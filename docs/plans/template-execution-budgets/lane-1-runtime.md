@@ -1,6 +1,6 @@
 # Lane 1: runtime ownership and metering
 
-**Prepared, not started.** Begin only after the owner's execution instruction. Use one local implementer for diagnosis, code, self-review and verification; do not spawn reviewers or subagents.
+**Execution started 2026-11-07** under the owner's explicit lane-start instruction, superseding the prepared hold. Use one local implementer for diagnosis, code, self-review and verification; do not spawn reviewers or subagents.
 
 ## Read first
 
@@ -25,10 +25,30 @@ Shared evaluator changes from other lanes wait for the recorded foundation SHA, 
 
 ## Done means
 
-- [ ] Controlled baseline and fixed interpreter cases pass under matching inputs, with externally bounded dangerous tests.
-- [ ] No owned interpreter work or pooled caller references after return on success/error/cancel/panic.
-- [ ] All native loop/recursion entry points have a metering disposition; try/isset cannot swallow termination.
-- [ ] Legacy compatibility and positive-limit API tests pass, causes remain inspectable, race results recorded separately.
-- [ ] J01–J03 descriptions state that values, compilation and arbitrary native callbacks remain outside this milestone.
+- [x] Controlled baseline and fixed interpreter cases pass under matching inputs, with externally bounded dangerous tests.
+- [x] No owned interpreter work or pooled caller references after return on success/error/cancel/panic.
+- [x] All native loop/recursion entry points have a metering disposition; try/isset cannot swallow termination.
+- [x] Legacy compatibility and positive-limit API tests pass, causes remain inspectable, race results recorded separately.
+- [x] J01–J03 descriptions state that values, compilation and arbitrary native callbacks remain outside this milestone.
 
 Do not merge a tenant-safe claim or close Karsto #209 from this lane's results. Use the shared host gate/deadline/log rules in the plan; prefer CI for full validation. Preserve scope while a stage runs and resume only invalidated/failed checks.
+
+## Published foundation
+
+Dependent work can use **`77025e5`** (production code `d2f089c`; additional recovery tests/public documentation in `77025e5`) on `work/lane-1-runtime` ([fork PR #3](https://github.com/ashtonian/jet/pull/3)). Earlier `86fce7a` introduced the API; `388f288` fixes public YieldBlock restoration; `d2f089c` adds numeric-scan preflight and reusable sink adapters. The internal method signatures below remain stable across those commits. Do not assume remote master includes them.
+
+- `checkpoint(uint64)`, `enter()/leave()`: cancellation, fuel and recursive-frame ownership.
+- `reserve(remaining *uint64, limit, requested uint64, kind string, cause error)`: checked pre-work subtraction, zero unlimited, sticky terminal failure with an inspectable LimitError. Lane 2 extends executionState/options only when its dimensions are enforced.
+- `terminate(error)`, `rethrowTerminal()`, `rethrowRecovered(interface{})`: first-error latch through try/isset and callback recovery. Programming panics are not reclassified as limits.
+- `beforeCall(reflect.Value)`: actual pre-invocation checkpoint for Func/reflection, Renderer/printing, SafeWriter and Ranger calls, paired with a return checkpoint. Lane 3 extends capability admission here and covers implicit formatting/configured escape callbacks in its capability inventory; no restricted policy is implemented by this foundation.
+- `executionContext()` and `loadTemplate(name,parent string,sibling bool)`: actual runtime compilation bridge. Lane 3 replaces the legacy load inside this seam with shared compilation admission, without moving request state onto Set/Template/cache.
+- `beginOutputTransaction()/commitOutputTransaction(*outputTransaction)`: actual try buffering/commit hook in execution_output.go. Lane 2 adds pre-growth value/output reservations, rollback accounting and commit transfer without double output charge here.
+- `exec` and `includeIfExists` in default.go already use loadTemplate/templateRoot and the current Runtime. Lane 2 can now own their dependent builtin changes against the explicit SHA.
+
+The context stored in executionState is an execution-local adapter to existing Runtime/Arguments callbacks, cleared with every pool return. Nested interpreter calls reuse it. Public Execute/ExecuteContext reentry from arbitrary host code starts a new top-level execution and must be denied by restricted policy.
+
+Evidence and remaining limits: [lane-1-evidence.md](lane-1-evidence.md). The generic correctness submission is [CloudyKit/jet #237](https://github.com/CloudyKit/jet/pull/237), mapping canonical `3863ed9`/`388f288` to submission `8b5e7b0`/`822cf70`; its diff contains no internal documents or packaging. J02/J03 remain one coherent context/fuel/depth API proposal.
+
+Lane 3 peer compile commit `9a8d22e` changes the private sibling-loader signature to accept parseAdmission. Its dependent runtime patch must replace loadTemplate's load with one render-shared parseAdmission using executionContext(), not create a fresh compilation allowance for each include/exec. The peer code is reviewed, not integrated into this lane; compilation remains explicitly excluded until that dependency lands.
+
+The context/fuel/depth upstream proposal is [CloudyKit/jet #238](https://github.com/CloudyKit/jet/pull/238), submission `1573061999cc3e9fdc543d5635e762d364e199ff`, derived from canonical `77025e5`. It is a draft stacked on #237, with explicit exclusions and measured header overhead. Runtime, module/dependency and fixture content in the submission matches the validated canonical source; only generic API documentation is submitted. No merge or tenant adoption is authorized by this handoff.

@@ -29,3 +29,9 @@ J02/J03 may combine if separating them weakens the public contract. J04/J05 may 
 5. Benchmarks and profile explanation when relevant; links to direct prerequisites.
 
 No internal assignment history, generated-by text or assistant credits. Do not substitute a large checklist for explaining the change. Keep a concise coverage table where the security boundary benefits from it. Open upstream submissions only after their code and evidence exist; this planning session creates no upstream issue/PR or maintainer notification.
+
+## Runtime submissions (2026-11-07)
+
+- J01: [CloudyKit/jet #237](https://github.com/CloudyKit/jet/pull/237), generic branch `upstream/runtime-correctness` at `822cf702300c6226fa56a3fcf2f8466dc6b9b712`; signed submission commits `8b5e7b0`/`822cf70` derive from canonical `3863ed9`/`388f288`. Standalone root-package compatibility/race checks pass.
+- J02/J03: [CloudyKit/jet draft #238](https://github.com/CloudyKit/jet/pull/238), generic branch `upstream/execution-context` at `1573061999cc3e9fdc543d5635e762d364e199ff`, derived from canonical `77025e5` and stacked on #237. Context/fuel/depth ship together so the additive API does not advertise a partially covered native evaluator. Full normal/race, Go 1.16 compatibility and diagnostic CPU/allocation/heap/mutex/block evidence are recorded in [lane-1-evidence.md](lane-1-evidence.md).
+- Canonical dependency handoff: [fork PR #3](https://github.com/ashtonian/jet/pull/3), explicit foundation `77025e5` (runtime production `d2f089c`), contracts in [lane 1](lane-1-runtime.md). Both upstream diffs exclude internal assignment documents, fork packaging and Karsto policy. Neither proposal establishes values/output, compilation/capability limits or tenant acceptance.
