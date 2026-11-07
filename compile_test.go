@@ -507,3 +507,14 @@ func TestCompilationDiamondNodeCacheParity(t *testing.T) {
 		})
 	}
 }
+
+func TestCompilationCloseCannotMaskLimit(t *testing.T) {
+	failure := errors.New("close panic")
+	loader := compilationLoader{open: func() (io.ReadCloser, error) {
+		return compilationReadCloser{Reader: strings.NewReader("over limit"), close: func() error { panic(failure) }}, nil
+	}}
+	tpl, err := NewSet(loader).GetTemplateContext(context.Background(), "s", ParseOptions{MaxSourceBytes: 2})
+	if tpl != nil || !errors.Is(err, ErrParseSourceLimit) {
+		t.Fatalf("%v", err)
+	}
+}

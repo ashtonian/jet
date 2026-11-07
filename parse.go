@@ -222,7 +222,7 @@ func (s *Set) parse(name, text string, cacheAfterParsing bool, parsing *parseAdm
 	if parsing == nil {
 		parsing, _ = newParseAdmission(context.Background(), ParseOptions{})
 	}
-	defer recoverCompilation(&err)
+	defer parsing.recover(&err)
 	name = path.Clean(name)
 	parsing.source(name, int64(len(text)))
 	parsing.enter()
