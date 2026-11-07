@@ -168,6 +168,9 @@ type lexer struct {
 	leftComment    string
 	rightComment   string
 	trimRightDelim string
+	admission      *parseAdmission
+	line           int
+	linePos        Pos
 }
 
 func (l *lexer) setDelimiters(leftDelim, rightDelim string) {
@@ -191,11 +194,13 @@ func (l *lexer) setCommentDelimiters(leftDelim, rightDelim string) {
 
 // next returns the next rune in the input.
 func (l *lexer) next() rune {
+	l.admission.step(1)
 	if int(l.pos) >= len(l.input) {
 		l.width = 0
 		return eof
 	}
 	r, w := utf8.DecodeRuneInString(l.input[l.pos:])
+	l.admission.step(uint64(w))
 	l.width = Pos(w)
 	l.pos += l.width
 	return r
@@ -247,18 +252,24 @@ func (l *lexer) acceptRun(valid string) {
 // the previous item returned by nextItem. Doing it this way
 // means we don't have to worry about peek double counting.
 func (l *lexer) lineNumber() int {
-	return 1 + strings.Count(l.input[:l.lastPos], "\n")
+	return l.line
 }
 
 // errorf returns an error token and terminates the scan by passing
 // back a nil pointer that will be the next state, terminating l.nextItem.
 func (l *lexer) errorf(format string, args ...interface{}) stateFn {
+	for i, arg := range args {
+		if value, ok := arg.(string); ok {
+			args[i] = parseDiagnostic(value)
+		}
+	}
 	l.items = append(l.items, item{itemError, l.start, fmt.Sprintf(format, args...)})
 	return nil
 }
 
 // nextItem advances the scanner until it produces an item.
 func (l *lexer) nextItem() item {
+	l.admission.step(1)
 	for len(l.items) == 0 && l.state != nil {
 		l.state = l.state(l)
 	}
@@ -269,6 +280,15 @@ func (l *lexer) nextItem() item {
 	copy(l.items, l.items[1:])
 	l.items[len(l.items)-1] = item{}
 	l.items = l.items[:len(l.items)-1]
+	for l.linePos < next.pos {
+		end := l.linePos + 4096
+		if end > next.pos {
+			end = next.pos
+		}
+		l.admission.step(uint64(end - l.linePos))
+		l.line += strings.Count(l.input[l.linePos:end], "\n")
+		l.linePos = end
+	}
 	l.lastPos = next.pos
 	return next
 }
@@ -277,6 +297,7 @@ func (l *lexer) nextItem() item {
 func lex(name, input string, run bool) *lexer {
 	l := &lexer{
 		name:           name,
+		line:           1,
 		input:          input,
 		items:          make([]item, 0, 2),
 		leftDelim:      defaultLeftDelim,
@@ -300,9 +321,9 @@ func (l *lexer) run() {
 func lexText(l *lexer) stateFn {
 	for {
 		// without breaking the API, this seems like a reasonable workaround to correctly parse comments
-		i := strings.IndexByte(l.input[l.pos:], l.leftDelim[0])    // index of suspected left delimiter
-		ic := strings.IndexByte(l.input[l.pos:], l.leftComment[0]) // index of suspected left comment marker
-		if ic > -1 && ic < i {                                     // use whichever is lower for future lexing
+		i := l.index(l.input[l.pos:], string(l.leftDelim[0]))    // index of suspected left delimiter
+		ic := l.index(l.input[l.pos:], string(l.leftComment[0])) // index of suspected left comment marker
+		if ic > -1 && ic < i {                                   // use whichever is lower for future lexing
 			i = ic
 		}
 		// if no token is found, skip till the end of template
@@ -315,7 +336,7 @@ func lexText(l *lexer) stateFn {
 				ld := Pos(len(l.leftDelim))
 				trimLength := Pos(0)
 				if strings.HasPrefix(l.input[l.pos+ld:], leftTrimMarker) {
-					trimLength = rightTrimLength(l.input[l.start:l.pos])
+					trimLength = l.trimLength(l.input[l.start:l.pos], false)
 				}
 				l.pos -= trimLength
 				if l.pos > l.start {
@@ -359,7 +380,7 @@ func lexLeftDelim(l *lexer) stateFn {
 // lexComment scans a comment. The left comment marker is known to be present.
 func lexComment(l *lexer) stateFn {
 	l.pos += Pos(len(l.leftComment))
-	i := strings.Index(l.input[l.pos:], l.rightComment)
+	i := l.index(l.input[l.pos:], l.rightComment)
 	if i < 0 {
 		return l.errorf("unclosed comment")
 	}
@@ -378,7 +399,7 @@ func lexRightDelim(l *lexer) stateFn {
 	l.pos += Pos(len(l.rightDelim))
 	l.emit(itemRightDelim)
 	if trimSpace {
-		l.pos += leftTrimLength(l.input[l.pos:])
+		l.pos += l.trimLength(l.input[l.pos:], true)
 		l.ignore()
 	}
 	return lexText
@@ -763,4 +784,48 @@ func (l *lexer) atRightDelim() (delim, trimSpaces bool) {
 		return true, false
 	}
 	return false, false
+}
+
+func (l *lexer) index(input, needle string) int {
+	if l.admission == nil {
+		return strings.Index(input, needle)
+	}
+	const chunk = 4096
+	for start := 0; start < len(input); {
+		end := start + chunk
+		if end > len(input) {
+			end = len(input)
+		}
+		// Preserve matches that straddle scan chunks, including custom delimiters.
+		if len(needle) > 1 && len(input)-end >= len(needle)-1 {
+			end += len(needle) - 1
+		} else if len(needle) > 1 {
+			end = len(input)
+		}
+		l.admission.step(uint64(end - start))
+		if i := strings.Index(input[start:end], needle); i >= 0 {
+			return start + i
+		}
+		if end == len(input) {
+			break
+		}
+		start += chunk
+	}
+	return -1
+}
+
+func (l *lexer) trimLength(input string, left bool) Pos {
+	n := 0
+	for n < len(input) {
+		l.admission.step(1)
+		i := n
+		if !left {
+			i = len(input) - 1 - n
+		}
+		if !isSpace(rune(input[i])) {
+			break
+		}
+		n++
+	}
+	return Pos(n)
 }
