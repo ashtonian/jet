@@ -2,7 +2,7 @@
 
 | Field | Value |
 | --- | --- |
-| Status | Proposed; implementation not started |
+| Status | Implemented on fork at d2f089c; upstream proposal and dependent protections remain separate |
 | Date | 2026-11-07 |
 | Baseline | Jet v6.3.3, `202464510d5b57f0afa9c5563f75babc1616682c` |
 | Owner | Lane 1 |
@@ -78,3 +78,13 @@ Unrestricted `ExecuteContext` checks before and after callbacks; it waits for an
 4. Verify [R01–R12](../plans/template-execution-budgets/validation.md), upstream compatibility and race checks. Keep recursion probes externally bounded.
 
 Do not call this RFC complete merely because `executeList` has a counter. The coverage audit must account for each loop, recursion and call boundary. The implementation PR states RFC-0002/0003/0004 exclusions prominently.
+
+## Implementation evidence (2026-11-07)
+
+The [runtime handoff](../plans/template-execution-budgets/lane-1-runtime.md) records the exact foundation and internal reservation, terminal, loading and output-transaction seams. [Validation evidence](../plans/template-execution-budgets/lane-1-evidence.md) separates controlled baselines, full normal/race runs, Go 1.16 compatibility and diagnostic dispatch profiles. The generic public contract is documented in [execution.md](../execution.md).
+
+ExecuteContext, fuel/depth and terminal unwind ship as one coherent API proposal. Existing Execute remains unlimited; zero low-level options remain unlimited. Context storage is confined to executionState to adapt existing Runtime/Arguments callbacks, cleared before pooling. Empty loop bodies need no list dispatch; their native advances retain pre-call fuel and cancellation checks and return checkpoints. Step totals are implementation details.
+
+All sink failures are terminal in both APIs, as a separately tested correctness correction. Ordinary try/isset recovery remains compatible; a programming fault after a callback recovers terminal unwind is rethrown, not reclassified as a budget error. Runtime.YieldBlock's duplicate execution/context-restoration defect is a separate causal fix.
+
+Values/output, compilation/input/capability admission, arbitrary native preemption and Karsto workflow safety are not established by this milestone. Diagnostic cached-execute profiles do not replace the representative performance/adoption gates. No tenant-safe claim or closure of Karsto #209 follows from this RFC's runtime implementation.
