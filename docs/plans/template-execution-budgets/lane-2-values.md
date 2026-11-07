@@ -1,6 +1,6 @@
 # Lane 2: allocation, output and builtin costs
 
-**Prepared, not started.** Begin only after the owner's execution instruction. One implementer owns diagnosis, implementation, self-review and checks.
+**Execution started 2026-11-07** under the owner's explicit lane-start instruction, superseding the prepared planning hold. One implementer owns diagnosis, implementation, self-review and checks.
 
 Read [plan](plan.md), [RFC-0002](../../rfcs/0002-value-and-output-budgets.md), [RFC-0004](../../rfcs/0004-restricted-execution.md), [audit](source-audit.md), [PR register](upstream-prs.md), [validation](validation.md), and applicable coding guides.
 
@@ -9,6 +9,8 @@ Read [plan](plan.md), [RFC-0002](../../rfcs/0002-value-and-output-budgets.md), [
 1. Inventory every allocation, output sink and builtin call, linking source symbols. Mark exact/proven upper bound, incremental accounting, or restricted denial. Include implicit formatting and reflection conversions, discarded exec output and nested try copies.
 2. Prepare bounded failing amplification/transaction fixtures and the operation-cost schedule. Do not run OOM inputs on the host or assume `GOMEMLIMIT` isolates them.
 3. Review default helper signatures/semantics and report which Karsto helpers require adapter changes to Lane 4. `formatNumber` precision and replace/split/join growth are concrete cases.
+
+The source-linked [cost/capability inventory and helper handoff](lane-2-cost-inventory.md) covers all default bindings, implicit formatting/conversion, transactions and discard sinks. [Evidence](lane-2-evidence.md) records bounded baseline fixtures, profiles and current dependency gates. No value/output protection is claimed by preparation tests.
 
 ## Dependent implementation
 
