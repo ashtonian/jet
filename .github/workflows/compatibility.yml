@@ -1,0 +1,50 @@
+name: Compatibility
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+defaults:
+  run:
+    shell: bash
+
+concurrency:
+  group: compatibility-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: Go ${{ matrix.go }} ${{ matrix.mode }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - go: '1.16.15'
+            mode: normal
+            flags: ''
+          - go: stable
+            mode: normal
+            flags: ''
+          - go: stable
+            mode: race
+            flags: '-race'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
+        with:
+          go-version: ${{ matrix.go }}
+          cache-dependency-path: go.sum
+      - name: Record toolchain and dependencies
+        run: |
+          go version
+          go env GOOS GOARCH GOFLAGS
+          go list -m all
+      - name: Test
+        run: timeout --kill-after=10s 6m go test -count=1 -timeout=5m ${{ matrix.flags }} ./...
