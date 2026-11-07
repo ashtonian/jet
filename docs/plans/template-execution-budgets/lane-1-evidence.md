@@ -6,6 +6,7 @@ Execution authorized 2026-11-07. This lane delivers generic runtime ownership an
 
 - Upstream v6.3.3/refreshed master: `202464510d5b57f0afa9c5563f75babc1616682c`; planning base `b0bbc0761fe98bbee4b6c74f7df74454f4c2d333`.
 - Canonical code: `d2f089c` on `work/lane-1-runtime`; correctness `3863ed9`, context/fuel/depth `86fce7a`, public YieldBlock correction `388f288`, scan accounting/sink adapter consolidation `d2f089c`.
+- Final canonical code/tests/documentation handoff: `77025e5`; production remains `d2f089c`. [Upstream context/fuel/depth draft PR #238](https://github.com/CloudyKit/jet/pull/238) maps it to `1573061999cc3e9fdc543d5635e762d364e199ff`, stacked on #237. Submission content was checked against canonical Go/dependency/template blobs; internal plans/RFCs and packaging are excluded.
 - [Fork handoff PR #3](https://github.com/ashtonian/jet/pull/3). [Upstream correctness PR #237](https://github.com/CloudyKit/jet/pull/237) uses generic submission commits `8b5e7b0` and `822cf70`, excluding all planning documents and packaging.
 - Go 1.27.3, darwin/arm64; Go 1.16.15 compatibility uses the official archive with SHA-256 `28365c5c252970c10f2627dc0aa63a2ec3df04a92df4d45ed83dbe464732c3e0`. Module/dependency files are unchanged.
 - Every created commit was GPG-signed with the effective repository identity, locally verified and checked through GitHub's verification API. Source changes preserve upstream authorship/history.

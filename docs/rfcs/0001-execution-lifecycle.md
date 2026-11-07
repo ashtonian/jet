@@ -88,3 +88,5 @@ ExecuteContext, fuel/depth and terminal unwind ship as one coherent API proposal
 All sink failures are terminal in both APIs, as a separately tested correctness correction. Ordinary try/isset recovery remains compatible; a programming fault after a callback recovers terminal unwind is rethrown, not reclassified as a budget error. Runtime.YieldBlock's duplicate execution/context-restoration defect is a separate causal fix.
 
 Values/output, compilation/input/capability admission, arbitrary native preemption and Karsto workflow safety are not established by this milestone. Diagnostic cached-execute profiles do not replace the representative performance/adoption gates. No tenant-safe claim or closure of Karsto #209 follows from this RFC's runtime implementation.
+
+Upstream review: [correctness #237](https://github.com/CloudyKit/jet/pull/237) and [context/fuel/depth draft #238](https://github.com/CloudyKit/jet/pull/238). Canonical foundation `77025e5` retains production `d2f089c`; the submission mapping is recorded in the runtime evidence.
