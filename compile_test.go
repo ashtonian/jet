@@ -440,3 +440,70 @@ func TestCompilationDiagnosticsBounded(t *testing.T) {
 		t.Fatalf("diagnostic length=%d", len(fmt.Sprint(err)))
 	}
 }
+
+type compilationCooperativeLoader struct{ entered, finished chan struct{} }
+
+func (l compilationCooperativeLoader) Exists(string) bool { panic("legacy Exists called") }
+func (l compilationCooperativeLoader) Open(string) (io.ReadCloser, error) {
+	panic("legacy Open called")
+}
+func (l compilationCooperativeLoader) ExistsContext(ctx context.Context, _ string) (bool, error) {
+	close(l.entered)
+	<-ctx.Done()
+	close(l.finished)
+	return false, ctx.Err()
+}
+func (l compilationCooperativeLoader) OpenContext(context.Context, string) (io.ReadCloser, error) {
+	panic("Open after cancelled Exists")
+}
+
+func TestCompilationContextLoaderOwnership(t *testing.T) {
+	loader := compilationCooperativeLoader{entered: make(chan struct{}), finished: make(chan struct{})}
+	ctx, cancel := context.WithCancel(context.Background())
+	defer cancel()
+	result := make(chan error, 1)
+	go func() { _, err := NewSet(loader).GetTemplateContext(ctx, "a.jet", ParseOptions{}); result <- err }()
+	<-loader.entered
+	cancel()
+	if err := <-result; !errors.Is(err, context.Canceled) {
+		t.Fatal(err)
+	}
+	select {
+	case <-loader.finished:
+	default:
+		t.Fatal("returned before loader stopped")
+	}
+}
+
+func TestCompilationCustomSyntaxCompatibility(t *testing.T) {
+	set := NewSet(NewInMemLoader(), WithDelims("<<", ">>"), WithCommentDelims("/*", "*/"), WithSafeWriter(nil))
+	tpl, err := set.ParseContext(context.Background(), "s", "/* comment\n */<< \"hé\" >>\xff", ParseOptions{MaxSourceBytes: 100, MaxNodes: 20, MaxDepth: 8, MaxSteps: 1000})
+	if err != nil {
+		t.Fatal(err)
+	}
+	var out bytes.Buffer
+	if err = tpl.Execute(&out, nil, nil); err != nil || out.String() != "hé\xff" {
+		t.Fatalf("%v: %q", err, out.String())
+	}
+}
+
+func TestCompilationDiamondNodeCacheParity(t *testing.T) {
+	for _, warm := range []bool{false, true} {
+		t.Run(fmt.Sprintf("warm=%t", warm), func(t *testing.T) {
+			set, _ := compilationDiamond(false)
+			if warm {
+				if _, err := set.GetTemplate("a.jet"); err != nil {
+					t.Fatal(err)
+				}
+			}
+			tpl, err := set.GetTemplateContext(context.Background(), "a.jet", ParseOptions{MaxNodes: 12, MaxTemplates: 4})
+			if err != nil {
+				t.Fatal(err)
+			}
+			var out bytes.Buffer
+			if err = tpl.Execute(&out, nil, nil); err != nil || out.String() != "ok" {
+				t.Fatalf("%v: %q", err, out.String())
+			}
+		})
+	}
+}

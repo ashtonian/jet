@@ -43,13 +43,14 @@ type Template struct {
 
 	text string // text parsed to create the template (or its parent)
 
+	metadata parseMetadata
+
 	// Parsing only; cleared after parse.
 	lex             *lexer
 	token           [3]item // three-token lookahead for parser.
 	peekCount       int
 	admission       *parseAdmission
 	parseDepth      int
-	metadata        parseMetadata
 	expressionDepth map[Node]int
 }
 
@@ -259,6 +260,7 @@ func (s *Set) parse(name, text string, cacheAfterParsing bool, parsing *parseAdm
 	}
 
 	t.addBlocks(t.passedBlocks)
+	parsing.cached[t] = true
 
 	return t, err
 }
