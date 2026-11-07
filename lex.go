@@ -153,15 +153,15 @@ type stateFn func(*lexer) stateFn
 
 // lexer holds the state of the scanner.
 type lexer struct {
-	name           string    // the name of the input; used only for error reports
-	input          string    // the string being scanned
-	state          stateFn   // the next lexing function to enter
-	pos            Pos       // current position in the input
-	start          Pos       // start position of this item
-	width          Pos       // width of last rune read from input
-	lastPos        Pos       // position of most recent item returned by nextItem
-	items          chan item // channel of scanned items
-	parenDepth     int       // nesting depth of ( ) exprs
+	name           string  // the name of the input; used only for error reports
+	input          string  // the string being scanned
+	state          stateFn // the next lexing function to enter
+	pos            Pos     // current position in the input
+	start          Pos     // start position of this item
+	width          Pos     // width of last rune read from input
+	lastPos        Pos     // position of most recent item returned by nextItem
+	items          []item  // pending items from the current scanner state
+	parenDepth     int     // nesting depth of ( ) exprs
 	lastType       itemType
 	leftDelim      string
 	rightDelim     string
@@ -218,7 +218,7 @@ func (l *lexer) backup() {
 // emit passes an item back to the client.
 func (l *lexer) emit(t itemType) {
 	l.lastType = t
-	l.items <- item{t, l.start, l.input[l.start:l.pos]}
+	l.items = append(l.items, item{t, l.start, l.input[l.start:l.pos]})
 	l.start = l.pos
 }
 
@@ -253,23 +253,24 @@ func (l *lexer) lineNumber() int {
 // errorf returns an error token and terminates the scan by passing
 // back a nil pointer that will be the next state, terminating l.nextItem.
 func (l *lexer) errorf(format string, args ...interface{}) stateFn {
-	l.items <- item{itemError, l.start, fmt.Sprintf(format, args...)}
+	l.items = append(l.items, item{itemError, l.start, fmt.Sprintf(format, args...)})
 	return nil
 }
 
-// nextItem returns the next item from the input.
-// Called by the parser, not in the lexing goroutine.
+// nextItem advances the scanner until it produces an item.
 func (l *lexer) nextItem() item {
-	item := <-l.items
-	l.lastPos = item.pos
-	return item
-}
-
-// drain drains the output so the lexing goroutine will exit.
-// Called by the parser, not in the lexing goroutine.
-func (l *lexer) drain() {
-	for range l.items {
+	for len(l.items) == 0 && l.state != nil {
+		l.state = l.state(l)
 	}
+	if len(l.items) == 0 {
+		return item{}
+	}
+	next := l.items[0]
+	copy(l.items, l.items[1:])
+	l.items[len(l.items)-1] = item{}
+	l.items = l.items[:len(l.items)-1]
+	l.lastPos = next.pos
+	return next
 }
 
 // lex creates a new scanner for the input string.
@@ -277,7 +278,7 @@ func lex(name, input string, run bool) *lexer {
 	l := &lexer{
 		name:           name,
 		input:          input,
-		items:          make(chan item),
+		items:          make([]item, 0, 2),
 		leftDelim:      defaultLeftDelim,
 		rightDelim:     defaultRightDelim,
 		leftComment:    defaultLeftComment,
@@ -290,14 +291,9 @@ func lex(name, input string, run bool) *lexer {
 	return l
 }
 
-// run runs the state machine for the lexer.
+// run initializes the scanner; nextItem drives it synchronously.
 func (l *lexer) run() {
-	go func() {
-		for l.state = lexText; l.state != nil; {
-			l.state = l.state(l)
-		}
-		close(l.items)
-	}()
+	l.state = lexText
 }
 
 // state functions
