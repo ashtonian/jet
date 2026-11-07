@@ -162,7 +162,7 @@ func (st *Runtime) loadTemplate(name, parent string, sibling bool) (*Template, e
 	var t *Template
 	var err error
 	if sibling {
-		t, err = st.set.getSiblingTemplate(name, parent, true)
+		t, err = st.set.getSiblingTemplate(name, parent, true, nil)
 	} else {
 		t, err = st.set.GetTemplate(name)
 	}

@@ -1,9 +1,10 @@
 package jet
 
 import (
+	"context"
 	"errors"
 	"fmt"
-	"io/ioutil"
+	"io"
 	"path"
 	"path/filepath"
 	"reflect"
@@ -23,8 +24,8 @@ type Set struct {
 	developmentMode bool
 	leftDelim       string
 	rightDelim      string
-	leftComment       string
-	rightComment     string
+	leftComment     string
+	rightComment    string
 }
 
 // Option is the type of option functions that can be used in NewSet().
@@ -126,35 +127,42 @@ func DevelopmentMode(mode bool) Option {
 //
 // For example, GetTemplate("catalog/products.list") with extensions set to []string{"", ".html.jet",".jet"}
 // will try to look for:
-//     1. catalog/products.list
-//     2. catalog/products.list.html.jet
-//     3. catalog/products.list.jet
+//  1. catalog/products.list
+//  2. catalog/products.list.html.jet
+//  3. catalog/products.list.jet
+//
 // in the set's templates cache, and if it can't find the template it will try to load the same paths via
 // the loader, and, if parsed successfully, cache the template (unless running in development mode).
 func (s *Set) GetTemplate(templatePath string) (t *Template, err error) {
-	return s.getSiblingTemplate(templatePath, "/", true)
+	return s.getSiblingTemplate(templatePath, "/", true, nil)
 }
 
-func (s *Set) getSiblingTemplate(templatePath, siblingPath string, cacheAfterParsing bool) (t *Template, err error) {
-	templatePath = filepath.ToSlash(templatePath)
+func (s *Set) getSiblingTemplate(templatePath, siblingPath string, cacheAfterParsing bool, parsing *parseAdmission) (t *Template, err error) {
+	templatePath = path.Clean(filepath.ToSlash(templatePath))
 	siblingPath = filepath.ToSlash(siblingPath)
 	if !path.IsAbs(templatePath) {
 		siblingDir := path.Dir(siblingPath)
 		templatePath = path.Join(siblingDir, templatePath)
 	}
-	return s.getTemplate(templatePath, cacheAfterParsing)
+	return s.getTemplate(templatePath, cacheAfterParsing, parsing)
 }
 
 // same as GetTemplate, but doesn't cache a template when found through the loader.
-func (s *Set) getTemplate(templatePath string, cacheAfterParsing bool) (t *Template, err error) {
+func (s *Set) getTemplate(templatePath string, cacheAfterParsing bool, parsing *parseAdmission) (t *Template, err error) {
+	if parsing == nil {
+		parsing, _ = newParseAdmission(context.Background(), ParseOptions{})
+	}
+	defer recoverCompilation(&err)
+	parsing.step(1)
 	if !s.developmentMode {
 		t, found := s.getTemplateFromCache(templatePath)
 		if found {
+			parsing.admitCached(t)
 			return t, nil
 		}
 	}
 
-	t, err = s.getTemplateFromLoader(templatePath, cacheAfterParsing)
+	t, err = s.getTemplateFromLoader(templatePath, cacheAfterParsing, parsing)
 	if err == nil && cacheAfterParsing && !s.developmentMode {
 		s.cache.Put(templatePath, t)
 	}
@@ -165,50 +173,76 @@ func (s *Set) getTemplateFromCache(templatePath string) (t *Template, ok bool) {
 	// check path with all possible extensions in cache
 	for _, extension := range s.extensions {
 		canonicalPath := templatePath + extension
-		if t := s.cache.Get(canonicalPath); t != nil {
+		if t := s.cache.Get(canonicalPath); t != nil && t.set == s {
 			return t, true
 		}
 	}
 	return nil, false
 }
 
-func (s *Set) getTemplateFromLoader(templatePath string, cacheAfterParsing bool) (t *Template, err error) {
+func (s *Set) getTemplateFromLoader(templatePath string, cacheAfterParsing bool, parsing *parseAdmission) (t *Template, err error) {
 	// check path with all possible extensions in loader
 	for _, extension := range s.extensions {
 		canonicalPath := templatePath + extension
-		if found := s.loader.Exists(canonicalPath); found {
-			return s.loadFromFile(canonicalPath, cacheAfterParsing)
+		parsing.step(1)
+		var found bool
+		if loader, ok := s.loader.(ContextLoader); ok {
+			found, err = loader.ExistsContext(parsing.ctx, canonicalPath)
+			if err != nil {
+				return nil, err
+			}
+		} else {
+			found = s.loader.Exists(canonicalPath)
+		}
+		parsing.check()
+		if found {
+			return s.loadFromFile(canonicalPath, cacheAfterParsing, parsing)
 		}
 	}
 	return nil, fmt.Errorf("template %s could not be found", templatePath)
 }
 
-func (s *Set) loadFromFile(templatePath string, cacheAfterParsing bool) (template *Template, err error) {
-	f, err := s.loader.Open(templatePath)
+func (s *Set) loadFromFile(templatePath string, cacheAfterParsing bool, parsing *parseAdmission) (template *Template, err error) {
+	parsing.prepareSource(templatePath)
+	var f io.ReadCloser
+	if loader, ok := s.loader.(ContextLoader); ok {
+		f, err = loader.OpenContext(parsing.ctx, templatePath)
+	} else {
+		f, err = s.loader.Open(templatePath)
+	}
 	if err != nil {
 		return nil, err
 	}
-	defer f.Close()
-	content, err := ioutil.ReadAll(f)
-	if err != nil {
-		return nil, err
-	}
-	return s.parse(templatePath, string(content), cacheAfterParsing)
+	defer func() {
+		closeErr := f.Close()
+		if err == nil && closeErr != nil {
+			template = nil
+			err = closeErr
+		}
+	}()
+	parsing.check()
+	content := parsing.readSource(templatePath, f)
+	return s.parse(templatePath, content, cacheAfterParsing, parsing)
 }
 
 // Parse parses `contents` as if it were located at `templatePath`, but won't put the result into the cache.
 // Any referenced template (e.g. via `extends` or `import` statements) will be tried to be loaded from the cache.
 // If a referenced template has to be loaded and parsed, it will also not be put into the cache after parsing.
 func (s *Set) Parse(templatePath, contents string) (template *Template, err error) {
+	templatePath, err = normalizeParseName(templatePath)
+	if err != nil {
+		return nil, err
+	}
+	return s.parse(templatePath, contents, false, nil)
+}
+
+func normalizeParseName(templatePath string) (string, error) {
 	templatePath = filepath.ToSlash(templatePath)
 	switch path.Base(templatePath) {
 	case ".", "/":
-		return nil, errors.New("template path has no base name")
+		return "", errors.New("template path has no base name")
 	}
-	// make sure it's absolute and clean it
-	templatePath = path.Join("/", templatePath)
-
-	return s.parse(templatePath, contents, false)
+	return path.Join("/", templatePath), nil
 }
 
 // AddGlobal adds a global variable into the Set,
