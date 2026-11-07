@@ -95,3 +95,19 @@ func TestExecutionCompilationCancelReaderCleanup(t *testing.T) {
 		t.Fatalf("%v: closed=%t output=%q", err, closed, out.String())
 	}
 }
+
+func TestExecutionCompilationCloseCannotMaskLimit(t *testing.T) {
+	failure := errors.New("close panic")
+	loader := compilationLoader{open: func() (io.ReadCloser, error) {
+		return compilationReadCloser{Reader: strings.NewReader(strings.Repeat("x", 100)), close: func() error { panic(failure) }}, nil
+	}}
+	tpl, err := NewSet(loader).Parse("root.jet", `{{try}}{{include "child.jet"}}{{catch}}caught{{end}}`)
+	if err != nil {
+		t.Fatal(err)
+	}
+	var out bytes.Buffer
+	err = tpl.ExecuteContext(context.Background(), &out, nil, nil, ExecutionOptions{ParseOptions: ParseOptions{MaxSourceBytes: 80}})
+	if !errors.Is(err, ErrParseSourceLimit) || out.Len() != 0 {
+		t.Fatalf("%v: %q", err, out.String())
+	}
+}

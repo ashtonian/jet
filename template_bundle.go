@@ -24,9 +24,9 @@ func admitTemplateBundle(ctx context.Context, sources map[string]string, opts Pa
 			bundle = nil
 		}
 	}()
-	defer recoverCompilation(&err)
+	defer a.recover(&err)
 	if uint64(len(sources)) > opts.MaxTemplates {
-		parseLimit("templates", opts.MaxTemplates)
+		a.limit("templates", opts.MaxTemplates)
 	}
 	admitted := make(map[string]string, len(sources))
 	for name, source := range sources {

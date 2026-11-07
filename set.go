@@ -152,7 +152,7 @@ func (s *Set) getTemplate(templatePath string, cacheAfterParsing bool, parsing *
 	if parsing == nil {
 		parsing, _ = newParseAdmission(context.Background(), ParseOptions{})
 	}
-	defer recoverCompilation(&err)
+	defer parsing.recover(&err)
 	parsing.step(1)
 	if !s.developmentMode {
 		t, found := s.getTemplateFromCache(templatePath)

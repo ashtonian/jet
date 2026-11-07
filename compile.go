@@ -74,7 +74,7 @@ func (s *Set) ParseContext(ctx context.Context, name, source string, opts ParseO
 			t = nil
 		}
 	}()
-	defer recoverCompilation(&err)
+	defer a.recover(&err)
 	name, err = normalizeParseName(name)
 	if err != nil {
 		return nil, err
@@ -99,7 +99,7 @@ func (s *Set) GetTemplateContext(ctx context.Context, name string, opts ParseOpt
 			t = nil
 		}
 	}()
-	defer recoverCompilation(&err)
+	defer a.recover(&err)
 	t, err = s.getSiblingTemplate(name, "/", true, a)
 	if err == nil {
 		a.check()
@@ -107,30 +107,42 @@ func (s *Set) GetTemplateContext(ctx context.Context, name string, opts ParseOpt
 	return t, err
 }
 
-func recoverCompilation(err *error) {
-	if p := recover(); p != nil {
-		if _, ok := p.(runtime.Error); ok {
-			panic(p)
-		}
-		e, ok := p.(error)
-		if !ok {
-			panic(p)
-		}
-		*err = e
+func recoverCompilation(err *error) { compilationPanic(recover(), err) }
+
+func compilationPanic(p interface{}, err *error) {
+	if p == nil {
+		return
+	}
+	if _, ok := p.(runtime.Error); ok {
+		panic(p)
+	}
+	failure, ok := p.(error)
+	if !ok {
+		panic(p)
+	}
+	*err = failure
+}
+
+func (a *parseAdmission) recover(err *error) {
+	compilationPanic(recover(), err)
+	// Cleanup cannot replace an observed resource or cancellation failure.
+	if a.terminal != nil {
+		*err = a.terminal
 	}
 }
 
 // This state belongs to one synchronous operation, never a Set or cached AST.
 type parseAdmission struct {
-	ctx     context.Context
-	opts    ParseOptions
-	active  map[string]bool
-	sources map[string]int64
-	cached  map[*Template]bool
-	total   int64
-	nodes   uint64
-	steps   uint64
-	depth   int
+	ctx      context.Context
+	opts     ParseOptions
+	active   map[string]bool
+	sources  map[string]int64
+	cached   map[*Template]bool
+	total    int64
+	nodes    uint64
+	steps    uint64
+	depth    int
+	terminal error
 }
 
 type parseMetadata struct {
@@ -153,14 +165,27 @@ func newParseAdmission(ctx context.Context, opts ParseOptions) (*parseAdmission,
 }
 
 func (a *parseAdmission) check() {
-	if a != nil {
-		if err := a.ctx.Err(); err != nil {
-			panic(err)
-		}
+	if a == nil {
+		return
+	}
+	if a.terminal != nil {
+		panic(a.terminal)
+	}
+	if err := a.ctx.Err(); err != nil {
+		a.stop(err)
 	}
 }
 
-func parseLimit(kind string, limit uint64) { panic(&ParseLimitError{Kind: kind, Limit: limit}) }
+func (a *parseAdmission) stop(err error) {
+	if a.terminal == nil {
+		a.terminal = err
+	}
+	panic(a.terminal)
+}
+
+func (a *parseAdmission) limit(kind string, limit uint64) {
+	a.stop(&ParseLimitError{Kind: kind, Limit: limit})
+}
 
 func (a *parseAdmission) step(n uint64) {
 	if a == nil {
@@ -168,10 +193,10 @@ func (a *parseAdmission) step(n uint64) {
 	}
 	a.check()
 	if a.opts.MaxSteps > 0 && (a.steps > a.opts.MaxSteps || n > a.opts.MaxSteps-a.steps) {
-		parseLimit("steps", a.opts.MaxSteps)
+		a.limit("steps", a.opts.MaxSteps)
 	}
 	if n > math.MaxUint64-a.steps {
-		parseLimit("steps", math.MaxUint64)
+		a.limit("steps", math.MaxUint64)
 	}
 	a.steps += n
 }
@@ -179,7 +204,7 @@ func (a *parseAdmission) step(n uint64) {
 func (a *parseAdmission) enter() {
 	a.step(1)
 	if a.depth == int(^uint(0)>>1) || (a.opts.MaxDepth > 0 && a.depth >= a.opts.MaxDepth) {
-		parseLimit("depth", uint64(a.opts.MaxDepth))
+		a.limit("depth", uint64(a.opts.MaxDepth))
 	}
 	a.depth++
 }
@@ -191,7 +216,7 @@ func (a *parseAdmission) prepareSource(name string) {
 	}
 	if _, ok := a.sources[name]; !ok {
 		if a.opts.MaxTemplates > 0 && uint64(len(a.sources)) >= a.opts.MaxTemplates {
-			parseLimit("templates", a.opts.MaxTemplates)
+			a.limit("templates", a.opts.MaxTemplates)
 		}
 		a.sources[name] = 0
 	}
@@ -200,7 +225,7 @@ func (a *parseAdmission) prepareSource(name string) {
 func (a *parseAdmission) source(name string, size int64) {
 	a.prepareSource(name)
 	if a.opts.MaxSourceBytes > 0 && size > a.opts.MaxSourceBytes {
-		parseLimit("source bytes", uint64(a.opts.MaxSourceBytes))
+		a.limit("source bytes", uint64(a.opts.MaxSourceBytes))
 	}
 	old := a.sources[name]
 	if size <= old {
@@ -208,10 +233,10 @@ func (a *parseAdmission) source(name string, size int64) {
 	}
 	extra := size - old
 	if a.opts.MaxTotalSourceBytes > 0 && extra > a.opts.MaxTotalSourceBytes-a.total {
-		parseLimit("total source bytes", uint64(a.opts.MaxTotalSourceBytes))
+		a.limit("total source bytes", uint64(a.opts.MaxTotalSourceBytes))
 	}
 	if extra > math.MaxInt64-a.total {
-		parseLimit("total source bytes", math.MaxInt64)
+		a.limit("total source bytes", math.MaxInt64)
 	}
 	a.total += extra
 	a.sources[name] = size
@@ -220,10 +245,10 @@ func (a *parseAdmission) source(name string, size int64) {
 func (a *parseAdmission) addNodes(n uint64) {
 	a.step(1)
 	if a.opts.MaxNodes > 0 && n > a.opts.MaxNodes-a.nodes {
-		parseLimit("nodes", a.opts.MaxNodes)
+		a.limit("nodes", a.opts.MaxNodes)
 	}
 	if n > math.MaxUint64-a.nodes {
-		parseLimit("nodes", math.MaxUint64)
+		a.limit("nodes", math.MaxUint64)
 	}
 	a.nodes += n
 }
@@ -259,7 +284,7 @@ func (a *parseAdmission) admitCached(t *Template) {
 	a.prepareSource(t.Name)
 	// Check depth on every path through a diamond, even if size was charged before.
 	if a.opts.MaxDepth > 0 && t.metadata.depth > a.opts.MaxDepth-a.depth {
-		parseLimit("depth", uint64(a.opts.MaxDepth))
+		a.limit("depth", uint64(a.opts.MaxDepth))
 	}
 	a.enter()
 	defer func() { a.depth-- }()
@@ -341,7 +366,7 @@ func (t *Template) nextExpressionDepth(children ...Node) int {
 	}
 	ancestors := t.admission.depth - t.parseDepth
 	if t.admission.opts.MaxDepth > 0 && height > t.admission.opts.MaxDepth-ancestors {
-		parseLimit("depth", uint64(t.admission.opts.MaxDepth))
+		t.admission.limit("depth", uint64(t.admission.opts.MaxDepth))
 	}
 	if height+1 > t.metadata.depth {
 		t.metadata.depth = height + 1
