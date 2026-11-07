@@ -61,10 +61,10 @@ func (t *Template) Execute(w io.Writer, variables VarMap, data interface{}) (err
 // ExecuteContext executes synchronously with cancellation and interpreter limits.
 // It checks before/after native calls and waits for them to return. It does not
 // interrupt blocked callbacks, writers, loaders, channels, or custom rangers.
-// Nil ctx and negative depth are invalid; zero limits are unlimited.
+// Nil ctx and negative limits are invalid; zero limits are unlimited.
 func (t *Template) ExecuteContext(ctx context.Context, w io.Writer, variables VarMap, data interface{}, opts ExecutionOptions) error {
-	if ctx == nil || opts.MaxDepth < 0 {
-		return fmt.Errorf("%w: context must be non-nil and depth nonnegative", ErrInvalidOptions)
+	if ctx == nil || opts.MaxDepth < 0 || opts.MaxValueBytes < 0 || opts.MaxOutputBytes < 0 {
+		return fmt.Errorf("%w: context must be non-nil and limits nonnegative", ErrInvalidOptions)
 	}
 	return t.execute(ctx, w, variables, data, opts)
 }
@@ -73,14 +73,18 @@ func (t *Template) execute(ctx context.Context, w io.Writer, variables VarMap, d
 	st := pool_State.Get().(*Runtime)
 	defer st.recover(&err)
 
-	st.execution = executionState{ctx: ctx, options: opts, remaining: opts.MaxSteps}
+	st.execution = executionState{ctx: ctx, options: opts, remaining: opts.MaxSteps, values: uint64(opts.MaxValueBytes), output: uint64(opts.MaxOutputBytes)}
 	st.checkpoint(0)
 	st.blocks = t.processedBlocks
 	st.variables = variables
 	st.set = t.set
 	st.writeErr = nil
 	st.rootSink = checkedWriter{writer: w, failure: &st.writeErr}
-	st.Writer = &st.rootSink
+	if ctx == nil {
+		st.Writer = &st.rootSink
+	} else {
+		st.Writer = st.outputWriter(w, false)
+	}
 
 	root := st.templateRoot(t)
 

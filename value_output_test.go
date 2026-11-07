@@ -2,6 +2,7 @@ package jet
 
 import (
 	"bytes"
+	"context"
 	"testing"
 )
 
@@ -65,6 +66,13 @@ func TestValueOutputCompatibility(t *testing.T) {
 					}
 					if out.String() != want {
 						t.Fatalf("got %q, want %q", out.String(), want)
+					}
+					out.Reset()
+					if err := tpl.ExecuteContext(context.Background(), &out, nil, nil, ExecutionOptions{MaxSteps: 1000000, MaxDepth: 100, MaxValueBytes: 1 << 20, MaxOutputBytes: 1 << 20}); err != nil {
+						t.Fatal(err)
+					}
+					if out.String() != want {
+						t.Fatalf("ExecuteContext got %q, want %q", out.String(), want)
 					}
 				})
 			}

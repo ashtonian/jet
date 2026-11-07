@@ -25,6 +25,7 @@ type Arguments struct {
 	runtime  *Runtime
 	args     CallArgs
 	pipedVal *reflect.Value
+	builtin  bool
 }
 
 // IsSet checks whether an argument is set or not. It behaves like the build-in isset function.
@@ -57,6 +58,14 @@ func (a *Arguments) IsSet(argumentIndex int) bool {
 
 // Get gets an argument by index.
 func (a *Arguments) Get(argumentIndex int) reflect.Value {
+	v := a.get(argumentIndex)
+	if !a.builtin {
+		v = legacyBuiltinValue(v)
+	}
+	return v
+}
+
+func (a *Arguments) get(argumentIndex int) reflect.Value {
 	if argumentIndex < 0 {
 		return reflect.Value{}
 	}
@@ -142,7 +151,7 @@ func (a *Arguments) ParseInto(ptrs ...interface{}) error {
 			case reflect.Float32, reflect.Float64:
 				*p, ok = int(arg.Float()), true
 			default:
-				return fmt.Errorf("could not parse %v (%s) into %v (%T)", arg, arg.Type(), ptr, ptr)
+				return a.parseError(i, arg, ptr)
 			}
 		case *int64:
 			switch arg.Kind() {
@@ -151,7 +160,7 @@ func (a *Arguments) ParseInto(ptrs ...interface{}) error {
 			case reflect.Float32, reflect.Float64:
 				*p, ok = int64(arg.Float()), true
 			default:
-				return fmt.Errorf("could not parse %v (%s) into %v (%T)", arg, arg.Type(), ptr, ptr)
+				return a.parseError(i, arg, ptr)
 			}
 		case *float64:
 			switch arg.Kind() {
@@ -160,7 +169,7 @@ func (a *Arguments) ParseInto(ptrs ...interface{}) error {
 			case reflect.Float32, reflect.Float64:
 				*p, ok = arg.Float(), true
 			default:
-				return fmt.Errorf("could not parse %v (%s) into %v (%T)", arg, arg.Type(), ptr, ptr)
+				return a.parseError(i, arg, ptr)
 			}
 		}
 
@@ -187,15 +196,25 @@ func (a *Arguments) ParseInto(ptrs ...interface{}) error {
 		case *map[string]interface{}:
 			*p, ok = val.(map[string]interface{})
 		default:
+			if a.runtime.execution.ctx != nil {
+				return a.parseError(i, arg, ptr)
+			}
 			return fmt.Errorf("trying to parse %v into %v: unhandled value type %T", arg, p, val)
 		}
 
 		if !ok {
-			return fmt.Errorf("could not parse %v (%s) into %v (%T)", arg, arg.Type(), ptr, ptr)
+			return a.parseError(i, arg, ptr)
 		}
 	}
 
 	return nil
+}
+
+func (a *Arguments) parseError(index int, arg reflect.Value, ptr interface{}) error {
+	if a.runtime.execution.ctx != nil {
+		return fmt.Errorf("could not parse argument %d (%s) into %T", index, arg.Type(), ptr)
+	}
+	return fmt.Errorf("could not parse %v (%s) into %v (%T)", arg, arg.Type(), ptr, ptr)
 }
 
 // Func function implementing this type is called directly, which is faster than calling through reflect.
