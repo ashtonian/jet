@@ -1,6 +1,6 @@
 # Lane 4: Karsto adoption, workflows and performance
 
-**Prepared, not started.** Begin only after the owner's execution instruction. One implementer handles this lane end to end. Read both repositories' current guides and queue ownership before edits.
+**Executing since the owner's 2026-11-07 start instruction.** One implementer handles this lane end to end. Read both repositories' current guides and queue ownership before edits. Current inputs, independent results and remaining dependency gates are in [lane 4 evidence](lane-4-evidence.md).
 
 Read [plan](plan.md), [RFC-0005](../../rfcs/0005-fork-and-upstream-strategy.md), [validation matrix](validation.md), [PR register](upstream-prs.md), Karsto RFC-0578 and its linked integration plan. Source baseline for this planning batch: Karsto `50f35351f`; refresh before implementation and preserve unrelated work.
 

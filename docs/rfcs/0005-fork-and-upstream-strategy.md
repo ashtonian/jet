@@ -2,12 +2,16 @@
 
 | Field | Value |
 | --- | --- |
-| Status | Fork selected; distribution and PR plan proposed |
+| Status | Fork selected; upstream submissions deferred by owner |
 | Date | 2026-11-07 |
 | Owner | Lane 4 |
 | Baseline | CloudyKit/jet v6.3.3, `202464510d5b57f0afa9c5563f75babc1616682c` |
 
 ## Decision
+
+Owner direction, 2026-11-07: keep implementation in `ashtonian/jet` and open no new upstream PRs yet. Preserve focused,
+reviewable generic commits within the fork; the upstream sequence below remains a future option requiring renewed owner
+direction. This supersedes earlier instructions to open upstream submissions during this execution batch.
 
 Maintain [ashtonian/jet](https://github.com/ashtonian/jet) with preserved upstream history and license. Keep one canonical interpreter implementation; no copy under Karsto's `internal/jet`, no downstream AST rewriting, no second renderer.
 

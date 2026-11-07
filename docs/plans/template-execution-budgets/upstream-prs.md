@@ -1,5 +1,9 @@
 # Upstream-oriented PR register
 
+Owner direction, 2026-11-07: use `ashtonian/jet` only and open no new upstream PRs yet. The rows below retain useful
+decomposition and dependency contracts for fork work; they do not authorize upstream submission. Lane 4 has opened only
+fork preparation PR #4 and Karsto consumer PR #349.
+
 Planning register, not opened implementation PRs. Preserve upstream conventions and a small review surface. Each row may split only when both resulting patches compile, have meaningful tests and explain their own behavior. Do not create a test-only red PR or expose unsupported budget fields.
 
 | ID | Suggested title | Owner | Base / predecessor | Scope and evidence | Exclude |
