@@ -140,8 +140,11 @@ type parseMetadata struct {
 }
 
 func newParseAdmission(ctx context.Context, opts ParseOptions) (*parseAdmission, error) {
-	if ctx == nil || opts.MaxSourceBytes < 0 || opts.MaxTotalSourceBytes < 0 || opts.MaxDepth < 0 {
+	if ctx == nil {
 		return nil, ErrInvalidParseOptions
+	}
+	if err := validateParseOptions(opts); err != nil {
+		return nil, err
 	}
 	if err := ctx.Err(); err != nil {
 		return nil, err
@@ -364,4 +367,11 @@ func (t *Template) recordCallDepth(call *CallExprNode) {
 		}
 	}
 	t.recordExpression(call, depth)
+}
+
+func validateParseOptions(opts ParseOptions) error {
+	if opts.MaxSourceBytes < 0 || opts.MaxTotalSourceBytes < 0 || opts.MaxDepth < 0 {
+		return ErrInvalidParseOptions
+	}
+	return nil
 }

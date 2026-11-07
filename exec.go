@@ -66,6 +66,9 @@ func (t *Template) ExecuteContext(ctx context.Context, w io.Writer, variables Va
 	if ctx == nil || opts.MaxDepth < 0 {
 		return fmt.Errorf("%w: context must be non-nil and depth nonnegative", ErrInvalidOptions)
 	}
+	if err := validateParseOptions(opts.ParseOptions); err != nil {
+		return err
+	}
 	return t.execute(ctx, w, variables, data, opts)
 }
 
@@ -82,6 +85,7 @@ func (t *Template) execute(ctx context.Context, w io.Writer, variables VarMap, d
 	st.rootSink = checkedWriter{writer: w, failure: &st.writeErr}
 	st.Writer = &st.rootSink
 
+	st.startCompilation(t)
 	root := st.templateRoot(t)
 
 	if data != nil {
