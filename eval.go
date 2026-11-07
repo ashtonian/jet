@@ -15,7 +15,6 @@
 package jet
 
 import (
-	"bytes"
 	"errors"
 	"fmt"
 	"io"
@@ -101,7 +100,8 @@ type Runtime struct {
 	content      func(*Runtime, Expression)
 	includeDepth int
 
-	context reflect.Value
+	context   reflect.Value
+	execution executionState
 }
 
 // Context returns the current context value
@@ -134,6 +134,8 @@ func (s scope) sortedBlocks() []string {
 
 // YieldBlock yields a block in the current context, will panic if the context is not available
 func (st *Runtime) YieldBlock(name string, context interface{}) {
+	st.enter()
+	defer st.leave()
 	block, found := st.getBlock(name)
 
 	if !found {
@@ -150,11 +152,12 @@ func (st *Runtime) YieldBlock(name string, context interface{}) {
 	st.executeList(block.List)
 }
 
-func (st *scope) getBlock(name string) (block *BlockNode, found bool) {
-	block, found = st.blocks[name]
-	for !found && st.parent != nil {
-		st = st.parent
-		block, found = st.blocks[name]
+func (st *Runtime) getBlock(name string) (block *BlockNode, found bool) {
+	for sc := st.scope; sc != nil; sc = sc.parent {
+		st.checkpoint(1)
+		if block, found = sc.blocks[name]; found {
+			return
+		}
 	}
 	return
 }
@@ -163,6 +166,7 @@ func (state *Runtime) setValue(name string, val reflect.Value) error {
 	// try changing existing variable in current or parent scope
 	sc := state.scope
 	for sc != nil {
+		state.checkpoint(1)
 		if _, ok := sc.variables[name]; ok {
 			sc.variables[name] = val
 			return nil
@@ -179,6 +183,7 @@ func (state *Runtime) LetGlobal(name string, val interface{}) {
 
 	// walk up to top-most valid scope
 	for sc.parent != nil && sc.parent.variables != nil {
+		state.checkpoint(1)
 		sc = sc.parent
 	}
 
@@ -214,6 +219,7 @@ func (state *Runtime) resolve(name string) (reflect.Value, error) {
 	// try current, then parent variable scopes
 	sc := state.scope
 	for sc != nil {
+		state.checkpoint(1)
 		v, ok := sc.variables[name]
 		if ok {
 			return indirectEface(v), nil
@@ -255,16 +261,24 @@ func (state *Runtime) MustResolve(name string) reflect.Value {
 
 func (st *Runtime) recover(err *error) {
 	recovered := recover()
-	failure := st.writeErr
+	failure := st.execution.terminal
+	if failure == nil {
+		failure = st.writeErr
+	}
 	st.scope = &scope{}
 	*st.escapeeWriter = escapeeWriter{}
 	st.content = nil
 	st.context = reflect.Value{}
 	st.includeDepth = 0
+	st.execution = executionState{}
 	pool_State.Put(st)
 	if recovered != nil {
 		if _, ok := recovered.(runtime.Error); ok {
 			panic(recovered)
+		}
+		if aborted, ok := recovered.(executionAbort); ok {
+			*err = aborted.error
+			return
 		}
 		var ok bool
 		*err, ok = recovered.(error)
@@ -298,8 +312,9 @@ func (st *Runtime) executeSet(left Expression, right reflect.Value) {
 	}
 	lef := len(fields) - 1
 	for i := 0; i < lef; i++ {
+		st.checkpoint(1)
 		var err error
-		value, err = resolveIndex(value, reflect.Value{}, fields[i])
+		value, err = st.resolveIndex(value, reflect.Value{}, fields[i])
 		if err != nil {
 			left.errorf("%v", err)
 		}
@@ -308,6 +323,7 @@ func (st *Runtime) executeSet(left Expression, right reflect.Value) {
 RESTART:
 	switch value.Kind() {
 	case reflect.Ptr:
+		st.checkpoint(1)
 		value = value.Elem()
 		goto RESTART
 	case reflect.Struct:
@@ -336,6 +352,7 @@ func (st *Runtime) executeSetList(set *SetNode) {
 		}
 	} else {
 		for i := 0; i < len(set.Left); i++ {
+			st.checkpoint(1)
 			value := st.evalPrimaryExpressionGroup(set.Right[i])
 			if set.Left[i].Type() != NodeUnderscore {
 				st.executeSet(set.Left[i], value)
@@ -359,6 +376,7 @@ func (st *Runtime) executeLetList(set *SetNode) {
 		}
 	} else {
 		for i := 0; i < len(set.Left); i++ {
+			st.checkpoint(1)
 			value := st.evalPrimaryExpressionGroup(set.Right[i])
 			if set.Left[i].Type() != NodeUnderscore {
 				st.variables[set.Left[i].(*IdentifierNode).Ident] = value
@@ -368,6 +386,8 @@ func (st *Runtime) executeLetList(set *SetNode) {
 }
 
 func (st *Runtime) executeYieldBlock(block *BlockNode, blockParam, yieldParam *BlockParameterList, expression Expression, content *ListNode) {
+	st.enter()
+	defer st.leave()
 	previousScope, previousContext, previousContent := st.scope, st.context, st.content
 	defer func() { st.scope, st.context, st.content = previousScope, previousContext, previousContent }()
 
@@ -375,6 +395,7 @@ func (st *Runtime) executeYieldBlock(block *BlockNode, blockParam, yieldParam *B
 	if needNewScope {
 		st.newScope()
 		for i := 0; i < len(yieldParam.List); i++ {
+			st.checkpoint(1)
 			p := &yieldParam.List[i]
 
 			if p.Expression == nil {
@@ -384,6 +405,7 @@ func (st *Runtime) executeYieldBlock(block *BlockNode, blockParam, yieldParam *B
 			st.variables[p.Identifier] = st.evalPrimaryExpressionGroup(p.Expression)
 		}
 		for i := 0; i < len(blockParam.List); i++ {
+			st.checkpoint(1)
 			p := &blockParam.List[i]
 			if _, found := st.variables[p.Identifier]; !found {
 				if p.Expression == nil {
@@ -437,9 +459,12 @@ func (st *Runtime) executeYieldBlock(block *BlockNode, blockParam, yieldParam *B
 }
 
 func (st *Runtime) executeList(list *ListNode) (returnValue reflect.Value) {
+	st.enter()
+	defer st.leave()
 	inNewScope := false // to use just one scope for multiple actions with variable declarations
 
 	for i := 0; i < len(list.Nodes); i++ {
+		st.checkpoint(1)
 		node := list.Nodes[i]
 		switch node.Type() {
 
@@ -467,9 +492,13 @@ func (st *Runtime) executeList(list *ListNode) (returnValue reflect.Value) {
 				v, safeWriter := st.evalPipelineExpression(node.Pipe)
 				if !safeWriter && v.IsValid() {
 					if v.Type().Implements(rendererType) {
+						st.beforeCall(v)
 						v.Interface().(Renderer).Render(st)
+						st.checkpoint(0)
 					} else {
+						st.beforeCall(v)
 						_, err := fastprinter.PrintValue(st.escapeeWriter, v)
+						st.checkpoint(0)
 						if err != nil {
 							node.error(err)
 						}
@@ -489,7 +518,7 @@ func (st *Runtime) executeList(list *ListNode) (returnValue reflect.Value) {
 				}
 			}
 
-			if isTrue(st.evalPrimaryExpressionGroup(node.Expression)) {
+			if st.isTrue(st.evalPrimaryExpressionGroup(node.Expression)) {
 				returnValue = st.executeList(node.List)
 			} else if node.ElseList != nil {
 				returnValue = st.executeList(node.ElseList)
@@ -560,12 +589,15 @@ func (st *Runtime) executeRange(node *RangeNode) (returnValue reflect.Value) {
 		expression = st.evalPrimaryExpressionGroup(node.Expression)
 	}
 
-	ranger, cleanup, err := getRanger(expression)
+	ranger, cleanup, err := st.getRanger(expression)
 	if err != nil {
 		node.error(err)
 	}
 	defer cleanup()
-	if !ranger.ProvidesIndex() {
+	st.beforeCall(reflect.ValueOf(ranger))
+	providesIndex := ranger.ProvidesIndex()
+	st.checkpoint(0)
+	if !providesIndex {
 		if isSet && len(node.Set.Left) > 1 {
 			// two-vars assignment with ranger that doesn't provide an index
 			node.error(errors.New("two-var range over ranger that does not provide an index"))
@@ -574,9 +606,10 @@ func (st *Runtime) executeRange(node *RangeNode) (returnValue reflect.Value) {
 		}
 	}
 
-	indexValue, rangeValue, end := ranger.Range()
+	indexValue, rangeValue, end := st.advanceRanger(ranger)
 	if !end {
 		for !end && !returnValue.IsValid() {
+			st.checkpoint(1)
 			if isSet {
 				if isLet {
 					if keyVarSlot >= 0 {
@@ -598,7 +631,7 @@ func (st *Runtime) executeRange(node *RangeNode) (returnValue reflect.Value) {
 				st.context = rangeValue
 			}
 			returnValue = st.executeList(node.List)
-			indexValue, rangeValue, end = ranger.Range()
+			indexValue, rangeValue, end = st.advanceRanger(ranger)
 		}
 	} else if node.ElseList != nil {
 		returnValue = st.executeList(node.ElseList)
@@ -611,25 +644,19 @@ func (st *Runtime) executeRange(node *RangeNode) (returnValue reflect.Value) {
 }
 
 func (st *Runtime) executeTry(try *TryNode) (returnValue reflect.Value) {
-	writer := st.Writer
+	tx := st.beginOutputTransaction()
 	previousScope, previousContext, previousContent := st.scope, st.context, st.content
-	buf := new(bytes.Buffer)
 
 	defer func() {
 		r := recover()
-		st.Writer = writer
+		st.Writer = tx.parent
 		st.scope, st.context, st.content = previousScope, previousContext, previousContent
 
-		if st.writeErr != nil {
-			panic(st.writeErr)
-		}
+		st.rethrowRecovered(r)
 		// copy buffered render output to writer only if no panic occurred
 		if r == nil {
-			if _, err := io.Copy(writer, buf); err != nil {
-				panic(err)
-			}
+			st.commitOutputTransaction(tx)
 		} else {
-			// st.Writer is already set to its original value since the later defer ran first
 			if try.Catch != nil {
 				if try.Catch.Err != nil {
 					st.newScope()
@@ -643,13 +670,12 @@ func (st *Runtime) executeTry(try *TryNode) (returnValue reflect.Value) {
 		}
 	}()
 
-	st.Writer = buf
-	defer func() { st.Writer = writer }()
-
 	return st.executeList(try.List)
 }
 
 func (st *Runtime) executeInclude(node *IncludeNode) (returnValue reflect.Value) {
+	st.enter()
+	defer st.leave()
 	if st.includeDepth >= 100_000 {
 		node.errorf("maximum 'include' depth (100000) exceeded")
 	}
@@ -669,7 +695,7 @@ func (st *Runtime) executeInclude(node *IncludeNode) (returnValue reflect.Value)
 		node.errorf("evaluating name of template to include: unexpected expression type %q", getTypeString(name))
 	}
 
-	t, err := st.set.getSiblingTemplate(templatePath, node.TemplatePath, true)
+	t, err := st.loadTemplate(templatePath, node.TemplatePath, true)
 	if err != nil {
 		node.error(err)
 		return reflect.Value{}
@@ -687,11 +713,7 @@ func (st *Runtime) executeInclude(node *IncludeNode) (returnValue reflect.Value)
 		st.context = st.evalPrimaryExpressionGroup(node.Context)
 	}
 
-	Root := t.Root
-	for t.extends != nil {
-		t = t.extends
-		Root = t.Root
-	}
+	Root := st.templateRoot(t)
 
 	return st.executeList(Root)
 }
@@ -702,6 +724,8 @@ var (
 )
 
 func (st *Runtime) evalPrimaryExpressionGroup(node Expression) reflect.Value {
+	st.enter()
+	defer st.leave()
 	switch node.Type() {
 	case NodeAdditiveExpr:
 		return st.evalAdditiveExpression(node.(*AdditiveExprNode))
@@ -714,10 +738,10 @@ func (st *Runtime) evalPrimaryExpressionGroup(node Expression) reflect.Value {
 	case NodeLogicalExpr:
 		return st.evalLogicalExpression(node.(*LogicalExprNode))
 	case NodeNotExpr:
-		return reflect.ValueOf(!isTrue(st.evalPrimaryExpressionGroup(node.(*NotExprNode).Expr)))
+		return reflect.ValueOf(!st.isTrue(st.evalPrimaryExpressionGroup(node.(*NotExprNode).Expr)))
 	case NodeTernaryExpr:
 		node := node.(*TernaryExprNode)
-		if isTrue(st.evalPrimaryExpressionGroup(node.Boolean)) {
+		if st.isTrue(st.evalPrimaryExpressionGroup(node.Boolean)) {
 			return st.evalPrimaryExpressionGroup(node.Left)
 		}
 		return st.evalPrimaryExpressionGroup(node.Right)
@@ -737,7 +761,7 @@ func (st *Runtime) evalPrimaryExpressionGroup(node Expression) reflect.Value {
 		base := st.evalPrimaryExpressionGroup(node.Base)
 		index := st.evalPrimaryExpressionGroup(node.Index)
 
-		resolved, err := resolveIndex(base, index, "")
+		resolved, err := st.resolveIndex(base, index, "")
 		if err != nil {
 			node.error(err)
 		}
@@ -792,8 +816,11 @@ func notNil(v reflect.Value) bool {
 }
 
 func (st *Runtime) isSet(node Node) (ok bool) {
+	st.enter()
+	defer st.leave()
 	defer func() {
 		if r := recover(); r != nil {
+			st.rethrowRecovered(r)
 			// something panicked while evaluating node
 			ok = false
 		}
@@ -811,7 +838,7 @@ func (st *Runtime) isSet(node Node) (ok bool) {
 		base := st.evalPrimaryExpressionGroup(node.Base)
 		index := st.evalPrimaryExpressionGroup(node.Index)
 
-		resolved, err := resolveIndex(base, index, "")
+		resolved, err := st.resolveIndex(base, index, "")
 		return err == nil && notNil(resolved)
 	case NodeIdentifier:
 		value, err := st.resolve(node.String())
@@ -820,8 +847,9 @@ func (st *Runtime) isSet(node Node) (ok bool) {
 		node := node.(*FieldNode)
 		resolved := st.context
 		for i := 0; i < len(node.Ident); i++ {
+			st.checkpoint(1)
 			var err error
-			resolved, err = resolveIndex(resolved, reflect.Value{}, node.Ident[i])
+			resolved, err = st.resolveIndex(resolved, reflect.Value{}, node.Ident[i])
 			if err != nil || !notNil(resolved) {
 				return false
 			}
@@ -926,18 +954,18 @@ func (st *Runtime) evalNumericComparativeExpression(node *NumericComparativeExpr
 }
 
 func (st *Runtime) evalLogicalExpression(node *LogicalExprNode) reflect.Value {
-	truthy := isTrue(st.evalPrimaryExpressionGroup(node.Left))
+	truthy := st.isTrue(st.evalPrimaryExpressionGroup(node.Left))
 	if node.Operator.typ == itemAnd {
-		truthy = truthy && isTrue(st.evalPrimaryExpressionGroup(node.Right))
+		truthy = truthy && st.isTrue(st.evalPrimaryExpressionGroup(node.Right))
 	} else {
-		truthy = truthy || isTrue(st.evalPrimaryExpressionGroup(node.Right))
+		truthy = truthy || st.isTrue(st.evalPrimaryExpressionGroup(node.Right))
 	}
 	return reflect.ValueOf(truthy)
 }
 
 func (st *Runtime) evalComparativeExpression(node *ComparativeExprNode) reflect.Value {
 	left, right := st.evalPrimaryExpressionGroup(node.Left), st.evalPrimaryExpressionGroup(node.Right)
-	equal := checkEquality(left, right)
+	equal := st.checkEquality(left, right)
 	if node.Operator.typ == itemNotEquals {
 		return reflect.ValueOf(!equal)
 	}
@@ -1199,6 +1227,8 @@ func getTypeString(value reflect.Value) string {
 }
 
 func (st *Runtime) evalBaseExpressionGroup(node Node) reflect.Value {
+	st.enter()
+	defer st.leave()
 	switch node.Type() {
 	case NodeNil:
 		return reflect.ValueOf(nil)
@@ -1219,7 +1249,8 @@ func (st *Runtime) evalBaseExpressionGroup(node Node) reflect.Value {
 		node := node.(*FieldNode)
 		resolved := st.context
 		for i := 0; i < len(node.Ident); i++ {
-			field, err := resolveIndex(resolved, reflect.Value{}, node.Ident[i])
+			st.checkpoint(1)
+			field, err := st.resolveIndex(resolved, reflect.Value{}, node.Ident[i])
 			if err != nil {
 				node.errorf("%v", err)
 			}
@@ -1261,8 +1292,13 @@ func (st *Runtime) evalPipeCallExpression(baseExpr reflect.Value, args CallArgs,
 	if !baseExpr.IsValid() {
 		return reflect.Value{}, errors.New("base of call expression is invalid value")
 	}
+	st.enter()
+	defer st.leave()
 	if funcType.AssignableTo(baseExpr.Type()) {
-		return baseExpr.Interface().(Func)(Arguments{runtime: st, args: args, pipedVal: pipedArg}), nil
+		st.beforeCall(baseExpr)
+		result := baseExpr.Interface().(Func)(Arguments{runtime: st, args: args, pipedVal: pipedArg})
+		st.checkpoint(0)
+		return result, nil
 	}
 
 	argValues, err := st.evaluateArgs(baseExpr.Type(), args, pipedArg)
@@ -1270,7 +1306,9 @@ func (st *Runtime) evalPipeCallExpression(baseExpr reflect.Value, args CallArgs,
 		return reflect.Value{}, fmt.Errorf("call expression: %v", err)
 	}
 
+	st.beforeCall(baseExpr)
 	var returns = baseExpr.Call(argValues)
+	st.checkpoint(0)
 	if len(returns) == 0 {
 		return reflect.Value{}, nil
 	}
@@ -1301,7 +1339,8 @@ func (st *Runtime) evalChainNodeExpression(node *ChainNode) (reflect.Value, erro
 	resolved := st.evalPrimaryExpressionGroup(node.Node)
 
 	for i := 0; i < len(node.Field); i++ {
-		field, err := resolveIndex(resolved, reflect.Value{}, node.Field[i])
+		st.checkpoint(1)
+		field, err := st.resolveIndex(resolved, reflect.Value{}, node.Field[i])
 		if err != nil {
 			return reflect.Value{}, err
 		}
@@ -1329,17 +1368,21 @@ func (w *escapeWriter) Write(b []byte) (int, error) {
 }
 
 func (st *Runtime) evalSafeWriter(term reflect.Value, node *CommandNode, v ...reflect.Value) {
+	st.beforeCall(term)
 	sw := &escapeWriter{rawWriter: st.Writer, safeWriter: term.Interface().(SafeWriter)}
 	for i := 0; i < len(v); i++ {
+		st.checkpoint(1)
 		if _, err := fastprinter.PrintValue(sw, v[i]); err != nil {
 			node.error(err)
 		}
 	}
 	for i := 0; i < len(node.Exprs); i++ {
+		st.checkpoint(1)
 		if _, err := fastprinter.PrintValue(sw, st.evalPrimaryExpressionGroup(node.Exprs[i])); err != nil {
 			node.error(err)
 		}
 	}
+	st.checkpoint(0)
 }
 
 func (st *Runtime) evalCommandPipeExpression(node *CommandNode, value reflect.Value) (reflect.Value, bool) {
@@ -1366,6 +1409,7 @@ func (st *Runtime) evalCommandPipeExpression(node *CommandNode, value reflect.Va
 func (st *Runtime) evalPipelineExpression(node *PipeNode) (value reflect.Value, safeWriter bool) {
 	value, safeWriter = st.evalCommandExpression(node.Cmds[0])
 	for i := 1; i < len(node.Cmds); i++ {
+		st.checkpoint(1)
 		if safeWriter {
 			node.Cmds[i].errorf("unexpected command %s, writer command should be the last command", node.Cmds[i])
 		}
@@ -1410,6 +1454,7 @@ func (st *Runtime) evaluateArgs(fnType reflect.Type, args CallArgs, pipedArg *re
 	i := 0 // index in parsed argument expression list
 
 	for slot < numArgsRequired {
+		st.checkpoint(1)
 		in := fnType.In(slot)
 		var term reflect.Value
 		if args.Exprs[i].Type() == NodeUnderscore {
@@ -1431,6 +1476,7 @@ func (st *Runtime) evaluateArgs(fnType reflect.Type, args CallArgs, pipedArg *re
 	if isVariadic {
 		in := fnType.In(numArgsRequired).Elem()
 		for i < len(args.Exprs) {
+			st.checkpoint(1)
 			var term reflect.Value
 			if args.Exprs[i].Type() == NodeUnderscore {
 				term = *pipedArg
@@ -1463,7 +1509,9 @@ func isFloat(kind reflect.Kind) bool {
 }
 
 // checkEquality of two reflect values in the semantic of the jet runtime
-func checkEquality(v1, v2 reflect.Value) bool {
+func (st *Runtime) checkEquality(v1, v2 reflect.Value) bool {
+	st.enter()
+	defer st.leave()
 	v1 = indirectInterface(v1)
 	v2 = indirectInterface(v2)
 
@@ -1492,8 +1540,9 @@ func checkEquality(v1, v2 reflect.Value) bool {
 
 	switch kind {
 	case reflect.Bool:
-		return v1.Bool() == isTrue(v2)
+		return v1.Bool() == st.isTrue(v2)
 	case reflect.String:
+		st.checkpoint(uint64(v1.Len()))
 		return v1.String() == v2.String()
 	case reflect.Array:
 		vlen := v1.Len()
@@ -1501,7 +1550,8 @@ func checkEquality(v1, v2 reflect.Value) bool {
 			return false
 		}
 		for i := 0; i < vlen; i++ {
-			if !checkEquality(v1.Index(i), v2.Index(i)) {
+			st.checkpoint(1)
+			if !st.checkEquality(v1.Index(i), v2.Index(i)) {
 				return false
 			}
 		}
@@ -1521,7 +1571,8 @@ func checkEquality(v1, v2 reflect.Value) bool {
 		}
 
 		for i := 0; i < vlen; i++ {
-			if !checkEquality(v1.Index(i), v2.Index(i)) {
+			st.checkpoint(1)
+			if !st.checkEquality(v1.Index(i), v2.Index(i)) {
 				return false
 			}
 		}
@@ -1530,13 +1581,14 @@ func checkEquality(v1, v2 reflect.Value) bool {
 		if v1.IsNil() || v2.IsNil() {
 			return v1.IsNil() == v2.IsNil()
 		}
-		return checkEquality(v1.Elem(), v2.Elem())
+		return st.checkEquality(v1.Elem(), v2.Elem())
 	case reflect.Ptr:
 		return v1.Pointer() == v2.Pointer()
 	case reflect.Struct:
 		numField := v1.NumField()
 		for i, n := 0, numField; i < n; i++ {
-			if !checkEquality(v1.Field(i), v2.Field(i)) {
+			st.checkpoint(1)
+			if !st.checkEquality(v1.Field(i), v2.Field(i)) {
 				return false
 			}
 		}
@@ -1551,10 +1603,12 @@ func checkEquality(v1, v2 reflect.Value) bool {
 		if v1.Pointer() == v2.Pointer() {
 			return true
 		}
-		for _, k := range v1.MapKeys() {
+		for iter := v1.MapRange(); iter.Next(); {
+			k := iter.Key()
+			st.checkpoint(1)
 			val1 := v1.MapIndex(k)
 			val2 := v2.MapIndex(k)
-			if !val1.IsValid() || !val2.IsValid() || !checkEquality(v1.MapIndex(k), v2.MapIndex(k)) {
+			if !val1.IsValid() || !val2.IsValid() || !st.checkEquality(v1.MapIndex(k), v2.MapIndex(k)) {
 				return false
 			}
 		}
@@ -1567,8 +1621,33 @@ func checkEquality(v1, v2 reflect.Value) bool {
 	}
 }
 
-func isTrue(v reflect.Value) bool {
-	return v.IsValid() && !v.IsZero()
+func (st *Runtime) isTrue(v reflect.Value) bool {
+	return v.IsValid() && !st.isZero(v)
+}
+
+func (st *Runtime) isZero(v reflect.Value) bool {
+	st.enter()
+	defer st.leave()
+	switch v.Kind() {
+	case reflect.Array:
+		for i := 0; i < v.Len(); i++ {
+			st.checkpoint(1)
+			if !st.isZero(v.Index(i)) {
+				return false
+			}
+		}
+		return true
+	case reflect.Struct:
+		for i := 0; i < v.NumField(); i++ {
+			st.checkpoint(1)
+			if v.Type().Field(i).Name != "_" && !st.isZero(v.Field(i)) {
+				return false
+			}
+		}
+		return true
+	default:
+		return v.IsZero()
+	}
 }
 
 func canNumber(kind reflect.Kind) bool {
@@ -1596,8 +1675,11 @@ var cachedStructsFieldIndex = map[reflect.Type]map[string][]int{}
 // indirect returns the item at the end of indirection, and a bool to indicate
 // if it's nil. If the returned bool is true, the returned value's kind will be
 // either a pointer or interface.
-func indirect(v reflect.Value) (rv reflect.Value, isNil bool) {
+func (st *Runtime) indirect(v reflect.Value) (rv reflect.Value, isNil bool) {
+	st.enter()
+	defer st.leave()
 	for ; v.Kind() == reflect.Ptr || v.Kind() == reflect.Interface; v = v.Elem() {
+		st.checkpoint(1)
 		if v.IsNil() {
 			return v, true
 		}
@@ -1635,12 +1717,14 @@ func indirectEface(v reflect.Value) reflect.Value {
 // complex, it improves the memory allocation story for the most common
 // execution paths when executing a template, such as when accessing a field
 // element.
-func resolveIndex(v, index reflect.Value, indexAsStr string) (reflect.Value, error) {
+func (st *Runtime) resolveIndex(v, index reflect.Value, indexAsStr string) (reflect.Value, error) {
+	st.enter()
+	defer st.leave()
 	if !v.IsValid() {
 		return reflect.Value{}, fmt.Errorf("there is no field or method '%s' in %s (%s)", index, v, getTypeString(v))
 	}
 
-	v, isNil := indirect(v)
+	v, isNil := st.indirect(v)
 	if v.Kind() == reflect.Interface && isNil {
 		// Calling a method on a nil interface can't work. The
 		// MethodByName method call below would panic.
@@ -1705,13 +1789,15 @@ func resolveIndex(v, index reflect.Value, indexAsStr string) (reflect.Value, err
 		cache, ok := cachedStructsFieldIndex[typ]
 		cachedStructsMutex.RUnlock()
 		if !ok {
-			cachedStructsMutex.Lock()
-			if cache, ok = cachedStructsFieldIndex[typ]; !ok {
-				cache = make(map[string][]int)
-				buildCache(typ, cache, nil)
-				cachedStructsFieldIndex[typ] = cache
-			}
-			cachedStructsMutex.Unlock()
+			func() {
+				cachedStructsMutex.Lock()
+				defer cachedStructsMutex.Unlock()
+				if cache, ok = cachedStructsFieldIndex[typ]; !ok {
+					cache = make(map[string][]int)
+					st.buildCache(typ, cache, nil)
+					cachedStructsFieldIndex[typ] = cache
+				}
+			}()
 		}
 
 		if id, ok := cache[key]; ok {
@@ -1776,11 +1862,14 @@ func indexArg(index reflect.Value, cap int) (int, error) {
 	return int(x), nil
 }
 
-func buildCache(typ reflect.Type, cache map[string][]int, parent []int) {
+func (st *Runtime) buildCache(typ reflect.Type, cache map[string][]int, parent []int) {
+	st.enter()
+	defer st.leave()
 	numFields := typ.NumField()
 	max := len(parent) + 1
 
 	for i := 0; i < numFields; i++ {
+		st.checkpoint(1)
 
 		index := make([]int, max)
 		copy(index, parent)
@@ -1794,7 +1883,7 @@ func buildCache(typ reflect.Type, cache map[string][]int, parent []int) {
 		if field.Anonymous {
 			typ := field.Type
 			if typ.Kind() == reflect.Struct {
-				buildCache(typ, cache, index)
+				st.buildCache(typ, cache, index)
 			}
 		}
 		cache[field.Name] = index
