@@ -6,7 +6,7 @@ import (
 )
 
 func TestLexerStopsAtParseError(t *testing.T) {
-	source := `{{ ) }}` + strings.Repeat("unvisited", 1024)
+	source := `{{ if }}` + strings.Repeat("unvisited", 1024)
 	set := NewSet(NewInMemLoader())
 	scanner := lex("error.jet", source, true)
 	template := &Template{Name: "error.jet", ParseName: "error.jet", set: set}
