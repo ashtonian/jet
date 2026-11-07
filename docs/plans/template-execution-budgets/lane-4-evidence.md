@@ -30,6 +30,26 @@ Median of three **ns/op samples**, not per-request latency percentiles:
 
 The separate profile run samples cached text execution of the 8 KiB body, silent loop and expansion fixture, 2 seconds per workload. CPU flat/cumulative, allocation/live heap, mutex and block profiles were inspected. In that mixed run, `executeList` accounts for 81.47% cumulative CPU, `memmove` 24.63% flat CPU, and printing 36.44% cumulative CPU. `Runtime.recover` accounts for 89.72% of sampled allocation bytes; this is cumulative allocation traffic, not retained heap or RSS. The post-GC live heap sample contains 513 KiB attributed to runtime thread allocation. Mutex samples are runtime GC synchronization; block samples are primarily benchmark-runner channel waits. This sequential profile supplies no concurrent contention verdict and no metering overhead comparison.
 
+Separate latency sampling and concurrent execution fixtures are in `execution_measurements_test.go`. Latency sampling
+retains at most 100,000 clock observations after 100 warmup renders; its timing overhead is separate from the throughput
+benchmark. Three independent 100 ms samples, normal build, `-cpu=2`:
+
+| Latency fixture | Median sampled p50, ns | Median sampled p99, ns |
+| --- | ---: | ---: |
+| Interpolated header, text | 83 | 166 |
+| 8 KiB body, text | 292 | 417 |
+| Silent loop, text | 56750 | 73250 |
+| Expansion-heavy escaping, HTML | 4375 | 6209 |
+
+The concurrent harness runs four representative fixtures in text/HTML with exactly 1, 2 and 8 workers, shared templates
+and separate Sets. With `GOMAXPROCS=2`, the host-fit worker count is already the 2-worker case. Each worker owns its output
+buffer, input maps remain read-only and all workers join before return. Normal three-sample runs and a separate
+`-race -benchtime=32x` exercise passed. Concurrent ns/op is inverse aggregate throughput, not per-request latency. No
+scalability or contention verdict is claimed without concurrent profiles. Logs are `latency-concurrency.log` (SHA-256
+`932684b6a285d548d5e203130b65e11d86b2598d5b8649dc0e11e90cad1f0899`) and `concurrent-race.log` (SHA-256
+`413628b83d168d7b73dcc91ec811af875f52d26eeb47c6e6e7ddab51bf1ea278`). Source stayed unchanged during these stages; the
+latency manifest was captured after execution, as its receipt records.
+
 ## Reproduction and receipts
 
 From the fixture commit, with the installed host gate and bounded execution:
@@ -55,6 +75,20 @@ Durable artifacts in this checkout: `.git/lane-4-evidence/`; `measurement-inputs
 
 ## Remaining acceptance
 
-The compatibility workflow runs full normal suites on Go 1.16.15 and stable, plus a separate stable race suite. Its results must be inspected on the pushed SHA before claiming compatibility. Action pins were checked against the official checkout v7.0.1 and setup-go v7.0.0 release notes; both are current stable releases at preparation.
+The compatibility workflow runs full normal suites on Go 1.16.15 and stable, plus a separate stable race suite. All three
+passed at `accce48cdc3d7813eba528c8b90d10697e202f02` ([run](https://github.com/ashtonian/jet/actions/runs/42424833224)).
+The additional measurement harness needs that matrix on its own pushed SHA. Action pins were checked against the official
+[checkout v7.0.1](https://github.com/actions/checkout/releases/tag/v7.0.1) and
+[setup-go v7.0.0](https://github.com/actions/setup-go/releases/tag/v7.0.0) release notes; both were current stable releases.
 
-No fork legacy/metered comparison, final Karsto comparison, p50/p99 latency, concurrency sweep, sustained CPU/RSS or cancellation-overshoot acceptance is complete. No runtime/protection matrix row is certified here. F01/K02 require explicit accepted lane 1/2/3 handoff SHAs and the complete restricted contract, followed by I01–I08. No release, merge, #209 closure or upstream submission has occurred.
+Lane 1 now supplies the explicit foundation `77025e5a5bbef3d6dd1208c49d16005e77250d77`, production `d2f089c`, in
+[PR #3](https://github.com/ashtonian/jet/pull/3). Its checkpoint/reserve/terminal/call/load/transaction contracts were
+reviewed without modifying or consuming the evaluator. Lane 2's checked-size/helper preparation is at `bea4624`; no
+accepted J04/J05 protection handoff is available yet. Lane 3's parser/input preparation was fetched through `9432a63`;
+complete restricted invocation/builtin/namespace acceptance remains pending. These are independent preparation results,
+not a combined candidate.
+
+No final fork legacy/metered comparison, integrated Karsto comparison, candidate latency/concurrency sweep, sustained
+CPU/RSS or cancellation-overshoot acceptance is complete. No runtime/protection matrix row is certified here. F01/K02
+require explicit accepted lane 1/2/3 handoff SHAs and the complete restricted contract, followed by I01–I08. No release,
+merge, #209 closure or upstream submission has occurred. Canonical preparation PR: [#4](https://github.com/ashtonian/jet/pull/4).
