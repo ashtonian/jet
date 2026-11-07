@@ -91,4 +91,5 @@ not a combined candidate.
 No final fork legacy/metered comparison, integrated Karsto comparison, candidate latency/concurrency sweep, sustained
 CPU/RSS or cancellation-overshoot acceptance is complete. No runtime/protection matrix row is certified here. F01/K02
 require explicit accepted lane 1/2/3 handoff SHAs and the complete restricted contract, followed by I01–I08. No release,
-merge, #209 closure or upstream submission has occurred. Canonical preparation PR: [#4](https://github.com/ashtonian/jet/pull/4).
+merge, #209 closure or upstream submission has occurred in this lane. The owner has now deferred new upstream PRs;
+continue in the fork only. Canonical preparation PR: [#4](https://github.com/ashtonian/jet/pull/4).
