@@ -15,10 +15,12 @@ var (
 )
 
 // ExecutionOptions limits interpreter work in ExecuteContext. Zero is unlimited.
-// Limits do not bound allocation, compilation, output, or arbitrary Go callbacks.
+// Value/output limits and arbitrary Go callbacks are separate contracts.
 type ExecutionOptions struct {
 	MaxSteps uint64
 	MaxDepth int
+	// ParseOptions is shared by the initial graph and every runtime-triggered load.
+	ParseOptions ParseOptions
 }
 
 // LimitError identifies the exhausted allowance. Step totals are implementation
@@ -45,11 +47,12 @@ func (e *LimitError) Unwrap() error {
 // executionState adapts the existing Runtime/Arguments callback APIs to one
 // synchronous render. It is never cached and is cleared before pooling Runtime.
 type executionState struct {
-	ctx       context.Context
-	options   ExecutionOptions
-	remaining uint64
-	depth     int
-	terminal  error
+	ctx         context.Context
+	options     ExecutionOptions
+	remaining   uint64
+	depth       int
+	terminal    error
+	compilation *parseAdmission
 }
 
 type executionAbort struct{ error }
@@ -162,10 +165,46 @@ func (st *Runtime) loadTemplate(name, parent string, sibling bool) (*Template, e
 	var t *Template
 	var err error
 	if sibling {
-		t, err = st.set.getSiblingTemplate(name, parent, true, nil)
+		t, err = st.set.getSiblingTemplate(name, parent, true, st.execution.compilation)
 	} else {
-		t, err = st.set.GetTemplate(name)
+		t, err = st.set.getSiblingTemplate(name, "/", true, st.execution.compilation)
+	}
+	if err != nil {
+		st.checkCompilationError(err)
 	}
 	st.checkpoint(0)
 	return t, err
+}
+
+func (st *Runtime) startCompilation(t *Template) {
+	if st.execution.ctx == nil && st.execution.options.ParseOptions == (ParseOptions{}) {
+		return
+	}
+	a, err := newParseAdmission(st.executionContext(), st.execution.options.ParseOptions)
+	if err != nil {
+		st.checkCompilationError(err)
+		st.terminate(err)
+	}
+	st.execution.compilation = a
+	func() {
+		defer recoverCompilation(&err)
+		a.admitCached(t)
+	}()
+	if err != nil {
+		st.checkCompilationError(err)
+		st.terminate(err)
+	}
+}
+
+func (st *Runtime) checkCompilationError(err error) {
+	var limit *ParseLimitError
+	if errors.As(err, &limit) {
+		st.terminate(err)
+	}
+	if errors.Is(err, context.Canceled) || errors.Is(err, context.DeadlineExceeded) {
+		if st.execution.ctx != nil && st.execution.ctx.Err() != nil {
+			st.terminate(executionContextError(st.execution.ctx))
+		}
+		st.terminate(err)
+	}
 }
