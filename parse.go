@@ -260,6 +260,7 @@ func (s *Set) parse(name, text string, cacheAfterParsing bool, parsing *parseAdm
 	}
 
 	t.addBlocks(t.passedBlocks)
+	parsing.cached[t] = true
 
 	return t, err
 }

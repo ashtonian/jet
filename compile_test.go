@@ -486,3 +486,24 @@ func TestCompilationCustomSyntaxCompatibility(t *testing.T) {
 		t.Fatalf("%v: %q", err, out.String())
 	}
 }
+
+func TestCompilationDiamondNodeCacheParity(t *testing.T) {
+	for _, warm := range []bool{false, true} {
+		t.Run(fmt.Sprintf("warm=%t", warm), func(t *testing.T) {
+			set, _ := compilationDiamond(false)
+			if warm {
+				if _, err := set.GetTemplate("a.jet"); err != nil {
+					t.Fatal(err)
+				}
+			}
+			tpl, err := set.GetTemplateContext(context.Background(), "a.jet", ParseOptions{MaxNodes: 12, MaxTemplates: 4})
+			if err != nil {
+				t.Fatal(err)
+			}
+			var out bytes.Buffer
+			if err = tpl.Execute(&out, nil, nil); err != nil || out.String() != "ok" {
+				t.Fatalf("%v: %q", err, out.String())
+			}
+		})
+	}
+}
