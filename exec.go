@@ -79,7 +79,8 @@ func (t *Template) execute(ctx context.Context, w io.Writer, variables VarMap, d
 	st.variables = variables
 	st.set = t.set
 	st.writeErr = nil
-	st.Writer = checkedWriter{writer: w, failure: &st.writeErr}
+	st.rootSink = checkedWriter{writer: w, failure: &st.writeErr}
+	st.Writer = &st.rootSink
 
 	root := st.templateRoot(t)
 

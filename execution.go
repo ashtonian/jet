@@ -97,13 +97,17 @@ func (st *Runtime) checkpoint(steps uint64) {
 	if b.ctx.Err() != nil {
 		st.terminate(executionContextError(b.ctx))
 	}
-	st.reserve(&b.remaining, b.options.MaxSteps, steps, "steps", ErrStepLimit)
+	st.reserveUnchecked(&b.remaining, b.options.MaxSteps, steps, "steps", ErrStepLimit)
 }
 
 // reserve checks an allowance before work/allocation. Zero limit is unlimited;
 // failed reservations leave the balance unchanged and terminate the render.
 func (st *Runtime) reserve(remaining *uint64, limit, requested uint64, kind string, cause error) {
 	st.rethrowTerminal()
+	st.reserveUnchecked(remaining, limit, requested, kind, cause)
+}
+
+func (st *Runtime) reserveUnchecked(remaining *uint64, limit, requested uint64, kind string, cause error) {
 	if limit == 0 {
 		return
 	}

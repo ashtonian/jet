@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"errors"
 	"io"
+	"io/ioutil"
 	"reflect"
 	"testing"
 )
@@ -106,6 +107,33 @@ func TestRuntimeNestedTryRollback(t *testing.T) {
 		t.Fatal(err)
 	}
 	if out.String() != "outerafter" {
+		t.Fatalf("got %q", out.String())
+	}
+}
+
+func TestRuntimeEscaperReentry(t *testing.T) {
+	var active *Runtime
+	l := NewInMemLoader()
+	l.Set("reentry", `{{ block b() }}{{ "inner" }}{{ end }}{{ capture() }}{{ "outer" }}`)
+	set := NewSet(l, WithSafeWriter(func(w io.Writer, p []byte) {
+		if string(p) == "outer" {
+			writer := active.Writer
+			active.Writer = ioutil.Discard
+			active.YieldBlock("b", nil)
+			active.Writer = writer
+		}
+		_, _ = w.Write(p)
+	}))
+	tpl, err := set.GetTemplate("reentry")
+	if err != nil {
+		t.Fatal(err)
+	}
+	vars := VarMap{}.SetFunc("capture", func(a Arguments) reflect.Value { active = a.Runtime(); return reflect.Value{} })
+	var out bytes.Buffer
+	if err := tpl.Execute(&out, vars, nil); err != nil {
+		t.Fatal(err)
+	}
+	if out.String() != "innerouter" {
 		t.Fatalf("got %q", out.String())
 	}
 }

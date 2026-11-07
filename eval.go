@@ -56,9 +56,11 @@ func (renderer RendererFunc) Render(r *Runtime) {
 }
 
 type escapeeWriter struct {
-	Writer   io.Writer
-	set      *Set
-	writeErr error
+	Writer     io.Writer
+	set        *Set
+	writeErr   error
+	rootSink   checkedWriter
+	escapeSink checkedWriter
 }
 
 // checkedWriter records failures even when a SafeWriter or Renderer ignores them.
@@ -67,7 +69,7 @@ type checkedWriter struct {
 	failure *error
 }
 
-func (w checkedWriter) Write(b []byte) (int, error) {
+func (w *checkedWriter) Write(b []byte) (int, error) {
 	if *w.failure != nil {
 		return 0, *w.failure
 	}
@@ -85,8 +87,10 @@ func (w *escapeeWriter) Write(b []byte) (int, error) {
 	if w.set.escapee == nil {
 		return w.Writer.Write(b)
 	}
-	sink := checkedWriter{writer: w.Writer, failure: &w.writeErr}
-	w.set.escapee(sink, b)
+	previous := w.escapeSink
+	w.escapeSink = checkedWriter{writer: w.Writer, failure: &w.writeErr}
+	defer func() { w.escapeSink = previous }()
+	w.set.escapee(&w.escapeSink, b)
 	if w.writeErr != nil {
 		return 0, w.writeErr
 	}
@@ -605,7 +609,6 @@ func (st *Runtime) executeRange(node *RangeNode) (returnValue reflect.Value) {
 	indexValue, rangeValue, end := st.advanceRanger(ranger)
 	if !end {
 		for !end && !returnValue.IsValid() {
-			st.checkpoint(1)
 			if isSet {
 				if isLet {
 					if keyVarSlot >= 0 {
@@ -626,7 +629,9 @@ func (st *Runtime) executeRange(node *RangeNode) (returnValue reflect.Value) {
 			if valVarSlot < 0 {
 				st.context = rangeValue
 			}
-			returnValue = st.executeList(node.List)
+			if len(node.List.Nodes) != 0 {
+				returnValue = st.executeList(node.List)
+			}
 			indexValue, rangeValue, end = st.advanceRanger(ranger)
 		}
 	} else if node.ElseList != nil {
@@ -878,15 +883,15 @@ func (st *Runtime) evalNumericComparativeExpression(node *NumericComparativeExpr
 			if needFloatPromotion {
 				isTrue = float64(left.Int()) > right.Float()
 			} else {
-				isTrue = left.Int() > toInt(right)
+				isTrue = left.Int() > st.toInt(right)
 			}
 		} else if isFloat(kind) {
-			isTrue = left.Float() > toFloat(right)
+			isTrue = left.Float() > st.toFloat(right)
 		} else if isUint(kind) {
 			if needFloatPromotion {
 				isTrue = float64(left.Uint()) > right.Float()
 			} else {
-				isTrue = left.Uint() > toUint(right)
+				isTrue = left.Uint() > st.toUint(right)
 			}
 		} else {
 			node.Left.errorf("a non numeric value in numeric comparative expression")
@@ -896,15 +901,15 @@ func (st *Runtime) evalNumericComparativeExpression(node *NumericComparativeExpr
 			if needFloatPromotion {
 				isTrue = float64(left.Int()) >= right.Float()
 			} else {
-				isTrue = left.Int() >= toInt(right)
+				isTrue = left.Int() >= st.toInt(right)
 			}
 		} else if isFloat(kind) {
-			isTrue = left.Float() >= toFloat(right)
+			isTrue = left.Float() >= st.toFloat(right)
 		} else if isUint(kind) {
 			if needFloatPromotion {
 				isTrue = float64(left.Uint()) >= right.Float()
 			} else {
-				isTrue = left.Uint() >= toUint(right)
+				isTrue = left.Uint() >= st.toUint(right)
 			}
 		} else {
 			node.Left.errorf("a non numeric value in numeric comparative expression")
@@ -914,15 +919,15 @@ func (st *Runtime) evalNumericComparativeExpression(node *NumericComparativeExpr
 			if needFloatPromotion {
 				isTrue = float64(left.Int()) < right.Float()
 			} else {
-				isTrue = left.Int() < toInt(right)
+				isTrue = left.Int() < st.toInt(right)
 			}
 		} else if isFloat(kind) {
-			isTrue = left.Float() < toFloat(right)
+			isTrue = left.Float() < st.toFloat(right)
 		} else if isUint(kind) {
 			if needFloatPromotion {
 				isTrue = float64(left.Uint()) < right.Float()
 			} else {
-				isTrue = left.Uint() < toUint(right)
+				isTrue = left.Uint() < st.toUint(right)
 			}
 		} else {
 			node.Left.errorf("a non numeric value in numeric comparative expression")
@@ -932,15 +937,15 @@ func (st *Runtime) evalNumericComparativeExpression(node *NumericComparativeExpr
 			if needFloatPromotion {
 				isTrue = float64(left.Int()) <= right.Float()
 			} else {
-				isTrue = left.Int() <= toInt(right)
+				isTrue = left.Int() <= st.toInt(right)
 			}
 		} else if isFloat(kind) {
-			isTrue = left.Float() <= toFloat(right)
+			isTrue = left.Float() <= st.toFloat(right)
 		} else if isUint(kind) {
 			if needFloatPromotion {
 				isTrue = float64(left.Uint()) <= right.Float()
 			} else {
-				isTrue = left.Uint() <= toUint(right)
+				isTrue = left.Uint() <= st.toUint(right)
 			}
 		} else {
 			node.Left.errorf("a non numeric value in numeric comparative expression")
@@ -968,7 +973,7 @@ func (st *Runtime) evalComparativeExpression(node *ComparativeExprNode) reflect.
 	return reflect.ValueOf(equal)
 }
 
-func toInt(v reflect.Value) int64 {
+func (st *Runtime) toInt(v reflect.Value) int64 {
 	if !v.IsValid() {
 		panic(fmt.Errorf("invalid value can't be converted to int64"))
 	}
@@ -980,6 +985,7 @@ func toInt(v reflect.Value) int64 {
 	} else if isUint(kind) {
 		return int64(v.Uint())
 	} else if kind == reflect.String {
+		st.checkpoint(uint64(v.Len()))
 		n, e := strconv.ParseInt(v.String(), 10, 0)
 		if e != nil {
 			panic(e)
@@ -994,7 +1000,7 @@ func toInt(v reflect.Value) int64 {
 	panic(fmt.Errorf("type: %q can't be converted to int64", v.Type()))
 }
 
-func toUint(v reflect.Value) uint64 {
+func (st *Runtime) toUint(v reflect.Value) uint64 {
 	if !v.IsValid() {
 		panic(fmt.Errorf("invalid value can't be converted to uint64"))
 	}
@@ -1006,6 +1012,7 @@ func toUint(v reflect.Value) uint64 {
 	} else if isFloat(kind) {
 		return uint64(v.Float())
 	} else if kind == reflect.String {
+		st.checkpoint(uint64(v.Len()))
 		n, e := strconv.ParseUint(v.String(), 10, 0)
 		if e != nil {
 			panic(e)
@@ -1020,7 +1027,7 @@ func toUint(v reflect.Value) uint64 {
 	panic(fmt.Errorf("type: %q can't be converted to uint64", v.Type()))
 }
 
-func toFloat(v reflect.Value) float64 {
+func (st *Runtime) toFloat(v reflect.Value) float64 {
 	if !v.IsValid() {
 		panic(fmt.Errorf("invalid value can't be converted to float64"))
 	}
@@ -1032,6 +1039,7 @@ func toFloat(v reflect.Value) float64 {
 	} else if isUint(kind) {
 		return float64(v.Uint())
 	} else if kind == reflect.String {
+		st.checkpoint(uint64(v.Len()))
 		n, e := strconv.ParseFloat(v.String(), 64)
 		if e != nil {
 			panic(e)
@@ -1060,15 +1068,15 @@ func (st *Runtime) evalMultiplicativeExpression(node *MultiplicativeExprNode) re
 				left = reflect.ValueOf(float64(left.Int()) * right.Float())
 			} else {
 				// do not need float promotion
-				left = reflect.ValueOf(left.Int() * toInt(right))
+				left = reflect.ValueOf(left.Int() * st.toInt(right))
 			}
 		} else if isFloat(kind) {
-			left = reflect.ValueOf(left.Float() * toFloat(right))
+			left = reflect.ValueOf(left.Float() * st.toFloat(right))
 		} else if isUint(kind) {
 			if needFloatPromotion {
 				left = reflect.ValueOf(float64(left.Uint()) * right.Float())
 			} else {
-				left = reflect.ValueOf(left.Uint() * toUint(right))
+				left = reflect.ValueOf(left.Uint() * st.toUint(right))
 			}
 		} else {
 			node.Left.errorf("a non numeric value in multiplicative expression")
@@ -1081,15 +1089,15 @@ func (st *Runtime) evalMultiplicativeExpression(node *MultiplicativeExprNode) re
 			if needFloatPromotion {
 				left = reflect.ValueOf(float64(left.Int()) / right.Float())
 			} else {
-				left = reflect.ValueOf(left.Int() / toInt(right))
+				left = reflect.ValueOf(left.Int() / st.toInt(right))
 			}
 		} else if isFloat(kind) {
-			left = reflect.ValueOf(left.Float() / toFloat(right))
+			left = reflect.ValueOf(left.Float() / st.toFloat(right))
 		} else if isUint(kind) {
 			if needFloatPromotion {
 				left = reflect.ValueOf(float64(left.Uint()) / right.Float())
 			} else {
-				left = reflect.ValueOf(left.Uint() / toUint(right))
+				left = reflect.ValueOf(left.Uint() / st.toUint(right))
 			}
 		} else {
 			node.Left.errorf("a non numeric value in multiplicative expression")
@@ -1097,19 +1105,19 @@ func (st *Runtime) evalMultiplicativeExpression(node *MultiplicativeExprNode) re
 	case itemMod:
 		// the divisor is truncated to an integer, so a non-zero fraction is a zero divisor too
 		if isInt(kind) {
-			divisor := toInt(right)
+			divisor := st.toInt(right)
 			if divisor == 0 {
 				node.Left.errorf("modulo by zero")
 			}
 			left = reflect.ValueOf(left.Int() % divisor)
 		} else if isFloat(kind) {
-			divisor := toInt(right)
+			divisor := st.toInt(right)
 			if divisor == 0 {
 				node.Left.errorf("modulo by zero")
 			}
 			left = reflect.ValueOf(int64(left.Float()) % divisor)
 		} else if isUint(kind) {
-			divisor := toUint(right)
+			divisor := st.toUint(right)
 			if divisor == 0 {
 				node.Left.errorf("modulo by zero")
 			}
@@ -1182,21 +1190,21 @@ func (st *Runtime) evalAdditiveExpression(node *AdditiveExprNode) reflect.Value 
 	} else {
 		if isInt(kind) {
 			if isAdditive {
-				left = reflect.ValueOf(left.Int() + toInt(right))
+				left = reflect.ValueOf(left.Int() + st.toInt(right))
 			} else {
-				left = reflect.ValueOf(left.Int() - toInt(right))
+				left = reflect.ValueOf(left.Int() - st.toInt(right))
 			}
 		} else if isFloat(kind) {
 			if isAdditive {
-				left = reflect.ValueOf(left.Float() + toFloat(right))
+				left = reflect.ValueOf(left.Float() + st.toFloat(right))
 			} else {
-				left = reflect.ValueOf(left.Float() - toFloat(right))
+				left = reflect.ValueOf(left.Float() - st.toFloat(right))
 			}
 		} else if isUint(kind) {
 			if isAdditive {
-				left = reflect.ValueOf(left.Uint() + toUint(right))
+				left = reflect.ValueOf(left.Uint() + st.toUint(right))
 			} else {
-				left = reflect.ValueOf(left.Uint() - toUint(right))
+				left = reflect.ValueOf(left.Uint() - st.toUint(right))
 			}
 		} else if kind == reflect.String {
 			if !isAdditive {
@@ -1525,13 +1533,13 @@ func (st *Runtime) checkEquality(v1, v2 reflect.Value) bool {
 
 	kind := v1.Kind()
 	if isInt(kind) {
-		return v1.Int() == toInt(v2)
+		return v1.Int() == st.toInt(v2)
 	}
 	if isFloat(kind) {
-		return v1.Float() == toFloat(v2)
+		return v1.Float() == st.toFloat(v2)
 	}
 	if isUint(kind) {
-		return v1.Uint() == toUint(v2)
+		return v1.Uint() == st.toUint(v2)
 	}
 
 	switch kind {
