@@ -1,0 +1,67 @@
+goos: darwin
+goarch: arm64
+pkg: github.com/CloudyKit/jet/v6
+cpu: Apple M2 Max
+                                                                  │ .git/finalization/selected-measure/baseline.txt │ .git/finalization/selected-measure/selected.txt │
+                                                                  │                     sec/op                      │          sec/op           vs base               │
+FinalReview/legacy_stream/header_interpolation/text-2                                                  147.1n ±  9%               133.9n ±  6%        ~ (p=0.089 n=6)
+FinalReview/legacy_stream/header_interpolation/html-2                                                  149.0n ±  5%               145.8n ±  6%        ~ (p=0.093 n=6)
+FinalReview/legacy_stream/escape_expansion/text-2                                                      141.3n ±  5%               138.2n ±  5%        ~ (p=0.180 n=6)
+FinalReview/legacy_stream/escape_expansion/html-2                                                      8.772µ ±  6%               6.389µ ±  3%  -27.17% (p=0.002 n=6)
+FinalReview/metered_background_stream/header_interpolation/text-2                                      526.1n ±  8%               534.6n ±  8%        ~ (p=0.485 n=6)
+FinalReview/metered_background_stream/header_interpolation/html-2                                      536.2n ± 10%               510.1n ±  7%        ~ (p=0.132 n=6)
+FinalReview/metered_background_stream/escape_expansion/text-2                                          534.5n ±  6%               522.2n ±  7%        ~ (p=0.394 n=6)
+FinalReview/metered_background_stream/escape_expansion/html-2                                         15.743µ ±  4%               8.878µ ±  4%  -43.61% (p=0.002 n=6)
+FinalReview/metered_live_stream/header_interpolation/text-2                                            544.3n ± 15%               520.5n ±  5%        ~ (p=0.093 n=6)
+FinalReview/metered_live_stream/header_interpolation/html-2                                            559.7n ± 14%               522.1n ± 10%        ~ (p=0.132 n=6)
+FinalReview/metered_live_stream/escape_expansion/text-2                                                604.0n ± 11%               532.4n ±  4%        ~ (p=0.065 n=6)
+FinalReview/metered_live_stream/escape_expansion/html-2                                                16.13µ ±  5%               10.52µ ±  4%  -34.82% (p=0.002 n=6)
+FinalReview/restricted_owned/header_interpolation/text-2                                               864.2n ±  8%               859.0n ±  5%        ~ (p=0.589 n=6)
+FinalReview/restricted_owned/header_interpolation/html-2                                               912.4n ±  8%               903.1n ± 19%        ~ (p=0.937 n=6)
+FinalReview/restricted_owned/escape_expansion/text-2                                                   1.039µ ± 14%               1.032µ ± 10%        ~ (p=0.732 n=6)
+FinalReview/restricted_owned/escape_expansion/html-2                                                   24.37µ ±  8%               13.04µ ±  4%  -46.50% (p=0.002 n=6)
+geomean                                                                                                1.087µ                     935.9n        -13.93%
+
+                                                                  │ .git/finalization/selected-measure/baseline.txt │ .git/finalization/selected-measure/selected.txt │
+                                                                  │                      B/op                       │        B/op          vs base                    │
+FinalReview/legacy_stream/header_interpolation/text-2                                                    24.00 ± 0%             0.00 ± 0%  -100.00% (p=0.002 n=6)
+FinalReview/legacy_stream/header_interpolation/html-2                                                    24.00 ± 0%             0.00 ± 0%  -100.00% (p=0.002 n=6)
+FinalReview/legacy_stream/escape_expansion/text-2                                                        24.00 ± 0%             0.00 ± 0%  -100.00% (p=0.002 n=6)
+FinalReview/legacy_stream/escape_expansion/html-2                                                        24.00 ± 0%             0.00 ± 0%  -100.00% (p=0.002 n=6)
+FinalReview/metered_background_stream/header_interpolation/text-2                                       1000.0 ± 0%            848.0 ± 0%   -15.20% (p=0.002 n=6)
+FinalReview/metered_background_stream/header_interpolation/html-2                                       1000.0 ± 0%            848.0 ± 0%   -15.20% (p=0.002 n=6)
+FinalReview/metered_background_stream/escape_expansion/text-2                                           1000.0 ± 0%            848.0 ± 0%   -15.20% (p=0.002 n=6)
+FinalReview/metered_background_stream/escape_expansion/html-2                                           1000.0 ± 0%            848.0 ± 0%   -15.20% (p=0.002 n=6)
+FinalReview/metered_live_stream/header_interpolation/text-2                                             1000.0 ± 0%            848.0 ± 0%   -15.20% (p=0.002 n=6)
+FinalReview/metered_live_stream/header_interpolation/html-2                                             1000.0 ± 0%            848.0 ± 0%   -15.20% (p=0.002 n=6)
+FinalReview/metered_live_stream/escape_expansion/text-2                                                 1000.0 ± 0%            848.0 ± 0%   -15.20% (p=0.002 n=6)
+FinalReview/metered_live_stream/escape_expansion/html-2                                                 1000.0 ± 0%            848.0 ± 0%   -15.20% (p=0.002 n=6)
+FinalReview/restricted_owned/header_interpolation/text-2                                               1.578Ki ± 0%          1.414Ki ± 0%   -10.40% (p=0.002 n=6)
+FinalReview/restricted_owned/header_interpolation/html-2                                               1.578Ki ± 0%          1.414Ki ± 0%   -10.40% (p=0.002 n=6)
+FinalReview/restricted_owned/escape_expansion/text-2                                                   2.743Ki ± 0%          2.579Ki ± 0%    -5.96% (p=0.002 n=6)
+FinalReview/restricted_owned/escape_expansion/html-2                                                   12.43Ki ± 0%          12.27Ki ± 0%    -1.32% (p=0.002 n=6)
+geomean                                                                                                  522.6                             ?                      ¹ ²
+¹ summaries must be >0 to compute geomean
+² ratios must be >0 to compute geomean
+
+                                                                  │ .git/finalization/selected-measure/baseline.txt │ .git/finalization/selected-measure/selected.txt │
+                                                                  │                    allocs/op                    │      allocs/op       vs base                    │
+FinalReview/legacy_stream/header_interpolation/text-2                                                    1.000 ± 0%            0.000 ± 0%  -100.00% (p=0.002 n=6)
+FinalReview/legacy_stream/header_interpolation/html-2                                                    1.000 ± 0%            0.000 ± 0%  -100.00% (p=0.002 n=6)
+FinalReview/legacy_stream/escape_expansion/text-2                                                        1.000 ± 0%            0.000 ± 0%  -100.00% (p=0.002 n=6)
+FinalReview/legacy_stream/escape_expansion/html-2                                                        1.000 ± 0%            0.000 ± 0%  -100.00% (p=0.002 n=6)
+FinalReview/metered_background_stream/header_interpolation/text-2                                       11.000 ± 0%            7.000 ± 0%   -36.36% (p=0.002 n=6)
+FinalReview/metered_background_stream/header_interpolation/html-2                                       11.000 ± 0%            7.000 ± 0%   -36.36% (p=0.002 n=6)
+FinalReview/metered_background_stream/escape_expansion/text-2                                           11.000 ± 0%            7.000 ± 0%   -36.36% (p=0.002 n=6)
+FinalReview/metered_background_stream/escape_expansion/html-2                                           11.000 ± 0%            7.000 ± 0%   -36.36% (p=0.002 n=6)
+FinalReview/metered_live_stream/header_interpolation/text-2                                             11.000 ± 0%            7.000 ± 0%   -36.36% (p=0.002 n=6)
+FinalReview/metered_live_stream/header_interpolation/html-2                                             11.000 ± 0%            7.000 ± 0%   -36.36% (p=0.002 n=6)
+FinalReview/metered_live_stream/escape_expansion/text-2                                                 11.000 ± 0%            7.000 ± 0%   -36.36% (p=0.002 n=6)
+FinalReview/metered_live_stream/escape_expansion/html-2                                                 11.000 ± 0%            7.000 ± 0%   -36.36% (p=0.002 n=6)
+FinalReview/restricted_owned/header_interpolation/text-2                                                 17.00 ± 0%            13.00 ± 0%   -23.53% (p=0.002 n=6)
+FinalReview/restricted_owned/header_interpolation/html-2                                                 17.00 ± 0%            13.00 ± 0%   -23.53% (p=0.002 n=6)
+FinalReview/restricted_owned/escape_expansion/text-2                                                     17.00 ± 0%            13.00 ± 0%   -23.53% (p=0.002 n=6)
+FinalReview/restricted_owned/escape_expansion/html-2                                                     23.00 ± 0%            19.00 ± 0%   -17.39% (p=0.002 n=6)
+geomean                                                                                                  6.863                             ?                      ¹ ²
+¹ summaries must be >0 to compute geomean
+² ratios must be >0 to compute geomean

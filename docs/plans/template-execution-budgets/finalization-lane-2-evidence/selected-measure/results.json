@@ -1,0 +1,404 @@
+[
+  {
+    "name": "baseline-0",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/baseline.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkFinalReview$/(legacy_stream|metered_background_stream|metered_live_stream|restricted_owned)$/(header_interpolation|escape_expansion)$/(html|text)$",
+      "-test.benchtime=1s",
+      "-test.count=1"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "started": 1794125138.3916218,
+    "finished": 1794125164.783735,
+    "exit_code": 0,
+    "binary_sha256": "0d0cdf13c8a0faea6b60cc2c7792ff55acb1e9fbc4aa6106c07c23a6fdf932c6",
+    "environment": {
+      "GOMAXPROCS": "2"
+    }
+  },
+  {
+    "name": "selected-0",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/selected.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkFinalReview$/(legacy_stream|metered_background_stream|metered_live_stream|restricted_owned)$/(header_interpolation|escape_expansion)$/(html|text)$",
+      "-test.benchtime=1s",
+      "-test.count=1"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "started": 1794125164.790557,
+    "finished": 1794125192.41434,
+    "exit_code": 0,
+    "binary_sha256": "85be5af1e4a075d2e680841e364c199919a641bc795f87d9f5dd6423cc5fd909",
+    "environment": {
+      "GOMAXPROCS": "2"
+    }
+  },
+  {
+    "name": "selected-1",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/selected.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkFinalReview$/(legacy_stream|metered_background_stream|metered_live_stream|restricted_owned)$/(header_interpolation|escape_expansion)$/(html|text)$",
+      "-test.benchtime=1s",
+      "-test.count=1"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "started": 1794125192.419819,
+    "finished": 1794125218.143923,
+    "exit_code": 0,
+    "binary_sha256": "85be5af1e4a075d2e680841e364c199919a641bc795f87d9f5dd6423cc5fd909",
+    "environment": {
+      "GOMAXPROCS": "2"
+    }
+  },
+  {
+    "name": "baseline-1",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/baseline.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkFinalReview$/(legacy_stream|metered_background_stream|metered_live_stream|restricted_owned)$/(header_interpolation|escape_expansion)$/(html|text)$",
+      "-test.benchtime=1s",
+      "-test.count=1"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "started": 1794125218.272026,
+    "finished": 1794125244.4153159,
+    "exit_code": 0,
+    "binary_sha256": "0d0cdf13c8a0faea6b60cc2c7792ff55acb1e9fbc4aa6106c07c23a6fdf932c6",
+    "environment": {
+      "GOMAXPROCS": "2"
+    }
+  },
+  {
+    "name": "baseline-2",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/baseline.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkFinalReview$/(legacy_stream|metered_background_stream|metered_live_stream|restricted_owned)$/(header_interpolation|escape_expansion)$/(html|text)$",
+      "-test.benchtime=1s",
+      "-test.count=1"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "started": 1794125244.422393,
+    "finished": 1794125270.770346,
+    "exit_code": 0,
+    "binary_sha256": "0d0cdf13c8a0faea6b60cc2c7792ff55acb1e9fbc4aa6106c07c23a6fdf932c6",
+    "environment": {
+      "GOMAXPROCS": "2"
+    }
+  },
+  {
+    "name": "selected-2",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/selected.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkFinalReview$/(legacy_stream|metered_background_stream|metered_live_stream|restricted_owned)$/(header_interpolation|escape_expansion)$/(html|text)$",
+      "-test.benchtime=1s",
+      "-test.count=1"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "started": 1794125270.776148,
+    "finished": 1794125296.0472581,
+    "exit_code": 0,
+    "binary_sha256": "85be5af1e4a075d2e680841e364c199919a641bc795f87d9f5dd6423cc5fd909",
+    "environment": {
+      "GOMAXPROCS": "2"
+    }
+  },
+  {
+    "name": "selected-3",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/selected.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkFinalReview$/(legacy_stream|metered_background_stream|metered_live_stream|restricted_owned)$/(header_interpolation|escape_expansion)$/(html|text)$",
+      "-test.benchtime=1s",
+      "-test.count=1"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "started": 1794125296.41329,
+    "finished": 1794125322.600441,
+    "exit_code": 0,
+    "binary_sha256": "85be5af1e4a075d2e680841e364c199919a641bc795f87d9f5dd6423cc5fd909",
+    "environment": {
+      "GOMAXPROCS": "2"
+    }
+  },
+  {
+    "name": "baseline-3",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/baseline.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkFinalReview$/(legacy_stream|metered_background_stream|metered_live_stream|restricted_owned)$/(header_interpolation|escape_expansion)$/(html|text)$",
+      "-test.benchtime=1s",
+      "-test.count=1"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "started": 1794125322.6073012,
+    "finished": 1794125349.410033,
+    "exit_code": 0,
+    "binary_sha256": "0d0cdf13c8a0faea6b60cc2c7792ff55acb1e9fbc4aa6106c07c23a6fdf932c6",
+    "environment": {
+      "GOMAXPROCS": "2"
+    }
+  },
+  {
+    "name": "baseline-4",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/baseline.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkFinalReview$/(legacy_stream|metered_background_stream|metered_live_stream|restricted_owned)$/(header_interpolation|escape_expansion)$/(html|text)$",
+      "-test.benchtime=1s",
+      "-test.count=1"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "started": 1794125349.535902,
+    "finished": 1794125375.2816682,
+    "exit_code": 0,
+    "binary_sha256": "0d0cdf13c8a0faea6b60cc2c7792ff55acb1e9fbc4aa6106c07c23a6fdf932c6",
+    "environment": {
+      "GOMAXPROCS": "2"
+    }
+  },
+  {
+    "name": "selected-4",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/selected.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkFinalReview$/(legacy_stream|metered_background_stream|metered_live_stream|restricted_owned)$/(header_interpolation|escape_expansion)$/(html|text)$",
+      "-test.benchtime=1s",
+      "-test.count=1"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "started": 1794125375.287861,
+    "finished": 1794125399.739912,
+    "exit_code": 0,
+    "binary_sha256": "85be5af1e4a075d2e680841e364c199919a641bc795f87d9f5dd6423cc5fd909",
+    "environment": {
+      "GOMAXPROCS": "2"
+    }
+  },
+  {
+    "name": "selected-5",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/selected.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkFinalReview$/(legacy_stream|metered_background_stream|metered_live_stream|restricted_owned)$/(header_interpolation|escape_expansion)$/(html|text)$",
+      "-test.benchtime=1s",
+      "-test.count=1"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "started": 1794125399.7651289,
+    "finished": 1794125423.648118,
+    "exit_code": 0,
+    "binary_sha256": "85be5af1e4a075d2e680841e364c199919a641bc795f87d9f5dd6423cc5fd909",
+    "environment": {
+      "GOMAXPROCS": "2"
+    }
+  },
+  {
+    "name": "baseline-5",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/baseline.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkFinalReview$/(legacy_stream|metered_background_stream|metered_live_stream|restricted_owned)$/(header_interpolation|escape_expansion)$/(html|text)$",
+      "-test.benchtime=1s",
+      "-test.count=1"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "started": 1794125423.664289,
+    "finished": 1794125450.725707,
+    "exit_code": 0,
+    "binary_sha256": "0d0cdf13c8a0faea6b60cc2c7792ff55acb1e9fbc4aa6106c07c23a6fdf932c6",
+    "environment": {
+      "GOMAXPROCS": "2"
+    }
+  },
+  {
+    "name": "baseline-legacy_stream-profile",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/baseline.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkFinalReview$/legacy_stream$/escape_expansion$/html$",
+      "-test.benchtime=2s",
+      "-test.count=1",
+      "-test.cpuprofile=<artifacts>/selected-measure/baseline-legacy_stream-cpu.pprof",
+      "-test.memprofile=<artifacts>/selected-measure/baseline-legacy_stream-heap.pprof",
+      "-test.mutexprofile=<artifacts>/selected-measure/baseline-legacy_stream-mutex.pprof",
+      "-test.blockprofile=<artifacts>/selected-measure/baseline-legacy_stream-block.pprof"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "started": 1794125450.733184,
+    "finished": 1794125453.469989,
+    "exit_code": 0,
+    "binary_sha256": "0d0cdf13c8a0faea6b60cc2c7792ff55acb1e9fbc4aa6106c07c23a6fdf932c6",
+    "environment": {
+      "GOMAXPROCS": "2"
+    }
+  },
+  {
+    "name": "baseline-metered_live_stream-profile",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/baseline.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkFinalReview$/metered_live_stream$/escape_expansion$/html$",
+      "-test.benchtime=2s",
+      "-test.count=1",
+      "-test.cpuprofile=<artifacts>/selected-measure/baseline-metered_live_stream-cpu.pprof",
+      "-test.memprofile=<artifacts>/selected-measure/baseline-metered_live_stream-heap.pprof",
+      "-test.mutexprofile=<artifacts>/selected-measure/baseline-metered_live_stream-mutex.pprof",
+      "-test.blockprofile=<artifacts>/selected-measure/baseline-metered_live_stream-block.pprof"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "started": 1794125453.475361,
+    "finished": 1794125456.111252,
+    "exit_code": 0,
+    "binary_sha256": "0d0cdf13c8a0faea6b60cc2c7792ff55acb1e9fbc4aa6106c07c23a6fdf932c6",
+    "environment": {
+      "GOMAXPROCS": "2"
+    }
+  },
+  {
+    "name": "baseline-restricted_owned-profile",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/baseline.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkFinalReview$/restricted_owned$/escape_expansion$/html$",
+      "-test.benchtime=2s",
+      "-test.count=1",
+      "-test.cpuprofile=<artifacts>/selected-measure/baseline-restricted_owned-cpu.pprof",
+      "-test.memprofile=<artifacts>/selected-measure/baseline-restricted_owned-heap.pprof",
+      "-test.mutexprofile=<artifacts>/selected-measure/baseline-restricted_owned-mutex.pprof",
+      "-test.blockprofile=<artifacts>/selected-measure/baseline-restricted_owned-block.pprof"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "started": 1794125456.120092,
+    "finished": 1794125458.74959,
+    "exit_code": 0,
+    "binary_sha256": "0d0cdf13c8a0faea6b60cc2c7792ff55acb1e9fbc4aa6106c07c23a6fdf932c6",
+    "environment": {
+      "GOMAXPROCS": "2"
+    }
+  },
+  {
+    "name": "selected-legacy_stream-profile",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/selected.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkFinalReview$/legacy_stream$/escape_expansion$/html$",
+      "-test.benchtime=2s",
+      "-test.count=1",
+      "-test.cpuprofile=<artifacts>/selected-measure/selected-legacy_stream-cpu.pprof",
+      "-test.memprofile=<artifacts>/selected-measure/selected-legacy_stream-heap.pprof",
+      "-test.mutexprofile=<artifacts>/selected-measure/selected-legacy_stream-mutex.pprof",
+      "-test.blockprofile=<artifacts>/selected-measure/selected-legacy_stream-block.pprof"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "started": 1794125458.756017,
+    "finished": 1794125461.512651,
+    "exit_code": 0,
+    "binary_sha256": "85be5af1e4a075d2e680841e364c199919a641bc795f87d9f5dd6423cc5fd909",
+    "environment": {
+      "GOMAXPROCS": "2"
+    }
+  },
+  {
+    "name": "selected-metered_live_stream-profile",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/selected.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkFinalReview$/metered_live_stream$/escape_expansion$/html$",
+      "-test.benchtime=2s",
+      "-test.count=1",
+      "-test.cpuprofile=<artifacts>/selected-measure/selected-metered_live_stream-cpu.pprof",
+      "-test.memprofile=<artifacts>/selected-measure/selected-metered_live_stream-heap.pprof",
+      "-test.mutexprofile=<artifacts>/selected-measure/selected-metered_live_stream-mutex.pprof",
+      "-test.blockprofile=<artifacts>/selected-measure/selected-metered_live_stream-block.pprof"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "started": 1794125461.518249,
+    "finished": 1794125464.154685,
+    "exit_code": 0,
+    "binary_sha256": "85be5af1e4a075d2e680841e364c199919a641bc795f87d9f5dd6423cc5fd909",
+    "environment": {
+      "GOMAXPROCS": "2"
+    }
+  },
+  {
+    "name": "selected-restricted_owned-profile",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/selected.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkFinalReview$/restricted_owned$/escape_expansion$/html$",
+      "-test.benchtime=2s",
+      "-test.count=1",
+      "-test.cpuprofile=<artifacts>/selected-measure/selected-restricted_owned-cpu.pprof",
+      "-test.memprofile=<artifacts>/selected-measure/selected-restricted_owned-heap.pprof",
+      "-test.mutexprofile=<artifacts>/selected-measure/selected-restricted_owned-mutex.pprof",
+      "-test.blockprofile=<artifacts>/selected-measure/selected-restricted_owned-block.pprof"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "started": 1794125464.164428,
+    "finished": 1794125466.797729,
+    "exit_code": 0,
+    "binary_sha256": "85be5af1e4a075d2e680841e364c199919a641bc795f87d9f5dd6423cc5fd909",
+    "environment": {
+      "GOMAXPROCS": "2"
+    }
+  }
+]

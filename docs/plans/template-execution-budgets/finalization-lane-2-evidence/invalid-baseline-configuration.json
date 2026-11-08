@@ -1,0 +1,5 @@
+{
+  "reason": "Inherited host-exclusive GOMAXPROCS instead of matched 2; stopped owned benchmark child; these samples excluded",
+  "owned_child": 88211,
+  "action": "TERM child; orchestrator records failure and exits"
+}

@@ -1,0 +1,21 @@
+File: reserve-256.test
+Type: alloc_space
+Time: 2026-11-08 01:51:53 CST
+Showing nodes accounting for 453957.61kB, 99.27% of 457287.48kB total
+Dropped 334 nodes (cum <= 2286.44kB)
+Showing top 14 nodes out of 27
+      flat  flat%   sum%        cum   cum%
+291283.75kB 63.70% 63.70% 291283.75kB 63.70%  bytes.growSlice
+112755.02kB 24.66% 88.36% 112755.02kB 24.66%  bytes.(*Buffer).String (inline)
+16443.53kB  3.60% 91.95% 16443.53kB  3.60%  github.com/CloudyKit/jet/v6.admitInputScopes
+12919.84kB  2.83% 94.78% 20554.30kB  4.49%  github.com/CloudyKit/jet/v6.(*parseAdmission).admitCached
+10571.34kB  2.31% 97.09% 10571.34kB  2.31%  github.com/CloudyKit/jet/v6.newParseAdmission
+ 7634.86kB  1.67% 98.76%  7634.86kB  1.67%  github.com/CloudyKit/jet/v6.(*parseAdmission).prepareSource
+ 2349.06kB  0.51% 99.27% 454290.88kB 99.34%  github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext
+    0.14kB 3.1e-05% 99.27% 455029.57kB 99.51%  testing.(*B).runN
+    0.06kB 1.4e-05% 99.27% 291283.81kB 63.70%  bytes.(*Buffer).grow
+         0     0% 99.27%  9396.25kB  2.05%  bytes.(*Buffer).Grow (inline)
+         0     0% 99.27% 281887.56kB 61.64%  bytes.(*Buffer).Write
+         0     0% 99.27% 291554.84kB 63.76%  github.com/CloudyKit/fastprinter.PrintString
+         0     0% 99.27% 291554.93kB 63.76%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 99.27% 291554.84kB 63.76%  github.com/CloudyKit/jet/v6.(*Runtime).printValue

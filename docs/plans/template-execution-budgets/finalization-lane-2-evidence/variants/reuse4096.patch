@@ -1,0 +1,18 @@
+--- execution_output.go
++++ execution_output.go
+@@ -38,0 +39,5 @@
++ if len(b)>0 && len(b)<4096 && w.retained.Cap()==0 && w.retained==st.rootSink.retained {
++  if st.outputScratch==nil { st.outputScratch=make([]byte,4096) }
++  *w.retained=*bytes.NewBuffer(st.outputScratch[:0])
++  st.outputScratchUsed=true
++ }
+--- eval.go
++++ eval.go
+@@ -89,0 +90,2 @@
++ outputScratch []byte
++ outputScratchUsed bool
+@@ -269,0 +272,4 @@
++ if st.outputScratchUsed {
++  for i := range st.outputScratch { st.outputScratch[i] = 0 }
++  st.outputScratchUsed = false
++ }

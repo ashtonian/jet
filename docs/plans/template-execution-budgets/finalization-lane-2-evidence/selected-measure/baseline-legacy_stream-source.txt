@@ -1,0 +1,29 @@
+Total: 2.30s
+ROUTINE ======================== github.com/CloudyKit/jet/v6.(*Runtime).checkpoint in execution.go
+         0       10ms (flat, cum)  0.43% of Total
+         .          .    107:func (st *Runtime) checkpoint(steps uint64) {
+         .       10ms    108:	st.rethrowTerminal()
+         .          .    109:	b := &st.execution
+         .          .    110:	if b.ctx == nil {
+         .          .    111:		return
+         .          .    112:	}
+         .          .    113:	if b.ctx.Err() != nil {
+ROUTINE ======================== github.com/CloudyKit/jet/v6.(*checkedWriter).Write in eval.go
+     860ms      1.88s (flat, cum) 81.74% of Total
+     170ms      170ms     70:func (w *checkedWriter) Write(b []byte) (int, error) {
+     200ms      200ms     71:	if *w.failure != nil {
+         .          .     72:		return 0, *w.failure
+         .          .     73:	}
+     110ms      1.13s     74:	n, err := w.writer.Write(b)
+     180ms      180ms     75:	if err == nil && n != len(b) {
+         .          .     76:		err = io.ErrShortWrite
+         .          .     77:	}
+     120ms      120ms     78:	if err != nil {
+         .          .     79:		*w.failure = err
+         .          .     80:	}
+      80ms       80ms     81:	return n, err
+         .          .     82:}
+         .          .     83:
+         .          .     84:func (w *escapeeWriter) Write(b []byte) (int, error) {
+         .          .     85:	if w.set.escapee == nil {
+         .          .     86:		return w.Writer.Write(b)

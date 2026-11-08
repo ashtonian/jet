@@ -1,0 +1,24 @@
+File: baseline.test
+Type: delay
+Time: 2026-11-08 02:10:56 CST
+Showing nodes accounting for 9667ns, 100% of 9667ns total
+      flat  flat%   sum%        cum   cum%
+    9667ns   100%   100%     9667ns   100%  runtime.unlock (inline)
+         0     0%   100%     9042ns 93.53%  runtime.allocm
+         0     0%   100%      625ns  6.47%  runtime.forEachP (inline)
+         0     0%   100%      625ns  6.47%  runtime.forEachP.func1
+         0     0%   100%      625ns  6.47%  runtime.forEachPInternal
+         0     0%   100%     9667ns   100%  runtime.gcBgMarkWorker
+         0     0%   100%     9042ns 93.53%  runtime.gcBgMarkWorker.func2
+         0     0%   100%     9042ns 93.53%  runtime.gcDrain
+         0     0%   100%     9042ns 93.53%  runtime.gcDrainMarkWorkerIdle (inline)
+         0     0%   100%      625ns  6.47%  runtime.gcMarkDone
+         0     0%   100%     9042ns 93.53%  runtime.markroot
+         0     0%   100%     9042ns 93.53%  runtime.markroot.func1
+         0     0%   100%     9042ns 93.53%  runtime.mcommoninit
+         0     0%   100%     9042ns 93.53%  runtime.newm
+         0     0%   100%     9042ns 93.53%  runtime.ready
+         0     0%   100%     9042ns 93.53%  runtime.resumeG
+         0     0%   100%     9042ns 93.53%  runtime.startm
+         0     0%   100%     9667ns   100%  runtime.systemstack
+         0     0%   100%     9042ns 93.53%  runtime.wakep

@@ -1,0 +1,29 @@
+File: baseline.test
+Type: alloc_space
+Time: 2026-11-08 02:10:56 CST
+Showing nodes accounting for 148.18MB, 98.24% of 150.84MB total
+Dropped 19 nodes (cum <= 0.75MB)
+Showing top 22 nodes out of 31
+      flat  flat%   sum%        cum   cum%
+   52.51MB 34.81% 34.81%    86.52MB 57.36%  github.com/CloudyKit/jet/v6.(*parseAdmission).admitCached
+      42MB 27.85% 62.66%       42MB 27.85%  github.com/CloudyKit/jet/v6.newParseAdmission
+   34.01MB 22.55% 85.20%    34.01MB 22.55%  github.com/CloudyKit/jet/v6.(*parseAdmission).prepareSource
+       8MB  5.30% 90.51%        8MB  5.30%  github.com/CloudyKit/jet/v6.(*dataPrinter).value
+    4.50MB  2.98% 93.49%     4.50MB  2.98%  github.com/CloudyKit/jet/v6.(*Runtime).outputWriter (inline)
+       3MB  1.99% 95.48%       11MB  7.29%  github.com/CloudyKit/jet/v6.(*Runtime).printValue
+       3MB  1.99% 97.47%        3MB  1.99%  github.com/CloudyKit/jet/v6.(*Runtime).recover
+    1.16MB  0.77% 98.24%     1.16MB  0.77%  runtime/pprof.StartCPUProfile
+         0     0% 98.24%       11MB  7.29%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 98.24%   128.52MB 85.20%  github.com/CloudyKit/jet/v6.(*Runtime).startCompilation
+         0     0% 98.24%    86.52MB 57.36%  github.com/CloudyKit/jet/v6.(*Runtime).startCompilation.func1
+         0     0% 98.24%   147.02MB 97.47%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0% 98.24%   147.02MB 97.47%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0% 98.24%     2.16MB  1.43%  github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview
+         0     0% 98.24%   147.02MB 97.47%  github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview.func1
+         0     0% 98.24%     1.16MB  0.77%  github.com/CloudyKit/jet/v6_test.executionWorkloads
+         0     0% 98.24%   147.02MB 97.47%  github.com/CloudyKit/jet/v6_test.init.0.func1
+         0     0% 98.24%     1.16MB  0.77%  main.main
+         0     0% 98.24%        1MB  0.66%  regexp.Compile (inline)
+         0     0% 98.24%        1MB  0.66%  regexp.compile
+         0     0% 98.24%     1.16MB  0.77%  runtime.main
+         0     0% 98.24%        1MB  0.66%  testing.(*B).Run

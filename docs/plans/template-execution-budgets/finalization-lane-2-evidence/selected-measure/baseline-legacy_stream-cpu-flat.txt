@@ -1,0 +1,30 @@
+File: baseline.test
+Type: cpu
+Time: 2026-11-08 02:10:50 CST
+Duration: 2.73s, Total samples = 2.30s (84.39%)
+Showing nodes accounting for 2.27s, 98.70% of 2.30s total
+Dropped 16 nodes (cum <= 0.01s)
+Showing top 22 nodes out of 42
+      flat  flat%   sum%        cum   cum%
+     0.86s 37.39% 37.39%      1.53s 66.52%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+     0.30s 13.04% 50.43%      1.83s 79.57%  text/template.HTMLEscape
+     0.27s 11.74% 62.17%      0.27s 11.74%  runtime.memmove
+     0.26s 11.30% 73.48%      0.67s 29.13%  bytes.(*Buffer).Write
+     0.21s  9.13% 82.61%      0.21s  9.13%  runtime.madvise
+     0.15s  6.52% 89.13%      0.15s  6.52%  runtime.memclrNoHeapPointers
+     0.14s  6.09% 95.22%      0.14s  6.09%  bytes.(*Buffer).tryGrowByReslice (inline)
+     0.03s  1.30% 96.52%      2.05s 89.13%  github.com/CloudyKit/jet/v6.(*Template).execute
+     0.03s  1.30% 97.83%      0.03s  1.30%  runtime.pthread_cond_signal
+     0.02s  0.87% 98.70%      0.02s  0.87%  runtime.(*mspan).init
+         0     0% 98.70%      1.83s 79.57%  github.com/CloudyKit/fastprinter.PrintString
+         0     0% 98.70%      1.83s 79.57%  github.com/CloudyKit/fastprinter.PrintValue
+         0     0% 98.70%      1.83s 79.57%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 98.70%      1.83s 79.57%  github.com/CloudyKit/jet/v6.(*Runtime).printValue
+         0     0% 98.70%      0.18s  7.83%  github.com/CloudyKit/jet/v6.(*Runtime).recover
+         0     0% 98.70%      2.05s 89.13%  github.com/CloudyKit/jet/v6.(*Template).Execute (inline)
+         0     0% 98.70%      1.83s 79.57%  github.com/CloudyKit/jet/v6.(*escapeeWriter).Write
+         0     0% 98.70%      2.05s 89.13%  github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview.func1
+         0     0% 98.70%      2.05s 89.13%  github.com/CloudyKit/jet/v6_test.init.func1
+         0     0% 98.70%      0.18s  7.83%  runtime.(*mcache).nextFree
+         0     0% 98.70%      0.18s  7.83%  runtime.(*mcache).refill
+         0     0% 98.70%      0.18s  7.83%  runtime.(*mcentral).cacheSpan

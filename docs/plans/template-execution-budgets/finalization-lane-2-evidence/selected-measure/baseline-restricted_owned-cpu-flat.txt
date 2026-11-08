@@ -1,0 +1,30 @@
+File: baseline.test
+Type: cpu
+Time: 2026-11-08 02:10:56 CST
+Duration: 2.62s, Total samples = 2.23s (85.19%)
+Showing nodes accounting for 2.12s, 95.07% of 2.23s total
+Dropped 57 nodes (cum <= 0.01s)
+Showing top 22 nodes out of 67
+      flat  flat%   sum%        cum   cum%
+     1.23s 55.16% 55.16%      1.23s 55.16%  runtime.kevent
+     0.12s  5.38% 60.54%      0.20s  8.97%  github.com/CloudyKit/jet/v6.(*Runtime).reserve
+     0.10s  4.48% 65.02%      0.10s  4.48%  github.com/CloudyKit/jet/v6.(*Runtime).rethrowTerminal (inline)
+     0.08s  3.59% 68.61%      0.75s 33.63%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+     0.06s  2.69% 71.30%      0.17s  7.62%  github.com/CloudyKit/jet/v6.(*Runtime).checkpoint
+     0.06s  2.69% 73.99%      0.71s 31.84%  github.com/CloudyKit/jet/v6.(*executionWriter).write
+     0.05s  2.24% 76.23%      0.16s  7.17%  bytes.(*Buffer).Write
+     0.05s  2.24% 78.48%      0.05s  2.24%  runtime.madvise
+     0.05s  2.24% 80.72%      0.05s  2.24%  runtime.memmove
+     0.05s  2.24% 82.96%      0.05s  2.24%  runtime.usleep
+     0.04s  1.79% 84.75%      0.08s  3.59%  context.(*cancelCtx).Err
+     0.04s  1.79% 86.55%      0.40s 17.94%  github.com/CloudyKit/jet/v6.(*restrictedSink).Write
+     0.04s  1.79% 88.34%      0.04s  1.79%  internal/runtime/atomic.(*UnsafePointer).Load (inline)
+     0.04s  1.79% 90.13%      0.04s  1.79%  runtime.pthread_kill
+     0.04s  1.79% 91.93%      0.04s  1.79%  sync/atomic.(*Value).Load (inline)
+     0.03s  1.35% 93.27%      0.20s  8.97%  github.com/CloudyKit/jet/v6.(*Runtime).reserveValue
+     0.02s   0.9% 94.17%      0.02s   0.9%  internal/runtime/maps.(*Map).putSlotSmallFastStr
+     0.01s  0.45% 94.62%      0.72s 32.29%  github.com/CloudyKit/jet/v6.(*executionWriter).Write
+     0.01s  0.45% 95.07%      0.76s 34.08%  text/template.HTMLEscape
+         0     0% 95.07%      0.05s  2.24%  bytes.(*Buffer).grow
+         0     0% 95.07%      0.05s  2.24%  bytes.growSlice
+         0     0% 95.07%      0.76s 34.08%  github.com/CloudyKit/fastprinter.PrintString

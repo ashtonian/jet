@@ -1,0 +1,21 @@
+File: reserve-1024.test
+Type: cpu
+Time: 2026-11-08 01:52:08 CST
+Duration: 1.71s, Total samples = 1.53s (89.29%)
+Showing nodes accounting for 0.06s, 3.92% of 1.53s total
+Showing top 14 nodes out of 133
+      flat  flat%   sum%        cum   cum%
+         0     0%     0%      1.13s 73.86%  github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext
+         0     0%     0%      1.13s 73.86%  github.com/CloudyKit/jet/v6_test.BenchmarkOutputReserve.func1.1
+         0     0%     0%      1.13s 73.86%  github.com/CloudyKit/jet/v6_test.BenchmarkOutputReserve.func1.2
+         0     0%     0%      1.13s 73.86%  testing.(*B).launch
+         0     0%     0%      1.13s 73.86%  testing.(*B).runN
+         0     0%     0%      1.12s 73.20%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+     0.01s  0.65%  0.65%      1.12s 73.20%  github.com/CloudyKit/jet/v6.(*Template).execute
+     0.01s  0.65%  1.31%      1.07s 69.93%  runtime.systemstack
+         0     0%  1.31%      0.72s 47.06%  runtime.mallocgc
+         0     0%  1.31%      0.71s 46.41%  runtime.mProf_Malloc
+         0     0%  1.31%      0.71s 46.41%  runtime.profilealloc
+         0     0%  1.31%      0.67s 43.79%  runtime.callers
+         0     0%  1.31%      0.67s 43.79%  runtime.callers.func1
+     0.04s  2.61%  3.92%      0.64s 41.83%  runtime.tracebackPCs

@@ -1,0 +1,30 @@
+File: baseline.test
+Type: cpu
+Time: 2026-11-08 02:10:50 CST
+Duration: 2.73s, Total samples = 2300ms (84.39%)
+Showing nodes accounting for 1930ms, 83.91% of 2300ms total
+Dropped 16 nodes (cum <= 11.50ms)
+Showing top 22 nodes out of 42
+      flat  flat%   sum%        cum   cum%
+         0     0%     0%     2060ms 89.57%  testing.(*B).runN
+         0     0%     0%     2050ms 89.13%  github.com/CloudyKit/jet/v6.(*Template).Execute (inline)
+      30ms  1.30%  1.30%     2050ms 89.13%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0%  1.30%     2050ms 89.13%  github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview.func1
+         0     0%  1.30%     2050ms 89.13%  github.com/CloudyKit/jet/v6_test.init.func1
+         0     0%  1.30%     2050ms 89.13%  testing.(*B).launch
+         0     0%  1.30%     1830ms 79.57%  github.com/CloudyKit/fastprinter.PrintString
+         0     0%  1.30%     1830ms 79.57%  github.com/CloudyKit/fastprinter.PrintValue
+         0     0%  1.30%     1830ms 79.57%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0%  1.30%     1830ms 79.57%  github.com/CloudyKit/jet/v6.(*Runtime).printValue
+         0     0%  1.30%     1830ms 79.57%  github.com/CloudyKit/jet/v6.(*escapeeWriter).Write
+     300ms 13.04% 14.35%     1830ms 79.57%  text/template.HTMLEscape
+     860ms 37.39% 51.74%     1530ms 66.52%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+     260ms 11.30% 63.04%      670ms 29.13%  bytes.(*Buffer).Write
+     270ms 11.74% 74.78%      270ms 11.74%  runtime.memmove
+         0     0% 74.78%      240ms 10.43%  runtime.(*mheap).alloc.func1
+         0     0% 74.78%      240ms 10.43%  runtime.(*mheap).allocSpan
+         0     0% 74.78%      240ms 10.43%  runtime.systemstack
+     210ms  9.13% 83.91%      210ms  9.13%  runtime.madvise
+         0     0% 83.91%      210ms  9.13%  runtime.sysUsed (inline)
+         0     0% 83.91%      210ms  9.13%  runtime.sysUsedOS (inline)
+         0     0% 83.91%      180ms  7.83%  github.com/CloudyKit/jet/v6.(*Runtime).recover

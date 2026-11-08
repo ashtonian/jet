@@ -1,0 +1,20 @@
+File: reserve-4096.test
+Type: delay
+Time: 2026-11-08 01:52:26 CST
+Showing nodes accounting for 94.38us, 100% of 94.38us total
+Showing top 14 nodes out of 45
+      flat  flat%   sum%        cum   cum%
+   94.38us   100%   100%    94.38us   100%  runtime.unlock (inline)
+         0     0%   100%     0.71us  0.75%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0%   100%     0.71us  0.75%  github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext
+         0     0%   100%     0.71us  0.75%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0%   100%     0.71us  0.75%  github.com/CloudyKit/jet/v6.admitInputScopes
+         0     0%   100%     0.71us  0.75%  github.com/CloudyKit/jet/v6_test.BenchmarkOutputReserve.func1.1
+         0     0%   100%     0.71us  0.75%  github.com/CloudyKit/jet/v6_test.BenchmarkOutputReserve.func1.2
+         0     0%   100%     0.71us  0.75%  internal/runtime/maps.NewEmptyMap (inline)
+         0     0%   100%    18.04us 19.12%  runtime.(*sweepLocked).sweep
+         0     0%   100%     0.71us  0.75%  runtime.addspecial
+         0     0%   100%    24.04us 25.47%  runtime.allocm
+         0     0%   100%    18.04us 19.12%  runtime.bgsweep
+         0     0%   100%    14.79us 15.67%  runtime.forEachP
+         0     0%   100%    14.79us 15.67%  runtime.forEachP.func1

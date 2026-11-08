@@ -1,0 +1,74 @@
+goos: darwin
+goarch: arm64
+pkg: github.com/CloudyKit/jet/v6
+cpu: Apple M2 Max
+BenchmarkOutputReserve/empty/warm-2    	  408266	       553.1 ns/op	    1008 B/op	      10 allocs/op
+BenchmarkOutputReserve/empty/warm-2    	  442542	       544.3 ns/op	    1008 B/op	      10 allocs/op
+BenchmarkOutputReserve/empty/warm-2    	  457665	       507.7 ns/op	    1008 B/op	      10 allocs/op
+BenchmarkOutputReserve/tiny/warm-2     	  364540	       636.5 ns/op	    1264 B/op	      11 allocs/op
+BenchmarkOutputReserve/tiny/warm-2     	  389043	       639.3 ns/op	    1264 B/op	      11 allocs/op
+BenchmarkOutputReserve/tiny/warm-2     	  396224	       592.7 ns/op	    1264 B/op	      11 allocs/op
+BenchmarkOutputReserve/tiny/parallel2-2         	  612283	       433.3 ns/op	    1264 B/op	      11 allocs/op
+BenchmarkOutputReserve/tiny/parallel2-2         	  602409	       439.1 ns/op	    1264 B/op	      11 allocs/op
+BenchmarkOutputReserve/tiny/parallel2-2         	  598552	       442.0 ns/op	    1264 B/op	      11 allocs/op
+BenchmarkOutputReserve/tiny/parallel8-2         	  626038	       414.3 ns/op	    1264 B/op	      11 allocs/op
+BenchmarkOutputReserve/tiny/parallel8-2         	  623402	       439.1 ns/op	    1264 B/op	      11 allocs/op
+BenchmarkOutputReserve/tiny/parallel8-2         	  580732	       424.9 ns/op	    1264 B/op	      11 allocs/op
+BenchmarkOutputReserve/tiny/postGC-2            	    1935	    134186 ns/op	    1724 B/op	      13 allocs/op
+BenchmarkOutputReserve/tiny/postGC-2            	    1789	    129151 ns/op	    1734 B/op	      13 allocs/op
+BenchmarkOutputReserve/tiny/postGC-2            	    1905	    155906 ns/op	    1713 B/op	      13 allocs/op
+BenchmarkOutputReserve/header_interpolation/warm-2         	  239222	       975.5 ns/op	    1640 B/op	      13 allocs/op
+BenchmarkOutputReserve/header_interpolation/warm-2         	  248234	       948.4 ns/op	    1640 B/op	      13 allocs/op
+BenchmarkOutputReserve/header_interpolation/warm-2         	  260461	       945.9 ns/op	    1640 B/op	      13 allocs/op
+BenchmarkOutputReserve/body_8192/warm-2                    	   25800	      9483 ns/op	   21850 B/op	      14 allocs/op
+BenchmarkOutputReserve/body_8192/warm-2                    	   25672	      9381 ns/op	   21852 B/op	      14 allocs/op
+BenchmarkOutputReserve/body_8192/warm-2                    	   25764	      9409 ns/op	   21850 B/op	      14 allocs/op
+BenchmarkOutputReserve/body_65536/warm-2                   	    3452	     68933 ns/op	  193939 B/op	      17 allocs/op
+BenchmarkOutputReserve/body_65536/warm-2                   	    3468	     69506 ns/op	  193949 B/op	      17 allocs/op
+BenchmarkOutputReserve/body_65536/warm-2                   	    3177	     68823 ns/op	  193934 B/op	      17 allocs/op
+BenchmarkOutputReserve/body_65536/parallel2-2              	    6082	     41702 ns/op	  193929 B/op	      17 allocs/op
+BenchmarkOutputReserve/body_65536/parallel2-2              	    5828	     42138 ns/op	  193931 B/op	      17 allocs/op
+BenchmarkOutputReserve/body_65536/parallel2-2              	    5811	     44728 ns/op	  193937 B/op	      17 allocs/op
+BenchmarkOutputReserve/body_65536/parallel8-2              	    5710	     44601 ns/op	  193983 B/op	      17 allocs/op
+BenchmarkOutputReserve/body_65536/parallel8-2              	    5343	     44486 ns/op	  193980 B/op	      17 allocs/op
+BenchmarkOutputReserve/body_65536/parallel8-2              	    5692	     44010 ns/op	  193986 B/op	      17 allocs/op
+BenchmarkOutputReserve/body_65536/postGC-2                 	    1279	    191551 ns/op	  196536 B/op	      22 allocs/op
+BenchmarkOutputReserve/body_65536/postGC-2                 	    1238	    194713 ns/op	  196467 B/op	      22 allocs/op
+BenchmarkOutputReserve/body_65536/postGC-2                 	    1266	    187119 ns/op	  196525 B/op	      22 allocs/op
+BenchmarkOutputReserve/escape_expansion/warm-2             	   16454	     14816 ns/op	   12374 B/op	      17 allocs/op
+BenchmarkOutputReserve/escape_expansion/warm-2             	   16130	     14574 ns/op	   12372 B/op	      17 allocs/op
+BenchmarkOutputReserve/escape_expansion/warm-2             	   16513	     14562 ns/op	   12374 B/op	      17 allocs/op
+BenchmarkOutputReserve/escape_expansion/parallel2-2        	   29373	      8289 ns/op	   12372 B/op	      17 allocs/op
+BenchmarkOutputReserve/escape_expansion/parallel2-2        	   29605	      8210 ns/op	   12372 B/op	      17 allocs/op
+BenchmarkOutputReserve/escape_expansion/parallel2-2        	   29491	      8221 ns/op	   12372 B/op	      17 allocs/op
+BenchmarkOutputReserve/escape_expansion/parallel8-2        	   29000	      8321 ns/op	   12377 B/op	      17 allocs/op
+BenchmarkOutputReserve/escape_expansion/parallel8-2        	   28711	      8252 ns/op	   12376 B/op	      17 allocs/op
+BenchmarkOutputReserve/escape_expansion/parallel8-2        	   29052	      8317 ns/op	   12375 B/op	      17 allocs/op
+BenchmarkOutputReserve/escape_expansion/postGC-2           	    1653	    144422 ns/op	   14820 B/op	      22 allocs/op
+BenchmarkOutputReserve/escape_expansion/postGC-2           	    1588	    168923 ns/op	   14718 B/op	      22 allocs/op
+BenchmarkOutputReserve/escape_expansion/postGC-2           	    1368	    243693 ns/op	   14564 B/op	      22 allocs/op
+BenchmarkOutputReserve/try_success/warm-2                  	  196336	      1075 ns/op	    1976 B/op	      15 allocs/op
+BenchmarkOutputReserve/try_success/warm-2                  	  234664	      1016 ns/op	    1976 B/op	      15 allocs/op
+BenchmarkOutputReserve/try_success/warm-2                  	  241359	      1006 ns/op	    1976 B/op	      15 allocs/op
+BenchmarkOutputReserve/try_rollback/warm-2                 	  159536	      1452 ns/op	    1832 B/op	      20 allocs/op
+BenchmarkOutputReserve/try_rollback/warm-2                 	  168768	      1447 ns/op	    1832 B/op	      20 allocs/op
+BenchmarkOutputReserve/try_rollback/warm-2                 	  166332	      1481 ns/op	    1832 B/op	      20 allocs/op
+PASS
+       14.54 real        18.92 user         0.91 sys
+            19922944  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                1437  page reclaims
+                   0  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+               44254  signals received
+                  19  voluntary context switches
+              265552  involuntary context switches
+        286804337684  instructions retired
+         64851385386  cycles elapsed
+            14909968  peak memory footprint

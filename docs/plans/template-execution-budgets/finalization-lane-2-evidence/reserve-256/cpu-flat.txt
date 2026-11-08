@@ -1,0 +1,21 @@
+File: reserve-256.test
+Type: cpu
+Time: 2026-11-08 01:51:51 CST
+Duration: 1.82s, Total samples = 1460ms (80.39%)
+Showing nodes accounting for 1190ms, 81.51% of 1460ms total
+Showing top 14 nodes out of 107
+      flat  flat%   sum%        cum   cum%
+     470ms 32.19% 32.19%      470ms 32.19%  runtime.kevent
+     170ms 11.64% 43.84%      380ms 26.03%  runtime.pcvalue
+     100ms  6.85% 50.68%      140ms  9.59%  runtime.step
+      90ms  6.16% 56.85%       90ms  6.16%  runtime.madvise
+      50ms  3.42% 60.27%       50ms  3.42%  runtime.findfunc
+      50ms  3.42% 63.70%      550ms 37.67%  text/template.HTMLEscape
+      40ms  2.74% 66.44%       50ms  3.42%  context.(*cancelCtx).Err
+      40ms  2.74% 69.18%      500ms 34.25%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+      40ms  2.74% 71.92%       40ms  2.74%  runtime.(*moduledata).textAddr
+      40ms  2.74% 74.66%       40ms  2.74%  runtime.readvarint (inline)
+      30ms  2.05% 76.71%       30ms  2.05%  runtime.memclrNoHeapPointers
+      30ms  2.05% 78.77%       30ms  2.05%  runtime.pthread_cond_wait
+      20ms  1.37% 80.14%       20ms  1.37%  github.com/CloudyKit/jet/v6.(*Runtime).reserveUnchecked (inline)
+      20ms  1.37% 81.51%       20ms  1.37%  runtime.(*inlineUnwinder).next

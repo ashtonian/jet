@@ -1,0 +1,30 @@
+File: selected.test
+Type: cpu
+Time: 2026-11-08 02:11:01 CST
+Duration: 2.62s, Total samples = 2.17s (82.68%)
+Showing nodes accounting for 2.11s, 97.24% of 2.17s total
+Dropped 32 nodes (cum <= 0.01s)
+Showing top 22 nodes out of 68
+      flat  flat%   sum%        cum   cum%
+     0.43s 19.82% 19.82%      1.61s 74.19%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+     0.33s 15.21% 35.02%      0.55s 25.35%  bytes.(*Buffer).Write
+     0.24s 11.06% 46.08%      0.61s 28.11%  github.com/CloudyKit/jet/v6.(*Runtime).reserveWork
+     0.20s  9.22% 55.30%      1.81s 83.41%  text/template.HTMLEscape
+     0.17s  7.83% 63.13%      0.24s 11.06%  context.(*cancelCtx).Err
+     0.17s  7.83% 70.97%      0.17s  7.83%  runtime.memmove
+     0.15s  6.91% 77.88%      0.15s  6.91%  github.com/CloudyKit/jet/v6.(*Runtime).reserveUnchecked (inline)
+     0.11s  5.07% 82.95%      0.11s  5.07%  runtime.madvise
+     0.09s  4.15% 87.10%      0.09s  4.15%  runtime.kevent
+     0.07s  3.23% 90.32%      0.07s  3.23%  sync/atomic.(*Value).Load (inline)
+     0.05s  2.30% 92.63%      0.05s  2.30%  bytes.(*Buffer).tryGrowByReslice (inline)
+     0.02s  0.92% 93.55%      0.02s  0.92%  internal/runtime/atomic.(*UnsafePointer).Load (inline)
+     0.02s  0.92% 94.47%      0.02s  0.92%  runtime.memclrNoHeapPointers
+     0.02s  0.92% 95.39%      0.02s  0.92%  runtime.pthread_cond_signal
+     0.02s  0.92% 96.31%      0.02s  0.92%  runtime.usleep
+     0.01s  0.46% 96.77%      0.06s  2.76%  github.com/CloudyKit/jet/v6.(*parseAdmission).admitCached
+     0.01s  0.46% 97.24%      0.04s  1.84%  runtime.newobject
+         0     0% 97.24%      1.81s 83.41%  github.com/CloudyKit/fastprinter.PrintString
+         0     0% 97.24%      1.82s 83.87%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 97.24%      1.82s 83.87%  github.com/CloudyKit/jet/v6.(*Runtime).printValue
+         0     0% 97.24%      0.10s  4.61%  github.com/CloudyKit/jet/v6.(*Runtime).startCompilation
+         0     0% 97.24%      0.06s  2.76%  github.com/CloudyKit/jet/v6.(*Runtime).startCompilation.func1
