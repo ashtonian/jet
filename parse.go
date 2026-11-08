@@ -16,6 +16,7 @@ package jet
 
 import (
 	"bytes"
+	"context"
 	"fmt"
 	"path"
 	"runtime"
@@ -42,10 +43,15 @@ type Template struct {
 
 	text string // text parsed to create the template (or its parent)
 
+	metadata parseMetadata
+
 	// Parsing only; cleared after parse.
-	lex       *lexer
-	token     [3]item // three-token lookahead for parser.
-	peekCount int
+	lex             *lexer
+	token           [3]item // three-token lookahead for parser.
+	peekCount       int
+	admission       *parseAdmission
+	parseDepth      int
+	expressionDepth map[Node]int
 }
 
 func (t *Template) String() (template string) {
@@ -83,12 +89,14 @@ func (t *Template) addBlocks(blocks map[string]*BlockNode) {
 		t.processedBlocks = make(map[string]*BlockNode)
 	}
 	for key, value := range blocks {
+		t.admission.step(1)
 		t.processedBlocks[key] = value
 	}
 }
 
 // next returns the next token.
 func (t *Template) next() item {
+	t.admission.step(1)
 	if t.peekCount > 0 {
 		t.peekCount--
 	} else {
@@ -111,6 +119,7 @@ func (t *Template) backup2(t1 item) {
 
 // peek returns but does not consume the next token.
 func (t *Template) peek() item {
+	t.admission.step(1)
 	if t.peekCount > 0 {
 		return t.token[t.peekCount-1]
 	}
@@ -145,13 +154,19 @@ func (t *Template) peekNonSpace() (token item) {
 // errorf formats the error and terminates processing.
 func (t *Template) errorf(format string, args ...interface{}) {
 	t.Root = nil
-	format = fmt.Sprintf("template: %s:%d: %s", t.ParseName, t.lex.lineNumber(), format)
+	for i, arg := range args {
+		if value, ok := arg.(string); ok {
+			args[i] = parseDiagnostic(value)
+		}
+	}
+	format = fmt.Sprintf("template: %s:%d: %s", parseDiagnostic(t.ParseName), t.lex.lineNumber(), format)
 	panic(fmt.Errorf(format, args...))
 }
 
 // error terminates processing.
 func (t *Template) error(err error) {
-	t.errorf("%s", err)
+	t.Root = nil
+	panic(fmt.Errorf("template: %s:%d: %w", parseDiagnostic(t.ParseName), t.lex.lineNumber(), err))
 }
 
 // expect consumes the next token and guarantees it has the required type.
@@ -203,34 +218,38 @@ func (t *Template) recover(errp *error) {
 	}
 }
 
-func (s *Set) parse(name, text string, cacheAfterParsing bool, parsing map[string]bool) (t *Template, err error) {
-	// Track only the active parse chain, using resolved paths after extension lookup.
-	canonicalName := path.Clean(name)
-	if parsing[canonicalName] {
-		return nil, fmt.Errorf("cyclic template dependency: %s", name)
-	}
+func (s *Set) parse(name, text string, cacheAfterParsing bool, parsing *parseAdmission) (t *Template, err error) {
 	if parsing == nil {
-		parsing = make(map[string]bool)
+		parsing, _ = newParseAdmission(context.Background(), ParseOptions{})
 	}
-	parsing[canonicalName] = true
-	defer delete(parsing, canonicalName)
+	defer parsing.recover(&err)
+	name = path.Clean(name)
+	parsing.source(name, int64(len(text)))
+	parsing.enter()
+	defer func() { parsing.depth-- }()
+	parsing.active[name] = true
+	defer delete(parsing.active, name)
 
 	t = &Template{
-		Name:         name,
-		ParseName:    name,
-		text:         text,
-		set:          s,
-		passedBlocks: make(map[string]*BlockNode),
+		Name:            name,
+		ParseName:       name,
+		text:            text,
+		set:             s,
+		passedBlocks:    make(map[string]*BlockNode),
+		admission:       parsing,
+		metadata:        parseMetadata{sourceBytes: int64(len(text)), depth: 1},
+		expressionDepth: make(map[Node]int),
 	}
 	defer t.recover(&err)
+	defer t.stopParse()
 
 	lexer := lex(name, text, false)
+	lexer.admission = parsing
 	lexer.setDelimiters(s.leftDelim, s.rightDelim)
 	lexer.setCommentDelimiters(s.leftComment, s.rightComment)
 	lexer.run()
 	t.startParse(lexer)
 	t.parseTemplate(cacheAfterParsing, parsing)
-	t.stopParse()
 
 	if t.extends != nil {
 		t.addBlocks(t.extends.processedBlocks)
@@ -241,6 +260,7 @@ func (s *Set) parse(name, text string, cacheAfterParsing bool, parsing map[strin
 	}
 
 	t.addBlocks(t.passedBlocks)
+	parsing.cached[t] = true
 
 	return t, err
 }
@@ -256,7 +276,7 @@ func (t *Template) expectString(context string) string {
 
 // parse is the top-level parser for a template, essentially the same
 // It runs to EOF.
-func (t *Template) parseTemplate(cacheAfterParsing bool, parsing map[string]bool) (next Node) {
+func (t *Template) parseTemplate(cacheAfterParsing bool, parsing *parseAdmission) (next Node) {
 	t.Root = t.newList(t.peek().pos)
 	// {{ extends|import stringLiteral }}
 	for t.peek().typ != itemEOF {
@@ -317,6 +337,11 @@ func (t *Template) startParse(lex *lexer) {
 // stopParse terminates parsing.
 func (t *Template) stopParse() {
 	t.lex = nil
+	t.admission = nil
+	t.token = [3]item{}
+	t.peekCount = 0
+	t.text = ""
+	t.expressionDepth = nil
 }
 
 // IsEmptyTree reports whether this tree (node) is empty of everything but space.
@@ -493,6 +518,8 @@ func (t *Template) parseReturn() Node {
 //
 // Terminates at any of the given nodes, returned separately.
 func (t *Template) itemList(terminatedBy ...NodeType) (list *ListNode, next Node) {
+	t.enterParse()
+	defer t.leaveParse()
 	list = t.newList(t.peekNonSpace().pos)
 	for t.peekNonSpace().typ != itemEOF {
 		n := t.textOrAction()
@@ -575,6 +602,8 @@ func (t *Template) logicalExpression(context string) (Expression, item) {
 }
 
 func (t *Template) parseExpression(context string) (Expression, item) {
+	t.enterParse()
+	defer t.leaveParse()
 	expression, endtoken := t.logicalExpression(context)
 	if endtoken.typ == itemTernary {
 		var left, right Expression
@@ -626,6 +655,8 @@ func (t *Template) multiplicativeExpression(context string) (left Expression, en
 }
 
 func (t *Template) unaryExpression(context string) (Expression, item) {
+	t.enterParse()
+	defer t.leaveParse()
 	next := t.nextNonSpace()
 	switch next.typ {
 	case itemNot:
@@ -828,6 +859,7 @@ RESET:
 		case itemLeftParen:
 			callExpr := t.newCallExpr(node.Position(), t.lex.lineNumber(), node)
 			callExpr.CallArgs = t.parseArguments()
+			t.recordCallDepth(callExpr)
 			t.expect(itemRightParen, "call expression", "closing parenthesis")
 			node = callExpr
 			goto RESET
@@ -900,6 +932,8 @@ loop:
 }
 
 func (t *Template) parseControl(allowElseIf bool, context string) (pos Pos, line int, set *SetNode, expression Expression, list, elseList *ListNode) {
+	t.enterParse()
+	defer t.leaveParse()
 	line = t.lex.lineNumber()
 
 	expression = t.assignmentOrExpression(context)
@@ -1072,11 +1106,13 @@ func (t *Template) term() Node {
 		}
 		return pipe
 	case itemString, itemRawString:
+		node := t.newString(token.pos, token.val, "")
 		s, err := unquote(token.val)
 		if err != nil {
 			t.error(err)
 		}
-		return t.newString(token.pos, token.val, s)
+		node.Text = s
+		return node
 	}
 	t.backup()
 	return nil

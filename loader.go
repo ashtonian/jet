@@ -16,6 +16,7 @@ package jet
 
 import (
 	"bytes"
+	"context"
 	"fmt"
 	"io"
 	"os"
@@ -49,6 +50,14 @@ type Loader interface {
 	// Calls to Open() will always be preceded by a call to Exists() with the same `templatePath`.
 	// It is the caller's duty to close the template.
 	Open(templatePath string) (io.ReadCloser, error)
+}
+
+// ContextLoader optionally cooperates with compilation cancellation. Its returned
+// reader must also observe ctx while blocked in Read. Jet closes it synchronously
+// on every exit and never abandons a goroutine to emulate interruption.
+type ContextLoader interface {
+	ExistsContext(ctx context.Context, templatePath string) (bool, error)
+	OpenContext(ctx context.Context, templatePath string) (io.ReadCloser, error)
 }
 
 // OSFileSystemLoader implements Loader interface using OS file system (os.File).
