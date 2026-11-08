@@ -106,6 +106,17 @@ func (st *Runtime) concatString(left string, right reflect.Value) string {
 }
 
 func (st *Runtime) convertValue(value reflect.Value, target reflect.Type) reflect.Value {
+	if st.isRestricted() {
+		if target.NumMethod() != 0 || reflect.PtrTo(target).NumMethod() != 0 {
+			st.denyCapability("conversion to a method-bearing type")
+		}
+		switch target.Kind() {
+		case reflect.Bool, reflect.Int, reflect.Int8, reflect.Int16, reflect.Int32, reflect.Int64, reflect.Uint, reflect.Uint8, reflect.Uint16, reflect.Uint32, reflect.Uint64, reflect.Float32, reflect.Float64, reflect.String, reflect.Interface, reflect.Array, reflect.Slice, reflect.Map:
+		default:
+			st.denyCapability("unsupported reflective conversion")
+		}
+	}
+
 	if b, ok := builtinForValue(value); ok && target.Kind() == reflect.Func {
 		value = b.legacy
 	}

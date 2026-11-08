@@ -65,7 +65,7 @@ func (e *ParseLimitError) Unwrap() error {
 // ParseContext parses inline source synchronously. Dependencies use the same
 // admission. A failed operation never publishes a partial template.
 func (s *Set) ParseContext(ctx context.Context, name, source string, opts ParseOptions) (t *Template, err error) {
-	a, err := newParseAdmission(ctx, opts)
+	a, err := s.parseAdmission(ctx, opts)
 	if err != nil {
 		return nil, err
 	}
@@ -75,6 +75,9 @@ func (s *Set) ParseContext(ctx context.Context, name, source string, opts ParseO
 		}
 	}()
 	defer a.recover(&err)
+	if s.restricted != nil && len(name) > 1024 {
+		return nil, ErrCapabilityDenied
+	}
 	name, err = normalizeParseName(name)
 	if err != nil {
 		return nil, err
@@ -90,7 +93,7 @@ func (s *Set) ParseContext(ctx context.Context, name, source string, opts ParseO
 // Loader calls and reads are owned synchronously: an arbitrary blocking Loader
 // cannot be interrupted. ContextLoader can cooperate without a detached worker.
 func (s *Set) GetTemplateContext(ctx context.Context, name string, opts ParseOptions) (t *Template, err error) {
-	a, err := newParseAdmission(ctx, opts)
+	a, err := s.parseAdmission(ctx, opts)
 	if err != nil {
 		return nil, err
 	}

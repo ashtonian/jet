@@ -26,6 +26,7 @@ type Set struct {
 	rightDelim      string
 	leftComment     string
 	rightComment    string
+	restricted      *restrictedPolicy
 }
 
 // Option is the type of option functions that can be used in NewSet().
@@ -66,6 +67,7 @@ func WithCache(c Cache) Option {
 		panic(errors.New("jet: WithCache() must not be called with a nil cache"))
 	}
 	return func(s *Set) {
+		s.checkMutable()
 		s.cache = c
 	}
 }
@@ -74,6 +76,7 @@ func WithCache(c Cache) Option {
 // templates. By default, Jet uses a writer that takes care of HTML escaping. Pass nil to disable escaping.
 func WithSafeWriter(w SafeWriter) Option {
 	return func(s *Set) {
+		s.checkMutable()
 		s.escapee = w
 	}
 }
@@ -82,6 +85,7 @@ func WithSafeWriter(w SafeWriter) Option {
 // Parsed templates will inherit the settings. Not setting them leaves them at the default: `{{` and `}}`.
 func WithDelims(left, right string) Option {
 	return func(s *Set) {
+		s.checkMutable()
 		s.leftDelim = left
 		s.rightDelim = right
 	}
@@ -91,6 +95,7 @@ func WithDelims(left, right string) Option {
 // Parsed templates will inherit the settings. Not setting them leaves them at the default: `{*` and `*}`.
 func WithCommentDelims(left, right string) Option {
 	return func(s *Set) {
+		s.checkMutable()
 		s.leftComment = left
 		s.rightComment = right
 	}
@@ -105,6 +110,7 @@ func WithTemplateNameExtensions(extensions []string) Option {
 		panic(errors.New("jet: WithTemplateNameExtensions() must not be called with a nil or empty slice of extensions"))
 	}
 	return func(s *Set) {
+		s.checkMutable()
 		s.extensions = extensions
 	}
 }
@@ -119,6 +125,7 @@ func InDevelopmentMode() Option {
 // always be bypassed and every template lookup will go to the loader.
 func DevelopmentMode(mode bool) Option {
 	return func(s *Set) {
+		s.checkMutable()
 		s.developmentMode = mode
 	}
 }
@@ -138,11 +145,17 @@ func (s *Set) GetTemplate(templatePath string) (t *Template, err error) {
 }
 
 func (s *Set) getSiblingTemplate(templatePath, siblingPath string, cacheAfterParsing bool, parsing *parseAdmission) (t *Template, err error) {
+	if s.restricted != nil && (len(templatePath) > 1024 || len(siblingPath) > 1024) {
+		return nil, ErrCapabilityDenied
+	}
 	templatePath = path.Clean(filepath.ToSlash(templatePath))
 	siblingPath = filepath.ToSlash(siblingPath)
 	if !path.IsAbs(templatePath) {
 		siblingDir := path.Dir(siblingPath)
 		templatePath = path.Join(siblingDir, templatePath)
+	}
+	if err := s.authorizeName(templatePath); err != nil {
+		return nil, err
 	}
 	return s.getTemplate(templatePath, cacheAfterParsing, parsing)
 }
@@ -150,7 +163,7 @@ func (s *Set) getSiblingTemplate(templatePath, siblingPath string, cacheAfterPar
 // same as GetTemplate, but doesn't cache a template when found through the loader.
 func (s *Set) getTemplate(templatePath string, cacheAfterParsing bool, parsing *parseAdmission) (t *Template, err error) {
 	if parsing == nil {
-		parsing, _ = newParseAdmission(context.Background(), ParseOptions{})
+		parsing, _ = s.parseAdmission(context.Background(), ParseOptions{})
 	}
 	defer parsing.recover(&err)
 	parsing.step(1)
@@ -173,6 +186,9 @@ func (s *Set) getTemplateFromCache(templatePath string) (t *Template, ok bool) {
 	// check path with all possible extensions in cache
 	for _, extension := range s.extensions {
 		canonicalPath := templatePath + extension
+		if !s.nameAllowed(canonicalPath) {
+			continue
+		}
 		if t := s.cache.Get(canonicalPath); t != nil && t.set == s {
 			return t, true
 		}
@@ -184,6 +200,9 @@ func (s *Set) getTemplateFromLoader(templatePath string, cacheAfterParsing bool,
 	// check path with all possible extensions in loader
 	for _, extension := range s.extensions {
 		canonicalPath := templatePath + extension
+		if !s.nameAllowed(canonicalPath) {
+			continue
+		}
 		parsing.step(1)
 		var found bool
 		if loader, ok := s.loader.(ContextLoader); ok {
@@ -229,6 +248,9 @@ func (s *Set) loadFromFile(templatePath string, cacheAfterParsing bool, parsing 
 // Any referenced template (e.g. via `extends` or `import` statements) will be tried to be loaded from the cache.
 // If a referenced template has to be loaded and parsed, it will also not be put into the cache after parsing.
 func (s *Set) Parse(templatePath, contents string) (template *Template, err error) {
+	if s.restricted != nil && len(templatePath) > 1024 {
+		return nil, ErrCapabilityDenied
+	}
 	templatePath, err = normalizeParseName(templatePath)
 	if err != nil {
 		return nil, err
@@ -249,6 +271,7 @@ func normalizeParseName(templatePath string) (string, error) {
 // overriding any value previously set under the specified key.
 // It returns the Set it was called on to allow for method chaining.
 func (s *Set) AddGlobal(key string, i interface{}) *Set {
+	s.checkMutable()
 	s.gmx.Lock()
 	defer s.gmx.Unlock()
 	s.globals[key] = reflect.ValueOf(i)
@@ -258,6 +281,17 @@ func (s *Set) AddGlobal(key string, i interface{}) *Set {
 // LookupGlobal returns the global variable previously set under the specified key.
 // It returns the nil interface and false if no variable exists under that key.
 func (s *Set) LookupGlobal(key string) (val interface{}, found bool) {
+	if s.restricted != nil {
+		value, ok := s.restricted.globals[key]
+		if !ok {
+			return nil, false
+		}
+		snapshot, _, err := admitInputs(context.Background(), VarMap{key: value}, nil, s.restricted.input)
+		if err != nil {
+			panic(err)
+		}
+		return snapshot[key], true
+	}
 	s.gmx.RLock()
 	defer s.gmx.RUnlock()
 	val, found = s.globals[key]

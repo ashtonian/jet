@@ -28,6 +28,7 @@ func admitTemplateBundle(ctx context.Context, sources map[string]string, opts Pa
 	if uint64(len(sources)) > opts.MaxTemplates {
 		a.limit("templates", opts.MaxTemplates)
 	}
+	a.step(uint64(len(sources)))
 	admitted := make(map[string]string, len(sources))
 	for name, source := range sources {
 		// Bound normalization and key storage as well as the template payloads.
@@ -37,6 +38,9 @@ func admitTemplateBundle(ctx context.Context, sources map[string]string, opts Pa
 		canonical, err := normalizeParseName(name)
 		if err != nil {
 			return nil, err
+		}
+		if len(canonical) > 1024 {
+			return nil, ErrCapabilityDenied
 		}
 		if _, ok := admitted[canonical]; ok {
 			return nil, fmt.Errorf("%w: duplicate canonical template name %s", ErrCapabilityDenied, parseDiagnostic(canonical))

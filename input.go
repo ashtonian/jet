@@ -13,7 +13,8 @@ var (
 	ErrCapabilityDenied = errors.New("jet: capability denied")
 )
 
-type inputOptions struct {
+// InputOptions bounds data copied into one restricted execution. All limits must be positive.
+type InputOptions struct {
 	MaxBytes int64
 	MaxItems uint64
 	MaxSteps uint64
@@ -22,7 +23,7 @@ type inputOptions struct {
 
 type inputAdmission struct {
 	ctx          context.Context
-	opts         inputOptions
+	opts         InputOptions
 	bytes        int64
 	items, steps uint64
 	active       map[inputIdentity]bool
@@ -34,7 +35,11 @@ type inputIdentity struct {
 	length  int
 }
 
-func admitInputs(ctx context.Context, vars VarMap, data interface{}, opts inputOptions) (out VarMap, snapshot interface{}, err error) {
+func admitInputs(ctx context.Context, vars VarMap, data interface{}, opts InputOptions) (VarMap, interface{}, error) {
+	return admitInputScopes(ctx, []VarMap{vars}, data, opts)
+}
+
+func admitInputScopes(ctx context.Context, scopes []VarMap, data interface{}, opts InputOptions) (out VarMap, snapshot interface{}, err error) {
 	if ctx == nil || opts.MaxBytes <= 0 || opts.MaxItems == 0 || opts.MaxSteps == 0 || opts.MaxDepth <= 0 || opts.MaxDepth > 64 {
 		return nil, nil, fmt.Errorf("%w: positive input budgets and depth <=64 required", ErrInputLimit)
 	}
@@ -50,15 +55,19 @@ func admitInputs(ctx context.Context, vars VarMap, data interface{}, opts inputO
 			}
 		}
 	}()
-	a.reserveItems(uint64(len(vars)))
-	a.reserveBytes(uint64(len(vars)), uint64(5*(strconv.IntSize/8)))
-	out = make(VarMap, len(vars))
-	for name, value := range vars {
-		a.reserveBytes(uint64(len(name)), 1)
-		copied := a.copy(value, 1)
-		out[name] = reflect.ValueOf(copied)
+	out = make(VarMap)
+	for _, scope := range scopes {
+		a.reserveItems(uint64(len(scope)))
+		a.reserveBytes(uint64(len(scope)), uint64(5*(strconv.IntSize/8)))
+		for name, value := range scope {
+			a.reserveBytes(uint64(len(name)), 1)
+			out[name] = a.clone(value, 1)
+		}
 	}
-	snapshot = a.copy(reflect.ValueOf(data), 1)
+	value := a.clone(reflect.ValueOf(data), 1)
+	if value.IsValid() {
+		snapshot = value.Interface()
+	}
 	a.step(0)
 	return out, snapshot, nil
 }
@@ -96,63 +105,36 @@ func (a *inputAdmission) reserveBytes(n, width uint64) {
 	a.bytes += int64(n * width)
 }
 
-func (a *inputAdmission) copy(v reflect.Value, depth int) interface{} {
+func (a *inputAdmission) clone(v reflect.Value, depth int) reflect.Value {
 	a.step(1)
 	if depth > a.opts.MaxDepth {
 		a.limit("depth")
 	}
 	if !v.IsValid() {
-		return nil
+		return reflect.Value{}
 	}
 	if !v.CanInterface() {
 		a.deny("inaccessible value")
 	}
-	// Inspect types without converting or formatting their values: those paths
-	// can themselves invoke String, MarshalJSON, Render, Range or method code.
-	if v.Type().NumMethod() != 0 {
+	if v.Type().NumMethod() != 0 || reflect.PtrTo(v.Type()).NumMethod() != 0 {
 		a.deny("values with methods")
 	}
 	if v.Kind() == reflect.Interface {
 		if v.IsNil() {
-			return nil
+			return reflect.Zero(v.Type())
 		}
-		return a.copy(v.Elem(), depth+1)
+		return a.clone(v.Elem(), depth+1)
 	}
 	switch v.Kind() {
-	case reflect.Bool:
-		return v.Bool()
-	case reflect.Int:
-		return int(v.Int())
-	case reflect.Int8:
-		return int8(v.Int())
-	case reflect.Int16:
-		return int16(v.Int())
-	case reflect.Int32:
-		return int32(v.Int())
-	case reflect.Int64:
-		return v.Int()
-	case reflect.Uint:
-		return uint(v.Uint())
-	case reflect.Uint8:
-		return uint8(v.Uint())
-	case reflect.Uint16:
-		return uint16(v.Uint())
-	case reflect.Uint32:
-		return uint32(v.Uint())
-	case reflect.Uint64:
-		return v.Uint()
-	case reflect.Float32:
-		return float32(v.Float())
-	case reflect.Float64:
-		return v.Float()
+	case reflect.Bool, reflect.Int, reflect.Int8, reflect.Int16, reflect.Int32, reflect.Int64, reflect.Uint, reflect.Uint8, reflect.Uint16, reflect.Uint32, reflect.Uint64, reflect.Float32, reflect.Float64:
+		a.reserveBytes(uint64(v.Type().Size()), 1)
+		return reflect.ValueOf(v.Interface())
 	case reflect.String:
-		text := v.String()
-		a.reserveBytes(uint64(len(text)), 1)
-		// Go strings are immutable; copying collection headers detaches mutable data.
-		return text
+		a.reserveBytes(uint64(v.Len()), 1)
+		return reflect.ValueOf(v.Interface())
 	case reflect.Array, reflect.Slice:
 		if v.Kind() == reflect.Slice && v.IsNil() {
-			return []interface{}(nil)
+			return reflect.Zero(v.Type())
 		}
 		if v.Kind() == reflect.Slice {
 			key := inputIdentity{kind: v.Kind(), typ: v.Type(), pointer: v.Pointer(), length: v.Len()}
@@ -163,30 +145,26 @@ func (a *inputAdmission) copy(v reflect.Value, depth int) interface{} {
 			defer delete(a.active, key)
 		}
 		a.reserveItems(uint64(v.Len()))
-		if v.Kind() == reflect.Slice && v.Type().Elem().Kind() == reflect.Uint8 && v.Type().Elem().NumMethod() == 0 {
-			a.reserveBytes(uint64(v.Len()), 1)
-			out := make([]byte, v.Len())
-			for i := range out {
-				a.step(1)
-				out[i] = byte(v.Index(i).Uint())
-			}
-			return out
+		a.reserveBytes(uint64(v.Len()), uint64(v.Type().Elem().Size()))
+		var out reflect.Value
+		if v.Kind() == reflect.Slice {
+			out = reflect.MakeSlice(v.Type(), v.Len(), v.Len())
+		} else {
+			out = reflect.New(v.Type()).Elem()
 		}
-		a.reserveBytes(uint64(v.Len()), uint64(2*(strconv.IntSize/8)))
-		out := make([]interface{}, v.Len())
-		for i := range out {
-			out[i] = a.copy(v.Index(i), depth+1)
+		for i := 0; i < v.Len(); i++ {
+			child := a.clone(v.Index(i), depth+1)
+			if child.IsValid() {
+				out.Index(i).Set(child)
+			}
 		}
 		return out
 	case reflect.Map:
-		if v.Type().Key().Kind() != reflect.String {
-			a.deny("map keys must be strings")
-		}
-		if v.Type().Key().NumMethod() != 0 {
-			a.deny("map keys with methods")
+		if v.Type().Key().Kind() != reflect.String || v.Type().Key().NumMethod() != 0 || reflect.PtrTo(v.Type().Key()).NumMethod() != 0 {
+			a.deny("map keys must be method-free strings")
 		}
 		if v.IsNil() {
-			return map[string]interface{}(nil)
+			return reflect.Zero(v.Type())
 		}
 		key := inputIdentity{kind: v.Kind(), typ: v.Type(), pointer: v.Pointer()}
 		if a.active[key] {
@@ -195,17 +173,21 @@ func (a *inputAdmission) copy(v reflect.Value, depth int) interface{} {
 		a.active[key] = true
 		defer delete(a.active, key)
 		a.reserveItems(uint64(v.Len()))
-		a.reserveBytes(uint64(v.Len()), uint64(4*(strconv.IntSize/8)))
-		out := make(map[string]interface{}, v.Len())
+		a.reserveBytes(uint64(v.Len()), uint64(v.Type().Key().Size()+v.Type().Elem().Size()))
+		out := reflect.MakeMapWithSize(v.Type(), v.Len())
 		iterator := v.MapRange()
 		for iterator.Next() {
-			name := iterator.Key().String()
-			a.reserveBytes(uint64(len(name)), 1)
-			out[name] = a.copy(iterator.Value(), depth+1)
+			name := iterator.Key()
+			a.reserveBytes(uint64(name.Len()), 1)
+			child := a.clone(iterator.Value(), depth+1)
+			if !child.IsValid() {
+				child = reflect.Zero(v.Type().Elem())
+			}
+			out.SetMapIndex(name, child)
 		}
 		return out
 	default:
 		a.deny("unsupported " + v.Kind().String())
 	}
-	return nil
+	return reflect.Value{}
 }

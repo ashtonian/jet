@@ -49,6 +49,7 @@ func (p *dataPrinter) value(v reflect.Value, nested bool) error {
 	st.enter()
 	defer st.leave()
 	v = indirectInterface(v)
+	st.beforeData(v)
 	if !v.IsValid() {
 		return p.text("<nil>")
 	}
@@ -58,7 +59,7 @@ func (p *dataPrinter) value(v reflect.Value, nested bool) error {
 	}
 	if v.Type().Implements(formatterType) || v.Type().Implements(stringerType) || v.Type().Implements(errorType) {
 		// Native formatting hooks remain unrestricted host capabilities.
-		st.beforeCall(v)
+		st.beforeNative(v)
 		var err error
 		if nested {
 			_, err = fmt.Fprint(p, v.Interface())
@@ -128,7 +129,7 @@ func (p *dataPrinter) value(v reflect.Value, nested bool) error {
 		}
 		return p.text("]")
 	default:
-		st.beforeCall(v)
+		st.beforeNative(v)
 		_, err := fastprinter.PrintValue(p, v)
 		st.checkpoint(0)
 		return err

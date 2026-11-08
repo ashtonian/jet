@@ -162,7 +162,12 @@ func (st *Runtime) executionContext() context.Context {
 // beforeCall is the common admission point for explicit native invocations.
 // Restricted capability admission extends this point; unrestricted calls remain
 // synchronous and cannot be preempted while they own execution.
-func (st *Runtime) beforeCall(value reflect.Value) { st.checkpoint(1) }
+func (st *Runtime) beforeCall(value reflect.Value) {
+	st.checkpoint(1)
+	if st.isRestricted() && !st.allowCall(value) {
+		st.denyCapability("unaudited Go invocation")
+	}
+}
 
 func (st *Runtime) templateRoot(t *Template) *ListNode {
 	for t.extends != nil {
@@ -211,7 +216,7 @@ func (st *Runtime) startCompilation(t *Template) {
 
 func (st *Runtime) checkCompilationError(err error) {
 	var limit *ParseLimitError
-	if errors.As(err, &limit) {
+	if errors.As(err, &limit) || errors.Is(err, ErrCapabilityDenied) {
 		st.terminate(err)
 	}
 	if errors.Is(err, context.Canceled) || errors.Is(err, context.DeadlineExceeded) {

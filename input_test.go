@@ -8,8 +8,8 @@ import (
 	"testing"
 )
 
-func inputTestOptions() inputOptions {
-	return inputOptions{MaxBytes: 1 << 16, MaxItems: 1000, MaxSteps: 10000, MaxDepth: 32}
+func inputTestOptions() InputOptions {
+	return InputOptions{MaxBytes: 1 << 16, MaxItems: 1000, MaxSteps: 10000, MaxDepth: 32}
 }
 
 type inputStringer struct{ called *bool }

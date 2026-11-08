@@ -177,6 +177,9 @@ func (state *Runtime) setValue(name string, val reflect.Value) error {
 
 // LetGlobal sets or initialises a variable in the top-most template scope.
 func (state *Runtime) LetGlobal(name string, val interface{}) {
+	if state.isRestricted() {
+		state.denyCapability("global mutation")
+	}
 	sc := state.scope
 
 	// walk up to top-most valid scope
@@ -227,6 +230,13 @@ func (state *Runtime) resolve(name string) (reflect.Value, error) {
 	}
 
 	// try globals
+	if state.isRestricted() {
+		value, ok := state.set.restricted.bindings[name]
+		if ok {
+			return indirectEface(value), nil
+		}
+		return reflect.Value{}, fmt.Errorf("identifier %q is not available", state.diagnosticText(name))
+	}
 	state.set.gmx.RLock()
 	v, ok := state.set.globals[name]
 	state.set.gmx.RUnlock()
@@ -477,6 +487,7 @@ func (st *Runtime) executeList(list *ListNode) (returnValue reflect.Value) {
 	for i := 0; i < len(list.Nodes); i++ {
 		st.checkpoint(1)
 		node := list.Nodes[i]
+		st.checkNode(node)
 		switch node.Type() {
 
 		case NodeText:
@@ -507,7 +518,7 @@ func (st *Runtime) executeList(list *ListNode) (returnValue reflect.Value) {
 						v.Interface().(Renderer).Render(st)
 						st.checkpoint(0)
 					} else {
-						st.beforeCall(v)
+						st.beforeData(v)
 						_, err := st.printValue(st.escapeeWriter, v)
 						st.checkpoint(0)
 						if err != nil {
@@ -736,6 +747,7 @@ var (
 )
 
 func (st *Runtime) evalPrimaryExpressionGroup(node Expression) reflect.Value {
+	st.checkNode(node)
 	st.enter()
 	defer st.leave()
 	switch node.Type() {
@@ -829,6 +841,7 @@ func notNil(v reflect.Value) bool {
 }
 
 func (st *Runtime) isSet(node Node) (ok bool) {
+	st.checkNode(node)
 	st.enter()
 	defer st.leave()
 	defer func() {
@@ -1249,6 +1262,7 @@ func getTypeString(value reflect.Value) string {
 }
 
 func (st *Runtime) evalBaseExpressionGroup(node Node) reflect.Value {
+	st.checkNode(node)
 	st.enter()
 	defer st.leave()
 	switch node.Type() {
@@ -1329,6 +1343,9 @@ func (st *Runtime) evalPipeCallExpression(baseExpr reflect.Value, args CallArgs,
 		return result, nil
 	}
 
+	if st.isRestricted() {
+		st.denyCapability("native Go function")
+	}
 	argValues, err := st.evaluateArgs(baseExpr.Type(), args, pipedArg)
 	if err != nil {
 		return reflect.Value{}, fmt.Errorf("call expression: %v", err)
@@ -1771,6 +1788,7 @@ func (st *Runtime) resolveIndex(v, index reflect.Value, indexAsStr string) (refl
 		return reflect.Value{}, fmt.Errorf("there is no field or method '%s' in %s (%s)", st.diagnosticValue(index), st.diagnosticValue(v), getTypeString(v))
 	}
 
+	st.beforeData(v)
 	v, isNil := st.indirect(v)
 	if v.Kind() == reflect.Interface && isNil {
 		// Calling a method on a nil interface can't work. The

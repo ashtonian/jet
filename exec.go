@@ -73,11 +73,31 @@ func (t *Template) ExecuteContext(ctx context.Context, w io.Writer, variables Va
 }
 
 func (t *Template) execute(ctx context.Context, w io.Writer, variables VarMap, data interface{}, opts ExecutionOptions) (err error) {
+	var owned *restrictedSink
+	if policy := t.set.restricted; policy != nil {
+		var ok bool
+		owned, ok = w.(*restrictedSink)
+		if !ok || owned.owner != t {
+			return fmt.Errorf("%w: use RenderRestrictedContext with an owned result", ErrCapabilityDenied)
+		}
+		if ctx == nil {
+			return ErrInvalidOptions
+		}
+		opts = constrainExecution(opts, policy.execution)
+		variables, data, err = admitInputScopes(ctx, []VarMap{policy.globals, variables}, data, policy.input)
+		if err != nil {
+			return inputContextError(ctx, err)
+		}
+	}
 	st := pool_State.Get().(*Runtime)
 	defer st.recover(&err)
 
 	st.execution = executionState{ctx: ctx, options: opts, remaining: opts.MaxSteps, values: uint64(opts.MaxValueBytes), output: uint64(opts.MaxOutputBytes)}
 	st.checkpoint(0)
+	if owned != nil {
+		owned.runtime = st
+		defer func() { owned.runtime = nil }()
+	}
 	st.blocks = t.processedBlocks
 	st.variables = variables
 	st.set = t.set
@@ -98,5 +118,10 @@ func (t *Template) execute(ctx context.Context, w io.Writer, variables VarMap, d
 
 	st.executeList(root)
 	st.checkpoint(0)
+	if owned != nil {
+		st.reserveValue(int64(owned.buffer.Len()))
+		owned.result = owned.buffer.String()
+		st.checkpoint(0)
+	}
 	return
 }
