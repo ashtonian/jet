@@ -50,3 +50,6 @@ jobs:
           go list -m all
       - name: Test
         run: timeout --kill-after=10s 6m go test -count=1 -timeout=5m ${{ matrix.flags }} ./...
+      - name: Concurrent execution ownership
+        if: matrix.mode == 'race'
+        run: timeout --kill-after=10s 2m go test -race -count=1 -timeout=90s -run '^$' -bench '^BenchmarkConcurrentExecutionModes$/[^/]+/^(header_interpolation|data_json_256)$/' -benchtime=32x .

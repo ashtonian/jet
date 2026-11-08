@@ -16,6 +16,7 @@ type executionWorkload struct {
 	Text      string
 	HTML      string
 	Templates map[string]string
+	Data      interface{}
 }
 
 func executionWorkloads(tb testing.TB) []executionWorkload {
@@ -33,13 +34,15 @@ func executionWorkloads(tb testing.TB) []executionWorkload {
 
 func (f executionWorkload) set(html bool) *jet.Set {
 	loader := jet.NewInMemLoader()
+	loader.Set("workload", f.Source)
 	for name, source := range f.Templates {
 		loader.Set(name, source)
 	}
-	if html {
-		return jet.NewSet(loader)
+	options := []jet.Option{}
+	if !html {
+		options = append(options, jet.WithSafeWriter(nil))
 	}
-	return jet.NewSet(loader, jet.WithSafeWriter(nil))
+	return jet.NewSet(loader, options...)
 }
 
 func (f executionWorkload) vars() jet.VarMap {

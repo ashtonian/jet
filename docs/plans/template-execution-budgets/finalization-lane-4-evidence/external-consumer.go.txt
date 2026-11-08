@@ -1,0 +1,67 @@
+package consumer_test
+
+import (
+	"bytes"
+	"context"
+	"embed"
+	"errors"
+	"net/http"
+	"testing"
+
+	jet "github.com/ashtonian/jet/v6"
+	"github.com/ashtonian/jet/v6/loaders/embedfs"
+	"github.com/ashtonian/jet/v6/loaders/httpfs"
+	"github.com/ashtonian/jet/v6/loaders/multi"
+	"github.com/ashtonian/jet/v6/utils"
+	_ "github.com/ashtonian/jet/v6/jettest"
+)
+
+func TestForkConsumer(t *testing.T) {
+	loader := jet.NewInMemLoader()
+	loader.Set("main", "Hello {{ .name }}")
+	httpLoader, err := httpfs.NewLoader(http.Dir(t.TempDir()))
+	if err != nil {
+		t.Fatal(err)
+	}
+	set := jet.NewSet(multi.NewLoader(loader, httpLoader, embedfs.NewLoader(".", embed.FS{})))
+	tpl, err := set.GetTemplate("main")
+	if err != nil {
+		t.Fatal(err)
+	}
+	var out bytes.Buffer
+	if err := tpl.Execute(&out, nil, map[string]string{"name": "world"}); err != nil || out.String() != "Hello world" {
+		t.Fatalf("result %q, error %v", out.String(), err)
+	}
+	utils.Walk(tpl, utils.VisitorFunc(func(_ utils.VisitorContext, _ jet.Node) {}))
+	binding, ok := jet.LookupBuiltin("lower")
+	if !ok {
+		t.Fatal("lower binding unavailable")
+	}
+	opts := jet.RestrictedOptions{
+		Text: true,
+		Execution: jet.ExecutionOptions{
+			MaxSteps: 1000000, MaxDepth: 64, MaxValueBytes: 8 << 20, MaxOutputBytes: 1 << 20,
+			ParseOptions: jet.ParseOptions{MaxSourceBytes: 128 << 10, MaxTotalSourceBytes: 1 << 20,
+				MaxNodes: 20000, MaxSteps: 1000000, MaxDepth: 64, MaxTemplates: 64},
+		},
+		Input: jet.InputOptions{MaxBytes: 1 << 20, MaxItems: 20000, MaxSteps: 1000000, MaxDepth: 64},
+		BuiltinAliases: map[string]jet.BuiltinBinding{"fold": binding},
+	}
+	restricted, err := jet.NewRestrictedSet(context.Background(), map[string]string{"main": "{{ fold(.name) }}"}, opts)
+	if err != nil {
+		t.Fatal(err)
+	}
+	tpl, err = restricted.GetTemplateContext(context.Background(), "main", jet.ParseOptions{})
+	if err != nil {
+		t.Fatal(err)
+	}
+	result, err := tpl.RenderRestrictedContext(context.Background(), nil, map[string]string{"name": "WORLD"})
+	if err != nil || result != "world" {
+		t.Fatalf("result %q, error %v", result, err)
+	}
+	called := false
+	result, err = tpl.RenderRestrictedContext(context.Background(), jet.VarMap{}.Set("unused", func() { called = true }), nil)
+	if !errors.Is(err, jet.ErrCapabilityDenied) || result != "" || called {
+		t.Fatalf("result %q, called %t, error %v", result, called, err)
+	}
+}
