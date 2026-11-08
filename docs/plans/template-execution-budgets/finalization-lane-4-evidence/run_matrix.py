@@ -72,7 +72,7 @@ def execute_stage(label, output, cwd, command, env, specification, receipts, sec
     previous = receipts.get(label, {})
     old_specification = dict(previous.get('specification', {}))
     reuse_specification = dict(specification)
-    if label.startswith('build-'):
+    if label.startswith(('build-', 'conformance-', 'profile-', 'retention-')):
         old_specification.pop('driver_sha256', None)
         reuse_specification.pop('driver_sha256', None)
     if old_specification == reuse_specification and previous.get('exit') == 0 and valid_artifacts(previous):
@@ -160,6 +160,7 @@ def run(work, group):
     stages = output / 'stages.json'
     receipts = json.loads(stages.read_text()) if stages.exists() else {}
     failures = []
+    host_fit_cores = int(os.environ.get('GOMAXPROCS') or os.cpu_count() or 1)
     environments = {tree: effective_environment(work / tree) for tree in ('upstream', 'correctness', 'candidate')}
 
     def stage(label, tree, arguments, seconds=600, cores=2):
@@ -236,7 +237,7 @@ def run(work, group):
         plan = json.loads(plan_path.read_text()) if plan_path.exists() else {}
         plan[group] = {'streams': streams, 'samples': 6, 'formats': ['text', 'html'],
                        'fixtures': [f['name'] for f in fixtures],
-                       'workers': sorted({1, 2, 8, int(os.environ['GOMAXPROCS'])}),
+                       'workers': sorted({1, 2, 8, host_fit_cores}),
                        'shared': [True, False], 'concurrent_fixtures': [
                            'header_interpolation', 'body_8192', 'nested_silent', 'escape_expansion', 'data_json_256']}
         if group == 'latency':
@@ -265,7 +266,7 @@ def run(work, group):
                         pattern += '^(' + '|'.join(names) + ')$/'
                 elif group == 'concurrent':
                     pattern = '^BenchmarkConcurrentExecutionModes$/^' + mode + '$/'
-                cores = int(os.environ['GOMAXPROCS']) if group == 'concurrent' else 2
+                cores = host_fit_cores if group == 'concurrent' else 2
                 stage(label, tree, benchmark(tree, pattern, cores=cores), 900, cores)
             if group == 'concurrent':
                 if ready('candidate', 'harness-control-' + str(sample)):
@@ -289,12 +290,12 @@ def run(work, group):
             label = 'profile-' + tree + '-' + mode
             if not ready(tree, label):
                 continue
-            command = benchmark(tree, '^BenchmarkExecutionModes$/^' + mode + '$/^(header_interpolation|nested_silent|escape_expansion|include|block_content)$/^html$', '1s')
+            command = benchmark(tree, '^BenchmarkExecutionModes$/^' + mode + '$/^(header_interpolation|nested_silent|escape_expansion|include|block_content|data_json_256|data_unused_256)$/^html$', '1s')
             for flag, suffix in [('cpuprofile', 'cpu'), ('memprofile', 'heap'),
                                  ('mutexprofile', 'mutex'), ('blockprofile', 'block')]:
                 command.append('-test.' + flag + '=' + str(output / (label + '-' + suffix + '.pprof')))
             stage(label, tree, command, 120)
-        cores = int(os.environ['GOMAXPROCS'])
+        cores = host_fit_cores
         concurrent = [('upstream', 'legacy_stream'), ('upstream', 'legacy_owned'),
                       ('correctness', 'legacy_stream'), ('correctness', 'legacy_owned')]
         concurrent += [('candidate', mode) for mode in ('legacy_stream', 'legacy_owned',
@@ -303,7 +304,7 @@ def run(work, group):
             label = 'profile-concurrent-' + tree + '-' + mode
             if not ready(tree, label):
                 continue
-            command = benchmark(tree, '^BenchmarkConcurrentExecutionModes$/^' + mode + '$/^(header_interpolation|escape_expansion)$/^html$/^workers_' + str(cores) + '$/', '1s', cores)
+            command = benchmark(tree, '^BenchmarkConcurrentExecutionModes$/^' + mode + '$/^(header_interpolation|escape_expansion|data_json_256)$/^html$/^workers_' + str(cores) + '$/', '1s', cores)
             for flag, suffix in [('cpuprofile', 'cpu'), ('memprofile', 'heap'),
                                  ('mutexprofile', 'mutex'), ('blockprofile', 'block')]:
                 command.append('-test.' + flag + '=' + str(output / (label + '-' + suffix + '.pprof')))
