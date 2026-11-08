@@ -1,0 +1,22 @@
+File: selected.test
+Type: alloc_objects
+Time: 2026-11-08 02:11:04 CST
+Showing nodes accounting for 1617919, 99.60% of 1624342 total
+Dropped 41 nodes (cum <= 8121)
+      flat  flat%   sum%        cum   cum%
+    975819 60.07% 60.07%     975819 60.07%  github.com/CloudyKit/jet/v6.newParseAdmission
+    399445 24.59% 84.67%     633908 39.03%  github.com/CloudyKit/jet/v6.(*parseAdmission).admitCached
+    234463 14.43% 99.10%     234463 14.43%  github.com/CloudyKit/jet/v6.(*parseAdmission).prepareSource
+      8192   0.5% 99.60%       8192   0.5%  testing.rewrite
+         0     0% 99.60%    1609727 99.10%  github.com/CloudyKit/jet/v6.(*Runtime).startCompilation
+         0     0% 99.60%     633908 39.03%  github.com/CloudyKit/jet/v6.(*Runtime).startCompilation.func1
+         0     0% 99.60%    1609727 99.10%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0% 99.60%    1609727 99.10%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0% 99.60%      11333   0.7%  github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview
+         0     0% 99.60%    1609727 99.10%  github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview.func1
+         0     0% 99.60%    1609727 99.10%  github.com/CloudyKit/jet/v6_test.init.0.func1
+         0     0% 99.60%      11320   0.7%  testing.(*B).Run
+         0     0% 99.60%    1609727 99.10%  testing.(*B).launch
+         0     0% 99.60%      11333   0.7%  testing.(*B).run1.func1
+         0     0% 99.60%    1621060 99.80%  testing.(*B).runN
+         0     0% 99.60%      11320   0.7%  testing.(*matcher).fullName

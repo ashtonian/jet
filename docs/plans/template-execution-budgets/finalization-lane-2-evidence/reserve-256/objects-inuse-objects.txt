@@ -1,0 +1,31 @@
+File: reserve-256.test
+Type: inuse_objects
+Time: 2026-11-08 01:51:53 CST
+Showing nodes accounting for 102, 95.33% of 107 total
+Showing top 25 nodes out of 129
+      flat  flat%   sum%        cum   cum%
+        15 14.02% 14.02%         16 14.95%  runtime.mallocgc
+        14 13.08% 27.10%         14 13.08%  encoding/json/v2.makeMapArshaler
+        13 12.15% 39.25%         52 48.60%  encoding/json/v2.makeStructFields
+         7  6.54% 45.79%          7  6.54%  encoding/json/v2.makeStructArshaler
+         7  6.54% 52.34%          7  6.54%  internal/sync.newEntryNode[go.shape.interface {},go.shape.interface {}] (inline)
+         6  5.61% 57.94%          7  6.54%  encoding/json/v2.makeSliceArshaler
+         4  3.74% 61.68%          6  5.61%  encoding/json/v2.parseFieldOptions
+         4  3.74% 65.42%          4  3.74%  internal/sync.newIndirectNode[go.shape.interface {},go.shape.interface {}] (inline)
+         4  3.74% 69.16%          4  3.74%  reflect.addReflectOff
+         3  2.80% 71.96%          3  2.80%  encoding/json/v2.makeInterfaceArshaler
+         3  2.80% 74.77%          3  2.80%  encoding/json/v2.makeStringArshaler (inline)
+         3  2.80% 77.57%          3  2.80%  os.newFile
+         3  2.80% 80.37%          3  2.80%  reflect.compiledTypelinks
+         2  1.87% 82.24%          2  1.87%  github.com/CloudyKit/jet/v6.(*Runtime).evalPrimaryExpressionGroup
+         2  1.87% 84.11%          7  6.54%  regexp.compile
+         2  1.87% 85.98%          2  1.87%  slices.Grow[go.shape.[]uint8,go.shape.uint8] (inline)
+         2  1.87% 87.85%          2  1.87%  testing.(*B).run1
+         1  0.93% 88.79%         33 30.84%  encoding/json/v2.makeStructFields.func3
+         1  0.93% 89.72%          1  0.93%  internal/abi.NewName
+         1  0.93% 90.65%         11 10.28%  reflect.(*rtype).ptrTo
+         1  0.93% 91.59%          1  0.93%  reflect.MakeSlice
+         1  0.93% 92.52%          1  0.93%  regexp/syntax.(*Regexp).CapNames
+         1  0.93% 93.46%          1  0.93%  regexp/syntax.(*compiler).init (inline)
+         1  0.93% 94.39%          1  0.93%  regexp/syntax.(*compiler).inst (inline)
+         1  0.93% 95.33%          1  0.93%  regexp/syntax.(*parser).maybeConcat

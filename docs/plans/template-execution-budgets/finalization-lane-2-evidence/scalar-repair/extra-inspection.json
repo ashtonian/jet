@@ -1,0 +1,154 @@
+[
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/scalar-repair/unsafe",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-cum",
+      "-inuse_objects",
+      "<artifacts>/scalar-repair/unsafe.test",
+      "<artifacts>/scalar-repair/sequential-unsafe-heap.pprof"
+    ],
+    "deadline": 25,
+    "exit_code": 0,
+    "reused_completed_output": true,
+    "no_sampled_printValue_allocations": false
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/scalar-repair/unsafe",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-alloc_objects",
+      "-list",
+      "printValue",
+      "<artifacts>/scalar-repair/unsafe.test",
+      "<artifacts>/scalar-repair/sequential-unsafe-heap.pprof"
+    ],
+    "deadline": 25,
+    "exit_code": 1,
+    "reused_completed_output": true,
+    "no_sampled_printValue_allocations": true
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/scalar-repair/lease",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-cum",
+      "-inuse_objects",
+      "<artifacts>/scalar-repair/lease.test",
+      "<artifacts>/scalar-repair/sequential-lease-heap.pprof"
+    ],
+    "deadline": 25,
+    "exit_code": 0,
+    "reused_completed_output": true,
+    "no_sampled_printValue_allocations": false
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/scalar-repair/lease",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-alloc_objects",
+      "-list",
+      "printValue",
+      "<artifacts>/scalar-repair/lease.test",
+      "<artifacts>/scalar-repair/sequential-lease-heap.pprof"
+    ],
+    "deadline": 25,
+    "exit_code": 2,
+    "reused_completed_output": true,
+    "no_sampled_printValue_allocations": true
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/scalar-repair/local",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-cum",
+      "-inuse_objects",
+      "<artifacts>/scalar-repair/local.test",
+      "<artifacts>/scalar-repair/reentry-local-heap.pprof"
+    ],
+    "deadline": 25,
+    "exit_code": 0,
+    "reused_completed_output": false,
+    "no_sampled_printValue_allocations": false
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/scalar-repair/local",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-alloc_objects",
+      "-list",
+      "printValue",
+      "<artifacts>/scalar-repair/local.test",
+      "<artifacts>/scalar-repair/reentry-local-heap.pprof"
+    ],
+    "deadline": 25,
+    "exit_code": 0,
+    "reused_completed_output": false,
+    "no_sampled_printValue_allocations": false
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/scalar-repair/lease",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-cum",
+      "-inuse_objects",
+      "<artifacts>/scalar-repair/lease.test",
+      "<artifacts>/scalar-repair/reentry-lease-heap.pprof"
+    ],
+    "deadline": 25,
+    "exit_code": 0,
+    "reused_completed_output": false,
+    "no_sampled_printValue_allocations": false
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/scalar-repair/lease",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-alloc_objects",
+      "-list",
+      "printValue",
+      "<artifacts>/scalar-repair/lease.test",
+      "<artifacts>/scalar-repair/reentry-lease-heap.pprof"
+    ],
+    "deadline": 25,
+    "exit_code": 0,
+    "reused_completed_output": false,
+    "no_sampled_printValue_allocations": false
+  }
+]

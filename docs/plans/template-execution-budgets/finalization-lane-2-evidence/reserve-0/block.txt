@@ -1,0 +1,21 @@
+File: reserve-0.test
+Type: delay
+Time: 2026-11-08 01:51:36 CST
+Showing nodes accounting for 5468.95ms, 100% of 5468.95ms total
+Dropped 3 nodes (cum <= 27.34ms)
+Showing top 14 nodes out of 23
+      flat  flat%   sum%        cum   cum%
+ 5468.95ms   100%   100%  5468.95ms   100%  runtime.chanrecv1
+         0     0%   100%  1777.50ms 32.50%  github.com/CloudyKit/jet/v6_test.BenchmarkOutputReserve
+         0     0%   100%  1775.88ms 32.47%  github.com/CloudyKit/jet/v6_test.BenchmarkOutputReserve.func1
+         0     0%   100%  1915.57ms 35.03%  main.main
+         0     0%   100%  1915.57ms 35.03%  runtime.main
+         0     0%   100%   135.32ms  2.47%  runtime/pprof.StopCPUProfile
+         0     0%   100%   135.32ms  2.47%  sync.(*Once).Do (inline)
+         0     0%   100%   135.32ms  2.47%  sync.(*Once).doSlow
+         0     0%   100%  5333.64ms 97.53%  testing.(*B).Run
+         0     0%   100%  1775.52ms 32.47%  testing.(*B).doBench
+         0     0%   100%  1775.52ms 32.47%  testing.(*B).run
+         0     0%   100%  3558.11ms 65.06%  testing.(*B).run1
+         0     0%   100%  3553.38ms 64.97%  testing.(*B).run1.func1
+         0     0%   100%  5333.64ms 97.53%  testing.(*B).runN

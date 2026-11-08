@@ -1,0 +1,46 @@
+gate-lock: held by pid <pid> on <host>, "jet-finalization-lane-2-object-profile-summary-fixed f7c2b67 in <checkout>", since 2026-11-08T08:29:04Z, 2 of 6 focused cores
+Reviewed 88 views; zero inuse reports 10
+.git/finalization/selected-measure/baseline-legacy_stream-alloc-objects.txt 218458 github.com/CloudyKit/jet/v6.(*Runtime).recover; 16384 runtime/pprof.(*profileBuilder).emitLocation; 3277 compress/gzip.NewWriterLevel
+.git/finalization/selected-measure/baseline-legacy_stream-inuse-objects.txt ZERO
+.git/finalization/selected-measure/baseline-metered_live_stream-alloc-objects.txt 633555 github.com/CloudyKit/jet/v6.newParseAdmission; 318489 github.com/CloudyKit/jet/v6.(*parseAdmission).admitCached; 171435 github.com/CloudyKit/jet/v6.(*parseAdmission).prepareSource
+.git/finalization/selected-measure/baseline-metered_live_stream-inuse-objects.txt ZERO
+.git/finalization/selected-measure/baseline-restricted_owned-alloc-objects.txt 610947 bytes.growSlice; 513398 github.com/CloudyKit/jet/v6.newParseAdmission; 312329 github.com/CloudyKit/jet/v6.admitInputScopes
+.git/finalization/selected-measure/baseline-restricted_owned-inuse-objects.txt ZERO
+.git/finalization/selected-measure/selected-legacy_stream-alloc-objects.txt 2755 regexp/syntax.(*compiler).inst (inline); 1092 runtime.mallocgc; 80 encoding/json/v2.makeString
+.git/finalization/selected-measure/selected-legacy_stream-inuse-objects.txt 1092 runtime.mallocgc; 0 runtime.malg; 0 runtime.newobject
+.git/finalization/selected-measure/selected-metered_live_stream-alloc-objects.txt 975819 github.com/CloudyKit/jet/v6.newParseAdmission; 399445 github.com/CloudyKit/jet/v6.(*parseAdmission).admitCached; 234463 github.com/CloudyKit/jet/v6.(*parseAdmission).prepareSource
+.git/finalization/selected-measure/selected-metered_live_stream-inuse-objects.txt ZERO
+.git/finalization/selected-measure/selected-restricted_owned-alloc-objects.txt 1096090 bytes.growSlice; 746429 github.com/CloudyKit/jet/v6.newParseAdmission; 652466 github.com/CloudyKit/jet/v6.admitInputScopes
+.git/finalization/selected-measure/selected-restricted_owned-inuse-objects.txt ZERO
+.git/finalization/reserve-0/objects-alloc-objects.txt 207834 bytes.growSlice; 138564 github.com/CloudyKit/jet/v6.newParseAdmission; 103919 github.com/CloudyKit/jet/v6.admitInputScopes
+.git/finalization/reserve-0/objects-inuse-objects.txt 14 encoding/json/v2.makeMapArshaler; 14 runtime.mallocgc; 13 encoding/json/v2.makeStructFields
+.git/finalization/reserve-0/large-small-objects-alloc-objects.txt 4831 strings.genSplit; 840 github.com/CloudyKit/jet/v6.newParseAdmission; 510 github.com/CloudyKit/jet/v6.admitInputScopes
+.git/finalization/reserve-0/large-small-objects-inuse-objects.txt 7 runtime.mallocgc; 5 sync.(*Pool).pinSlow; 2 github.com/CloudyKit/fastprinter.newByteSliceBufferPool.func1
+.git/finalization/reserve-256/objects-alloc-objects.txt 187925 bytes.growSlice; 150348 github.com/CloudyKit/jet/v6.newParseAdmission; 112757 github.com/CloudyKit/jet/v6.admitInputScopes
+.git/finalization/reserve-256/objects-inuse-objects.txt 15 runtime.mallocgc; 14 encoding/json/v2.makeMapArshaler; 13 encoding/json/v2.makeStructFields
+.git/finalization/reserve-256/large-small-objects-alloc-objects.txt 4831 strings.genSplit; 840 github.com/CloudyKit/jet/v6.newParseAdmission; 510 github.com/CloudyKit/jet/v6.admitInputScopes
+.git/finalization/reserve-256/large-small-objects-inuse-objects.txt 9 runtime.mallocgc; 5 sync.(*Pool).pinSlow; 2 github.com/CloudyKit/fastprinter.newByteSliceBufferPool.func1
+.git/finalization/reserve-1024/objects-alloc-objects.txt 157364 github.com/CloudyKit/jet/v6.newParseAdmission; 118019 github.com/CloudyKit/jet/v6.admitInputScopes; 118017 bytes.growSlice
+.git/finalization/reserve-1024/objects-inuse-objects.txt 14 encoding/json/v2.makeMapArshaler; 13 encoding/json/v2.makeStructFields; 12 runtime.mallocgc
+.git/finalization/reserve-1024/large-small-objects-alloc-objects.txt 4831 strings.genSplit; 840 github.com/CloudyKit/jet/v6.newParseAdmission; 510 github.com/CloudyKit/jet/v6.admitInputScopes
+.git/finalization/reserve-1024/large-small-objects-inuse-objects.txt 6 runtime.mallocgc; 5 sync.(*Pool).pinSlow; 2 github.com/CloudyKit/fastprinter.newByteSliceBufferPool.func1
+.git/finalization/reserve-4096/objects-alloc-objects.txt 175548 github.com/CloudyKit/jet/v6.newParseAdmission; 131657 github.com/CloudyKit/jet/v6.admitInputScopes; 87770 github.com/CloudyKit/jet/v6.(*parseAdmission).admitCached
+.git/finalization/reserve-4096/objects-inuse-objects.txt 19 runtime.mallocgc; 14 encoding/json/v2.makeMapArshaler; 13 encoding/json/v2.makeStructFields
+.git/finalization/reserve-4096/large-small-objects-alloc-objects.txt 4831 strings.genSplit; 840 github.com/CloudyKit/jet/v6.newParseAdmission; 510 github.com/CloudyKit/jet/v6.admitInputScopes
+.git/finalization/reserve-4096/large-small-objects-inuse-objects.txt 8 runtime.mallocgc; 5 sync.(*Pool).pinSlow; 2 github.com/CloudyKit/fastprinter.newByteSliceBufferPool.func1
+.git/finalization/reserve-reuse4096/objects-alloc-objects.txt 190376 github.com/CloudyKit/jet/v6.newParseAdmission; 142778 github.com/CloudyKit/jet/v6.admitInputScopes; 95184 github.com/CloudyKit/jet/v6.(*parseAdmission).admitCached
+.git/finalization/reserve-reuse4096/objects-inuse-objects.txt 14 encoding/json/v2.makeMapArshaler; 13 encoding/json/v2.makeStructFields; 12 runtime.mallocgc
+.git/finalization/reserve-reuse4096/large-small-objects-alloc-objects.txt 4831 strings.genSplit; 840 github.com/CloudyKit/jet/v6.newParseAdmission; 510 github.com/CloudyKit/jet/v6.admitInputScopes
+.git/finalization/reserve-reuse4096/large-small-objects-inuse-objects.txt 8 runtime.mallocgc; 5 sync.(*Pool).pinSlow; 2 github.com/CloudyKit/fastprinter.newByteSliceBufferPool.func1
+.git/finalization/profiles/baseline-legacy_stream/objects-alloc-objects.txt 128644 github.com/CloudyKit/jet/v6.(*Runtime).recover; 3247 regexp.makeOnePass.func1; 1862 regexp/syntax.(*compiler).inst (inline)
+.git/finalization/profiles/baseline-legacy_stream/objects-inuse-objects.txt 14 encoding/json/v2.makeMapArshaler; 13 encoding/json/v2.makeStructFields; 11 runtime.mallocgc
+.git/finalization/profiles/baseline-metered_live_stream/objects-alloc-objects.txt 181388 github.com/CloudyKit/jet/v6.newParseAdmission; 90686 github.com/CloudyKit/jet/v6.(*parseAdmission).admitCached; 45347 github.com/CloudyKit/jet/v6.(*parseAdmission).prepareSource
+.git/finalization/profiles/baseline-metered_live_stream/objects-inuse-objects.txt 14 encoding/json/v2.makeMapArshaler; 13 encoding/json/v2.makeStructFields; 9 runtime.mallocgc
+.git/finalization/profiles/baseline-restricted_owned/objects-alloc-objects.txt 170202 bytes.growSlice; 113500 github.com/CloudyKit/jet/v6.newParseAdmission; 85109 github.com/CloudyKit/jet/v6.admitInputScopes
+.git/finalization/profiles/baseline-restricted_owned/objects-inuse-objects.txt 14 encoding/json/v2.makeMapArshaler; 13 encoding/json/v2.makeStructFields; 11 runtime.mallocgc
+.git/finalization/profiles/fixed-legacy_stream/objects-alloc-objects.txt 3245 regexp.makeOnePass.func1; 1862 regexp/syntax.(*compiler).inst (inline); 1162 regexp/syntax.(*parser).newRegexp (inline)
+.git/finalization/profiles/fixed-legacy_stream/objects-inuse-objects.txt 14 encoding/json/v2.makeMapArshaler; 13 encoding/json/v2.makeStructFields; 9 runtime.mallocgc
+.git/finalization/profiles/fixed-metered_live_stream/objects-alloc-objects.txt 261932 github.com/CloudyKit/jet/v6.newParseAdmission; 130958 github.com/CloudyKit/jet/v6.(*parseAdmission).admitCached; 65483 github.com/CloudyKit/jet/v6.(*parseAdmission).prepareSource
+.git/finalization/profiles/fixed-metered_live_stream/objects-inuse-objects.txt 14 encoding/json/v2.makeMapArshaler; 13 encoding/json/v2.makeStructFields; 11 runtime.mallocgc
+.git/finalization/profiles/fixed-restricted_owned/objects-alloc-objects.txt 205248 bytes.growSlice; 136864 github.com/CloudyKit/jet/v6.newParseAdmission; 102632 github.com/CloudyKit/jet/v6.admitInputScopes
+.git/finalization/profiles/fixed-restricted_owned/objects-inuse-objects.txt 17 runtime.mallocgc; 14 encoding/json/v2.makeMapArshaler; 13 encoding/json/v2.makeStructFields

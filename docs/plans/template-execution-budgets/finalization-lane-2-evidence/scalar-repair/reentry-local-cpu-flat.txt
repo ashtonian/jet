@@ -1,0 +1,30 @@
+File: local.test
+Type: cpu
+Time: 2026-11-08 02:43:04 CST
+Duration: 6.03s, Total samples = 5.87s (97.40%)
+Showing nodes accounting for 4.85s, 82.62% of 5.87s total
+Dropped 94 nodes (cum <= 0.03s)
+Showing top 22 nodes out of 135
+      flat  flat%   sum%        cum   cum%
+     2.78s 47.36% 47.36%      2.78s 47.36%  runtime.kevent
+     0.36s  6.13% 53.49%      0.36s  6.13%  runtime.pthread_kill
+     0.23s  3.92% 57.41%      0.23s  3.92%  runtime.madvise
+     0.20s  3.41% 60.82%      0.20s  3.41%  runtime.pthread_cond_wait
+     0.20s  3.41% 64.22%      0.20s  3.41%  runtime.usleep
+     0.14s  2.39% 66.61%      0.14s  2.39%  runtime.memclrNoHeapPointers
+     0.08s  1.36% 67.97%      0.15s  2.56%  github.com/CloudyKit/jet/v6.(*Runtime).reserveWork
+     0.08s  1.36% 69.34%      0.12s  2.04%  internal/runtime/maps.(*Map).getWithoutKeySmallFastStr
+     0.08s  1.36% 70.70%      0.49s  8.35%  runtime.mallocgc
+     0.08s  1.36% 72.06%      0.37s  6.30%  runtime.mallocgcSmallScanNoHeader
+     0.07s  1.19% 73.25%      0.26s  4.43%  github.com/CloudyKit/jet/v6.(*Runtime).checkpoint
+     0.07s  1.19% 74.45%      0.07s  1.19%  runtime.tryDeferToSpanScan
+     0.06s  1.02% 75.47%      1.20s 20.44%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+     0.06s  1.02% 76.49%      0.06s  1.02%  runtime.(*_panic).nextDefer
+     0.06s  1.02% 77.51%      0.08s  1.36%  runtime.(*mspan).writeHeapBitsSmall
+     0.05s  0.85% 78.36%      0.05s  0.85%  internal/runtime/maps.(*Map).putSlotSmallFastStr
+     0.05s  0.85% 79.22%      0.05s  0.85%  internal/runtime/maps.memHashAES
+     0.04s  0.68% 79.90%      0.04s  0.68%  github.com/CloudyKit/jet/v6.(*Runtime).rethrowTerminal (inline)
+     0.04s  0.68% 80.58%      0.04s  0.68%  reflect.implements
+     0.04s  0.68% 81.26%      0.16s  2.73%  runtime.mapaccess2_faststr
+     0.04s  0.68% 81.94%      0.04s  0.68%  runtime.pthread_cond_signal
+     0.04s  0.68% 82.62%      0.04s  0.68%  runtime.pthread_cond_timedwait_relative_np

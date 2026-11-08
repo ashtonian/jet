@@ -1,0 +1,22 @@
+{
+  "variant": "1024",
+  "stage": "bench",
+  "command": [
+    "/usr/bin/time",
+    "-l",
+    "<artifacts>/reserve-1024.test",
+    "-test.run=^$",
+    "-test.bench=^BenchmarkOutputReserve$",
+    "-test.benchtime=200ms",
+    "-test.count=3"
+  ],
+  "environment": {
+    "GOMAXPROCS": "2"
+  },
+  "deadline_seconds": 100,
+  "cleanup_seconds": 5,
+  "exit_code": 0,
+  "binary_sha256": "00d45f9860a1e949cebca76c4c9cab320b811c300a566ab09e14c7e904753658",
+  "started": 1794124313.148179,
+  "finished": 1794124328.030077
+}

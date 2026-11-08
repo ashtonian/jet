@@ -1,0 +1,32 @@
+File: fixed.test
+Type: alloc_objects
+Time: 2026-11-08 01:29:30 CST
+Showing nodes accounting for 651524, 97.64% of 667291 total
+Dropped 339 nodes (cum <= 3336)
+Showing top 25 nodes out of 39
+      flat  flat%   sum%        cum   cum%
+    205248 30.76% 30.76%     205248 30.76%  bytes.growSlice
+    136864 20.51% 51.27%     136864 20.51%  github.com/CloudyKit/jet/v6.newParseAdmission
+    102632 15.38% 66.65%     102632 15.38%  github.com/CloudyKit/jet/v6.admitInputScopes
+     68416 10.25% 76.90%     102624 15.38%  github.com/CloudyKit/jet/v6.(*parseAdmission).admitCached
+     34216  5.13% 82.03%      34216  5.13%  github.com/CloudyKit/jet/v6.(*parseAdmission).prepareSource
+     34212  5.13% 87.16%      34212  5.13%  bytes.(*Buffer).String (inline)
+     34212  5.13% 92.28%     239460 35.89%  bytes.(*Buffer).grow
+     34208  5.13% 97.41%     650916 97.55%  github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext
+       671   0.1% 97.51%      12280  1.84%  regexp.compile
+       343 0.051% 97.56%      14382  2.16%  github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview
+       337 0.051% 97.61%       3965  0.59%  regexp/syntax.parse
+       152 0.023% 97.64%       4001   0.6%  regexp.makeOnePass
+         6 0.0009% 97.64%      13097  1.96%  testing.(*B).Run
+         4 0.0006% 97.64%     651204 97.59%  github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview.func1
+         3 0.00045% 97.64%     665623 99.75%  testing.(*B).runN
+         0     0% 97.64%     239460 35.89%  bytes.(*Buffer).Write
+         0     0% 97.64%     239990 35.96%  github.com/CloudyKit/fastprinter.PrintString
+         0     0% 97.64%     239992 35.97%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 97.64%     239990 35.96%  github.com/CloudyKit/jet/v6.(*Runtime).printValue
+         0     0% 97.64%     239456 35.88%  github.com/CloudyKit/jet/v6.(*Runtime).startCompilation
+         0     0% 97.64%     102624 15.38%  github.com/CloudyKit/jet/v6.(*Runtime).startCompilation.func1
+         0     0% 97.64%     616708 92.42%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0% 97.64%     616708 92.42%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0% 97.64%     239456 35.88%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+         0     0% 97.64%     239456 35.88%  github.com/CloudyKit/jet/v6.(*checkedWriter).write

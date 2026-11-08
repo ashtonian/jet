@@ -1,0 +1,30 @@
+File: baseline.test
+Type: cpu
+Time: 2026-11-08 02:10:56 CST
+Duration: 2.62s, Total samples = 2.23s (85.19%)
+Showing nodes accounting for 1.33s, 59.64% of 2.23s total
+Dropped 57 nodes (cum <= 0.01s)
+Showing top 22 nodes out of 67
+      flat  flat%   sum%        cum   cum%
+         0     0%     0%      1.34s 60.09%  runtime.systemstack
+     1.23s 55.16% 55.16%      1.23s 55.16%  runtime.kevent
+         0     0% 55.16%      1.23s 55.16%  runtime.netpoll
+         0     0% 55.16%      1.23s 55.16%  runtime.startTheWorldWithSema
+         0     0% 55.16%      1.22s 54.71%  runtime.gcStart.func4
+         0     0% 55.16%      0.85s 38.12%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0% 55.16%      0.85s 38.12%  github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext
+         0     0% 55.16%      0.85s 38.12%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0% 55.16%      0.85s 38.12%  github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview.func1
+         0     0% 55.16%      0.85s 38.12%  github.com/CloudyKit/jet/v6_test.init.0.func2
+         0     0% 55.16%      0.85s 38.12%  testing.(*B).launch
+         0     0% 55.16%      0.85s 38.12%  testing.(*B).runN
+         0     0% 55.16%      0.79s 35.43%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 55.16%      0.78s 34.98%  github.com/CloudyKit/jet/v6.(*Runtime).printValue
+         0     0% 55.16%      0.78s 34.98%  github.com/CloudyKit/jet/v6.(*dataPrinter).value
+         0     0% 55.16%      0.76s 34.08%  github.com/CloudyKit/fastprinter.PrintString
+         0     0% 55.16%      0.76s 34.08%  github.com/CloudyKit/jet/v6.(*dataPrinter).Write
+         0     0% 55.16%      0.76s 34.08%  github.com/CloudyKit/jet/v6.(*dataPrinter).text
+         0     0% 55.16%      0.76s 34.08%  github.com/CloudyKit/jet/v6.(*escapeeWriter).Write
+     0.01s  0.45% 55.61%      0.76s 34.08%  text/template.HTMLEscape
+     0.08s  3.59% 59.19%      0.75s 33.63%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+     0.01s  0.45% 59.64%      0.72s 32.29%  github.com/CloudyKit/jet/v6.(*executionWriter).Write

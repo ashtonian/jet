@@ -1,0 +1,30 @@
+File: selected.test
+Type: cpu
+Time: 2026-11-08 02:10:58 CST
+Duration: 2.73s, Total samples = 2170ms (79.58%)
+Showing nodes accounting for 2160ms, 99.54% of 2170ms total
+Dropped 12 nodes (cum <= 10.85ms)
+Showing top 22 nodes out of 25
+      flat  flat%   sum%        cum   cum%
+     700ms 32.26% 32.26%     2110ms 97.24%  text/template.HTMLEscape
+     620ms 28.57% 60.83%     1020ms 47.00%  bytes.(*Buffer).Write
+     390ms 17.97% 78.80%     1410ms 64.98%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+     310ms 14.29% 93.09%      310ms 14.29%  runtime.memmove
+      90ms  4.15% 97.24%       90ms  4.15%  bytes.(*Buffer).tryGrowByReslice (inline)
+      50ms  2.30% 99.54%       50ms  2.30%  runtime.pthread_cond_signal
+         0     0% 99.54%     2110ms 97.24%  github.com/CloudyKit/fastprinter.PrintString
+         0     0% 99.54%     2110ms 97.24%  github.com/CloudyKit/fastprinter.PrintValue
+         0     0% 99.54%     2110ms 97.24%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 99.54%     2110ms 97.24%  github.com/CloudyKit/jet/v6.(*Runtime).printValue
+         0     0% 99.54%     2110ms 97.24%  github.com/CloudyKit/jet/v6.(*Template).Execute (inline)
+         0     0% 99.54%     2110ms 97.24%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0% 99.54%     2110ms 97.24%  github.com/CloudyKit/jet/v6.(*escapeeWriter).Write
+         0     0% 99.54%     2110ms 97.24%  github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview.func1
+         0     0% 99.54%     2110ms 97.24%  github.com/CloudyKit/jet/v6_test.init.func1
+         0     0% 99.54%       50ms  2.30%  runtime.gopreempt_m (inline)
+         0     0% 99.54%       50ms  2.30%  runtime.goschedImpl
+         0     0% 99.54%       50ms  2.30%  runtime.morestack
+         0     0% 99.54%       50ms  2.30%  runtime.newstack
+         0     0% 99.54%       50ms  2.30%  runtime.notewakeup
+         0     0% 99.54%       50ms  2.30%  runtime.semawakeup
+         0     0% 99.54%       50ms  2.30%  runtime.startm

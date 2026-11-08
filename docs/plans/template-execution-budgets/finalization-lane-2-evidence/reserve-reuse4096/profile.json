@@ -1,0 +1,27 @@
+{
+  "variant": "reuse4096",
+  "stage": "profile",
+  "command": [
+    "/usr/bin/time",
+    "-l",
+    "<artifacts>/reserve-reuse4096.test",
+    "-test.run=^$",
+    "-test.bench=^BenchmarkOutputReserve$/escape_expansion$/warm$",
+    "-test.benchtime=1s",
+    "-test.count=1",
+    "-test.cpuprofile=<artifacts>/reserve-reuse4096/cpu.pprof",
+    "-test.memprofile=<artifacts>/reserve-reuse4096/heap.pprof",
+    "-test.memprofilerate=1",
+    "-test.mutexprofile=<artifacts>/reserve-reuse4096/mutex.pprof",
+    "-test.blockprofile=<artifacts>/reserve-reuse4096/block.pprof"
+  ],
+  "environment": {
+    "GOMAXPROCS": "2"
+  },
+  "deadline_seconds": 100,
+  "cleanup_seconds": 5,
+  "exit_code": 0,
+  "binary_sha256": "5d8ded62adbfb9a9ca2e7179ee940e81ccf62f4bfef2e1d93ffcf47873a417fd",
+  "started": 1794124605.226469,
+  "finished": 1794124606.8968089
+}

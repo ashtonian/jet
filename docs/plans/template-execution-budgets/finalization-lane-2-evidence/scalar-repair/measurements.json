@@ -1,0 +1,578 @@
+[
+  {
+    "name": "sequential-unsafe-0",
+    "build": "unsafe",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/scalar-repair/unsafe.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkScalarSequential$",
+      "-test.benchtime=1s",
+      "-test.count=1"
+    ],
+    "GOMAXPROCS": 2,
+    "deadline": 60,
+    "kill_after": 5,
+    "exit_code": 0,
+    "started": 1794127210.793824,
+    "finished": 1794127221.851922,
+    "binary_sha256": "8da9447adac5101fcebf180ad6d7bf0537acfc21cb933484e69023b565874278"
+  },
+  {
+    "name": "sequential-lease-0",
+    "build": "lease",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/scalar-repair/lease.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkScalarSequential$",
+      "-test.benchtime=1s",
+      "-test.count=1"
+    ],
+    "GOMAXPROCS": 2,
+    "deadline": 60,
+    "kill_after": 5,
+    "exit_code": 0,
+    "started": 1794127221.863651,
+    "finished": 1794127233.0287519,
+    "binary_sha256": "99e417c6bf01d283c130799e5403ddd5c3d3eca95db115f3e03240c8e21dd06c"
+  },
+  {
+    "name": "reentry-local-0",
+    "build": "local",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/scalar-repair/local.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkScalarReentry$",
+      "-test.benchtime=1s",
+      "-test.count=1"
+    ],
+    "GOMAXPROCS": 2,
+    "deadline": 60,
+    "kill_after": 5,
+    "exit_code": 0,
+    "started": 1794127233.045356,
+    "finished": 1794127236.720284,
+    "binary_sha256": "1701884acbf31c32f038270812e04a8ea1513c940cad88f27a9a2cfe7327e0b4"
+  },
+  {
+    "name": "reentry-lease-0",
+    "build": "lease",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/scalar-repair/lease.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkScalarReentry$",
+      "-test.benchtime=1s",
+      "-test.count=1"
+    ],
+    "GOMAXPROCS": 2,
+    "deadline": 60,
+    "kill_after": 5,
+    "exit_code": 0,
+    "started": 1794127236.736657,
+    "finished": 1794127239.1112819,
+    "binary_sha256": "99e417c6bf01d283c130799e5403ddd5c3d3eca95db115f3e03240c8e21dd06c"
+  },
+  {
+    "name": "sequential-lease-1",
+    "build": "lease",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/scalar-repair/lease.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkScalarSequential$",
+      "-test.benchtime=1s",
+      "-test.count=1"
+    ],
+    "GOMAXPROCS": 2,
+    "deadline": 60,
+    "kill_after": 5,
+    "exit_code": 0,
+    "started": 1794127239.116734,
+    "finished": 1794127249.62296,
+    "binary_sha256": "99e417c6bf01d283c130799e5403ddd5c3d3eca95db115f3e03240c8e21dd06c"
+  },
+  {
+    "name": "sequential-unsafe-1",
+    "build": "unsafe",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/scalar-repair/unsafe.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkScalarSequential$",
+      "-test.benchtime=1s",
+      "-test.count=1"
+    ],
+    "GOMAXPROCS": 2,
+    "deadline": 60,
+    "kill_after": 5,
+    "exit_code": 0,
+    "started": 1794127249.628182,
+    "finished": 1794127260.575836,
+    "binary_sha256": "8da9447adac5101fcebf180ad6d7bf0537acfc21cb933484e69023b565874278"
+  },
+  {
+    "name": "reentry-lease-1",
+    "build": "lease",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/scalar-repair/lease.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkScalarReentry$",
+      "-test.benchtime=1s",
+      "-test.count=1"
+    ],
+    "GOMAXPROCS": 2,
+    "deadline": 60,
+    "kill_after": 5,
+    "exit_code": 0,
+    "started": 1794127260.582022,
+    "finished": 1794127262.79185,
+    "binary_sha256": "99e417c6bf01d283c130799e5403ddd5c3d3eca95db115f3e03240c8e21dd06c"
+  },
+  {
+    "name": "reentry-local-1",
+    "build": "local",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/scalar-repair/local.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkScalarReentry$",
+      "-test.benchtime=1s",
+      "-test.count=1"
+    ],
+    "GOMAXPROCS": 2,
+    "deadline": 60,
+    "kill_after": 5,
+    "exit_code": 0,
+    "started": 1794127262.945654,
+    "finished": 1794127266.215255,
+    "binary_sha256": "1701884acbf31c32f038270812e04a8ea1513c940cad88f27a9a2cfe7327e0b4"
+  },
+  {
+    "name": "sequential-unsafe-2",
+    "build": "unsafe",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/scalar-repair/unsafe.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkScalarSequential$",
+      "-test.benchtime=1s",
+      "-test.count=1"
+    ],
+    "GOMAXPROCS": 2,
+    "deadline": 60,
+    "kill_after": 5,
+    "exit_code": 0,
+    "started": 1794127266.330411,
+    "finished": 1794127276.92173,
+    "binary_sha256": "8da9447adac5101fcebf180ad6d7bf0537acfc21cb933484e69023b565874278"
+  },
+  {
+    "name": "sequential-lease-2",
+    "build": "lease",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/scalar-repair/lease.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkScalarSequential$",
+      "-test.benchtime=1s",
+      "-test.count=1"
+    ],
+    "GOMAXPROCS": 2,
+    "deadline": 60,
+    "kill_after": 5,
+    "exit_code": 0,
+    "started": 1794127276.953442,
+    "finished": 1794127287.2176378,
+    "binary_sha256": "99e417c6bf01d283c130799e5403ddd5c3d3eca95db115f3e03240c8e21dd06c"
+  },
+  {
+    "name": "reentry-local-2",
+    "build": "local",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/scalar-repair/local.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkScalarReentry$",
+      "-test.benchtime=1s",
+      "-test.count=1"
+    ],
+    "GOMAXPROCS": 2,
+    "deadline": 60,
+    "kill_after": 5,
+    "exit_code": 0,
+    "started": 1794127287.494265,
+    "finished": 1794127290.21556,
+    "binary_sha256": "1701884acbf31c32f038270812e04a8ea1513c940cad88f27a9a2cfe7327e0b4"
+  },
+  {
+    "name": "reentry-lease-2",
+    "build": "lease",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/scalar-repair/lease.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkScalarReentry$",
+      "-test.benchtime=1s",
+      "-test.count=1"
+    ],
+    "GOMAXPROCS": 2,
+    "deadline": 60,
+    "kill_after": 5,
+    "exit_code": 0,
+    "started": 1794127290.3564632,
+    "finished": 1794127293.757112,
+    "binary_sha256": "99e417c6bf01d283c130799e5403ddd5c3d3eca95db115f3e03240c8e21dd06c"
+  },
+  {
+    "name": "sequential-lease-3",
+    "build": "lease",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/scalar-repair/lease.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkScalarSequential$",
+      "-test.benchtime=1s",
+      "-test.count=1"
+    ],
+    "GOMAXPROCS": 2,
+    "deadline": 60,
+    "kill_after": 5,
+    "exit_code": 0,
+    "started": 1794127294.518246,
+    "finished": 1794127305.371614,
+    "binary_sha256": "99e417c6bf01d283c130799e5403ddd5c3d3eca95db115f3e03240c8e21dd06c"
+  },
+  {
+    "name": "sequential-unsafe-3",
+    "build": "unsafe",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/scalar-repair/unsafe.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkScalarSequential$",
+      "-test.benchtime=1s",
+      "-test.count=1"
+    ],
+    "GOMAXPROCS": 2,
+    "deadline": 60,
+    "kill_after": 5,
+    "exit_code": 0,
+    "started": 1794127305.4451551,
+    "finished": 1794127316.3667998,
+    "binary_sha256": "8da9447adac5101fcebf180ad6d7bf0537acfc21cb933484e69023b565874278"
+  },
+  {
+    "name": "reentry-lease-3",
+    "build": "lease",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/scalar-repair/lease.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkScalarReentry$",
+      "-test.benchtime=1s",
+      "-test.count=1"
+    ],
+    "GOMAXPROCS": 2,
+    "deadline": 60,
+    "kill_after": 5,
+    "exit_code": 0,
+    "started": 1794127316.373099,
+    "finished": 1794127318.830904,
+    "binary_sha256": "99e417c6bf01d283c130799e5403ddd5c3d3eca95db115f3e03240c8e21dd06c"
+  },
+  {
+    "name": "reentry-local-3",
+    "build": "local",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/scalar-repair/local.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkScalarReentry$",
+      "-test.benchtime=1s",
+      "-test.count=1"
+    ],
+    "GOMAXPROCS": 2,
+    "deadline": 60,
+    "kill_after": 5,
+    "exit_code": 0,
+    "started": 1794127318.837208,
+    "finished": 1794127320.9762099,
+    "binary_sha256": "1701884acbf31c32f038270812e04a8ea1513c940cad88f27a9a2cfe7327e0b4"
+  },
+  {
+    "name": "sequential-unsafe-4",
+    "build": "unsafe",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/scalar-repair/unsafe.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkScalarSequential$",
+      "-test.benchtime=1s",
+      "-test.count=1"
+    ],
+    "GOMAXPROCS": 2,
+    "deadline": 60,
+    "kill_after": 5,
+    "exit_code": 0,
+    "started": 1794127320.982267,
+    "finished": 1794127331.7341068,
+    "binary_sha256": "8da9447adac5101fcebf180ad6d7bf0537acfc21cb933484e69023b565874278"
+  },
+  {
+    "name": "sequential-lease-4",
+    "build": "lease",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/scalar-repair/lease.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkScalarSequential$",
+      "-test.benchtime=1s",
+      "-test.count=1"
+    ],
+    "GOMAXPROCS": 2,
+    "deadline": 60,
+    "kill_after": 5,
+    "exit_code": 0,
+    "started": 1794127331.739839,
+    "finished": 1794127342.351887,
+    "binary_sha256": "99e417c6bf01d283c130799e5403ddd5c3d3eca95db115f3e03240c8e21dd06c"
+  },
+  {
+    "name": "reentry-local-4",
+    "build": "local",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/scalar-repair/local.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkScalarReentry$",
+      "-test.benchtime=1s",
+      "-test.count=1"
+    ],
+    "GOMAXPROCS": 2,
+    "deadline": 60,
+    "kill_after": 5,
+    "exit_code": 0,
+    "started": 1794127342.379711,
+    "finished": 1794127345.442962,
+    "binary_sha256": "1701884acbf31c32f038270812e04a8ea1513c940cad88f27a9a2cfe7327e0b4"
+  },
+  {
+    "name": "reentry-lease-4",
+    "build": "lease",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/scalar-repair/lease.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkScalarReentry$",
+      "-test.benchtime=1s",
+      "-test.count=1"
+    ],
+    "GOMAXPROCS": 2,
+    "deadline": 60,
+    "kill_after": 5,
+    "exit_code": 0,
+    "started": 1794127345.449548,
+    "finished": 1794127347.652768,
+    "binary_sha256": "99e417c6bf01d283c130799e5403ddd5c3d3eca95db115f3e03240c8e21dd06c"
+  },
+  {
+    "name": "sequential-lease-5",
+    "build": "lease",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/scalar-repair/lease.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkScalarSequential$",
+      "-test.benchtime=1s",
+      "-test.count=1"
+    ],
+    "GOMAXPROCS": 2,
+    "deadline": 60,
+    "kill_after": 5,
+    "exit_code": 0,
+    "started": 1794127347.6583612,
+    "finished": 1794127358.479769,
+    "binary_sha256": "99e417c6bf01d283c130799e5403ddd5c3d3eca95db115f3e03240c8e21dd06c"
+  },
+  {
+    "name": "sequential-unsafe-5",
+    "build": "unsafe",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/scalar-repair/unsafe.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkScalarSequential$",
+      "-test.benchtime=1s",
+      "-test.count=1"
+    ],
+    "GOMAXPROCS": 2,
+    "deadline": 60,
+    "kill_after": 5,
+    "exit_code": 0,
+    "started": 1794127358.546355,
+    "finished": 1794127371.816201,
+    "binary_sha256": "8da9447adac5101fcebf180ad6d7bf0537acfc21cb933484e69023b565874278"
+  },
+  {
+    "name": "reentry-lease-5",
+    "build": "lease",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/scalar-repair/lease.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkScalarReentry$",
+      "-test.benchtime=1s",
+      "-test.count=1"
+    ],
+    "GOMAXPROCS": 2,
+    "deadline": 60,
+    "kill_after": 5,
+    "exit_code": 0,
+    "started": 1794127371.823133,
+    "finished": 1794127374.9966831,
+    "binary_sha256": "99e417c6bf01d283c130799e5403ddd5c3d3eca95db115f3e03240c8e21dd06c"
+  },
+  {
+    "name": "reentry-local-5",
+    "build": "local",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/scalar-repair/local.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkScalarReentry$",
+      "-test.benchtime=1s",
+      "-test.count=1"
+    ],
+    "GOMAXPROCS": 2,
+    "deadline": 60,
+    "kill_after": 5,
+    "exit_code": 0,
+    "started": 1794127375.003173,
+    "finished": 1794127378.4115222,
+    "binary_sha256": "1701884acbf31c32f038270812e04a8ea1513c940cad88f27a9a2cfe7327e0b4"
+  },
+  {
+    "name": "sequential-unsafe-profile",
+    "build": "unsafe",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/scalar-repair/unsafe.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkScalarSequential$/int$/live$",
+      "-test.benchtime=2s",
+      "-test.count=1",
+      "-test.cpuprofile=<artifacts>/scalar-repair/sequential-unsafe-cpu.pprof",
+      "-test.memprofile=<artifacts>/scalar-repair/sequential-unsafe-heap.pprof",
+      "-test.mutexprofile=<artifacts>/scalar-repair/sequential-unsafe-mutex.pprof",
+      "-test.blockprofile=<artifacts>/scalar-repair/sequential-unsafe-block.pprof"
+    ],
+    "GOMAXPROCS": 2,
+    "deadline": 60,
+    "kill_after": 5,
+    "exit_code": 0,
+    "started": 1794127378.417941,
+    "finished": 1794127381.648113,
+    "binary_sha256": "8da9447adac5101fcebf180ad6d7bf0537acfc21cb933484e69023b565874278"
+  },
+  {
+    "name": "sequential-lease-profile",
+    "build": "lease",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/scalar-repair/lease.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkScalarSequential$/int$/live$",
+      "-test.benchtime=2s",
+      "-test.count=1",
+      "-test.cpuprofile=<artifacts>/scalar-repair/sequential-lease-cpu.pprof",
+      "-test.memprofile=<artifacts>/scalar-repair/sequential-lease-heap.pprof",
+      "-test.mutexprofile=<artifacts>/scalar-repair/sequential-lease-mutex.pprof",
+      "-test.blockprofile=<artifacts>/scalar-repair/sequential-lease-block.pprof"
+    ],
+    "GOMAXPROCS": 2,
+    "deadline": 60,
+    "kill_after": 5,
+    "exit_code": 0,
+    "started": 1794127381.653794,
+    "finished": 1794127384.775697,
+    "binary_sha256": "99e417c6bf01d283c130799e5403ddd5c3d3eca95db115f3e03240c8e21dd06c"
+  },
+  {
+    "name": "reentry-local-profile",
+    "build": "local",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/scalar-repair/local.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkScalarReentry$/live$",
+      "-test.benchtime=2s",
+      "-test.count=1",
+      "-test.cpuprofile=<artifacts>/scalar-repair/reentry-local-cpu.pprof",
+      "-test.memprofile=<artifacts>/scalar-repair/reentry-local-heap.pprof",
+      "-test.mutexprofile=<artifacts>/scalar-repair/reentry-local-mutex.pprof",
+      "-test.blockprofile=<artifacts>/scalar-repair/reentry-local-block.pprof"
+    ],
+    "GOMAXPROCS": 2,
+    "deadline": 60,
+    "kill_after": 5,
+    "exit_code": 0,
+    "started": 1794127384.781625,
+    "finished": 1794127390.819063,
+    "binary_sha256": "1701884acbf31c32f038270812e04a8ea1513c940cad88f27a9a2cfe7327e0b4"
+  },
+  {
+    "name": "reentry-lease-profile",
+    "build": "lease",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/scalar-repair/lease.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkScalarReentry$/live$",
+      "-test.benchtime=2s",
+      "-test.count=1",
+      "-test.cpuprofile=<artifacts>/scalar-repair/reentry-lease-cpu.pprof",
+      "-test.memprofile=<artifacts>/scalar-repair/reentry-lease-heap.pprof",
+      "-test.mutexprofile=<artifacts>/scalar-repair/reentry-lease-mutex.pprof",
+      "-test.blockprofile=<artifacts>/scalar-repair/reentry-lease-block.pprof"
+    ],
+    "GOMAXPROCS": 2,
+    "deadline": 60,
+    "kill_after": 5,
+    "exit_code": 0,
+    "started": 1794127390.825305,
+    "finished": 1794127394.554497,
+    "binary_sha256": "99e417c6bf01d283c130799e5403ddd5c3d3eca95db115f3e03240c8e21dd06c"
+  }
+]

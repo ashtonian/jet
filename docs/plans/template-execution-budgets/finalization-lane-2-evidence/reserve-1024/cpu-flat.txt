@@ -1,0 +1,21 @@
+File: reserve-1024.test
+Type: cpu
+Time: 2026-11-08 01:52:08 CST
+Duration: 1.71s, Total samples = 1530ms (89.29%)
+Showing nodes accounting for 1250ms, 81.70% of 1530ms total
+Showing top 14 nodes out of 133
+      flat  flat%   sum%        cum   cum%
+     260ms 16.99% 16.99%      260ms 16.99%  runtime.kevent
+     190ms 12.42% 29.41%      480ms 31.37%  runtime.pcvalue
+     150ms  9.80% 39.22%      180ms 11.76%  runtime.step
+      90ms  5.88% 45.10%      140ms  9.15%  github.com/CloudyKit/jet/v6.(*Runtime).reserveWork
+      90ms  5.88% 50.98%       90ms  5.88%  runtime.findfunc
+      80ms  5.23% 56.21%       80ms  5.23%  runtime.madvise
+      70ms  4.58% 60.78%      540ms 35.29%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+      70ms  4.58% 65.36%       70ms  4.58%  runtime.acquirem (inline)
+      50ms  3.27% 68.63%       50ms  3.27%  context.(*cancelCtx).Err
+      50ms  3.27% 71.90%      590ms 38.56%  text/template.HTMLEscape
+      40ms  2.61% 74.51%      220ms 14.38%  bytes.(*Buffer).Write
+      40ms  2.61% 77.12%       40ms  2.61%  runtime.(*moduledata).textAddr
+      40ms  2.61% 79.74%      640ms 41.83%  runtime.tracebackPCs
+      30ms  1.96% 81.70%      300ms 19.61%  runtime.(*unwinder).next

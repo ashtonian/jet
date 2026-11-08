@@ -1,0 +1,21 @@
+File: reserve-256.test
+Type: cpu
+Time: 2026-11-08 01:51:51 CST
+Duration: 1.82s, Total samples = 1460ms (80.39%)
+Showing nodes accounting for 0, 0% of 1460ms total
+Showing top 14 nodes out of 107
+      flat  flat%   sum%        cum   cum%
+         0     0%     0%     1120ms 76.71%  runtime.systemstack
+         0     0%     0%      870ms 59.59%  github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext
+         0     0%     0%      870ms 59.59%  github.com/CloudyKit/jet/v6_test.BenchmarkOutputReserve.func1.1
+         0     0%     0%      870ms 59.59%  github.com/CloudyKit/jet/v6_test.BenchmarkOutputReserve.func1.2
+         0     0%     0%      870ms 59.59%  testing.(*B).launch
+         0     0%     0%      870ms 59.59%  testing.(*B).runN
+         0     0%     0%      820ms 56.16%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0%     0%      820ms 56.16%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0%     0%      560ms 38.36%  runtime.mProf_Malloc
+         0     0%     0%      560ms 38.36%  runtime.profilealloc
+         0     0%     0%      550ms 37.67%  github.com/CloudyKit/fastprinter.PrintString
+         0     0%     0%      550ms 37.67%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0%     0%      550ms 37.67%  github.com/CloudyKit/jet/v6.(*Runtime).printValue
+         0     0%     0%      550ms 37.67%  github.com/CloudyKit/jet/v6.(*dataPrinter).Write

@@ -1,0 +1,10 @@
+gate-lock: held by pid <pid> on <host>, "jet-scalar-workspace-lifetime 0fb28ee in <checkout>", since 2026-11-08T08:38:19Z
+gate-lock: held by pid <pid> on <host>, "jet-scalar-workspace-lifetime 0fb28ee in <checkout>", since 2026-11-08T08:38:20Z
+Traceback (most recent call last):
+  File "<artifacts>/measure_scalar_repair.py", line 27, in <module>
+    run('sequential-'+build+'-'+str(sample),build,['-test.run=^$','-test.bench=^BenchmarkScalarSequential$','-test.benchtime=1s','-test.count=1'])
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<artifacts>/measure_scalar_repair.py", line 24, in run
+    assert rc==0,(name,rc)
+           ^^^^^
+AssertionError: ('sequential-unsafe-0', 1)

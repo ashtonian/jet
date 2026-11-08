@@ -59,6 +59,7 @@ func (e *LimitError) Unwrap() error {
 // synchronous render. It is never cached and is cleared before pooling Runtime.
 type executionState struct {
 	ctx              context.Context
+	checkContext     bool
 	options          ExecutionOptions
 	remaining        uint64
 	values           uint64
@@ -84,13 +85,10 @@ func (st *Runtime) rethrowTerminal() {
 	if st.execution.terminal != nil {
 		panic(executionAbort{st.execution.terminal})
 	}
-	if st.escapeeWriter != nil && st.writeErr != nil {
-		st.terminate(st.writeErr)
-	}
 }
 
 func (st *Runtime) rethrowRecovered(recovered interface{}) {
-	if st.execution.terminal != nil || st.writeErr != nil {
+	if st.execution.terminal != nil {
 		if _, ok := recovered.(runtime.Error); ok {
 			panic(recovered)
 		}
@@ -106,12 +104,24 @@ func (st *Runtime) rethrowRecovered(recovered interface{}) {
 // checkpoint reserves work before it happens, using subtraction to avoid wrap.
 // Additional budget dimensions must reserve against this same execution state.
 func (st *Runtime) checkpoint(steps uint64) {
+	if st.execution.ctx == nil && st.execution.terminal == nil {
+		return
+	}
+	st.checkpointActive(steps)
+}
+
+func (st *Runtime) checkpointActive(steps uint64) {
 	st.rethrowTerminal()
+	st.reserveWork(steps)
+}
+
+// reserveWork follows a terminal check without an intervening native call.
+func (st *Runtime) reserveWork(steps uint64) {
 	b := &st.execution
 	if b.ctx == nil {
 		return
 	}
-	if b.ctx.Err() != nil {
+	if b.checkContext && b.ctx.Err() != nil {
 		st.terminate(executionContextError(b.ctx))
 	}
 	st.reserveUnchecked(&b.remaining, b.options.MaxSteps, steps, "steps", ErrStepLimit)

@@ -1,0 +1,8 @@
+gate-lock: held by pid <pid> on <host>, "jet-finalization-lane-2-object-profile-summary f7c2b67 in <checkout>", since 2026-11-08T08:28:37Z, 2 of 6 focused cores
+Traceback (most recent call last):
+  File "<artifacts>/summarize_objects.py", line 10, in <module>
+    rows.append(dict(output=str(path.relative_to(Path.cwd())),kind=kind,zero_total='0, 0% of 0 total' in text,top=nodes[:8],all_nodes=nodes))
+                                ~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "<homebrew>/Cellar/python@3.15/3.15.2/Frameworks/Python.framework/Versions/3.15/lib/python3.15/pathlib/__init__.py", line 494, in relative_to
+    raise ValueError(f"{str(self)!r} is not in the subpath of {str(other)!r}")
+ValueError: '.git/finalization/selected-measure/baseline-legacy_stream-alloc-objects.txt' is not in the subpath of '<checkout>'

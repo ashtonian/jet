@@ -1,0 +1,4 @@
+--- execution_output.go
++++ execution_output.go
+@@ -38,0 +39 @@
++ if len(b) > 0 && len(b) < 4096 && w.retained.Cap() == 0 { w.retained.Grow(4096) }

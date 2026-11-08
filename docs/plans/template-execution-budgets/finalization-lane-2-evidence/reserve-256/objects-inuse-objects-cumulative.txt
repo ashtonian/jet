@@ -1,0 +1,31 @@
+File: reserve-256.test
+Type: inuse_objects
+Time: 2026-11-08 01:51:53 CST
+Showing nodes accounting for 44, 41.12% of 107 total
+Showing top 25 nodes out of 129
+      flat  flat%   sum%        cum   cum%
+         0     0%     0%         85 79.44%  testing.(*B).runN
+         0     0%     0%         83 77.57%  testing.(*B).run1.func1
+         0     0%     0%         81 75.70%  github.com/CloudyKit/jet/v6_test.BenchmarkOutputReserve
+         0     0%     0%         73 68.22%  encoding/json.Unmarshal (inline)
+         0     0%     0%         73 68.22%  encoding/json/v2.Unmarshal
+         0     0%     0%         73 68.22%  encoding/json/v2.unmarshalDecode
+         0     0%     0%         73 68.22%  github.com/CloudyKit/jet/v6_test.executionWorkloads
+         0     0%     0%         67 62.62%  sync.(*Once).Do (partial-inline)
+         0     0%     0%         67 62.62%  sync.(*Once).doSlow
+         0     0%     0%         64 59.81%  encoding/json/v2.makeSliceArshaler.func3
+         0     0%     0%         56 52.34%  encoding/json/v2.makeStructArshaler.func3
+         0     0%     0%         52 48.60%  encoding/json/v2.makeStructArshaler.func1
+        13 12.15% 12.15%         52 48.60%  encoding/json/v2.makeStructFields
+         0     0% 12.15%         42 39.25%  encoding/json/v2.lookupArshaler
+         0     0% 12.15%         34 31.78%  encoding/json/v2.makeDefaultArshaler
+         1  0.93% 13.08%         33 30.84%  encoding/json/v2.makeStructFields.func3
+        15 14.02% 27.10%         16 14.95%  runtime.mallocgc
+        14 13.08% 40.19%         14 13.08%  encoding/json/v2.makeMapArshaler
+         0     0% 40.19%         12 11.21%  runtime.newobject
+         1  0.93% 41.12%         11 10.28%  reflect.(*rtype).ptrTo
+         0     0% 41.12%         11 10.28%  reflect.PointerTo (inline)
+         0     0% 41.12%         10  9.35%  testing.(*B).Run
+         0     0% 41.12%          8  7.48%  encoding/json/v2.makeSliceArshaler.func1
+         0     0% 41.12%          8  7.48%  internal/sync.(*HashTrieMap[go.shape.interface {},go.shape.interface {}]).LoadOrStore
+         0     0% 41.12%          8  7.48%  sync.(*Map).LoadOrStore (inline)

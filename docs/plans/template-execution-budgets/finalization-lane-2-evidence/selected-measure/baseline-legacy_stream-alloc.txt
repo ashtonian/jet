@@ -1,0 +1,28 @@
+File: baseline.test
+Type: alloc_space
+Time: 2026-11-08 02:10:53 CST
+Showing nodes accounting for 11319.79kB, 100% of 11319.79kB total
+Showing top 22 nodes out of 36
+      flat  flat%   sum%        cum   cum%
+ 5120.12kB 45.23% 45.23%  5120.12kB 45.23%  github.com/CloudyKit/jet/v6.(*Runtime).recover
+ 2694.67kB 23.80% 69.04%  2694.67kB 23.80%  encoding/json/v2.makeString
+ 1184.27kB 10.46% 79.50%  1184.27kB 10.46%  runtime/pprof.StartCPUProfile
+  655.29kB  5.79% 85.29%   655.29kB  5.79%  compress/flate.NewWriter (inline)
+  641.34kB  5.67% 90.95%   641.34kB  5.67%  os.readFileContents
+  512.08kB  4.52% 95.48%   512.08kB  4.52%  compress/gzip.NewWriterLevel
+  512.02kB  4.52%   100%  1167.31kB 10.31%  runtime/pprof.(*profileBuilder).emitLocation
+         0     0%   100%   655.29kB  5.79%  compress/gzip.(*Writer).Write
+         0     0%   100%  2694.67kB 23.80%  encoding/json.Unmarshal (inline)
+         0     0%   100%  2694.67kB 23.80%  encoding/json/v2.Unmarshal
+         0     0%   100%   544.67kB  4.81%  encoding/json/v2.makeInterfaceArshaler.func2
+         0     0%   100%   544.67kB  4.81%  encoding/json/v2.makeMapArshaler.func3
+         0     0%   100%  2694.67kB 23.80%  encoding/json/v2.makeSliceArshaler.func3
+         0     0%   100%  2694.67kB 23.80%  encoding/json/v2.makeStringArshaler.func2
+         0     0%   100%  2694.67kB 23.80%  encoding/json/v2.makeStructArshaler.func3
+         0     0%   100%  2694.67kB 23.80%  encoding/json/v2.unmarshalDecode
+         0     0%   100%  5120.12kB 45.23%  github.com/CloudyKit/jet/v6.(*Template).Execute (inline)
+         0     0%   100%  5120.12kB 45.23%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0%   100%  3336.02kB 29.47%  github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview
+         0     0%   100%  5120.12kB 45.23%  github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview.func1
+         0     0%   100%  3336.02kB 29.47%  github.com/CloudyKit/jet/v6_test.executionWorkloads
+         0     0%   100%  5120.12kB 45.23%  github.com/CloudyKit/jet/v6_test.init.func1

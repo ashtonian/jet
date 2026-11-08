@@ -1,0 +1,31 @@
+File: fixed.test
+Type: inuse_objects
+Time: 2026-11-08 01:29:26 CST
+Showing nodes accounting for 38, 37.62% of 101 total
+Showing top 25 nodes out of 122
+      flat  flat%   sum%        cum   cum%
+         0     0%     0%         85 84.16%  testing.(*B).runN
+         0     0%     0%         83 82.18%  github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview
+         0     0%     0%         83 82.18%  testing.(*B).run1.func1
+         0     0%     0%         74 73.27%  encoding/json.Unmarshal (inline)
+         0     0%     0%         74 73.27%  encoding/json/v2.Unmarshal
+         0     0%     0%         74 73.27%  encoding/json/v2.unmarshalDecode
+         0     0%     0%         74 73.27%  github.com/CloudyKit/jet/v6_test.executionWorkloads
+         0     0%     0%         68 67.33%  sync.(*Once).Do (partial-inline)
+         0     0%     0%         68 67.33%  sync.(*Once).doSlow
+         0     0%     0%         65 64.36%  encoding/json/v2.makeSliceArshaler.func3
+         0     0%     0%         57 56.44%  encoding/json/v2.makeStructArshaler.func3
+         0     0%     0%         53 52.48%  encoding/json/v2.makeStructArshaler.func1
+        13 12.87% 12.87%         53 52.48%  encoding/json/v2.makeStructFields
+         0     0% 12.87%         43 42.57%  encoding/json/v2.lookupArshaler
+         0     0% 12.87%         34 33.66%  encoding/json/v2.makeDefaultArshaler
+         1  0.99% 13.86%         34 33.66%  encoding/json/v2.makeStructFields.func3
+        14 13.86% 27.72%         14 13.86%  encoding/json/v2.makeMapArshaler
+         1  0.99% 28.71%         11 10.89%  reflect.(*rtype).ptrTo
+         0     0% 28.71%         11 10.89%  reflect.PointerTo (inline)
+         9  8.91% 37.62%         10  9.90%  runtime.mallocgc
+         0     0% 37.62%          9  8.91%  internal/sync.(*HashTrieMap[go.shape.interface {},go.shape.interface {}]).LoadOrStore
+         0     0% 37.62%          9  8.91%  sync.(*Map).LoadOrStore (inline)
+         0     0% 37.62%          9  8.91%  testing.(*B).Run
+         0     0% 37.62%          8  7.92%  encoding/json/v2.makeSliceArshaler.func1
+         0     0% 37.62%          8  7.92%  runtime.newobject

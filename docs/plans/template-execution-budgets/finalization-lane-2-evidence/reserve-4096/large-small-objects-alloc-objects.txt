@@ -1,0 +1,32 @@
+File: reserve-4096.test
+Type: alloc_objects
+Time: 2026-11-08 01:52:24 CST
+Showing nodes accounting for 9477, 89.95% of 10536 total
+Dropped 110 nodes (cum <= 52)
+Showing top 25 nodes out of 85
+      flat  flat%   sum%        cum   cum%
+      4831 45.85% 45.85%       4831 45.85%  strings.genSplit
+       840  7.97% 53.82%        840  7.97%  github.com/CloudyKit/jet/v6.newParseAdmission
+       510  4.84% 58.67%        510  4.84%  github.com/CloudyKit/jet/v6.admitInputScopes
+       450  4.27% 62.94%       1080 10.25%  github.com/CloudyKit/jet/v6.NewRestrictedSet
+       300  2.85% 65.78%        450  4.27%  github.com/CloudyKit/jet/v6.(*parseAdmission).admitCached
+       244  2.32% 68.10%       4600 43.66%  github.com/CloudyKit/jet/v6.TestOutputOwnedLargeThenSmall
+       216  2.05% 70.15%        216  2.05%  sync.(*Pool).pinSlow
+       210  1.99% 72.14%        210  1.99%  bytes.growSlice
+       210  1.99% 74.14%        210  1.99%  github.com/CloudyKit/jet/v6.(*parseAdmission).prepareSource
+       210  1.99% 76.13%       5201 49.36%  testing.(*T).Run
+       150  1.42% 77.55%        420  3.99%  github.com/CloudyKit/jet/v6.(*Set).parse
+       150  1.42% 78.98%       2076 19.70%  github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext
+       150  1.42% 80.40%        150  1.42%  github.com/CloudyKit/jet/v6.NewSet
+       150  1.42% 81.82%        150  1.42%  github.com/CloudyKit/jet/v6.VarMap.Set (inline)
+       101  0.96% 82.78%        101  0.96%  testing.rewrite
+        93  0.88% 83.67%        321  3.05%  testing.newMatcher
+        90  0.85% 84.52%        120  1.14%  github.com/CloudyKit/jet/v6.(*Set).getTemplateFromCache
+        90  0.85% 85.37%        330  3.13%  github.com/CloudyKit/jet/v6.admitTemplateBundle
+        90  0.85% 86.23%         90  0.85%  testing.pcToName
+        90  0.85% 87.08%       5776 54.82%  testing.runTests
+        62  0.59% 87.67%         62  0.59%  testing.splitRegexp
+        60  0.57% 88.24%         60  0.57%  bytes.(*Buffer).String (inline)
+        60  0.57% 88.81%        120  1.14%  context.WithCancel
+        60  0.57% 89.38%         60  0.57%  context.withCancel (inline)
+        60  0.57% 89.95%         60  0.57%  github.com/CloudyKit/jet/v6.lex (inline)

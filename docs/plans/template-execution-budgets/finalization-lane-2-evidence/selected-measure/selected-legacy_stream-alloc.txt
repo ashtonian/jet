@@ -1,0 +1,28 @@
+File: selected.test
+Type: alloc_space
+Time: 2026-11-08 02:11:01 CST
+Showing nodes accounting for 5480.38kB, 100% of 5480.38kB total
+Showing top 22 nodes out of 37
+      flat  flat%   sum%        cum   cum%
+ 1605.34kB 29.29% 29.29%  1605.34kB 29.29%  encoding/json/v2.makeString
+ 1537.19kB 28.05% 57.34%  1537.19kB 28.05%  regexp/syntax.(*compiler).inst (inline)
+ 1184.27kB 21.61% 78.95%  1184.27kB 21.61%  runtime/pprof.StartCPUProfile
+  641.34kB 11.70% 90.65%   641.34kB 11.70%  os.readFileContents
+  512.23kB  9.35%   100%   512.23kB  9.35%  runtime.mallocgc
+         0     0%   100%  1605.34kB 29.29%  encoding/json.Unmarshal (inline)
+         0     0%   100%  1605.34kB 29.29%  encoding/json/v2.Unmarshal
+         0     0%   100%   544.67kB  9.94%  encoding/json/v2.makeInterfaceArshaler.func2
+         0     0%   100%   544.67kB  9.94%  encoding/json/v2.makeMapArshaler.func3
+         0     0%   100%  1605.34kB 29.29%  encoding/json/v2.makeSliceArshaler.func3
+         0     0%   100%  1605.34kB 29.29%  encoding/json/v2.makeStringArshaler.func2
+         0     0%   100%  1605.34kB 29.29%  encoding/json/v2.makeStructArshaler.func3
+         0     0%   100%  1605.34kB 29.29%  encoding/json/v2.unmarshalDecode
+         0     0%   100%  3783.87kB 69.04%  github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview
+         0     0%   100%  2246.68kB 41.00%  github.com/CloudyKit/jet/v6_test.executionWorkloads
+         0     0%   100%  1184.27kB 21.61%  main.main
+         0     0%   100%   641.34kB 11.70%  os.ReadFile
+         0     0%   100%  1537.19kB 28.05%  regexp.Compile (inline)
+         0     0%   100%  1537.19kB 28.05%  regexp.compile
+         0     0%   100%  1537.19kB 28.05%  regexp/syntax.(*compiler).compile
+         0     0%   100%  1537.19kB 28.05%  regexp/syntax.(*compiler).rune
+         0     0%   100%  1537.19kB 28.05%  regexp/syntax.Compile

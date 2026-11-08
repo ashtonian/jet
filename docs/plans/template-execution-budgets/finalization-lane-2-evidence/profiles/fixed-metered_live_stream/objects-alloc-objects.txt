@@ -1,0 +1,31 @@
+File: fixed.test
+Type: alloc_objects
+Time: 2026-11-08 01:29:28 CST
+Showing nodes accounting for 463139, 97.48% of 475118 total
+Dropped 314 nodes (cum <= 2375)
+      flat  flat%   sum%        cum   cum%
+    261932 55.13% 55.13%     261932 55.13%  github.com/CloudyKit/jet/v6.newParseAdmission
+    130958 27.56% 82.69%     196437 41.34%  github.com/CloudyKit/jet/v6.(*parseAdmission).admitCached
+     65483 13.78% 96.48%      65483 13.78%  github.com/CloudyKit/jet/v6.(*parseAdmission).prepareSource
+      3248  0.68% 97.16%       3248  0.68%  regexp.makeOnePass.func1
+       671  0.14% 97.30%      12585  2.65%  regexp.compile
+       345 0.073% 97.37%      14719  3.10%  github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview
+       337 0.071% 97.44%       4116  0.87%  regexp/syntax.parse
+       152 0.032% 97.48%       4004  0.84%  regexp.makeOnePass
+         6 0.0013% 97.48%      13397  2.82%  testing.(*B).Run
+         4 0.00084% 97.48%     458647 96.53%  github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview.func1
+         3 0.00063% 97.48%     473401 99.64%  testing.(*B).runN
+         0     0% 97.48%     458353 96.47%  github.com/CloudyKit/jet/v6.(*Runtime).startCompilation
+         0     0% 97.48%     196437 41.34%  github.com/CloudyKit/jet/v6.(*Runtime).startCompilation.func1
+         0     0% 97.48%     458511 96.50%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0% 97.48%     458511 96.50%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0% 97.48%     458511 96.50%  github.com/CloudyKit/jet/v6_test.init.0.func1
+         0     0% 97.48%      12585  2.65%  regexp.Compile (inline)
+         0     0% 97.48%       4308  0.91%  regexp.compileOnePass
+         0     0% 97.48%       2984  0.63%  regexp/syntax.(*parser).literal
+         0     0% 97.48%       4116  0.87%  regexp/syntax.Parse (inline)
+         0     0% 97.48%     458527 96.51%  testing.(*B).launch
+         0     0% 97.48%      14857  3.13%  testing.(*B).run1.func1
+         0     0% 97.48%      13587  2.86%  testing.(*matcher).fullName
+         0     0% 97.48%      12475  2.63%  testing.simpleMatch.matches
+         0     0% 97.48%      12615  2.66%  testing/internal/testdeps.TestDeps.MatchString

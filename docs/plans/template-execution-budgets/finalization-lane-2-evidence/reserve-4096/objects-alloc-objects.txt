@@ -1,0 +1,32 @@
+File: reserve-4096.test
+Type: alloc_objects
+Time: 2026-11-08 01:52:26 CST
+Showing nodes accounting for 570522, 99.30% of 574516 total
+Dropped 352 nodes (cum <= 2872)
+Showing top 25 nodes out of 26
+      flat  flat%   sum%        cum   cum%
+    175548 30.56% 30.56%     175548 30.56%  github.com/CloudyKit/jet/v6.newParseAdmission
+    131657 22.92% 53.47%     131657 22.92%  github.com/CloudyKit/jet/v6.admitInputScopes
+     87770 15.28% 68.75%     131655 22.92%  github.com/CloudyKit/jet/v6.(*parseAdmission).admitCached
+     43887  7.64% 76.39%      43887  7.64%  github.com/CloudyKit/jet/v6.(*parseAdmission).prepareSource
+     43886  7.64% 84.03%      43886  7.64%  bytes.(*Buffer).String (inline)
+     43885  7.64% 91.67%      43885  7.64%  bytes.growSlice
+     43885  7.64% 99.30%     571347 99.45%  github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext
+         3 0.00052% 99.30%     572825 99.71%  testing.(*B).runN
+         1 0.00017% 99.30%      43886  7.64%  bytes.(*Buffer).grow
+         0     0% 99.30%      43885  7.64%  bytes.(*Buffer).Grow (inline)
+         0     0% 99.30%      44339  7.72%  github.com/CloudyKit/fastprinter.PrintString
+         0     0% 99.30%      44341  7.72%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 99.30%      44339  7.72%  github.com/CloudyKit/jet/v6.(*Runtime).printValue
+         0     0% 99.30%     307195 53.47%  github.com/CloudyKit/jet/v6.(*Runtime).startCompilation
+         0     0% 99.30%     131655 22.92%  github.com/CloudyKit/jet/v6.(*Runtime).startCompilation.func1
+         0     0% 99.30%     527462 91.81%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0% 99.30%     527462 91.81%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0% 99.30%      43885  7.64%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+         0     0% 99.30%      43885  7.64%  github.com/CloudyKit/jet/v6.(*dataPrinter).Write
+         0     0% 99.30%      44339  7.72%  github.com/CloudyKit/jet/v6.(*dataPrinter).text
+         0     0% 99.30%      44339  7.72%  github.com/CloudyKit/jet/v6.(*dataPrinter).value
+         0     0% 99.30%      43885  7.64%  github.com/CloudyKit/jet/v6.(*escapeeWriter).Write
+         0     0% 99.30%     571347 99.45%  github.com/CloudyKit/jet/v6_test.BenchmarkOutputReserve.func1.1
+         0     0% 99.30%     571347 99.45%  github.com/CloudyKit/jet/v6_test.BenchmarkOutputReserve.func1.2
+         0     0% 99.30%     571332 99.45%  testing.(*B).launch

@@ -1,0 +1,28 @@
+File: lease.test
+Type: alloc_objects
+Time: 2026-11-08 02:43:14 CST
+Showing nodes accounting for 36086175, 100% of 36095810 total
+Dropped 18 nodes (cum <= 180479)
+      flat  flat%   sum%        cum   cum%
+         0     0%     0%   36090272   100%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0%     0%   36090272   100%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0%     0%   36090272   100%  github.com/CloudyKit/jet/v6_test.BenchmarkScalarReentry.func1
+         0     0%     0%   36090272   100%  github.com/CloudyKit/jet/v6_test.BenchmarkScalarReentry.func1.3
+         0     0%     0%   36090272   100%  testing.(*B).launch
+         0     0%     0%   36090272   100%  testing.(*B).runN
+         0     0%     0%   21012869 58.21%  github.com/CloudyKit/jet/v6.(*Runtime).startCompilation
+   2654248  7.35%  7.35%   15073306 41.76%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+  11895591 32.96% 40.31%   11895591 32.96%  github.com/CloudyKit/jet/v6.newParseAdmission
+         0     0% 40.31%    9117278 25.26%  github.com/CloudyKit/jet/v6.(*Runtime).startCompilation.func1
+   6223038 17.24% 57.55%    9117278 25.26%  github.com/CloudyKit/jet/v6.(*parseAdmission).admitCached
+   6400896 17.73% 75.28%    6400896 17.73%  github.com/CloudyKit/jet/v6.(*Runtime).newScope (inline)
+         0     0% 75.28%    3102321  8.59%  github.com/CloudyKit/jet/v6.(*Runtime).YieldBlock
+   3102321  8.59% 83.88%    3102321  8.59%  github.com/CloudyKit/jet/v6.(*Runtime).printValue
+         0     0% 83.88%    3102321  8.59%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+         0     0% 83.88%    3102321  8.59%  github.com/CloudyKit/jet/v6.(*dataPrinter).Write
+         0     0% 83.88%    3102321  8.59%  github.com/CloudyKit/jet/v6.(*dataPrinter).value
+         0     0% 83.88%    3102321  8.59%  github.com/CloudyKit/jet/v6.(*escapeeWriter).Write
+         0     0% 83.88%    3102321  8.59%  github.com/CloudyKit/jet/v6_test.(*scalarBorrowWriter).Write
+   2915841  8.08% 91.96%    2915841  8.08%  github.com/CloudyKit/jet/v6.(*Runtime).declareValue
+         0     0% 91.96%    2915841  8.08%  github.com/CloudyKit/jet/v6.(*Runtime).executeLetList
+   2894240  8.02%   100%    2894240  8.02%  github.com/CloudyKit/jet/v6.(*parseAdmission).prepareSource

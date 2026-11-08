@@ -1,0 +1,17 @@
+File: lease.test
+Type: inuse_objects
+Time: 2026-11-08 02:43:04 CST
+Showing nodes accounting for 16, 100% of 16 total
+      flat  flat%   sum%        cum   cum%
+         0     0%     0%         16   100%  github.com/CloudyKit/jet/v6_test.BenchmarkScalarSequential
+         0     0%     0%         16   100%  regexp.(*Regexp).MatchString (inline)
+         0     0%     0%         16   100%  regexp.(*Regexp).backtrack
+         0     0%     0%         16   100%  regexp.(*Regexp).doMatch (inline)
+         0     0%     0%         16   100%  regexp.(*Regexp).find
+        16   100%   100%         16   100%  regexp.(*bitState).reset
+         0     0%   100%         16   100%  testing.(*B).Run
+         0     0%   100%         16   100%  testing.(*B).run1.func1
+         0     0%   100%         16   100%  testing.(*B).runN
+         0     0%   100%         16   100%  testing.(*matcher).fullName
+         0     0%   100%         16   100%  testing.simpleMatch.matches
+         0     0%   100%         16   100%  testing/internal/testdeps.TestDeps.MatchString

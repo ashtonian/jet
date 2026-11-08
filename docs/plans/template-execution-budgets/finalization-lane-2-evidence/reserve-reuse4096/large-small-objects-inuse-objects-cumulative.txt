@@ -1,0 +1,31 @@
+File: reserve-reuse4096.test
+Type: inuse_objects
+Time: 2026-11-08 01:56:45 CST
+Showing nodes accounting for 17, 45.95% of 37 total
+Showing top 25 nodes out of 97
+      flat  flat%   sum%        cum   cum%
+         0     0%     0%         16 43.24%  main.main
+         0     0%     0%         16 43.24%  runtime.main
+         0     0%     0%         16 43.24%  testing.(*M).Run
+         0     0%     0%         16 43.24%  testing.tRunner
+         0     0%     0%         14 37.84%  testing.runTests
+         0     0%     0%         12 32.43%  testing/internal/testdeps.TestDeps.MatchString
+         0     0%     0%         11 29.73%  testing.newMatcher
+         0     0%     0%         11 29.73%  testing.simpleMatch.verify
+         0     0%     0%         10 27.03%  regexp.Compile (inline)
+         2  5.41%  5.41%         10 27.03%  regexp.compile
+         0     0%  5.41%         10 27.03%  sync.(*Pool).Get
+         1  2.70%  8.11%          8 21.62%  github.com/CloudyKit/jet/v6.TestOutputOwnedLargeThenSmall
+         8 21.62% 29.73%          8 21.62%  runtime.mallocgc
+         0     0% 29.73%          7 18.92%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0% 29.73%          7 18.92%  github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext
+         0     0% 29.73%          7 18.92%  github.com/CloudyKit/jet/v6.(*Template).execute
+         1  2.70% 32.43%          5 13.51%  fmt.Sprintf
+         0     0% 32.43%          5 13.51%  runtime.newobject
+         0     0% 32.43%          5 13.51%  sync.(*Pool).pin
+         5 13.51% 45.95%          5 13.51%  sync.(*Pool).pinSlow
+         0     0% 45.95%          5 13.51%  testing.(*T).report
+         0     0% 45.95%          5 13.51%  testing.fmtDuration
+         0     0% 45.95%          5 13.51%  testing.tRunner.func1
+         0     0% 45.95%          4 10.81%  github.com/CloudyKit/fastprinter.PrintString
+         0     0% 45.95%          4 10.81%  github.com/CloudyKit/jet/v6.(*Runtime).executeList

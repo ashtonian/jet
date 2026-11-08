@@ -1,0 +1,15 @@
+File: reserve-1024.test
+Type: delay
+Time: 2026-11-08 01:52:09 CST
+Showing nodes accounting for 104.33us, 100% of 104.33us total
+      flat  flat%   sum%        cum   cum%
+  104.33us   100%   100%   104.33us   100%  runtime.unlock (inline)
+         0     0%   100%     3.21us  3.07%  runtime.forEachP (inline)
+         0     0%   100%     3.21us  3.07%  runtime.forEachP.func1
+         0     0%   100%     3.21us  3.07%  runtime.forEachPInternal
+         0     0%   100%   104.33us   100%  runtime.gcBgMarkWorker
+         0     0%   100%   104.33us   100%  runtime.gcMarkDone
+         0     0%   100%   101.12us 96.93%  runtime.gcMarkTermination
+         0     0%   100%   101.12us 96.93%  runtime.gcMarkTermination.func3
+         0     0%   100%   101.12us 96.93%  runtime.startTheWorldWithSema
+         0     0%   100%   104.33us   100%  runtime.systemstack

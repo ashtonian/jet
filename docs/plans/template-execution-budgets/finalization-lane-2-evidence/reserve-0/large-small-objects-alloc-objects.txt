@@ -1,0 +1,32 @@
+File: reserve-0.test
+Type: alloc_objects
+Time: 2026-11-08 01:51:34 CST
+Showing nodes accounting for 9444, 89.82% of 10514 total
+Dropped 106 nodes (cum <= 52)
+Showing top 25 nodes out of 84
+      flat  flat%   sum%        cum   cum%
+      4831 45.95% 45.95%       4831 45.95%  strings.genSplit
+       840  7.99% 53.94%        840  7.99%  github.com/CloudyKit/jet/v6.newParseAdmission
+       510  4.85% 58.79%        510  4.85%  github.com/CloudyKit/jet/v6.admitInputScopes
+       450  4.28% 63.07%       1080 10.27%  github.com/CloudyKit/jet/v6.NewRestrictedSet
+       300  2.85% 65.92%        450  4.28%  github.com/CloudyKit/jet/v6.(*parseAdmission).admitCached
+       244  2.32% 68.24%       4588 43.64%  github.com/CloudyKit/jet/v6.TestOutputOwnedLargeThenSmall
+       216  2.05% 70.30%        216  2.05%  sync.(*Pool).pinSlow
+       210  2.00% 72.29%        210  2.00%  github.com/CloudyKit/jet/v6.(*parseAdmission).prepareSource
+       210  2.00% 74.29%       5198 49.44%  testing.(*T).Run
+       150  1.43% 75.72%        150  1.43%  bytes.growSlice
+       150  1.43% 77.14%        420  3.99%  github.com/CloudyKit/jet/v6.(*Set).parse
+       150  1.43% 78.57%       2064 19.63%  github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext
+       150  1.43% 80.00%        150  1.43%  github.com/CloudyKit/jet/v6.NewSet
+       150  1.43% 81.42%        150  1.43%  github.com/CloudyKit/jet/v6.VarMap.Set (inline)
+        98  0.93% 82.36%         98  0.93%  testing.rewrite
+        93  0.88% 83.24%        318  3.02%  testing.newMatcher
+        90  0.86% 84.10%        240  2.28%  bytes.(*Buffer).grow
+        90  0.86% 84.95%        120  1.14%  github.com/CloudyKit/jet/v6.(*Set).getTemplateFromCache
+        90  0.86% 85.81%        330  3.14%  github.com/CloudyKit/jet/v6.admitTemplateBundle
+        90  0.86% 86.67%         90  0.86%  testing.pcToName
+        90  0.86% 87.52%       5773 54.91%  testing.runTests
+        62  0.59% 88.11%         62  0.59%  testing.splitRegexp
+        60  0.57% 88.68%         60  0.57%  bytes.(*Buffer).String (inline)
+        60  0.57% 89.25%        120  1.14%  context.WithCancel
+        60  0.57% 89.82%         60  0.57%  context.withCancel (inline)

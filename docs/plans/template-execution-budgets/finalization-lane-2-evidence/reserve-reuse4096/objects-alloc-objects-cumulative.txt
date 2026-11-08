@@ -1,0 +1,20 @@
+File: reserve-reuse4096.test
+Type: alloc_objects
+Time: 2026-11-08 01:56:46 CST
+Showing nodes accounting for 571120, 99.38% of 574657 total
+Dropped 345 nodes (cum <= 2873)
+      flat  flat%   sum%        cum   cum%
+         3 0.00052% 0.00052%     573100 99.73%  testing.(*B).runN
+     47592  8.28%  8.28%     571623 99.47%  github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext
+         0     0%  8.28%     571623 99.47%  github.com/CloudyKit/jet/v6_test.BenchmarkOutputReserve.func1.1
+         0     0%  8.28%     571623 99.47%  github.com/CloudyKit/jet/v6_test.BenchmarkOutputReserve.func1.2
+         0     0%  8.28%     571608 99.47%  testing.(*B).launch
+         0     0%  8.28%     524031 91.19%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0%  8.28%     524031 91.19%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0%  8.28%     333144 57.97%  github.com/CloudyKit/jet/v6.(*Runtime).startCompilation
+    190376 33.13% 41.41%     190376 33.13%  github.com/CloudyKit/jet/v6.newParseAdmission
+    142778 24.85% 66.26%     142778 24.85%  github.com/CloudyKit/jet/v6.admitInputScopes
+         0     0% 66.26%     142776 24.85%  github.com/CloudyKit/jet/v6.(*Runtime).startCompilation.func1
+     95184 16.56% 82.82%     142776 24.85%  github.com/CloudyKit/jet/v6.(*parseAdmission).admitCached
+     47594  8.28% 91.10%      47594  8.28%  github.com/CloudyKit/jet/v6.(*parseAdmission).prepareSource
+     47593  8.28% 99.38%      47593  8.28%  bytes.(*Buffer).String (inline)

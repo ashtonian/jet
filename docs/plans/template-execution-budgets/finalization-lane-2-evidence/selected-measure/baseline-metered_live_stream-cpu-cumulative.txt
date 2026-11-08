@@ -1,0 +1,30 @@
+File: baseline.test
+Type: cpu
+Time: 2026-11-08 02:10:53 CST
+Duration: 2.62s, Total samples = 2.18s (83.07%)
+Showing nodes accounting for 1.39s, 63.76% of 2.18s total
+Dropped 40 nodes (cum <= 0.01s)
+Showing top 22 nodes out of 70
+      flat  flat%   sum%        cum   cum%
+         0     0%     0%      1.94s 88.99%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0%     0%      1.94s 88.99%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0%     0%      1.94s 88.99%  github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview.func1
+         0     0%     0%      1.94s 88.99%  github.com/CloudyKit/jet/v6_test.init.0.func1
+         0     0%     0%      1.94s 88.99%  testing.(*B).launch
+         0     0%     0%      1.94s 88.99%  testing.(*B).runN
+         0     0%     0%      1.83s 83.94%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0%     0%      1.81s 83.03%  github.com/CloudyKit/jet/v6.(*Runtime).printValue
+         0     0%     0%      1.80s 82.57%  github.com/CloudyKit/fastprinter.PrintString
+     0.01s  0.46%  0.46%      1.80s 82.57%  github.com/CloudyKit/jet/v6.(*dataPrinter).Write
+         0     0%  0.46%      1.80s 82.57%  github.com/CloudyKit/jet/v6.(*dataPrinter).text
+         0     0%  0.46%      1.80s 82.57%  github.com/CloudyKit/jet/v6.(*dataPrinter).value
+         0     0%  0.46%      1.79s 82.11%  github.com/CloudyKit/jet/v6.(*escapeeWriter).Write
+     0.10s  4.59%  5.05%      1.79s 82.11%  text/template.HTMLEscape
+     0.44s 20.18% 25.23%      1.69s 77.52%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+     0.02s  0.92% 26.15%      1.43s 65.60%  github.com/CloudyKit/jet/v6.(*executionWriter).Write
+     0.21s  9.63% 35.78%      1.41s 64.68%  github.com/CloudyKit/jet/v6.(*executionWriter).write
+     0.13s  5.96% 41.74%      0.41s 18.81%  github.com/CloudyKit/jet/v6.(*Runtime).checkpoint
+     0.14s  6.42% 48.17%      0.35s 16.06%  bytes.(*Buffer).Write
+     0.14s  6.42% 54.59%      0.27s 12.39%  github.com/CloudyKit/jet/v6.(*Runtime).reserve
+         0     0% 54.59%      0.22s 10.09%  runtime.systemstack
+     0.20s  9.17% 63.76%      0.20s  9.17%  github.com/CloudyKit/jet/v6.(*Runtime).rethrowTerminal (inline)

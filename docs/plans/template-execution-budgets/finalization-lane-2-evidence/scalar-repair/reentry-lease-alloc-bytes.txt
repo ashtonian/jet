@@ -1,0 +1,28 @@
+File: lease.test
+Type: alloc_space
+Time: 2026-11-08 02:43:14 CST
+Showing nodes accounting for 3941.73MB, 99.92% of 3944.89MB total
+Dropped 18 nodes (cum <= 19.72MB)
+      flat  flat%   sum%        cum   cum%
+ 1040.18MB 26.37% 26.37%  1614.29MB 40.92%  github.com/CloudyKit/jet/v6.(*parseAdmission).admitCached
+  978.83MB 24.81% 51.18%   978.83MB 24.81%  github.com/CloudyKit/jet/v6.(*Runtime).declareValue
+  808.57MB 20.50% 71.68%   808.57MB 20.50%  github.com/CloudyKit/jet/v6.newParseAdmission
+  574.11MB 14.55% 86.23%   574.11MB 14.55%  github.com/CloudyKit/jet/v6.(*parseAdmission).prepareSource
+  284.03MB  7.20% 93.43%   284.03MB  7.20%  github.com/CloudyKit/jet/v6.(*Runtime).printValue
+  215.51MB  5.46% 98.89%   215.51MB  5.46%  github.com/CloudyKit/jet/v6.(*Runtime).newScope (inline)
+   40.50MB  1.03% 99.92%  1518.86MB 38.50%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 99.92%   284.03MB  7.20%  github.com/CloudyKit/jet/v6.(*Runtime).YieldBlock
+         0     0% 99.92%   978.83MB 24.81%  github.com/CloudyKit/jet/v6.(*Runtime).executeLetList
+         0     0% 99.92%  2422.87MB 61.42%  github.com/CloudyKit/jet/v6.(*Runtime).startCompilation
+         0     0% 99.92%  1614.29MB 40.92%  github.com/CloudyKit/jet/v6.(*Runtime).startCompilation.func1
+         0     0% 99.92%  3942.73MB 99.95%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0% 99.92%  3942.73MB 99.95%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0% 99.92%   284.03MB  7.20%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+         0     0% 99.92%   284.03MB  7.20%  github.com/CloudyKit/jet/v6.(*dataPrinter).Write
+         0     0% 99.92%   284.03MB  7.20%  github.com/CloudyKit/jet/v6.(*dataPrinter).value
+         0     0% 99.92%   284.03MB  7.20%  github.com/CloudyKit/jet/v6.(*escapeeWriter).Write
+         0     0% 99.92%   284.03MB  7.20%  github.com/CloudyKit/jet/v6_test.(*scalarBorrowWriter).Write
+         0     0% 99.92%  3942.73MB 99.95%  github.com/CloudyKit/jet/v6_test.BenchmarkScalarReentry.func1
+         0     0% 99.92%  3942.73MB 99.95%  github.com/CloudyKit/jet/v6_test.BenchmarkScalarReentry.func1.3
+         0     0% 99.92%  3942.73MB 99.95%  testing.(*B).launch
+         0     0% 99.92%  3942.73MB 99.95%  testing.(*B).runN

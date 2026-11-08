@@ -1,0 +1,22 @@
+{
+  "variant": "256",
+  "stage": "large-small",
+  "command": [
+    "/usr/bin/time",
+    "-l",
+    "<artifacts>/reserve-256.test",
+    "-test.run=^TestOutputOwnedLargeThenSmall$",
+    "-test.count=30",
+    "-test.memprofile=<artifacts>/reserve-256/large-small.pprof",
+    "-test.memprofilerate=1"
+  ],
+  "environment": {
+    "GOMAXPROCS": "2"
+  },
+  "deadline_seconds": 100,
+  "cleanup_seconds": 5,
+  "exit_code": 0,
+  "binary_sha256": "6703eca0e219ddcdc55966b6cc99b748c55e5a59012954874cae56c1799111bc",
+  "started": 1794124311.26316,
+  "finished": 1794124311.302919
+}

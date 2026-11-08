@@ -1,0 +1,634 @@
+[
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/scalar-repair/unsafe",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<artifacts>/scalar-repair/unsafe.test",
+      "<artifacts>/scalar-repair/sequential-unsafe-cpu.pprof"
+    ],
+    "deadline": 25,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/scalar-repair/unsafe",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-cum",
+      "<artifacts>/scalar-repair/unsafe.test",
+      "<artifacts>/scalar-repair/sequential-unsafe-cpu.pprof"
+    ],
+    "deadline": 25,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/scalar-repair/unsafe",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-list",
+      "printValue|dataPrinter.*Write|dataPrinter.*value",
+      "<artifacts>/scalar-repair/unsafe.test",
+      "<artifacts>/scalar-repair/sequential-unsafe-cpu.pprof"
+    ],
+    "deadline": 25,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/scalar-repair/unsafe",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-alloc_space",
+      "<artifacts>/scalar-repair/unsafe.test",
+      "<artifacts>/scalar-repair/sequential-unsafe-heap.pprof"
+    ],
+    "deadline": 25,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/scalar-repair/unsafe",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-alloc_objects",
+      "<artifacts>/scalar-repair/unsafe.test",
+      "<artifacts>/scalar-repair/sequential-unsafe-heap.pprof"
+    ],
+    "deadline": 25,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/scalar-repair/unsafe",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-cum",
+      "-alloc_objects",
+      "<artifacts>/scalar-repair/unsafe.test",
+      "<artifacts>/scalar-repair/sequential-unsafe-heap.pprof"
+    ],
+    "deadline": 25,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/scalar-repair/unsafe",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-inuse_space",
+      "<artifacts>/scalar-repair/unsafe.test",
+      "<artifacts>/scalar-repair/sequential-unsafe-heap.pprof"
+    ],
+    "deadline": 25,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/scalar-repair/unsafe",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-inuse_objects",
+      "<artifacts>/scalar-repair/unsafe.test",
+      "<artifacts>/scalar-repair/sequential-unsafe-heap.pprof"
+    ],
+    "deadline": 25,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/scalar-repair/unsafe",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<artifacts>/scalar-repair/unsafe.test",
+      "<artifacts>/scalar-repair/sequential-unsafe-mutex.pprof"
+    ],
+    "deadline": 25,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/scalar-repair/unsafe",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<artifacts>/scalar-repair/unsafe.test",
+      "<artifacts>/scalar-repair/sequential-unsafe-block.pprof"
+    ],
+    "deadline": 25,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/scalar-repair/lease",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<artifacts>/scalar-repair/lease.test",
+      "<artifacts>/scalar-repair/sequential-lease-cpu.pprof"
+    ],
+    "deadline": 25,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/scalar-repair/lease",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-cum",
+      "<artifacts>/scalar-repair/lease.test",
+      "<artifacts>/scalar-repair/sequential-lease-cpu.pprof"
+    ],
+    "deadline": 25,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/scalar-repair/lease",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-list",
+      "printValue|dataPrinter.*Write|dataPrinter.*value",
+      "<artifacts>/scalar-repair/lease.test",
+      "<artifacts>/scalar-repair/sequential-lease-cpu.pprof"
+    ],
+    "deadline": 25,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/scalar-repair/lease",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-alloc_space",
+      "<artifacts>/scalar-repair/lease.test",
+      "<artifacts>/scalar-repair/sequential-lease-heap.pprof"
+    ],
+    "deadline": 25,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/scalar-repair/lease",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-alloc_objects",
+      "<artifacts>/scalar-repair/lease.test",
+      "<artifacts>/scalar-repair/sequential-lease-heap.pprof"
+    ],
+    "deadline": 25,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/scalar-repair/lease",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-cum",
+      "-alloc_objects",
+      "<artifacts>/scalar-repair/lease.test",
+      "<artifacts>/scalar-repair/sequential-lease-heap.pprof"
+    ],
+    "deadline": 25,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/scalar-repair/lease",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-inuse_space",
+      "<artifacts>/scalar-repair/lease.test",
+      "<artifacts>/scalar-repair/sequential-lease-heap.pprof"
+    ],
+    "deadline": 25,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/scalar-repair/lease",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-inuse_objects",
+      "<artifacts>/scalar-repair/lease.test",
+      "<artifacts>/scalar-repair/sequential-lease-heap.pprof"
+    ],
+    "deadline": 25,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/scalar-repair/lease",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<artifacts>/scalar-repair/lease.test",
+      "<artifacts>/scalar-repair/sequential-lease-mutex.pprof"
+    ],
+    "deadline": 25,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/scalar-repair/lease",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<artifacts>/scalar-repair/lease.test",
+      "<artifacts>/scalar-repair/sequential-lease-block.pprof"
+    ],
+    "deadline": 25,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/scalar-repair/local",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<artifacts>/scalar-repair/local.test",
+      "<artifacts>/scalar-repair/reentry-local-cpu.pprof"
+    ],
+    "deadline": 25,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/scalar-repair/local",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-cum",
+      "<artifacts>/scalar-repair/local.test",
+      "<artifacts>/scalar-repair/reentry-local-cpu.pprof"
+    ],
+    "deadline": 25,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/scalar-repair/local",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-list",
+      "printValue|dataPrinter.*Write|dataPrinter.*value",
+      "<artifacts>/scalar-repair/local.test",
+      "<artifacts>/scalar-repair/reentry-local-cpu.pprof"
+    ],
+    "deadline": 25,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/scalar-repair/local",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-alloc_space",
+      "<artifacts>/scalar-repair/local.test",
+      "<artifacts>/scalar-repair/reentry-local-heap.pprof"
+    ],
+    "deadline": 25,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/scalar-repair/local",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-alloc_objects",
+      "<artifacts>/scalar-repair/local.test",
+      "<artifacts>/scalar-repair/reentry-local-heap.pprof"
+    ],
+    "deadline": 25,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/scalar-repair/local",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-cum",
+      "-alloc_objects",
+      "<artifacts>/scalar-repair/local.test",
+      "<artifacts>/scalar-repair/reentry-local-heap.pprof"
+    ],
+    "deadline": 25,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/scalar-repair/local",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-inuse_space",
+      "<artifacts>/scalar-repair/local.test",
+      "<artifacts>/scalar-repair/reentry-local-heap.pprof"
+    ],
+    "deadline": 25,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/scalar-repair/local",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-inuse_objects",
+      "<artifacts>/scalar-repair/local.test",
+      "<artifacts>/scalar-repair/reentry-local-heap.pprof"
+    ],
+    "deadline": 25,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/scalar-repair/local",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<artifacts>/scalar-repair/local.test",
+      "<artifacts>/scalar-repair/reentry-local-mutex.pprof"
+    ],
+    "deadline": 25,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/scalar-repair/local",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<artifacts>/scalar-repair/local.test",
+      "<artifacts>/scalar-repair/reentry-local-block.pprof"
+    ],
+    "deadline": 25,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/scalar-repair/lease",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<artifacts>/scalar-repair/lease.test",
+      "<artifacts>/scalar-repair/reentry-lease-cpu.pprof"
+    ],
+    "deadline": 25,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/scalar-repair/lease",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-cum",
+      "<artifacts>/scalar-repair/lease.test",
+      "<artifacts>/scalar-repair/reentry-lease-cpu.pprof"
+    ],
+    "deadline": 25,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/scalar-repair/lease",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-list",
+      "printValue|dataPrinter.*Write|dataPrinter.*value",
+      "<artifacts>/scalar-repair/lease.test",
+      "<artifacts>/scalar-repair/reentry-lease-cpu.pprof"
+    ],
+    "deadline": 25,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/scalar-repair/lease",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-alloc_space",
+      "<artifacts>/scalar-repair/lease.test",
+      "<artifacts>/scalar-repair/reentry-lease-heap.pprof"
+    ],
+    "deadline": 25,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/scalar-repair/lease",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-alloc_objects",
+      "<artifacts>/scalar-repair/lease.test",
+      "<artifacts>/scalar-repair/reentry-lease-heap.pprof"
+    ],
+    "deadline": 25,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/scalar-repair/lease",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-cum",
+      "-alloc_objects",
+      "<artifacts>/scalar-repair/lease.test",
+      "<artifacts>/scalar-repair/reentry-lease-heap.pprof"
+    ],
+    "deadline": 25,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/scalar-repair/lease",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-inuse_space",
+      "<artifacts>/scalar-repair/lease.test",
+      "<artifacts>/scalar-repair/reentry-lease-heap.pprof"
+    ],
+    "deadline": 25,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/scalar-repair/lease",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-inuse_objects",
+      "<artifacts>/scalar-repair/lease.test",
+      "<artifacts>/scalar-repair/reentry-lease-heap.pprof"
+    ],
+    "deadline": 25,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/scalar-repair/lease",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<artifacts>/scalar-repair/lease.test",
+      "<artifacts>/scalar-repair/reentry-lease-mutex.pprof"
+    ],
+    "deadline": 25,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/scalar-repair/lease",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<artifacts>/scalar-repair/lease.test",
+      "<artifacts>/scalar-repair/reentry-lease-block.pprof"
+    ],
+    "deadline": 25,
+    "exit_code": 0
+  }
+]

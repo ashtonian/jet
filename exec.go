@@ -94,22 +94,19 @@ func (t *Template) execute(ctx context.Context, w io.Writer, variables VarMap, d
 	st := pool_State.Get().(*Runtime)
 	defer st.recover(&err)
 
-	st.execution = executionState{ctx: ctx, options: opts, remaining: opts.MaxSteps, values: uint64(opts.MaxValueBytes), output: uint64(opts.MaxOutputBytes)}
+	st.execution = executionState{ctx: ctx, checkContext: ctx != nil && ctx != context.Background() && ctx != context.TODO(), options: opts, remaining: opts.MaxSteps, values: uint64(opts.MaxValueBytes), output: uint64(opts.MaxOutputBytes)}
 	st.checkpoint(0)
-	if owned != nil {
-		owned.runtime = st
-		defer func() { owned.runtime = nil }()
-	}
 	st.blocks = t.processedBlocks
 	st.variables = variables
 	st.set = t.set
 	st.writeErr = nil
-	st.rootSink = checkedWriter{writer: w, failure: &st.writeErr}
-	if ctx == nil {
-		st.Writer = &st.rootSink
-	} else {
-		st.Writer = st.outputWriter(w, false)
+	st.rootSink = st.checkedOutput(w)
+	if owned != nil {
+		st.rootSink.writer = &owned.buffer
+		st.rootSink.buffer = &owned.buffer
+		st.rootSink.retained = &owned.buffer
 	}
+	st.Writer = &st.rootSink
 
 	st.startCompilation(t)
 	root := st.templateRoot(t)

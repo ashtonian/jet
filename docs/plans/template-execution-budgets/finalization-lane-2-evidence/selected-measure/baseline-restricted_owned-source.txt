@@ -1,0 +1,80 @@
+Total: 2.23s
+ROUTINE ======================== github.com/CloudyKit/jet/v6.(*Runtime).checkpoint in execution.go
+      60ms      170ms (flat, cum)  7.62% of Total
+      10ms       10ms    107:func (st *Runtime) checkpoint(steps uint64) {
+         .       30ms    108:	st.rethrowTerminal()
+         .          .    109:	b := &st.execution
+         .          .    110:	if b.ctx == nil {
+         .          .    111:		return
+         .          .    112:	}
+      10ms       90ms    113:	if b.ctx.Err() != nil {
+         .          .    114:		st.terminate(executionContextError(b.ctx))
+         .          .    115:	}
+      20ms       20ms    116:	st.reserveUnchecked(&b.remaining, b.options.MaxSteps, steps, "steps", ErrStepLimit)
+      20ms       20ms    117:}
+         .          .    118:
+         .          .    119:// reserve checks an allowance before work/allocation. Zero limit is unlimited;
+         .          .    120:// failed reservations leave the balance unchanged and terminate the render.
+         .          .    121:func (st *Runtime) reserve(remaining *uint64, limit, requested uint64, kind string, cause error) {
+         .          .    122:	st.rethrowTerminal()
+ROUTINE ======================== github.com/CloudyKit/jet/v6.(*checkedWriter).Write in eval.go
+      80ms      780ms (flat, cum) 34.98% of Total
+      10ms       10ms     70:func (w *checkedWriter) Write(b []byte) (int, error) {
+      20ms       20ms     71:	if *w.failure != nil {
+         .          .     72:		return 0, *w.failure
+         .          .     73:	}
+      30ms      730ms     74:	n, err := w.writer.Write(b)
+      10ms       10ms     75:	if err == nil && n != len(b) {
+         .          .     76:		err = io.ErrShortWrite
+         .          .     77:	}
+         .          .     78:	if err != nil {
+         .          .     79:		*w.failure = err
+         .          .     80:	}
+      10ms       10ms     81:	return n, err
+         .          .     82:}
+         .          .     83:
+         .          .     84:func (w *escapeeWriter) Write(b []byte) (int, error) {
+         .          .     85:	if w.set.escapee == nil {
+         .          .     86:		return w.Writer.Write(b)
+ROUTINE ======================== github.com/CloudyKit/jet/v6.(*dataPrinter).Write in execution_print.go
+         0      760ms (flat, cum) 34.08% of Total
+         .          .     34:func (p *dataPrinter) Write(b []byte) (int, error) {
+         .          .     35:	p.runtime.checkpoint(uint64(len(b)))
+         .      760ms     36:	n, err := p.writer.Write(b)
+         .          .     37:	p.written += n
+         .          .     38:	return n, err
+         .          .     39:}
+         .          .     40:
+         .          .     41:func (p *dataPrinter) text(s string) error {
+ROUTINE ======================== github.com/CloudyKit/jet/v6.(*executionWriter).Write in execution_output.go
+      10ms      720ms (flat, cum) 32.29% of Total
+      10ms       10ms     28:func (w *executionWriter) Write(b []byte) (int, error) {
+         .      710ms     29:	return w.write(b, true)
+         .          .     30:}
+         .          .     31:
+         .          .     32:func (w *executionWriter) write(b []byte, generated bool) (int, error) {
+         .          .     33:	st := w.runtime
+         .          .     34:	st.checkpoint(uint64(len(b)))
+ROUTINE ======================== github.com/CloudyKit/jet/v6.(*executionWriter).write in execution_output.go
+      60ms      710ms (flat, cum) 31.84% of Total
+      10ms       10ms     32:func (w *executionWriter) write(b []byte, generated bool) (int, error) {
+      10ms       10ms     33:	st := w.runtime
+         .       80ms     34:	st.checkpoint(uint64(len(b)))
+         .          .     35:	if generated {
+         .      120ms     36:		st.reserve(&st.execution.output, uint64(st.execution.options.MaxOutputBytes), uint64(len(b)), "output", ErrOutputLimit)
+         .          .     37:	}
+      10ms       10ms     38:	if w.retained {
+         .          .     39:		buffer := w.writer.(*bytes.Buffer)
+         .          .     40:		size, ok := addValueSizes(int64(buffer.Len()), int64(len(b)))
+         .          .     41:		if !ok || uint64(size) > uint64(^uint(0)>>1) {
+         .          .     42:			st.failValueSize()
+         .          .     43:		}
+         .          .     44:		st.reserveValue(int64(len(b)))
+         .          .     45:	}
+         .          .     46:	sink := checkedWriter{writer: w.writer, failure: &st.writeErr}
+      30ms      480ms     47:	return sink.Write(b)
+         .          .     48:}
+         .          .     49:
+         .          .     50:func (st *Runtime) beginOutputTransaction() *outputTransaction {
+         .          .     51:	st.checkpoint(0)
+         .          .     52:	tx := &outputTransaction{parent: st.Writer}
