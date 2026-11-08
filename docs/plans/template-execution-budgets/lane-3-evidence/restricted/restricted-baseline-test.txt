@@ -1,0 +1,24 @@
+package jet
+
+import (
+ "bytes"
+ "context"
+ "errors"
+ "testing"
+)
+
+// The control is the pre-profile public workflow with the same template, input,
+// dependencies and positive execution/parse budgets as the restricted fix.
+func TestRestrictedDenialWorkflow(t *testing.T) {
+ t.Run("function",func(t *testing.T){
+  called:=false
+  vars:=VarMap{}.Set("value",func() string {called=true;return "called"})
+  opts:=ExecutionOptions{MaxSteps:1000000,MaxDepth:64,MaxValueBytes:8<<20,MaxOutputBytes:1<<20,ParseOptions:ParseOptions{MaxSourceBytes:65536,MaxTotalSourceBytes:262144,MaxNodes:20000,MaxSteps:1000000,MaxDepth:64,MaxTemplates:32}}
+  loader:=NewInMemLoader();loader.Set("main.jet",`{{ value() }}`)
+  tpl,err:=NewSet(loader,WithSafeWriter(nil)).GetTemplateContext(context.Background(),"main.jet",ParseOptions{})
+  if err!=nil{t.Fatal(err)}
+  var result bytes.Buffer
+  err=tpl.ExecuteContext(context.Background(),&result,vars,nil,opts)
+  if !errors.Is(err,ErrCapabilityDenied)||result.Len()!=0||called{t.Fatalf("result=%q err=%v called=%t",result.String(),err,called)}
+ })
+}

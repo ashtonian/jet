@@ -1,0 +1,14 @@
+{
+  "previous": {
+    "compilation": "5e5aa42662d9f6fc5372b7809cd03c6ddbb48486",
+    "runtime_compilation_base": "c422a0215ed40cc17d2282688d3626a1014ac7d7",
+    "runtime_compilation": "98f45c6b1d87b9fb8941291c94d51441c3a5b4b9"
+  },
+  "compilation": "484d70de3c8bfb6f9da06483637e14e276eff439",
+  "runtime_compilation_base": "dd594d8cd6700395b96badc0b49bfc4b6b235e89",
+  "runtime_compilation": "2858cef45f7fdc9c100fe0294f367fea63c82a15",
+  "canonical": "2d95fa9e9f02a831febbd62c0fb10995a3496e7b",
+  "registry": "a81e7dbd5036bebe9b8bcb5de3676c2e87ccd3fe",
+  "scope": "existing ashtonian/jet PRs only; no rewritten history or upstream submission",
+  "runtime_compilation_pre_index_cleanup": "3e9db040a9b463edba1a3fc7819afe00b3f45bd5"
+}

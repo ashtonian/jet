@@ -1,0 +1,2 @@
+gate-lock: held by pid 989 on $HOST, "jet-lane3-compiler-review-normal 2d95fa9 in $CHECKOUT", since 2026-11-08T00:50:20Z, 2 of 6 focused cores
+ok  	github.com/CloudyKit/jet/v6	0.251s

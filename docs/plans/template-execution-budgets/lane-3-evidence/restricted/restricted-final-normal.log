@@ -1,0 +1,6 @@
+gate-lock: held by pid 39727 on $HOST, "jet-lane3-restricted-final-normal bda0fa8 in $CHECKOUT", since 2026-11-08T00:44:49Z, 2 of 6 focused cores
+--- FAIL: TestRestrictedGeneratedCyclesAndMutableSnapshots (0.00s)
+    restricted_test.go:447: {{ m := map() }}{{ m.self = m }}{{ m == m }}: "true" <nil>
+FAIL
+FAIL	github.com/CloudyKit/jet/v6	0.288s
+FAIL

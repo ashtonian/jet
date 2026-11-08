@@ -1,0 +1,11 @@
+gate-lock: held by pid 10636 on $HOST, "jet-lane3-final-docs 2d95fa9 in $CHECKOUT", since 2026-11-08T00:57:49Z, 2 of 6 focused cores
+{
+  "command": "python3 .git/lane3-evidence/docs_validation.py",
+  "execution_deadline_seconds": 180,
+  "term_cleanup_seconds": 5,
+  "start": 1794099470.202566,
+  "end": 1794099472.474171,
+  "exit_code": 0,
+  "errors": [],
+  "manifest": "restricted-docs-inputs.json"
+}

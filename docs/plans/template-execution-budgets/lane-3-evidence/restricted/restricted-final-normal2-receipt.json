@@ -1,0 +1,22 @@
+{
+  "command": [
+    "go",
+    "test",
+    "-p=1",
+    "-parallel=2",
+    "-count=1",
+    "-timeout=90s",
+    "-run",
+    "^(TestRestricted|TestExecutionOwnsBlockingWriter|TestCompilation|TestInputAdmission|TestTemplateBundle)",
+    "."
+  ],
+  "execution_deadline_seconds": 180,
+  "queue_wait_in_stage_elapsed": true,
+  "supervisor": "installed gate-lock",
+  "gate_deadline_seconds": 180,
+  "term_cleanup_seconds": 5,
+  "start": 1794098719.263686,
+  "end": 1794098724.623332,
+  "exit_code": 0,
+  "manifest": "restricted-final-normal2-inputs.json"
+}

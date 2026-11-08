@@ -1,0 +1,12 @@
+gate-lock: held by pid 92653 on $HOST, "jet-lane3-restricted-workflows bda0fa8 in $CHECKOUT", since 2026-11-08T00:41:11Z, 2 of 6 focused cores
+--- FAIL: TestRestrictedSupportedWorkflow (0.00s)
+    restricted_test.go:52: template: /main.jet:1: parsing pipeline: unexpected token ':=' (expected pipe or right delimiter)
+--- FAIL: TestRestrictedTerminalAndCeilings (0.00s)
+    restricted_test.go:126: {{ isset(dump()) }}: "true" <nil>
+--- FAIL: TestRestrictedSnapshotsAndNamespace (0.00s)
+    restricted_test.go:203: "true" <nil>
+--- FAIL: TestRestrictedInputLimitsAndSemantics (0.00s)
+    restricted_test.go:223: "|0|bytes|null|named" <nil>
+FAIL
+FAIL	github.com/CloudyKit/jet/v6	0.241s
+FAIL

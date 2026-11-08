@@ -1,0 +1,357 @@
+[
+  {
+    "file": "$HOME/.host-gate.lock.managed/admissions/0d073ce78bea43fc889f19058929253a.json",
+    "sha256": "ea91ef8183dfbc75b6648fef9239a8bdc138cc16c6aa0ffd356a7e5eaa1ae4a2",
+    "receipt": {
+      "closing": true,
+      "contract": 1,
+      "guard": {
+        "inode": [
+          16777232,
+          447963385
+        ],
+        "nonce": "4f824542068d4488945315ee182b0a1c"
+      },
+      "inode": [
+        "$VOLUME",
+        491594818
+      ],
+      "latch_inode": [
+        "$VOLUME",
+        491594843
+      ],
+      "machine": [
+        "$HOST",
+        "darwin",
+        "$BOOT"
+      ],
+      "nonce": "0d073ce78bea43fc889f19058929253a",
+      "owner": "46387|Sat Nov 7 18:45:45 2026|$HOST|jet-lane3-restricted-final-race bda0fa8 in $CHECKOUT|2026-11-08T00:45:46Z",
+      "slot": "$HOME/.host-gate.lock.focused.slot1",
+      "source": "f3712d4758affa4a28d46003e0565bc8f622c70f94476f1aba95f4e3a877cd11",
+      "workdir": "$GOTMP/gate-run.46387.OUwQ5L"
+    }
+  },
+  {
+    "file": "$HOME/.host-gate.lock.managed/admissions/08d59ca8d97a4d8dbca7ee26836db109.json",
+    "sha256": "16236bdc4b12321047f60a217d1211c1db90cfb676eb91d223ac9c1e0e4d1f6b",
+    "receipt": {
+      "closing": true,
+      "contract": 1,
+      "guard": {
+        "inode": [
+          16777232,
+          447963385
+        ],
+        "nonce": "4f824542068d4488945315ee182b0a1c"
+      },
+      "inode": [
+        "$VOLUME",
+        491601372
+      ],
+      "latch_inode": [
+        "$VOLUME",
+        491601384
+      ],
+      "machine": [
+        "$HOST",
+        "darwin",
+        "$BOOT"
+      ],
+      "nonce": "08d59ca8d97a4d8dbca7ee26836db109",
+      "owner": "71127|Sat Nov 7 18:47:33 2026|$HOST|jet-lane3-restricted-pre-profile-baseline bda0fa8 in $CHECKOUT|2026-11-08T00:47:34Z",
+      "slot": "$HOME/.host-gate.lock.focused.slot1",
+      "source": "f3712d4758affa4a28d46003e0565bc8f622c70f94476f1aba95f4e3a877cd11",
+      "workdir": "$GOTMP/gate-run.71127.zfeFmP"
+    }
+  },
+  {
+    "file": "$HOME/.host-gate.lock.managed/admissions/c41d18f8d1184fd1a06b4710fbd88a07.json",
+    "sha256": "302ec535a590a480d0ec3666591119a8b0060f9c67d29c9acf6d36b49faa2483",
+    "receipt": {
+      "closing": true,
+      "contract": 1,
+      "guard": {
+        "inode": [
+          16777232,
+          447963385
+        ],
+        "nonce": "4f824542068d4488945315ee182b0a1c"
+      },
+      "inode": [
+        "$VOLUME",
+        491609229
+      ],
+      "latch_inode": [
+        "$VOLUME",
+        491609242
+      ],
+      "machine": [
+        "$HOST",
+        "darwin",
+        "$BOOT"
+      ],
+      "nonce": "c41d18f8d1184fd1a06b4710fbd88a07",
+      "owner": "3750|Sat Nov 7 18:50:39 2026|$HOST|jet-lane3-final-vet 2d95fa9 in $CHECKOUT|2026-11-08T00:50:41Z",
+      "slot": "$HOME/.host-gate.lock.focused",
+      "source": "f3712d4758affa4a28d46003e0565bc8f622c70f94476f1aba95f4e3a877cd11",
+      "workdir": "$GOTMP/gate-run.3750.fxlzOw"
+    }
+  },
+  {
+    "file": "$HOME/.host-gate.lock.managed/admissions/e8b0264ed7b441cd8899b75161ebc84b.json",
+    "sha256": "6fef8c99395583c0838169491b8211b241904f817739ecef1a5b4dc0169568dd",
+    "receipt": {
+      "closing": true,
+      "contract": 1,
+      "guard": {
+        "inode": [
+          16777232,
+          447963385
+        ],
+        "nonce": "4f824542068d4488945315ee182b0a1c"
+      },
+      "inode": [
+        "$VOLUME",
+        491594540
+      ],
+      "latch_inode": [
+        "$VOLUME",
+        491594553
+      ],
+      "machine": [
+        "$HOST",
+        "darwin",
+        "$BOOT"
+      ],
+      "nonce": "e8b0264ed7b441cd8899b75161ebc84b",
+      "owner": "42443|Sat Nov 7 18:45:19 2026|$HOST|jet-lane3-restricted-final-normal2 bda0fa8 in $CHECKOUT|2026-11-08T00:45:19Z",
+      "slot": "$HOME/.host-gate.lock.focused.slot1",
+      "source": "f3712d4758affa4a28d46003e0565bc8f622c70f94476f1aba95f4e3a877cd11",
+      "workdir": "$GOTMP/gate-run.42443.o7GBXR"
+    }
+  },
+  {
+    "file": "$HOME/.host-gate.lock.managed/admissions/ef7756f1850d4598999d4afce0c8518d.json",
+    "sha256": "a0abfe6ec44e550b9a94833db6e26d630ce6d0320cda35f774807dad99bf7ca3",
+    "receipt": {
+      "closing": true,
+      "contract": 1,
+      "guard": {
+        "inode": [
+          16777232,
+          447963385
+        ],
+        "nonce": "4f824542068d4488945315ee182b0a1c"
+      },
+      "inode": [
+        "$VOLUME",
+        491608239
+      ],
+      "latch_inode": [
+        "$VOLUME",
+        491608251
+      ],
+      "machine": [
+        "$HOST",
+        "darwin",
+        "$BOOT"
+      ],
+      "nonce": "ef7756f1850d4598999d4afce0c8518d",
+      "owner": "989|Sat Nov 7 18:50:20 2026|$HOST|jet-lane3-compiler-review-normal 2d95fa9 in $CHECKOUT|2026-11-08T00:50:20Z",
+      "slot": "$HOME/.host-gate.lock.focused",
+      "source": "f3712d4758affa4a28d46003e0565bc8f622c70f94476f1aba95f4e3a877cd11",
+      "workdir": "$GOTMP/gate-run.989.oYNSPy"
+    }
+  },
+  {
+    "file": "$HOME/.host-gate.lock.managed/commands/9b5af70e477f4d279050c6369fb80c14.json",
+    "sha256": "cde3c1bd402f19939dec88d0bbdc6e23a0065b8f83fa9f22275adcb2dc99aa1c",
+    "receipt": {
+      "admissions": [
+        "ef7756f1850d4598999d4afce0c8518d"
+      ],
+      "confirmed": true,
+      "contract": 1,
+      "inspection_failed": false,
+      "phase": "running",
+      "purpose": "setup",
+      "result": 0,
+      "sid": 1155,
+      "source": "f3712d4758affa4a28d46003e0565bc8f622c70f94476f1aba95f4e3a877cd11",
+      "supervisor": "1142|Sat Nov 7 18:50:20 2026",
+      "unconfirmed": false
+    }
+  },
+  {
+    "file": "$HOME/.host-gate.lock.managed/commands/e3b9efbd0fdd4a0ab748652c632f9416.json",
+    "sha256": "8f6eda2db5ba12f84aa90a9b182be6d3e92f6dec1b0947442c47236342652a47",
+    "receipt": {
+      "admissions": [
+        "c41d18f8d1184fd1a06b4710fbd88a07"
+      ],
+      "confirmed": true,
+      "contract": 1,
+      "inspection_failed": false,
+      "phase": "running",
+      "purpose": "setup",
+      "result": 0,
+      "sid": 4140,
+      "source": "f3712d4758affa4a28d46003e0565bc8f622c70f94476f1aba95f4e3a877cd11",
+      "supervisor": "4132|Sat Nov 7 18:50:41 2026",
+      "unconfirmed": false
+    }
+  },
+  {
+    "file": "$HOME/.host-gate.lock.managed/commands/3674d75318e3414fb49fa5009f1e8e76.json",
+    "sha256": "1b934291cdbc14f64a99e05dc8dcdac3d452dbe92eebca6e329041b7f18ccb57",
+    "receipt": {
+      "admissions": [
+        "c41d18f8d1184fd1a06b4710fbd88a07"
+      ],
+      "confirmed": true,
+      "contract": 1,
+      "inspection_failed": false,
+      "phase": "running",
+      "purpose": "command",
+      "result": 0,
+      "sid": 4247,
+      "source": "f3712d4758affa4a28d46003e0565bc8f622c70f94476f1aba95f4e3a877cd11",
+      "supervisor": "4238|Sat Nov 7 18:50:41 2026",
+      "unconfirmed": false
+    }
+  },
+  {
+    "file": "$HOME/.host-gate.lock.managed/commands/6027f52667134b4fa8e54df9f310366b.json",
+    "sha256": "a63e8e9d15e140ddc00482be5971bea2d57d591124b547e2f880751e69a094ab",
+    "receipt": {
+      "admissions": [
+        "0d073ce78bea43fc889f19058929253a"
+      ],
+      "confirmed": true,
+      "contract": 1,
+      "inspection_failed": false,
+      "phase": "running",
+      "purpose": "setup",
+      "result": 0,
+      "sid": 46756,
+      "source": "f3712d4758affa4a28d46003e0565bc8f622c70f94476f1aba95f4e3a877cd11",
+      "supervisor": "46721|Sat Nov 7 18:45:46 2026",
+      "unconfirmed": false
+    }
+  },
+  {
+    "file": "$HOME/.host-gate.lock.managed/commands/6ef52bb68e5845cc997530b49655a053.json",
+    "sha256": "194011267fe6e560c51a263c2c734927be3edc8f9dad42786902ce9ccbf69584",
+    "receipt": {
+      "admissions": [
+        "0d073ce78bea43fc889f19058929253a"
+      ],
+      "confirmed": true,
+      "contract": 1,
+      "inspection_failed": false,
+      "phase": "running",
+      "purpose": "command",
+      "result": 0,
+      "sid": 47124,
+      "source": "f3712d4758affa4a28d46003e0565bc8f622c70f94476f1aba95f4e3a877cd11",
+      "supervisor": "46991|Sat Nov 7 18:45:46 2026",
+      "unconfirmed": false
+    }
+  },
+  {
+    "file": "$HOME/.host-gate.lock.managed/commands/328704835732440a90ddb04b99bb5d78.json",
+    "sha256": "d6439ca5973e53e6afbac79097c75c0aa449389a795e9f30965b200375be6fa7",
+    "receipt": {
+      "admissions": [
+        "08d59ca8d97a4d8dbca7ee26836db109"
+      ],
+      "confirmed": true,
+      "contract": 1,
+      "inspection_failed": false,
+      "phase": "running",
+      "purpose": "command",
+      "result": 1,
+      "sid": 71325,
+      "source": "f3712d4758affa4a28d46003e0565bc8f622c70f94476f1aba95f4e3a877cd11",
+      "supervisor": "71320|Sat Nov 7 18:47:34 2026",
+      "unconfirmed": false
+    }
+  },
+  {
+    "file": "$HOME/.host-gate.lock.managed/commands/c5bf52c669e943628a3aea041db5adf4.json",
+    "sha256": "52ffcb879cf8c128c5d0a6350c4e751446ebb38bf83427c1b7bf106fa72add1e",
+    "receipt": {
+      "admissions": [
+        "08d59ca8d97a4d8dbca7ee26836db109"
+      ],
+      "confirmed": true,
+      "contract": 1,
+      "inspection_failed": false,
+      "phase": "running",
+      "purpose": "setup",
+      "result": 0,
+      "sid": 71234,
+      "source": "f3712d4758affa4a28d46003e0565bc8f622c70f94476f1aba95f4e3a877cd11",
+      "supervisor": "71229|Sat Nov 7 18:47:34 2026",
+      "unconfirmed": false
+    }
+  },
+  {
+    "file": "$HOME/.host-gate.lock.managed/commands/77345c1845b746cf96bfea362487fc24.json",
+    "sha256": "ebb2e7657321c34011dcb3bbdfaf60d793b3893a6555c0e2b5f04c102c381ae1",
+    "receipt": {
+      "admissions": [
+        "e8b0264ed7b441cd8899b75161ebc84b"
+      ],
+      "confirmed": true,
+      "contract": 1,
+      "inspection_failed": false,
+      "phase": "running",
+      "purpose": "command",
+      "result": 0,
+      "sid": 42667,
+      "source": "f3712d4758affa4a28d46003e0565bc8f622c70f94476f1aba95f4e3a877cd11",
+      "supervisor": "42661|Sat Nov 7 18:45:20 2026",
+      "unconfirmed": false
+    }
+  },
+  {
+    "file": "$HOME/.host-gate.lock.managed/commands/7683981418ec4442802e439dd8b52c49.json",
+    "sha256": "0b933e246f1a6827f16162cdbd916afb50eb06c028e048fed4a5b751111e85b3",
+    "receipt": {
+      "admissions": [
+        "e8b0264ed7b441cd8899b75161ebc84b"
+      ],
+      "confirmed": true,
+      "contract": 1,
+      "inspection_failed": false,
+      "phase": "running",
+      "purpose": "setup",
+      "result": 0,
+      "sid": 42581,
+      "source": "f3712d4758affa4a28d46003e0565bc8f622c70f94476f1aba95f4e3a877cd11",
+      "supervisor": "42575|Sat Nov 7 18:45:19 2026",
+      "unconfirmed": false
+    }
+  },
+  {
+    "file": "$HOME/.host-gate.lock.managed/commands/23d82b3e53f84b62aaec03bf6bafee85.json",
+    "sha256": "b73165a62751a1938c1d44f9e91d9a87309e058221bb5d9d32b595cc562bfc07",
+    "receipt": {
+      "admissions": [
+        "ef7756f1850d4598999d4afce0c8518d"
+      ],
+      "confirmed": true,
+      "contract": 1,
+      "inspection_failed": false,
+      "phase": "running",
+      "purpose": "command",
+      "result": 0,
+      "sid": 1323,
+      "source": "f3712d4758affa4a28d46003e0565bc8f622c70f94476f1aba95f4e3a877cd11",
+      "supervisor": "1309|Sat Nov 7 18:50:21 2026",
+      "unconfirmed": false
+    }
+  }
+]

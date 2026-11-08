@@ -2,7 +2,7 @@
 
 | Field | Value |
 | --- | --- |
-| Status | Not enabled; admission preparation implemented, J05 acceptance pending |
+| Status | Implemented Jet subset; consumer adoption remains gated |
 | Date | 2026-11-07 |
 | Owner | Lane 3; Lane 1 owns evaluator hooks, Lane 2 owns builtin implementations |
 | Depends on | RFCs 0001–0003 before any sandbox claim |
@@ -13,9 +13,9 @@ Metering interpreter dispatch does not constrain native Go code. Function values
 
 The unrestricted API must preserve Jet's extension points. The restricted profile must make unsupported capabilities unavailable by construction and reject them visibly. It is an in-process interpreter contract, not hard CPU, memory or crash isolation.
 
-## Proposed policy
+## Policy
 
-Use an immutable per-Set capability policy selected at construction; the exact option spelling is pending API review. Default Set behavior remains unrestricted. The restricted selection requires nonzero execution/parse/input budgets and a policy-bound compile cache. It must not infer trust from whether a deadline exists. Validate depth against a conservative supported ceiling established by stack-bound tests; a positive but enormous configured depth is not a safe configuration. Document configuration assumptions and reject settings that invalidate the restricted contract.
+NewRestrictedSet selects an immutable per-Set capability policy at construction. Default Set behavior remains unrestricted. The restricted selection requires nonzero execution/parse/input budgets and a policy-bound compile cache. It must not infer trust from whether a deadline exists. Validate depth against a conservative supported ceiling established by stack-bound tests; a positive but enormous configured depth is not a safe configuration. Document configuration assumptions and reject settings that invalidate the restricted contract.
 
 | Capability | Unrestricted | Restricted |
 | --- | --- | --- |
@@ -59,8 +59,10 @@ Do not expose partially implemented restricted mode as safe. A trusted `ExecuteC
 
 Acceptance: [C01–C07](../plans/template-execution-budgets/validation.md) and a completed, source-linked capability inventory signed off in the PR. A policy document alone is not enforcement.
 
-## Implementation gate
+## Implementation and remaining adoption gates
 
-The fork has private input-snapshot and immutable bundle helpers plus a [source capability inventory](../plans/template-execution-budgets/lane-3-capabilities.md). These do not select or enforce a restricted rendering profile. Input preparation supports method-free primitive values, strings, arrays/slices (including byte-slice snapshots) and string-keyed maps. Unsupported keys, structs/pointers, methods, functions, channels, unsafe values and cycles are denied; shared acyclic children consume admission per copied occurrence. Caller synchronization is required during admission. Bundle construction copies the namespace under positive source/total/template caps and a 1,024-byte name ceiling.
+NewRestrictedSet, RestrictedOptions and RenderRestrictedContext enforce the [documented subset](../restricted.md). Positive execution/compilation/input budgets and depth <=64 are mandatory. Input/global snapshots, opaque builtin aliases, immutable source bundles, namespace authorization before cache and owned bounded results close the native invocation/reentry paths. Every implicit/direct invocation has a [source-linked disposition and regression](../plans/template-execution-budgets/lane-3-capabilities.md). Unknown capability/AST/value kinds fail closed; terminal policy errors cannot become successful catches.
 
-J08 waits for the accepted builtin/value contract, including minimum-Go JSON bounds and immutable audited descriptor identity. No public callback registration grants approval. The owner's current direction is fork-only development/review; no new upstream PR is authorized. Compilation and execution budgets remain useful independently and do not establish a sandbox.
+Implementation `c0cffa0` consumes the private metered registry from production `5583ec1`; final peer evidence/tests `a81e7db` integrate at `2d95fa9`. C01–C07 normal/race checks, the controlled pre-profile failing function workflow, depth-64 bounded subprocess and full minimum-Go/stable/race CI are recorded in the [lane handoff](../plans/template-execution-budgets/lane-3-admission.md).
+
+The accepted alias surface grants no approval to arbitrary Go callbacks. Application-specific helpers absent from the registry require owning-layer bounded implementations with compatible semantics. Karsto's real workflows, helper migration, fork packaging and performance remain Lane 4 gates. No tenant adoption or hard sandbox claim follows from this RFC. The owner's publication policy is fork-only development/review using existing PRs; no new upstream PR is authorized.

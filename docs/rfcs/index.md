@@ -1,8 +1,8 @@
 # Template execution budget RFCs
 
-Status: **execution started by the owner; restricted profile not enabled**. Updated 2026-11-07.
+Status: **Jet restricted subset implemented; consumer adoption gated**. Updated 2026-11-07.
 
-The owner requested an independent Jet v6 fork, then explicitly directed that this session prepare RFCs and instructions for four future implementers. These documents authorize no automatic agent launch. Additive execution/compilation APIs are implemented on the task branch; individual RFCs and lane handoffs record validation and incomplete prerequisites. The owner now requires fork-only development/review with no new upstream PRs.
+The owner requested an independent Jet v6 fork, then explicitly directed that this session prepare RFCs and instructions for four future implementers. These documents authorize no automatic agent launch. Execution/value/compilation APIs and the explicit restricted profile are implemented; individual RFCs and lane handoffs record validation and remaining consumer gates. The owner now requires fork-only development/review with no new upstream PRs.
 
 | RFC | Decision | Primary implementation owner |
 | --- | --- | --- |
@@ -18,6 +18,6 @@ The motivating downstream contract is [Karsto #209](https://github.com/ashtonian
 
 ## Decision status
 
-The owner selected an independently maintained fork and preparation for four implementers. API spellings and numeric defaults below are proposals, pending implementation evidence and upstream review. The initial context/fuel/depth patch is useful on its own but **does not establish an untrusted-template sandbox**. Restricted execution requires all four protection RFCs and downstream acceptance.
+The owner selected an independently maintained fork and preparation for four implementers. The RFCs link implemented API spellings and evidence; application defaults and downstream acceptance remain consumer decisions. The initial context/fuel/depth patch is useful on its own but **does not establish an untrusted-template sandbox**. Restricted execution requires all four protection RFCs and downstream acceptance.
 
 The planning session ran no runtime probes or measurements. Subsequent execution evidence is recorded in the lane handoffs; the source audit preserves that original provenance distinction.

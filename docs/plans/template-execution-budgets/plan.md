@@ -1,6 +1,6 @@
 # Template execution budgets: four-lane execution plan
 
-Prepared 2026-11-07. **Planning only. All implementation items remain open. Do not start any agent until the owner explicitly starts execution.** One implementer per lane handles diagnosis, implementation, self-review and verification; no coordinator/reviewer subagents.
+Prepared 2026-11-07. **Execution started by the owner. Lane handoffs record completed work and remaining gates.** One implementer per lane handles diagnosis, implementation, self-review and verification; no coordinator/reviewer subagents.
 
 Canonical decisions: [RFC index](../../rfcs/index.md). Baseline/source findings: [audit](source-audit.md). Every lane reads the global/repository guides that apply at execution time, current Git status/history, this plan, its assignment and the validation matrix. Do not copy Karsto's Go 1.27 conventions into upstream Jet, whose module declares Go 1.16; preserve the dependency's compatibility unless deliberately agreed otherwise.
 
@@ -32,7 +32,7 @@ flowchart TD
     K02 --> K03[K03 acceptance and release]
 ```
 
-Entry: independently reproducible defects. Exit: reviewed Jet changes plus Karsto acceptance. Failure: failed prerequisite blocks dependents; independent inventory, implementation and tests continue. Dependencies: PR identifiers in the [register](upstream-prs.md); no PR numbers assigned yet. J01 is several independent small correctness PRs if their fixes are separable.
+Entry: independently reproducible defects. Exit: reviewed Jet changes plus Karsto acceptance. Failure: failed prerequisite blocks dependents; independent inventory, implementation and tests continue. Dependencies: PR identifiers in the [register](upstream-prs.md); current fork PRs and exact dependency SHAs are recorded there.
 
 ## Shared-file rules
 
@@ -46,14 +46,14 @@ Entry: independently reproducible defects. Exit: reviewed Jet changes plus Karst
 | Jet module/import packaging, compatibility CI, release report | Lane 4, separate commits from implementation. Unit owners still run their own meaningful checks. |
 | Karsto code, RFC-0578, relevant spec/README/error docs | Lane 4 for this task only. Check live queue ownership; preserve unrelated work. Existing project release and CI policies still apply. |
 
-No implementation agent is blocked on approval of a routine internal choice already resolved by these RFCs. If a public contract must change, first update the affected RFC with evidence and impact. Owner-start authorization is still required; this document is not that authorization.
+No implementation agent is blocked on approval of a routine internal choice already resolved by these RFCs. If a public contract must change, first update the affected RFC with evidence and impact. The owner supplied execution authorization; do not launch additional agents/sessions.
 
 ## Milestones and evidence
 
 - [ ] M0: refresh upstream/consumer state; exact immutable inputs recorded; safe failing baselines reproduced.
 - [ ] M1: J01–J03 pass; context/fuel/depth contract available with exclusions, not tenant-ready.
 - [ ] M2: J04–J05 pass; amplification and generated output accounted before allocation/write.
-- [ ] M3: J06–J08 pass; compilation and capability closure demonstrated, not merely documented.
+- [x] M3: J06–J08 pass for the documented Jet subset; [Lane 3 acceptance and receipts](lane-3-admission.md) cover compilation and capability closure. Consumer helper/workflow gates remain in M4/M5.
 - [ ] M4: K01–K02 pass; real webhook, chain and report workflows fail closed using one Renderer.
 - [ ] M5: full normal/race compatibility and performance report; fork module resolves externally; ready for review/release.
 
@@ -68,3 +68,7 @@ No dedicated fuzz tests/sessions without explicit owner approval. Fatal/OOM-risk
 ## Documentation ownership
 
 Jet RFCs own generic contracts; this plan owns lane/dependency work; the validation matrix owns test IDs; Karsto RFC-0578 owns downstream defaults, errors and consumer migration. Link rather than duplicating those authorities. Keep upstream submission descriptions free of internal task IDs where they do not help a maintainer review the behavior.
+
+## Current publication policy
+
+The owner directs fork-only development/review: no new upstream PRs. Reuse the existing ashtonian/jet review sequence, consolidate related ready work and preserve published history. Do not create one PR per work ID or close/rewrite existing PRs merely to consolidate. Lane 3 uses #5/#6/#7; exact heads/bases and evidence are in its handoff.

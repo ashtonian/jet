@@ -1,0 +1,5 @@
+gate-lock: held by pid 98640 on $HOST, "jet-lane3-restricted-repair bda0fa8 in $CHECKOUT", since 2026-11-08T00:41:42Z, 2 of 6 focused cores
+# github.com/CloudyKit/jet/v6
+restricted_test.go:65:61: expected declaration, found '}'
+FAIL	github.com/CloudyKit/jet/v6 [setup failed]
+FAIL
