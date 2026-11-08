@@ -1,0 +1,3 @@
+gate-lock: $HOME/.host-gate.lock.managed/commands/264fa6306860404a93431c36d89cafc8.json was recorded by version 44c07f1df5db; recovering with it.
+gate-lock: recovery source/host/boot/guard identity mismatch
+gate-lock: recovered only recorded owned lanes; original results are unchanged

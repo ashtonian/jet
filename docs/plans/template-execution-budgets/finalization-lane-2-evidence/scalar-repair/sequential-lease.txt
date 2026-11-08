@@ -1,0 +1,174 @@
+goos: darwin
+goarch: arm64
+pkg: github.com/CloudyKit/jet/v6
+cpu: Apple M2 Max
+BenchmarkScalarSequential/int/background-2         	 2350876	       466.8 ns/op	     848 B/op	       7 allocs/op
+BenchmarkScalarSequential/int/live-2               	 2541163	       483.7 ns/op	     848 B/op	       7 allocs/op
+BenchmarkScalarSequential/collection/background-2  	 1551116	       768.3 ns/op	     848 B/op	       7 allocs/op
+BenchmarkScalarSequential/collection/live-2        	 1468328	       808.5 ns/op	     848 B/op	       7 allocs/op
+BenchmarkScalarSequential/string/background-2      	 2406430	       493.5 ns/op	     848 B/op	       7 allocs/op
+BenchmarkScalarSequential/string/live-2            	 2378808	       509.0 ns/op	     848 B/op	       7 allocs/op
+PASS
+       11.14 real        11.01 user         0.31 sys
+            14680064  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                1111  page reclaims
+                   0  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+               18522  signals received
+                  12  voluntary context switches
+               57820  involuntary context switches
+        171922192946  instructions retired
+         37324511766  cycles elapsed
+            10273320  peak memory footprint
+goos: darwin
+goarch: arm64
+pkg: github.com/CloudyKit/jet/v6
+cpu: Apple M2 Max
+BenchmarkScalarSequential/int/background-2         	 2547694	       454.1 ns/op	     848 B/op	       7 allocs/op
+BenchmarkScalarSequential/int/live-2               	 2419160	       485.4 ns/op	     848 B/op	       7 allocs/op
+BenchmarkScalarSequential/collection/background-2  	 1678514	       736.2 ns/op	     848 B/op	       7 allocs/op
+BenchmarkScalarSequential/collection/live-2        	 1558495	       750.6 ns/op	     848 B/op	       7 allocs/op
+BenchmarkScalarSequential/string/background-2      	 2468982	       453.8 ns/op	     848 B/op	       7 allocs/op
+BenchmarkScalarSequential/string/live-2            	 2627875	       457.7 ns/op	     848 B/op	       7 allocs/op
+PASS
+       10.50 real        10.80 user         0.25 sys
+            14581760  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                1104  page reclaims
+                   0  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+               18789  signals received
+                   4  voluntary context switches
+               54405  involuntary context switches
+        177168556920  instructions retired
+         36900322347  cycles elapsed
+            10240528  peak memory footprint
+goos: darwin
+goarch: arm64
+pkg: github.com/CloudyKit/jet/v6
+cpu: Apple M2 Max
+BenchmarkScalarSequential/int/background-2         	 2689726	       489.2 ns/op	     848 B/op	       7 allocs/op
+BenchmarkScalarSequential/int/live-2               	 2652652	       460.9 ns/op	     848 B/op	       7 allocs/op
+BenchmarkScalarSequential/collection/background-2  	 1686943	       709.5 ns/op	     848 B/op	       7 allocs/op
+BenchmarkScalarSequential/collection/live-2        	 1578519	       789.2 ns/op	     848 B/op	       7 allocs/op
+BenchmarkScalarSequential/string/background-2      	 2612704	       444.8 ns/op	     848 B/op	       7 allocs/op
+BenchmarkScalarSequential/string/live-2            	 2614490	       494.3 ns/op	     848 B/op	       7 allocs/op
+PASS
+       10.25 real        10.32 user         0.25 sys
+            14614528  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                 815  page reclaims
+                 298  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+               18736  signals received
+                   5  voluntary context switches
+               52546  involuntary context switches
+        170892759027  instructions retired
+         35408986159  cycles elapsed
+            10224144  peak memory footprint
+goos: darwin
+goarch: arm64
+pkg: github.com/CloudyKit/jet/v6
+cpu: Apple M2 Max
+BenchmarkScalarSequential/int/background-2         	 2494866	       488.8 ns/op	     848 B/op	       7 allocs/op
+BenchmarkScalarSequential/int/live-2               	 2423211	       492.6 ns/op	     848 B/op	       7 allocs/op
+BenchmarkScalarSequential/collection/background-2  	 1577749	       772.6 ns/op	     848 B/op	       7 allocs/op
+BenchmarkScalarSequential/collection/live-2        	 1504831	       805.8 ns/op	     848 B/op	       7 allocs/op
+BenchmarkScalarSequential/string/background-2      	 2688772	       451.7 ns/op	     848 B/op	       7 allocs/op
+BenchmarkScalarSequential/string/live-2            	 2574050	       493.2 ns/op	     848 B/op	       7 allocs/op
+PASS
+       10.83 real        11.11 user         0.28 sys
+            15417344  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                1156  page reclaims
+                   0  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+               18491  signals received
+                   8  voluntary context switches
+               54060  involuntary context switches
+        176293983565  instructions retired
+         37518790801  cycles elapsed
+            11026960  peak memory footprint
+goos: darwin
+goarch: arm64
+pkg: github.com/CloudyKit/jet/v6
+cpu: Apple M2 Max
+BenchmarkScalarSequential/int/background-2         	 2407592	       454.8 ns/op	     848 B/op	       7 allocs/op
+BenchmarkScalarSequential/int/live-2               	 2590724	       462.3 ns/op	     848 B/op	       7 allocs/op
+BenchmarkScalarSequential/collection/background-2  	 1552456	       719.2 ns/op	     848 B/op	       7 allocs/op
+BenchmarkScalarSequential/collection/live-2        	 1486672	       830.7 ns/op	     848 B/op	       7 allocs/op
+BenchmarkScalarSequential/string/background-2      	 2715670	       450.3 ns/op	     848 B/op	       7 allocs/op
+BenchmarkScalarSequential/string/live-2            	 2427553	       492.6 ns/op	     848 B/op	       7 allocs/op
+PASS
+       10.60 real        10.85 user         0.25 sys
+            14778368  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                 823  page reclaims
+                 297  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+               18928  signals received
+                   7  voluntary context switches
+               53405  involuntary context switches
+        175566205912  instructions retired
+         37147991117  cycles elapsed
+            10420776  peak memory footprint
+goos: darwin
+goarch: arm64
+pkg: github.com/CloudyKit/jet/v6
+cpu: Apple M2 Max
+BenchmarkScalarSequential/int/background-2         	 2447696	       475.8 ns/op	     848 B/op	       7 allocs/op
+BenchmarkScalarSequential/int/live-2               	 2330947	       505.5 ns/op	     848 B/op	       7 allocs/op
+BenchmarkScalarSequential/collection/background-2  	 1561083	       769.4 ns/op	     848 B/op	       7 allocs/op
+BenchmarkScalarSequential/collection/live-2        	 1458588	       808.3 ns/op	     848 B/op	       7 allocs/op
+BenchmarkScalarSequential/string/background-2      	 2466759	       484.9 ns/op	     848 B/op	       7 allocs/op
+BenchmarkScalarSequential/string/live-2            	 2380160	       511.3 ns/op	     848 B/op	       7 allocs/op
+PASS
+       10.79 real        11.07 user         0.30 sys
+            14729216  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                1116  page reclaims
+                   0  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+               18397  signals received
+                  11  voluntary context switches
+               58731  involuntary context switches
+        171293026094  instructions retired
+         37508110917  cycles elapsed
+            10306064  peak memory footprint

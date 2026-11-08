@@ -1,0 +1,24 @@
+File: render.test
+Type: inuse_space
+Time: 2026-11-08 04:47:39 CST
+Showing nodes accounting for 522.06kB, 100% of 522.06kB total
+      flat  flat%   sum%        cum   cum%
+  522.06kB   100%   100%   522.06kB   100%  reflect.compiledTypelinks
+         0     0%   100%   522.06kB   100%  encoding/json.Unmarshal (inline)
+         0     0%   100%   522.06kB   100%  encoding/json/v2.Unmarshal
+         0     0%   100%   522.06kB   100%  encoding/json/v2.makeSliceArshaler.func3
+         0     0%   100%   522.06kB   100%  encoding/json/v2.makeStructArshaler.func1
+         0     0%   100%   522.06kB   100%  encoding/json/v2.makeStructArshaler.func3
+         0     0%   100%   522.06kB   100%  encoding/json/v2.makeStructFields
+         0     0%   100%   522.06kB   100%  encoding/json/v2.makeStructFields.func3
+         0     0%   100%   522.06kB   100%  encoding/json/v2.unmarshalDecode
+         0     0%   100%   522.06kB   100%  github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes
+         0     0%   100%   522.06kB   100%  github.com/CloudyKit/jet/v6_test.executionWorkloads
+         0     0%   100%   522.06kB   100%  github.com/CloudyKit/jet/v6_test.measurementWorkloads
+         0     0%   100%   522.06kB   100%  reflect.(*rtype).ptrTo
+         0     0%   100%   522.06kB   100%  reflect.PointerTo (inline)
+         0     0%   100%   522.06kB   100%  reflect.typesByString
+         0     0%   100%   522.06kB   100%  sync.(*Once).Do
+         0     0%   100%   522.06kB   100%  sync.(*Once).doSlow
+         0     0%   100%   522.06kB   100%  testing.(*B).run1.func1
+         0     0%   100%   522.06kB   100%  testing.(*B).runN

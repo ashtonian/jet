@@ -1,0 +1,29 @@
+File: candidate.test
+Type: alloc_objects
+Time: 2026-11-08 03:03:26 CST
+Showing nodes accounting for 146425256, 99.81% of 146698855 total
+Dropped 140 nodes (cum <= 733494)
+      flat  flat%   sum%        cum   cum%
+ 146294179 99.72% 99.72%  146294179 99.72%  reflect.unsafe_New
+     98308 0.067% 99.79%  146503160 99.87%  reflect.Value.call
+     32769 0.022% 99.81%  146585059 99.92%  github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes.func1.1
+         0     0% 99.81%  146099124 99.59%  encoding/json.Marshal
+         0     0% 99.81%  146099124 99.59%  encoding/json/v2.Marshal
+         0     0% 99.81%   49950129 34.05%  encoding/json/v2.makeInterfaceArshaler.func1
+         0     0% 99.81%  145939025 99.48%  encoding/json/v2.makeMapArshaler.func2
+         0     0% 99.81%  145939025 99.48%  encoding/json/v2.makeSliceArshaler.func2
+         0     0% 99.81%  146004561 99.53%  encoding/json/v2.marshalEncode
+         0     0% 99.81%    3840170  2.62%  encoding/json/v2.marshalValueAny
+         0     0% 99.81%   98408483 67.08%  encoding/json/v2.newAddressableValue
+         0     0% 99.81%  146546851 99.90%  github.com/CloudyKit/jet/v6.(*Runtime).evalCallExpression (inline)
+         0     0% 99.81%  146546851 99.90%  github.com/CloudyKit/jet/v6.(*Runtime).evalCommandExpression
+         0     0% 99.81%  146546851 99.90%  github.com/CloudyKit/jet/v6.(*Runtime).evalPipeCallExpression
+         0     0% 99.81%  146546851 99.90%  github.com/CloudyKit/jet/v6.(*Runtime).evalPipelineExpression
+         0     0% 99.81%  146547477 99.90%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 99.81%  146552290 99.90%  github.com/CloudyKit/jet/v6.(*Template).Execute (inline)
+         0     0% 99.81%  146552290 99.90%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0% 99.81%  146552290 99.90%  github.com/CloudyKit/jet/v6_test.init.func1
+         0     0% 99.81%   98474019 67.13%  reflect.New
+         0     0% 99.81%  146503160 99.87%  reflect.Value.Call
+         0     0% 99.81%   47514324 32.39%  reflect.Value.MapIndex
+         0     0% 99.81%   47514324 32.39%  reflect.copyVal

@@ -1,0 +1,189 @@
+File: candidate.test
+Type: delay
+Time: 2026-11-08 03:03:26 CST
+Showing nodes accounting for 5.64s, 100% of 5.64s total
+Dropped 141 nodes (cum <= 0.03s)
+Showing top 40 nodes out of 75
+----------------------------------------------------------+-------------
+      flat  flat%   sum%        cum   cum%   calls calls% + context
+----------------------------------------------------------+-------------
+                                             2.11s 38.20% |   runtime.findRunnable (inline)
+                                             1.04s 18.85% |   runtime.forEachPInternal (inline)
+                                             0.45s  8.17% |   runtime.(*mheap).freeSpan.func1
+                                             0.12s  2.17% |   reflect.unsafe_New (inline)
+                                             0.08s  1.49% |   bytes.Clone (inline)
+                                             0.02s  0.39% |   runtime.asyncPreempt2.func1 (inline)
+                                             0.01s  0.24% |   runtime.(*mcentral).cacheSpan (inline)
+     5.52s 97.90% 97.90%      5.52s 97.90%                | runtime.unlock
+----------------------------------------------------------+-------------
+     0.08s  1.37% 99.27%      0.08s  1.37%                | runtime._LostContendedRuntimeLock
+----------------------------------------------------------+-------------
+                                             0.03s 65.22% |   encoding/json/v2.makeMapArshaler.func2
+                                             0.01s 25.42% |   github.com/CloudyKit/jet/v6.(*Template).execute
+     0.04s  0.73%   100%      0.04s  0.73%                | sync.(*Mutex).Unlock
+----------------------------------------------------------+-------------
+                                             0.20s   100% |   encoding/json/v2.Marshal (inline)
+         0     0%   100%      0.20s  3.63%                | bytes.Clone
+                                             0.12s 59.30% |   runtime.(*mcache).nextFree
+                                             0.08s 40.20% |   runtime.unlock (inline)
+----------------------------------------------------------+-------------
+                                             0.62s 95.28% |   reflect.Value.call
+                                             0.03s  4.72% |   runtime.call16
+         0     0%   100%      0.65s 11.59%                | encoding/json.Marshal
+                                             0.65s   100% |   encoding/json/v2.Marshal
+----------------------------------------------------------+-------------
+                                             0.65s   100% |   encoding/json.Marshal
+         0     0%   100%      0.65s 11.59%                | encoding/json/v2.Marshal
+                                             0.44s 67.83% |   encoding/json/v2.marshalEncode
+                                             0.20s 31.33% |   bytes.Clone (inline)
+----------------------------------------------------------+-------------
+                                             0.15s   100% |   encoding/json/v2.makeMapArshaler.func2
+         0     0%   100%      0.15s  2.59%                | encoding/json/v2.makeInterfaceArshaler.func1
+                                             0.14s 97.48% |   encoding/json/v2.newAddressableValue
+----------------------------------------------------------+-------------
+                                             0.44s   100% |   encoding/json/v2.makeSliceArshaler.func2
+         0     0%   100%      0.44s  7.86%                | encoding/json/v2.makeMapArshaler.func2
+                                             0.15s 32.94% |   encoding/json/v2.makeInterfaceArshaler.func1
+                                             0.14s 30.85% |   encoding/json/v2.newAddressableValue
+                                             0.13s 29.38% |   reflect.Value.MapIndex
+                                             0.03s  6.10% |   sync.(*Mutex).Unlock
+----------------------------------------------------------+-------------
+                                             0.44s   100% |   encoding/json/v2.marshalEncode
+         0     0%   100%      0.44s  7.86%                | encoding/json/v2.makeSliceArshaler.func2
+                                             0.44s   100% |   encoding/json/v2.makeMapArshaler.func2
+----------------------------------------------------------+-------------
+                                             0.44s   100% |   encoding/json/v2.Marshal
+         0     0%   100%      0.44s  7.86%                | encoding/json/v2.marshalEncode
+                                             0.44s   100% |   encoding/json/v2.makeSliceArshaler.func2
+----------------------------------------------------------+-------------
+                                             0.14s 51.00% |   encoding/json/v2.makeInterfaceArshaler.func1
+                                             0.14s 49.00% |   encoding/json/v2.makeMapArshaler.func2
+         0     0%   100%      0.28s  4.95%                | encoding/json/v2.newAddressableValue
+                                             0.28s   100% |   reflect.New
+----------------------------------------------------------+-------------
+                                             0.70s   100% |   github.com/CloudyKit/jet/v6.(*Runtime).evalCommandExpression (inline)
+         0     0%   100%      0.70s 12.41%                | github.com/CloudyKit/jet/v6.(*Runtime).evalCallExpression
+                                             0.70s   100% |   github.com/CloudyKit/jet/v6.(*Runtime).evalPipeCallExpression
+----------------------------------------------------------+-------------
+                                             0.70s   100% |   github.com/CloudyKit/jet/v6.(*Runtime).evalPipelineExpression
+         0     0%   100%      0.70s 12.41%                | github.com/CloudyKit/jet/v6.(*Runtime).evalCommandExpression
+                                             0.70s   100% |   github.com/CloudyKit/jet/v6.(*Runtime).evalCallExpression (inline)
+----------------------------------------------------------+-------------
+                                             0.70s   100% |   github.com/CloudyKit/jet/v6.(*Runtime).evalCallExpression
+         0     0%   100%      0.70s 12.41%                | github.com/CloudyKit/jet/v6.(*Runtime).evalPipeCallExpression
+                                             0.70s 99.54% |   reflect.Value.Call
+----------------------------------------------------------+-------------
+                                             0.70s   100% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0%   100%      0.70s 12.41%                | github.com/CloudyKit/jet/v6.(*Runtime).evalPipelineExpression
+                                             0.70s   100% |   github.com/CloudyKit/jet/v6.(*Runtime).evalCommandExpression
+----------------------------------------------------------+-------------
+                                             0.70s   100% |   github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0%   100%      0.70s 12.44%                | github.com/CloudyKit/jet/v6.(*Runtime).executeList
+                                             0.70s 99.80% |   github.com/CloudyKit/jet/v6.(*Runtime).evalPipelineExpression
+----------------------------------------------------------+-------------
+                                             0.71s   100% |   github.com/CloudyKit/jet/v6_test.init.func1 (inline)
+         0     0%   100%      0.71s 12.64%                | github.com/CloudyKit/jet/v6.(*Template).Execute
+                                             0.71s   100% |   github.com/CloudyKit/jet/v6.(*Template).execute
+----------------------------------------------------------+-------------
+                                             0.71s   100% |   github.com/CloudyKit/jet/v6.(*Template).Execute
+         0     0%   100%      0.71s 12.64%                | github.com/CloudyKit/jet/v6.(*Template).execute
+                                             0.70s 98.42% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+                                             0.01s  1.48% |   sync.(*Mutex).Unlock
+----------------------------------------------------------+-------------
+                                             0.04s  5.81% |   github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes.func1.gowrap1
+         0     0%   100%      0.71s 12.64%                | github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes.func1.1
+                                             0.71s   100% |   github.com/CloudyKit/jet/v6_test.init.func1
+----------------------------------------------------------+-------------
+         0     0%   100%      0.04s  0.73%                | github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes.func1.gowrap1
+                                             0.04s   100% |   github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes.func1.1
+----------------------------------------------------------+-------------
+                                             0.71s   100% |   github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes.func1.1
+         0     0%   100%      0.71s 12.64%                | github.com/CloudyKit/jet/v6_test.init.func1
+                                             0.71s   100% |   github.com/CloudyKit/jet/v6.(*Template).Execute (inline)
+----------------------------------------------------------+-------------
+                                             0.28s   100% |   encoding/json/v2.newAddressableValue
+         0     0%   100%      0.28s  4.95%                | reflect.New
+                                             0.28s   100% |   reflect.unsafe_New
+----------------------------------------------------------+-------------
+                                             0.70s   100% |   github.com/CloudyKit/jet/v6.(*Runtime).evalPipeCallExpression
+         0     0%   100%      0.70s 12.36%                | reflect.Value.Call
+                                             0.70s   100% |   reflect.Value.call
+----------------------------------------------------------+-------------
+                                             0.13s   100% |   encoding/json/v2.makeMapArshaler.func2
+         0     0%   100%      0.13s  2.31%                | reflect.Value.MapIndex
+                                             0.13s   100% |   reflect.copyVal
+----------------------------------------------------------+-------------
+                                             0.70s   100% |   reflect.Value.Call
+         0     0%   100%      0.70s 12.36%                | reflect.Value.call
+                                             0.62s 89.38% |   encoding/json.Marshal
+                                             0.03s  4.43% |   runtime.call16
+                                             0.02s  3.32% |   runtime.(*mcache).nextFree
+                                             0.02s  2.86% |   reflect.unsafe_New
+----------------------------------------------------------+-------------
+                                             0.13s   100% |   reflect.Value.MapIndex
+         0     0%   100%      0.13s  2.31%                | reflect.copyVal
+                                             0.13s   100% |   reflect.unsafe_New
+----------------------------------------------------------+-------------
+                                             0.28s 65.02% |   reflect.New
+                                             0.13s 30.34% |   reflect.copyVal
+                                             0.02s  4.64% |   reflect.Value.call
+         0     0%   100%      0.43s  7.61%                | reflect.unsafe_New
+                                             0.29s 68.20% |   runtime.(*mcache).nextFree
+                                             0.12s 27.87% |   runtime.unlock (inline)
+                                             0.02s  3.93% |   runtime.forEachP (inline)
+----------------------------------------------------------+-------------
+                                             0.29s 65.60% |   reflect.unsafe_New
+                                             0.12s 27.21% |   bytes.Clone
+                                             0.02s  5.18% |   reflect.Value.call
+         0     0%   100%      0.45s  7.91%                | runtime.(*mcache).nextFree
+                                             0.45s   100% |   runtime.(*mcache).refill
+----------------------------------------------------------+-------------
+                                             0.45s   100% |   runtime.(*mcache).nextFree
+         0     0%   100%      0.45s  7.91%                | runtime.(*mcache).refill
+                                             0.45s   100% |   runtime.(*mcentral).cacheSpan
+----------------------------------------------------------+-------------
+                                             0.45s   100% |   runtime.(*mcache).refill
+         0     0%   100%      0.45s  7.91%                | runtime.(*mcentral).cacheSpan
+                                             0.43s 96.78% |   runtime.deductSweepCredit
+                                             0.01s  3.00% |   runtime.unlock (inline)
+----------------------------------------------------------+-------------
+                                             0.45s   100% |   runtime.(*sweepLocked).sweep (inline)
+         0     0%   100%      0.45s  8.00%                | runtime.(*mheap).freeSpan
+                                             0.45s   100% |   runtime.(*mheap).freeSpan.func1
+----------------------------------------------------------+-------------
+                                             0.45s   100% |   runtime.(*mheap).freeSpan
+         0     0%   100%      0.45s  8.00%                | runtime.(*mheap).freeSpan.func1
+                                             0.45s   100% |   runtime.unlock
+----------------------------------------------------------+-------------
+                                             0.43s 94.84% |   runtime.deductSweepCredit
+         0     0%   100%      0.46s  8.07%                | runtime.(*sweepLocked).sweep
+                                             0.45s 99.08% |   runtime.(*mheap).freeSpan (inline)
+----------------------------------------------------------+-------------
+         0     0%   100%      0.07s  1.26%                | runtime.asyncPreempt2.func1
+                                             0.05s 69.88% |   runtime.findRunnable
+                                             0.02s 30.12% |   runtime.unlock (inline)
+----------------------------------------------------------+-------------
+                                             0.03s   100% |   reflect.Value.call
+         0     0%   100%      0.03s  0.55%                | runtime.call16
+                                             0.03s   100% |   encoding/json.Marshal
+----------------------------------------------------------+-------------
+                                             0.43s   100% |   runtime.(*mcentral).cacheSpan
+         0     0%   100%      0.43s  7.66%                | runtime.deductSweepCredit
+                                             0.43s 99.93% |   runtime.(*sweepLocked).sweep
+----------------------------------------------------------+-------------
+                                             0.05s  2.36% |   runtime.asyncPreempt2.func1
+         0     0%   100%      2.11s 37.40%                | runtime.findRunnable
+                                             2.11s   100% |   runtime.unlock (inline)
+----------------------------------------------------------+-------------
+                                             0.02s  1.62% |   reflect.unsafe_New (inline)
+         0     0%   100%      1.04s 18.45%                | runtime.forEachP
+                                             1.04s   100% |   runtime.forEachP.func1
+----------------------------------------------------------+-------------
+                                             1.04s   100% |   runtime.forEachP
+         0     0%   100%      1.04s 18.45%                | runtime.forEachP.func1
+                                             1.04s   100% |   runtime.forEachPInternal
+----------------------------------------------------------+-------------
+                                             1.04s   100% |   runtime.forEachP.func1
+         0     0%   100%      1.04s 18.45%                | runtime.forEachPInternal
+                                             1.04s   100% |   runtime.unlock (inline)
+----------------------------------------------------------+-------------

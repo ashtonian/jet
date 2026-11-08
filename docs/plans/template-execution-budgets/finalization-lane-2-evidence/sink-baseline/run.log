@@ -1,0 +1,75 @@
+gate-lock: held by pid <pid> on <host>, "jet-finalization-lane-2-sink-baseline 0e277b3 in <checkout>", since 2026-11-08T07:19:15Z, 2 of 6 focused cores
+=== RUN   TestOutputFailureLocation
+=== RUN   TestOutputFailureLocation/body/legacy
+    finalization_output_test.go:47: cause/location/first failure lost: sink failed; calls=1
+=== RUN   TestOutputFailureLocation/body/metered
+    finalization_output_test.go:47: cause/location/first failure lost: sink failed; calls=1
+=== RUN   TestOutputFailureLocation/{{_"<&"_}}/legacy
+    finalization_output_test.go:47: cause/location/first failure lost: sink failed; calls=1
+=== RUN   TestOutputFailureLocation/{{_"<&"_}}/metered
+    finalization_output_test.go:47: cause/location/first failure lost: sink failed; calls=1
+=== RUN   TestOutputFailureLocation/{{_raw("<&")_}}/legacy
+    finalization_output_test.go:47: cause/location/first failure lost: sink failed; calls=1
+=== RUN   TestOutputFailureLocation/{{_raw("<&")_}}/metered
+    finalization_output_test.go:47: cause/location/first failure lost: sink failed; calls=1
+=== RUN   TestOutputFailureLocation/{{_safeHtml("<&")_}}/legacy
+    finalization_output_test.go:47: cause/location/first failure lost: sink failed; calls=1
+=== RUN   TestOutputFailureLocation/{{_safeHtml("<&")_}}/metered
+    finalization_output_test.go:47: cause/location/first failure lost: sink failed; calls=1
+=== RUN   TestOutputFailureLocation/{{_safeJs("<&")_}}/legacy
+    finalization_output_test.go:47: cause/location/first failure lost: sink failed; calls=1
+=== RUN   TestOutputFailureLocation/{{_safeJs("<&")_}}/metered
+    finalization_output_test.go:47: cause/location/first failure lost: sink failed; calls=1
+=== RUN   TestOutputFailureLocation/{{_json("<&")_}}/legacy
+    finalization_output_test.go:47: cause/location/first failure lost: sink failed; calls=1
+=== RUN   TestOutputFailureLocation/{{_json("<&")_}}/metered
+    finalization_output_test.go:47: cause/location/first failure lost: sink failed; calls=1
+=== RUN   TestOutputFailureLocation/{{_writeJson("<&")_}}/legacy
+    finalization_output_test.go:47: cause/location/first failure lost: sink failed; calls=1
+=== RUN   TestOutputFailureLocation/{{_writeJson("<&")_}}/metered
+    finalization_output_test.go:47: cause/location/first failure lost: sink failed; calls=1
+=== RUN   TestOutputFailureLocation/{{_ignored("body")_}}later/legacy
+    finalization_output_test.go:47: cause/location/first failure lost: sink failed; calls=1
+=== RUN   TestOutputFailureLocation/{{_ignored("body")_}}later/metered
+    finalization_output_test.go:47: cause/location/first failure lost: sink failed; calls=1
+=== RUN   TestOutputFailureLocation/{{_renderer_}}later/legacy
+    finalization_output_test.go:47: cause/location/first failure lost: sink failed; calls=1
+=== RUN   TestOutputFailureLocation/{{_renderer_}}later/metered
+    finalization_output_test.go:47: cause/location/first failure lost: sink failed; calls=1
+=== RUN   TestOutputFailureLocation/{{_try_}}{{_try_}}body{{_end_}}{{_catch_}}caught{{_end_}}/legacy
+    finalization_output_test.go:47: cause/location/first failure lost: sink failed; calls=1
+=== RUN   TestOutputFailureLocation/{{_try_}}{{_try_}}body{{_end_}}{{_catch_}}caught{{_end_}}/metered
+    finalization_output_test.go:47: cause/location/first failure lost: sink failed; calls=1
+--- FAIL: TestOutputFailureLocation (0.00s)
+    --- FAIL: TestOutputFailureLocation/body/legacy (0.00s)
+    --- FAIL: TestOutputFailureLocation/body/metered (0.00s)
+    --- FAIL: TestOutputFailureLocation/{{_"<&"_}}/legacy (0.00s)
+    --- FAIL: TestOutputFailureLocation/{{_"<&"_}}/metered (0.00s)
+    --- FAIL: TestOutputFailureLocation/{{_raw("<&")_}}/legacy (0.00s)
+    --- FAIL: TestOutputFailureLocation/{{_raw("<&")_}}/metered (0.00s)
+    --- FAIL: TestOutputFailureLocation/{{_safeHtml("<&")_}}/legacy (0.00s)
+    --- FAIL: TestOutputFailureLocation/{{_safeHtml("<&")_}}/metered (0.00s)
+    --- FAIL: TestOutputFailureLocation/{{_safeJs("<&")_}}/legacy (0.00s)
+    --- FAIL: TestOutputFailureLocation/{{_safeJs("<&")_}}/metered (0.00s)
+    --- FAIL: TestOutputFailureLocation/{{_json("<&")_}}/legacy (0.00s)
+    --- FAIL: TestOutputFailureLocation/{{_json("<&")_}}/metered (0.00s)
+    --- FAIL: TestOutputFailureLocation/{{_writeJson("<&")_}}/legacy (0.00s)
+    --- FAIL: TestOutputFailureLocation/{{_writeJson("<&")_}}/metered (0.00s)
+    --- FAIL: TestOutputFailureLocation/{{_ignored("body")_}}later/legacy (0.00s)
+    --- FAIL: TestOutputFailureLocation/{{_ignored("body")_}}later/metered (0.00s)
+    --- FAIL: TestOutputFailureLocation/{{_renderer_}}later/legacy (0.00s)
+    --- FAIL: TestOutputFailureLocation/{{_renderer_}}later/metered (0.00s)
+    --- FAIL: TestOutputFailureLocation/{{_try_}}{{_try_}}body{{_end_}}{{_catch_}}caught{{_end_}}/legacy (0.00s)
+    --- FAIL: TestOutputFailureLocation/{{_try_}}{{_try_}}body{{_end_}}{{_catch_}}caught{{_end_}}/metered (0.00s)
+=== RUN   TestOutputFailureNestedLocation
+    finalization_output_test.go:71: nested write location: sink failed
+--- FAIL: TestOutputFailureNestedLocation (0.00s)
+=== RUN   TestOutputFailurePrecedesLaterLimit
+    finalization_output_test.go:90: first failure replaced: jet: steps limit exceeded (1000)
+--- FAIL: TestOutputFailurePrecedesLaterLimit (0.00s)
+=== RUN   TestOutputReentrantEscaper
+    finalization_output_test.go:117: reentrant escaping: "&lt;&gt;", <nil>
+--- FAIL: TestOutputReentrantEscaper (0.00s)
+FAIL
+FAIL	github.com/CloudyKit/jet/v6	0.276s
+FAIL

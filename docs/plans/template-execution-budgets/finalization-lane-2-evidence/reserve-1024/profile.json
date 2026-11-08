@@ -1,0 +1,27 @@
+{
+  "variant": "1024",
+  "stage": "profile",
+  "command": [
+    "/usr/bin/time",
+    "-l",
+    "<artifacts>/reserve-1024.test",
+    "-test.run=^$",
+    "-test.bench=^BenchmarkOutputReserve$/escape_expansion$/warm$",
+    "-test.benchtime=1s",
+    "-test.count=1",
+    "-test.cpuprofile=<artifacts>/reserve-1024/cpu.pprof",
+    "-test.memprofile=<artifacts>/reserve-1024/heap.pprof",
+    "-test.memprofilerate=1",
+    "-test.mutexprofile=<artifacts>/reserve-1024/mutex.pprof",
+    "-test.blockprofile=<artifacts>/reserve-1024/block.pprof"
+  ],
+  "environment": {
+    "GOMAXPROCS": "2"
+  },
+  "deadline_seconds": 100,
+  "cleanup_seconds": 5,
+  "exit_code": 0,
+  "binary_sha256": "00d45f9860a1e949cebca76c4c9cab320b811c300a566ab09e14c7e904753658",
+  "started": 1794124328.0880792,
+  "finished": 1794124329.851578
+}

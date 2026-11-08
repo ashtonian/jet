@@ -98,7 +98,7 @@ func (e *dataJSONEncoder) stringValue(s string) error {
 
 func (e *dataJSONEncoder) nativeValue(v reflect.Value) error {
 	st := e.runtime
-	st.beforeCall(v)
+	st.beforeNative(v)
 	b, err := json.Marshal(v.Interface())
 	st.checkpoint(0)
 	if err != nil {

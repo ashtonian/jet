@@ -1,0 +1,17 @@
+{
+  "archive": {
+    "source": "<source-sdk-archive>",
+    "sha256": "28365c5c252970c10f2627dc0aa63a2ec3df04a92df4d45ed83dbe464732c3e0",
+    "toolchain_directory": "<source-sdk>",
+    "reuse": "APFS clone to this lane before execution; no writes to the source checkout"
+  },
+  "GOROOT": "<go1.16-sdk>",
+  "CGO_ENABLED": "1",
+  "GOMAXPROCS": null,
+  "GOFLAGS": null,
+  "files": {
+    "bin/go": "374434bd88d03cac87b848ccf58f4a1a5dffda6b61c89b8340715a1a9cba1840",
+    "pkg/tool/darwin_arm64/compile": "f7b6dc355a37c9dd3f221c921ed9393656ccfdcb301fe47cf746d7226daedf49",
+    "pkg/tool/darwin_arm64/link": "fea1d2f7c9fe12e31138abcb38bbc60a34a7d29397cacdebbfe9ef47ee9e172e"
+  }
+}

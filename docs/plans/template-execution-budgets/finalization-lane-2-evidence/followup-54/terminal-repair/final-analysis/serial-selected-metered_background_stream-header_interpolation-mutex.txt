@@ -1,0 +1,11 @@
+File: render.test
+Type: delay
+Time: 2026-11-08 05:27:34 CST
+Showing nodes accounting for 375ns, 100% of 375ns total
+      flat  flat%   sum%        cum   cum%
+     375ns   100%   100%      375ns   100%  runtime.unlock (inline)
+         0     0%   100%      375ns   100%  runtime.findRunnable
+         0     0%   100%      375ns   100%  runtime.mcall
+         0     0%   100%      375ns   100%  runtime.park_m
+         0     0%   100%      375ns   100%  runtime.runSafePointFn
+         0     0%   100%      375ns   100%  runtime.schedule

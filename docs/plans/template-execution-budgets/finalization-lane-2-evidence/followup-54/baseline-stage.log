@@ -1,0 +1,17 @@
+gate-lock: held by pid <pid> on <host>, "jet-lane2-followup-isolated-baseline 54b5614 in <checkout>", since 2026-11-08T09:57:20Z
+gate-lock: held by pid <pid> on <host>, "jet-lane2-followup-isolated-baseline 54b5614 in <checkout>", since 2026-11-08T09:57:20Z
+legacy_stream-header_literal 0
+legacy_stream-inheritance 0
+legacy_stream-nested_writing 0
+legacy_stream-header_interpolation 0
+legacy_stream-escape_expansion 0
+metered_background_stream-header_literal 0
+metered_background_stream-inheritance 0
+metered_background_stream-nested_writing 0
+metered_background_stream-header_interpolation 0
+metered_background_stream-escape_expansion 0
+metered_live_stream-header_literal 0
+metered_live_stream-inheritance 0
+metered_live_stream-nested_writing 0
+metered_live_stream-header_interpolation 0
+metered_live_stream-escape_expansion 0

@@ -1,0 +1,31 @@
+File: correctness.test
+Type: inuse_space
+Time: 2026-11-08 03:05:52 CST
+Showing nodes accounting for 519.10kB, 98.72% of 525.85kB total
+Dropped 116 nodes (cum <= 2.63kB)
+      flat  flat%   sum%        cum   cum%
+     256kB 48.68% 48.68%      256kB 48.68%  bytes.growSlice
+     256kB 48.68% 97.37%      256kB 48.68%  internal/bytealg.MakeNoZero
+    3.48kB  0.66% 98.03%     3.48kB  0.66%  runtime.mallocgc
+    2.59kB  0.49% 98.52%     5.53kB  1.05%  testing.(*T).Run
+    0.80kB  0.15% 98.67%     2.95kB  0.56%  testing.runTests
+    0.16kB  0.03% 98.70%   515.14kB 97.96%  github.com/CloudyKit/jet/v6_test.TestExecutionRetentionMeasurements.func1
+    0.05kB 0.0089% 98.71%     4.01kB  0.76%  github.com/CloudyKit/jet/v6_test.TestExecutionRetentionMeasurements
+    0.02kB 0.0045% 98.72%     3.11kB  0.59%  testing.(*M).Run
+         0     0% 98.72%      256kB 48.68%  bytes.(*Buffer).Write
+         0     0% 98.72%      256kB 48.68%  bytes.(*Buffer).grow
+         0     0% 98.72%      256kB 48.68%  github.com/CloudyKit/fastprinter.PrintString
+         0     0% 98.72%      256kB 48.68%  github.com/CloudyKit/fastprinter.PrintValue
+         0     0% 98.72%   256.05kB 48.69%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 98.72%   256.05kB 48.69%  github.com/CloudyKit/jet/v6.(*Template).Execute
+         0     0% 98.72%      256kB 48.68%  github.com/CloudyKit/jet/v6.(*escapeeWriter).Write
+         0     0% 98.72%      256kB 48.68%  github.com/CloudyKit/jet/v6.checkedWriter.Write
+         0     0% 98.72%   256.05kB 48.69%  github.com/CloudyKit/jet/v6_test.TestExecutionRetentionMeasurements.func1.1 (inline)
+         0     0% 98.72%   256.05kB 48.69%  github.com/CloudyKit/jet/v6_test.init.func1
+         0     0% 98.72%     3.11kB  0.59%  main.main
+         0     0% 98.72%     3.11kB  0.59%  runtime.main
+         0     0% 98.72%     3.34kB  0.64%  runtime.newobject
+         0     0% 98.72%      256kB 48.68%  strings.(*Builder).Grow
+         0     0% 98.72%      256kB 48.68%  strings.(*Builder).grow
+         0     0% 98.72%      256kB 48.68%  strings.Repeat
+         0     0% 98.72%   520.72kB 99.02%  testing.tRunner

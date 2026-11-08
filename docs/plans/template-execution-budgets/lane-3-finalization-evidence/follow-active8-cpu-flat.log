@@ -1,0 +1,37 @@
+File: follow-active8.test
+Type: cpu
+Time: 2026-11-08 02:16:20 CST
+Duration: 1.41s, Total samples = 1.15s (81.55%)
+Showing nodes accounting for 0.73s, 63.48% of 1.15s total
+Showing top 30 nodes out of 177
+      flat  flat%   sum%        cum   cum%
+     0.05s  4.35%  4.35%      0.93s 80.87%  github.com/CloudyKit/jet/v6.(*Template).execute
+     0.05s  4.35%  8.70%      0.05s  4.35%  internal/runtime/maps.(*Iter).Next
+     0.05s  4.35% 13.04%      0.05s  4.35%  runtime.kevent
+     0.04s  3.48% 16.52%      0.05s  4.35%  context.(*cancelCtx).Err
+     0.04s  3.48% 20.00%      0.12s 10.43%  github.com/CloudyKit/jet/v6.(*Runtime).checkpoint
+     0.04s  3.48% 23.48%      0.05s  4.35%  github.com/CloudyKit/jet/v6.(*inputAdmission).step
+     0.03s  2.61% 26.09%      0.10s  8.70%  github.com/CloudyKit/jet/v6.(*Runtime).evalBaseExpressionGroup
+     0.03s  2.61% 28.70%      0.03s  2.61%  github.com/CloudyKit/jet/v6.(*Runtime).rethrowTerminal (inline)
+     0.03s  2.61% 31.30%      0.05s  4.35%  path.Clean
+     0.03s  2.61% 33.91%      0.03s  2.61%  runtime.madvise
+     0.03s  2.61% 36.52%      0.04s  3.48%  runtime.mallocgcSmallScanNoHeaderSC4
+     0.03s  2.61% 39.13%      0.03s  2.61%  runtime.pthread_kill
+     0.03s  2.61% 41.74%      0.03s  2.61%  runtime.usleep
+     0.02s  1.74% 43.48%      0.02s  1.74%  github.com/CloudyKit/jet/v6.(*Runtime).reserveUnchecked (inline)
+     0.02s  1.74% 45.22%      0.13s 11.30%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+     0.02s  1.74% 46.96%      0.02s  1.74%  github.com/CloudyKit/jet/v6.builtinForValue
+     0.02s  1.74% 48.70%      0.02s  1.74%  internal/runtime/atomic.(*UnsafePointer).Load (inline)
+     0.02s  1.74% 50.43%      0.03s  2.61%  runtime.(*_panic).nextDefer
+     0.02s  1.74% 52.17%      0.07s  6.09%  runtime.mallocgc
+     0.02s  1.74% 53.91%      0.05s  4.35%  runtime.mapaccess2_faststr
+     0.02s  1.74% 55.65%      0.02s  1.74%  runtime.memequal
+     0.01s  0.87% 56.52%      0.06s  5.22%  bytes.(*Buffer).grow
+     0.01s  0.87% 57.39%      0.04s  3.48%  github.com/CloudyKit/jet/v6.(*Runtime).beforeData
+     0.01s  0.87% 58.26%      0.01s  0.87%  github.com/CloudyKit/jet/v6.(*Runtime).checkNode
+     0.01s  0.87% 59.13%      0.57s 49.57%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+     0.01s  0.87% 60.00%      0.01s  0.87%  github.com/CloudyKit/jet/v6.(*Runtime).isRestricted (inline)
+     0.01s  0.87% 60.87%      0.01s  0.87%  github.com/CloudyKit/jet/v6.(*Runtime).leave
+     0.01s  0.87% 61.74%      0.01s  0.87%  github.com/CloudyKit/jet/v6.(*Runtime).reserve
+     0.01s  0.87% 62.61%      0.03s  2.61%  github.com/CloudyKit/jet/v6.(*Runtime).reserveValue
+     0.01s  0.87% 63.48%      0.97s 84.35%  github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext

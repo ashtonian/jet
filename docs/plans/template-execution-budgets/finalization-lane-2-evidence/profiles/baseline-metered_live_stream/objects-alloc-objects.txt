@@ -1,0 +1,32 @@
+File: baseline.test
+Type: alloc_objects
+Time: 2026-11-08 01:29:23 CST
+Showing nodes accounting for 503557, 97.68% of 515510 total
+Dropped 307 nodes (cum <= 2577)
+Showing top 25 nodes out of 30
+      flat  flat%   sum%        cum   cum%
+    181388 35.19% 35.19%     181388 35.19%  github.com/CloudyKit/jet/v6.newParseAdmission
+     90686 17.59% 52.78%     136029 26.39%  github.com/CloudyKit/jet/v6.(*parseAdmission).admitCached
+     45347  8.80% 61.57%      45347  8.80%  github.com/CloudyKit/jet/v6.(*parseAdmission).prepareSource
+     45343  8.80% 70.37%      45343  8.80%  github.com/CloudyKit/jet/v6.(*Runtime).outputWriter (inline)
+     45343  8.80% 79.17%      90768 17.61%  github.com/CloudyKit/jet/v6.(*Runtime).printValue
+     45343  8.80% 87.96%      45381  8.80%  github.com/CloudyKit/jet/v6.(*Runtime).recover
+     45343  8.80% 96.76%      45425  8.81%  github.com/CloudyKit/jet/v6.(*dataPrinter).value
+      3247  0.63% 97.39%       3247  0.63%  regexp.makeOnePass.func1
+       671  0.13% 97.52%      12585  2.44%  regexp.compile
+       344 0.067% 97.58%      14755  2.86%  github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview
+       337 0.065% 97.65%       4116   0.8%  regexp/syntax.parse
+       152 0.029% 97.68%       4003  0.78%  regexp.makeOnePass
+         6 0.0012% 97.68%      13403  2.60%  testing.(*B).Run
+         4 0.00078% 97.68%     499045 96.81%  github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview.func1
+         3 0.00058% 97.68%     513837 99.68%  testing.(*B).runN
+         0     0% 97.68%      90770 17.61%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 97.68%     317401 61.57%  github.com/CloudyKit/jet/v6.(*Runtime).startCompilation
+         0     0% 97.68%     136029 26.39%  github.com/CloudyKit/jet/v6.(*Runtime).startCompilation.func1
+         0     0% 97.68%     498909 96.78%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0% 97.68%     498909 96.78%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0% 97.68%     498909 96.78%  github.com/CloudyKit/jet/v6_test.init.0.func1
+         0     0% 97.68%      12585  2.44%  regexp.Compile (inline)
+         0     0% 97.68%       4307  0.84%  regexp.compileOnePass
+         0     0% 97.68%       2984  0.58%  regexp/syntax.(*parser).literal
+         0     0% 97.68%       4116   0.8%  regexp/syntax.Parse (inline)

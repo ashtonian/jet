@@ -1,0 +1,188 @@
+[
+  {
+    "name": "shape-layout-pooled4",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      ".git/finalization/follow-pooled4.test",
+      "-test.run=^TestAdmissionLayoutAndRetained$",
+      "-test.v",
+      "-test.timeout=60s"
+    ],
+    "deadline": 90,
+    "cleanup_seconds": 5,
+    "start": 1794126282.023368,
+    "end": 1794126282.0947578,
+    "exit_code": 0
+  },
+  {
+    "name": "shape-layout-active8",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      ".git/finalization/follow-active8.test",
+      "-test.run=^TestAdmissionLayoutAndRetained$",
+      "-test.v",
+      "-test.timeout=60s"
+    ],
+    "deadline": 90,
+    "cleanup_seconds": 5,
+    "start": 1794126282.1016839,
+    "end": 1794126282.152041,
+    "exit_code": 0
+  },
+  {
+    "name": "shape-pooled4-0",
+    "command": [
+      ".git/finalization/follow-pooled4.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkAdmissionInput$",
+      "-test.benchtime=200ms",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=60s"
+    ],
+    "deadline": 90,
+    "cleanup_seconds": 5,
+    "start": 1794126282.1593332,
+    "end": 1794126283.4657621,
+    "exit_code": 0
+  },
+  {
+    "name": "shape-active8-0",
+    "command": [
+      ".git/finalization/follow-active8.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkAdmissionInput$",
+      "-test.benchtime=200ms",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=60s"
+    ],
+    "deadline": 90,
+    "cleanup_seconds": 5,
+    "start": 1794126283.4906812,
+    "end": 1794126284.760339,
+    "exit_code": 0
+  },
+  {
+    "name": "shape-active8-1",
+    "command": [
+      ".git/finalization/follow-active8.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkAdmissionInput$",
+      "-test.benchtime=200ms",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=60s"
+    ],
+    "deadline": 90,
+    "cleanup_seconds": 5,
+    "start": 1794126284.780204,
+    "end": 1794126286.082901,
+    "exit_code": 0
+  },
+  {
+    "name": "shape-pooled4-1",
+    "command": [
+      ".git/finalization/follow-pooled4.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkAdmissionInput$",
+      "-test.benchtime=200ms",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=60s"
+    ],
+    "deadline": 90,
+    "cleanup_seconds": 5,
+    "start": 1794126286.1048892,
+    "end": 1794126287.393117,
+    "exit_code": 0
+  },
+  {
+    "name": "shape-pooled4-2",
+    "command": [
+      ".git/finalization/follow-pooled4.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkAdmissionInput$",
+      "-test.benchtime=200ms",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=60s"
+    ],
+    "deadline": 90,
+    "cleanup_seconds": 5,
+    "start": 1794126287.411952,
+    "end": 1794126288.696293,
+    "exit_code": 0
+  },
+  {
+    "name": "shape-active8-2",
+    "command": [
+      ".git/finalization/follow-active8.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkAdmissionInput$",
+      "-test.benchtime=200ms",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=60s"
+    ],
+    "deadline": 90,
+    "cleanup_seconds": 5,
+    "start": 1794126288.722372,
+    "end": 1794126289.957761,
+    "exit_code": 0
+  },
+  {
+    "name": "shape-profile-pooled4",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      ".git/finalization/follow-pooled4.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkAdmissionInput$/^(nested|large)$",
+      "-test.benchtime=500ms",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.timeout=60s",
+      "-test.cpuprofile=.git/finalization/shape-pooled4-cpu.pprof",
+      "-test.memprofile=.git/finalization/shape-pooled4-heap.pprof",
+      "-test.mutexprofile=.git/finalization/shape-pooled4-mutex.pprof",
+      "-test.blockprofile=.git/finalization/shape-pooled4-block.pprof"
+    ],
+    "deadline": 90,
+    "cleanup_seconds": 5,
+    "start": 1794126289.973043,
+    "end": 1794126291.965502,
+    "exit_code": 0
+  },
+  {
+    "name": "shape-profile-active8",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      ".git/finalization/follow-active8.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkAdmissionInput$/^(nested|large)$",
+      "-test.benchtime=500ms",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.timeout=60s",
+      "-test.cpuprofile=.git/finalization/shape-active8-cpu.pprof",
+      "-test.memprofile=.git/finalization/shape-active8-heap.pprof",
+      "-test.mutexprofile=.git/finalization/shape-active8-mutex.pprof",
+      "-test.blockprofile=.git/finalization/shape-active8-block.pprof"
+    ],
+    "deadline": 90,
+    "cleanup_seconds": 5,
+    "start": 1794126291.971721,
+    "end": 1794126294.542573,
+    "exit_code": 0
+  }
+]

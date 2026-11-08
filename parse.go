@@ -220,15 +220,23 @@ func (t *Template) recover(errp *error) {
 
 func (s *Set) parse(name, text string, cacheAfterParsing bool, parsing *parseAdmission) (t *Template, err error) {
 	if parsing == nil {
-		parsing, _ = newParseAdmission(context.Background(), ParseOptions{})
+		parsing, _ = s.parseAdmission(context.Background(), ParseOptions{})
+		defer parsing.release()
 	}
 	defer parsing.recover(&err)
 	name = path.Clean(name)
-	parsing.source(name, int64(len(text)))
+	if s.restricted != nil && len(name) > 1024 {
+		return nil, ErrCapabilityDenied
+	}
+	source := parsing.source(name, int64(len(text)))
 	parsing.enter()
 	defer func() { parsing.depth-- }()
-	parsing.active[name] = true
-	defer delete(parsing.active, name)
+	parsing.parsing++
+	parsing.sources[source].active = true
+	defer func() {
+		parsing.sources[source].active = false
+		parsing.parsing--
+	}()
 
 	t = &Template{
 		Name:            name,
@@ -260,7 +268,8 @@ func (s *Set) parse(name, text string, cacheAfterParsing bool, parsing *parseAdm
 	}
 
 	t.addBlocks(t.passedBlocks)
-	parsing.cached[t] = true
+	t.recordGraphDepth()
+	parsing.markCached(t)
 
 	return t, err
 }

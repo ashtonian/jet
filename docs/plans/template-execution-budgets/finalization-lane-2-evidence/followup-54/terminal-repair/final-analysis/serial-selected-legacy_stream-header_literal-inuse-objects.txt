@@ -1,0 +1,17 @@
+File: render.test
+Type: inuse_objects
+Time: 2026-11-08 05:27:17 CST
+Showing nodes accounting for 3674, 100% of 3674 total
+      flat  flat%   sum%        cum   cum%
+      2185 59.47% 59.47%       2185 59.47%  runtime.mallocgc
+      1489 40.53%   100%       1489 40.53%  text/template.addValueFuncs
+         0     0%   100%       1489 40.53%  github.com/CloudyKit/jet/v6.init.1
+         0     0%   100%       1489 40.53%  runtime.doInit (inline)
+         0     0%   100%       1489 40.53%  runtime.doInit1
+         0     0%   100%       1489 40.53%  runtime.main
+         0     0%   100%       2185 59.47%  runtime.malg
+         0     0%   100%       2185 59.47%  runtime.newobject
+         0     0%   100%       2185 59.47%  runtime.newproc.func1
+         0     0%   100%       2185 59.47%  runtime.newproc1
+         0     0%   100%       2185 59.47%  runtime.systemstack
+         0     0%   100%       1489 40.53%  text/template.(*Template).Funcs

@@ -1,0 +1,176 @@
+File: upstream.test
+Type: delay
+Time: 2026-11-08 02:59:04 CST
+Showing nodes accounting for 142.71us, 100% of 142.71us total
+Dropped 41 nodes (cum <= 0.71us)
+----------------------------------------------------------+-------------
+      flat  flat%   sum%        cum   cum%   calls calls% + context
+----------------------------------------------------------+-------------
+                                           74.87us 52.47% |   runtime.forEachPInternal (inline)
+                                           24.08us 16.88% |   runtime.stopTheWorldWithSema (inline)
+                                           19.12us 13.40% |   runtime.mcommoninit (inline)
+                                            9.46us  6.63% |   runtime.goschedImpl (inline)
+                                            6.83us  4.79% |   runtime.gcstopm (inline)
+                                               5us  3.50% |   runtime.runSafePointFn (inline)
+                                            3.12us  2.19% |   runtime.(*mheap).freeSpan.func1
+                                            0.21us  0.15% |   runtime.systemstack (inline)
+  142.71us   100%   100%   142.71us   100%                | runtime.unlock
+----------------------------------------------------------+-------------
+                                           19.12us   100% |   runtime.systemstack
+         0     0%   100%    19.12us 13.40%                | _.goready.func1
+                                           19.12us   100% |   runtime.ready
+----------------------------------------------------------+-------------
+                                           19.12us   100% |   github.com/CloudyKit/jet/v6.lexSpace (inline)
+         0     0%   100%    19.12us 13.40%                | github.com/CloudyKit/jet/v6.(*lexer).emit
+                                           19.12us   100% |   runtime.chansend1
+----------------------------------------------------------+-------------
+         0     0%   100%    19.12us 13.40%                | github.com/CloudyKit/jet/v6.(*lexer).run.func1
+                                           19.12us   100% |   github.com/CloudyKit/jet/v6.lexSpace
+----------------------------------------------------------+-------------
+                                           19.12us   100% |   github.com/CloudyKit/jet/v6.(*lexer).run.func1
+         0     0%   100%    19.12us 13.40%                | github.com/CloudyKit/jet/v6.lexSpace
+                                           19.12us   100% |   github.com/CloudyKit/jet/v6.(*lexer).emit (inline)
+----------------------------------------------------------+-------------
+                                            3.12us   100% |   runtime.(*sweepLocked).sweep (inline)
+         0     0%   100%     3.12us  2.19%                | runtime.(*mheap).freeSpan
+                                            2.87us 92.00% |   runtime.systemstack
+                                            0.25us  8.00% |   runtime.(*mheap).freeSpan.func1
+----------------------------------------------------------+-------------
+                                            2.87us 92.00% |   runtime.systemstack
+                                            0.25us  8.00% |   runtime.(*mheap).freeSpan
+         0     0%   100%     3.12us  2.19%                | runtime.(*mheap).freeSpan.func1
+                                            3.12us   100% |   runtime.unlock
+----------------------------------------------------------+-------------
+                                            2.87us 92.00% |   runtime.sweepone
+                                            0.25us  8.00% |   runtime.systemstack
+         0     0%   100%     3.12us  2.19%                | runtime.(*sweepLocked).sweep
+                                            3.12us   100% |   runtime.(*mheap).freeSpan (inline)
+----------------------------------------------------------+-------------
+                                           19.12us   100% |   runtime.newm
+         0     0%   100%    19.12us 13.40%                | runtime.allocm
+                                           19.12us   100% |   runtime.mcommoninit
+----------------------------------------------------------+-------------
+         0     0%   100%     2.87us  2.01%                | runtime.bgsweep
+                                            2.87us   100% |   runtime.sweepone
+----------------------------------------------------------+-------------
+                                           19.12us   100% |   runtime.chansend1
+         0     0%   100%    19.12us 13.40%                | runtime.chansend
+                                           19.12us   100% |   runtime.send
+----------------------------------------------------------+-------------
+                                           19.12us   100% |   github.com/CloudyKit/jet/v6.(*lexer).emit
+         0     0%   100%    19.12us 13.40%                | runtime.chansend1
+                                           19.12us   100% |   runtime.chansend
+----------------------------------------------------------+-------------
+                                           11.83us   100% |   runtime.schedule
+         0     0%   100%    11.83us  8.29%                | runtime.findRunnable
+                                            6.83us 57.74% |   runtime.gcstopm
+                                               5us 42.26% |   runtime.runSafePointFn
+----------------------------------------------------------+-------------
+                                           74.87us   100% |   runtime.gcMarkDone (inline)
+         0     0%   100%    74.87us 52.47%                | runtime.forEachP
+                                           74.87us   100% |   runtime.systemstack
+----------------------------------------------------------+-------------
+                                           74.87us   100% |   runtime.systemstack
+         0     0%   100%    74.87us 52.47%                | runtime.forEachP.func1
+                                           74.87us   100% |   runtime.forEachPInternal
+----------------------------------------------------------+-------------
+                                           74.87us   100% |   runtime.forEachP.func1
+         0     0%   100%    74.87us 52.47%                | runtime.forEachPInternal
+                                           74.87us   100% |   runtime.unlock (inline)
+----------------------------------------------------------+-------------
+         0     0%   100%    98.96us 69.34%                | runtime.gcBgMarkWorker
+                                           98.96us   100% |   runtime.gcMarkDone
+----------------------------------------------------------+-------------
+                                           98.96us   100% |   runtime.gcBgMarkWorker
+         0     0%   100%    98.96us 69.34%                | runtime.gcMarkDone
+                                           74.87us 75.66% |   runtime.forEachP (inline)
+                                           24.08us 24.34% |   runtime.systemstack
+----------------------------------------------------------+-------------
+                                           24.08us   100% |   runtime.systemstack
+         0     0%   100%    24.08us 16.88%                | runtime.gcMarkDone.func2
+                                           24.08us   100% |   runtime.stopTheWorldWithSema
+----------------------------------------------------------+-------------
+                                            6.83us   100% |   runtime.findRunnable
+         0     0%   100%     6.83us  4.79%                | runtime.gcstopm
+                                            6.83us   100% |   runtime.unlock (inline)
+----------------------------------------------------------+-------------
+                                           19.96us   100% |   runtime.newstack (inline)
+         0     0%   100%    19.96us 13.99%                | runtime.gopreempt_m
+                                           19.96us   100% |   runtime.goschedImpl
+----------------------------------------------------------+-------------
+                                           19.12us   100% |   runtime.send (inline)
+         0     0%   100%    19.12us 13.40%                | runtime.goready
+                                           19.12us   100% |   runtime.systemstack
+----------------------------------------------------------+-------------
+                                           19.96us   100% |   runtime.gopreempt_m
+         0     0%   100%    19.96us 13.99%                | runtime.goschedImpl
+                                           10.50us 52.61% |   runtime.schedule
+                                            9.46us 47.39% |   runtime.unlock (inline)
+----------------------------------------------------------+-------------
+         0     0%   100%     1.33us  0.93%                | runtime.mcall
+                                            1.33us   100% |   runtime.park_m
+----------------------------------------------------------+-------------
+                                           19.12us   100% |   runtime.allocm
+         0     0%   100%    19.12us 13.40%                | runtime.mcommoninit
+                                           19.12us   100% |   runtime.unlock (inline)
+----------------------------------------------------------+-------------
+         0     0%   100%    19.96us 13.99%                | runtime.morestack
+                                           19.96us   100% |   runtime.newstack
+----------------------------------------------------------+-------------
+                                           19.12us   100% |   runtime.startm
+         0     0%   100%    19.12us 13.40%                | runtime.newm
+                                           19.12us   100% |   runtime.allocm
+----------------------------------------------------------+-------------
+                                           19.96us   100% |   runtime.morestack
+         0     0%   100%    19.96us 13.99%                | runtime.newstack
+                                           19.96us   100% |   runtime.gopreempt_m (inline)
+----------------------------------------------------------+-------------
+                                            1.33us   100% |   runtime.mcall
+         0     0%   100%     1.33us  0.93%                | runtime.park_m
+                                            1.33us   100% |   runtime.schedule
+----------------------------------------------------------+-------------
+                                           19.12us   100% |   _.goready.func1
+         0     0%   100%    19.12us 13.40%                | runtime.ready
+                                           19.12us   100% |   runtime.wakep
+----------------------------------------------------------+-------------
+                                               5us   100% |   runtime.findRunnable
+         0     0%   100%        5us  3.50%                | runtime.runSafePointFn
+                                               5us   100% |   runtime.unlock (inline)
+----------------------------------------------------------+-------------
+                                           10.50us 88.73% |   runtime.goschedImpl
+                                            1.33us 11.27% |   runtime.park_m
+         0     0%   100%    11.83us  8.29%                | runtime.schedule
+                                           11.83us   100% |   runtime.findRunnable
+----------------------------------------------------------+-------------
+                                           19.12us   100% |   runtime.chansend
+         0     0%   100%    19.12us 13.40%                | runtime.send
+                                           19.12us   100% |   runtime.goready (inline)
+----------------------------------------------------------+-------------
+                                           19.12us   100% |   runtime.wakep
+         0     0%   100%    19.12us 13.40%                | runtime.startm
+                                           19.12us   100% |   runtime.newm
+----------------------------------------------------------+-------------
+                                           24.08us   100% |   runtime.gcMarkDone.func2
+         0     0%   100%    24.08us 16.88%                | runtime.stopTheWorldWithSema
+                                           24.08us   100% |   runtime.unlock (inline)
+----------------------------------------------------------+-------------
+                                            2.87us   100% |   runtime.bgsweep
+         0     0%   100%     2.87us  2.01%                | runtime.sweepone
+                                            2.87us   100% |   runtime.(*sweepLocked).sweep
+----------------------------------------------------------+-------------
+                                           74.87us 61.67% |   runtime.forEachP
+                                           24.08us 19.84% |   runtime.gcMarkDone
+                                           19.12us 15.75% |   runtime.goready
+                                            2.87us  2.37% |   runtime.(*mheap).freeSpan
+         0     0%   100%   121.41us 85.08%                | runtime.systemstack
+                                           74.87us 61.67% |   runtime.forEachP.func1
+                                           24.08us 19.84% |   runtime.gcMarkDone.func2
+                                           19.12us 15.75% |   _.goready.func1
+                                            2.87us  2.37% |   runtime.(*mheap).freeSpan.func1
+                                            0.25us  0.21% |   runtime.(*sweepLocked).sweep
+                                            0.21us  0.17% |   runtime.unlock (inline)
+----------------------------------------------------------+-------------
+                                           19.12us   100% |   runtime.ready
+         0     0%   100%    19.12us 13.40%                | runtime.wakep
+                                           19.12us   100% |   runtime.startm
+----------------------------------------------------------+-------------

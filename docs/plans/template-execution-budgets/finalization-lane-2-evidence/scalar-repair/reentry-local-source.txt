@@ -1,0 +1,133 @@
+Total: 5.87s
+ROUTINE ======================== github.com/CloudyKit/jet/v6.(*Runtime).printValue in execution_print.go
+      10ms      690ms (flat, cum) 11.75% of Total
+      10ms       10ms     19:func (st *Runtime) printValue(w io.Writer, v reflect.Value) (int, error) {
+         .          .     20:	if st.execution.ctx == nil {
+         .          .     21:		return fastprinter.PrintValue(w, v)
+         .          .     22:	}
+         .      130ms     23:	p := &dataPrinter{runtime: st, writer: w}
+         .          .     24:	defer func() { *p = dataPrinter{} }()
+         .      540ms     25:	err := p.value(v, false)
+         .       10ms     26:	return p.written, err
+         .          .     27:}
+         .          .     28:
+         .          .     29:type dataPrinter struct {
+         .          .     30:	runtime *Runtime
+         .          .     31:	writer  io.Writer
+ROUTINE ======================== github.com/CloudyKit/jet/v6.(*Runtime).printValue.func1 in execution_print.go
+      10ms       10ms (flat, cum)  0.17% of Total
+      10ms       10ms     24:	defer func() { *p = dataPrinter{} }()
+         .          .     25:	err := p.value(v, false)
+         .          .     26:	return p.written, err
+         .          .     27:}
+         .          .     28:
+         .          .     29:type dataPrinter struct {
+ROUTINE ======================== github.com/CloudyKit/jet/v6.(*dataPrinter).Write in execution_print.go
+      10ms      410ms (flat, cum)  6.98% of Total
+      10ms       10ms     36:func (p *dataPrinter) Write(b []byte) (int, error) {
+         .       10ms     37:	p.runtime.checkpoint(uint64(len(b)))
+         .      390ms     38:	n, err := p.writer.Write(b)
+         .          .     39:	p.written += n
+         .          .     40:	return n, err
+         .          .     41:}
+         .          .     42:
+         .          .     43:func (p *dataPrinter) text(s string) error {
+ROUTINE ======================== github.com/CloudyKit/jet/v6.(*dataPrinter).value in execution_print.go
+      20ms      650ms (flat, cum) 11.07% of Total
+         .          .     49:func (p *dataPrinter) value(v reflect.Value, nested bool) error {
+         .          .     50:	st := p.runtime
+         .       20ms     51:	st.enter()
+         .       20ms     52:	defer st.leave()
+         .       10ms     53:	v = indirectInterface(v)
+         .          .     54:	st.beforeData(v)
+         .          .     55:	if !v.IsValid() {
+         .          .     56:		return p.text("<nil>")
+         .          .     57:	}
+         .       20ms     58:	if b, ok := builtinForValue(v); ok {
+         .          .     59:		_, err := fastprinter.PrintValue(p, b.legacy)
+         .          .     60:		return err
+         .          .     61:	}
+         .       60ms     62:	if v.Type().Implements(formatterType) || v.Type().Implements(stringerType) || v.Type().Implements(errorType) {
+         .          .     63:		// Native formatting hooks remain unrestricted host capabilities.
+         .          .     64:		st.beforeNative(v)
+         .          .     65:		var err error
+         .          .     66:		if nested {
+         .          .     67:			_, err = fmt.Fprint(p, v.Interface())
+         .          .     68:		} else {
+         .          .     69:			_, err = fastprinter.PrintValue(p, v)
+         .          .     70:		}
+         .          .     71:		st.checkpoint(0)
+         .          .     72:		return err
+         .          .     73:	}
+         .          .     74:	var scalar []byte
+         .          .     75:	switch k := v.Kind(); {
+         .          .     76:	case k == reflect.String:
+         .          .     77:		return p.text(v.String())
+         .          .     78:	case isInt(k):
+         .       60ms     79:		scalar = strconv.AppendInt(p.scratch[:0], v.Int(), 10)
+         .          .     80:	case isUint(k):
+         .          .     81:		scalar = strconv.AppendUint(p.scratch[:0], v.Uint(), 10)
+         .          .     82:	case k == reflect.Bool:
+         .          .     83:		scalar = strconv.AppendBool(p.scratch[:0], v.Bool())
+         .          .     84:	case isFloat(k):
+         .          .     85:		if !nested {
+         .          .     86:			_, err := fastprinter.PrintValue(p, v)
+         .          .     87:			return err
+         .          .     88:		}
+         .          .     89:		scalar = strconv.AppendFloat(p.scratch[:0], v.Float(), 'g', -1, v.Type().Bits())
+         .          .     90:	case k == reflect.Array || k == reflect.Slice:
+         .          .     91:		if !nested && k == reflect.Slice && v.Type().Elem().Kind() == reflect.Uint8 {
+         .          .     92:			_, err := p.Write(v.Bytes())
+         .          .     93:			return err
+         .          .     94:		}
+         .          .     95:		if err := p.text("["); err != nil {
+         .          .     96:			return err
+         .          .     97:		}
+         .          .     98:		for i := 0; i < v.Len(); i++ {
+         .          .     99:			if i > 0 {
+         .          .    100:				if err := p.text(" "); err != nil {
+         .          .    101:					return err
+         .          .    102:				}
+         .          .    103:			}
+         .          .    104:			if err := p.value(v.Index(i), true); err != nil {
+         .          .    105:				return err
+         .          .    106:			}
+         .          .    107:		}
+         .          .    108:		return p.text("]")
+         .          .    109:	case k == reflect.Map && v.Type().Key().Kind() == reflect.String:
+         .          .    110:		keys := st.sortedStringKeys(v)
+         .          .    111:		if err := p.text("map["); err != nil {
+         .          .    112:			return err
+         .          .    113:		}
+         .          .    114:		for i, key := range keys {
+         .          .    115:			if i > 0 {
+         .          .    116:				if err := p.text(" "); err != nil {
+         .          .    117:					return err
+         .          .    118:				}
+         .          .    119:			}
+         .          .    120:			if err := p.text(key); err != nil {
+         .          .    121:				return err
+         .          .    122:			}
+         .          .    123:			if err := p.text(":"); err != nil {
+         .          .    124:				return err
+         .          .    125:			}
+         .          .    126:			keyValue := reflect.ValueOf(key).Convert(v.Type().Key())
+         .          .    127:			if err := p.value(v.MapIndex(keyValue), true); err != nil {
+         .          .    128:				return err
+         .          .    129:			}
+         .          .    130:		}
+         .          .    131:		return p.text("]")
+         .          .    132:	default:
+         .          .    133:		st.beforeNative(v)
+         .          .    134:		_, err := fastprinter.PrintValue(p, v)
+         .          .    135:		st.checkpoint(0)
+         .          .    136:		return err
+         .          .    137:	}
+         .      410ms    138:	_, err := p.Write(scalar)
+         .          .    139:	return err
+      20ms       50ms    140:}
+         .          .    141:
+         .          .    142:func (st *Runtime) sortedStringKeys(v reflect.Value) []string {
+         .          .    143:	st.reserveSlots(v.Len(), int64(reflect.TypeOf("").Size()))
+         .          .    144:	keys := make([]string, 0, v.Len())
+         .          .    145:	iter := v.MapRange()

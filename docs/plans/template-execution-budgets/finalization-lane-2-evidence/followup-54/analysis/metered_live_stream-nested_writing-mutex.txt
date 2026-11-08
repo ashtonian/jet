@@ -1,0 +1,17 @@
+File: candidate.test
+Type: delay
+Time: 2026-11-08 03:57:40 CST
+Showing nodes accounting for 14.83us, 100% of 14.83us total
+      flat  flat%   sum%        cum   cum%
+   14.83us   100%   100%    14.83us   100%  runtime.unlock (inline)
+         0     0%   100%    14.83us   100%  runtime.allocm
+         0     0%   100%    14.83us   100%  runtime.forEachP (inline)
+         0     0%   100%    14.83us   100%  runtime.forEachP.func1
+         0     0%   100%    14.83us   100%  runtime.forEachPInternal
+         0     0%   100%    14.83us   100%  runtime.gcBgMarkWorker
+         0     0%   100%    14.83us   100%  runtime.gcMarkDone
+         0     0%   100%    14.83us   100%  runtime.handoffp
+         0     0%   100%    14.83us   100%  runtime.mcommoninit
+         0     0%   100%    14.83us   100%  runtime.newm
+         0     0%   100%    14.83us   100%  runtime.startm
+         0     0%   100%    14.83us   100%  runtime.systemstack

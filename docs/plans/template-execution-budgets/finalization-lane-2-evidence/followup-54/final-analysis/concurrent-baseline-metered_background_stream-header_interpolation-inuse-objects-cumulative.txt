@@ -1,0 +1,16 @@
+File: render.test
+Type: inuse_objects
+Time: 2026-11-08 04:46:43 CST
+Showing nodes accounting for 80, 100% of 80 total
+      flat  flat%   sum%        cum   cum%
+         0     0%     0%         80   100%  github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes
+         0     0%     0%         80   100%  github.com/CloudyKit/jet/v6_test.additionalExecutionWorkloads
+         0     0%     0%         80   100%  github.com/CloudyKit/jet/v6_test.measurementWorkloads
+         0     0%     0%         80   100%  html.EscapeString (inline)
+         0     0%     0%         80   100%  strings.(*Replacer).Replace
+        80   100%   100%         80   100%  strings.(*Replacer).build
+         0     0%   100%         80   100%  strings.(*Replacer).buildOnce
+         0     0%   100%         80   100%  sync.(*Once).Do (inline)
+         0     0%   100%         80   100%  sync.(*Once).doSlow
+         0     0%   100%         80   100%  testing.(*B).run1.func1
+         0     0%   100%         80   100%  testing.(*B).runN

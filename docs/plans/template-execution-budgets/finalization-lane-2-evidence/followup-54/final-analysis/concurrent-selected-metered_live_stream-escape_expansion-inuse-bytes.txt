@@ -1,0 +1,12 @@
+File: render.test
+Type: inuse_space
+Time: 2026-11-08 04:47:36 CST
+Showing nodes accounting for 1024.93kB, 100% of 1024.93kB total
+      flat  flat%   sum%        cum   cum%
+  512.88kB 50.04% 50.04%   512.88kB 50.04%  unicode.map.init.1
+  512.05kB 49.96%   100%   512.05kB 49.96%  runtime.mallocgc
+         0     0%   100%   512.88kB 50.04%  runtime.doInit (inline)
+         0     0%   100%   512.88kB 50.04%  runtime.doInit1
+         0     0%   100%  1024.93kB   100%  runtime.main
+         0     0%   100%   512.05kB 49.96%  runtime.makechan
+         0     0%   100%   512.88kB 50.04%  unicode.init

@@ -1,0 +1,21 @@
+File: reserve-4096.test
+Type: cpu
+Time: 2026-11-08 01:52:24 CST
+Duration: 1.61s, Total samples = 1400ms (86.96%)
+Showing nodes accounting for 960ms, 68.57% of 1400ms total
+Showing top 14 nodes out of 149
+      flat  flat%   sum%        cum   cum%
+     120ms  8.57%  8.57%      420ms 30.00%  runtime.pcvalue
+     120ms  8.57% 17.14%      150ms 10.71%  runtime.step
+     110ms  7.86% 25.00%      110ms  7.86%  runtime.kevent
+     100ms  7.14% 32.14%      410ms 29.29%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+      70ms  5.00% 37.14%      130ms  9.29%  bytes.(*Buffer).Write
+      70ms  5.00% 42.14%       70ms  5.00%  runtime.(*moduledata).textAddr
+      60ms  4.29% 46.43%      470ms 33.57%  text/template.HTMLEscape
+      50ms  3.57% 50.00%      260ms 18.57%  runtime.(*unwinder).resolveInternal
+      50ms  3.57% 53.57%       50ms  3.57%  runtime.acquirem (inline)
+      50ms  3.57% 57.14%       50ms  3.57%  runtime.memmove
+      50ms  3.57% 60.71%       50ms  3.57%  runtime.pthread_kill
+      40ms  2.86% 63.57%       40ms  2.86%  context.(*cancelCtx).Err
+      40ms  2.86% 66.43%       80ms  5.71%  github.com/CloudyKit/jet/v6.(*Runtime).reserveWork
+      30ms  2.14% 68.57%       30ms  2.14%  github.com/CloudyKit/jet/v6.addValueSizes (inline)

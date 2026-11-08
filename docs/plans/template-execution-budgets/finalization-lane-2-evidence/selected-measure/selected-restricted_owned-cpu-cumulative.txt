@@ -1,0 +1,30 @@
+File: selected.test
+Type: cpu
+Time: 2026-11-08 02:11:04 CST
+Duration: 2.62s, Total samples = 2.44s (93.29%)
+Showing nodes accounting for 1.72s, 70.49% of 2.44s total
+Dropped 30 nodes (cum <= 0.01s)
+Showing top 22 nodes out of 87
+      flat  flat%   sum%        cum   cum%
+         0     0%     0%      1.79s 73.36%  runtime.systemstack
+         0     0%     0%      1.65s 67.62%  runtime.startTheWorldWithSema
+     1.63s 66.80% 66.80%      1.63s 66.80%  runtime.kevent
+         0     0% 66.80%      1.63s 66.80%  runtime.netpoll
+         0     0% 66.80%      1.62s 66.39%  runtime.gcStart.func4
+         0     0% 66.80%      0.44s 18.03%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0% 66.80%      0.44s 18.03%  github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext
+         0     0% 66.80%      0.44s 18.03%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0% 66.80%      0.44s 18.03%  github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview.func1
+         0     0% 66.80%      0.44s 18.03%  github.com/CloudyKit/jet/v6_test.init.0.func2
+         0     0% 66.80%      0.44s 18.03%  testing.(*B).launch
+         0     0% 66.80%      0.44s 18.03%  testing.(*B).runN
+         0     0% 66.80%      0.39s 15.98%  github.com/CloudyKit/fastprinter.PrintString
+         0     0% 66.80%      0.39s 15.98%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 66.80%      0.39s 15.98%  github.com/CloudyKit/jet/v6.(*Runtime).printValue
+         0     0% 66.80%      0.39s 15.98%  github.com/CloudyKit/jet/v6.(*dataPrinter).Write
+         0     0% 66.80%      0.39s 15.98%  github.com/CloudyKit/jet/v6.(*dataPrinter).text
+         0     0% 66.80%      0.39s 15.98%  github.com/CloudyKit/jet/v6.(*dataPrinter).value
+         0     0% 66.80%      0.39s 15.98%  github.com/CloudyKit/jet/v6.(*escapeeWriter).Write
+     0.01s  0.41% 67.21%      0.39s 15.98%  text/template.HTMLEscape
+     0.08s  3.28% 70.49%      0.38s 15.57%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+         0     0% 70.49%      0.21s  8.61%  runtime.gopreempt_m

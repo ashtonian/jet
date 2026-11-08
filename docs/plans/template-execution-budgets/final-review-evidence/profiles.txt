@@ -1,0 +1,1212 @@
+
+profile-candidate-legacy_owned-alloc.txt
+File: candidate.test
+Type: alloc_space
+Time: 2026-11-08 00:53:39 CST
+Showing nodes accounting for 2633.57MB, 99.27% of 2652.87MB total
+Dropped 46 nodes (cum <= 13.26MB)
+Showing top 18 nodes out of 35
+      flat  flat%   sum%        cum   cum%
+  515.34MB 19.43% 19.43%   515.34MB 19.43%  bytes.growSlice
+  447.03MB 16.85% 36.28%   962.37MB 36.28%  bytes.(*Buffer).grow
+  345.08MB 13.01% 49.28%   345.08MB 13.01%  bytes.(*Buffer).String (inline)
+  334.02MB 12.59% 61.87%  2644.57MB 99.69%  github.com/CloudyKit/jet/v6_test.init.func2
+  282.05MB 10.63% 72.51%   431.08MB 16.25%  github.com/CloudyKit/jet/v6.(*parseAdmission).admitCached
+  213.52MB  8.05% 80.56%   213.52MB  8.05%  github.com/CloudyKit/jet/v6.newParseAdmission
+  159.50MB  6.01% 86.57%   159.50MB  6.01%  github.com/CloudyKit/jet/v6.(*Runtime).recover
+  149.03MB  5.62% 92.19%   149.03MB  5.62%  github.com/CloudyKit/jet/v6.(*parseAdmission).prepareSource
+  100.50MB  3.79% 95.97%   290.51MB 10.95%  github.com/CloudyKit/jet/v6.(*Runtime).executeYieldBlock
+   51.50MB  1.94% 97.92%    51.50MB  1.94%  github.com/CloudyKit/jet/v6.(*Runtime).newScope (inline)
+      21MB  0.79% 98.71%       21MB  0.79%  github.com/CloudyKit/jet/v6.newIntsRanger (inline)
+    9.50MB  0.36% 99.06%    30.50MB  1.15%  github.com/CloudyKit/jet/v6.init.0.func5
+    5.50MB  0.21% 99.27%       16MB   0.6%  path.Join
+         0     0% 99.27%   962.37MB 36.28%  bytes.(*Buffer).Write
+         0     0% 99.27%   516.84MB 19.48%  github.com/CloudyKit/fastprinter.PrintString
+         0     0% 99.27%   516.84MB 19.48%  github.com/CloudyKit/fastprinter.PrintValue
+         0     0% 99.27%    30.50MB  1.15%  github.com/CloudyKit/jet/v6.(*Runtime).evalCallExpression (inline)
+         0     0% 99.27%    30.50MB  1.15%  github.com/CloudyKit/jet/v6.(*Runtime).evalPipeCallExpression
+
+profile-candidate-legacy_owned-block.txt
+File: candidate.test
+Type: delay
+Time: 2026-11-08 00:53:39 CST
+Showing nodes accounting for 7143.20ms, 100% of 7143.20ms total
+Dropped 3 nodes (cum <= 35.72ms)
+Showing top 18 nodes out of 22
+      flat  flat%   sum%        cum   cum%
+ 7143.20ms   100%   100%  7143.20ms   100%  runtime.chanrecv1
+         0     0%   100%  3515.30ms 49.21%  github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview
+         0     0%   100%  3627.90ms 50.79%  main.main
+         0     0%   100%  3627.90ms 50.79%  runtime.main
+         0     0%   100%   107.12ms  1.50%  runtime/pprof.StopCPUProfile
+         0     0%   100%   107.12ms  1.50%  sync.(*Once).Do (inline)
+         0     0%   100%   107.12ms  1.50%  sync.(*Once).doSlow
+         0     0%   100%  7036.08ms 98.50%  testing.(*B).Run
+         0     0%   100%  3512.52ms 49.17%  testing.(*B).doBench
+         0     0%   100%  3512.52ms 49.17%  testing.(*B).run
+         0     0%   100%  3523.56ms 49.33%  testing.(*B).run1
+         0     0%   100%  3515.30ms 49.21%  testing.(*B).run1.func1
+         0     0%   100%  7036.09ms 98.50%  testing.(*B).runN
+         0     0%   100%  3627.90ms 50.79%  testing.(*M).Run
+         0     0%   100%   107.12ms  1.50%  testing.(*M).Run.deferwrap1
+         0     0%   100%   107.12ms  1.50%  testing.(*M).after
+         0     0%   100%   107.12ms  1.50%  testing.(*M).after.func1
+         0     0%   100%   107.12ms  1.50%  testing.(*M).writeProfiles
+
+profile-candidate-legacy_owned-cpu-cumulative.txt
+File: candidate.test
+Type: cpu
+Time: 2026-11-08 00:53:35 CST
+Duration: 3.63s, Total samples = 3.54s (97.58%)
+Showing nodes accounting for 1.32s, 37.29% of 3.54s total
+Dropped 71 nodes (cum <= 0.02s)
+Showing top 18 nodes out of 158
+      flat  flat%   sum%        cum   cum%
+         0     0%     0%      2.13s 60.17%  github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview.func1
+         0     0%     0%      2.13s 60.17%  github.com/CloudyKit/jet/v6_test.init.func2
+         0     0%     0%      2.13s 60.17%  testing.(*B).runN
+         0     0%     0%      2.12s 59.89%  testing.(*B).launch
+         0     0%     0%      2.02s 57.06%  github.com/CloudyKit/jet/v6.(*Template).Execute (inline)
+     0.10s  2.82%  2.82%      2.02s 57.06%  github.com/CloudyKit/jet/v6.(*Template).execute
+     0.16s  4.52%  7.34%      1.72s 48.59%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0%  7.34%      1.28s 36.16%  runtime.systemstack
+     0.84s 23.73% 31.07%      0.84s 23.73%  runtime.kevent
+         0     0% 31.07%      0.84s 23.73%  runtime.netpoll
+         0     0% 31.07%      0.84s 23.73%  runtime.startTheWorldWithSema
+         0     0% 31.07%      0.83s 23.45%  runtime.gcStart.func4
+     0.03s  0.85% 31.92%      0.51s 14.41%  github.com/CloudyKit/jet/v6.(*Runtime).executeRange
+         0     0% 31.92%      0.48s 13.56%  github.com/CloudyKit/fastprinter.PrintValue
+         0     0% 31.92%      0.48s 13.56%  github.com/CloudyKit/jet/v6.(*Runtime).printValue
+     0.18s  5.08% 37.01%      0.48s 13.56%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+     0.01s  0.28% 37.29%      0.46s 12.99%  github.com/CloudyKit/fastprinter.PrintString
+         0     0% 37.29%      0.44s 12.43%  github.com/CloudyKit/jet/v6.(*escapeeWriter).Write
+
+profile-candidate-legacy_owned-cpu-flat.txt
+File: candidate.test
+Type: cpu
+Time: 2026-11-08 00:53:35 CST
+Duration: 3.63s, Total samples = 3540ms (97.58%)
+Showing nodes accounting for 2520ms, 71.19% of 3540ms total
+Dropped 71 nodes (cum <= 17.70ms)
+Showing top 18 nodes out of 158
+      flat  flat%   sum%        cum   cum%
+     840ms 23.73% 23.73%      840ms 23.73%  runtime.kevent
+     180ms  5.08% 28.81%      480ms 13.56%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+     170ms  4.80% 33.62%      170ms  4.80%  runtime.pthread_kill
+     160ms  4.52% 38.14%     1720ms 48.59%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+     140ms  3.95% 42.09%      140ms  3.95%  reflect.Value.Elem
+     120ms  3.39% 45.48%      120ms  3.39%  runtime.madvise
+     110ms  3.11% 48.59%      440ms 12.43%  text/template.HTMLEscape
+     100ms  2.82% 51.41%     2020ms 57.06%  github.com/CloudyKit/jet/v6.(*Template).execute
+      90ms  2.54% 53.95%      160ms  4.52%  github.com/CloudyKit/jet/v6.(*Runtime).checkpoint
+      80ms  2.26% 56.21%       80ms  2.26%  runtime.pthread_cond_wait
+      80ms  2.26% 58.47%       80ms  2.26%  runtime.usleep
+      70ms  1.98% 60.45%      300ms  8.47%  bytes.(*Buffer).Write
+      70ms  1.98% 62.43%       70ms  1.98%  bytes.(*Buffer).tryGrowByReslice (inline)
+      70ms  1.98% 64.41%      340ms  9.60%  github.com/CloudyKit/jet/v6.(*Runtime).advanceRanger
+      70ms  1.98% 66.38%       70ms  1.98%  github.com/CloudyKit/jet/v6.(*Runtime).rethrowTerminal (inline)
+      70ms  1.98% 68.36%       70ms  1.98%  runtime.memmove
+      50ms  1.41% 69.77%       90ms  2.54%  runtime.(*_panic).nextDefer
+      50ms  1.41% 71.19%       80ms  2.26%  runtime.mallocgcSmallScanNoHeaderSC5
+
+profile-candidate-legacy_owned-heap.txt
+File: candidate.test
+Type: inuse_space
+Time: 2026-11-08 00:53:39 CST
+Showing nodes accounting for 0, 0% of 0 total
+      flat  flat%   sum%        cum   cum%
+
+profile-candidate-legacy_owned-mutex.txt
+File: candidate.test
+Type: delay
+Time: 2026-11-08 00:53:39 CST
+Showing nodes accounting for 30.12us, 100% of 30.12us total
+      flat  flat%   sum%        cum   cum%
+   30.12us   100%   100%    30.12us   100%  runtime.unlock (partial-inline)
+         0     0%   100%     4.79us 15.91%  runtime.(*mheap).freeSpan (inline)
+         0     0%   100%     4.79us 15.91%  runtime.(*mheap).freeSpan.func1
+         0     0%   100%     4.79us 15.91%  runtime.(*sweepLocked).sweep
+         0     0%   100%     4.79us 15.91%  runtime.bgsweep
+         0     0%   100%    23.54us 78.14%  runtime.forEachP (inline)
+         0     0%   100%    23.54us 78.14%  runtime.forEachP.func1
+         0     0%   100%    23.54us 78.14%  runtime.forEachPInternal
+         0     0%   100%    25.33us 84.09%  runtime.gcBgMarkWorker
+         0     0%   100%    25.33us 84.09%  runtime.gcMarkDone
+         0     0%   100%     1.79us  5.95%  runtime.gcMarkDone.func2
+         0     0%   100%     0.29us  0.97%  runtime.gcMarkTermination
+         0     0%   100%     1.79us  5.95%  runtime.stopTheWorldWithSema
+         0     0%   100%     4.79us 15.91%  runtime.sweepone
+         0     0%   100%    30.12us   100%  runtime.systemstack
+
+profile-candidate-legacy_owned.txt
+goos: darwin
+goarch: arm64
+pkg: github.com/CloudyKit/jet/v6
+cpu: Apple M2 Max
+BenchmarkFinalReview/legacy_owned/header_interpolation/html-2         	 2462083	       206.0 ns/op	     160 B/op	       4 allocs/op
+BenchmarkFinalReview/legacy_owned/nested_silent/html-2                	   10000	     58140 ns/op	    3193 B/op	     132 allocs/op
+BenchmarkFinalReview/legacy_owned/escape_expansion/html-2             	   54286	     10456 ns/op	   11278 B/op	      10 allocs/op
+BenchmarkFinalReview/legacy_owned/include/html-2                      	  758373	       788.6 ns/op	    1104 B/op	      16 allocs/op
+BenchmarkFinalReview/legacy_owned/block_content/html-2                	 2205020	       273.3 ns/op	     184 B/op	       5 allocs/op
+PASS
+        3.67 real         3.64 user         0.12 sys
+            15466496  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                1163  page reclaims
+                   1  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                6657  signals received
+                  83  voluntary context switches
+               20534  involuntary context switches
+         61564456730  instructions retired
+         12359473763  cycles elapsed
+             9355792  peak memory footprint
+
+profile-candidate-legacy_stream-alloc.txt
+File: candidate.test
+Type: alloc_space
+Time: 2026-11-08 00:53:35 CST
+Showing nodes accounting for 1048.11MB, 98.93% of 1059.43MB total
+Dropped 47 nodes (cum <= 5.30MB)
+Showing top 18 nodes out of 27
+      flat  flat%   sum%        cum   cum%
+  261.04MB 24.64% 24.64%   425.58MB 40.17%  github.com/CloudyKit/jet/v6.(*parseAdmission).admitCached
+  235.02MB 22.18% 46.82%   235.02MB 22.18%  github.com/CloudyKit/jet/v6.newParseAdmission
+  187.50MB 17.70% 64.52%   187.50MB 17.70%  github.com/CloudyKit/jet/v6.(*Runtime).recover
+  164.53MB 15.53% 80.05%   164.53MB 15.53%  github.com/CloudyKit/jet/v6.(*parseAdmission).prepareSource
+  118.50MB 11.19% 91.24%   118.50MB 11.19%  github.com/CloudyKit/jet/v6.(*Runtime).executeYieldBlock
+   51.50MB  4.86% 96.10%    51.50MB  4.86%  github.com/CloudyKit/jet/v6.(*Runtime).newScope (inline)
+   15.50MB  1.46% 97.56%    15.50MB  1.46%  github.com/CloudyKit/jet/v6.newIntsRanger (inline)
+    6.50MB  0.61% 98.18%     6.50MB  0.61%  path.(*lazybuf).append (inline)
+       5MB  0.47% 98.65%    20.50MB  1.94%  github.com/CloudyKit/jet/v6.init.0.func5
+       3MB  0.28% 98.93%    13.50MB  1.27%  path.Join
+         0     0% 98.93%    20.50MB  1.94%  github.com/CloudyKit/jet/v6.(*Runtime).evalCallExpression (inline)
+         0     0% 98.93%    20.50MB  1.94%  github.com/CloudyKit/jet/v6.(*Runtime).evalPipeCallExpression
+         0     0% 98.93%    20.50MB  1.94%  github.com/CloudyKit/jet/v6.(*Runtime).evalPrimaryExpressionGroup
+         0     0% 98.93%   725.60MB 68.49%  github.com/CloudyKit/jet/v6.(*Runtime).executeInclude
+         0     0% 98.93%   864.61MB 81.61%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 98.93%    20.50MB  1.94%  github.com/CloudyKit/jet/v6.(*Runtime).executeRange
+         0     0% 98.93%   674.10MB 63.63%  github.com/CloudyKit/jet/v6.(*Runtime).loadTemplate
+         0     0% 98.93%   674.10MB 63.63%  github.com/CloudyKit/jet/v6.(*Set).getSiblingTemplate
+
+profile-candidate-legacy_stream-block.txt
+File: candidate.test
+Type: delay
+Time: 2026-11-08 00:53:35 CST
+Showing nodes accounting for 7452.22ms, 100% of 7452.22ms total
+Dropped 3 nodes (cum <= 37.26ms)
+Showing top 18 nodes out of 22
+      flat  flat%   sum%        cum   cum%
+ 7452.22ms   100%   100%  7452.22ms   100%  runtime.chanrecv1
+         0     0%   100%  3588.53ms 48.15%  github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview
+         0     0%   100%  3863.68ms 51.85%  main.main
+         0     0%   100%  3863.68ms 51.85%  runtime.main
+         0     0%   100%   209.01ms  2.80%  runtime/pprof.StopCPUProfile
+         0     0%   100%   209.01ms  2.80%  sync.(*Once).Do (inline)
+         0     0%   100%   209.01ms  2.80%  sync.(*Once).doSlow
+         0     0%   100%  7243.21ms 97.20%  testing.(*B).Run
+         0     0%   100%  3551.83ms 47.66%  testing.(*B).doBench
+         0     0%   100%  3551.83ms 47.66%  testing.(*B).run
+         0     0%   100%  3691.38ms 49.53%  testing.(*B).run1
+         0     0%   100%  3588.53ms 48.15%  testing.(*B).run1.func1
+         0     0%   100%  7243.21ms 97.20%  testing.(*B).runN
+         0     0%   100%  3863.68ms 51.85%  testing.(*M).Run
+         0     0%   100%   209.01ms  2.80%  testing.(*M).Run.deferwrap1
+         0     0%   100%   209.01ms  2.80%  testing.(*M).after
+         0     0%   100%   209.01ms  2.80%  testing.(*M).after.func1
+         0     0%   100%   209.01ms  2.80%  testing.(*M).writeProfiles
+
+profile-candidate-legacy_stream-cpu-cumulative.txt
+File: candidate.test
+Type: cpu
+Time: 2026-11-08 00:53:31 CST
+Duration: 3.83s, Total samples = 3.36s (87.78%)
+Showing nodes accounting for 0.73s, 21.73% of 3.36s total
+Dropped 69 nodes (cum <= 0.02s)
+Showing top 18 nodes out of 143
+      flat  flat%   sum%        cum   cum%
+         0     0%     0%      2.65s 78.87%  testing.(*B).runN
+     0.04s  1.19%  1.19%      2.64s 78.57%  github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview.func1
+         0     0%  1.19%      2.64s 78.57%  testing.(*B).launch
+         0     0%  1.19%      2.60s 77.38%  github.com/CloudyKit/jet/v6.(*Template).Execute (inline)
+     0.10s  2.98%  4.17%      2.60s 77.38%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0%  4.17%      2.60s 77.38%  github.com/CloudyKit/jet/v6_test.init.func1
+     0.14s  4.17%  8.33%      2.14s 63.69%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+     0.01s   0.3%  8.63%      0.66s 19.64%  github.com/CloudyKit/fastprinter.PrintValue
+         0     0%  8.63%      0.66s 19.64%  github.com/CloudyKit/jet/v6.(*Runtime).printValue
+         0     0%  8.63%      0.63s 18.75%  runtime.systemstack
+         0     0%  8.63%      0.61s 18.15%  github.com/CloudyKit/fastprinter.PrintString
+         0     0%  8.63%      0.57s 16.96%  github.com/CloudyKit/jet/v6.(*escapeeWriter).Write
+     0.12s  3.57% 12.20%      0.57s 16.96%  text/template.HTMLEscape
+     0.24s  7.14% 19.35%      0.52s 15.48%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+     0.04s  1.19% 20.54%      0.49s 14.58%  github.com/CloudyKit/jet/v6.(*Runtime).executeRange
+     0.03s  0.89% 21.43%      0.33s  9.82%  github.com/CloudyKit/jet/v6.(*Runtime).executeYieldBlock
+     0.01s   0.3% 21.73%      0.31s  9.23%  github.com/CloudyKit/jet/v6.(*Runtime).executeInclude
+         0     0% 21.73%      0.30s  8.93%  runtime.startTheWorldWithSema
+
+profile-candidate-legacy_stream-cpu-flat.txt
+File: candidate.test
+Type: cpu
+Time: 2026-11-08 00:53:31 CST
+Duration: 3.83s, Total samples = 3360ms (87.78%)
+Showing nodes accounting for 2070ms, 61.61% of 3360ms total
+Dropped 69 nodes (cum <= 16.80ms)
+Showing top 18 nodes out of 143
+      flat  flat%   sum%        cum   cum%
+     290ms  8.63%  8.63%      290ms  8.63%  runtime.kevent
+     240ms  7.14% 15.77%      520ms 15.48%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+     200ms  5.95% 21.73%      200ms  5.95%  runtime.madvise
+     140ms  4.17% 25.89%      280ms  8.33%  bytes.(*Buffer).Write
+     140ms  4.17% 30.06%     2140ms 63.69%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+     130ms  3.87% 33.93%      140ms  4.17%  reflect.Value.Elem
+     120ms  3.57% 37.50%      570ms 16.96%  text/template.HTMLEscape
+     100ms  2.98% 40.48%      100ms  2.98%  github.com/CloudyKit/jet/v6.(*Runtime).rethrowTerminal (inline)
+     100ms  2.98% 43.45%     2600ms 77.38%  github.com/CloudyKit/jet/v6.(*Template).execute
+     100ms  2.98% 46.43%      100ms  2.98%  runtime.memmove
+      80ms  2.38% 48.81%      180ms  5.36%  github.com/CloudyKit/jet/v6.(*Runtime).checkpoint
+      80ms  2.38% 51.19%      120ms  3.57%  runtime.(*_panic).nextDefer
+      70ms  2.08% 53.27%       70ms  2.08%  runtime.pthread_kill
+      70ms  2.08% 55.36%      100ms  2.98%  sync.(*Pool).pin
+      60ms  1.79% 57.14%      280ms  8.33%  github.com/CloudyKit/jet/v6.(*Runtime).advanceRanger
+      50ms  1.49% 58.63%       50ms  1.49%  bytes.(*Buffer).tryGrowByReslice (inline)
+      50ms  1.49% 60.12%      210ms  6.25%  github.com/CloudyKit/jet/v6.(*Runtime).evalPrimaryExpressionGroup
+      50ms  1.49% 61.61%       60ms  1.79%  internal/runtime/maps.(*Map).getWithoutKeySmallFastStr
+
+profile-candidate-legacy_stream-heap.txt
+File: candidate.test
+Type: inuse_space
+Time: 2026-11-08 00:53:35 CST
+Showing nodes accounting for 0, 0% of 0 total
+      flat  flat%   sum%        cum   cum%
+
+profile-candidate-legacy_stream-mutex.txt
+File: candidate.test
+Type: delay
+Time: 2026-11-08 00:53:35 CST
+Showing nodes accounting for 14.21us, 100% of 14.21us total
+      flat  flat%   sum%        cum   cum%
+   14.21us   100%   100%    14.21us   100%  runtime.unlock (partial-inline)
+         0     0%   100%     0.12us  0.88%  runtime.(*mheap).freeSpan (inline)
+         0     0%   100%     0.12us  0.88%  runtime.(*mheap).freeSpan.func1
+         0     0%   100%     0.12us  0.88%  runtime.(*sweepLocked).sweep
+         0     0%   100%     0.12us  0.88%  runtime.GC
+         0     0%   100%     9.67us 68.04%  runtime.forEachP (inline)
+         0     0%   100%     9.67us 68.04%  runtime.forEachP.func1
+         0     0%   100%     9.67us 68.04%  runtime.forEachPInternal
+         0     0%   100%    14.08us 99.12%  runtime.gcBgMarkWorker
+         0     0%   100%    14.08us 99.12%  runtime.gcMarkDone
+         0     0%   100%     4.42us 31.08%  runtime.gcMarkDone.func2
+         0     0%   100%     4.42us 31.08%  runtime.stopTheWorldWithSema
+         0     0%   100%     0.12us  0.88%  runtime.sweepone
+         0     0%   100%    14.21us   100%  runtime.systemstack
+         0     0%   100%     0.12us  0.88%  testing.(*B).run1.func1
+         0     0%   100%     0.12us  0.88%  testing.(*B).runN
+
+profile-candidate-legacy_stream.txt
+goos: darwin
+goarch: arm64
+pkg: github.com/CloudyKit/jet/v6
+cpu: Apple M2 Max
+BenchmarkFinalReview/legacy_stream/header_interpolation/html-2         	 3500757	       172.5 ns/op	      24 B/op	       1 allocs/op
+BenchmarkFinalReview/legacy_stream/nested_silent/html-2                	   10000	     60415 ns/op	    3145 B/op	     131 allocs/op
+BenchmarkFinalReview/legacy_stream/escape_expansion/html-2             	   69714	      9379 ns/op	      24 B/op	       1 allocs/op
+BenchmarkFinalReview/legacy_stream/include/html-2                      	  767185	       735.8 ns/op	     968 B/op	      13 allocs/op
+BenchmarkFinalReview/legacy_stream/block_content/html-2                	 2629046	       232.3 ns/op	      56 B/op	       2 allocs/op
+PASS
+        3.89 real         3.52 user         0.08 sys
+            15613952  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                1133  page reclaims
+                  35  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                2848  signals received
+                  51  voluntary context switches
+               11312  involuntary context switches
+         60657733507  instructions retired
+         11829062444  cycles elapsed
+            10240528  peak memory footprint
+
+profile-candidate-metered_background_stream-alloc.txt
+File: candidate.test
+Type: alloc_space
+Time: 2026-11-08 00:53:42 CST
+Showing nodes accounting for 2428.83MB, 99.23% of 2447.56MB total
+Dropped 59 nodes (cum <= 12.24MB)
+Showing top 18 nodes out of 28
+      flat  flat%   sum%        cum   cum%
+  860.65MB 35.16% 35.16%  1376.75MB 56.25%  github.com/CloudyKit/jet/v6.(*parseAdmission).admitCached
+  679.56MB 27.76% 62.93%   679.56MB 27.76%  github.com/CloudyKit/jet/v6.newParseAdmission
+  516.10MB 21.09% 84.01%   516.10MB 21.09%  github.com/CloudyKit/jet/v6.(*parseAdmission).prepareSource
+  109.01MB  4.45% 88.47%   109.51MB  4.47%  github.com/CloudyKit/jet/v6.(*dataPrinter).value
+   70.50MB  2.88% 91.35%    70.50MB  2.88%  github.com/CloudyKit/jet/v6.(*Runtime).outputWriter
+   51.50MB  2.10% 93.45%       52MB  2.12%  github.com/CloudyKit/jet/v6.(*Runtime).recover
+   45.50MB  1.86% 95.31%   155.01MB  6.33%  github.com/CloudyKit/jet/v6.(*Runtime).printValue
+   37.50MB  1.53% 96.84%    37.50MB  1.53%  github.com/CloudyKit/jet/v6.(*Runtime).newScope (inline)
+   26.50MB  1.08% 97.93%    26.50MB  1.08%  github.com/CloudyKit/jet/v6.(*Runtime).executeYieldBlock
+      17MB  0.69% 98.62%       17MB  0.69%  github.com/CloudyKit/jet/v6.newIntsRanger (inline)
+    8.50MB  0.35% 98.97%    25.50MB  1.04%  github.com/CloudyKit/jet/v6.init.0.func5
+    6.50MB  0.27% 99.23%    14.50MB  0.59%  path.Join
+         0     0% 99.23%    25.50MB  1.04%  github.com/CloudyKit/jet/v6.(*Runtime).evalCallExpression (inline)
+         0     0% 99.23%    25.50MB  1.04%  github.com/CloudyKit/jet/v6.(*Runtime).evalPipeCallExpression
+         0     0% 99.23%    25.50MB  1.04%  github.com/CloudyKit/jet/v6.(*Runtime).evalPrimaryExpressionGroup
+         0     0% 99.23%   101.50MB  4.15%  github.com/CloudyKit/jet/v6.(*Runtime).executeInclude
+         0     0% 99.23%   259.01MB 10.58%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 99.23%    25.50MB  1.04%  github.com/CloudyKit/jet/v6.(*Runtime).executeRange
+
+profile-candidate-metered_background_stream-block.txt
+File: candidate.test
+Type: delay
+Time: 2026-11-08 00:53:42 CST
+Showing nodes accounting for 6478.51ms, 100% of 6478.51ms total
+Dropped 3 nodes (cum <= 32.39ms)
+Showing top 18 nodes out of 22
+      flat  flat%   sum%        cum   cum%
+ 6478.51ms   100%   100%  6478.51ms   100%  runtime.chanrecv1
+         0     0%   100%  3160.72ms 48.79%  github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview
+         0     0%   100%  3317.79ms 51.21%  main.main
+         0     0%   100%  3317.79ms 51.21%  runtime.main
+         0     0%   100%   152.46ms  2.35%  runtime/pprof.StopCPUProfile
+         0     0%   100%   152.46ms  2.35%  sync.(*Once).Do (inline)
+         0     0%   100%   152.46ms  2.35%  sync.(*Once).doSlow
+         0     0%   100%  6326.04ms 97.65%  testing.(*B).Run
+         0     0%   100%  3157.96ms 48.75%  testing.(*B).doBench
+         0     0%   100%  3157.96ms 48.75%  testing.(*B).run
+         0     0%   100%  3168.08ms 48.90%  testing.(*B).run1
+         0     0%   100%  3160.72ms 48.79%  testing.(*B).run1.func1
+         0     0%   100%  6326.04ms 97.65%  testing.(*B).runN
+         0     0%   100%  3317.79ms 51.21%  testing.(*M).Run
+         0     0%   100%   152.46ms  2.35%  testing.(*M).Run.deferwrap1
+         0     0%   100%   152.46ms  2.35%  testing.(*M).after
+         0     0%   100%   152.46ms  2.35%  testing.(*M).after.func1
+         0     0%   100%   152.46ms  2.35%  testing.(*M).writeProfiles
+
+profile-candidate-metered_background_stream-cpu-cumulative.txt
+File: candidate.test
+Type: cpu
+Time: 2026-11-08 00:53:39 CST
+Duration: 3.32s, Total samples = 3.22s (97.07%)
+Showing nodes accounting for 0.90s, 27.95% of 3.22s total
+Dropped 61 nodes (cum <= 0.02s)
+Showing top 18 nodes out of 144
+      flat  flat%   sum%        cum   cum%
+         0     0%     0%      1.87s 58.07%  github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview.func1
+     0.01s  0.31%  0.31%      1.87s 58.07%  github.com/CloudyKit/jet/v6_test.init.0.func1
+         0     0%  0.31%      1.87s 58.07%  testing.(*B).launch
+         0     0%  0.31%      1.87s 58.07%  testing.(*B).runN
+     0.02s  0.62%  0.93%      1.85s 57.45%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+     0.01s  0.31%  1.24%      1.83s 56.83%  github.com/CloudyKit/jet/v6.(*Template).execute
+     0.04s  1.24%  2.48%      1.45s 45.03%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0%  2.48%      1.16s 36.02%  runtime.systemstack
+         0     0%  2.48%      0.69s 21.43%  github.com/CloudyKit/jet/v6.(*Runtime).printValue
+         0     0%  2.48%      0.68s 21.12%  github.com/CloudyKit/jet/v6.(*dataPrinter).value
+         0     0%  2.48%      0.64s 19.88%  github.com/CloudyKit/fastprinter.PrintString
+         0     0%  2.48%      0.64s 19.88%  github.com/CloudyKit/jet/v6.(*dataPrinter).text
+         0     0%  2.48%      0.62s 19.25%  github.com/CloudyKit/jet/v6.(*dataPrinter).Write
+         0     0%  2.48%      0.62s 19.25%  github.com/CloudyKit/jet/v6.(*escapeeWriter).Write
+     0.05s  1.55%  4.04%      0.62s 19.25%  text/template.HTMLEscape
+     0.18s  5.59%  9.63%      0.60s 18.63%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+         0     0%  9.63%      0.60s 18.63%  runtime.startTheWorldWithSema
+     0.59s 18.32% 27.95%      0.59s 18.32%  runtime.kevent
+
+profile-candidate-metered_background_stream-cpu-flat.txt
+File: candidate.test
+Type: cpu
+Time: 2026-11-08 00:53:39 CST
+Duration: 3.32s, Total samples = 3220ms (97.07%)
+Showing nodes accounting for 2290ms, 71.12% of 3220ms total
+Dropped 61 nodes (cum <= 16.10ms)
+Showing top 18 nodes out of 144
+      flat  flat%   sum%        cum   cum%
+     590ms 18.32% 18.32%      590ms 18.32%  runtime.kevent
+     310ms  9.63% 27.95%      310ms  9.63%  runtime.pthread_kill
+     200ms  6.21% 34.16%      300ms  9.32%  github.com/CloudyKit/jet/v6.(*Runtime).checkpoint
+     180ms  5.59% 39.75%      600ms 18.63%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+     140ms  4.35% 44.10%      140ms  4.35%  runtime.usleep
+     130ms  4.04% 48.14%      130ms  4.04%  runtime.madvise
+     110ms  3.42% 51.55%      110ms  3.42%  github.com/CloudyKit/jet/v6.(*Runtime).rethrowTerminal (inline)
+      90ms  2.80% 54.35%      540ms 16.77%  github.com/CloudyKit/jet/v6.(*executionWriter).write
+      90ms  2.80% 57.14%       90ms  2.80%  runtime.memmove
+      70ms  2.17% 59.32%       70ms  2.17%  reflect.Value.Elem
+      60ms  1.86% 61.18%      160ms  4.97%  bytes.(*Buffer).Write
+      50ms  1.55% 62.73%      140ms  4.35%  github.com/CloudyKit/jet/v6.(*Runtime).beforeCall
+      50ms  1.55% 64.29%      510ms 15.84%  github.com/CloudyKit/jet/v6.(*Runtime).executeRange
+      50ms  1.55% 65.84%       50ms  1.55%  runtime.pthread_cond_wait
+      50ms  1.55% 67.39%      620ms 19.25%  text/template.HTMLEscape
+      40ms  1.24% 68.63%      360ms 11.18%  github.com/CloudyKit/jet/v6.(*Runtime).advanceRanger
+      40ms  1.24% 69.88%     1450ms 45.03%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+      40ms  1.24% 71.12%       40ms  1.24%  github.com/CloudyKit/jet/v6.(*Runtime).isRestricted (inline)
+
+profile-candidate-metered_background_stream-heap.txt
+File: candidate.test
+Type: inuse_space
+Time: 2026-11-08 00:53:42 CST
+Showing nodes accounting for 0, 0% of 0 total
+      flat  flat%   sum%        cum   cum%
+
+profile-candidate-metered_background_stream-mutex.txt
+File: candidate.test
+Type: delay
+Time: 2026-11-08 00:53:42 CST
+Showing nodes accounting for 76.42us, 100% of 76.42us total
+Dropped 1 node (cum <= 0.38us)
+Showing top 18 nodes out of 30
+      flat  flat%   sum%        cum   cum%
+   76.42us   100%   100%    76.42us   100%  runtime.unlock (partial-inline)
+         0     0%   100%     1.62us  2.13%  runtime.(*mheap).freeSpan (inline)
+         0     0%   100%     1.62us  2.13%  runtime.(*mheap).freeSpan.func1
+         0     0%   100%     1.62us  2.13%  runtime.(*sweepLocked).sweep
+         0     0%   100%     1.46us  1.91%  runtime.GC
+         0     0%   100%     1.42us  1.85%  runtime.findRunnable
+         0     0%   100%     6.25us  8.18%  runtime.forEachP (inline)
+         0     0%   100%     6.25us  8.18%  runtime.forEachP.func1
+         0     0%   100%     6.25us  8.18%  runtime.forEachPInternal
+         0     0%   100%    73.38us 96.02%  runtime.gcBgMarkWorker
+         0     0%   100%    73.38us 96.02%  runtime.gcMarkDone
+         0     0%   100%    26.88us 35.17%  runtime.gcMarkDone.func2
+         0     0%   100%    40.25us 52.67%  runtime.gcMarkTermination
+         0     0%   100%    40.25us 52.67%  runtime.gcMarkTermination.func3
+         0     0%   100%     1.46us  1.91%  runtime.gcStart
+         0     0%   100%     0.62us  0.82%  runtime.gcstopm
+         0     0%   100%     0.62us  0.82%  runtime.gopreempt_m
+         0     0%   100%     0.62us  0.82%  runtime.goschedImpl
+
+profile-candidate-metered_background_stream.txt
+goos: darwin
+goarch: arm64
+pkg: github.com/CloudyKit/jet/v6
+cpu: Apple M2 Max
+BenchmarkFinalReview/metered_background_stream/header_interpolation/html-2         	  987180	       607.0 ns/op	    1000 B/op	      11 allocs/op
+BenchmarkFinalReview/metered_background_stream/nested_silent/html-2                	    8635	     68280 ns/op	    4024 B/op	     139 allocs/op
+BenchmarkFinalReview/metered_background_stream/escape_expansion/html-2             	   36262	     16522 ns/op	    1000 B/op	      11 allocs/op
+BenchmarkFinalReview/metered_background_stream/include/html-2                      	  627592	       940.6 ns/op	    1096 B/op	      16 allocs/op
+BenchmarkFinalReview/metered_background_stream/block_content/html-2                	  885646	       650.9 ns/op	     936 B/op	      10 allocs/op
+PASS
+        3.35 real         3.29 user         0.09 sys
+            15745024  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                1173  page reclaims
+                   1  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                6450  signals received
+                  92  voluntary context switches
+               16498  involuntary context switches
+         58650983586  instructions retired
+         11137637784  cycles elapsed
+             9863720  peak memory footprint
+
+profile-candidate-metered_live_stream-alloc.txt
+File: candidate.test
+Type: alloc_space
+Time: 2026-11-08 00:53:45 CST
+Showing nodes accounting for 2470.83MB, 99.40% of 2485.63MB total
+Dropped 55 nodes (cum <= 12.43MB)
+Showing top 18 nodes out of 28
+      flat  flat%   sum%        cum   cum%
+  845.65MB 34.02% 34.02%  1353.75MB 54.46%  github.com/CloudyKit/jet/v6.(*parseAdmission).admitCached
+  714.57MB 28.75% 62.77%   714.57MB 28.75%  github.com/CloudyKit/jet/v6.newParseAdmission
+  508.10MB 20.44% 83.21%   508.10MB 20.44%  github.com/CloudyKit/jet/v6.(*parseAdmission).prepareSource
+  105.01MB  4.22% 87.44%   106.01MB  4.26%  github.com/CloudyKit/jet/v6.(*dataPrinter).value
+      83MB  3.34% 90.77%       83MB  3.34%  github.com/CloudyKit/jet/v6.(*Runtime).outputWriter
+   55.50MB  2.23% 93.01%       56MB  2.25%  github.com/CloudyKit/jet/v6.(*Runtime).recover
+   47.50MB  1.91% 94.92%   153.51MB  6.18%  github.com/CloudyKit/jet/v6.(*Runtime).printValue
+      47MB  1.89% 96.81%       47MB  1.89%  github.com/CloudyKit/jet/v6.(*Runtime).newScope (inline)
+      35MB  1.41% 98.22%       35MB  1.41%  github.com/CloudyKit/jet/v6.(*Runtime).executeYieldBlock
+      17MB  0.68% 98.90%       17MB  0.68%  github.com/CloudyKit/jet/v6.newIntsRanger (inline)
+    6.50MB  0.26% 99.16%    23.50MB  0.95%  github.com/CloudyKit/jet/v6.init.0.func5
+       6MB  0.24% 99.40%    12.50MB   0.5%  path.Join
+         0     0% 99.40%    23.50MB  0.95%  github.com/CloudyKit/jet/v6.(*Runtime).evalCallExpression (inline)
+         0     0% 99.40%    23.50MB  0.95%  github.com/CloudyKit/jet/v6.(*Runtime).evalPipeCallExpression
+         0     0% 99.40%    23.50MB  0.95%  github.com/CloudyKit/jet/v6.(*Runtime).evalPrimaryExpressionGroup
+         0     0% 99.40%      113MB  4.55%  github.com/CloudyKit/jet/v6.(*Runtime).executeInclude
+         0     0% 99.40%   271.51MB 10.92%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 99.40%    23.50MB  0.95%  github.com/CloudyKit/jet/v6.(*Runtime).executeRange
+
+profile-candidate-metered_live_stream-block.txt
+File: candidate.test
+Type: delay
+Time: 2026-11-08 00:53:45 CST
+Showing nodes accounting for 6333.98ms, 100% of 6333.98ms total
+Dropped 3 nodes (cum <= 31.67ms)
+Showing top 18 nodes out of 22
+      flat  flat%   sum%        cum   cum%
+ 6333.98ms   100%   100%  6333.98ms   100%  runtime.chanrecv1
+         0     0%   100%  3112.44ms 49.14%  github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview
+         0     0%   100%  3221.54ms 50.86%  main.main
+         0     0%   100%  3221.54ms 50.86%  runtime.main
+         0     0%   100%   104.53ms  1.65%  runtime/pprof.StopCPUProfile
+         0     0%   100%   104.53ms  1.65%  sync.(*Once).Do (inline)
+         0     0%   100%   104.53ms  1.65%  sync.(*Once).doSlow
+         0     0%   100%  6229.45ms 98.35%  testing.(*B).Run
+         0     0%   100%  3109.74ms 49.10%  testing.(*B).doBench
+         0     0%   100%  3109.74ms 49.10%  testing.(*B).run
+         0     0%   100%  3119.71ms 49.25%  testing.(*B).run1
+         0     0%   100%  3112.44ms 49.14%  testing.(*B).run1.func1
+         0     0%   100%  6229.45ms 98.35%  testing.(*B).runN
+         0     0%   100%  3221.54ms 50.86%  testing.(*M).Run
+         0     0%   100%   104.53ms  1.65%  testing.(*M).Run.deferwrap1
+         0     0%   100%   104.53ms  1.65%  testing.(*M).after
+         0     0%   100%   104.53ms  1.65%  testing.(*M).after.func1
+         0     0%   100%   104.53ms  1.65%  testing.(*M).writeProfiles
+
+profile-candidate-metered_live_stream-cpu-cumulative.txt
+File: candidate.test
+Type: cpu
+Time: 2026-11-08 00:53:42 CST
+Duration: 3.22s, Total samples = 3.13s (97.19%)
+Showing nodes accounting for 0.92s, 29.39% of 3.13s total
+Dropped 90 nodes (cum <= 0.02s)
+Showing top 18 nodes out of 139
+      flat  flat%   sum%        cum   cum%
+         0     0%     0%      1.49s 47.60%  testing.(*B).runN
+         0     0%     0%      1.48s 47.28%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0%     0%      1.48s 47.28%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0%     0%      1.48s 47.28%  github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview.func1
+         0     0%     0%      1.48s 47.28%  github.com/CloudyKit/jet/v6_test.init.0.func1
+         0     0%     0%      1.48s 47.28%  testing.(*B).launch
+         0     0%     0%      1.45s 46.33%  runtime.systemstack
+     0.01s  0.32%  0.32%      1.25s 39.94%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+     0.89s 28.43% 28.75%      0.89s 28.43%  runtime.kevent
+         0     0% 28.75%      0.89s 28.43%  runtime.netpoll
+         0     0% 28.75%      0.89s 28.43%  runtime.startTheWorldWithSema
+         0     0% 28.75%      0.88s 28.12%  runtime.gcStart.func4
+         0     0% 28.75%      0.66s 21.09%  github.com/CloudyKit/jet/v6.(*Runtime).printValue
+     0.01s  0.32% 29.07%      0.65s 20.77%  github.com/CloudyKit/jet/v6.(*dataPrinter).value
+     0.01s  0.32% 29.39%      0.58s 18.53%  github.com/CloudyKit/fastprinter.PrintString
+         0     0% 29.39%      0.58s 18.53%  github.com/CloudyKit/jet/v6.(*dataPrinter).text
+         0     0% 29.39%      0.56s 17.89%  github.com/CloudyKit/jet/v6.(*dataPrinter).Write
+         0     0% 29.39%      0.56s 17.89%  github.com/CloudyKit/jet/v6.(*escapeeWriter).Write
+
+profile-candidate-metered_live_stream-cpu-flat.txt
+File: candidate.test
+Type: cpu
+Time: 2026-11-08 00:53:42 CST
+Duration: 3.22s, Total samples = 3.13s (97.19%)
+Showing nodes accounting for 2.46s, 78.59% of 3.13s total
+Dropped 90 nodes (cum <= 0.02s)
+Showing top 18 nodes out of 139
+      flat  flat%   sum%        cum   cum%
+     0.89s 28.43% 28.43%      0.89s 28.43%  runtime.kevent
+     0.34s 10.86% 39.30%      0.34s 10.86%  runtime.madvise
+     0.14s  4.47% 43.77%      0.15s  4.79%  context.(*cancelCtx).Err
+     0.14s  4.47% 48.24%      0.40s 12.78%  github.com/CloudyKit/jet/v6.(*Runtime).checkpoint
+     0.14s  4.47% 52.72%      0.55s 17.57%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+     0.11s  3.51% 56.23%      0.11s  3.51%  github.com/CloudyKit/jet/v6.(*Runtime).rethrowTerminal (inline)
+     0.10s  3.19% 59.42%      0.10s  3.19%  runtime.usleep
+     0.09s  2.88% 62.30%      0.09s  2.88%  runtime.pthread_kill
+     0.08s  2.56% 64.86%      0.08s  2.56%  runtime.pthread_cond_wait
+     0.07s  2.24% 67.09%      0.07s  2.24%  github.com/CloudyKit/jet/v6.(*Runtime).reserveUnchecked (inline)
+     0.06s  1.92% 69.01%      0.06s  1.92%  reflect.Value.Elem
+     0.06s  1.92% 70.93%      0.06s  1.92%  runtime.memmove
+     0.05s  1.60% 72.52%      0.05s  1.60%  bytes.(*Buffer).tryGrowByReslice (inline)
+     0.04s  1.28% 73.80%      0.32s 10.22%  github.com/CloudyKit/jet/v6.(*Runtime).advanceRanger
+     0.04s  1.28% 75.08%      0.11s  3.51%  github.com/CloudyKit/jet/v6.(*Runtime).reserve
+     0.04s  1.28% 76.36%      0.51s 16.29%  github.com/CloudyKit/jet/v6.(*executionWriter).write
+     0.04s  1.28% 77.64%      0.04s  1.28%  runtime.tryDeferToSpanScan
+     0.03s  0.96% 78.59%      0.09s  2.88%  github.com/CloudyKit/jet/v6.(*intsRanger).Range
+
+profile-candidate-metered_live_stream-heap.txt
+File: candidate.test
+Type: inuse_space
+Time: 2026-11-08 00:53:45 CST
+Showing nodes accounting for 0, 0% of 0 total
+      flat  flat%   sum%        cum   cum%
+
+profile-candidate-metered_live_stream-mutex.txt
+File: candidate.test
+Type: delay
+Time: 2026-11-08 00:53:45 CST
+Showing nodes accounting for 10500ns, 100% of 10500ns total
+Showing top 18 nodes out of 23
+      flat  flat%   sum%        cum   cum%
+   10500ns   100%   100%    10500ns   100%  runtime.unlock (partial-inline)
+         0     0%   100%      125ns  1.19%  runtime.(*mheap).freeSpan (inline)
+         0     0%   100%      125ns  1.19%  runtime.(*mheap).freeSpan.func1
+         0     0%   100%      125ns  1.19%  runtime.(*sweepLocked).sweep
+         0     0%   100%      125ns  1.19%  runtime.GC
+         0     0%   100%     2041ns 19.44%  runtime.findRunnable
+         0     0%   100%     6001ns 57.15%  runtime.forEachP (inline)
+         0     0%   100%     6001ns 57.15%  runtime.forEachP.func1
+         0     0%   100%     6001ns 57.15%  runtime.forEachPInternal
+         0     0%   100%     8334ns 79.37%  runtime.gcBgMarkWorker
+         0     0%   100%     8334ns 79.37%  runtime.gcMarkDone
+         0     0%   100%     2333ns 22.22%  runtime.gcMarkDone.func2
+         0     0%   100%     2041ns 19.44%  runtime.gopreempt_m (inline)
+         0     0%   100%     2041ns 19.44%  runtime.goschedImpl
+         0     0%   100%     2041ns 19.44%  runtime.morestack
+         0     0%   100%     2041ns 19.44%  runtime.newstack
+         0     0%   100%     2041ns 19.44%  runtime.runSafePointFn
+         0     0%   100%     2041ns 19.44%  runtime.schedule
+
+profile-candidate-metered_live_stream.txt
+goos: darwin
+goarch: arm64
+pkg: github.com/CloudyKit/jet/v6
+cpu: Apple M2 Max
+BenchmarkFinalReview/metered_live_stream/header_interpolation/html-2         	  962270	       621.0 ns/op	    1000 B/op	      11 allocs/op
+BenchmarkFinalReview/metered_live_stream/nested_silent/html-2                	    7574	     76281 ns/op	    4024 B/op	     139 allocs/op
+BenchmarkFinalReview/metered_live_stream/escape_expansion/html-2             	   36772	     15982 ns/op	    1001 B/op	      11 allocs/op
+BenchmarkFinalReview/metered_live_stream/include/html-2                      	  572143	       911.1 ns/op	    1096 B/op	      16 allocs/op
+BenchmarkFinalReview/metered_live_stream/block_content/html-2                	  965515	       645.2 ns/op	     936 B/op	      10 allocs/op
+PASS
+        3.22 real         3.25 user         0.09 sys
+            16515072  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                1225  page reclaims
+                   0  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                6344  signals received
+                  43  voluntary context switches
+               16440  involuntary context switches
+         60190458606  instructions retired
+         11088125612  cycles elapsed
+            10109456  peak memory footprint
+
+profile-candidate-restricted_owned-alloc.txt
+File: candidate.test
+Type: alloc_space
+Time: 2026-11-08 00:53:49 CST
+Showing nodes accounting for 3445.46MB, 99.02% of 3479.74MB total
+Dropped 66 nodes (cum <= 17.40MB)
+Showing top 18 nodes out of 39
+      flat  flat%   sum%        cum   cum%
+  751.13MB 21.59% 21.59%  1174.71MB 33.76%  github.com/CloudyKit/jet/v6.(*parseAdmission).admitCached
+  665.17MB 19.12% 40.70%   665.17MB 19.12%  github.com/CloudyKit/jet/v6.admitInputScopes
+  590.05MB 16.96% 57.66%   590.05MB 16.96%  github.com/CloudyKit/jet/v6.newParseAdmission
+  423.58MB 12.17% 69.83%   423.58MB 12.17%  github.com/CloudyKit/jet/v6.(*parseAdmission).prepareSource
+  266.71MB  7.66% 77.50%   266.71MB  7.66%  bytes.growSlice
+  166.51MB  4.79% 82.28%  3467.96MB 99.66%  github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext
+  141.51MB  4.07% 86.35%   408.22MB 11.73%  bytes.(*Buffer).grow
+  139.28MB  4.00% 90.35%   139.28MB  4.00%  bytes.(*Buffer).String (inline)
+   99.01MB  2.85% 93.20%   369.22MB 10.61%  github.com/CloudyKit/jet/v6.(*dataPrinter).value
+      62MB  1.78% 94.98%       62MB  1.78%  github.com/CloudyKit/jet/v6.(*Runtime).outputWriter (inline)
+      48MB  1.38% 96.36%       48MB  1.38%  github.com/CloudyKit/jet/v6.(*Runtime).recover
+   41.50MB  1.19% 97.55%   410.72MB 11.80%  github.com/CloudyKit/jet/v6.(*Runtime).printValue
+   22.50MB  0.65% 98.20%       65MB  1.87%  github.com/CloudyKit/jet/v6.(*Runtime).executeYieldBlock
+      22MB  0.63% 98.83%       22MB  0.63%  github.com/CloudyKit/jet/v6.(*Runtime).newScope (inline)
+    6.50MB  0.19% 99.02%    20.50MB  0.59%  github.com/CloudyKit/jet/v6.init.0.func5
+         0     0% 99.02%   408.22MB 11.73%  bytes.(*Buffer).Write
+         0     0% 99.02%   270.21MB  7.77%  github.com/CloudyKit/fastprinter.PrintString
+         0     0% 99.02%    20.50MB  0.59%  github.com/CloudyKit/jet/v6.(*Runtime).evalCallExpression (inline)
+
+profile-candidate-restricted_owned-block.txt
+File: candidate.test
+Type: delay
+Time: 2026-11-08 00:53:49 CST
+Showing nodes accounting for 7682.96ms, 100% of 7682.96ms total
+Dropped 3 nodes (cum <= 38.41ms)
+Showing top 18 nodes out of 22
+      flat  flat%   sum%        cum   cum%
+ 7682.96ms   100%   100%  7682.96ms   100%  runtime.chanrecv1
+         0     0%   100%  3760.64ms 48.95%  github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview
+         0     0%   100%  3922.32ms 51.05%  main.main
+         0     0%   100%  3922.32ms 51.05%  runtime.main
+         0     0%   100%   155.91ms  2.03%  runtime/pprof.StopCPUProfile
+         0     0%   100%   155.91ms  2.03%  sync.(*Once).Do (inline)
+         0     0%   100%   155.91ms  2.03%  sync.(*Once).doSlow
+         0     0%   100%  7527.04ms 97.97%  testing.(*B).Run
+         0     0%   100%  3756.65ms 48.90%  testing.(*B).doBench
+         0     0%   100%  3756.65ms 48.90%  testing.(*B).run
+         0     0%   100%  3770.39ms 49.07%  testing.(*B).run1
+         0     0%   100%  3760.64ms 48.95%  testing.(*B).run1.func1
+         0     0%   100%  7527.04ms 97.97%  testing.(*B).runN
+         0     0%   100%  3922.32ms 51.05%  testing.(*M).Run
+         0     0%   100%   155.91ms  2.03%  testing.(*M).Run.deferwrap1
+         0     0%   100%   155.91ms  2.03%  testing.(*M).after
+         0     0%   100%   155.91ms  2.03%  testing.(*M).after.func1
+         0     0%   100%   155.91ms  2.03%  testing.(*M).writeProfiles
+
+profile-candidate-restricted_owned-cpu-cumulative.txt
+File: candidate.test
+Type: cpu
+Time: 2026-11-08 00:53:45 CST
+Duration: 3.92s, Total samples = 3.84s (97.92%)
+Showing nodes accounting for 1.40s, 36.46% of 3.84s total
+Dropped 79 nodes (cum <= 0.02s)
+Showing top 18 nodes out of 148
+      flat  flat%   sum%        cum   cum%
+         0     0%     0%      2.01s 52.34%  runtime.systemstack
+         0     0%     0%      1.52s 39.58%  github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext
+         0     0%     0%      1.52s 39.58%  github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview.func1
+         0     0%     0%      1.52s 39.58%  github.com/CloudyKit/jet/v6_test.init.0.func2
+         0     0%     0%      1.52s 39.58%  testing.(*B).launch
+         0     0%     0%      1.52s 39.58%  testing.(*B).runN
+         0     0%     0%      1.51s 39.32%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+     0.03s  0.78%  0.78%      1.51s 39.32%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0%  0.78%      1.36s 35.42%  runtime.startTheWorldWithSema
+     1.35s 35.16% 35.94%      1.35s 35.16%  runtime.kevent
+         0     0% 35.94%      1.35s 35.16%  runtime.netpoll
+         0     0% 35.94%      1.34s 34.90%  runtime.gcStart.func4
+     0.02s  0.52% 36.46%      1.15s 29.95%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 36.46%      0.52s 13.54%  github.com/CloudyKit/jet/v6.(*Runtime).printValue
+         0     0% 36.46%      0.50s 13.02%  github.com/CloudyKit/jet/v6.(*dataPrinter).value
+         0     0% 36.46%      0.48s 12.50%  github.com/CloudyKit/fastprinter.PrintString
+         0     0% 36.46%      0.48s 12.50%  github.com/CloudyKit/jet/v6.(*dataPrinter).Write
+         0     0% 36.46%      0.48s 12.50%  github.com/CloudyKit/jet/v6.(*dataPrinter).text
+
+profile-candidate-restricted_owned-cpu-flat.txt
+File: candidate.test
+Type: cpu
+Time: 2026-11-08 00:53:45 CST
+Duration: 3.92s, Total samples = 3.84s (97.92%)
+Showing nodes accounting for 2.89s, 75.26% of 3.84s total
+Dropped 79 nodes (cum <= 0.02s)
+Showing top 18 nodes out of 148
+      flat  flat%   sum%        cum   cum%
+     1.35s 35.16% 35.16%      1.35s 35.16%  runtime.kevent
+     0.27s  7.03% 42.19%      0.27s  7.03%  runtime.madvise
+     0.21s  5.47% 47.66%      0.21s  5.47%  runtime.pthread_kill
+     0.16s  4.17% 51.82%      0.16s  4.17%  runtime.usleep
+     0.12s  3.12% 54.95%      0.34s  8.85%  github.com/CloudyKit/jet/v6.(*Runtime).checkpoint
+     0.12s  3.12% 58.07%      0.12s  3.12%  runtime.pthread_cond_wait
+     0.10s  2.60% 60.68%      0.10s  2.60%  github.com/CloudyKit/jet/v6.(*Runtime).rethrowTerminal (inline)
+     0.09s  2.34% 63.02%      0.12s  3.12%  context.(*cancelCtx).Err
+     0.09s  2.34% 65.36%      0.13s  3.39%  github.com/CloudyKit/jet/v6.(*Runtime).reserve
+     0.06s  1.56% 66.93%      0.43s 11.20%  github.com/CloudyKit/jet/v6.(*executionWriter).write
+     0.06s  1.56% 68.49%      0.08s  2.08%  runtime.ifaceeq
+     0.05s  1.30% 69.79%      0.46s 11.98%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+     0.04s  1.04% 70.83%      0.07s  1.82%  bytes.(*Buffer).Write
+     0.04s  1.04% 71.88%      0.04s  1.04%  github.com/CloudyKit/jet/v6.(*Runtime).reserveUnchecked (inline)
+     0.04s  1.04% 72.92%      0.04s  1.04%  internal/runtime/maps.memHashAES
+     0.03s  0.78% 73.70%      0.16s  4.17%  github.com/CloudyKit/jet/v6.(*Runtime).allowCall
+     0.03s  0.78% 74.48%      1.51s 39.32%  github.com/CloudyKit/jet/v6.(*Template).execute
+     0.03s  0.78% 75.26%      0.05s  1.30%  github.com/CloudyKit/jet/v6.builtinForValue
+
+profile-candidate-restricted_owned-heap.txt
+File: candidate.test
+Type: inuse_space
+Time: 2026-11-08 00:53:49 CST
+Showing nodes accounting for 0, 0% of 0 total
+      flat  flat%   sum%        cum   cum%
+
+profile-candidate-restricted_owned-mutex.txt
+File: candidate.test
+Type: delay
+Time: 2026-11-08 00:53:49 CST
+Showing nodes accounting for 146.54us, 100% of 146.54us total
+Dropped 12 nodes (cum <= 0.73us)
+Showing top 18 nodes out of 22
+      flat  flat%   sum%        cum   cum%
+  146.54us   100%   100%   146.54us   100%  runtime.unlock (inline)
+         0     0%   100%       11us  7.51%  runtime.allocm
+         0     0%   100%    89.67us 61.19%  runtime.forEachP (inline)
+         0     0%   100%    89.67us 61.19%  runtime.forEachP.func1
+         0     0%   100%    89.67us 61.19%  runtime.forEachPInternal
+         0     0%   100%   145.71us 99.43%  runtime.gcBgMarkWorker
+         0     0%   100%       11us  7.51%  runtime.gcBgMarkWorker.func2
+         0     0%   100%       11us  7.51%  runtime.gcDrain
+         0     0%   100%       11us  7.51%  runtime.gcDrainMarkWorkerIdle (inline)
+         0     0%   100%   134.71us 91.93%  runtime.gcMarkDone
+         0     0%   100%    45.04us 30.74%  runtime.gcMarkDone.func2
+         0     0%   100%    28.67us 19.56%  runtime.gcMarkTermination
+         0     0%   100%       11us  7.51%  runtime.markroot
+         0     0%   100%       11us  7.51%  runtime.markroot.func1
+         0     0%   100%       11us  7.51%  runtime.mcommoninit
+         0     0%   100%       11us  7.51%  runtime.newm
+         0     0%   100%       11us  7.51%  runtime.ready
+         0     0%   100%       11us  7.51%  runtime.resumeG
+
+profile-candidate-restricted_owned.txt
+goos: darwin
+goarch: arm64
+pkg: github.com/CloudyKit/jet/v6
+cpu: Apple M2 Max
+BenchmarkFinalReview/restricted_owned/header_interpolation/html-2         	  613461	      1114 ns/op	    1617 B/op	      17 allocs/op
+BenchmarkFinalReview/restricted_owned/nested_silent/html-2                	    5366	    109786 ns/op	    4202 B/op	     142 allocs/op
+BenchmarkFinalReview/restricted_owned/escape_expansion/html-2             	   22042	     24935 ns/op	   12734 B/op	      23 allocs/op
+BenchmarkFinalReview/restricted_owned/include/html-2                      	  386732	      1365 ns/op	    1712 B/op	      22 allocs/op
+BenchmarkFinalReview/restricted_owned/block_content/html-2                	  708818	       923.9 ns/op	    1192 B/op	      15 allocs/op
+PASS
+        3.92 real         3.96 user         0.15 sys
+            16285696  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                1216  page reclaims
+                   0  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                9277  signals received
+                  63  voluntary context switches
+               24634  involuntary context switches
+         68236011201  instructions retired
+         13563392894  cycles elapsed
+            11158008  peak memory footprint
+
+profile-correctness-legacy_stream-alloc.txt
+File: correctness.test
+Type: alloc_space
+Time: 2026-11-08 00:53:31 CST
+Showing nodes accounting for 1306.03MB, 99.45% of 1313.25MB total
+Dropped 57 nodes (cum <= 6.57MB)
+Showing top 18 nodes out of 24
+      flat  flat%   sum%        cum   cum%
+  322.51MB 24.56% 24.56%   322.51MB 24.56%  github.com/CloudyKit/jet/v6.(*Runtime).recover
+  316.01MB 24.06% 48.62%  1306.54MB 99.49%  github.com/CloudyKit/jet/v6.(*Template).Execute
+  228.51MB 17.40% 66.02%   228.51MB 17.40%  github.com/CloudyKit/jet/v6.(*Runtime).newScope (inline)
+  199.50MB 15.19% 81.21%   199.50MB 15.19%  github.com/CloudyKit/jet/v6.(*escapeeWriter).Write
+  156.50MB 11.92% 93.13%   156.50MB 11.92%  github.com/CloudyKit/jet/v6.(*Runtime).executeYieldBlock
+   25.50MB  1.94% 95.07%    65.50MB  4.99%  path.Join
+      23MB  1.75% 96.82%       23MB  1.75%  path.(*lazybuf).append (inline)
+      17MB  1.29% 98.12%       17MB  1.29%  path.(*lazybuf).string (inline)
+      12MB  0.91% 99.03%       12MB  0.91%  github.com/CloudyKit/jet/v6.newIntsRanger (inline)
+    5.50MB  0.42% 99.45%    17.50MB  1.33%  github.com/CloudyKit/jet/v6.init.0.func5
+         0     0% 99.45%   200.01MB 15.23%  github.com/CloudyKit/fastprinter.PrintString
+         0     0% 99.45%   200.01MB 15.23%  github.com/CloudyKit/fastprinter.PrintValue
+         0     0% 99.45%    17.50MB  1.33%  github.com/CloudyKit/jet/v6.(*Runtime).evalCallExpression (inline)
+         0     0% 99.45%    17.50MB  1.33%  github.com/CloudyKit/jet/v6.(*Runtime).evalPipeCallExpression
+         0     0% 99.45%    17.50MB  1.33%  github.com/CloudyKit/jet/v6.(*Runtime).evalPrimaryExpressionGroup
+         0     0% 99.45%   369.51MB 28.14%  github.com/CloudyKit/jet/v6.(*Runtime).executeInclude
+         0     0% 99.45%   668.02MB 50.87%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 99.45%    17.50MB  1.33%  github.com/CloudyKit/jet/v6.(*Runtime).executeRange
+
+profile-correctness-legacy_stream-block.txt
+File: correctness.test
+Type: delay
+Time: 2026-11-08 00:53:31 CST
+Showing nodes accounting for 7516.30ms, 100% of 7516.62ms total
+Dropped 57 nodes (cum <= 37.58ms)
+Showing top 18 nodes out of 22
+      flat  flat%   sum%        cum   cum%
+ 7516.30ms   100%   100%  7516.30ms   100%  runtime.chanrecv1
+         0     0%   100%  3668.26ms 48.80%  github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview
+         0     0%   100%  3847.89ms 51.19%  main.main
+         0     0%   100%  3847.89ms 51.19%  runtime.main
+         0     0%   100%   176.66ms  2.35%  runtime/pprof.StopCPUProfile
+         0     0%   100%   176.66ms  2.35%  sync.(*Once).Do (inline)
+         0     0%   100%   176.66ms  2.35%  sync.(*Once).doSlow
+         0     0%   100%  7339.49ms 97.64%  testing.(*B).Run
+         0     0%   100%  3665.73ms 48.77%  testing.(*B).doBench
+         0     0%   100%  3665.73ms 48.77%  testing.(*B).run
+         0     0%   100%  3673.76ms 48.88%  testing.(*B).run1
+         0     0%   100%  3668.32ms 48.80%  testing.(*B).run1.func1
+         0     0%   100%  7339.64ms 97.65%  testing.(*B).runN
+         0     0%   100%  3847.89ms 51.19%  testing.(*M).Run
+         0     0%   100%   176.66ms  2.35%  testing.(*M).Run.deferwrap1
+         0     0%   100%   176.66ms  2.35%  testing.(*M).after
+         0     0%   100%   176.66ms  2.35%  testing.(*M).after.func1
+         0     0%   100%   176.66ms  2.35%  testing.(*M).writeProfiles
+
+profile-correctness-legacy_stream-cpu-cumulative.txt
+File: correctness.test
+Type: cpu
+Time: 2026-11-08 00:53:27 CST
+Duration: 3.83s, Total samples = 3.40s (88.77%)
+Showing nodes accounting for 1.44s, 42.35% of 3.40s total
+Dropped 65 nodes (cum <= 0.02s)
+Showing top 18 nodes out of 106
+      flat  flat%   sum%        cum   cum%
+     0.04s  1.18%  1.18%      2.14s 62.94%  github.com/CloudyKit/jet/v6.(*Template).Execute
+         0     0%  1.18%      2.14s 62.94%  github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview.func1
+         0     0%  1.18%      2.14s 62.94%  github.com/CloudyKit/jet/v6_test.init.func1
+         0     0%  1.18%      2.14s 62.94%  testing.(*B).launch
+         0     0%  1.18%      2.14s 62.94%  testing.(*B).runN
+     0.35s 10.29% 11.47%      1.81s 53.24%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 11.47%      1.23s 36.18%  runtime.systemstack
+     0.72s 21.18% 32.65%      0.72s 21.18%  runtime.kevent
+         0     0% 32.65%      0.72s 21.18%  runtime.netpoll
+         0     0% 32.65%      0.72s 21.18%  runtime.startTheWorldWithSema
+         0     0% 32.65%      0.70s 20.59%  runtime.gcStart.func4
+     0.01s  0.29% 32.94%      0.61s 17.94%  github.com/CloudyKit/fastprinter.PrintValue
+     0.01s  0.29% 33.24%      0.57s 16.76%  github.com/CloudyKit/fastprinter.PrintString
+     0.04s  1.18% 34.41%      0.49s 14.41%  github.com/CloudyKit/jet/v6.(*escapeeWriter).Write
+     0.02s  0.59% 35.00%      0.45s 13.24%  github.com/CloudyKit/jet/v6.(*Runtime).executeRange
+     0.19s  5.59% 40.59%      0.40s 11.76%  github.com/CloudyKit/jet/v6.checkedWriter.Write
+     0.06s  1.76% 42.35%      0.39s 11.47%  text/template.HTMLEscape
+         0     0% 42.35%      0.36s 10.59%  runtime.(*mheap).alloc.func1
+
+profile-correctness-legacy_stream-cpu-flat.txt
+File: correctness.test
+Type: cpu
+Time: 2026-11-08 00:53:27 CST
+Duration: 3.83s, Total samples = 3400ms (88.77%)
+Showing nodes accounting for 2640ms, 77.65% of 3400ms total
+Dropped 65 nodes (cum <= 17ms)
+Showing top 18 nodes out of 106
+      flat  flat%   sum%        cum   cum%
+     720ms 21.18% 21.18%      720ms 21.18%  runtime.kevent
+     360ms 10.59% 31.76%      360ms 10.59%  runtime.madvise
+     350ms 10.29% 42.06%     1810ms 53.24%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+     190ms  5.59% 47.65%      400ms 11.76%  github.com/CloudyKit/jet/v6.checkedWriter.Write
+     150ms  4.41% 52.06%      210ms  6.18%  bytes.(*Buffer).Write
+     120ms  3.53% 55.59%      170ms  5.00%  runtime.mallocgcSmallScanNoHeaderSC3
+     100ms  2.94% 58.53%      100ms  2.94%  reflect.Value.Elem
+      90ms  2.65% 61.18%       90ms  2.65%  runtime.pthread_kill
+      80ms  2.35% 63.53%      150ms  4.41%  runtime.(*_panic).nextDefer
+      80ms  2.35% 65.88%       80ms  2.35%  runtime.memmove
+      70ms  2.06% 67.94%       70ms  2.06%  runtime.(*_panic).nextFrame
+      60ms  1.76% 69.71%      100ms  2.94%  internal/runtime/maps.(*Map).getWithoutKeySmallFastStr
+      60ms  1.76% 71.47%      390ms 11.47%  text/template.HTMLEscape
+      50ms  1.47% 72.94%      170ms  5.00%  runtime.mallocgc
+      40ms  1.18% 74.12%      150ms  4.41%  github.com/CloudyKit/jet/v6.(*Runtime).recover
+      40ms  1.18% 75.29%     2140ms 62.94%  github.com/CloudyKit/jet/v6.(*Template).Execute
+      40ms  1.18% 76.47%      490ms 14.41%  github.com/CloudyKit/jet/v6.(*escapeeWriter).Write
+      40ms  1.18% 77.65%       40ms  1.18%  runtime.(*_panic).start
+
+profile-correctness-legacy_stream-heap.txt
+File: correctness.test
+Type: inuse_space
+Time: 2026-11-08 00:53:31 CST
+Showing nodes accounting for 512.03kB, 100% of 512.03kB total
+      flat  flat%   sum%        cum   cum%
+  512.03kB   100%   100%   512.03kB   100%  sync.OnceValue[go.shape.string] (inline)
+         0     0%   100%   512.03kB   100%  internal/sysinfo.init
+         0     0%   100%   512.03kB   100%  runtime.doInit (inline)
+         0     0%   100%   512.03kB   100%  runtime.doInit1
+         0     0%   100%   512.03kB   100%  runtime.main
+
+profile-correctness-legacy_stream-mutex.txt
+File: correctness.test
+Type: delay
+Time: 2026-11-08 00:53:31 CST
+Showing nodes accounting for 27413ns, 100% of 27413ns total
+Showing top 18 nodes out of 30
+      flat  flat%   sum%        cum   cum%
+   27413ns   100%   100%    27413ns   100%  runtime.unlock (partial-inline)
+         0     0%   100%    12333ns 44.99%  _.goready.func1
+         0     0%   100%    12333ns 44.99%  github.com/CloudyKit/jet/v6.(*lexer).emit (inline)
+         0     0%   100%    12333ns 44.99%  github.com/CloudyKit/jet/v6.(*lexer).run.func1
+         0     0%   100%    12333ns 44.99%  github.com/CloudyKit/jet/v6.lexInsideAction
+         0     0%   100%      332ns  1.21%  runtime.(*mheap).freeSpan (inline)
+         0     0%   100%      332ns  1.21%  runtime.(*mheap).freeSpan.func1
+         0     0%   100%      332ns  1.21%  runtime.(*sweepLocked).sweep
+         0     0%   100%      332ns  1.21%  runtime.GC
+         0     0%   100%    12333ns 44.99%  runtime.allocm
+         0     0%   100%    12333ns 44.99%  runtime.chansend
+         0     0%   100%    12333ns 44.99%  runtime.chansend1
+         0     0%   100%    12749ns 46.51%  runtime.forEachP (inline)
+         0     0%   100%    12749ns 46.51%  runtime.forEachP.func1
+         0     0%   100%    12749ns 46.51%  runtime.forEachPInternal
+         0     0%   100%    14748ns 53.80%  runtime.gcBgMarkWorker
+         0     0%   100%    14748ns 53.80%  runtime.gcMarkDone
+         0     0%   100%     1999ns  7.29%  runtime.gcMarkDone.func2
+
+profile-correctness-legacy_stream.txt
+goos: darwin
+goarch: arm64
+pkg: github.com/CloudyKit/jet/v6
+cpu: Apple M2 Max
+BenchmarkFinalReview/legacy_stream/header_interpolation/html-2         	 4508485	       126.0 ns/op	      72 B/op	       3 allocs/op
+BenchmarkFinalReview/legacy_stream/nested_silent/html-2                	   10000	     56394 ns/op	    2648 B/op	     132 allocs/op
+BenchmarkFinalReview/legacy_stream/escape_expansion/html-2             	   52791	     11333 ns/op	      72 B/op	       3 allocs/op
+BenchmarkFinalReview/legacy_stream/include/html-2                      	 2242688	       279.0 ns/op	     168 B/op	       8 allocs/op
+BenchmarkFinalReview/legacy_stream/block_content/html-2                	 3914372	       159.1 ns/op	      80 B/op	       3 allocs/op
+PASS
+        3.88 real         3.72 user         0.06 sys
+            15499264  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                1137  page reclaims
+                  22  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                3275  signals received
+                  31  voluntary context switches
+                9424  involuntary context switches
+         70407888761  instructions retired
+         12761590936  cycles elapsed
+            10813992  peak memory footprint
+
+profile-upstream-legacy_stream-alloc.txt
+File: upstream.test
+Type: alloc_space
+Time: 2026-11-08 00:53:27 CST
+Showing nodes accounting for 965.53MB, 99.39% of 971.48MB total
+Dropped 41 nodes (cum <= 4.86MB)
+Showing top 18 nodes out of 20
+      flat  flat%   sum%        cum   cum%
+  409.51MB 42.15% 42.15%   410.01MB 42.20%  github.com/CloudyKit/jet/v6.(*Runtime).recover
+  253.01MB 26.04% 68.20%   253.01MB 26.04%  github.com/CloudyKit/jet/v6.(*Runtime).newScope (inline)
+  187.51MB 19.30% 87.50%   187.51MB 19.30%  github.com/CloudyKit/jet/v6.(*Runtime).executeYieldBlock
+   29.50MB  3.04% 90.53%    29.50MB  3.04%  path.(*lazybuf).append (inline)
+   29.50MB  3.04% 93.57%       87MB  8.96%  path.Join
+      28MB  2.88% 96.45%       28MB  2.88%  path.(*lazybuf).string (inline)
+      16MB  1.65% 98.10%       16MB  1.65%  github.com/CloudyKit/jet/v6.newIntsRanger (inline)
+   12.50MB  1.29% 99.39%    28.50MB  2.93%  github.com/CloudyKit/jet/v6.init.0.func5
+         0     0% 99.39%    28.50MB  2.93%  github.com/CloudyKit/jet/v6.(*Runtime).evalCallExpression (inline)
+         0     0% 99.39%    28.50MB  2.93%  github.com/CloudyKit/jet/v6.(*Runtime).evalPipeCallExpression
+         0     0% 99.39%    28.50MB  2.93%  github.com/CloudyKit/jet/v6.(*Runtime).evalPrimaryExpressionGroup
+         0     0% 99.39%   340.01MB 35.00%  github.com/CloudyKit/jet/v6.(*Runtime).executeInclude
+         0     0% 99.39%   556.02MB 57.23%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 99.39%       87MB  8.96%  github.com/CloudyKit/jet/v6.(*Set).getSiblingTemplate
+         0     0% 99.39%   966.03MB 99.44%  github.com/CloudyKit/jet/v6.(*Template).Execute
+         0     0% 99.39%   966.03MB 99.44%  github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview.func1
+         0     0% 99.39%   966.03MB 99.44%  github.com/CloudyKit/jet/v6_test.init.func1
+         0     0% 99.39%    57.50MB  5.92%  path.Clean
+
+profile-upstream-legacy_stream-block.txt
+File: upstream.test
+Type: delay
+Time: 2026-11-08 00:53:27 CST
+Showing nodes accounting for 7092.34ms, 100% of 7092.67ms total
+Dropped 57 nodes (cum <= 35.46ms)
+Showing top 18 nodes out of 22
+      flat  flat%   sum%        cum   cum%
+ 7092.34ms   100%   100%  7092.34ms   100%  runtime.chanrecv1
+         0     0%   100%  3459.71ms 48.78%  github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview
+         0     0%   100%  3632.49ms 51.21%  main.main
+         0     0%   100%  3632.49ms 51.21%  runtime.main
+         0     0%   100%   168.51ms  2.38%  runtime/pprof.StopCPUProfile
+         0     0%   100%   168.51ms  2.38%  sync.(*Once).Do (inline)
+         0     0%   100%   168.51ms  2.38%  sync.(*Once).doSlow
+         0     0%   100%  6923.69ms 97.62%  testing.(*B).Run
+         0     0%   100%  3456.43ms 48.73%  testing.(*B).doBench
+         0     0%   100%  3456.43ms 48.73%  testing.(*B).run
+         0     0%   100%  3467.25ms 48.88%  testing.(*B).run1
+         0     0%   100%  3459.77ms 48.78%  testing.(*B).run1.func1
+         0     0%   100%  6923.82ms 97.62%  testing.(*B).runN
+         0     0%   100%  3632.49ms 51.21%  testing.(*M).Run
+         0     0%   100%   168.51ms  2.38%  testing.(*M).Run.deferwrap1
+         0     0%   100%   168.51ms  2.38%  testing.(*M).after
+         0     0%   100%   168.51ms  2.38%  testing.(*M).after.func1
+         0     0%   100%   168.51ms  2.38%  testing.(*M).writeProfiles
+
+profile-upstream-legacy_stream-cpu-cumulative.txt
+File: upstream.test
+Type: cpu
+Time: 2026-11-08 00:53:24 CST
+Duration: 3.63s, Total samples = 3.17s (87.32%)
+Showing nodes accounting for 1.34s, 42.27% of 3.17s total
+Dropped 62 nodes (cum <= 0.02s)
+Showing top 18 nodes out of 116
+      flat  flat%   sum%        cum   cum%
+     0.03s  0.95%  0.95%      2.11s 66.56%  github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview.func1
+         0     0%  0.95%      2.11s 66.56%  testing.(*B).launch
+         0     0%  0.95%      2.11s 66.56%  testing.(*B).runN
+     0.04s  1.26%  2.21%      2.08s 65.62%  github.com/CloudyKit/jet/v6.(*Template).Execute
+         0     0%  2.21%      2.08s 65.62%  github.com/CloudyKit/jet/v6_test.init.func1
+     0.34s 10.73% 12.93%      1.89s 59.62%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 12.93%      0.85s 26.81%  runtime.systemstack
+     0.02s  0.63% 13.56%      0.60s 18.93%  github.com/CloudyKit/fastprinter.PrintValue
+     0.04s  1.26% 14.83%      0.51s 16.09%  github.com/CloudyKit/fastprinter.PrintString
+         0     0% 14.83%      0.50s 15.77%  runtime.(*mheap).alloc.func1
+         0     0% 14.83%      0.50s 15.77%  runtime.(*mheap).allocSpan
+     0.48s 15.14% 29.97%      0.48s 15.14%  runtime.madvise
+         0     0% 29.97%      0.48s 15.14%  runtime.sysUsed (inline)
+         0     0% 29.97%      0.48s 15.14%  runtime.sysUsedOS (inline)
+     0.01s  0.32% 30.28%      0.43s 13.56%  github.com/CloudyKit/jet/v6.(*escapeeWriter).Write
+     0.24s  7.57% 37.85%      0.42s 13.25%  text/template.HTMLEscape
+         0     0% 37.85%      0.38s 11.99%  github.com/CloudyKit/jet/v6.(*Runtime).executeInclude
+     0.14s  4.42% 42.27%      0.24s  7.57%  bytes.(*Buffer).Write
+
+profile-upstream-legacy_stream-cpu-flat.txt
+File: upstream.test
+Type: cpu
+Time: 2026-11-08 00:53:24 CST
+Duration: 3.63s, Total samples = 3170ms (87.32%)
+Showing nodes accounting for 2370ms, 74.76% of 3170ms total
+Dropped 62 nodes (cum <= 15.85ms)
+Showing top 18 nodes out of 116
+      flat  flat%   sum%        cum   cum%
+     480ms 15.14% 15.14%      480ms 15.14%  runtime.madvise
+     340ms 10.73% 25.87%     1890ms 59.62%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+     240ms  7.57% 33.44%      420ms 13.25%  text/template.HTMLEscape
+     220ms  6.94% 40.38%      220ms  6.94%  runtime.kevent
+     140ms  4.42% 44.79%      240ms  7.57%  bytes.(*Buffer).Write
+     140ms  4.42% 49.21%      150ms  4.73%  runtime.(*_panic).start
+     130ms  4.10% 53.31%      130ms  4.10%  runtime.pthread_cond_wait
+     110ms  3.47% 56.78%      150ms  4.73%  runtime.(*_panic).nextDefer
+     110ms  3.47% 60.25%      110ms  3.47%  runtime.usleep
+     100ms  3.15% 63.41%      100ms  3.15%  runtime.memmove
+      60ms  1.89% 65.30%       60ms  1.89%  runtime.pthread_kill
+      50ms  1.58% 66.88%      180ms  5.68%  github.com/CloudyKit/jet/v6.(*Runtime).evalPrimaryExpressionGroup
+      50ms  1.58% 68.45%       50ms  1.58%  reflect.Value.Elem
+      40ms  1.26% 69.72%      510ms 16.09%  github.com/CloudyKit/fastprinter.PrintString
+      40ms  1.26% 70.98%     2080ms 65.62%  github.com/CloudyKit/jet/v6.(*Template).Execute
+      40ms  1.26% 72.24%       40ms  1.26%  internal/bytealg.LastIndexByteString (inline)
+      40ms  1.26% 73.50%       40ms  1.26%  internal/runtime/maps.memHashAES
+      40ms  1.26% 74.76%       40ms  1.26%  runtime.(*_panic).nextFrame
+
+profile-upstream-legacy_stream-heap.txt
+File: upstream.test
+Type: inuse_space
+Time: 2026-11-08 00:53:27 CST
+Showing nodes accounting for 0, 0% of 0 total
+      flat  flat%   sum%        cum   cum%
+
+profile-upstream-legacy_stream-mutex.txt
+File: upstream.test
+Type: delay
+Time: 2026-11-08 00:53:27 CST
+Showing nodes accounting for 43667ns, 100% of 43667ns total
+Dropped 1 node (cum <= 218ns)
+Showing top 18 nodes out of 45
+      flat  flat%   sum%        cum   cum%
+   43667ns   100%   100%    43667ns   100%  runtime.unlock (partial-inline)
+         0     0%   100%    27833ns 63.74%  _.goready.func1
+         0     0%   100%    19666ns 45.04%  github.com/CloudyKit/jet/v6.(*Set).Parse
+         0     0%   100%    19666ns 45.04%  github.com/CloudyKit/jet/v6.(*Set).parse
+         0     0%   100%    19666ns 45.04%  github.com/CloudyKit/jet/v6.(*Template).action
+         0     0%   100%    19666ns 45.04%  github.com/CloudyKit/jet/v6.(*Template).itemList
+         0     0%   100%    19666ns 45.04%  github.com/CloudyKit/jet/v6.(*Template).next (inline)
+         0     0%   100%    19666ns 45.04%  github.com/CloudyKit/jet/v6.(*Template).parseBlock
+         0     0%   100%    19666ns 45.04%  github.com/CloudyKit/jet/v6.(*Template).parseTemplate
+         0     0%   100%    19666ns 45.04%  github.com/CloudyKit/jet/v6.(*Template).peekNonSpace (inline)
+         0     0%   100%    19666ns 45.04%  github.com/CloudyKit/jet/v6.(*Template).textOrAction
+         0     0%   100%     8167ns 18.70%  github.com/CloudyKit/jet/v6.(*lexer).emit (inline)
+         0     0%   100%    19666ns 45.04%  github.com/CloudyKit/jet/v6.(*lexer).nextItem (inline)
+         0     0%   100%     8167ns 18.70%  github.com/CloudyKit/jet/v6.(*lexer).run.func1
+         0     0%   100%     8167ns 18.70%  github.com/CloudyKit/jet/v6.lexIdentifier
+         0     0%   100%    19666ns 45.04%  github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview.func1
+         0     0%   100%    19666ns 45.04%  github.com/CloudyKit/jet/v6_test.finalLegacySetup
+         0     0%   100%      875ns  2.00%  runtime.(*mheap).freeSpan
+
+profile-upstream-legacy_stream.txt
+goos: darwin
+goarch: arm64
+pkg: github.com/CloudyKit/jet/v6
+cpu: Apple M2 Max
+BenchmarkFinalReview/legacy_stream/header_interpolation/html-2         	 6788718	        87.48 ns/op	      24 B/op	       1 allocs/op
+BenchmarkFinalReview/legacy_stream/nested_silent/html-2                	   10000	     58383 ns/op	    2624 B/op	     131 allocs/op
+BenchmarkFinalReview/legacy_stream/escape_expansion/html-2             	  134334	      4437 ns/op	      24 B/op	       1 allocs/op
+BenchmarkFinalReview/legacy_stream/include/html-2                      	 2536027	       228.4 ns/op	     120 B/op	       6 allocs/op
+BenchmarkFinalReview/legacy_stream/block_content/html-2                	 5066397	       118.0 ns/op	      56 B/op	       2 allocs/op
+PASS
+        3.64 real         3.48 user         0.04 sys
+            16007168  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                1166  page reclaims
+                  23  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                2232  signals received
+                  23  voluntary context switches
+                6388  involuntary context switches
+         67984771746  instructions retired
+         11991656321  cycles elapsed
+            11239976  peak memory footprint

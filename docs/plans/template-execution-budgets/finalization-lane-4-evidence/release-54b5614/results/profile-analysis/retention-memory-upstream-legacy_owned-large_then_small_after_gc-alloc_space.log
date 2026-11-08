@@ -1,0 +1,47 @@
+File: upstream.test
+Type: alloc_space
+Time: 2026-11-08 03:05:52 CST
+Showing nodes accounting for 18098.21kB, 98.59% of 18357.93kB total
+Dropped 230 nodes (cum <= 91.79kB)
+Showing top 40 nodes out of 41
+      flat  flat%   sum%        cum   cum%
+    8128kB 44.28% 44.28%     8128kB 44.28%  bytes.growSlice
+    4096kB 22.31% 66.59%     4096kB 22.31%  bytes.(*Buffer).String (inline)
+    1280kB  6.97% 73.56%     1280kB  6.97%  compress/flate.(*fastGen).addBlock
+ 1200.11kB  6.54% 80.10%  1200.11kB  6.54%  runtime/pprof.allFrames
+    1056kB  5.75% 85.85%  1898.50kB 10.34%  compress/flate.NewWriter (inline)
+  563.59kB  3.07% 88.92%   772.50kB  4.21%  runtime/pprof.(*profileBuilder).emitLocation
+     544kB  2.96% 91.88%      544kB  2.96%  compress/flate.newFastEnc (inline)
+  256.62kB  1.40% 93.28%   256.62kB  1.40%  internal/bytealg.MakeNoZero
+     256kB  1.39% 94.67%   842.50kB  4.59%  compress/flate.(*compressor).init
+  169.03kB  0.92% 95.60%   169.03kB  0.92%  runtime/pprof.(*profileBuilder).stringIndex (inline)
+     144kB  0.78% 96.38%      144kB  0.78%  runtime/pprof.(*protobuf).string (inline)
+  125.25kB  0.68% 97.06%  8253.25kB 44.96%  bytes.(*Buffer).grow
+     114kB  0.62% 97.68%  5518.62kB 30.06%  runtime/pprof.writeHeapInternal
+   94.69kB  0.52% 98.20% 12503.26kB 68.11%  github.com/CloudyKit/jet/v6_test.init.func2
+   68.25kB  0.37% 98.57%  5404.62kB 29.44%  runtime/pprof.writeHeapProto
+    1.98kB 0.011% 98.58%  1979.67kB 10.78%  runtime/pprof.(*profileBuilder).appendLocsForStack
+    0.38kB 0.0021% 98.58%  5538.06kB 30.17%  github.com/CloudyKit/jet/v6_test.TestExecutionRetentionMeasurements.func1.2
+    0.30kB 0.0016% 98.59% 18292.08kB 99.64%  github.com/CloudyKit/jet/v6_test.TestExecutionRetentionMeasurements.func1
+         0     0% 98.59%  8253.25kB 44.96%  bytes.(*Buffer).Write
+         0     0% 98.59%     1280kB  6.97%  compress/flate.(*Writer).Close (inline)
+         0     0% 98.59%     1280kB  6.97%  compress/flate.(*compressor).close
+         0     0% 98.59%     1280kB  6.97%  compress/flate.(*compressor).deflateFast
+         0     0% 98.59%     1280kB  6.97%  compress/flate.(*fastEncL1).encode
+         0     0% 98.59%     1280kB  6.97%  compress/gzip.(*Writer).Close
+         0     0% 98.59%  1898.50kB 10.34%  compress/gzip.(*Writer).Write
+         0     0% 98.59%  8263.12kB 45.01%  github.com/CloudyKit/fastprinter.PrintString
+         0     0% 98.59%  8263.12kB 45.01%  github.com/CloudyKit/fastprinter.PrintValue
+         0     0% 98.59%  8263.17kB 45.01%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 98.59%  8312.57kB 45.28%  github.com/CloudyKit/jet/v6.(*Template).Execute
+         0     0% 98.59%  8253.25kB 44.96%  github.com/CloudyKit/jet/v6.(*escapeeWriter).Write
+         0     0% 98.59% 12503.26kB 68.11%  github.com/CloudyKit/jet/v6_test.TestExecutionRetentionMeasurements.func1.1 (inline)
+         0     0% 98.59%     1424kB  7.76%  runtime/pprof.(*profileBuilder).build
+         0     0% 98.59%  1898.50kB 10.34%  runtime/pprof.(*profileBuilder).flush
+         0     0% 98.59%  1927.50kB 10.50%  runtime/pprof.(*profileBuilder).pbSample
+         0     0% 98.59%      144kB  0.78%  runtime/pprof.(*protobuf).strings
+         0     0% 98.59%  5518.62kB 30.06%  runtime/pprof.WriteHeapProfile (inline)
+         0     0% 98.59%  5518.62kB 30.06%  runtime/pprof.writeHeap (inline)
+         0     0% 98.59%   256.62kB  1.40%  strings.(*Builder).Grow
+         0     0% 98.59%   256.62kB  1.40%  strings.(*Builder).grow
+         0     0% 98.59%      256kB  1.39%  strings.Repeat

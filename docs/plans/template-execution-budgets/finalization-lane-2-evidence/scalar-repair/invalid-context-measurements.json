@@ -1,0 +1,22 @@
+[
+  {
+    "name": "sequential-unsafe-0",
+    "build": "unsafe",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/scalar-repair/unsafe.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkScalarSequential$",
+      "-test.benchtime=1s",
+      "-test.count=1"
+    ],
+    "GOMAXPROCS": 2,
+    "deadline": 60,
+    "kill_after": 5,
+    "exit_code": 1,
+    "started": 1794127100.298868,
+    "finished": 1794127106.309601,
+    "binary_sha256": "272886fdc21f14bf75e6c8bb5ec8d706068d743097bc87c961c7bf0666264adc"
+  }
+]

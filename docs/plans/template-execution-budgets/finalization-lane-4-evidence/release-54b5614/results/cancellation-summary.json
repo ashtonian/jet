@@ -1,0 +1,46 @@
+{
+  "interpreter_loop": {
+    "samples": 128,
+    "p50_ns": 1229.5,
+    "p99_ns": 7083,
+    "max_ns": 9041,
+    "completed_before_request": 0,
+    "post_return_checks": 0,
+    "canceled_samples": 128,
+    "canceled_p50_ns": 1229.5,
+    "canceled_p99_ns": 7083
+  },
+  "prepaid_builtin_operation": {
+    "samples": 128,
+    "p50_ns": 152916.0,
+    "p99_ns": 175625,
+    "max_ns": 185292,
+    "completed_before_request": 0,
+    "post_return_checks": 0,
+    "canceled_samples": 128,
+    "canceled_p50_ns": 152916.0,
+    "canceled_p99_ns": 175625
+  },
+  "compile_admission": {
+    "samples": 128,
+    "p50_ns": -250.0,
+    "p99_ns": 50333,
+    "max_ns": 60959,
+    "completed_before_request": 75,
+    "post_return_checks": 0,
+    "canceled_samples": 53,
+    "canceled_p50_ns": 1584,
+    "canceled_p99_ns": 57709
+  },
+  "input_admission": {
+    "samples": 128,
+    "p50_ns": 1125.0,
+    "p99_ns": 24083,
+    "max_ns": 74709,
+    "completed_before_request": 0,
+    "post_return_checks": 0,
+    "canceled_samples": 128,
+    "canceled_p50_ns": 1125.0,
+    "canceled_p99_ns": 24083
+  }
+}

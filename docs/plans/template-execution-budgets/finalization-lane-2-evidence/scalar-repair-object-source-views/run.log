@@ -1,0 +1,6 @@
+gate-lock: held by pid <pid> on <host>, "jet-finalization-lane-2-scalar-repair-object-source-views f599fc9 in <checkout>", since 2026-11-08T08:48:35Z, 2 of 6 focused cores
+Traceback (most recent call last):
+  File "<artifacts>/scalar_repair_extra_views.py", line 7, in <module>
+    r=subprocess.run(cmd,capture_output=True,text=True,timeout=25);(art/(label+'-'+view+'.txt')).write_text(r.stdout+r.stderr);extra.append(dict(command=cmd,deadline=25,exit_code=r.returncode));assert r.returncode==0
+                                                                                                                                                                                                         ^^^^^^^^^^^^^^^
+AssertionError

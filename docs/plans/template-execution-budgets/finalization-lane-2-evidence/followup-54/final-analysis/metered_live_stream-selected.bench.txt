@@ -1,0 +1,34 @@
+goos: darwin
+goarch: arm64
+pkg: github.com/CloudyKit/jet/v6
+cpu: Apple M2 Max
+BenchmarkRuntimeFollowup/header_literal/text-2 10652289 103.3 ns/op 0 B/op 0 allocs/op
+BenchmarkRuntimeFollowup/header_literal/text-2 11807154 102.3 ns/op 0 B/op 0 allocs/op
+BenchmarkRuntimeFollowup/header_literal/text-2 11612715 102.5 ns/op 0 B/op 0 allocs/op
+BenchmarkRuntimeFollowup/header_literal/text-2 11620094 101.8 ns/op 0 B/op 0 allocs/op
+BenchmarkRuntimeFollowup/header_literal/text-2 12187695 99.84 ns/op 0 B/op 0 allocs/op
+BenchmarkRuntimeFollowup/header_literal/text-2 12217532 98.31 ns/op 0 B/op 0 allocs/op
+BenchmarkRuntimeFollowup/header_interpolation/text-2 5741784 216.2 ns/op 0 B/op 0 allocs/op
+BenchmarkRuntimeFollowup/header_interpolation/text-2 5711122 215.1 ns/op 0 B/op 0 allocs/op
+BenchmarkRuntimeFollowup/header_interpolation/text-2 5440531 226.6 ns/op 0 B/op 0 allocs/op
+BenchmarkRuntimeFollowup/header_interpolation/text-2 5739813 212.7 ns/op 0 B/op 0 allocs/op
+BenchmarkRuntimeFollowup/header_interpolation/text-2 5638634 214.1 ns/op 0 B/op 0 allocs/op
+BenchmarkRuntimeFollowup/header_interpolation/text-2 5721140 219.1 ns/op 0 B/op 0 allocs/op
+BenchmarkRuntimeFollowup/nested_writing/text-2 46410 26189 ns/op 1584 B/op 66 allocs/op
+BenchmarkRuntimeFollowup/nested_writing/text-2 47865 25689 ns/op 1584 B/op 66 allocs/op
+BenchmarkRuntimeFollowup/nested_writing/text-2 47683 25197 ns/op 1584 B/op 66 allocs/op
+BenchmarkRuntimeFollowup/nested_writing/text-2 45873 25836 ns/op 1584 B/op 66 allocs/op
+BenchmarkRuntimeFollowup/nested_writing/text-2 45729 26428 ns/op 1584 B/op 66 allocs/op
+BenchmarkRuntimeFollowup/nested_writing/text-2 44864 26925 ns/op 1584 B/op 66 allocs/op
+BenchmarkRuntimeFollowup/inheritance/text-2 6032127 190.2 ns/op 0 B/op 0 allocs/op
+BenchmarkRuntimeFollowup/inheritance/text-2 6328833 189.6 ns/op 0 B/op 0 allocs/op
+BenchmarkRuntimeFollowup/inheritance/text-2 6426406 188.5 ns/op 0 B/op 0 allocs/op
+BenchmarkRuntimeFollowup/inheritance/text-2 5840611 203.0 ns/op 0 B/op 0 allocs/op
+BenchmarkRuntimeFollowup/inheritance/text-2 6321102 188.6 ns/op 0 B/op 0 allocs/op
+BenchmarkRuntimeFollowup/inheritance/text-2 6072340 205.9 ns/op 0 B/op 0 allocs/op
+BenchmarkRuntimeFollowup/escape_expansion/html-2 113085 10590 ns/op 0 B/op 0 allocs/op
+BenchmarkRuntimeFollowup/escape_expansion/html-2 115131 11437 ns/op 0 B/op 0 allocs/op
+BenchmarkRuntimeFollowup/escape_expansion/html-2 110689 10598 ns/op 0 B/op 0 allocs/op
+BenchmarkRuntimeFollowup/escape_expansion/html-2 108255 11203 ns/op 0 B/op 0 allocs/op
+BenchmarkRuntimeFollowup/escape_expansion/html-2 116253 11747 ns/op 0 B/op 0 allocs/op
+BenchmarkRuntimeFollowup/escape_expansion/html-2 108374 11015 ns/op 0 B/op 0 allocs/op

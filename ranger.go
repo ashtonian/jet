@@ -177,6 +177,9 @@ func (st *Runtime) getRanger(v reflect.Value) (r Ranger, cleanup func(), err err
 	if !v.IsValid() {
 		return nil, nil, errors.New("can't range over invalid value")
 	}
+	if st.isRestricted() && v.Type() != reflect.TypeOf((*intsRanger)(nil)) {
+		st.beforeData(v)
+	}
 	t := v.Type()
 	if t.Implements(rangerType) {
 		return v.Interface().(Ranger), func() { /* no cleanup needed */ }, nil

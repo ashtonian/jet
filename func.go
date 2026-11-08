@@ -94,7 +94,8 @@ func (a *Arguments) get(argumentIndex int) reflect.Value {
 
 // Panicf panics with formatted error message.
 func (a *Arguments) Panicf(format string, v ...interface{}) {
-	panic(fmt.Errorf(format, v...))
+	err := fmt.Errorf(format, v...)
+	panic(&templateError{message: err.Error(), cause: err})
 }
 
 // RequireNumOfArguments panics if the number of arguments is not in the range specified by min and max.

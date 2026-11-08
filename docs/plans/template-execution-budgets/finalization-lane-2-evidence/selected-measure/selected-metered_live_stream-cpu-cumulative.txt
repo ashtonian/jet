@@ -1,0 +1,30 @@
+File: selected.test
+Type: cpu
+Time: 2026-11-08 02:11:01 CST
+Duration: 2.62s, Total samples = 2170ms (82.68%)
+Showing nodes accounting for 1690ms, 77.88% of 2170ms total
+Dropped 32 nodes (cum <= 10.85ms)
+Showing top 22 nodes out of 68
+      flat  flat%   sum%        cum   cum%
+         0     0%     0%     1920ms 88.48%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0%     0%     1920ms 88.48%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0%     0%     1920ms 88.48%  github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview.func1
+         0     0%     0%     1920ms 88.48%  github.com/CloudyKit/jet/v6_test.init.0.func1
+         0     0%     0%     1920ms 88.48%  testing.(*B).launch
+         0     0%     0%     1920ms 88.48%  testing.(*B).runN
+         0     0%     0%     1820ms 83.87%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0%     0%     1820ms 83.87%  github.com/CloudyKit/jet/v6.(*Runtime).printValue
+         0     0%     0%     1820ms 83.87%  github.com/CloudyKit/jet/v6.(*dataPrinter).value
+         0     0%     0%     1810ms 83.41%  github.com/CloudyKit/fastprinter.PrintString
+         0     0%     0%     1810ms 83.41%  github.com/CloudyKit/jet/v6.(*dataPrinter).Write
+         0     0%     0%     1810ms 83.41%  github.com/CloudyKit/jet/v6.(*dataPrinter).text
+         0     0%     0%     1810ms 83.41%  github.com/CloudyKit/jet/v6.(*escapeeWriter).Write
+     200ms  9.22%  9.22%     1810ms 83.41%  text/template.HTMLEscape
+     430ms 19.82% 29.03%     1610ms 74.19%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+     240ms 11.06% 40.09%      610ms 28.11%  github.com/CloudyKit/jet/v6.(*Runtime).reserveWork
+     330ms 15.21% 55.30%      550ms 25.35%  bytes.(*Buffer).Write
+     170ms  7.83% 63.13%      240ms 11.06%  context.(*cancelCtx).Err
+         0     0% 63.13%      230ms 10.60%  runtime.systemstack
+     170ms  7.83% 70.97%      170ms  7.83%  runtime.memmove
+     150ms  6.91% 77.88%      150ms  6.91%  github.com/CloudyKit/jet/v6.(*Runtime).reserveUnchecked (inline)
+         0     0% 77.88%      120ms  5.53%  runtime.(*mheap).alloc.func1

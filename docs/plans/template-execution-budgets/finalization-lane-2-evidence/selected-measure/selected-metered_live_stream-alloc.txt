@@ -1,0 +1,29 @@
+File: selected.test
+Type: alloc_space
+Time: 2026-11-08 02:11:04 CST
+Showing nodes accounting for 182.44MB, 98.46% of 185.28MB total
+Dropped 23 nodes (cum <= 0.93MB)
+Showing top 22 nodes out of 34
+      flat  flat%   sum%        cum   cum%
+   69.01MB 37.25% 37.25%   115.52MB 62.35%  github.com/CloudyKit/jet/v6.(*parseAdmission).admitCached
+   62.01MB 33.47% 70.71%    62.01MB 33.47%  github.com/CloudyKit/jet/v6.newParseAdmission
+   46.51MB 25.10% 95.81%    46.51MB 25.10%  github.com/CloudyKit/jet/v6.(*parseAdmission).prepareSource
+    2.50MB  1.35% 97.16%     2.50MB  1.35%  regexp/syntax.(*compiler).inst (inline)
+    1.25MB  0.68% 97.84%     1.25MB  0.68%  os.readFileContents
+    1.16MB  0.62% 98.46%     1.16MB  0.62%  runtime/pprof.StartCPUProfile
+         0     0% 98.46%   177.53MB 95.81%  github.com/CloudyKit/jet/v6.(*Runtime).startCompilation
+         0     0% 98.46%   115.52MB 62.35%  github.com/CloudyKit/jet/v6.(*Runtime).startCompilation.func1
+         0     0% 98.46%   177.53MB 95.81%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0% 98.46%   177.53MB 95.81%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0% 98.46%     4.79MB  2.58%  github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview
+         0     0% 98.46%   177.53MB 95.81%  github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview.func1
+         0     0% 98.46%     1.78MB  0.96%  github.com/CloudyKit/jet/v6_test.executionWorkloads
+         0     0% 98.46%   177.53MB 95.81%  github.com/CloudyKit/jet/v6_test.init.0.func1
+         0     0% 98.46%     1.16MB  0.62%  main.main
+         0     0% 98.46%     1.25MB  0.68%  os.ReadFile
+         0     0% 98.46%     2.50MB  1.35%  regexp.Compile (inline)
+         0     0% 98.46%     2.50MB  1.35%  regexp.compile
+         0     0% 98.46%     2.50MB  1.35%  regexp/syntax.(*compiler).compile
+         0     0% 98.46%     2.50MB  1.35%  regexp/syntax.(*compiler).rune
+         0     0% 98.46%     2.50MB  1.35%  regexp/syntax.Compile
+         0     0% 98.46%     1.16MB  0.62%  runtime.main

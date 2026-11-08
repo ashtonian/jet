@@ -1,0 +1,41 @@
+{
+  "run": {
+    "id": 42431657520,
+    "head_sha": "2858cef45f7fdc9c100fe0294f367fea63c82a15",
+    "event": "push",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/ashtonian/jet/actions/runs/42431657520",
+    "created_at": "2026-11-08T00:51:20Z",
+    "updated_at": "2026-11-08T00:52:14Z"
+  },
+  "jobs": [
+    {
+      "id": 128581697799,
+      "name": "Go 1.16.15 normal",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/ashtonian/jet/actions/runs/42431657520/job/128581697799",
+      "started_at": "2026-11-08T00:51:23Z",
+      "completed_at": "2026-11-08T00:51:41Z"
+    },
+    {
+      "id": 128581698027,
+      "name": "Go stable normal",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/ashtonian/jet/actions/runs/42431657520/job/128581698027",
+      "started_at": "2026-11-08T00:51:24Z",
+      "completed_at": "2026-11-08T00:51:39Z"
+    },
+    {
+      "id": 128581698033,
+      "name": "Go stable race",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/ashtonian/jet/actions/runs/42431657520/job/128581698033",
+      "started_at": "2026-11-08T00:51:24Z",
+      "completed_at": "2026-11-08T00:52:13Z"
+    }
+  ]
+}

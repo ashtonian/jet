@@ -1,0 +1,17 @@
+File: base.test
+Type: inuse_objects
+Time: 2026-11-08 04:13:48 CST
+Showing nodes accounting for 16384, 100% of 16384 total
+      flat  flat%   sum%        cum   cum%
+     10923 66.67% 66.67%      10923 66.67%  flag.(*FlagSet).Var
+      5461 33.33%   100%       5461 33.33%  runtime.mallocgc
+         0     0%   100%      10923 66.67%  flag.(*FlagSet).Bool
+         0     0%   100%      10923 66.67%  flag.(*FlagSet).BoolVar (inline)
+         0     0%   100%      10923 66.67%  flag.Bool (inline)
+         0     0%   100%      10923 66.67%  main.main
+         0     0%   100%       5461 33.33%  runtime.(*scavengerState).init
+         0     0%   100%       5461 33.33%  runtime.bgscavenge
+         0     0%   100%      10923 66.67%  runtime.main
+         0     0%   100%       5461 33.33%  runtime.newobject
+         0     0%   100%      10923 66.67%  testing.Init
+         0     0%   100%      10923 66.67%  testing.MainStart

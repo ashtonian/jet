@@ -1,0 +1,26 @@
+File: render.test
+Type: delay
+Time: 2026-11-08 04:46:49 CST
+Showing nodes accounting for 38.21us, 100% of 38.21us total
+      flat  flat%   sum%        cum   cum%
+   29.04us 76.01% 76.01%    29.04us 76.01%  runtime.unlock (inline)
+    9.17us 23.99%   100%     9.17us 23.99%  sync.(*Mutex).Unlock
+         0     0%   100%     9.17us 23.99%  github.com/CloudyKit/fastprinter.PrintString
+         0     0%   100%     9.17us 23.99%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0%   100%     9.17us 23.99%  github.com/CloudyKit/jet/v6.(*Runtime).printValue
+         0     0%   100%     9.17us 23.99%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0%   100%     9.17us 23.99%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0%   100%     9.17us 23.99%  github.com/CloudyKit/jet/v6.(*dataPrinter).text
+         0     0%   100%     9.17us 23.99%  github.com/CloudyKit/jet/v6.(*dataPrinter).value
+         0     0%   100%     9.17us 23.99%  github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes.func1.1
+         0     0%   100%     9.17us 23.99%  github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes.func1.gowrap1
+         0     0%   100%     9.17us 23.99%  github.com/CloudyKit/jet/v6_test.init.0.func2
+         0     0%   100%    29.04us 76.01%  runtime.gcBgMarkWorker
+         0     0%   100%    29.04us 76.01%  runtime.gcMarkDone
+         0     0%   100%    29.04us 76.01%  runtime.gcMarkTermination
+         0     0%   100%    29.04us 76.01%  runtime.gcMarkTermination.func3
+         0     0%   100%    29.04us 76.01%  runtime.startTheWorldWithSema
+         0     0%   100%    29.04us 76.01%  runtime.systemstack
+         0     0%   100%     9.17us 23.99%  sync.(*Pool).Get
+         0     0%   100%     9.17us 23.99%  sync.(*Pool).pin
+         0     0%   100%     9.17us 23.99%  sync.(*Pool).pinSlow

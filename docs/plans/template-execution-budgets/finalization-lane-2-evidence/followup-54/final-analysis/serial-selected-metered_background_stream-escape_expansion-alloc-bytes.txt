@@ -1,0 +1,36 @@
+File: render.test
+Type: alloc_space
+Time: 2026-11-08 04:47:07 CST
+Showing nodes accounting for 9544.89kB, 100% of 9544.89kB total
+Showing top 30 nodes out of 49
+      flat  flat%   sum%        cum   cum%
+ 1605.34kB 16.82% 16.82%  1605.34kB 16.82%  encoding/json/v2.makeString
+ 1282.68kB 13.44% 30.26%  1282.68kB 13.44%  os.readFileContents
+ 1184.27kB 12.41% 42.66%  1184.27kB 12.41%  runtime/pprof.StartCPUProfile
+ 1048.19kB 10.98% 53.65%  1048.19kB 10.98%  strings.(*byteStringReplacer).Replace
+  688.56kB  7.21% 60.86%   688.56kB  7.21%  compress/flate.(*fastGen).addBlock
+  655.29kB  6.87% 67.73%   655.29kB  6.87%  compress/flate.NewWriter (inline)
+  520.04kB  5.45% 73.17%   520.04kB  5.45%  bytes.Clone (inline)
+  512.23kB  5.37% 78.54%  1536.30kB 16.10%  regexp.makeOnePass
+  512.14kB  5.37% 83.91%  2080.37kB 21.80%  github.com/CloudyKit/jet/v6_test.additionalExecutionWorkloads
+  512.08kB  5.36% 89.27%   512.08kB  5.36%  compress/gzip.NewWriterLevel
+  512.05kB  5.36% 94.64%   512.05kB  5.36%  regexp.newQueue (inline)
+  512.01kB  5.36%   100%   512.01kB  5.36%  regexp.makeOnePass.func1
+         0     0%   100%   688.56kB  7.21%  compress/flate.(*Writer).Close (inline)
+         0     0%   100%   688.56kB  7.21%  compress/flate.(*compressor).close
+         0     0%   100%   688.56kB  7.21%  compress/flate.(*compressor).deflateFast
+         0     0%   100%   688.56kB  7.21%  compress/flate.(*fastEncL1).encode
+         0     0%   100%   688.56kB  7.21%  compress/gzip.(*Writer).Close
+         0     0%   100%   655.29kB  6.87%  compress/gzip.(*Writer).Write
+         0     0%   100%   520.04kB  5.45%  encoding/json.Marshal (inline)
+         0     0%   100%  1605.34kB 16.82%  encoding/json.Unmarshal (inline)
+         0     0%   100%   520.04kB  5.45%  encoding/json/v2.Marshal
+         0     0%   100%  1605.34kB 16.82%  encoding/json/v2.Unmarshal
+         0     0%   100%  1605.34kB 16.82%  encoding/json/v2.makeSliceArshaler.func3
+         0     0%   100%  1605.34kB 16.82%  encoding/json/v2.makeStringArshaler.func2
+         0     0%   100%  1605.34kB 16.82%  encoding/json/v2.makeStructArshaler.func3
+         0     0%   100%  1605.34kB 16.82%  encoding/json/v2.unmarshalDecode
+         0     0%   100%  6504.69kB 68.15%  github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes
+         0     0%   100%  2888.02kB 30.26%  github.com/CloudyKit/jet/v6_test.executionWorkloads
+         0     0%   100%  4968.39kB 52.05%  github.com/CloudyKit/jet/v6_test.measurementWorkloads
+         0     0%   100%  1048.19kB 10.98%  html.EscapeString (inline)

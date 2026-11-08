@@ -1,0 +1,29 @@
+File: render.test
+Type: cpu
+Time: 2026-11-08 04:46:47 CST
+Duration: 1.37s, Total samples = 2.14s (156.22%)
+Showing nodes accounting for 2.11s, 98.60% of 2.14s total
+Dropped 24 nodes (cum <= 0.01s)
+      flat  flat%   sum%        cum   cum%
+         0     0%     0%      2.12s 99.07%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0%     0%      2.12s 99.07%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0%     0%      2.12s 99.07%  github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes.func1.1
+         0     0%     0%      2.12s 99.07%  github.com/CloudyKit/jet/v6_test.init.0.func2
+         0     0%     0%      2.10s 98.13%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0%     0%      2.09s 97.66%  github.com/CloudyKit/jet/v6.(*Runtime).printValue
+     0.01s  0.47%  0.47%      2.09s 97.66%  github.com/CloudyKit/jet/v6.(*dataPrinter).value
+         0     0%  0.47%      2.08s 97.20%  github.com/CloudyKit/fastprinter.PrintString
+         0     0%  0.47%      2.08s 97.20%  github.com/CloudyKit/jet/v6.(*dataPrinter).Write
+         0     0%  0.47%      2.08s 97.20%  github.com/CloudyKit/jet/v6.(*dataPrinter).text
+         0     0%  0.47%      2.08s 97.20%  github.com/CloudyKit/jet/v6.(*escapeeWriter).Write
+     0.17s  7.94%  8.41%      2.08s 97.20%  text/template.HTMLEscape
+     0.42s 19.63% 28.04%      1.91s 89.25%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+     0.50s 23.36% 51.40%      1.05s 49.07%  bytes.(*Buffer).Write
+     0.21s  9.81% 61.21%      0.43s 20.09%  github.com/CloudyKit/jet/v6.(*Runtime).reserveWork
+     0.31s 14.49% 75.70%      0.31s 14.49%  bytes.(*Buffer).tryGrowByReslice (inline)
+     0.24s 11.21% 86.92%      0.24s 11.21%  runtime.memmove
+     0.16s  7.48% 94.39%      0.18s  8.41%  context.(*cancelCtx).Err
+     0.07s  3.27% 97.66%      0.07s  3.27%  github.com/CloudyKit/jet/v6.(*Runtime).reserveUnchecked (inline)
+         0     0% 97.66%      0.02s  0.93%  github.com/CloudyKit/jet/v6.(*Runtime).checkpoint
+         0     0% 97.66%      0.02s  0.93%  github.com/CloudyKit/jet/v6.(*Runtime).checkpointActive (inline)
+     0.02s  0.93% 98.60%      0.02s  0.93%  sync/atomic.(*Value).Load (inline)

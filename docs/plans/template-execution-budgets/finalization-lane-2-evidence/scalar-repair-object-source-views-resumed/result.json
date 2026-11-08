@@ -1,0 +1,33 @@
+{
+  "head": "f599fc95992f104dd6e8cab180df04c9f964b5fa",
+  "command": [
+    "gate-lock",
+    "run-check",
+    "jet-finalization-lane-2-scalar-repair-object-source-views-resumed",
+    "--",
+    "python3",
+    ".git/finalization/scalar_repair_extra_views.py"
+  ],
+  "execution_timeout_seconds": 120,
+  "kill_after_seconds": 5,
+  "queued_at": 1794127740.909559,
+  "harness_sha256": "893a8f30884f25c096c1146717b1f1122cd89b87719d451055ed52194cf9f0d8",
+  "go_version": "go version go1.27.3 darwin/arm64",
+  "go_env": {
+    "GOARCH": "arm64",
+    "GOFLAGS": "-trimpath",
+    "GOMOD": "<checkout>/go.mod",
+    "GOOS": "darwin",
+    "GOTOOLCHAIN": "auto",
+    "GOWORK": ""
+  },
+  "environment": {
+    "GATE_LOCK_WAIT": "1",
+    "GATE_LOCK_COMMAND_TIMEOUT": "120",
+    "GATE_LOCK_COMMAND_KILL_AFTER": "5"
+  },
+  "exit_code": 1,
+  "finished_at": 1794127743.610435,
+  "inputs_unchanged": true,
+  "input_manifest": "../manifests/4c7e58fabe92d2a001b048092b5253346778e3220cc4fdce8a453ad7c5960aa2.json"
+}

@@ -1,0 +1,23 @@
+File: base.test
+Type: alloc_space
+Time: 2026-11-08 04:13:55 CST
+Showing nodes accounting for 2698.43MB, 100% of 2698.43MB total
+----------------------------------------------------------+-------------
+      flat  flat%   sum%        cum   cum%   calls calls% + context 	 	 
+----------------------------------------------------------+-------------
+                                               2MB   100% |   github.com/CloudyKit/jet/v6.(*Template).execute
+       2MB 0.074% 0.074%        2MB 0.074%                | github.com/CloudyKit/jet/v6.admitInputScopesInto
+----------------------------------------------------------+-------------
+                                         1560.09MB   100% |   github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0% 0.074%  1560.09MB 57.81%                | github.com/CloudyKit/jet/v6.(*Template).execute
+                                         1125.08MB 72.12% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+                                          428.51MB 27.47% |   bytes.(*Buffer).String (inline)
+                                               3MB  0.19% |   sync.(*Pool).Get
+                                               2MB  0.13% |   github.com/CloudyKit/jet/v6.admitInputScopesInto
+                                               1MB 0.064% |   github.com/CloudyKit/jet/v6.releaseInputVars
+                                            0.50MB 0.032% |   github.com/CloudyKit/jet/v6.borrowInputVars
+----------------------------------------------------------+-------------
+                                            0.50MB   100% |   github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0% 0.074%     0.50MB 0.019%                | github.com/CloudyKit/jet/v6.borrowInputVars
+                                            0.50MB   100% |   sync.(*Pool).Get
+----------------------------------------------------------+-------------

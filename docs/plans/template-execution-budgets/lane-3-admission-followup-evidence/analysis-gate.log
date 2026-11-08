@@ -1,0 +1,10 @@
+gate-lock: held by pid 90429 on <HOST>, "jet-lane3-admission-profile-analysis 7001b1e in <CHECKOUT>", since 2026-11-08T10:14:29Z, 2 of 6 focused cores
+selected-base-nil
+Traceback (most recent call last):
+  File "<CHECKOUT>/.git/admission-followup/analyze.py", line 30, in <module>
+    if profile in ['mutex','block']:stage(prefix+'-call',args+['-peek=sync.*|inputAdmission|RenderRestrictedContext',str(binary),str(pprof)])
+                                    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<CHECKOUT>/.git/admission-followup/analyze.py", line 16, in stage
+    if status=='failed':raise RuntimeError(name)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: selected-base-nil-mutex-delay-call

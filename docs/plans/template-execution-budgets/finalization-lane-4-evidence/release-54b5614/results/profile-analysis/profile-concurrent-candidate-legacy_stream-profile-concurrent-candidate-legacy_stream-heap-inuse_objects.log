@@ -1,0 +1,42 @@
+File: candidate.test
+Type: inuse_objects
+Time: 2026-11-08 03:03:26 CST
+Showing nodes accounting for 2399, 100% of 2399 total
+      flat  flat%   sum%        cum   cum%
+      2373 98.92% 98.92%       2373 98.92%  runtime.mallocgc
+        26  1.08%   100%         26  1.08%  reflect.compiledTypelinks
+         0     0%   100%         26  1.08%  encoding/json.Unmarshal (inline)
+         0     0%   100%         26  1.08%  encoding/json/v2.Unmarshal
+         0     0%   100%         26  1.08%  encoding/json/v2.makeSliceArshaler.func3
+         0     0%   100%         26  1.08%  encoding/json/v2.makeStructArshaler.func1
+         0     0%   100%         26  1.08%  encoding/json/v2.makeStructArshaler.func3
+         0     0%   100%         26  1.08%  encoding/json/v2.makeStructFields
+         0     0%   100%         26  1.08%  encoding/json/v2.makeStructFields.func3
+         0     0%   100%         26  1.08%  encoding/json/v2.unmarshalDecode
+         0     0%   100%         26  1.08%  github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes
+         0     0%   100%         26  1.08%  github.com/CloudyKit/jet/v6_test.executionWorkloads
+         0     0%   100%         26  1.08%  github.com/CloudyKit/jet/v6_test.measurementWorkloads
+         0     0%   100%         26  1.08%  reflect.(*rtype).ptrTo
+         0     0%   100%         26  1.08%  reflect.PointerTo (inline)
+         0     0%   100%         26  1.08%  reflect.typesByString
+         0     0%   100%       1281 53.40%  runtime.allocm
+         0     0%   100%        256 10.67%  runtime.goexit0
+         0     0%   100%       1092 45.52%  runtime.malg
+         0     0%   100%        512 21.34%  runtime.mcall
+         0     0%   100%        769 32.06%  runtime.mstart
+         0     0%   100%        769 32.06%  runtime.mstart0
+         0     0%   100%        769 32.06%  runtime.mstart1
+         0     0%   100%       1281 53.40%  runtime.newm
+         0     0%   100%       2373 98.92%  runtime.newobject
+         0     0%   100%       1092 45.52%  runtime.newproc.func1
+         0     0%   100%       1092 45.52%  runtime.newproc1
+         0     0%   100%        256 10.67%  runtime.park_m
+         0     0%   100%       1281 53.40%  runtime.resetspinning
+         0     0%   100%       1281 53.40%  runtime.schedule
+         0     0%   100%       1281 53.40%  runtime.startm
+         0     0%   100%       1092 45.52%  runtime.systemstack
+         0     0%   100%       1281 53.40%  runtime.wakep
+         0     0%   100%         26  1.08%  sync.(*Once).Do
+         0     0%   100%         26  1.08%  sync.(*Once).doSlow
+         0     0%   100%         26  1.08%  testing.(*B).run1.func1
+         0     0%   100%         26  1.08%  testing.(*B).runN

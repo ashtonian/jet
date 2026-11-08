@@ -1,0 +1,17 @@
+File: render.test
+Type: inuse_space
+Time: 2026-11-08 05:27:17 CST
+Showing nodes accounting for 1536.64kB, 100% of 1536.64kB total
+      flat  flat%   sum%        cum   cum%
+ 1024.47kB 66.67% 66.67%  1024.47kB 66.67%  runtime.mallocgc
+  512.17kB 33.33%   100%   512.17kB 33.33%  text/template.addValueFuncs
+         0     0%   100%   512.17kB 33.33%  github.com/CloudyKit/jet/v6.init.1
+         0     0%   100%   512.17kB 33.33%  runtime.doInit (inline)
+         0     0%   100%   512.17kB 33.33%  runtime.doInit1
+         0     0%   100%   512.17kB 33.33%  runtime.main
+         0     0%   100%  1024.47kB 66.67%  runtime.malg
+         0     0%   100%  1024.47kB 66.67%  runtime.newobject
+         0     0%   100%  1024.47kB 66.67%  runtime.newproc.func1
+         0     0%   100%  1024.47kB 66.67%  runtime.newproc1
+         0     0%   100%  1024.47kB 66.67%  runtime.systemstack
+         0     0%   100%   512.17kB 33.33%  text/template.(*Template).Funcs

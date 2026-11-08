@@ -1,0 +1,46 @@
+File: candidate.test
+Type: alloc_objects
+Time: 2026-11-08 02:59:55 CST
+Showing nodes accounting for 39442763, 99.74% of 39547384 total
+Dropped 65 nodes (cum <= 197736)
+      flat  flat%   sum%        cum   cum%
+   6979689 17.65% 17.65%    6979689 17.65%  reflect.unsafe_New
+   6488291 16.41% 34.06%    6488291 16.41%  github.com/CloudyKit/jet/v6.(*Runtime).newScope (inline)
+   5144732 13.01% 47.06%    5144732 13.01%  github.com/CloudyKit/jet/v6.(*Runtime).executeYieldBlock
+   4423863 11.19% 58.25%   19467549 49.23%  github.com/CloudyKit/jet/v6.(*dataJSONEncoder).value
+   2785320  7.04% 65.29%    7986813 20.20%  github.com/CloudyKit/jet/v6.(*dataJSONEncoder).stringValue
+   2233743  5.65% 70.94%    5051849 12.77%  github.com/CloudyKit/jet/v6.(*Runtime).sortedStringKeys
+   2129952  5.39% 76.33%    2129952  5.39%  path.(*lazybuf).append (inline)
+   1998908  5.05% 81.38%    1998908  5.05%  bytes.Clone (inline)
+   1851448  4.68% 86.06%    1851448  4.68%  github.com/CloudyKit/jet/v6.newIntsRanger (inline)
+   1605656  4.06% 90.12%    5144653 13.01%  path.Join
+   1409045  3.56% 93.69%    1409045  3.56%  path.(*lazybuf).string (inline)
+   1376277  3.48% 97.17%    3227725  8.16%  github.com/CloudyKit/jet/v6.init.0.func5
+   1015839  2.57% 99.74%    1015839  2.57%  internal/reflectlite.Swapper
+         0     0% 99.74%    5177452 13.09%  encoding/json.Marshal (inline)
+         0     0% 99.74%    5177452 13.09%  encoding/json/v2.Marshal
+         0     0% 99.74%    3178544  8.04%  encoding/json/v2.marshalEncode
+         0     0% 99.74%   22695274 57.39%  github.com/CloudyKit/jet/v6.(*Runtime).evalCallExpression (inline)
+         0     0% 99.74%   19467549 49.23%  github.com/CloudyKit/jet/v6.(*Runtime).evalCommandExpression
+         0     0% 99.74%   22695274 57.39%  github.com/CloudyKit/jet/v6.(*Runtime).evalPipeCallExpression
+         0     0% 99.74%   19467549 49.23%  github.com/CloudyKit/jet/v6.(*Runtime).evalPipelineExpression
+         0     0% 99.74%    3227725  8.16%  github.com/CloudyKit/jet/v6.(*Runtime).evalPrimaryExpressionGroup
+         0     0% 99.74%   11632944 29.42%  github.com/CloudyKit/jet/v6.(*Runtime).executeInclude
+         0     0% 99.74%   39472950 99.81%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 99.74%    3227725  8.16%  github.com/CloudyKit/jet/v6.(*Runtime).executeRange
+         0     0% 99.74%    5144653 13.01%  github.com/CloudyKit/jet/v6.(*Runtime).loadTemplate
+         0     0% 99.74%   19467549 49.23%  github.com/CloudyKit/jet/v6.(*Runtime).marshalDataJSON
+         0     0% 99.74%    5144781 13.01%  github.com/CloudyKit/jet/v6.(*Set).getSiblingTemplate
+         0     0% 99.74%   39472950 99.81%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0% 99.74%   39472950 99.81%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0% 99.74%   19467549 49.23%  github.com/CloudyKit/jet/v6.builtinMarshalJSON
+         0     0% 99.74%   39473078 99.81%  github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes.func1
+         0     0% 99.74%   39472950 99.81%  github.com/CloudyKit/jet/v6_test.init.0.func2
+         0     0% 99.74%    3538997  8.95%  path.Clean
+         0     0% 99.74%    1802267  4.56%  reflect.(*MapIter).Key
+         0     0% 99.74%    3178544  8.04%  reflect.New
+         0     0% 99.74%    1998878  5.05%  reflect.Value.MapIndex
+         0     0% 99.74%    3801145  9.61%  reflect.copyVal
+         0     0% 99.74%    1015839  2.57%  sort.Slice
+         0     0% 99.74%   39388267 99.60%  testing.(*B).launch
+         0     0% 99.74%   39541919   100%  testing.(*B).runN

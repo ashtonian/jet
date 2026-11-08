@@ -1,0 +1,27 @@
+goos: darwin
+goarch: arm64
+pkg: github.com/CloudyKit/jet/v6
+cpu: Apple M2 Max
+BenchmarkExecutionModes/legacy_stream/header_literal/text-2         	37821780	        32.10 ns/op	      24 B/op	       1 allocs/op
+BenchmarkExecutionModes/legacy_stream/header_interpolation/text-2   	15011719	        83.92 ns/op	      24 B/op	       1 allocs/op
+BenchmarkExecutionModes/legacy_stream/nested_writing/text-2         	   86686	     13425 ns/op	    1344 B/op	      67 allocs/op
+BenchmarkExecutionModes/legacy_stream/inheritance/text-2            	19090281	        63.89 ns/op	      24 B/op	       1 allocs/op
+PASS
+        5.25 real         5.14 user         0.10 sys
+            14745600  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                 809  page reclaims
+                 303  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                2591  signals received
+                   0  voluntary context switches
+               13322  involuntary context switches
+        102354128574  instructions retired
+         17398321350  cycles elapsed
+            10043944  peak memory footprint

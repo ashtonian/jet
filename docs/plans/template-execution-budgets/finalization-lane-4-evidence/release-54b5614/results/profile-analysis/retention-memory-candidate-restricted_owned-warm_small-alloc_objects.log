@@ -1,0 +1,47 @@
+File: candidate.test
+Type: alloc_objects
+Time: 2026-11-08 03:05:52 CST
+Showing nodes accounting for 1044, 94.91% of 1100 total
+Dropped 80 nodes (cum <= 5)
+Showing top 40 nodes out of 73
+      flat  flat%   sum%        cum   cum%
+       318 28.91% 28.91%        318 28.91%  regexp.makeOnePass.func1
+       196 17.82% 46.73%        196 17.82%  strings.genSplit
+        78  7.09% 53.82%         78  7.09%  regexp/syntax.(*compiler).inst (inline)
+        48  4.36% 58.18%         48  4.36%  regexp.newQueue (inline)
+        48  4.36% 62.55%         48  4.36%  regexp/syntax.(*parser).maybeConcat
+        48  4.36% 66.91%         48  4.36%  regexp/syntax.(*parser).newRegexp (inline)
+        36  3.27% 70.18%         84  7.64%  regexp/syntax.(*parser).push
+        30  2.73% 72.91%         30  2.73%  unicode/utf8.AppendRune (inline)
+        24  2.18% 75.09%        732 66.55%  regexp.compile
+        24  2.18% 77.27%         24  2.18%  regexp.onePassCopy
+        24  2.18% 79.45%         24  2.18%  regexp/syntax.(*parser).collapse
+        22  2.00% 81.45%         22  2.00%  testing.rewrite
+        18  1.64% 83.09%        384 34.91%  regexp.makeOnePass
+        17  1.55% 84.64%        861 78.27%  testing.(*T).Run
+        15  1.36% 86.00%         32  2.91%  github.com/CloudyKit/jet/v6.NewRestrictedSet
+        12  1.09% 87.09%         12  1.09%  regexp/syntax.(*Regexp).CapNames
+        12  1.09% 88.18%         24  2.18%  regexp/syntax.(*compiler).init (inline)
+        12  1.09% 89.27%        168 15.27%  regexp/syntax.parse
+         8  0.73% 90.00%         73  6.64%  github.com/CloudyKit/jet/v6_test.TestExecutionRetentionMeasurements.func1
+         7  0.64% 90.64%          7  0.64%  runtime.mallocgc
+         6  0.55% 91.18%        582 52.91%  github.com/CloudyKit/jet/v6_test.TestExecutionRetentionMeasurements
+         6  0.55% 91.73%          6  0.55%  sync.(*Pool).pinSlow
+         6  0.55% 92.27%          6  0.55%  testing.(*matcher).unique
+         5  0.45% 92.73%          5  0.45%  github.com/CloudyKit/jet/v6.NewSet
+         5  0.45% 93.18%          5  0.45%  testing.pcToName
+         4  0.36% 93.55%          8  0.73%  context.WithCancel
+         3  0.27% 93.82%         12  1.09%  github.com/CloudyKit/jet/v6.(*Set).parse
+         3  0.27% 94.09%          9  0.82%  github.com/CloudyKit/jet/v6.admitTemplateBundle
+         3  0.27% 94.36%        136 12.36%  testing.newMatcher
+         3  0.27% 94.64%        430 39.09%  testing.runTests
+         2  0.18% 94.82%          6  0.55%  path.Join
+         1 0.091% 94.91%        434 39.45%  testing.(*M).Run
+         0     0% 94.91%          6  0.55%  fmt.Fprintf
+         0     0% 94.91%         26  2.36%  github.com/CloudyKit/jet/v6.(*Set).GetTemplateContext
+         0     0% 94.91%         26  2.36%  github.com/CloudyKit/jet/v6.(*Set).getSiblingTemplate
+         0     0% 94.91%         23  2.09%  github.com/CloudyKit/jet/v6.(*Set).getTemplate
+         0     0% 94.91%         17  1.55%  github.com/CloudyKit/jet/v6.(*Set).getTemplateFromLoader
+         0     0% 94.91%         17  1.55%  github.com/CloudyKit/jet/v6.(*Set).loadFromFile
+         0     0% 94.91%          5  0.45%  github.com/CloudyKit/jet/v6.(*Template).action
+         0     0% 94.91%          7  0.64%  github.com/CloudyKit/jet/v6.(*Template).parseTemplate

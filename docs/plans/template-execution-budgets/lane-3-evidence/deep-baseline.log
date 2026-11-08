@@ -1,0 +1,14 @@
+gate-lock: held by pid 25974 on studio, "jet-lane3-deep-baseline f7f7e22 in $CHECKOUT", since 2026-11-07T23:02:14Z, 2 of 6 focused cores
+=== RUN   TestLane3DeepBaseline
+=== RUN   TestLane3DeepBaseline/expression
+    lane3_baseline_test.go:41: expression: confirmed child stack overflow (256 KiB stack, 10s external deadline)
+=== RUN   TestLane3DeepBaseline/list
+    lane3_baseline_test.go:41: list: confirmed child stack overflow (256 KiB stack, 10s external deadline)
+=== RUN   TestLane3DeepBaseline/dependency
+    lane3_baseline_test.go:41: dependency: confirmed child stack overflow (256 KiB stack, 10s external deadline)
+--- PASS: TestLane3DeepBaseline (0.12s)
+    --- PASS: TestLane3DeepBaseline/expression (0.04s)
+    --- PASS: TestLane3DeepBaseline/list (0.04s)
+    --- PASS: TestLane3DeepBaseline/dependency (0.04s)
+PASS
+ok  	github.com/CloudyKit/jet/v6	0.359s

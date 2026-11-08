@@ -1,0 +1,813 @@
+[
+  {
+    "name": "build-defaults",
+    "command": [
+      "go",
+      "test",
+      "-p=1",
+      "-c",
+      "-overlay=<CHECKOUT>/.git/admission-followup/defaults-overlay.json",
+      "-o",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "."
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "start": 1794132589.3895822,
+    "end": 1794132591.81701,
+    "exit_code": 0
+  },
+  {
+    "name": "conformance-defaults",
+    "command": [
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "-test.run=^(TestInputAdmission|TestRestricted|TestCompilation|TestExecutionCompilation|TestTemplateBundle|TestExecutionModeConformance)",
+      "-test.timeout=60s"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "start": 1794132591.8173308,
+    "end": 1794132592.226311,
+    "exit_code": 0
+  },
+  {
+    "name": "default-screen-direct-0",
+    "command": [
+      "<CHECKOUT>/.git/admission-followup/direct.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkExecutionModes$/^restricted_owned$/^(header_literal|header_interpolation|include|inheritance|named_map)$/^html$",
+      "-test.benchtime=200ms",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=60s"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "start": 1794132592.2266712,
+    "end": 1794132593.795964,
+    "exit_code": 0
+  },
+  {
+    "name": "default-screen-defaults-0",
+    "command": [
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkExecutionModes$/^restricted_owned$/^(header_literal|header_interpolation|include|inheritance|named_map)$/^html$",
+      "-test.benchtime=200ms",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=60s"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "start": 1794132593.796351,
+    "end": 1794132594.9989738,
+    "exit_code": 0
+  },
+  {
+    "name": "default-screen-defaults-1",
+    "command": [
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkExecutionModes$/^restricted_owned$/^(header_literal|header_interpolation|include|inheritance|named_map)$/^html$",
+      "-test.benchtime=200ms",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=60s"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "start": 1794132594.99931,
+    "end": 1794132596.20767,
+    "exit_code": 0
+  },
+  {
+    "name": "default-screen-direct-1",
+    "command": [
+      "<CHECKOUT>/.git/admission-followup/direct.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkExecutionModes$/^restricted_owned$/^(header_literal|header_interpolation|include|inheritance|named_map)$/^html$",
+      "-test.benchtime=200ms",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=60s"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "start": 1794132596.2080472,
+    "end": 1794132597.4307258,
+    "exit_code": 0
+  },
+  {
+    "name": "default-screen-direct-2",
+    "command": [
+      "<CHECKOUT>/.git/admission-followup/direct.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkExecutionModes$/^restricted_owned$/^(header_literal|header_interpolation|include|inheritance|named_map)$/^html$",
+      "-test.benchtime=200ms",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=60s"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "start": 1794132597.440992,
+    "end": 1794132598.706712,
+    "exit_code": 0
+  },
+  {
+    "name": "default-screen-defaults-2",
+    "command": [
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkExecutionModes$/^restricted_owned$/^(header_literal|header_interpolation|include|inheritance|named_map)$/^html$",
+      "-test.benchtime=200ms",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=60s"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "start": 1794132598.733519,
+    "end": 1794132599.9984078,
+    "exit_code": 0
+  },
+  {
+    "name": "paired-core-base-0",
+    "command": [
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkExecutionModes$/^restricted_owned$/^(header_literal|header_interpolation|include|inheritance|named_map)$/^html$",
+      "-test.benchtime=1s",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=70s"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "start": 1794132599.998807,
+    "end": 1794132609.0344908,
+    "exit_code": 0
+  },
+  {
+    "name": "paired-shape-base-0",
+    "command": [
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkAdmissionInput$",
+      "-test.benchtime=1s",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=70s"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "start": 1794132609.1413262,
+    "end": 1794132617.959081,
+    "exit_code": 0
+  },
+  {
+    "name": "paired-core-defaults-0",
+    "command": [
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkExecutionModes$/^restricted_owned$/^(header_literal|header_interpolation|include|inheritance|named_map)$/^html$",
+      "-test.benchtime=1s",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=70s"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "start": 1794132617.959497,
+    "end": 1794132627.047204,
+    "exit_code": 0
+  },
+  {
+    "name": "paired-shape-defaults-0",
+    "command": [
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkAdmissionInput$",
+      "-test.benchtime=1s",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=70s"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "start": 1794132627.053073,
+    "end": 1794132635.4740071,
+    "exit_code": 0
+  },
+  {
+    "name": "paired-core-defaults-1",
+    "command": [
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkExecutionModes$/^restricted_owned$/^(header_literal|header_interpolation|include|inheritance|named_map)$/^html$",
+      "-test.benchtime=1s",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=70s"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "start": 1794132635.4918349,
+    "end": 1794132644.4320471,
+    "exit_code": 0
+  },
+  {
+    "name": "paired-shape-defaults-1",
+    "command": [
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkAdmissionInput$",
+      "-test.benchtime=1s",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=70s"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "start": 1794132644.4324942,
+    "end": 1794132652.9264598,
+    "exit_code": 0
+  },
+  {
+    "name": "paired-core-base-1",
+    "command": [
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkExecutionModes$/^restricted_owned$/^(header_literal|header_interpolation|include|inheritance|named_map)$/^html$",
+      "-test.benchtime=1s",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=70s"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "start": 1794132652.9270132,
+    "end": 1794132662.194245,
+    "exit_code": 0
+  },
+  {
+    "name": "paired-shape-base-1",
+    "command": [
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkAdmissionInput$",
+      "-test.benchtime=1s",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=70s"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "start": 1794132662.194688,
+    "end": 1794132671.374012,
+    "exit_code": 0
+  },
+  {
+    "name": "paired-core-base-2",
+    "command": [
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkExecutionModes$/^restricted_owned$/^(header_literal|header_interpolation|include|inheritance|named_map)$/^html$",
+      "-test.benchtime=1s",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=70s"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "start": 1794132671.4975512,
+    "end": 1794132680.5653682,
+    "exit_code": 0
+  },
+  {
+    "name": "paired-shape-base-2",
+    "command": [
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkAdmissionInput$",
+      "-test.benchtime=1s",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=70s"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "start": 1794132680.5657878,
+    "end": 1794132689.446789,
+    "exit_code": 0
+  },
+  {
+    "name": "paired-core-defaults-2",
+    "command": [
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkExecutionModes$/^restricted_owned$/^(header_literal|header_interpolation|include|inheritance|named_map)$/^html$",
+      "-test.benchtime=1s",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=70s"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "start": 1794132689.45916,
+    "end": 1794132698.8857422,
+    "exit_code": 0
+  },
+  {
+    "name": "paired-shape-defaults-2",
+    "command": [
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkAdmissionInput$",
+      "-test.benchtime=1s",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=70s"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "start": 1794132698.907747,
+    "end": 1794132707.3613389,
+    "exit_code": 0
+  },
+  {
+    "name": "paired-core-defaults-3",
+    "command": [
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkExecutionModes$/^restricted_owned$/^(header_literal|header_interpolation|include|inheritance|named_map)$/^html$",
+      "-test.benchtime=1s",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=70s"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "start": 1794132707.36179,
+    "end": 1794132716.1703591,
+    "exit_code": 0
+  },
+  {
+    "name": "paired-shape-defaults-3",
+    "command": [
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkAdmissionInput$",
+      "-test.benchtime=1s",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=70s"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "start": 1794132716.175942,
+    "end": 1794132724.615205,
+    "exit_code": 0
+  },
+  {
+    "name": "paired-core-base-3",
+    "command": [
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkExecutionModes$/^restricted_owned$/^(header_literal|header_interpolation|include|inheritance|named_map)$/^html$",
+      "-test.benchtime=1s",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=70s"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "start": 1794132724.6159601,
+    "end": 1794132733.830326,
+    "exit_code": 0
+  },
+  {
+    "name": "paired-shape-base-3",
+    "command": [
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkAdmissionInput$",
+      "-test.benchtime=1s",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=70s"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "start": 1794132733.830915,
+    "end": 1794132743.727922,
+    "exit_code": 0
+  },
+  {
+    "name": "paired-core-base-4",
+    "command": [
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkExecutionModes$/^restricted_owned$/^(header_literal|header_interpolation|include|inheritance|named_map)$/^html$",
+      "-test.benchtime=1s",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=70s"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "start": 1794132743.7284129,
+    "end": 1794132752.730616,
+    "exit_code": 0
+  },
+  {
+    "name": "paired-shape-base-4",
+    "command": [
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkAdmissionInput$",
+      "-test.benchtime=1s",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=70s"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "start": 1794132752.7487931,
+    "end": 1794132761.556274,
+    "exit_code": 0
+  },
+  {
+    "name": "paired-core-defaults-4",
+    "command": [
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkExecutionModes$/^restricted_owned$/^(header_literal|header_interpolation|include|inheritance|named_map)$/^html$",
+      "-test.benchtime=1s",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=70s"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "start": 1794132761.5722141,
+    "end": 1794132770.4347908,
+    "exit_code": 0
+  },
+  {
+    "name": "paired-shape-defaults-4",
+    "command": [
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkAdmissionInput$",
+      "-test.benchtime=1s",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=70s"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "start": 1794132770.435254,
+    "end": 1794132780.145849,
+    "exit_code": 0
+  },
+  {
+    "name": "paired-core-defaults-5",
+    "command": [
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkExecutionModes$/^restricted_owned$/^(header_literal|header_interpolation|include|inheritance|named_map)$/^html$",
+      "-test.benchtime=1s",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=70s"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "start": 1794132780.257804,
+    "end": 1794132789.1105332,
+    "exit_code": 0
+  },
+  {
+    "name": "paired-shape-defaults-5",
+    "command": [
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkAdmissionInput$",
+      "-test.benchtime=1s",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=70s"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "start": 1794132789.1109629,
+    "end": 1794132797.6190982,
+    "exit_code": 0
+  },
+  {
+    "name": "paired-core-base-5",
+    "command": [
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkExecutionModes$/^restricted_owned$/^(header_literal|header_interpolation|include|inheritance|named_map)$/^html$",
+      "-test.benchtime=1s",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=70s"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "start": 1794132797.6198049,
+    "end": 1794132806.605827,
+    "exit_code": 0
+  },
+  {
+    "name": "paired-shape-base-5",
+    "command": [
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkAdmissionInput$",
+      "-test.benchtime=1s",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=70s"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "start": 1794132806.606314,
+    "end": 1794132815.467971,
+    "exit_code": 0
+  },
+  {
+    "name": "selected-base-nil",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkExecutionModes$/^restricted_owned$/^header_literal$/^html$",
+      "-test.benchtime=3s",
+      "-test.cpu=2",
+      "-test.count=1",
+      "-test.benchmem",
+      "-test.timeout=60s",
+      "-test.cpuprofile=<CHECKOUT>/.git/admission-followup/selected-base-nil-cpu.pprof",
+      "-test.memprofile=<CHECKOUT>/.git/admission-followup/selected-base-nil-heap.pprof",
+      "-test.mutexprofile=<CHECKOUT>/.git/admission-followup/selected-base-nil-mutex.pprof",
+      "-test.blockprofile=<CHECKOUT>/.git/admission-followup/selected-base-nil-block.pprof"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "start": 1794132815.488152,
+    "end": 1794132819.7454772,
+    "exit_code": 0
+  },
+  {
+    "name": "selected-base-scalar",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkExecutionModes$/^restricted_owned$/^header_interpolation$/^html$",
+      "-test.benchtime=3s",
+      "-test.cpu=2",
+      "-test.count=1",
+      "-test.benchmem",
+      "-test.timeout=60s",
+      "-test.cpuprofile=<CHECKOUT>/.git/admission-followup/selected-base-scalar-cpu.pprof",
+      "-test.memprofile=<CHECKOUT>/.git/admission-followup/selected-base-scalar-heap.pprof",
+      "-test.mutexprofile=<CHECKOUT>/.git/admission-followup/selected-base-scalar-mutex.pprof",
+      "-test.blockprofile=<CHECKOUT>/.git/admission-followup/selected-base-scalar-block.pprof"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "start": 1794132819.7569,
+    "end": 1794132824.197214,
+    "exit_code": 0
+  },
+  {
+    "name": "selected-base-map",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkAdmissionInput$/^small_map$",
+      "-test.benchtime=3s",
+      "-test.cpu=2",
+      "-test.count=1",
+      "-test.benchmem",
+      "-test.timeout=60s",
+      "-test.cpuprofile=<CHECKOUT>/.git/admission-followup/selected-base-map-cpu.pprof",
+      "-test.memprofile=<CHECKOUT>/.git/admission-followup/selected-base-map-heap.pprof",
+      "-test.mutexprofile=<CHECKOUT>/.git/admission-followup/selected-base-map-mutex.pprof",
+      "-test.blockprofile=<CHECKOUT>/.git/admission-followup/selected-base-map-block.pprof"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "start": 1794132824.198209,
+    "end": 1794132828.582187,
+    "exit_code": 0
+  },
+  {
+    "name": "selected-base-large",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkAdmissionInput$/^(nested|shared|large)$",
+      "-test.benchtime=1s",
+      "-test.cpu=2",
+      "-test.count=1",
+      "-test.benchmem",
+      "-test.timeout=60s",
+      "-test.cpuprofile=<CHECKOUT>/.git/admission-followup/selected-base-large-cpu.pprof",
+      "-test.memprofile=<CHECKOUT>/.git/admission-followup/selected-base-large-heap.pprof",
+      "-test.mutexprofile=<CHECKOUT>/.git/admission-followup/selected-base-large-mutex.pprof",
+      "-test.blockprofile=<CHECKOUT>/.git/admission-followup/selected-base-large-block.pprof"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "start": 1794132828.588792,
+    "end": 1794132832.831147,
+    "exit_code": 0
+  },
+  {
+    "name": "selected-base-concurrent",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkConcurrentExecutionModes$/^restricted_owned$/^(header_interpolation|data_unused_256)$/^html$/^workers_12$/",
+      "-test.benchtime=1s",
+      "-test.cpu=12",
+      "-test.count=1",
+      "-test.benchmem",
+      "-test.timeout=60s",
+      "-test.cpuprofile=<CHECKOUT>/.git/admission-followup/selected-base-concurrent-cpu.pprof",
+      "-test.memprofile=<CHECKOUT>/.git/admission-followup/selected-base-concurrent-heap.pprof",
+      "-test.mutexprofile=<CHECKOUT>/.git/admission-followup/selected-base-concurrent-mutex.pprof",
+      "-test.blockprofile=<CHECKOUT>/.git/admission-followup/selected-base-concurrent-block.pprof"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "start": 1794132832.832103,
+    "end": 1794132835.673475,
+    "exit_code": 0
+  },
+  {
+    "name": "selected-defaults-nil",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkExecutionModes$/^restricted_owned$/^header_literal$/^html$",
+      "-test.benchtime=3s",
+      "-test.cpu=2",
+      "-test.count=1",
+      "-test.benchmem",
+      "-test.timeout=60s",
+      "-test.cpuprofile=<CHECKOUT>/.git/admission-followup/selected-defaults-nil-cpu.pprof",
+      "-test.memprofile=<CHECKOUT>/.git/admission-followup/selected-defaults-nil-heap.pprof",
+      "-test.mutexprofile=<CHECKOUT>/.git/admission-followup/selected-defaults-nil-mutex.pprof",
+      "-test.blockprofile=<CHECKOUT>/.git/admission-followup/selected-defaults-nil-block.pprof"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "start": 1794132835.6740549,
+    "end": 1794132839.8417852,
+    "exit_code": 0
+  },
+  {
+    "name": "selected-defaults-scalar",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkExecutionModes$/^restricted_owned$/^header_interpolation$/^html$",
+      "-test.benchtime=3s",
+      "-test.cpu=2",
+      "-test.count=1",
+      "-test.benchmem",
+      "-test.timeout=60s",
+      "-test.cpuprofile=<CHECKOUT>/.git/admission-followup/selected-defaults-scalar-cpu.pprof",
+      "-test.memprofile=<CHECKOUT>/.git/admission-followup/selected-defaults-scalar-heap.pprof",
+      "-test.mutexprofile=<CHECKOUT>/.git/admission-followup/selected-defaults-scalar-mutex.pprof",
+      "-test.blockprofile=<CHECKOUT>/.git/admission-followup/selected-defaults-scalar-block.pprof"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "start": 1794132839.842636,
+    "end": 1794132844.015681,
+    "exit_code": 0
+  },
+  {
+    "name": "selected-defaults-map",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkAdmissionInput$/^small_map$",
+      "-test.benchtime=3s",
+      "-test.cpu=2",
+      "-test.count=1",
+      "-test.benchmem",
+      "-test.timeout=60s",
+      "-test.cpuprofile=<CHECKOUT>/.git/admission-followup/selected-defaults-map-cpu.pprof",
+      "-test.memprofile=<CHECKOUT>/.git/admission-followup/selected-defaults-map-heap.pprof",
+      "-test.mutexprofile=<CHECKOUT>/.git/admission-followup/selected-defaults-map-mutex.pprof",
+      "-test.blockprofile=<CHECKOUT>/.git/admission-followup/selected-defaults-map-block.pprof"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "start": 1794132844.0174642,
+    "end": 1794132848.1574469,
+    "exit_code": 0
+  },
+  {
+    "name": "selected-defaults-large",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkAdmissionInput$/^(nested|shared|large)$",
+      "-test.benchtime=1s",
+      "-test.cpu=2",
+      "-test.count=1",
+      "-test.benchmem",
+      "-test.timeout=60s",
+      "-test.cpuprofile=<CHECKOUT>/.git/admission-followup/selected-defaults-large-cpu.pprof",
+      "-test.memprofile=<CHECKOUT>/.git/admission-followup/selected-defaults-large-heap.pprof",
+      "-test.mutexprofile=<CHECKOUT>/.git/admission-followup/selected-defaults-large-mutex.pprof",
+      "-test.blockprofile=<CHECKOUT>/.git/admission-followup/selected-defaults-large-block.pprof"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "start": 1794132848.1586392,
+    "end": 1794132852.0963671,
+    "exit_code": 0
+  },
+  {
+    "name": "selected-defaults-concurrent",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkConcurrentExecutionModes$/^restricted_owned$/^(header_interpolation|data_unused_256)$/^html$/^workers_12$/",
+      "-test.benchtime=1s",
+      "-test.cpu=12",
+      "-test.count=1",
+      "-test.benchmem",
+      "-test.timeout=60s",
+      "-test.cpuprofile=<CHECKOUT>/.git/admission-followup/selected-defaults-concurrent-cpu.pprof",
+      "-test.memprofile=<CHECKOUT>/.git/admission-followup/selected-defaults-concurrent-heap.pprof",
+      "-test.mutexprofile=<CHECKOUT>/.git/admission-followup/selected-defaults-concurrent-mutex.pprof",
+      "-test.blockprofile=<CHECKOUT>/.git/admission-followup/selected-defaults-concurrent-block.pprof"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "start": 1794132852.097484,
+    "end": 1794132854.936706,
+    "exit_code": 0
+  }
+]

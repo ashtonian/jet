@@ -1,0 +1,22 @@
+{
+  "command": [
+    "python3",
+    "docs/plans/template-execution-budgets/finalization-lane-4-evidence/analyze_profiles.py",
+    ".git/finalization-evidence/release-54b5614"
+  ],
+  "cwd": "$JET_CHECKOUT",
+  "start": 1794128789.546317,
+  "head": "79e47cad028366aadfb68336baf4fccc580ea9cb",
+  "inputs_manifest": "4158559a3a72549a7ccee61ddd02f7d3792f556e9c81bed1e11744f9126dfb47",
+  "toolchain": "go version go1.27.3 darwin/arm64",
+  "environment": {
+    "GOMAXPROCS": "2",
+    "GOFLAGS": null,
+    "GOTOOLCHAIN": null,
+    "GATE_LOCK_COMMAND_TIMEOUT": "1800",
+    "GATE_LOCK_COMMAND_KILL_AFTER": "10"
+  },
+  "exit": 1,
+  "end": 1794128890.872951,
+  "changed_inputs": []
+}

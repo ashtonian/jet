@@ -1,0 +1,93 @@
+
+compile-candidate.txt
+goos: darwin
+goarch: arm64
+pkg: github.com/CloudyKit/jet/v6
+cpu: Apple M2 Max
+BenchmarkFinalCompile/legacy_stream/header_interpolation-2         	   90915	      1236 ns/op	    2504 B/op	      32 allocs/op
+BenchmarkFinalCompile/legacy_stream/header_interpolation-2         	   98502	      1198 ns/op	    2504 B/op	      32 allocs/op
+BenchmarkFinalCompile/legacy_stream/header_interpolation-2         	  103650	      1161 ns/op	    2504 B/op	      32 allocs/op
+BenchmarkFinalCompile/legacy_stream/header_interpolation-2         	  105180	      1183 ns/op	    2504 B/op	      32 allocs/op
+BenchmarkFinalCompile/legacy_stream/header_interpolation-2         	   99086	      1205 ns/op	    2504 B/op	      32 allocs/op
+BenchmarkFinalCompile/legacy_stream/header_interpolation-2         	  104089	      1158 ns/op	    2504 B/op	      32 allocs/op
+BenchmarkFinalCompile/legacy_stream/include-2                      	   80750	      1539 ns/op	    2856 B/op	      37 allocs/op
+BenchmarkFinalCompile/legacy_stream/include-2                      	   77548	      1480 ns/op	    2856 B/op	      37 allocs/op
+BenchmarkFinalCompile/legacy_stream/include-2                      	   79741	      1621 ns/op	    2856 B/op	      37 allocs/op
+BenchmarkFinalCompile/legacy_stream/include-2                      	   65997	      1848 ns/op	    2856 B/op	      37 allocs/op
+BenchmarkFinalCompile/legacy_stream/include-2                      	   68871	      1802 ns/op	    2856 B/op	      37 allocs/op
+BenchmarkFinalCompile/legacy_stream/include-2                      	   59810	      1692 ns/op	    2856 B/op	      37 allocs/op
+BenchmarkFinalCompile/legacy_stream/block_content-2                	   33226	      3681 ns/op	    3552 B/op	      47 allocs/op
+BenchmarkFinalCompile/legacy_stream/block_content-2                	   32554	      3531 ns/op	    3552 B/op	      47 allocs/op
+BenchmarkFinalCompile/legacy_stream/block_content-2                	   34789	      3523 ns/op	    3552 B/op	      47 allocs/op
+BenchmarkFinalCompile/legacy_stream/block_content-2                	   34174	      3541 ns/op	    3552 B/op	      47 allocs/op
+BenchmarkFinalCompile/legacy_stream/block_content-2                	   34598	      3475 ns/op	    3552 B/op	      47 allocs/op
+BenchmarkFinalCompile/legacy_stream/block_content-2                	   32791	      3698 ns/op	    3552 B/op	      47 allocs/op
+BenchmarkFinalCompile/restricted_owned/header_interpolation-2      	   24992	      4839 ns/op	   11048 B/op	      70 allocs/op
+BenchmarkFinalCompile/restricted_owned/header_interpolation-2      	   24655	      5141 ns/op	   11048 B/op	      70 allocs/op
+BenchmarkFinalCompile/restricted_owned/header_interpolation-2      	   25034	      4754 ns/op	   11048 B/op	      70 allocs/op
+BenchmarkFinalCompile/restricted_owned/header_interpolation-2      	   25449	      4610 ns/op	   11048 B/op	      70 allocs/op
+BenchmarkFinalCompile/restricted_owned/header_interpolation-2      	   27265	      4710 ns/op	   11048 B/op	      70 allocs/op
+BenchmarkFinalCompile/restricted_owned/header_interpolation-2      	   23913	      4972 ns/op	   11048 B/op	      70 allocs/op
+BenchmarkFinalCompile/restricted_owned/include-2                   	   21842	      5195 ns/op	   11056 B/op	      73 allocs/op
+BenchmarkFinalCompile/restricted_owned/include-2                   	   23167	      5098 ns/op	   11056 B/op	      73 allocs/op
+BenchmarkFinalCompile/restricted_owned/include-2                   	   24309	      4827 ns/op	   11056 B/op	      73 allocs/op
+BenchmarkFinalCompile/restricted_owned/include-2                   	   24975	      5165 ns/op	   11056 B/op	      73 allocs/op
+BenchmarkFinalCompile/restricted_owned/include-2                   	   23542	      5153 ns/op	   11056 B/op	      73 allocs/op
+BenchmarkFinalCompile/restricted_owned/include-2                   	   23654	      4707 ns/op	   11056 B/op	      73 allocs/op
+BenchmarkFinalCompile/restricted_owned/block_content-2             	   18318	      6657 ns/op	   12200 B/op	      85 allocs/op
+BenchmarkFinalCompile/restricted_owned/block_content-2             	   18352	      7370 ns/op	   12200 B/op	      85 allocs/op
+BenchmarkFinalCompile/restricted_owned/block_content-2             	   17740	      6803 ns/op	   12200 B/op	      85 allocs/op
+BenchmarkFinalCompile/restricted_owned/block_content-2             	   17956	      6676 ns/op	   12200 B/op	      85 allocs/op
+BenchmarkFinalCompile/restricted_owned/block_content-2             	   16700	      6866 ns/op	   12200 B/op	      85 allocs/op
+BenchmarkFinalCompile/restricted_owned/block_content-2             	   18337	      6807 ns/op	   12200 B/op	      85 allocs/op
+PASS
+
+compile-correctness.txt
+goos: darwin
+goarch: arm64
+pkg: github.com/CloudyKit/jet/v6
+cpu: Apple M2 Max
+BenchmarkFinalCompile/legacy_stream/header_interpolation-2         	   64161	      1841 ns/op	    1560 B/op	      25 allocs/op
+BenchmarkFinalCompile/legacy_stream/header_interpolation-2         	   60140	      1830 ns/op	    1560 B/op	      25 allocs/op
+BenchmarkFinalCompile/legacy_stream/header_interpolation-2         	   60679	      1872 ns/op	    1560 B/op	      25 allocs/op
+BenchmarkFinalCompile/legacy_stream/header_interpolation-2         	   62787	      1838 ns/op	    1560 B/op	      25 allocs/op
+BenchmarkFinalCompile/legacy_stream/header_interpolation-2         	   61416	      1868 ns/op	    1560 B/op	      25 allocs/op
+BenchmarkFinalCompile/legacy_stream/header_interpolation-2         	   63241	      1848 ns/op	    1560 B/op	      25 allocs/op
+BenchmarkFinalCompile/legacy_stream/include-2                      	   53385	      2221 ns/op	    1913 B/op	      30 allocs/op
+BenchmarkFinalCompile/legacy_stream/include-2                      	   54148	      2215 ns/op	    1912 B/op	      30 allocs/op
+BenchmarkFinalCompile/legacy_stream/include-2                      	   53647	      2178 ns/op	    1912 B/op	      30 allocs/op
+BenchmarkFinalCompile/legacy_stream/include-2                      	   54820	      2192 ns/op	    1912 B/op	      30 allocs/op
+BenchmarkFinalCompile/legacy_stream/include-2                      	   54670	      2185 ns/op	    1912 B/op	      30 allocs/op
+BenchmarkFinalCompile/legacy_stream/include-2                      	   52316	      2274 ns/op	    1912 B/op	      30 allocs/op
+BenchmarkFinalCompile/legacy_stream/block_content-2                	   15849	     12587 ns/op	    2608 B/op	      40 allocs/op
+BenchmarkFinalCompile/legacy_stream/block_content-2                	   15568	      7633 ns/op	    2608 B/op	      40 allocs/op
+BenchmarkFinalCompile/legacy_stream/block_content-2                	   13520	      8658 ns/op	    2608 B/op	      40 allocs/op
+BenchmarkFinalCompile/legacy_stream/block_content-2                	   14877	      7581 ns/op	    2608 B/op	      40 allocs/op
+BenchmarkFinalCompile/legacy_stream/block_content-2                	   15950	      7487 ns/op	    2608 B/op	      40 allocs/op
+BenchmarkFinalCompile/legacy_stream/block_content-2                	   16023	      7850 ns/op	    2608 B/op	      40 allocs/op
+PASS
+
+compile-upstream.txt
+goos: darwin
+goarch: arm64
+pkg: github.com/CloudyKit/jet/v6
+cpu: Apple M2 Max
+BenchmarkFinalCompile/legacy_stream/header_interpolation-2         	   61592	      1826 ns/op	    1560 B/op	      25 allocs/op
+BenchmarkFinalCompile/legacy_stream/header_interpolation-2         	   62904	      1810 ns/op	    1560 B/op	      25 allocs/op
+BenchmarkFinalCompile/legacy_stream/header_interpolation-2         	   66934	      1793 ns/op	    1560 B/op	      25 allocs/op
+BenchmarkFinalCompile/legacy_stream/header_interpolation-2         	   66351	      1804 ns/op	    1560 B/op	      25 allocs/op
+BenchmarkFinalCompile/legacy_stream/header_interpolation-2         	   65511	      1834 ns/op	    1560 B/op	      25 allocs/op
+BenchmarkFinalCompile/legacy_stream/header_interpolation-2         	   64440	      1836 ns/op	    1560 B/op	      25 allocs/op
+BenchmarkFinalCompile/legacy_stream/include-2                      	   54620	      2209 ns/op	    1912 B/op	      30 allocs/op
+BenchmarkFinalCompile/legacy_stream/include-2                      	   54130	      2188 ns/op	    1912 B/op	      30 allocs/op
+BenchmarkFinalCompile/legacy_stream/include-2                      	   54794	      2236 ns/op	    1912 B/op	      30 allocs/op
+BenchmarkFinalCompile/legacy_stream/include-2                      	   55086	      2315 ns/op	    1912 B/op	      30 allocs/op
+BenchmarkFinalCompile/legacy_stream/include-2                      	   53544	      2205 ns/op	    1912 B/op	      30 allocs/op
+BenchmarkFinalCompile/legacy_stream/include-2                      	   55092	      2239 ns/op	    1912 B/op	      30 allocs/op
+BenchmarkFinalCompile/legacy_stream/block_content-2                	   15775	      7495 ns/op	    2608 B/op	      40 allocs/op
+BenchmarkFinalCompile/legacy_stream/block_content-2                	   15813	      7629 ns/op	    2608 B/op	      40 allocs/op
+BenchmarkFinalCompile/legacy_stream/block_content-2                	   15552	      7702 ns/op	    2608 B/op	      40 allocs/op
+BenchmarkFinalCompile/legacy_stream/block_content-2                	   15603	      7936 ns/op	    2608 B/op	      40 allocs/op
+BenchmarkFinalCompile/legacy_stream/block_content-2                	   15375	      7730 ns/op	    2608 B/op	      40 allocs/op
+BenchmarkFinalCompile/legacy_stream/block_content-2                	   15850	      7539 ns/op	    2608 B/op	      40 allocs/op
+PASS

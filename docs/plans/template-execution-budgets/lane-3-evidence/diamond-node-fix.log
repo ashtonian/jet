@@ -1,0 +1,2 @@
+gate-lock: held by pid 72536 on studio, "jet-lane3-diamond-node-fix ffc1d8a in $CHECKOUT", since 2026-11-07T23:38:15Z, 2 of 6 focused cores
+ok  	github.com/CloudyKit/jet/v6	4.564s

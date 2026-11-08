@@ -1,0 +1,37 @@
+File: candidate.test
+Type: inuse_space
+Time: 2026-11-08 03:05:52 CST
+Showing nodes accounting for 266.34kB, 98.35% of 270.80kB total
+Dropped 82 nodes (cum <= 1.35kB)
+      flat  flat%   sum%        cum   cum%
+     256kB 94.53% 94.53%      256kB 94.53%  internal/bytealg.MakeNoZero
+       3kB  1.11% 95.64%        3kB  1.11%  runtime.mallocgc
+    2.59kB  0.96% 96.60%     7.30kB  2.69%  testing.(*T).Run
+    2.05kB  0.76% 97.35%     2.05kB  0.76%  regexp.onePassCopy
+    1.38kB  0.51% 97.86%     1.38kB  0.51%  regexp/syntax.(*compiler).inst (inline)
+    0.80kB  0.29% 98.16%     2.96kB  1.09%  testing.runTests
+    0.27kB 0.098% 98.25%   258.91kB 95.61%  github.com/CloudyKit/jet/v6_test.TestExecutionRetentionMeasurements.func1
+    0.19kB 0.069% 98.32%     3.84kB  1.42%  regexp.compile
+    0.05kB 0.017% 98.34%     5.77kB  2.13%  github.com/CloudyKit/jet/v6_test.TestExecutionRetentionMeasurements
+    0.02kB 0.0087% 98.35%     3.12kB  1.15%  testing.(*M).Run
+         0     0% 98.35%     1.95kB  0.72%  github.com/CloudyKit/jet/v6_test.prepareMeasurement
+         0     0% 98.35%     3.12kB  1.15%  main.main
+         0     0% 98.35%     3.84kB  1.42%  regexp.Compile (inline)
+         0     0% 98.35%     2.06kB  0.76%  regexp.compileOnePass
+         0     0% 98.35%     1.38kB  0.51%  regexp/syntax.(*compiler).compile
+         0     0% 98.35%     1.38kB  0.51%  regexp/syntax.(*compiler).rune
+         0     0% 98.35%     1.42kB  0.53%  regexp/syntax.Compile
+         0     0% 98.35%     3.12kB  1.15%  runtime.main
+         0     0% 98.35%     1.88kB  0.69%  runtime.malg
+         0     0% 98.35%     2.88kB  1.06%  runtime.newobject
+         0     0% 98.35%        2kB  0.74%  runtime.newproc.func1
+         0     0% 98.35%        2kB  0.74%  runtime.newproc1
+         0     0% 98.35%        2kB  0.74%  runtime.systemstack
+         0     0% 98.35%      256kB 94.53%  strings.(*Builder).Grow
+         0     0% 98.35%      256kB 94.53%  strings.(*Builder).grow
+         0     0% 98.35%      256kB 94.53%  strings.Repeat
+         0     0% 98.35%     4.20kB  1.55%  testing.(*matcher).fullName
+         0     0% 98.35%     1.57kB  0.58%  testing.runTests.func1
+         0     0% 98.35%     3.84kB  1.42%  testing.simpleMatch.matches
+         0     0% 98.35%   266.25kB 98.32%  testing.tRunner
+         0     0% 98.35%     3.84kB  1.42%  testing/internal/testdeps.TestDeps.MatchString

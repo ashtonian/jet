@@ -1,0 +1,31 @@
+File: reserve-1024.test
+Type: inuse_objects
+Time: 2026-11-08 01:52:09 CST
+Showing nodes accounting for 100, 94.34% of 106 total
+Showing top 25 nodes out of 133
+      flat  flat%   sum%        cum   cum%
+        14 13.21% 13.21%         14 13.21%  encoding/json/v2.makeMapArshaler
+        13 12.26% 25.47%         51 48.11%  encoding/json/v2.makeStructFields
+        12 11.32% 36.79%         14 13.21%  runtime.mallocgc
+         7  6.60% 43.40%          7  6.60%  encoding/json/v2.makeStructArshaler
+         7  6.60% 50.00%          7  6.60%  internal/sync.newEntryNode[go.shape.interface {},go.shape.interface {}] (inline)
+         6  5.66% 55.66%          7  6.60%  encoding/json/v2.makeSliceArshaler
+         4  3.77% 59.43%          6  5.66%  encoding/json/v2.parseFieldOptions
+         4  3.77% 63.21%          4  3.77%  internal/sync.newIndirectNode[go.shape.interface {},go.shape.interface {}] (inline)
+         4  3.77% 66.98%          4  3.77%  reflect.addReflectOff
+         3  2.83% 69.81%          3  2.83%  encoding/json/v2.makeInterfaceArshaler
+         3  2.83% 72.64%          3  2.83%  encoding/json/v2.makeStringArshaler (inline)
+         3  2.83% 75.47%          3  2.83%  os.newFile
+         3  2.83% 78.30%          3  2.83%  reflect.compiledTypelinks
+         2  1.89% 80.19%          2  1.89%  github.com/CloudyKit/jet/v6.(*Runtime).evalPrimaryExpressionGroup
+         2  1.89% 82.08%          7  6.60%  regexp.compile
+         2  1.89% 83.96%          2  1.89%  runtime.mallocgcSmallScanNoHeaderSC4
+         2  1.89% 85.85%          2  1.89%  slices.Grow[go.shape.[]uint8,go.shape.uint8] (inline)
+         2  1.89% 87.74%          2  1.89%  testing.(*B).run1
+         1  0.94% 88.68%         32 30.19%  encoding/json/v2.makeStructFields.func3
+         1  0.94% 89.62%          1  0.94%  internal/abi.NewName
+         1  0.94% 90.57%         11 10.38%  reflect.(*rtype).ptrTo
+         1  0.94% 91.51%          1  0.94%  reflect.MakeSlice
+         1  0.94% 92.45%          1  0.94%  regexp/syntax.(*Regexp).CapNames
+         1  0.94% 93.40%          1  0.94%  regexp/syntax.(*compiler).init (inline)
+         1  0.94% 94.34%          1  0.94%  regexp/syntax.(*compiler).inst (inline)

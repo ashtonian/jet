@@ -1,0 +1,37 @@
+File: render.test
+Type: cpu
+Time: 2026-11-08 04:47:10 CST
+Duration: 1.61s, Total samples = 1.36s (84.36%)
+Showing nodes accounting for 0.83s, 61.03% of 1.36s total
+Showing top 30 nodes out of 102
+      flat  flat%   sum%        cum   cum%
+     0.07s  5.15%  5.15%      1.21s 88.97%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+     0.04s  2.94%  8.09%      1.21s 88.97%  github.com/CloudyKit/jet/v6.(*Runtime).executeRange
+         0     0%  8.09%      1.21s 88.97%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0%  8.09%      1.21s 88.97%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0%  8.09%      1.21s 88.97%  github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes.func1
+         0     0%  8.09%      1.21s 88.97%  github.com/CloudyKit/jet/v6_test.init.0.func2
+         0     0%  8.09%      1.21s 88.97%  testing.(*B).launch
+         0     0%  8.09%      1.21s 88.97%  testing.(*B).runN
+     0.14s 10.29% 18.38%      0.38s 27.94%  github.com/CloudyKit/jet/v6.(*Runtime).reserveWork
+     0.04s  2.94% 21.32%      0.37s 27.21%  github.com/CloudyKit/jet/v6.(*Runtime).advanceRanger
+     0.01s  0.74% 22.06%      0.31s 22.79%  github.com/CloudyKit/jet/v6.(*Runtime).evalPrimaryExpressionGroup
+     0.01s  0.74% 22.79%      0.25s 18.38%  github.com/CloudyKit/jet/v6.(*Runtime).checkpoint (inline)
+     0.06s  4.41% 27.21%      0.18s 13.24%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+     0.13s  9.56% 36.76%      0.17s 12.50%  context.(*cancelCtx).Err
+         0     0% 36.76%      0.17s 12.50%  github.com/CloudyKit/jet/v6.(*Runtime).evalCallExpression (inline)
+     0.01s  0.74% 37.50%      0.17s 12.50%  github.com/CloudyKit/jet/v6.(*Runtime).evalPipeCallExpression
+         0     0% 37.50%      0.15s 11.03%  github.com/CloudyKit/jet/v6.(*Runtime).evalBaseExpressionGroup
+         0     0% 37.50%      0.15s 11.03%  runtime.systemstack
+     0.04s  2.94% 40.44%      0.14s 10.29%  github.com/CloudyKit/jet/v6.(*intsRanger).Range
+     0.01s  0.74% 41.18%      0.13s  9.56%  github.com/CloudyKit/jet/v6.(*Runtime).enter (inline)
+         0     0% 41.18%      0.12s  8.82%  github.com/CloudyKit/jet/v6.(*Runtime).beforeCall
+     0.03s  2.21% 43.38%      0.12s  8.82%  github.com/CloudyKit/jet/v6.(*Runtime).enterActive
+         0     0% 43.38%      0.12s  8.82%  github.com/CloudyKit/jet/v6.(*Runtime).resolve
+     0.01s  0.74% 44.12%      0.12s  8.82%  github.com/CloudyKit/jet/v6.init.0.func5
+     0.04s  2.94% 47.06%      0.10s  7.35%  github.com/CloudyKit/jet/v6.(*Runtime).getRanger
+     0.10s  7.35% 54.41%      0.10s  7.35%  reflect.Value.Elem
+         0     0% 54.41%      0.10s  7.35%  runtime.(*mheap).alloc.func1
+         0     0% 54.41%      0.10s  7.35%  runtime.(*mheap).allocSpan
+     0.09s  6.62% 61.03%      0.09s  6.62%  runtime.madvise
+         0     0% 61.03%      0.09s  6.62%  runtime.sysUsed (inline)

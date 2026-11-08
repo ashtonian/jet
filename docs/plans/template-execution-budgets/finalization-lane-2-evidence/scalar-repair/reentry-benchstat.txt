@@ -1,0 +1,21 @@
+goos: darwin
+goarch: arm64
+pkg: github.com/CloudyKit/jet/v6
+cpu: Apple M2 Max
+                           │ <artifacts>/scalar-repair/reentry-local.txt │ <artifacts>/scalar-repair/reentry-lease.txt │
+                           │                                          sec/op                                           │                               sec/op                                 vs base              │
+ScalarReentry/background-2                                                                                 1.126µ ± 8%                                                          1.106µ ± 10%       ~ (p=0.974 n=6)
+ScalarReentry/live-2                                                                                       1.183µ ± 6%                                                          1.170µ ±  6%       ~ (p=0.818 n=6)
+geomean                                                                                                    1.154µ                                                               1.138µ        -1.44%
+
+                           │ <artifacts>/scalar-repair/reentry-local.txt │ <artifacts>/scalar-repair/reentry-lease.txt │
+                           │                                           B/op                                            │                                B/op                                 vs base               │
+ScalarReentry/background-2                                                                                1.539Ki ± 0%                                                         1.352Ki ± 0%  -12.18% (p=0.002 n=6)
+ScalarReentry/live-2                                                                                      1.539Ki ± 0%                                                         1.352Ki ± 0%  -12.18% (p=0.002 n=6)
+geomean                                                                                                   1.539Ki                                                              1.352Ki       -12.18%
+
+                           │ <artifacts>/scalar-repair/reentry-local.txt │ <artifacts>/scalar-repair/reentry-lease.txt │
+                           │                                         allocs/op                                         │                             allocs/op                               vs base               │
+ScalarReentry/background-2                                                                                  14.00 ± 0%                                                           12.00 ± 0%  -14.29% (p=0.002 n=6)
+ScalarReentry/live-2                                                                                        14.00 ± 0%                                                           12.00 ± 0%  -14.29% (p=0.002 n=6)
+geomean                                                                                                     14.00                                                                12.00       -14.29%

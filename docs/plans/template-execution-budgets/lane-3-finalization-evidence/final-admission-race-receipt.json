@@ -1,0 +1,23 @@
+{
+  "command": [
+    "go",
+    "test",
+    "-race",
+    "-p=1",
+    "-parallel=2",
+    "-count=1",
+    "-timeout=90s",
+    "-run",
+    "^(TestCompilation|TestExecutionCompilation|TestRestricted|TestTemplateBundle|TestInputAdmission|TestLex)",
+    "."
+  ],
+  "execution_deadline_seconds": 180,
+  "queue_wait_in_stage_elapsed": true,
+  "supervisor": "installed gate-lock",
+  "gate_deadline_seconds": 180,
+  "term_cleanup_seconds": 5,
+  "start": 1794124970.45084,
+  "end": 1794124981.6082718,
+  "exit_code": 0,
+  "manifest": "final-admission-race-inputs.json"
+}

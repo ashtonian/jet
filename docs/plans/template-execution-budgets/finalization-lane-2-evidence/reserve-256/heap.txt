@@ -1,0 +1,21 @@
+File: reserve-256.test
+Type: inuse_space
+Time: 2026-11-08 01:51:53 CST
+Showing nodes accounting for 30.93kB, 97.54% of 31.71kB total
+Dropped 64 nodes (cum <= 0.16kB)
+Showing top 14 nodes out of 65
+      flat  flat%   sum%        cum   cum%
+   20.33kB 64.10% 64.10%    20.33kB 64.10%  reflect.compiledTypelinks
+    4.52kB 14.24% 78.34%     4.55kB 14.34%  runtime.mallocgc
+    1.38kB  4.34% 82.68%     1.38kB  4.34%  regexp/syntax.(*compiler).inst (inline)
+    1.12kB  3.55% 86.23%    22.94kB 72.33%  encoding/json/v2.makeStructFields.func3
+    0.73kB  2.32% 88.54%    23.77kB 74.94%  encoding/json/v2.makeStructFields
+    0.62kB  1.97% 90.51%     0.62kB  1.97%  internal/sync.newIndirectNode[go.shape.interface {},go.shape.interface {}] (inline)
+    0.45kB  1.43% 91.94%     0.45kB  1.43%  encoding/json/v2.makeMapArshaler
+    0.38kB  1.18% 93.13%     0.38kB  1.18%  reflect.addReflectOff
+    0.33kB  1.03% 94.16%     0.33kB  1.03%  internal/sync.newEntryNode[go.shape.interface {},go.shape.interface {}] (inline)
+    0.28kB  0.89% 95.05%     0.28kB  0.89%  encoding/json/v2.makeStructArshaler
+    0.22kB  0.69% 95.74%     0.22kB  0.69%  testing.(*B).run1
+    0.20kB  0.64% 96.38%     0.23kB  0.71%  encoding/json/v2.makeSliceArshaler
+    0.20kB  0.62% 96.99%     0.20kB  0.62%  os.newFile
+    0.17kB  0.54% 97.54%     1.69kB  5.32%  regexp.compile

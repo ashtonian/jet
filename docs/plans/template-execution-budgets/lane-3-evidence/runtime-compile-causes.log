@@ -1,0 +1,2 @@
+gate-lock: held by pid 60075 on studio, "jet-lane3-runtime-compile-causes 1c63e78 in $CHECKOUT", since 2026-11-07T23:24:18Z, 2 of 6 focused cores
+ok  	github.com/CloudyKit/jet/v6	0.223s

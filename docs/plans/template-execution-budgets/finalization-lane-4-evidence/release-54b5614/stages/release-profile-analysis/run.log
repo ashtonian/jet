@@ -1,0 +1,1107 @@
+START profile-upstream-legacy_stream-profile-upstream-legacy_stream-cpu-cpu-flat
+END profile-upstream-legacy_stream-profile-upstream-legacy_stream-cpu-cpu-flat exit=0
+START profile-upstream-legacy_stream-profile-upstream-legacy_stream-cpu-cpu-cumulative
+END profile-upstream-legacy_stream-profile-upstream-legacy_stream-cpu-cpu-cumulative exit=0
+START profile-upstream-legacy_stream-profile-upstream-legacy_stream-cpu-cpu-call
+END profile-upstream-legacy_stream-profile-upstream-legacy_stream-cpu-cpu-call exit=0
+START profile-upstream-legacy_stream-profile-upstream-legacy_stream-cpu-cpu-callees
+END profile-upstream-legacy_stream-profile-upstream-legacy_stream-cpu-cpu-callees exit=0
+START profile-upstream-legacy_stream-profile-upstream-legacy_stream-cpu-cpu-source
+END profile-upstream-legacy_stream-profile-upstream-legacy_stream-cpu-cpu-source exit=0
+START profile-upstream-legacy_stream-profile-upstream-legacy_stream-heap-alloc_space
+END profile-upstream-legacy_stream-profile-upstream-legacy_stream-heap-alloc_space exit=0
+START profile-upstream-legacy_stream-profile-upstream-legacy_stream-heap-alloc_objects
+END profile-upstream-legacy_stream-profile-upstream-legacy_stream-heap-alloc_objects exit=0
+START profile-upstream-legacy_stream-profile-upstream-legacy_stream-heap-inuse_space
+END profile-upstream-legacy_stream-profile-upstream-legacy_stream-heap-inuse_space exit=0
+START profile-upstream-legacy_stream-profile-upstream-legacy_stream-heap-inuse_objects
+END profile-upstream-legacy_stream-profile-upstream-legacy_stream-heap-inuse_objects exit=0
+START profile-upstream-legacy_stream-profile-upstream-legacy_stream-heap-alloc-call
+END profile-upstream-legacy_stream-profile-upstream-legacy_stream-heap-alloc-call exit=0
+START profile-upstream-legacy_stream-profile-upstream-legacy_stream-heap-alloc-source
+END profile-upstream-legacy_stream-profile-upstream-legacy_stream-heap-alloc-source exit=0
+START profile-upstream-legacy_stream-profile-upstream-legacy_stream-mutex-mutex
+END profile-upstream-legacy_stream-profile-upstream-legacy_stream-mutex-mutex exit=0
+START profile-upstream-legacy_stream-profile-upstream-legacy_stream-mutex-mutex-call
+END profile-upstream-legacy_stream-profile-upstream-legacy_stream-mutex-mutex-call exit=0
+START profile-upstream-legacy_stream-profile-upstream-legacy_stream-block-block
+END profile-upstream-legacy_stream-profile-upstream-legacy_stream-block-block exit=0
+START profile-upstream-legacy_stream-profile-upstream-legacy_stream-block-block-call
+END profile-upstream-legacy_stream-profile-upstream-legacy_stream-block-block-call exit=0
+START profile-upstream-legacy_owned-profile-upstream-legacy_owned-cpu-cpu-flat
+END profile-upstream-legacy_owned-profile-upstream-legacy_owned-cpu-cpu-flat exit=0
+START profile-upstream-legacy_owned-profile-upstream-legacy_owned-cpu-cpu-cumulative
+END profile-upstream-legacy_owned-profile-upstream-legacy_owned-cpu-cpu-cumulative exit=0
+START profile-upstream-legacy_owned-profile-upstream-legacy_owned-cpu-cpu-call
+END profile-upstream-legacy_owned-profile-upstream-legacy_owned-cpu-cpu-call exit=0
+START profile-upstream-legacy_owned-profile-upstream-legacy_owned-cpu-cpu-callees
+END profile-upstream-legacy_owned-profile-upstream-legacy_owned-cpu-cpu-callees exit=0
+START profile-upstream-legacy_owned-profile-upstream-legacy_owned-cpu-cpu-source
+END profile-upstream-legacy_owned-profile-upstream-legacy_owned-cpu-cpu-source exit=0
+START profile-upstream-legacy_owned-profile-upstream-legacy_owned-heap-alloc_space
+END profile-upstream-legacy_owned-profile-upstream-legacy_owned-heap-alloc_space exit=0
+START profile-upstream-legacy_owned-profile-upstream-legacy_owned-heap-alloc_objects
+END profile-upstream-legacy_owned-profile-upstream-legacy_owned-heap-alloc_objects exit=0
+START profile-upstream-legacy_owned-profile-upstream-legacy_owned-heap-inuse_space
+END profile-upstream-legacy_owned-profile-upstream-legacy_owned-heap-inuse_space exit=0
+START profile-upstream-legacy_owned-profile-upstream-legacy_owned-heap-inuse_objects
+END profile-upstream-legacy_owned-profile-upstream-legacy_owned-heap-inuse_objects exit=0
+START profile-upstream-legacy_owned-profile-upstream-legacy_owned-heap-alloc-call
+END profile-upstream-legacy_owned-profile-upstream-legacy_owned-heap-alloc-call exit=0
+START profile-upstream-legacy_owned-profile-upstream-legacy_owned-heap-alloc-source
+END profile-upstream-legacy_owned-profile-upstream-legacy_owned-heap-alloc-source exit=0
+START profile-upstream-legacy_owned-profile-upstream-legacy_owned-mutex-mutex
+END profile-upstream-legacy_owned-profile-upstream-legacy_owned-mutex-mutex exit=0
+START profile-upstream-legacy_owned-profile-upstream-legacy_owned-mutex-mutex-call
+END profile-upstream-legacy_owned-profile-upstream-legacy_owned-mutex-mutex-call exit=0
+START profile-upstream-legacy_owned-profile-upstream-legacy_owned-block-block
+END profile-upstream-legacy_owned-profile-upstream-legacy_owned-block-block exit=0
+START profile-upstream-legacy_owned-profile-upstream-legacy_owned-block-block-call
+END profile-upstream-legacy_owned-profile-upstream-legacy_owned-block-block-call exit=0
+START profile-correctness-legacy_stream-profile-correctness-legacy_stream-cpu-cpu-flat
+END profile-correctness-legacy_stream-profile-correctness-legacy_stream-cpu-cpu-flat exit=0
+START profile-correctness-legacy_stream-profile-correctness-legacy_stream-cpu-cpu-cumulative
+END profile-correctness-legacy_stream-profile-correctness-legacy_stream-cpu-cpu-cumulative exit=0
+START profile-correctness-legacy_stream-profile-correctness-legacy_stream-cpu-cpu-call
+END profile-correctness-legacy_stream-profile-correctness-legacy_stream-cpu-cpu-call exit=0
+START profile-correctness-legacy_stream-profile-correctness-legacy_stream-cpu-cpu-callees
+END profile-correctness-legacy_stream-profile-correctness-legacy_stream-cpu-cpu-callees exit=0
+START profile-correctness-legacy_stream-profile-correctness-legacy_stream-cpu-cpu-source
+END profile-correctness-legacy_stream-profile-correctness-legacy_stream-cpu-cpu-source exit=0
+START profile-correctness-legacy_stream-profile-correctness-legacy_stream-heap-alloc_space
+END profile-correctness-legacy_stream-profile-correctness-legacy_stream-heap-alloc_space exit=0
+START profile-correctness-legacy_stream-profile-correctness-legacy_stream-heap-alloc_objects
+END profile-correctness-legacy_stream-profile-correctness-legacy_stream-heap-alloc_objects exit=0
+START profile-correctness-legacy_stream-profile-correctness-legacy_stream-heap-inuse_space
+END profile-correctness-legacy_stream-profile-correctness-legacy_stream-heap-inuse_space exit=0
+START profile-correctness-legacy_stream-profile-correctness-legacy_stream-heap-inuse_objects
+END profile-correctness-legacy_stream-profile-correctness-legacy_stream-heap-inuse_objects exit=0
+START profile-correctness-legacy_stream-profile-correctness-legacy_stream-heap-alloc-call
+END profile-correctness-legacy_stream-profile-correctness-legacy_stream-heap-alloc-call exit=0
+START profile-correctness-legacy_stream-profile-correctness-legacy_stream-heap-alloc-source
+END profile-correctness-legacy_stream-profile-correctness-legacy_stream-heap-alloc-source exit=0
+START profile-correctness-legacy_stream-profile-correctness-legacy_stream-mutex-mutex
+END profile-correctness-legacy_stream-profile-correctness-legacy_stream-mutex-mutex exit=0
+START profile-correctness-legacy_stream-profile-correctness-legacy_stream-mutex-mutex-call
+END profile-correctness-legacy_stream-profile-correctness-legacy_stream-mutex-mutex-call exit=0
+START profile-correctness-legacy_stream-profile-correctness-legacy_stream-block-block
+END profile-correctness-legacy_stream-profile-correctness-legacy_stream-block-block exit=0
+START profile-correctness-legacy_stream-profile-correctness-legacy_stream-block-block-call
+END profile-correctness-legacy_stream-profile-correctness-legacy_stream-block-block-call exit=0
+START profile-correctness-legacy_owned-profile-correctness-legacy_owned-cpu-cpu-flat
+END profile-correctness-legacy_owned-profile-correctness-legacy_owned-cpu-cpu-flat exit=0
+START profile-correctness-legacy_owned-profile-correctness-legacy_owned-cpu-cpu-cumulative
+END profile-correctness-legacy_owned-profile-correctness-legacy_owned-cpu-cpu-cumulative exit=0
+START profile-correctness-legacy_owned-profile-correctness-legacy_owned-cpu-cpu-call
+END profile-correctness-legacy_owned-profile-correctness-legacy_owned-cpu-cpu-call exit=0
+START profile-correctness-legacy_owned-profile-correctness-legacy_owned-cpu-cpu-callees
+END profile-correctness-legacy_owned-profile-correctness-legacy_owned-cpu-cpu-callees exit=0
+START profile-correctness-legacy_owned-profile-correctness-legacy_owned-cpu-cpu-source
+END profile-correctness-legacy_owned-profile-correctness-legacy_owned-cpu-cpu-source exit=0
+START profile-correctness-legacy_owned-profile-correctness-legacy_owned-heap-alloc_space
+END profile-correctness-legacy_owned-profile-correctness-legacy_owned-heap-alloc_space exit=0
+START profile-correctness-legacy_owned-profile-correctness-legacy_owned-heap-alloc_objects
+END profile-correctness-legacy_owned-profile-correctness-legacy_owned-heap-alloc_objects exit=0
+START profile-correctness-legacy_owned-profile-correctness-legacy_owned-heap-inuse_space
+END profile-correctness-legacy_owned-profile-correctness-legacy_owned-heap-inuse_space exit=0
+START profile-correctness-legacy_owned-profile-correctness-legacy_owned-heap-inuse_objects
+END profile-correctness-legacy_owned-profile-correctness-legacy_owned-heap-inuse_objects exit=0
+START profile-correctness-legacy_owned-profile-correctness-legacy_owned-heap-alloc-call
+END profile-correctness-legacy_owned-profile-correctness-legacy_owned-heap-alloc-call exit=0
+START profile-correctness-legacy_owned-profile-correctness-legacy_owned-heap-alloc-source
+END profile-correctness-legacy_owned-profile-correctness-legacy_owned-heap-alloc-source exit=0
+START profile-correctness-legacy_owned-profile-correctness-legacy_owned-mutex-mutex
+END profile-correctness-legacy_owned-profile-correctness-legacy_owned-mutex-mutex exit=0
+START profile-correctness-legacy_owned-profile-correctness-legacy_owned-mutex-mutex-call
+END profile-correctness-legacy_owned-profile-correctness-legacy_owned-mutex-mutex-call exit=0
+START profile-correctness-legacy_owned-profile-correctness-legacy_owned-block-block
+END profile-correctness-legacy_owned-profile-correctness-legacy_owned-block-block exit=0
+START profile-correctness-legacy_owned-profile-correctness-legacy_owned-block-block-call
+END profile-correctness-legacy_owned-profile-correctness-legacy_owned-block-block-call exit=0
+START profile-candidate-legacy_stream-profile-candidate-legacy_stream-cpu-cpu-flat
+END profile-candidate-legacy_stream-profile-candidate-legacy_stream-cpu-cpu-flat exit=0
+START profile-candidate-legacy_stream-profile-candidate-legacy_stream-cpu-cpu-cumulative
+END profile-candidate-legacy_stream-profile-candidate-legacy_stream-cpu-cpu-cumulative exit=0
+START profile-candidate-legacy_stream-profile-candidate-legacy_stream-cpu-cpu-call
+END profile-candidate-legacy_stream-profile-candidate-legacy_stream-cpu-cpu-call exit=0
+START profile-candidate-legacy_stream-profile-candidate-legacy_stream-cpu-cpu-callees
+END profile-candidate-legacy_stream-profile-candidate-legacy_stream-cpu-cpu-callees exit=0
+START profile-candidate-legacy_stream-profile-candidate-legacy_stream-cpu-cpu-source
+END profile-candidate-legacy_stream-profile-candidate-legacy_stream-cpu-cpu-source exit=0
+START profile-candidate-legacy_stream-profile-candidate-legacy_stream-heap-alloc_space
+END profile-candidate-legacy_stream-profile-candidate-legacy_stream-heap-alloc_space exit=0
+START profile-candidate-legacy_stream-profile-candidate-legacy_stream-heap-alloc_objects
+END profile-candidate-legacy_stream-profile-candidate-legacy_stream-heap-alloc_objects exit=0
+START profile-candidate-legacy_stream-profile-candidate-legacy_stream-heap-inuse_space
+END profile-candidate-legacy_stream-profile-candidate-legacy_stream-heap-inuse_space exit=0
+START profile-candidate-legacy_stream-profile-candidate-legacy_stream-heap-inuse_objects
+END profile-candidate-legacy_stream-profile-candidate-legacy_stream-heap-inuse_objects exit=0
+START profile-candidate-legacy_stream-profile-candidate-legacy_stream-heap-alloc-call
+END profile-candidate-legacy_stream-profile-candidate-legacy_stream-heap-alloc-call exit=0
+START profile-candidate-legacy_stream-profile-candidate-legacy_stream-heap-alloc-source
+END profile-candidate-legacy_stream-profile-candidate-legacy_stream-heap-alloc-source exit=0
+START profile-candidate-legacy_stream-profile-candidate-legacy_stream-mutex-mutex
+END profile-candidate-legacy_stream-profile-candidate-legacy_stream-mutex-mutex exit=0
+START profile-candidate-legacy_stream-profile-candidate-legacy_stream-mutex-mutex-call
+END profile-candidate-legacy_stream-profile-candidate-legacy_stream-mutex-mutex-call exit=0
+START profile-candidate-legacy_stream-profile-candidate-legacy_stream-block-block
+END profile-candidate-legacy_stream-profile-candidate-legacy_stream-block-block exit=0
+START profile-candidate-legacy_stream-profile-candidate-legacy_stream-block-block-call
+END profile-candidate-legacy_stream-profile-candidate-legacy_stream-block-block-call exit=0
+START profile-candidate-legacy_owned-profile-candidate-legacy_owned-cpu-cpu-flat
+END profile-candidate-legacy_owned-profile-candidate-legacy_owned-cpu-cpu-flat exit=0
+START profile-candidate-legacy_owned-profile-candidate-legacy_owned-cpu-cpu-cumulative
+END profile-candidate-legacy_owned-profile-candidate-legacy_owned-cpu-cpu-cumulative exit=0
+START profile-candidate-legacy_owned-profile-candidate-legacy_owned-cpu-cpu-call
+END profile-candidate-legacy_owned-profile-candidate-legacy_owned-cpu-cpu-call exit=0
+START profile-candidate-legacy_owned-profile-candidate-legacy_owned-cpu-cpu-callees
+END profile-candidate-legacy_owned-profile-candidate-legacy_owned-cpu-cpu-callees exit=0
+START profile-candidate-legacy_owned-profile-candidate-legacy_owned-cpu-cpu-source
+END profile-candidate-legacy_owned-profile-candidate-legacy_owned-cpu-cpu-source exit=0
+START profile-candidate-legacy_owned-profile-candidate-legacy_owned-heap-alloc_space
+END profile-candidate-legacy_owned-profile-candidate-legacy_owned-heap-alloc_space exit=0
+START profile-candidate-legacy_owned-profile-candidate-legacy_owned-heap-alloc_objects
+END profile-candidate-legacy_owned-profile-candidate-legacy_owned-heap-alloc_objects exit=0
+START profile-candidate-legacy_owned-profile-candidate-legacy_owned-heap-inuse_space
+END profile-candidate-legacy_owned-profile-candidate-legacy_owned-heap-inuse_space exit=0
+START profile-candidate-legacy_owned-profile-candidate-legacy_owned-heap-inuse_objects
+END profile-candidate-legacy_owned-profile-candidate-legacy_owned-heap-inuse_objects exit=0
+START profile-candidate-legacy_owned-profile-candidate-legacy_owned-heap-alloc-call
+END profile-candidate-legacy_owned-profile-candidate-legacy_owned-heap-alloc-call exit=0
+START profile-candidate-legacy_owned-profile-candidate-legacy_owned-heap-alloc-source
+END profile-candidate-legacy_owned-profile-candidate-legacy_owned-heap-alloc-source exit=0
+START profile-candidate-legacy_owned-profile-candidate-legacy_owned-mutex-mutex
+END profile-candidate-legacy_owned-profile-candidate-legacy_owned-mutex-mutex exit=0
+START profile-candidate-legacy_owned-profile-candidate-legacy_owned-mutex-mutex-call
+END profile-candidate-legacy_owned-profile-candidate-legacy_owned-mutex-mutex-call exit=0
+START profile-candidate-legacy_owned-profile-candidate-legacy_owned-block-block
+END profile-candidate-legacy_owned-profile-candidate-legacy_owned-block-block exit=0
+START profile-candidate-legacy_owned-profile-candidate-legacy_owned-block-block-call
+END profile-candidate-legacy_owned-profile-candidate-legacy_owned-block-block-call exit=0
+START profile-candidate-metered_background_stream-profile-candidate-metered_background_stream-cpu-cpu-flat
+END profile-candidate-metered_background_stream-profile-candidate-metered_background_stream-cpu-cpu-flat exit=0
+START profile-candidate-metered_background_stream-profile-candidate-metered_background_stream-cpu-cpu-cumulative
+END profile-candidate-metered_background_stream-profile-candidate-metered_background_stream-cpu-cpu-cumulative exit=0
+START profile-candidate-metered_background_stream-profile-candidate-metered_background_stream-cpu-cpu-call
+END profile-candidate-metered_background_stream-profile-candidate-metered_background_stream-cpu-cpu-call exit=0
+START profile-candidate-metered_background_stream-profile-candidate-metered_background_stream-cpu-cpu-callees
+END profile-candidate-metered_background_stream-profile-candidate-metered_background_stream-cpu-cpu-callees exit=0
+START profile-candidate-metered_background_stream-profile-candidate-metered_background_stream-cpu-cpu-source
+END profile-candidate-metered_background_stream-profile-candidate-metered_background_stream-cpu-cpu-source exit=0
+START profile-candidate-metered_background_stream-profile-candidate-metered_background_stream-heap-alloc_space
+END profile-candidate-metered_background_stream-profile-candidate-metered_background_stream-heap-alloc_space exit=0
+START profile-candidate-metered_background_stream-profile-candidate-metered_background_stream-heap-alloc_objects
+END profile-candidate-metered_background_stream-profile-candidate-metered_background_stream-heap-alloc_objects exit=0
+START profile-candidate-metered_background_stream-profile-candidate-metered_background_stream-heap-inuse_space
+END profile-candidate-metered_background_stream-profile-candidate-metered_background_stream-heap-inuse_space exit=0
+START profile-candidate-metered_background_stream-profile-candidate-metered_background_stream-heap-inuse_objects
+END profile-candidate-metered_background_stream-profile-candidate-metered_background_stream-heap-inuse_objects exit=0
+START profile-candidate-metered_background_stream-profile-candidate-metered_background_stream-heap-alloc-call
+END profile-candidate-metered_background_stream-profile-candidate-metered_background_stream-heap-alloc-call exit=0
+START profile-candidate-metered_background_stream-profile-candidate-metered_background_stream-heap-alloc-source
+END profile-candidate-metered_background_stream-profile-candidate-metered_background_stream-heap-alloc-source exit=2
+START profile-candidate-metered_background_stream-profile-candidate-metered_background_stream-mutex-mutex
+END profile-candidate-metered_background_stream-profile-candidate-metered_background_stream-mutex-mutex exit=0
+START profile-candidate-metered_background_stream-profile-candidate-metered_background_stream-mutex-mutex-call
+END profile-candidate-metered_background_stream-profile-candidate-metered_background_stream-mutex-mutex-call exit=0
+START profile-candidate-metered_background_stream-profile-candidate-metered_background_stream-block-block
+END profile-candidate-metered_background_stream-profile-candidate-metered_background_stream-block-block exit=0
+START profile-candidate-metered_background_stream-profile-candidate-metered_background_stream-block-block-call
+END profile-candidate-metered_background_stream-profile-candidate-metered_background_stream-block-block-call exit=0
+START profile-candidate-metered_live_stream-profile-candidate-metered_live_stream-cpu-cpu-flat
+END profile-candidate-metered_live_stream-profile-candidate-metered_live_stream-cpu-cpu-flat exit=0
+START profile-candidate-metered_live_stream-profile-candidate-metered_live_stream-cpu-cpu-cumulative
+END profile-candidate-metered_live_stream-profile-candidate-metered_live_stream-cpu-cpu-cumulative exit=0
+START profile-candidate-metered_live_stream-profile-candidate-metered_live_stream-cpu-cpu-call
+END profile-candidate-metered_live_stream-profile-candidate-metered_live_stream-cpu-cpu-call exit=0
+START profile-candidate-metered_live_stream-profile-candidate-metered_live_stream-cpu-cpu-callees
+END profile-candidate-metered_live_stream-profile-candidate-metered_live_stream-cpu-cpu-callees exit=0
+START profile-candidate-metered_live_stream-profile-candidate-metered_live_stream-cpu-cpu-source
+END profile-candidate-metered_live_stream-profile-candidate-metered_live_stream-cpu-cpu-source exit=0
+START profile-candidate-metered_live_stream-profile-candidate-metered_live_stream-heap-alloc_space
+END profile-candidate-metered_live_stream-profile-candidate-metered_live_stream-heap-alloc_space exit=0
+START profile-candidate-metered_live_stream-profile-candidate-metered_live_stream-heap-alloc_objects
+END profile-candidate-metered_live_stream-profile-candidate-metered_live_stream-heap-alloc_objects exit=0
+START profile-candidate-metered_live_stream-profile-candidate-metered_live_stream-heap-inuse_space
+END profile-candidate-metered_live_stream-profile-candidate-metered_live_stream-heap-inuse_space exit=0
+START profile-candidate-metered_live_stream-profile-candidate-metered_live_stream-heap-inuse_objects
+END profile-candidate-metered_live_stream-profile-candidate-metered_live_stream-heap-inuse_objects exit=0
+START profile-candidate-metered_live_stream-profile-candidate-metered_live_stream-heap-alloc-call
+END profile-candidate-metered_live_stream-profile-candidate-metered_live_stream-heap-alloc-call exit=0
+START profile-candidate-metered_live_stream-profile-candidate-metered_live_stream-heap-alloc-source
+END profile-candidate-metered_live_stream-profile-candidate-metered_live_stream-heap-alloc-source exit=0
+START profile-candidate-metered_live_stream-profile-candidate-metered_live_stream-mutex-mutex
+END profile-candidate-metered_live_stream-profile-candidate-metered_live_stream-mutex-mutex exit=0
+START profile-candidate-metered_live_stream-profile-candidate-metered_live_stream-mutex-mutex-call
+END profile-candidate-metered_live_stream-profile-candidate-metered_live_stream-mutex-mutex-call exit=0
+START profile-candidate-metered_live_stream-profile-candidate-metered_live_stream-block-block
+END profile-candidate-metered_live_stream-profile-candidate-metered_live_stream-block-block exit=0
+START profile-candidate-metered_live_stream-profile-candidate-metered_live_stream-block-block-call
+END profile-candidate-metered_live_stream-profile-candidate-metered_live_stream-block-block-call exit=0
+START profile-candidate-restricted_owned-profile-candidate-restricted_owned-cpu-cpu-flat
+END profile-candidate-restricted_owned-profile-candidate-restricted_owned-cpu-cpu-flat exit=0
+START profile-candidate-restricted_owned-profile-candidate-restricted_owned-cpu-cpu-cumulative
+END profile-candidate-restricted_owned-profile-candidate-restricted_owned-cpu-cpu-cumulative exit=0
+START profile-candidate-restricted_owned-profile-candidate-restricted_owned-cpu-cpu-call
+END profile-candidate-restricted_owned-profile-candidate-restricted_owned-cpu-cpu-call exit=0
+START profile-candidate-restricted_owned-profile-candidate-restricted_owned-cpu-cpu-callees
+END profile-candidate-restricted_owned-profile-candidate-restricted_owned-cpu-cpu-callees exit=0
+START profile-candidate-restricted_owned-profile-candidate-restricted_owned-cpu-cpu-source
+END profile-candidate-restricted_owned-profile-candidate-restricted_owned-cpu-cpu-source exit=0
+START profile-candidate-restricted_owned-profile-candidate-restricted_owned-heap-alloc_space
+END profile-candidate-restricted_owned-profile-candidate-restricted_owned-heap-alloc_space exit=0
+START profile-candidate-restricted_owned-profile-candidate-restricted_owned-heap-alloc_objects
+END profile-candidate-restricted_owned-profile-candidate-restricted_owned-heap-alloc_objects exit=0
+START profile-candidate-restricted_owned-profile-candidate-restricted_owned-heap-inuse_space
+END profile-candidate-restricted_owned-profile-candidate-restricted_owned-heap-inuse_space exit=0
+START profile-candidate-restricted_owned-profile-candidate-restricted_owned-heap-inuse_objects
+END profile-candidate-restricted_owned-profile-candidate-restricted_owned-heap-inuse_objects exit=0
+START profile-candidate-restricted_owned-profile-candidate-restricted_owned-heap-alloc-call
+END profile-candidate-restricted_owned-profile-candidate-restricted_owned-heap-alloc-call exit=0
+START profile-candidate-restricted_owned-profile-candidate-restricted_owned-heap-alloc-source
+END profile-candidate-restricted_owned-profile-candidate-restricted_owned-heap-alloc-source exit=0
+START profile-candidate-restricted_owned-profile-candidate-restricted_owned-mutex-mutex
+END profile-candidate-restricted_owned-profile-candidate-restricted_owned-mutex-mutex exit=0
+START profile-candidate-restricted_owned-profile-candidate-restricted_owned-mutex-mutex-call
+END profile-candidate-restricted_owned-profile-candidate-restricted_owned-mutex-mutex-call exit=0
+START profile-candidate-restricted_owned-profile-candidate-restricted_owned-block-block
+END profile-candidate-restricted_owned-profile-candidate-restricted_owned-block-block exit=0
+START profile-candidate-restricted_owned-profile-candidate-restricted_owned-block-block-call
+END profile-candidate-restricted_owned-profile-candidate-restricted_owned-block-block-call exit=0
+START profile-concurrent-upstream-legacy_stream-profile-concurrent-upstream-legacy_stream-cpu-cpu-flat
+END profile-concurrent-upstream-legacy_stream-profile-concurrent-upstream-legacy_stream-cpu-cpu-flat exit=0
+START profile-concurrent-upstream-legacy_stream-profile-concurrent-upstream-legacy_stream-cpu-cpu-cumulative
+END profile-concurrent-upstream-legacy_stream-profile-concurrent-upstream-legacy_stream-cpu-cpu-cumulative exit=0
+START profile-concurrent-upstream-legacy_stream-profile-concurrent-upstream-legacy_stream-cpu-cpu-call
+END profile-concurrent-upstream-legacy_stream-profile-concurrent-upstream-legacy_stream-cpu-cpu-call exit=0
+START profile-concurrent-upstream-legacy_stream-profile-concurrent-upstream-legacy_stream-cpu-cpu-callees
+END profile-concurrent-upstream-legacy_stream-profile-concurrent-upstream-legacy_stream-cpu-cpu-callees exit=0
+START profile-concurrent-upstream-legacy_stream-profile-concurrent-upstream-legacy_stream-cpu-cpu-source
+END profile-concurrent-upstream-legacy_stream-profile-concurrent-upstream-legacy_stream-cpu-cpu-source exit=0
+START profile-concurrent-upstream-legacy_stream-profile-concurrent-upstream-legacy_stream-heap-alloc_space
+END profile-concurrent-upstream-legacy_stream-profile-concurrent-upstream-legacy_stream-heap-alloc_space exit=0
+START profile-concurrent-upstream-legacy_stream-profile-concurrent-upstream-legacy_stream-heap-alloc_objects
+END profile-concurrent-upstream-legacy_stream-profile-concurrent-upstream-legacy_stream-heap-alloc_objects exit=0
+START profile-concurrent-upstream-legacy_stream-profile-concurrent-upstream-legacy_stream-heap-inuse_space
+END profile-concurrent-upstream-legacy_stream-profile-concurrent-upstream-legacy_stream-heap-inuse_space exit=0
+START profile-concurrent-upstream-legacy_stream-profile-concurrent-upstream-legacy_stream-heap-inuse_objects
+END profile-concurrent-upstream-legacy_stream-profile-concurrent-upstream-legacy_stream-heap-inuse_objects exit=0
+START profile-concurrent-upstream-legacy_stream-profile-concurrent-upstream-legacy_stream-heap-alloc-call
+END profile-concurrent-upstream-legacy_stream-profile-concurrent-upstream-legacy_stream-heap-alloc-call exit=0
+START profile-concurrent-upstream-legacy_stream-profile-concurrent-upstream-legacy_stream-heap-alloc-source
+END profile-concurrent-upstream-legacy_stream-profile-concurrent-upstream-legacy_stream-heap-alloc-source exit=0
+START profile-concurrent-upstream-legacy_stream-profile-concurrent-upstream-legacy_stream-mutex-mutex
+END profile-concurrent-upstream-legacy_stream-profile-concurrent-upstream-legacy_stream-mutex-mutex exit=0
+START profile-concurrent-upstream-legacy_stream-profile-concurrent-upstream-legacy_stream-mutex-mutex-call
+END profile-concurrent-upstream-legacy_stream-profile-concurrent-upstream-legacy_stream-mutex-mutex-call exit=0
+START profile-concurrent-upstream-legacy_stream-profile-concurrent-upstream-legacy_stream-block-block
+END profile-concurrent-upstream-legacy_stream-profile-concurrent-upstream-legacy_stream-block-block exit=0
+START profile-concurrent-upstream-legacy_stream-profile-concurrent-upstream-legacy_stream-block-block-call
+END profile-concurrent-upstream-legacy_stream-profile-concurrent-upstream-legacy_stream-block-block-call exit=0
+START profile-concurrent-upstream-legacy_owned-profile-concurrent-upstream-legacy_owned-cpu-cpu-flat
+END profile-concurrent-upstream-legacy_owned-profile-concurrent-upstream-legacy_owned-cpu-cpu-flat exit=0
+START profile-concurrent-upstream-legacy_owned-profile-concurrent-upstream-legacy_owned-cpu-cpu-cumulative
+END profile-concurrent-upstream-legacy_owned-profile-concurrent-upstream-legacy_owned-cpu-cpu-cumulative exit=0
+START profile-concurrent-upstream-legacy_owned-profile-concurrent-upstream-legacy_owned-cpu-cpu-call
+END profile-concurrent-upstream-legacy_owned-profile-concurrent-upstream-legacy_owned-cpu-cpu-call exit=0
+START profile-concurrent-upstream-legacy_owned-profile-concurrent-upstream-legacy_owned-cpu-cpu-callees
+END profile-concurrent-upstream-legacy_owned-profile-concurrent-upstream-legacy_owned-cpu-cpu-callees exit=0
+START profile-concurrent-upstream-legacy_owned-profile-concurrent-upstream-legacy_owned-cpu-cpu-source
+END profile-concurrent-upstream-legacy_owned-profile-concurrent-upstream-legacy_owned-cpu-cpu-source exit=0
+START profile-concurrent-upstream-legacy_owned-profile-concurrent-upstream-legacy_owned-heap-alloc_space
+END profile-concurrent-upstream-legacy_owned-profile-concurrent-upstream-legacy_owned-heap-alloc_space exit=0
+START profile-concurrent-upstream-legacy_owned-profile-concurrent-upstream-legacy_owned-heap-alloc_objects
+END profile-concurrent-upstream-legacy_owned-profile-concurrent-upstream-legacy_owned-heap-alloc_objects exit=0
+START profile-concurrent-upstream-legacy_owned-profile-concurrent-upstream-legacy_owned-heap-inuse_space
+END profile-concurrent-upstream-legacy_owned-profile-concurrent-upstream-legacy_owned-heap-inuse_space exit=0
+START profile-concurrent-upstream-legacy_owned-profile-concurrent-upstream-legacy_owned-heap-inuse_objects
+END profile-concurrent-upstream-legacy_owned-profile-concurrent-upstream-legacy_owned-heap-inuse_objects exit=0
+START profile-concurrent-upstream-legacy_owned-profile-concurrent-upstream-legacy_owned-heap-alloc-call
+END profile-concurrent-upstream-legacy_owned-profile-concurrent-upstream-legacy_owned-heap-alloc-call exit=0
+START profile-concurrent-upstream-legacy_owned-profile-concurrent-upstream-legacy_owned-heap-alloc-source
+END profile-concurrent-upstream-legacy_owned-profile-concurrent-upstream-legacy_owned-heap-alloc-source exit=0
+START profile-concurrent-upstream-legacy_owned-profile-concurrent-upstream-legacy_owned-mutex-mutex
+END profile-concurrent-upstream-legacy_owned-profile-concurrent-upstream-legacy_owned-mutex-mutex exit=0
+START profile-concurrent-upstream-legacy_owned-profile-concurrent-upstream-legacy_owned-mutex-mutex-call
+END profile-concurrent-upstream-legacy_owned-profile-concurrent-upstream-legacy_owned-mutex-mutex-call exit=0
+START profile-concurrent-upstream-legacy_owned-profile-concurrent-upstream-legacy_owned-block-block
+END profile-concurrent-upstream-legacy_owned-profile-concurrent-upstream-legacy_owned-block-block exit=0
+START profile-concurrent-upstream-legacy_owned-profile-concurrent-upstream-legacy_owned-block-block-call
+END profile-concurrent-upstream-legacy_owned-profile-concurrent-upstream-legacy_owned-block-block-call exit=0
+START profile-concurrent-correctness-legacy_stream-profile-concurrent-correctness-legacy_stream-cpu-cpu-flat
+END profile-concurrent-correctness-legacy_stream-profile-concurrent-correctness-legacy_stream-cpu-cpu-flat exit=0
+START profile-concurrent-correctness-legacy_stream-profile-concurrent-correctness-legacy_stream-cpu-cpu-cumulative
+END profile-concurrent-correctness-legacy_stream-profile-concurrent-correctness-legacy_stream-cpu-cpu-cumulative exit=0
+START profile-concurrent-correctness-legacy_stream-profile-concurrent-correctness-legacy_stream-cpu-cpu-call
+END profile-concurrent-correctness-legacy_stream-profile-concurrent-correctness-legacy_stream-cpu-cpu-call exit=0
+START profile-concurrent-correctness-legacy_stream-profile-concurrent-correctness-legacy_stream-cpu-cpu-callees
+END profile-concurrent-correctness-legacy_stream-profile-concurrent-correctness-legacy_stream-cpu-cpu-callees exit=0
+START profile-concurrent-correctness-legacy_stream-profile-concurrent-correctness-legacy_stream-cpu-cpu-source
+END profile-concurrent-correctness-legacy_stream-profile-concurrent-correctness-legacy_stream-cpu-cpu-source exit=0
+START profile-concurrent-correctness-legacy_stream-profile-concurrent-correctness-legacy_stream-heap-alloc_space
+END profile-concurrent-correctness-legacy_stream-profile-concurrent-correctness-legacy_stream-heap-alloc_space exit=0
+START profile-concurrent-correctness-legacy_stream-profile-concurrent-correctness-legacy_stream-heap-alloc_objects
+END profile-concurrent-correctness-legacy_stream-profile-concurrent-correctness-legacy_stream-heap-alloc_objects exit=0
+START profile-concurrent-correctness-legacy_stream-profile-concurrent-correctness-legacy_stream-heap-inuse_space
+END profile-concurrent-correctness-legacy_stream-profile-concurrent-correctness-legacy_stream-heap-inuse_space exit=0
+START profile-concurrent-correctness-legacy_stream-profile-concurrent-correctness-legacy_stream-heap-inuse_objects
+END profile-concurrent-correctness-legacy_stream-profile-concurrent-correctness-legacy_stream-heap-inuse_objects exit=0
+START profile-concurrent-correctness-legacy_stream-profile-concurrent-correctness-legacy_stream-heap-alloc-call
+END profile-concurrent-correctness-legacy_stream-profile-concurrent-correctness-legacy_stream-heap-alloc-call exit=0
+START profile-concurrent-correctness-legacy_stream-profile-concurrent-correctness-legacy_stream-heap-alloc-source
+END profile-concurrent-correctness-legacy_stream-profile-concurrent-correctness-legacy_stream-heap-alloc-source exit=0
+START profile-concurrent-correctness-legacy_stream-profile-concurrent-correctness-legacy_stream-mutex-mutex
+END profile-concurrent-correctness-legacy_stream-profile-concurrent-correctness-legacy_stream-mutex-mutex exit=0
+START profile-concurrent-correctness-legacy_stream-profile-concurrent-correctness-legacy_stream-mutex-mutex-call
+END profile-concurrent-correctness-legacy_stream-profile-concurrent-correctness-legacy_stream-mutex-mutex-call exit=0
+START profile-concurrent-correctness-legacy_stream-profile-concurrent-correctness-legacy_stream-block-block
+END profile-concurrent-correctness-legacy_stream-profile-concurrent-correctness-legacy_stream-block-block exit=0
+START profile-concurrent-correctness-legacy_stream-profile-concurrent-correctness-legacy_stream-block-block-call
+END profile-concurrent-correctness-legacy_stream-profile-concurrent-correctness-legacy_stream-block-block-call exit=0
+START profile-concurrent-correctness-legacy_owned-profile-concurrent-correctness-legacy_owned-cpu-cpu-flat
+END profile-concurrent-correctness-legacy_owned-profile-concurrent-correctness-legacy_owned-cpu-cpu-flat exit=0
+START profile-concurrent-correctness-legacy_owned-profile-concurrent-correctness-legacy_owned-cpu-cpu-cumulative
+END profile-concurrent-correctness-legacy_owned-profile-concurrent-correctness-legacy_owned-cpu-cpu-cumulative exit=0
+START profile-concurrent-correctness-legacy_owned-profile-concurrent-correctness-legacy_owned-cpu-cpu-call
+END profile-concurrent-correctness-legacy_owned-profile-concurrent-correctness-legacy_owned-cpu-cpu-call exit=0
+START profile-concurrent-correctness-legacy_owned-profile-concurrent-correctness-legacy_owned-cpu-cpu-callees
+END profile-concurrent-correctness-legacy_owned-profile-concurrent-correctness-legacy_owned-cpu-cpu-callees exit=0
+START profile-concurrent-correctness-legacy_owned-profile-concurrent-correctness-legacy_owned-cpu-cpu-source
+END profile-concurrent-correctness-legacy_owned-profile-concurrent-correctness-legacy_owned-cpu-cpu-source exit=0
+START profile-concurrent-correctness-legacy_owned-profile-concurrent-correctness-legacy_owned-heap-alloc_space
+END profile-concurrent-correctness-legacy_owned-profile-concurrent-correctness-legacy_owned-heap-alloc_space exit=0
+START profile-concurrent-correctness-legacy_owned-profile-concurrent-correctness-legacy_owned-heap-alloc_objects
+END profile-concurrent-correctness-legacy_owned-profile-concurrent-correctness-legacy_owned-heap-alloc_objects exit=0
+START profile-concurrent-correctness-legacy_owned-profile-concurrent-correctness-legacy_owned-heap-inuse_space
+END profile-concurrent-correctness-legacy_owned-profile-concurrent-correctness-legacy_owned-heap-inuse_space exit=0
+START profile-concurrent-correctness-legacy_owned-profile-concurrent-correctness-legacy_owned-heap-inuse_objects
+END profile-concurrent-correctness-legacy_owned-profile-concurrent-correctness-legacy_owned-heap-inuse_objects exit=0
+START profile-concurrent-correctness-legacy_owned-profile-concurrent-correctness-legacy_owned-heap-alloc-call
+END profile-concurrent-correctness-legacy_owned-profile-concurrent-correctness-legacy_owned-heap-alloc-call exit=0
+START profile-concurrent-correctness-legacy_owned-profile-concurrent-correctness-legacy_owned-heap-alloc-source
+END profile-concurrent-correctness-legacy_owned-profile-concurrent-correctness-legacy_owned-heap-alloc-source exit=0
+START profile-concurrent-correctness-legacy_owned-profile-concurrent-correctness-legacy_owned-mutex-mutex
+END profile-concurrent-correctness-legacy_owned-profile-concurrent-correctness-legacy_owned-mutex-mutex exit=0
+START profile-concurrent-correctness-legacy_owned-profile-concurrent-correctness-legacy_owned-mutex-mutex-call
+END profile-concurrent-correctness-legacy_owned-profile-concurrent-correctness-legacy_owned-mutex-mutex-call exit=0
+START profile-concurrent-correctness-legacy_owned-profile-concurrent-correctness-legacy_owned-block-block
+END profile-concurrent-correctness-legacy_owned-profile-concurrent-correctness-legacy_owned-block-block exit=0
+START profile-concurrent-correctness-legacy_owned-profile-concurrent-correctness-legacy_owned-block-block-call
+END profile-concurrent-correctness-legacy_owned-profile-concurrent-correctness-legacy_owned-block-block-call exit=0
+START profile-concurrent-candidate-legacy_stream-profile-concurrent-candidate-legacy_stream-cpu-cpu-flat
+END profile-concurrent-candidate-legacy_stream-profile-concurrent-candidate-legacy_stream-cpu-cpu-flat exit=0
+START profile-concurrent-candidate-legacy_stream-profile-concurrent-candidate-legacy_stream-cpu-cpu-cumulative
+END profile-concurrent-candidate-legacy_stream-profile-concurrent-candidate-legacy_stream-cpu-cpu-cumulative exit=0
+START profile-concurrent-candidate-legacy_stream-profile-concurrent-candidate-legacy_stream-cpu-cpu-call
+END profile-concurrent-candidate-legacy_stream-profile-concurrent-candidate-legacy_stream-cpu-cpu-call exit=0
+START profile-concurrent-candidate-legacy_stream-profile-concurrent-candidate-legacy_stream-cpu-cpu-callees
+END profile-concurrent-candidate-legacy_stream-profile-concurrent-candidate-legacy_stream-cpu-cpu-callees exit=0
+START profile-concurrent-candidate-legacy_stream-profile-concurrent-candidate-legacy_stream-cpu-cpu-source
+END profile-concurrent-candidate-legacy_stream-profile-concurrent-candidate-legacy_stream-cpu-cpu-source exit=0
+START profile-concurrent-candidate-legacy_stream-profile-concurrent-candidate-legacy_stream-heap-alloc_space
+END profile-concurrent-candidate-legacy_stream-profile-concurrent-candidate-legacy_stream-heap-alloc_space exit=0
+START profile-concurrent-candidate-legacy_stream-profile-concurrent-candidate-legacy_stream-heap-alloc_objects
+END profile-concurrent-candidate-legacy_stream-profile-concurrent-candidate-legacy_stream-heap-alloc_objects exit=0
+START profile-concurrent-candidate-legacy_stream-profile-concurrent-candidate-legacy_stream-heap-inuse_space
+END profile-concurrent-candidate-legacy_stream-profile-concurrent-candidate-legacy_stream-heap-inuse_space exit=0
+START profile-concurrent-candidate-legacy_stream-profile-concurrent-candidate-legacy_stream-heap-inuse_objects
+END profile-concurrent-candidate-legacy_stream-profile-concurrent-candidate-legacy_stream-heap-inuse_objects exit=0
+START profile-concurrent-candidate-legacy_stream-profile-concurrent-candidate-legacy_stream-heap-alloc-call
+END profile-concurrent-candidate-legacy_stream-profile-concurrent-candidate-legacy_stream-heap-alloc-call exit=0
+START profile-concurrent-candidate-legacy_stream-profile-concurrent-candidate-legacy_stream-heap-alloc-source
+END profile-concurrent-candidate-legacy_stream-profile-concurrent-candidate-legacy_stream-heap-alloc-source exit=0
+START profile-concurrent-candidate-legacy_stream-profile-concurrent-candidate-legacy_stream-mutex-mutex
+END profile-concurrent-candidate-legacy_stream-profile-concurrent-candidate-legacy_stream-mutex-mutex exit=0
+START profile-concurrent-candidate-legacy_stream-profile-concurrent-candidate-legacy_stream-mutex-mutex-call
+END profile-concurrent-candidate-legacy_stream-profile-concurrent-candidate-legacy_stream-mutex-mutex-call exit=0
+START profile-concurrent-candidate-legacy_stream-profile-concurrent-candidate-legacy_stream-block-block
+END profile-concurrent-candidate-legacy_stream-profile-concurrent-candidate-legacy_stream-block-block exit=0
+START profile-concurrent-candidate-legacy_stream-profile-concurrent-candidate-legacy_stream-block-block-call
+END profile-concurrent-candidate-legacy_stream-profile-concurrent-candidate-legacy_stream-block-block-call exit=0
+START profile-concurrent-candidate-legacy_owned-profile-concurrent-candidate-legacy_owned-cpu-cpu-flat
+END profile-concurrent-candidate-legacy_owned-profile-concurrent-candidate-legacy_owned-cpu-cpu-flat exit=0
+START profile-concurrent-candidate-legacy_owned-profile-concurrent-candidate-legacy_owned-cpu-cpu-cumulative
+END profile-concurrent-candidate-legacy_owned-profile-concurrent-candidate-legacy_owned-cpu-cpu-cumulative exit=0
+START profile-concurrent-candidate-legacy_owned-profile-concurrent-candidate-legacy_owned-cpu-cpu-call
+END profile-concurrent-candidate-legacy_owned-profile-concurrent-candidate-legacy_owned-cpu-cpu-call exit=0
+START profile-concurrent-candidate-legacy_owned-profile-concurrent-candidate-legacy_owned-cpu-cpu-callees
+END profile-concurrent-candidate-legacy_owned-profile-concurrent-candidate-legacy_owned-cpu-cpu-callees exit=0
+START profile-concurrent-candidate-legacy_owned-profile-concurrent-candidate-legacy_owned-cpu-cpu-source
+END profile-concurrent-candidate-legacy_owned-profile-concurrent-candidate-legacy_owned-cpu-cpu-source exit=0
+START profile-concurrent-candidate-legacy_owned-profile-concurrent-candidate-legacy_owned-heap-alloc_space
+END profile-concurrent-candidate-legacy_owned-profile-concurrent-candidate-legacy_owned-heap-alloc_space exit=0
+START profile-concurrent-candidate-legacy_owned-profile-concurrent-candidate-legacy_owned-heap-alloc_objects
+END profile-concurrent-candidate-legacy_owned-profile-concurrent-candidate-legacy_owned-heap-alloc_objects exit=0
+START profile-concurrent-candidate-legacy_owned-profile-concurrent-candidate-legacy_owned-heap-inuse_space
+END profile-concurrent-candidate-legacy_owned-profile-concurrent-candidate-legacy_owned-heap-inuse_space exit=0
+START profile-concurrent-candidate-legacy_owned-profile-concurrent-candidate-legacy_owned-heap-inuse_objects
+END profile-concurrent-candidate-legacy_owned-profile-concurrent-candidate-legacy_owned-heap-inuse_objects exit=0
+START profile-concurrent-candidate-legacy_owned-profile-concurrent-candidate-legacy_owned-heap-alloc-call
+END profile-concurrent-candidate-legacy_owned-profile-concurrent-candidate-legacy_owned-heap-alloc-call exit=0
+START profile-concurrent-candidate-legacy_owned-profile-concurrent-candidate-legacy_owned-heap-alloc-source
+END profile-concurrent-candidate-legacy_owned-profile-concurrent-candidate-legacy_owned-heap-alloc-source exit=0
+START profile-concurrent-candidate-legacy_owned-profile-concurrent-candidate-legacy_owned-mutex-mutex
+END profile-concurrent-candidate-legacy_owned-profile-concurrent-candidate-legacy_owned-mutex-mutex exit=0
+START profile-concurrent-candidate-legacy_owned-profile-concurrent-candidate-legacy_owned-mutex-mutex-call
+END profile-concurrent-candidate-legacy_owned-profile-concurrent-candidate-legacy_owned-mutex-mutex-call exit=0
+START profile-concurrent-candidate-legacy_owned-profile-concurrent-candidate-legacy_owned-block-block
+END profile-concurrent-candidate-legacy_owned-profile-concurrent-candidate-legacy_owned-block-block exit=0
+START profile-concurrent-candidate-legacy_owned-profile-concurrent-candidate-legacy_owned-block-block-call
+END profile-concurrent-candidate-legacy_owned-profile-concurrent-candidate-legacy_owned-block-block-call exit=0
+START profile-concurrent-candidate-metered_background_stream-profile-concurrent-candidate-metered_background_stream-cpu-cpu-flat
+END profile-concurrent-candidate-metered_background_stream-profile-concurrent-candidate-metered_background_stream-cpu-cpu-flat exit=0
+START profile-concurrent-candidate-metered_background_stream-profile-concurrent-candidate-metered_background_stream-cpu-cpu-cumulative
+END profile-concurrent-candidate-metered_background_stream-profile-concurrent-candidate-metered_background_stream-cpu-cpu-cumulative exit=0
+START profile-concurrent-candidate-metered_background_stream-profile-concurrent-candidate-metered_background_stream-cpu-cpu-call
+END profile-concurrent-candidate-metered_background_stream-profile-concurrent-candidate-metered_background_stream-cpu-cpu-call exit=0
+START profile-concurrent-candidate-metered_background_stream-profile-concurrent-candidate-metered_background_stream-cpu-cpu-callees
+END profile-concurrent-candidate-metered_background_stream-profile-concurrent-candidate-metered_background_stream-cpu-cpu-callees exit=0
+START profile-concurrent-candidate-metered_background_stream-profile-concurrent-candidate-metered_background_stream-cpu-cpu-source
+END profile-concurrent-candidate-metered_background_stream-profile-concurrent-candidate-metered_background_stream-cpu-cpu-source exit=0
+START profile-concurrent-candidate-metered_background_stream-profile-concurrent-candidate-metered_background_stream-heap-alloc_space
+END profile-concurrent-candidate-metered_background_stream-profile-concurrent-candidate-metered_background_stream-heap-alloc_space exit=0
+START profile-concurrent-candidate-metered_background_stream-profile-concurrent-candidate-metered_background_stream-heap-alloc_objects
+END profile-concurrent-candidate-metered_background_stream-profile-concurrent-candidate-metered_background_stream-heap-alloc_objects exit=0
+START profile-concurrent-candidate-metered_background_stream-profile-concurrent-candidate-metered_background_stream-heap-inuse_space
+END profile-concurrent-candidate-metered_background_stream-profile-concurrent-candidate-metered_background_stream-heap-inuse_space exit=0
+START profile-concurrent-candidate-metered_background_stream-profile-concurrent-candidate-metered_background_stream-heap-inuse_objects
+END profile-concurrent-candidate-metered_background_stream-profile-concurrent-candidate-metered_background_stream-heap-inuse_objects exit=0
+START profile-concurrent-candidate-metered_background_stream-profile-concurrent-candidate-metered_background_stream-heap-alloc-call
+END profile-concurrent-candidate-metered_background_stream-profile-concurrent-candidate-metered_background_stream-heap-alloc-call exit=0
+START profile-concurrent-candidate-metered_background_stream-profile-concurrent-candidate-metered_background_stream-heap-alloc-source
+END profile-concurrent-candidate-metered_background_stream-profile-concurrent-candidate-metered_background_stream-heap-alloc-source exit=0
+START profile-concurrent-candidate-metered_background_stream-profile-concurrent-candidate-metered_background_stream-mutex-mutex
+END profile-concurrent-candidate-metered_background_stream-profile-concurrent-candidate-metered_background_stream-mutex-mutex exit=0
+START profile-concurrent-candidate-metered_background_stream-profile-concurrent-candidate-metered_background_stream-mutex-mutex-call
+END profile-concurrent-candidate-metered_background_stream-profile-concurrent-candidate-metered_background_stream-mutex-mutex-call exit=0
+START profile-concurrent-candidate-metered_background_stream-profile-concurrent-candidate-metered_background_stream-block-block
+END profile-concurrent-candidate-metered_background_stream-profile-concurrent-candidate-metered_background_stream-block-block exit=0
+START profile-concurrent-candidate-metered_background_stream-profile-concurrent-candidate-metered_background_stream-block-block-call
+END profile-concurrent-candidate-metered_background_stream-profile-concurrent-candidate-metered_background_stream-block-block-call exit=0
+START profile-concurrent-candidate-metered_live_stream-profile-concurrent-candidate-metered_live_stream-cpu-cpu-flat
+END profile-concurrent-candidate-metered_live_stream-profile-concurrent-candidate-metered_live_stream-cpu-cpu-flat exit=0
+START profile-concurrent-candidate-metered_live_stream-profile-concurrent-candidate-metered_live_stream-cpu-cpu-cumulative
+END profile-concurrent-candidate-metered_live_stream-profile-concurrent-candidate-metered_live_stream-cpu-cpu-cumulative exit=0
+START profile-concurrent-candidate-metered_live_stream-profile-concurrent-candidate-metered_live_stream-cpu-cpu-call
+END profile-concurrent-candidate-metered_live_stream-profile-concurrent-candidate-metered_live_stream-cpu-cpu-call exit=0
+START profile-concurrent-candidate-metered_live_stream-profile-concurrent-candidate-metered_live_stream-cpu-cpu-callees
+END profile-concurrent-candidate-metered_live_stream-profile-concurrent-candidate-metered_live_stream-cpu-cpu-callees exit=0
+START profile-concurrent-candidate-metered_live_stream-profile-concurrent-candidate-metered_live_stream-cpu-cpu-source
+END profile-concurrent-candidate-metered_live_stream-profile-concurrent-candidate-metered_live_stream-cpu-cpu-source exit=0
+START profile-concurrent-candidate-metered_live_stream-profile-concurrent-candidate-metered_live_stream-heap-alloc_space
+END profile-concurrent-candidate-metered_live_stream-profile-concurrent-candidate-metered_live_stream-heap-alloc_space exit=0
+START profile-concurrent-candidate-metered_live_stream-profile-concurrent-candidate-metered_live_stream-heap-alloc_objects
+END profile-concurrent-candidate-metered_live_stream-profile-concurrent-candidate-metered_live_stream-heap-alloc_objects exit=0
+START profile-concurrent-candidate-metered_live_stream-profile-concurrent-candidate-metered_live_stream-heap-inuse_space
+END profile-concurrent-candidate-metered_live_stream-profile-concurrent-candidate-metered_live_stream-heap-inuse_space exit=0
+START profile-concurrent-candidate-metered_live_stream-profile-concurrent-candidate-metered_live_stream-heap-inuse_objects
+END profile-concurrent-candidate-metered_live_stream-profile-concurrent-candidate-metered_live_stream-heap-inuse_objects exit=0
+START profile-concurrent-candidate-metered_live_stream-profile-concurrent-candidate-metered_live_stream-heap-alloc-call
+END profile-concurrent-candidate-metered_live_stream-profile-concurrent-candidate-metered_live_stream-heap-alloc-call exit=0
+START profile-concurrent-candidate-metered_live_stream-profile-concurrent-candidate-metered_live_stream-heap-alloc-source
+END profile-concurrent-candidate-metered_live_stream-profile-concurrent-candidate-metered_live_stream-heap-alloc-source exit=0
+START profile-concurrent-candidate-metered_live_stream-profile-concurrent-candidate-metered_live_stream-mutex-mutex
+END profile-concurrent-candidate-metered_live_stream-profile-concurrent-candidate-metered_live_stream-mutex-mutex exit=0
+START profile-concurrent-candidate-metered_live_stream-profile-concurrent-candidate-metered_live_stream-mutex-mutex-call
+END profile-concurrent-candidate-metered_live_stream-profile-concurrent-candidate-metered_live_stream-mutex-mutex-call exit=0
+START profile-concurrent-candidate-metered_live_stream-profile-concurrent-candidate-metered_live_stream-block-block
+END profile-concurrent-candidate-metered_live_stream-profile-concurrent-candidate-metered_live_stream-block-block exit=0
+START profile-concurrent-candidate-metered_live_stream-profile-concurrent-candidate-metered_live_stream-block-block-call
+END profile-concurrent-candidate-metered_live_stream-profile-concurrent-candidate-metered_live_stream-block-block-call exit=0
+START profile-concurrent-candidate-restricted_owned-profile-concurrent-candidate-restricted_owned-cpu-cpu-flat
+END profile-concurrent-candidate-restricted_owned-profile-concurrent-candidate-restricted_owned-cpu-cpu-flat exit=0
+START profile-concurrent-candidate-restricted_owned-profile-concurrent-candidate-restricted_owned-cpu-cpu-cumulative
+END profile-concurrent-candidate-restricted_owned-profile-concurrent-candidate-restricted_owned-cpu-cpu-cumulative exit=0
+START profile-concurrent-candidate-restricted_owned-profile-concurrent-candidate-restricted_owned-cpu-cpu-call
+END profile-concurrent-candidate-restricted_owned-profile-concurrent-candidate-restricted_owned-cpu-cpu-call exit=0
+START profile-concurrent-candidate-restricted_owned-profile-concurrent-candidate-restricted_owned-cpu-cpu-callees
+END profile-concurrent-candidate-restricted_owned-profile-concurrent-candidate-restricted_owned-cpu-cpu-callees exit=0
+START profile-concurrent-candidate-restricted_owned-profile-concurrent-candidate-restricted_owned-cpu-cpu-source
+END profile-concurrent-candidate-restricted_owned-profile-concurrent-candidate-restricted_owned-cpu-cpu-source exit=0
+START profile-concurrent-candidate-restricted_owned-profile-concurrent-candidate-restricted_owned-heap-alloc_space
+END profile-concurrent-candidate-restricted_owned-profile-concurrent-candidate-restricted_owned-heap-alloc_space exit=0
+START profile-concurrent-candidate-restricted_owned-profile-concurrent-candidate-restricted_owned-heap-alloc_objects
+END profile-concurrent-candidate-restricted_owned-profile-concurrent-candidate-restricted_owned-heap-alloc_objects exit=0
+START profile-concurrent-candidate-restricted_owned-profile-concurrent-candidate-restricted_owned-heap-inuse_space
+END profile-concurrent-candidate-restricted_owned-profile-concurrent-candidate-restricted_owned-heap-inuse_space exit=0
+START profile-concurrent-candidate-restricted_owned-profile-concurrent-candidate-restricted_owned-heap-inuse_objects
+END profile-concurrent-candidate-restricted_owned-profile-concurrent-candidate-restricted_owned-heap-inuse_objects exit=0
+START profile-concurrent-candidate-restricted_owned-profile-concurrent-candidate-restricted_owned-heap-alloc-call
+END profile-concurrent-candidate-restricted_owned-profile-concurrent-candidate-restricted_owned-heap-alloc-call exit=0
+START profile-concurrent-candidate-restricted_owned-profile-concurrent-candidate-restricted_owned-heap-alloc-source
+END profile-concurrent-candidate-restricted_owned-profile-concurrent-candidate-restricted_owned-heap-alloc-source exit=0
+START profile-concurrent-candidate-restricted_owned-profile-concurrent-candidate-restricted_owned-mutex-mutex
+END profile-concurrent-candidate-restricted_owned-profile-concurrent-candidate-restricted_owned-mutex-mutex exit=0
+START profile-concurrent-candidate-restricted_owned-profile-concurrent-candidate-restricted_owned-mutex-mutex-call
+END profile-concurrent-candidate-restricted_owned-profile-concurrent-candidate-restricted_owned-mutex-mutex-call exit=0
+START profile-concurrent-candidate-restricted_owned-profile-concurrent-candidate-restricted_owned-block-block
+END profile-concurrent-candidate-restricted_owned-profile-concurrent-candidate-restricted_owned-block-block exit=0
+START profile-concurrent-candidate-restricted_owned-profile-concurrent-candidate-restricted_owned-block-block-call
+END profile-concurrent-candidate-restricted_owned-profile-concurrent-candidate-restricted_owned-block-block-call exit=0
+START retention-memory-upstream-legacy_stream-post_two_gc-alloc_space
+END retention-memory-upstream-legacy_stream-post_two_gc-alloc_space exit=0
+START retention-memory-upstream-legacy_stream-post_two_gc-alloc_objects
+END retention-memory-upstream-legacy_stream-post_two_gc-alloc_objects exit=0
+START retention-memory-upstream-legacy_stream-post_two_gc-inuse_space
+END retention-memory-upstream-legacy_stream-post_two_gc-inuse_space exit=0
+START retention-memory-upstream-legacy_stream-post_two_gc-inuse_objects
+END retention-memory-upstream-legacy_stream-post_two_gc-inuse_objects exit=0
+START retention-memory-upstream-legacy_stream-post_two_gc-alloc-call
+END retention-memory-upstream-legacy_stream-post_two_gc-alloc-call exit=0
+START retention-memory-upstream-legacy_stream-post_two_gc-alloc-source
+END retention-memory-upstream-legacy_stream-post_two_gc-alloc-source exit=2
+START retention-memory-upstream-legacy_stream-warm_small-alloc_space
+END retention-memory-upstream-legacy_stream-warm_small-alloc_space exit=0
+START retention-memory-upstream-legacy_stream-warm_small-alloc_objects
+END retention-memory-upstream-legacy_stream-warm_small-alloc_objects exit=0
+START retention-memory-upstream-legacy_stream-warm_small-inuse_space
+END retention-memory-upstream-legacy_stream-warm_small-inuse_space exit=0
+START retention-memory-upstream-legacy_stream-warm_small-inuse_objects
+END retention-memory-upstream-legacy_stream-warm_small-inuse_objects exit=0
+START retention-memory-upstream-legacy_stream-warm_small-alloc-call
+END retention-memory-upstream-legacy_stream-warm_small-alloc-call exit=0
+START retention-memory-upstream-legacy_stream-warm_small-alloc-source
+END retention-memory-upstream-legacy_stream-warm_small-alloc-source exit=2
+START retention-memory-upstream-legacy_stream-after_large-alloc_space
+END retention-memory-upstream-legacy_stream-after_large-alloc_space exit=0
+START retention-memory-upstream-legacy_stream-after_large-alloc_objects
+END retention-memory-upstream-legacy_stream-after_large-alloc_objects exit=0
+START retention-memory-upstream-legacy_stream-after_large-inuse_space
+END retention-memory-upstream-legacy_stream-after_large-inuse_space exit=0
+START retention-memory-upstream-legacy_stream-after_large-inuse_objects
+END retention-memory-upstream-legacy_stream-after_large-inuse_objects exit=0
+START retention-memory-upstream-legacy_stream-after_large-alloc-call
+END retention-memory-upstream-legacy_stream-after_large-alloc-call exit=0
+START retention-memory-upstream-legacy_stream-after_large-alloc-source
+END retention-memory-upstream-legacy_stream-after_large-alloc-source exit=2
+START retention-memory-upstream-legacy_stream-large_then_small-alloc_space
+END retention-memory-upstream-legacy_stream-large_then_small-alloc_space exit=0
+START retention-memory-upstream-legacy_stream-large_then_small-alloc_objects
+END retention-memory-upstream-legacy_stream-large_then_small-alloc_objects exit=0
+START retention-memory-upstream-legacy_stream-large_then_small-inuse_space
+END retention-memory-upstream-legacy_stream-large_then_small-inuse_space exit=0
+START retention-memory-upstream-legacy_stream-large_then_small-inuse_objects
+END retention-memory-upstream-legacy_stream-large_then_small-inuse_objects exit=0
+START retention-memory-upstream-legacy_stream-large_then_small-alloc-call
+END retention-memory-upstream-legacy_stream-large_then_small-alloc-call exit=0
+START retention-memory-upstream-legacy_stream-large_then_small-alloc-source
+END retention-memory-upstream-legacy_stream-large_then_small-alloc-source exit=2
+START retention-memory-upstream-legacy_stream-large_then_small_after_gc-alloc_space
+END retention-memory-upstream-legacy_stream-large_then_small_after_gc-alloc_space exit=0
+START retention-memory-upstream-legacy_stream-large_then_small_after_gc-alloc_objects
+END retention-memory-upstream-legacy_stream-large_then_small_after_gc-alloc_objects exit=0
+START retention-memory-upstream-legacy_stream-large_then_small_after_gc-inuse_space
+END retention-memory-upstream-legacy_stream-large_then_small_after_gc-inuse_space exit=0
+START retention-memory-upstream-legacy_stream-large_then_small_after_gc-inuse_objects
+END retention-memory-upstream-legacy_stream-large_then_small_after_gc-inuse_objects exit=0
+START retention-memory-upstream-legacy_stream-large_then_small_after_gc-alloc-call
+END retention-memory-upstream-legacy_stream-large_then_small_after_gc-alloc-call exit=0
+START retention-memory-upstream-legacy_stream-large_then_small_after_gc-alloc-source
+END retention-memory-upstream-legacy_stream-large_then_small_after_gc-alloc-source exit=0
+START retention-memory-upstream-legacy_owned-post_two_gc-alloc_space
+END retention-memory-upstream-legacy_owned-post_two_gc-alloc_space exit=0
+START retention-memory-upstream-legacy_owned-post_two_gc-alloc_objects
+END retention-memory-upstream-legacy_owned-post_two_gc-alloc_objects exit=0
+START retention-memory-upstream-legacy_owned-post_two_gc-inuse_space
+END retention-memory-upstream-legacy_owned-post_two_gc-inuse_space exit=0
+START retention-memory-upstream-legacy_owned-post_two_gc-inuse_objects
+END retention-memory-upstream-legacy_owned-post_two_gc-inuse_objects exit=0
+START retention-memory-upstream-legacy_owned-post_two_gc-alloc-call
+END retention-memory-upstream-legacy_owned-post_two_gc-alloc-call exit=0
+START retention-memory-upstream-legacy_owned-post_two_gc-alloc-source
+END retention-memory-upstream-legacy_owned-post_two_gc-alloc-source exit=2
+START retention-memory-upstream-legacy_owned-warm_small-alloc_space
+END retention-memory-upstream-legacy_owned-warm_small-alloc_space exit=0
+START retention-memory-upstream-legacy_owned-warm_small-alloc_objects
+END retention-memory-upstream-legacy_owned-warm_small-alloc_objects exit=0
+START retention-memory-upstream-legacy_owned-warm_small-inuse_space
+END retention-memory-upstream-legacy_owned-warm_small-inuse_space exit=0
+START retention-memory-upstream-legacy_owned-warm_small-inuse_objects
+END retention-memory-upstream-legacy_owned-warm_small-inuse_objects exit=0
+START retention-memory-upstream-legacy_owned-warm_small-alloc-call
+END retention-memory-upstream-legacy_owned-warm_small-alloc-call exit=0
+START retention-memory-upstream-legacy_owned-warm_small-alloc-source
+END retention-memory-upstream-legacy_owned-warm_small-alloc-source exit=2
+START retention-memory-upstream-legacy_owned-after_large-alloc_space
+END retention-memory-upstream-legacy_owned-after_large-alloc_space exit=0
+START retention-memory-upstream-legacy_owned-after_large-alloc_objects
+END retention-memory-upstream-legacy_owned-after_large-alloc_objects exit=0
+START retention-memory-upstream-legacy_owned-after_large-inuse_space
+END retention-memory-upstream-legacy_owned-after_large-inuse_space exit=0
+START retention-memory-upstream-legacy_owned-after_large-inuse_objects
+END retention-memory-upstream-legacy_owned-after_large-inuse_objects exit=0
+START retention-memory-upstream-legacy_owned-after_large-alloc-call
+END retention-memory-upstream-legacy_owned-after_large-alloc-call exit=0
+START retention-memory-upstream-legacy_owned-after_large-alloc-source
+END retention-memory-upstream-legacy_owned-after_large-alloc-source exit=0
+START retention-memory-upstream-legacy_owned-large_then_small-alloc_space
+END retention-memory-upstream-legacy_owned-large_then_small-alloc_space exit=0
+START retention-memory-upstream-legacy_owned-large_then_small-alloc_objects
+END retention-memory-upstream-legacy_owned-large_then_small-alloc_objects exit=0
+START retention-memory-upstream-legacy_owned-large_then_small-inuse_space
+END retention-memory-upstream-legacy_owned-large_then_small-inuse_space exit=0
+START retention-memory-upstream-legacy_owned-large_then_small-inuse_objects
+END retention-memory-upstream-legacy_owned-large_then_small-inuse_objects exit=0
+START retention-memory-upstream-legacy_owned-large_then_small-alloc-call
+END retention-memory-upstream-legacy_owned-large_then_small-alloc-call exit=0
+START retention-memory-upstream-legacy_owned-large_then_small-alloc-source
+END retention-memory-upstream-legacy_owned-large_then_small-alloc-source exit=0
+START retention-memory-upstream-legacy_owned-large_then_small_after_gc-alloc_space
+END retention-memory-upstream-legacy_owned-large_then_small_after_gc-alloc_space exit=0
+START retention-memory-upstream-legacy_owned-large_then_small_after_gc-alloc_objects
+END retention-memory-upstream-legacy_owned-large_then_small_after_gc-alloc_objects exit=0
+START retention-memory-upstream-legacy_owned-large_then_small_after_gc-inuse_space
+END retention-memory-upstream-legacy_owned-large_then_small_after_gc-inuse_space exit=0
+START retention-memory-upstream-legacy_owned-large_then_small_after_gc-inuse_objects
+END retention-memory-upstream-legacy_owned-large_then_small_after_gc-inuse_objects exit=0
+START retention-memory-upstream-legacy_owned-large_then_small_after_gc-alloc-call
+END retention-memory-upstream-legacy_owned-large_then_small_after_gc-alloc-call exit=0
+START retention-memory-upstream-legacy_owned-large_then_small_after_gc-alloc-source
+END retention-memory-upstream-legacy_owned-large_then_small_after_gc-alloc-source exit=0
+START retention-memory-correctness-legacy_stream-post_two_gc-alloc_space
+END retention-memory-correctness-legacy_stream-post_two_gc-alloc_space exit=0
+START retention-memory-correctness-legacy_stream-post_two_gc-alloc_objects
+END retention-memory-correctness-legacy_stream-post_two_gc-alloc_objects exit=0
+START retention-memory-correctness-legacy_stream-post_two_gc-inuse_space
+END retention-memory-correctness-legacy_stream-post_two_gc-inuse_space exit=0
+START retention-memory-correctness-legacy_stream-post_two_gc-inuse_objects
+END retention-memory-correctness-legacy_stream-post_two_gc-inuse_objects exit=0
+START retention-memory-correctness-legacy_stream-post_two_gc-alloc-call
+END retention-memory-correctness-legacy_stream-post_two_gc-alloc-call exit=0
+START retention-memory-correctness-legacy_stream-post_two_gc-alloc-source
+END retention-memory-correctness-legacy_stream-post_two_gc-alloc-source exit=2
+START retention-memory-correctness-legacy_stream-warm_small-alloc_space
+END retention-memory-correctness-legacy_stream-warm_small-alloc_space exit=0
+START retention-memory-correctness-legacy_stream-warm_small-alloc_objects
+END retention-memory-correctness-legacy_stream-warm_small-alloc_objects exit=0
+START retention-memory-correctness-legacy_stream-warm_small-inuse_space
+END retention-memory-correctness-legacy_stream-warm_small-inuse_space exit=0
+START retention-memory-correctness-legacy_stream-warm_small-inuse_objects
+END retention-memory-correctness-legacy_stream-warm_small-inuse_objects exit=0
+START retention-memory-correctness-legacy_stream-warm_small-alloc-call
+END retention-memory-correctness-legacy_stream-warm_small-alloc-call exit=0
+START retention-memory-correctness-legacy_stream-warm_small-alloc-source
+END retention-memory-correctness-legacy_stream-warm_small-alloc-source exit=2
+START retention-memory-correctness-legacy_stream-after_large-alloc_space
+END retention-memory-correctness-legacy_stream-after_large-alloc_space exit=0
+START retention-memory-correctness-legacy_stream-after_large-alloc_objects
+END retention-memory-correctness-legacy_stream-after_large-alloc_objects exit=0
+START retention-memory-correctness-legacy_stream-after_large-inuse_space
+END retention-memory-correctness-legacy_stream-after_large-inuse_space exit=0
+START retention-memory-correctness-legacy_stream-after_large-inuse_objects
+END retention-memory-correctness-legacy_stream-after_large-inuse_objects exit=0
+START retention-memory-correctness-legacy_stream-after_large-alloc-call
+END retention-memory-correctness-legacy_stream-after_large-alloc-call exit=0
+START retention-memory-correctness-legacy_stream-after_large-alloc-source
+END retention-memory-correctness-legacy_stream-after_large-alloc-source exit=2
+START retention-memory-correctness-legacy_stream-large_then_small-alloc_space
+END retention-memory-correctness-legacy_stream-large_then_small-alloc_space exit=0
+START retention-memory-correctness-legacy_stream-large_then_small-alloc_objects
+END retention-memory-correctness-legacy_stream-large_then_small-alloc_objects exit=0
+START retention-memory-correctness-legacy_stream-large_then_small-inuse_space
+END retention-memory-correctness-legacy_stream-large_then_small-inuse_space exit=0
+START retention-memory-correctness-legacy_stream-large_then_small-inuse_objects
+END retention-memory-correctness-legacy_stream-large_then_small-inuse_objects exit=0
+START retention-memory-correctness-legacy_stream-large_then_small-alloc-call
+END retention-memory-correctness-legacy_stream-large_then_small-alloc-call exit=0
+START retention-memory-correctness-legacy_stream-large_then_small-alloc-source
+END retention-memory-correctness-legacy_stream-large_then_small-alloc-source exit=2
+START retention-memory-correctness-legacy_stream-large_then_small_after_gc-alloc_space
+END retention-memory-correctness-legacy_stream-large_then_small_after_gc-alloc_space exit=0
+START retention-memory-correctness-legacy_stream-large_then_small_after_gc-alloc_objects
+END retention-memory-correctness-legacy_stream-large_then_small_after_gc-alloc_objects exit=0
+START retention-memory-correctness-legacy_stream-large_then_small_after_gc-inuse_space
+END retention-memory-correctness-legacy_stream-large_then_small_after_gc-inuse_space exit=0
+START retention-memory-correctness-legacy_stream-large_then_small_after_gc-inuse_objects
+END retention-memory-correctness-legacy_stream-large_then_small_after_gc-inuse_objects exit=0
+START retention-memory-correctness-legacy_stream-large_then_small_after_gc-alloc-call
+END retention-memory-correctness-legacy_stream-large_then_small_after_gc-alloc-call exit=0
+START retention-memory-correctness-legacy_stream-large_then_small_after_gc-alloc-source
+END retention-memory-correctness-legacy_stream-large_then_small_after_gc-alloc-source exit=0
+START retention-memory-correctness-legacy_owned-post_two_gc-alloc_space
+END retention-memory-correctness-legacy_owned-post_two_gc-alloc_space exit=0
+START retention-memory-correctness-legacy_owned-post_two_gc-alloc_objects
+END retention-memory-correctness-legacy_owned-post_two_gc-alloc_objects exit=0
+START retention-memory-correctness-legacy_owned-post_two_gc-inuse_space
+END retention-memory-correctness-legacy_owned-post_two_gc-inuse_space exit=0
+START retention-memory-correctness-legacy_owned-post_two_gc-inuse_objects
+END retention-memory-correctness-legacy_owned-post_two_gc-inuse_objects exit=0
+START retention-memory-correctness-legacy_owned-post_two_gc-alloc-call
+END retention-memory-correctness-legacy_owned-post_two_gc-alloc-call exit=0
+START retention-memory-correctness-legacy_owned-post_two_gc-alloc-source
+END retention-memory-correctness-legacy_owned-post_two_gc-alloc-source exit=2
+START retention-memory-correctness-legacy_owned-warm_small-alloc_space
+END retention-memory-correctness-legacy_owned-warm_small-alloc_space exit=0
+START retention-memory-correctness-legacy_owned-warm_small-alloc_objects
+END retention-memory-correctness-legacy_owned-warm_small-alloc_objects exit=0
+START retention-memory-correctness-legacy_owned-warm_small-inuse_space
+END retention-memory-correctness-legacy_owned-warm_small-inuse_space exit=0
+START retention-memory-correctness-legacy_owned-warm_small-inuse_objects
+END retention-memory-correctness-legacy_owned-warm_small-inuse_objects exit=0
+START retention-memory-correctness-legacy_owned-warm_small-alloc-call
+END retention-memory-correctness-legacy_owned-warm_small-alloc-call exit=0
+START retention-memory-correctness-legacy_owned-warm_small-alloc-source
+END retention-memory-correctness-legacy_owned-warm_small-alloc-source exit=2
+START retention-memory-correctness-legacy_owned-after_large-alloc_space
+END retention-memory-correctness-legacy_owned-after_large-alloc_space exit=0
+START retention-memory-correctness-legacy_owned-after_large-alloc_objects
+END retention-memory-correctness-legacy_owned-after_large-alloc_objects exit=0
+START retention-memory-correctness-legacy_owned-after_large-inuse_space
+END retention-memory-correctness-legacy_owned-after_large-inuse_space exit=0
+START retention-memory-correctness-legacy_owned-after_large-inuse_objects
+END retention-memory-correctness-legacy_owned-after_large-inuse_objects exit=0
+START retention-memory-correctness-legacy_owned-after_large-alloc-call
+END retention-memory-correctness-legacy_owned-after_large-alloc-call exit=0
+START retention-memory-correctness-legacy_owned-after_large-alloc-source
+END retention-memory-correctness-legacy_owned-after_large-alloc-source exit=0
+START retention-memory-correctness-legacy_owned-large_then_small-alloc_space
+END retention-memory-correctness-legacy_owned-large_then_small-alloc_space exit=0
+START retention-memory-correctness-legacy_owned-large_then_small-alloc_objects
+END retention-memory-correctness-legacy_owned-large_then_small-alloc_objects exit=0
+START retention-memory-correctness-legacy_owned-large_then_small-inuse_space
+END retention-memory-correctness-legacy_owned-large_then_small-inuse_space exit=0
+START retention-memory-correctness-legacy_owned-large_then_small-inuse_objects
+END retention-memory-correctness-legacy_owned-large_then_small-inuse_objects exit=0
+START retention-memory-correctness-legacy_owned-large_then_small-alloc-call
+END retention-memory-correctness-legacy_owned-large_then_small-alloc-call exit=0
+START retention-memory-correctness-legacy_owned-large_then_small-alloc-source
+END retention-memory-correctness-legacy_owned-large_then_small-alloc-source exit=0
+START retention-memory-correctness-legacy_owned-large_then_small_after_gc-alloc_space
+END retention-memory-correctness-legacy_owned-large_then_small_after_gc-alloc_space exit=0
+START retention-memory-correctness-legacy_owned-large_then_small_after_gc-alloc_objects
+END retention-memory-correctness-legacy_owned-large_then_small_after_gc-alloc_objects exit=0
+START retention-memory-correctness-legacy_owned-large_then_small_after_gc-inuse_space
+END retention-memory-correctness-legacy_owned-large_then_small_after_gc-inuse_space exit=0
+START retention-memory-correctness-legacy_owned-large_then_small_after_gc-inuse_objects
+END retention-memory-correctness-legacy_owned-large_then_small_after_gc-inuse_objects exit=0
+START retention-memory-correctness-legacy_owned-large_then_small_after_gc-alloc-call
+END retention-memory-correctness-legacy_owned-large_then_small_after_gc-alloc-call exit=0
+START retention-memory-correctness-legacy_owned-large_then_small_after_gc-alloc-source
+END retention-memory-correctness-legacy_owned-large_then_small_after_gc-alloc-source exit=0
+START retention-memory-candidate-legacy_stream-post_two_gc-alloc_space
+END retention-memory-candidate-legacy_stream-post_two_gc-alloc_space exit=0
+START retention-memory-candidate-legacy_stream-post_two_gc-alloc_objects
+END retention-memory-candidate-legacy_stream-post_two_gc-alloc_objects exit=0
+START retention-memory-candidate-legacy_stream-post_two_gc-inuse_space
+END retention-memory-candidate-legacy_stream-post_two_gc-inuse_space exit=0
+START retention-memory-candidate-legacy_stream-post_two_gc-inuse_objects
+END retention-memory-candidate-legacy_stream-post_two_gc-inuse_objects exit=0
+START retention-memory-candidate-legacy_stream-post_two_gc-alloc-call
+END retention-memory-candidate-legacy_stream-post_two_gc-alloc-call exit=0
+START retention-memory-candidate-legacy_stream-post_two_gc-alloc-source
+END retention-memory-candidate-legacy_stream-post_two_gc-alloc-source exit=0
+START retention-memory-candidate-legacy_stream-warm_small-alloc_space
+END retention-memory-candidate-legacy_stream-warm_small-alloc_space exit=0
+START retention-memory-candidate-legacy_stream-warm_small-alloc_objects
+END retention-memory-candidate-legacy_stream-warm_small-alloc_objects exit=0
+START retention-memory-candidate-legacy_stream-warm_small-inuse_space
+END retention-memory-candidate-legacy_stream-warm_small-inuse_space exit=0
+START retention-memory-candidate-legacy_stream-warm_small-inuse_objects
+END retention-memory-candidate-legacy_stream-warm_small-inuse_objects exit=0
+START retention-memory-candidate-legacy_stream-warm_small-alloc-call
+END retention-memory-candidate-legacy_stream-warm_small-alloc-call exit=0
+START retention-memory-candidate-legacy_stream-warm_small-alloc-source
+END retention-memory-candidate-legacy_stream-warm_small-alloc-source exit=0
+START retention-memory-candidate-legacy_stream-after_large-alloc_space
+END retention-memory-candidate-legacy_stream-after_large-alloc_space exit=0
+START retention-memory-candidate-legacy_stream-after_large-alloc_objects
+END retention-memory-candidate-legacy_stream-after_large-alloc_objects exit=0
+START retention-memory-candidate-legacy_stream-after_large-inuse_space
+END retention-memory-candidate-legacy_stream-after_large-inuse_space exit=0
+START retention-memory-candidate-legacy_stream-after_large-inuse_objects
+END retention-memory-candidate-legacy_stream-after_large-inuse_objects exit=0
+START retention-memory-candidate-legacy_stream-after_large-alloc-call
+END retention-memory-candidate-legacy_stream-after_large-alloc-call exit=0
+START retention-memory-candidate-legacy_stream-after_large-alloc-source
+END retention-memory-candidate-legacy_stream-after_large-alloc-source exit=0
+START retention-memory-candidate-legacy_stream-large_then_small-alloc_space
+END retention-memory-candidate-legacy_stream-large_then_small-alloc_space exit=0
+START retention-memory-candidate-legacy_stream-large_then_small-alloc_objects
+END retention-memory-candidate-legacy_stream-large_then_small-alloc_objects exit=0
+START retention-memory-candidate-legacy_stream-large_then_small-inuse_space
+END retention-memory-candidate-legacy_stream-large_then_small-inuse_space exit=0
+START retention-memory-candidate-legacy_stream-large_then_small-inuse_objects
+END retention-memory-candidate-legacy_stream-large_then_small-inuse_objects exit=0
+START retention-memory-candidate-legacy_stream-large_then_small-alloc-call
+END retention-memory-candidate-legacy_stream-large_then_small-alloc-call exit=0
+START retention-memory-candidate-legacy_stream-large_then_small-alloc-source
+END retention-memory-candidate-legacy_stream-large_then_small-alloc-source exit=0
+START retention-memory-candidate-legacy_stream-large_then_small_after_gc-alloc_space
+END retention-memory-candidate-legacy_stream-large_then_small_after_gc-alloc_space exit=0
+START retention-memory-candidate-legacy_stream-large_then_small_after_gc-alloc_objects
+END retention-memory-candidate-legacy_stream-large_then_small_after_gc-alloc_objects exit=0
+START retention-memory-candidate-legacy_stream-large_then_small_after_gc-inuse_space
+END retention-memory-candidate-legacy_stream-large_then_small_after_gc-inuse_space exit=0
+START retention-memory-candidate-legacy_stream-large_then_small_after_gc-inuse_objects
+END retention-memory-candidate-legacy_stream-large_then_small_after_gc-inuse_objects exit=0
+START retention-memory-candidate-legacy_stream-large_then_small_after_gc-alloc-call
+END retention-memory-candidate-legacy_stream-large_then_small_after_gc-alloc-call exit=0
+START retention-memory-candidate-legacy_stream-large_then_small_after_gc-alloc-source
+END retention-memory-candidate-legacy_stream-large_then_small_after_gc-alloc-source exit=0
+START retention-memory-candidate-legacy_owned-post_two_gc-alloc_space
+END retention-memory-candidate-legacy_owned-post_two_gc-alloc_space exit=0
+START retention-memory-candidate-legacy_owned-post_two_gc-alloc_objects
+END retention-memory-candidate-legacy_owned-post_two_gc-alloc_objects exit=0
+START retention-memory-candidate-legacy_owned-post_two_gc-inuse_space
+END retention-memory-candidate-legacy_owned-post_two_gc-inuse_space exit=0
+START retention-memory-candidate-legacy_owned-post_two_gc-inuse_objects
+END retention-memory-candidate-legacy_owned-post_two_gc-inuse_objects exit=0
+START retention-memory-candidate-legacy_owned-post_two_gc-alloc-call
+END retention-memory-candidate-legacy_owned-post_two_gc-alloc-call exit=0
+START retention-memory-candidate-legacy_owned-post_two_gc-alloc-source
+END retention-memory-candidate-legacy_owned-post_two_gc-alloc-source exit=0
+START retention-memory-candidate-legacy_owned-warm_small-alloc_space
+END retention-memory-candidate-legacy_owned-warm_small-alloc_space exit=0
+START retention-memory-candidate-legacy_owned-warm_small-alloc_objects
+END retention-memory-candidate-legacy_owned-warm_small-alloc_objects exit=0
+START retention-memory-candidate-legacy_owned-warm_small-inuse_space
+END retention-memory-candidate-legacy_owned-warm_small-inuse_space exit=0
+START retention-memory-candidate-legacy_owned-warm_small-inuse_objects
+END retention-memory-candidate-legacy_owned-warm_small-inuse_objects exit=0
+START retention-memory-candidate-legacy_owned-warm_small-alloc-call
+END retention-memory-candidate-legacy_owned-warm_small-alloc-call exit=0
+START retention-memory-candidate-legacy_owned-warm_small-alloc-source
+END retention-memory-candidate-legacy_owned-warm_small-alloc-source exit=0
+START retention-memory-candidate-legacy_owned-after_large-alloc_space
+END retention-memory-candidate-legacy_owned-after_large-alloc_space exit=0
+START retention-memory-candidate-legacy_owned-after_large-alloc_objects
+END retention-memory-candidate-legacy_owned-after_large-alloc_objects exit=0
+START retention-memory-candidate-legacy_owned-after_large-inuse_space
+END retention-memory-candidate-legacy_owned-after_large-inuse_space exit=0
+START retention-memory-candidate-legacy_owned-after_large-inuse_objects
+END retention-memory-candidate-legacy_owned-after_large-inuse_objects exit=0
+START retention-memory-candidate-legacy_owned-after_large-alloc-call
+END retention-memory-candidate-legacy_owned-after_large-alloc-call exit=0
+START retention-memory-candidate-legacy_owned-after_large-alloc-source
+END retention-memory-candidate-legacy_owned-after_large-alloc-source exit=0
+START retention-memory-candidate-legacy_owned-large_then_small-alloc_space
+END retention-memory-candidate-legacy_owned-large_then_small-alloc_space exit=0
+START retention-memory-candidate-legacy_owned-large_then_small-alloc_objects
+END retention-memory-candidate-legacy_owned-large_then_small-alloc_objects exit=0
+START retention-memory-candidate-legacy_owned-large_then_small-inuse_space
+END retention-memory-candidate-legacy_owned-large_then_small-inuse_space exit=0
+START retention-memory-candidate-legacy_owned-large_then_small-inuse_objects
+END retention-memory-candidate-legacy_owned-large_then_small-inuse_objects exit=0
+START retention-memory-candidate-legacy_owned-large_then_small-alloc-call
+END retention-memory-candidate-legacy_owned-large_then_small-alloc-call exit=0
+START retention-memory-candidate-legacy_owned-large_then_small-alloc-source
+END retention-memory-candidate-legacy_owned-large_then_small-alloc-source exit=0
+START retention-memory-candidate-legacy_owned-large_then_small_after_gc-alloc_space
+END retention-memory-candidate-legacy_owned-large_then_small_after_gc-alloc_space exit=0
+START retention-memory-candidate-legacy_owned-large_then_small_after_gc-alloc_objects
+END retention-memory-candidate-legacy_owned-large_then_small_after_gc-alloc_objects exit=0
+START retention-memory-candidate-legacy_owned-large_then_small_after_gc-inuse_space
+END retention-memory-candidate-legacy_owned-large_then_small_after_gc-inuse_space exit=0
+START retention-memory-candidate-legacy_owned-large_then_small_after_gc-inuse_objects
+END retention-memory-candidate-legacy_owned-large_then_small_after_gc-inuse_objects exit=0
+START retention-memory-candidate-legacy_owned-large_then_small_after_gc-alloc-call
+END retention-memory-candidate-legacy_owned-large_then_small_after_gc-alloc-call exit=0
+START retention-memory-candidate-legacy_owned-large_then_small_after_gc-alloc-source
+END retention-memory-candidate-legacy_owned-large_then_small_after_gc-alloc-source exit=0
+START retention-memory-candidate-metered_background_stream-post_two_gc-alloc_space
+END retention-memory-candidate-metered_background_stream-post_two_gc-alloc_space exit=0
+START retention-memory-candidate-metered_background_stream-post_two_gc-alloc_objects
+END retention-memory-candidate-metered_background_stream-post_two_gc-alloc_objects exit=0
+START retention-memory-candidate-metered_background_stream-post_two_gc-inuse_space
+END retention-memory-candidate-metered_background_stream-post_two_gc-inuse_space exit=0
+START retention-memory-candidate-metered_background_stream-post_two_gc-inuse_objects
+END retention-memory-candidate-metered_background_stream-post_two_gc-inuse_objects exit=0
+START retention-memory-candidate-metered_background_stream-post_two_gc-alloc-call
+END retention-memory-candidate-metered_background_stream-post_two_gc-alloc-call exit=0
+START retention-memory-candidate-metered_background_stream-post_two_gc-alloc-source
+END retention-memory-candidate-metered_background_stream-post_two_gc-alloc-source exit=0
+START retention-memory-candidate-metered_background_stream-warm_small-alloc_space
+END retention-memory-candidate-metered_background_stream-warm_small-alloc_space exit=0
+START retention-memory-candidate-metered_background_stream-warm_small-alloc_objects
+END retention-memory-candidate-metered_background_stream-warm_small-alloc_objects exit=0
+START retention-memory-candidate-metered_background_stream-warm_small-inuse_space
+END retention-memory-candidate-metered_background_stream-warm_small-inuse_space exit=0
+START retention-memory-candidate-metered_background_stream-warm_small-inuse_objects
+END retention-memory-candidate-metered_background_stream-warm_small-inuse_objects exit=0
+START retention-memory-candidate-metered_background_stream-warm_small-alloc-call
+END retention-memory-candidate-metered_background_stream-warm_small-alloc-call exit=0
+START retention-memory-candidate-metered_background_stream-warm_small-alloc-source
+END retention-memory-candidate-metered_background_stream-warm_small-alloc-source exit=0
+START retention-memory-candidate-metered_background_stream-after_large-alloc_space
+END retention-memory-candidate-metered_background_stream-after_large-alloc_space exit=0
+START retention-memory-candidate-metered_background_stream-after_large-alloc_objects
+END retention-memory-candidate-metered_background_stream-after_large-alloc_objects exit=0
+START retention-memory-candidate-metered_background_stream-after_large-inuse_space
+END retention-memory-candidate-metered_background_stream-after_large-inuse_space exit=0
+START retention-memory-candidate-metered_background_stream-after_large-inuse_objects
+END retention-memory-candidate-metered_background_stream-after_large-inuse_objects exit=0
+START retention-memory-candidate-metered_background_stream-after_large-alloc-call
+END retention-memory-candidate-metered_background_stream-after_large-alloc-call exit=0
+START retention-memory-candidate-metered_background_stream-after_large-alloc-source
+END retention-memory-candidate-metered_background_stream-after_large-alloc-source exit=0
+START retention-memory-candidate-metered_background_stream-large_then_small-alloc_space
+END retention-memory-candidate-metered_background_stream-large_then_small-alloc_space exit=0
+START retention-memory-candidate-metered_background_stream-large_then_small-alloc_objects
+END retention-memory-candidate-metered_background_stream-large_then_small-alloc_objects exit=0
+START retention-memory-candidate-metered_background_stream-large_then_small-inuse_space
+END retention-memory-candidate-metered_background_stream-large_then_small-inuse_space exit=0
+START retention-memory-candidate-metered_background_stream-large_then_small-inuse_objects
+END retention-memory-candidate-metered_background_stream-large_then_small-inuse_objects exit=0
+START retention-memory-candidate-metered_background_stream-large_then_small-alloc-call
+END retention-memory-candidate-metered_background_stream-large_then_small-alloc-call exit=0
+START retention-memory-candidate-metered_background_stream-large_then_small-alloc-source
+END retention-memory-candidate-metered_background_stream-large_then_small-alloc-source exit=0
+START retention-memory-candidate-metered_background_stream-large_then_small_after_gc-alloc_space
+END retention-memory-candidate-metered_background_stream-large_then_small_after_gc-alloc_space exit=0
+START retention-memory-candidate-metered_background_stream-large_then_small_after_gc-alloc_objects
+END retention-memory-candidate-metered_background_stream-large_then_small_after_gc-alloc_objects exit=0
+START retention-memory-candidate-metered_background_stream-large_then_small_after_gc-inuse_space
+END retention-memory-candidate-metered_background_stream-large_then_small_after_gc-inuse_space exit=0
+START retention-memory-candidate-metered_background_stream-large_then_small_after_gc-inuse_objects
+END retention-memory-candidate-metered_background_stream-large_then_small_after_gc-inuse_objects exit=0
+START retention-memory-candidate-metered_background_stream-large_then_small_after_gc-alloc-call
+END retention-memory-candidate-metered_background_stream-large_then_small_after_gc-alloc-call exit=0
+START retention-memory-candidate-metered_background_stream-large_then_small_after_gc-alloc-source
+END retention-memory-candidate-metered_background_stream-large_then_small_after_gc-alloc-source exit=0
+START retention-memory-candidate-metered_live_stream-post_two_gc-alloc_space
+END retention-memory-candidate-metered_live_stream-post_two_gc-alloc_space exit=0
+START retention-memory-candidate-metered_live_stream-post_two_gc-alloc_objects
+END retention-memory-candidate-metered_live_stream-post_two_gc-alloc_objects exit=0
+START retention-memory-candidate-metered_live_stream-post_two_gc-inuse_space
+END retention-memory-candidate-metered_live_stream-post_two_gc-inuse_space exit=0
+START retention-memory-candidate-metered_live_stream-post_two_gc-inuse_objects
+END retention-memory-candidate-metered_live_stream-post_two_gc-inuse_objects exit=0
+START retention-memory-candidate-metered_live_stream-post_two_gc-alloc-call
+END retention-memory-candidate-metered_live_stream-post_two_gc-alloc-call exit=0
+START retention-memory-candidate-metered_live_stream-post_two_gc-alloc-source
+END retention-memory-candidate-metered_live_stream-post_two_gc-alloc-source exit=0
+START retention-memory-candidate-metered_live_stream-warm_small-alloc_space
+END retention-memory-candidate-metered_live_stream-warm_small-alloc_space exit=0
+START retention-memory-candidate-metered_live_stream-warm_small-alloc_objects
+END retention-memory-candidate-metered_live_stream-warm_small-alloc_objects exit=0
+START retention-memory-candidate-metered_live_stream-warm_small-inuse_space
+END retention-memory-candidate-metered_live_stream-warm_small-inuse_space exit=0
+START retention-memory-candidate-metered_live_stream-warm_small-inuse_objects
+END retention-memory-candidate-metered_live_stream-warm_small-inuse_objects exit=0
+START retention-memory-candidate-metered_live_stream-warm_small-alloc-call
+END retention-memory-candidate-metered_live_stream-warm_small-alloc-call exit=0
+START retention-memory-candidate-metered_live_stream-warm_small-alloc-source
+END retention-memory-candidate-metered_live_stream-warm_small-alloc-source exit=0
+START retention-memory-candidate-metered_live_stream-after_large-alloc_space
+END retention-memory-candidate-metered_live_stream-after_large-alloc_space exit=0
+START retention-memory-candidate-metered_live_stream-after_large-alloc_objects
+END retention-memory-candidate-metered_live_stream-after_large-alloc_objects exit=0
+START retention-memory-candidate-metered_live_stream-after_large-inuse_space
+END retention-memory-candidate-metered_live_stream-after_large-inuse_space exit=0
+START retention-memory-candidate-metered_live_stream-after_large-inuse_objects
+END retention-memory-candidate-metered_live_stream-after_large-inuse_objects exit=0
+START retention-memory-candidate-metered_live_stream-after_large-alloc-call
+END retention-memory-candidate-metered_live_stream-after_large-alloc-call exit=0
+START retention-memory-candidate-metered_live_stream-after_large-alloc-source
+END retention-memory-candidate-metered_live_stream-after_large-alloc-source exit=0
+START retention-memory-candidate-metered_live_stream-large_then_small-alloc_space
+END retention-memory-candidate-metered_live_stream-large_then_small-alloc_space exit=0
+START retention-memory-candidate-metered_live_stream-large_then_small-alloc_objects
+END retention-memory-candidate-metered_live_stream-large_then_small-alloc_objects exit=0
+START retention-memory-candidate-metered_live_stream-large_then_small-inuse_space
+END retention-memory-candidate-metered_live_stream-large_then_small-inuse_space exit=0
+START retention-memory-candidate-metered_live_stream-large_then_small-inuse_objects
+END retention-memory-candidate-metered_live_stream-large_then_small-inuse_objects exit=0
+START retention-memory-candidate-metered_live_stream-large_then_small-alloc-call
+END retention-memory-candidate-metered_live_stream-large_then_small-alloc-call exit=0
+START retention-memory-candidate-metered_live_stream-large_then_small-alloc-source
+END retention-memory-candidate-metered_live_stream-large_then_small-alloc-source exit=0
+START retention-memory-candidate-metered_live_stream-large_then_small_after_gc-alloc_space
+END retention-memory-candidate-metered_live_stream-large_then_small_after_gc-alloc_space exit=0
+START retention-memory-candidate-metered_live_stream-large_then_small_after_gc-alloc_objects
+END retention-memory-candidate-metered_live_stream-large_then_small_after_gc-alloc_objects exit=0
+START retention-memory-candidate-metered_live_stream-large_then_small_after_gc-inuse_space
+END retention-memory-candidate-metered_live_stream-large_then_small_after_gc-inuse_space exit=0
+START retention-memory-candidate-metered_live_stream-large_then_small_after_gc-inuse_objects
+END retention-memory-candidate-metered_live_stream-large_then_small_after_gc-inuse_objects exit=0
+START retention-memory-candidate-metered_live_stream-large_then_small_after_gc-alloc-call
+END retention-memory-candidate-metered_live_stream-large_then_small_after_gc-alloc-call exit=0
+START retention-memory-candidate-metered_live_stream-large_then_small_after_gc-alloc-source
+END retention-memory-candidate-metered_live_stream-large_then_small_after_gc-alloc-source exit=0
+START retention-memory-candidate-restricted_owned-post_two_gc-alloc_space
+END retention-memory-candidate-restricted_owned-post_two_gc-alloc_space exit=0
+START retention-memory-candidate-restricted_owned-post_two_gc-alloc_objects
+END retention-memory-candidate-restricted_owned-post_two_gc-alloc_objects exit=0
+START retention-memory-candidate-restricted_owned-post_two_gc-inuse_space
+END retention-memory-candidate-restricted_owned-post_two_gc-inuse_space exit=0
+START retention-memory-candidate-restricted_owned-post_two_gc-inuse_objects
+END retention-memory-candidate-restricted_owned-post_two_gc-inuse_objects exit=0
+START retention-memory-candidate-restricted_owned-post_two_gc-alloc-call
+END retention-memory-candidate-restricted_owned-post_two_gc-alloc-call exit=0
+START retention-memory-candidate-restricted_owned-post_two_gc-alloc-source
+END retention-memory-candidate-restricted_owned-post_two_gc-alloc-source exit=0
+START retention-memory-candidate-restricted_owned-warm_small-alloc_space
+END retention-memory-candidate-restricted_owned-warm_small-alloc_space exit=0
+START retention-memory-candidate-restricted_owned-warm_small-alloc_objects
+END retention-memory-candidate-restricted_owned-warm_small-alloc_objects exit=0
+START retention-memory-candidate-restricted_owned-warm_small-inuse_space
+END retention-memory-candidate-restricted_owned-warm_small-inuse_space exit=0
+START retention-memory-candidate-restricted_owned-warm_small-inuse_objects
+END retention-memory-candidate-restricted_owned-warm_small-inuse_objects exit=0
+START retention-memory-candidate-restricted_owned-warm_small-alloc-call
+END retention-memory-candidate-restricted_owned-warm_small-alloc-call exit=0
+START retention-memory-candidate-restricted_owned-warm_small-alloc-source
+END retention-memory-candidate-restricted_owned-warm_small-alloc-source exit=0
+START retention-memory-candidate-restricted_owned-after_large-alloc_space
+END retention-memory-candidate-restricted_owned-after_large-alloc_space exit=0
+START retention-memory-candidate-restricted_owned-after_large-alloc_objects
+END retention-memory-candidate-restricted_owned-after_large-alloc_objects exit=0
+START retention-memory-candidate-restricted_owned-after_large-inuse_space
+END retention-memory-candidate-restricted_owned-after_large-inuse_space exit=0
+START retention-memory-candidate-restricted_owned-after_large-inuse_objects
+END retention-memory-candidate-restricted_owned-after_large-inuse_objects exit=0
+START retention-memory-candidate-restricted_owned-after_large-alloc-call
+END retention-memory-candidate-restricted_owned-after_large-alloc-call exit=0
+START retention-memory-candidate-restricted_owned-after_large-alloc-source
+END retention-memory-candidate-restricted_owned-after_large-alloc-source exit=0
+START retention-memory-candidate-restricted_owned-large_then_small-alloc_space
+END retention-memory-candidate-restricted_owned-large_then_small-alloc_space exit=0
+START retention-memory-candidate-restricted_owned-large_then_small-alloc_objects
+END retention-memory-candidate-restricted_owned-large_then_small-alloc_objects exit=0
+START retention-memory-candidate-restricted_owned-large_then_small-inuse_space
+END retention-memory-candidate-restricted_owned-large_then_small-inuse_space exit=0
+START retention-memory-candidate-restricted_owned-large_then_small-inuse_objects
+END retention-memory-candidate-restricted_owned-large_then_small-inuse_objects exit=0
+START retention-memory-candidate-restricted_owned-large_then_small-alloc-call
+END retention-memory-candidate-restricted_owned-large_then_small-alloc-call exit=0
+START retention-memory-candidate-restricted_owned-large_then_small-alloc-source
+END retention-memory-candidate-restricted_owned-large_then_small-alloc-source exit=0
+START retention-memory-candidate-restricted_owned-large_then_small_after_gc-alloc_space
+END retention-memory-candidate-restricted_owned-large_then_small_after_gc-alloc_space exit=0
+START retention-memory-candidate-restricted_owned-large_then_small_after_gc-alloc_objects
+END retention-memory-candidate-restricted_owned-large_then_small_after_gc-alloc_objects exit=0
+START retention-memory-candidate-restricted_owned-large_then_small_after_gc-inuse_space
+END retention-memory-candidate-restricted_owned-large_then_small_after_gc-inuse_space exit=0
+START retention-memory-candidate-restricted_owned-large_then_small_after_gc-inuse_objects
+END retention-memory-candidate-restricted_owned-large_then_small_after_gc-inuse_objects exit=0
+START retention-memory-candidate-restricted_owned-large_then_small_after_gc-alloc-call
+END retention-memory-candidate-restricted_owned-large_then_small_after_gc-alloc-call exit=0
+START retention-memory-candidate-restricted_owned-large_then_small_after_gc-alloc-source
+END retention-memory-candidate-restricted_owned-large_then_small_after_gc-alloc-source exit=0
+{
+  "profiles": 117,
+  "reports": 540,
+  "failures": [
+    "profile-candidate-metered_background_stream-profile-candidate-metered_background_stream-heap-alloc-source",
+    "retention-memory-upstream-legacy_stream-post_two_gc-alloc-source",
+    "retention-memory-upstream-legacy_stream-warm_small-alloc-source",
+    "retention-memory-upstream-legacy_stream-after_large-alloc-source",
+    "retention-memory-upstream-legacy_stream-large_then_small-alloc-source",
+    "retention-memory-upstream-legacy_owned-post_two_gc-alloc-source",
+    "retention-memory-upstream-legacy_owned-warm_small-alloc-source",
+    "retention-memory-correctness-legacy_stream-post_two_gc-alloc-source",
+    "retention-memory-correctness-legacy_stream-warm_small-alloc-source",
+    "retention-memory-correctness-legacy_stream-after_large-alloc-source",
+    "retention-memory-correctness-legacy_stream-large_then_small-alloc-source",
+    "retention-memory-correctness-legacy_owned-post_two_gc-alloc-source",
+    "retention-memory-correctness-legacy_owned-warm_small-alloc-source"
+  ],
+  "interpretation": "Read the generated call/source and bytes/objects views; sparse heap is not retention proof. Capture logs contain native time/RSS observations. Instrumented timings are excluded from release comparisons."
+}
+Traceback (most recent call last):
+  File "$JET_CHECKOUT/docs/plans/template-execution-budgets/finalization-lane-4-evidence/analyze_profiles.py", line 107, in <module>
+    main(Path(sys.argv[1]).resolve())
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "$JET_CHECKOUT/docs/plans/template-execution-budgets/finalization-lane-4-evidence/analyze_profiles.py", line 101, in main
+    raise RuntimeError('profile coverage incomplete; inspect summary and receipts')
+RuntimeError: profile coverage incomplete; inspect summary and receipts

@@ -1,0 +1,38 @@
+--- a/execution.go
++++ b/execution.go
+@@ -85,2 +85,2 @@
+-	if st.execution.terminal != nil {
+-		panic(executionAbort{st.execution.terminal})
++	if err := st.execution.terminal; err != nil {
++		panic(executionAbort{err})
+@@ -107,7 +106,0 @@
+-	if st.execution.ctx == nil && st.execution.terminal == nil {
+-		return
+-	}
+-	st.checkpointActive(steps)
+-}
+-
+-func (st *Runtime) checkpointActive(steps uint64) {
+@@ -115,4 +108,7 @@
+-	st.reserveWork(steps)
+-}
+-
+-// reserveWork follows a terminal check without an intervening native call.
++	if st.execution.ctx != nil {
++		st.reserveWork(steps)
++	}
++}
++
++// Callers check the terminal latch and non-nil context before this reservation,
++// with no intervening native call.
+@@ -121,3 +116,0 @@
+-	if b.ctx == nil {
+-		return
+-	}
+@@ -147,0 +141,6 @@
++	if st.execution.ctx != nil || st.execution.terminal != nil || st.execution.options.MaxDepth != 0 {
++		st.enterActive()
++	}
++}
++
++func (st *Runtime) enterActive() {

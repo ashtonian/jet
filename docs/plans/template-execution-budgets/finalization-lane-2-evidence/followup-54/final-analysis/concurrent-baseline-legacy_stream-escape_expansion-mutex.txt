@@ -1,0 +1,36 @@
+File: render.test
+Type: delay
+Time: 2026-11-08 04:46:41 CST
+Showing nodes accounting for 2793ns, 100% of 2793ns total
+Showing top 30 nodes out of 32
+      flat  flat%   sum%        cum   cum%
+    2626ns 94.02% 94.02%     2626ns 94.02%  runtime.unlock (inline)
+     167ns  5.98%   100%      167ns  5.98%  sync.(*Mutex).Unlock
+         0     0%   100%      459ns 16.43%  compress/flate.(*Writer).Close (inline)
+         0     0%   100%      459ns 16.43%  compress/flate.(*compressor).close
+         0     0%   100%      459ns 16.43%  compress/flate.(*compressor).deflateFast
+         0     0%   100%      459ns 16.43%  compress/flate.(*fastEncL1).encode
+         0     0%   100%      459ns 16.43%  compress/flate.(*fastGen).addBlock
+         0     0%   100%      459ns 16.43%  compress/gzip.(*Writer).Close
+         0     0%   100%      167ns  5.98%  github.com/CloudyKit/jet/v6.(*Template).Execute (inline)
+         0     0%   100%      167ns  5.98%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0%   100%      167ns  5.98%  github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes.func1.1
+         0     0%   100%      167ns  5.98%  github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes.func1.gowrap1
+         0     0%   100%      167ns  5.98%  github.com/CloudyKit/jet/v6_test.init.func1
+         0     0%   100%      459ns 16.43%  runtime.(*mcache).allocLarge
+         0     0%   100%      459ns 16.43%  runtime.(*mheap).alloc
+         0     0%   100%      459ns 16.43%  runtime.(*mheap).alloc.func1
+         0     0%   100%      459ns 16.43%  runtime.(*mheap).reclaim
+         0     0%   100%     2167ns 77.59%  runtime.findRunnable
+         0     0%   100%     2167ns 77.59%  runtime.gopreempt_m (inline)
+         0     0%   100%     2167ns 77.59%  runtime.goschedImpl
+         0     0%   100%      459ns 16.43%  runtime.makeslice
+         0     0%   100%      459ns 16.43%  runtime.mallocgc
+         0     0%   100%      459ns 16.43%  runtime.mallocgcLarge
+         0     0%   100%     2167ns 77.59%  runtime.morestack
+         0     0%   100%     2167ns 77.59%  runtime.newstack
+         0     0%   100%     2167ns 77.59%  runtime.schedule
+         0     0%   100%      459ns 16.43%  runtime.systemstack
+         0     0%   100%      459ns 16.43%  runtime/pprof.(*profileBuilder).build
+         0     0%   100%      459ns 16.43%  runtime/pprof.profileWriter
+         0     0%   100%      167ns  5.98%  sync.(*Pool).Get

@@ -1,0 +1,24 @@
+File: upstream.test
+Type: delay
+Time: 2026-11-08 03:02:50 CST
+Showing nodes accounting for 24.41s, 99.66% of 24.49s total
+Dropped 79 nodes (cum <= 0.12s)
+      flat  flat%   sum%        cum   cum%
+    16.33s 66.67% 66.67%     16.33s 66.67%  runtime.chanrecv1
+     8.08s 33.00% 99.66%      8.08s 33.00%  sync.(*WaitGroup).Wait
+         0     0% 99.66%      8.09s 33.04%  github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes
+         0     0% 99.66%      8.08s 33.00%  github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes.func1
+         0     0% 99.66%      8.23s 33.58%  main.main
+         0     0% 99.66%      8.23s 33.58%  runtime.main
+         0     0% 99.66%     16.20s 66.13%  testing.(*B).Run
+         0     0% 99.66%      8.09s 33.03%  testing.(*B).doBench
+         0     0% 99.66%      8.08s 32.99%  testing.(*B).doBench.gowrap1
+         0     0% 99.66%      8.08s 32.99%  testing.(*B).launch
+         0     0% 99.66%      8.09s 33.03%  testing.(*B).run
+         0     0% 99.66%      8.11s 33.10%  testing.(*B).run1
+         0     0% 99.66%      8.09s 33.05%  testing.(*B).run1.func1
+         0     0% 99.66%     24.28s 99.13%  testing.(*B).runN
+         0     0% 99.66%      8.23s 33.58%  testing.(*M).Run
+         0     0% 99.66%      8.09s 33.03%  testing.(*benchState).processBench
+         0     0% 99.66%      8.10s 33.08%  testing.runBenchmarks
+         0     0% 99.66%      8.10s 33.08%  testing.runBenchmarks.func1

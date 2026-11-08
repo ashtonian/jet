@@ -1,0 +1,13 @@
+File: defaults.test
+Type: inuse_objects
+Time: 2026-11-08 04:14:08 CST
+Showing nodes accounting for 6553, 100% of 6553 total
+      flat  flat%   sum%        cum   cum%
+      6553   100%   100%       6553   100%  runtime.mallocgc
+         0     0%   100%       5461 83.34%  runtime.(*scavengerState).init
+         0     0%   100%       5461 83.34%  runtime.bgscavenge
+         0     0%   100%       1092 16.66%  runtime.malg
+         0     0%   100%       6553   100%  runtime.newobject
+         0     0%   100%       1092 16.66%  runtime.newproc.func1
+         0     0%   100%       1092 16.66%  runtime.newproc1
+         0     0%   100%       1092 16.66%  runtime.systemstack

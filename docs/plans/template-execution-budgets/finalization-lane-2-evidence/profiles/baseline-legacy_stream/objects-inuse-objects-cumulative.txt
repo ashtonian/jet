@@ -1,0 +1,31 @@
+File: baseline.test
+Type: inuse_objects
+Time: 2026-11-08 01:29:21 CST
+Showing nodes accounting for 53, 52.48% of 101 total
+Showing top 25 nodes out of 125
+      flat  flat%   sum%        cum   cum%
+         0     0%     0%         83 82.18%  testing.(*B).runN
+         0     0%     0%         81 80.20%  github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview
+         0     0%     0%         81 80.20%  testing.(*B).run1.func1
+         0     0%     0%         72 71.29%  encoding/json.Unmarshal (inline)
+         0     0%     0%         72 71.29%  encoding/json/v2.Unmarshal
+         0     0%     0%         72 71.29%  encoding/json/v2.unmarshalDecode
+         0     0%     0%         72 71.29%  github.com/CloudyKit/jet/v6_test.executionWorkloads
+         0     0%     0%         66 65.35%  sync.(*Once).Do (partial-inline)
+         0     0%     0%         66 65.35%  sync.(*Once).doSlow
+         0     0%     0%         63 62.38%  encoding/json/v2.makeSliceArshaler.func3
+         0     0%     0%         55 54.46%  encoding/json/v2.makeStructArshaler.func3
+         0     0%     0%         51 50.50%  encoding/json/v2.makeStructArshaler.func1
+        13 12.87% 12.87%         51 50.50%  encoding/json/v2.makeStructFields
+         0     0% 12.87%         41 40.59%  encoding/json/v2.lookupArshaler
+         0     0% 12.87%         34 33.66%  encoding/json/v2.makeDefaultArshaler
+         1  0.99% 13.86%         32 31.68%  encoding/json/v2.makeStructFields.func3
+        14 13.86% 27.72%         14 13.86%  encoding/json/v2.makeMapArshaler
+         1  0.99% 28.71%         11 10.89%  reflect.(*rtype).ptrTo
+         0     0% 28.71%         11 10.89%  reflect.PointerTo (inline)
+        11 10.89% 39.60%         11 10.89%  runtime.mallocgc
+         0     0% 39.60%          9  8.91%  testing.(*B).Run
+         0     0% 39.60%          8  7.92%  encoding/json/v2.makeSliceArshaler.func1
+         0     0% 39.60%          8  7.92%  runtime.newobject
+         6  5.94% 45.54%          7  6.93%  encoding/json/v2.makeSliceArshaler
+         7  6.93% 52.48%          7  6.93%  encoding/json/v2.makeStructArshaler (inline)

@@ -1,0 +1,25 @@
+goos: darwin
+goarch: arm64
+pkg: github.com/CloudyKit/jet/v6
+cpu: Apple M2 Max
+BenchmarkAdmissionLookup/1-2 	  956047	       187.5 ns/op	      48 B/op	       3 allocs/op
+BenchmarkAdmissionLookup/3-2 	  839828	       218.8 ns/op	      48 B/op	       3 allocs/op
+BenchmarkAdmissionLookup/4-2 	  760723	       243.8 ns/op	      48 B/op	       3 allocs/op
+BenchmarkAdmissionLookup/5-2 	  683738	       266.2 ns/op	      48 B/op	       3 allocs/op
+BenchmarkAdmissionLookup/7-2 	  537547	       323.8 ns/op	      48 B/op	       3 allocs/op
+BenchmarkAdmissionLookup/8-2 	  490562	       347.1 ns/op	      48 B/op	       3 allocs/op
+BenchmarkAdmissionLookup/9-2 	  210775	       828.2 ns/op	    1568 B/op	      13 allocs/op
+BenchmarkAdmissionLookup/15-2         	  103916	      1697 ns/op	    3104 B/op	      17 allocs/op
+BenchmarkAdmissionLookup/16-2         	  100363	      1779 ns/op	    3104 B/op	      17 allocs/op
+BenchmarkAdmissionLookup/17-2         	   91226	      2000 ns/op	    4512 B/op	      19 allocs/op
+BenchmarkAdmissionLookup/64-2         	   23370	      7662 ns/op	   16161 B/op	      29 allocs/op
+BenchmarkAdmissionInput/empty-2       	  609686	       296.4 ns/op	     202 B/op	       5 allocs/op
+BenchmarkAdmissionInput/scalar-2      	  527131	       330.6 ns/op	     202 B/op	       5 allocs/op
+BenchmarkAdmissionInput/nested-2      	   47254	      3981 ns/op	    4810 B/op	      65 allocs/op
+BenchmarkAdmissionInput/shared-2      	  116896	      1597 ns/op	    1170 B/op	      21 allocs/op
+BenchmarkAdmissionInput/large-2       	    4677	     39813 ns/op	   23079 B/op	     649 allocs/op
+BenchmarkAdmissionCold/1-2            	  124468	      1456 ns/op	    6248 B/op	      39 allocs/op
+BenchmarkAdmissionCold/4-2            	   23185	      7513 ns/op	   23016 B/op	     150 allocs/op
+BenchmarkAdmissionCold/16-2           	    4760	     35062 ns/op	   95643 B/op	     585 allocs/op
+BenchmarkAdmissionCold/64-2           	    1292	    146462 ns/op	  388246 B/op	    2256 allocs/op
+PASS

@@ -1,0 +1,5 @@
+gate-lock: held by pid 27658 on $HOST, "jet-lane3-restricted-normal bda0fa8 in $CHECKOUT", since 2026-11-08T00:43:31Z, 2 of 6 focused cores
+# github.com/CloudyKit/jet/v6 [github.com/CloudyKit/jet/v6.test]
+./restricted_test.go:396:19: use of promoted field escapeeWriter.set in struct literal of type Runtime requires go1.27 or later (-lang was set to go1.16; check go.mod)
+FAIL	github.com/CloudyKit/jet/v6 [build failed]
+FAIL

@@ -1,0 +1,101 @@
+{
+  "quantiles": "Median and sorted[(n-1)*99//100]; p99 is the observed order statistic, not a confidence bound.",
+  "native": {
+    "interpreter_loop": {
+      "all": {
+        "samples": 128,
+        "p50_ns": 1229.5,
+        "p99_ns": 7083,
+        "max_ns": 9041
+      },
+      "canceled_only": {
+        "samples": 128,
+        "p50_ns": 1229.5,
+        "p99_ns": 7083,
+        "max_ns": 9041
+      },
+      "completed_before_request": 0,
+      "uncanceled_samples": 0,
+      "uncanceled_nonnegative_overshoot": 0,
+      "post_return_checks": 0
+    },
+    "prepaid_builtin_operation": {
+      "all": {
+        "samples": 128,
+        "p50_ns": 152916.0,
+        "p99_ns": 175625,
+        "max_ns": 185292
+      },
+      "canceled_only": {
+        "samples": 128,
+        "p50_ns": 152916.0,
+        "p99_ns": 175625,
+        "max_ns": 185292
+      },
+      "completed_before_request": 0,
+      "uncanceled_samples": 0,
+      "uncanceled_nonnegative_overshoot": 0,
+      "post_return_checks": 0
+    },
+    "compile_admission": {
+      "all": {
+        "samples": 128,
+        "p50_ns": -250.0,
+        "p99_ns": 50333,
+        "max_ns": 60959
+      },
+      "canceled_only": {
+        "samples": 53,
+        "p50_ns": 1584,
+        "p99_ns": 57709,
+        "max_ns": 60959
+      },
+      "completed_before_request": 73,
+      "uncanceled_samples": 75,
+      "uncanceled_nonnegative_overshoot": 2,
+      "post_return_checks": 0
+    },
+    "input_admission": {
+      "all": {
+        "samples": 128,
+        "p50_ns": 1125.0,
+        "p99_ns": 24083,
+        "max_ns": 74709
+      },
+      "canceled_only": {
+        "samples": 128,
+        "p50_ns": 1125.0,
+        "p99_ns": 24083,
+        "max_ns": 74709
+      },
+      "completed_before_request": 0,
+      "uncanceled_samples": 0,
+      "uncanceled_nonnegative_overshoot": 0,
+      "post_return_checks": 0
+    }
+  },
+  "callbacks": {
+    "false": {
+      "samples": 128,
+      "p50_ns": 1520.5,
+      "p99_ns": 10875,
+      "max_ns": 54917
+    },
+    "true": {
+      "samples": 128,
+      "p50_ns": 1604.5,
+      "p99_ns": 5333,
+      "max_ns": 8583
+    }
+  },
+  "limits": [
+    "Native timings include the synchronized measurement context; deterministic controls are separate.",
+    "Negative overshoots mean completion preceded the cancellation request.",
+    "An uncanceled return alone does not establish that its return timestamp preceded the request.",
+    "Blocked callback observations explicitly release and join the callback; they do not establish preemption."
+  ],
+  "raw_sha256": {
+    "$JET_CHECKOUT/.git/finalization-evidence/release-54b5614/results/cancellation-candidate.log": "a8ff84d1d1513f5676a896eec0c9db186b0f1e5aa7d6e84913536e373430da49",
+    "$JET_CHECKOUT/.git/finalization-evidence/callback-cancellation-samples/run.log": "124c6f142b6b6cdc497f60241f360a9f37494246c3b5e61e76f54d676b1e32c4"
+  }
+}

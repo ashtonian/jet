@@ -1,0 +1,30 @@
+File: baseline.test
+Type: cpu
+Time: 2026-11-08 02:10:53 CST
+Duration: 2.62s, Total samples = 2.18s (83.07%)
+Showing nodes accounting for 2.10s, 96.33% of 2.18s total
+Dropped 40 nodes (cum <= 0.01s)
+Showing top 22 nodes out of 70
+      flat  flat%   sum%        cum   cum%
+     0.44s 20.18% 20.18%      1.69s 77.52%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+     0.21s  9.63% 29.82%      1.41s 64.68%  github.com/CloudyKit/jet/v6.(*executionWriter).write
+     0.20s  9.17% 38.99%      0.20s  9.17%  github.com/CloudyKit/jet/v6.(*Runtime).rethrowTerminal (inline)
+     0.14s  6.42% 45.41%      0.35s 16.06%  bytes.(*Buffer).Write
+     0.14s  6.42% 51.83%      0.27s 12.39%  github.com/CloudyKit/jet/v6.(*Runtime).reserve
+     0.13s  5.96% 57.80%      0.41s 18.81%  github.com/CloudyKit/jet/v6.(*Runtime).checkpoint
+     0.13s  5.96% 63.76%      0.13s  5.96%  runtime.kevent
+     0.11s  5.05% 68.81%      0.11s  5.05%  runtime.memmove
+     0.10s  4.59% 73.39%      0.10s  4.59%  bytes.(*Buffer).tryGrowByReslice (inline)
+     0.10s  4.59% 77.98%      1.79s 82.11%  text/template.HTMLEscape
+     0.09s  4.13% 82.11%      0.09s  4.13%  github.com/CloudyKit/jet/v6.(*Runtime).reserveUnchecked (inline)
+     0.08s  3.67% 85.78%      0.12s  5.50%  context.(*cancelCtx).Err
+     0.05s  2.29% 88.07%      0.05s  2.29%  runtime.madvise
+     0.04s  1.83% 89.91%      0.04s  1.83%  sync/atomic.(*Value).Load (inline)
+     0.03s  1.38% 91.28%      0.03s  1.38%  internal/runtime/atomic.(*UnsafePointer).Load
+     0.03s  1.38% 92.66%      0.03s  1.38%  runtime.memclrNoHeapPointers
+     0.02s  0.92% 93.58%      1.43s 65.60%  github.com/CloudyKit/jet/v6.(*executionWriter).Write
+     0.02s  0.92% 94.50%      0.02s  0.92%  runtime.pthread_cond_signal
+     0.02s  0.92% 95.41%      0.02s  0.92%  runtime.pthread_kill
+     0.01s  0.46% 95.87%      1.80s 82.57%  github.com/CloudyKit/jet/v6.(*dataPrinter).Write
+     0.01s  0.46% 96.33%      0.04s  1.83%  runtime.mapassign_faststr
+         0     0% 96.33%      1.80s 82.57%  github.com/CloudyKit/fastprinter.PrintString

@@ -1,0 +1,36 @@
+File: render.test
+Type: alloc_space
+Time: 2026-11-08 05:27:43 CST
+Showing nodes accounting for 88.09MB, 100% of 88.09MB total
+Showing top 30 nodes out of 51
+      flat  flat%   sum%        cum   cum%
+   57.50MB 65.28% 65.28%    57.50MB 65.28%  github.com/CloudyKit/jet/v6.newIntsRanger (inline)
+   24.50MB 27.81% 93.09%       82MB 93.09%  github.com/CloudyKit/jet/v6.init.0.func5
+       3MB  3.41% 96.50%        3MB  3.41%  regexp/syntax.(*compiler).inst (inline)
+    0.57MB  0.64% 97.14%     0.57MB  0.64%  runtime/pprof.StartCPUProfile
+    0.51MB  0.58% 97.72%     0.51MB  0.58%  strings.(*byteStringReplacer).Replace
+    0.50MB  0.57% 98.30%     0.50MB  0.57%  encoding/json/v2.makeString
+    0.50MB  0.57% 98.86%     0.50MB  0.57%  regexp.onePassCopy
+    0.50MB  0.57% 99.43%     0.50MB  0.57%  regexp.makeOnePass
+    0.50MB  0.57%   100%     0.50MB  0.57%  runtime.mallocgc
+         0     0%   100%     0.50MB  0.57%  encoding/json.Unmarshal (inline)
+         0     0%   100%     0.50MB  0.57%  encoding/json/v2.Unmarshal
+         0     0%   100%     0.50MB  0.57%  encoding/json/v2.makeSliceArshaler.func3
+         0     0%   100%     0.50MB  0.57%  encoding/json/v2.makeStringArshaler.func2
+         0     0%   100%     0.50MB  0.57%  encoding/json/v2.makeStructArshaler.func3
+         0     0%   100%     0.50MB  0.57%  encoding/json/v2.unmarshalDecode
+         0     0%   100%       82MB 93.09%  github.com/CloudyKit/jet/v6.(*Runtime).evalCallExpression (inline)
+         0     0%   100%       82MB 93.09%  github.com/CloudyKit/jet/v6.(*Runtime).evalPipeCallExpression
+         0     0%   100%       82MB 93.09%  github.com/CloudyKit/jet/v6.(*Runtime).evalPrimaryExpressionGroup
+         0     0%   100%       82MB 93.09%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0%   100%       82MB 93.09%  github.com/CloudyKit/jet/v6.(*Runtime).executeRange
+         0     0%   100%       82MB 93.09%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0%   100%       82MB 93.09%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0%   100%     5.02MB  5.70%  github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes
+         0     0%   100%       82MB 93.09%  github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes.func1
+         0     0%   100%     0.51MB  0.58%  github.com/CloudyKit/jet/v6_test.additionalExecutionWorkloads
+         0     0%   100%     0.50MB  0.57%  github.com/CloudyKit/jet/v6_test.executionWorkloads
+         0     0%   100%       82MB 93.09%  github.com/CloudyKit/jet/v6_test.init.0.func2
+         0     0%   100%     1.02MB  1.15%  github.com/CloudyKit/jet/v6_test.measurementWorkloads
+         0     0%   100%     0.51MB  0.58%  html.EscapeString (inline)
+         0     0%   100%     0.57MB  0.64%  main.main

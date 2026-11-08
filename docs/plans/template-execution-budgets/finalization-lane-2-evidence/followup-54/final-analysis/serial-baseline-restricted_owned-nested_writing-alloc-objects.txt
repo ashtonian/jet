@@ -1,0 +1,37 @@
+File: render.test
+Type: alloc_objects
+Time: 2026-11-08 04:46:32 CST
+Showing nodes accounting for 2892688, 98.96% of 2923099 total
+Dropped 51 nodes (cum <= 14615)
+Showing top 30 nodes out of 39
+      flat  flat%   sum%        cum   cum%
+   1327144 45.40% 45.40%    1327144 45.40%  github.com/CloudyKit/jet/v6.newIntsRanger (inline)
+   1310739 44.84% 90.24%    2637883 90.24%  github.com/CloudyKit/jet/v6.init.0.func5
+    115743  3.96% 94.20%     115743  3.96%  bytes.growSlice
+     47127  1.61% 95.81%      47127  1.61%  bytes.(*Buffer).String (inline)
+     32770  1.12% 96.94%     148513  5.08%  bytes.(*Buffer).grow
+     32768  1.12% 98.06%      32768  1.12%  reflect.unsafe_New
+     24577  0.84% 98.90%    2858100 97.78%  github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext
+      1820 0.062% 98.96%      34620  1.18%  github.com/CloudyKit/jet/v6_test.additionalExecutionWorkloads
+         0     0% 98.96%     148513  5.08%  bytes.(*Buffer).Write
+         0     0% 98.96%      32800  1.12%  encoding/json.Marshal (inline)
+         0     0% 98.96%      32800  1.12%  encoding/json/v2.Marshal
+         0     0% 98.96%      32800  1.12%  encoding/json/v2.makeInterfaceArshaler.func1
+         0     0% 98.96%      32800  1.12%  encoding/json/v2.makeMapArshaler.func2
+         0     0% 98.96%      32800  1.12%  encoding/json/v2.makeSliceArshaler.func2
+         0     0% 98.96%      32800  1.12%  encoding/json/v2.marshalEncode
+         0     0% 98.96%      32768  1.12%  encoding/json/v2.newAddressableValue
+         0     0% 98.96%    2637883 90.24%  github.com/CloudyKit/jet/v6.(*Runtime).evalCallExpression (inline)
+         0     0% 98.96%    2637883 90.24%  github.com/CloudyKit/jet/v6.(*Runtime).evalPipeCallExpression
+         0     0% 98.96%    2637883 90.24%  github.com/CloudyKit/jet/v6.(*Runtime).evalPrimaryExpressionGroup
+         0     0% 98.96%    2786396 95.32%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 98.96%    2786396 95.32%  github.com/CloudyKit/jet/v6.(*Runtime).executeRange
+         0     0% 98.96%    2833523 96.94%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0% 98.96%    2833523 96.94%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0% 98.96%     148513  5.08%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+         0     0% 98.96%      59527  2.04%  github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes
+         0     0% 98.96%    2858100 97.78%  github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes.func1
+         0     0% 98.96%    2858100 97.78%  github.com/CloudyKit/jet/v6_test.init.0.func5
+         0     0% 98.96%      35513  1.21%  github.com/CloudyKit/jet/v6_test.measurementWorkloads
+         0     0% 98.96%      32768  1.12%  reflect.New
+         0     0% 98.96%      24014  0.82%  regexp.Compile (inline)

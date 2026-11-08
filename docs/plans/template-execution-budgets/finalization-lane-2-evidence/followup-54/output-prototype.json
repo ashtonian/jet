@@ -1,0 +1,272 @@
+[
+  {
+    "variant": "combined",
+    "sample": 0,
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/followup-54/variants/combined/render.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkExecutionModes$/(legacy_stream|metered_background_stream|metered_live_stream)$/(header_literal|header_interpolation|escape_expansion)$/(text|html)$",
+      "-test.benchtime=200ms",
+      "-test.count=1"
+    ],
+    "exit_code": 0,
+    "deadline": 30,
+    "GOMAXPROCS": 2,
+    "kill_after": 5,
+    "elapsed": 5.430736780166626
+  },
+  {
+    "variant": "buffer-fast",
+    "sample": 0,
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/followup-54/variants/buffer-fast/render.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkExecutionModes$/(legacy_stream|metered_background_stream|metered_live_stream)$/(header_literal|header_interpolation|escape_expansion)$/(text|html)$",
+      "-test.benchtime=200ms",
+      "-test.count=1"
+    ],
+    "exit_code": 0,
+    "deadline": 30,
+    "GOMAXPROCS": 2,
+    "kill_after": 5,
+    "elapsed": 5.578022003173828
+  },
+  {
+    "variant": "methodless",
+    "sample": 0,
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/followup-54/variants/methodless/render.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkExecutionModes$/(legacy_stream|metered_background_stream|metered_live_stream)$/(header_literal|header_interpolation|escape_expansion)$/(text|html)$",
+      "-test.benchtime=200ms",
+      "-test.count=1"
+    ],
+    "exit_code": 0,
+    "deadline": 30,
+    "GOMAXPROCS": 2,
+    "kill_after": 5,
+    "elapsed": 5.714514970779419
+  },
+  {
+    "variant": "both-output",
+    "sample": 0,
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/followup-54/variants/both-output/render.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkExecutionModes$/(legacy_stream|metered_background_stream|metered_live_stream)$/(header_literal|header_interpolation|escape_expansion)$/(text|html)$",
+      "-test.benchtime=200ms",
+      "-test.count=1"
+    ],
+    "exit_code": 0,
+    "deadline": 30,
+    "GOMAXPROCS": 2,
+    "kill_after": 5,
+    "elapsed": 6.018800973892212
+  },
+  {
+    "variant": "legacy-setup",
+    "sample": 0,
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/followup-54/variants/legacy-setup/render.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkExecutionModes$/(legacy_stream|metered_background_stream|metered_live_stream)$/(header_literal|header_interpolation|escape_expansion)$/(text|html)$",
+      "-test.benchtime=200ms",
+      "-test.count=1"
+    ],
+    "exit_code": 0,
+    "deadline": 30,
+    "GOMAXPROCS": 2,
+    "kill_after": 5,
+    "elapsed": 5.89422607421875
+  },
+  {
+    "variant": "legacy-setup",
+    "sample": 1,
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/followup-54/variants/legacy-setup/render.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkExecutionModes$/(legacy_stream|metered_background_stream|metered_live_stream)$/(header_literal|header_interpolation|escape_expansion)$/(text|html)$",
+      "-test.benchtime=200ms",
+      "-test.count=1"
+    ],
+    "exit_code": 0,
+    "deadline": 30,
+    "GOMAXPROCS": 2,
+    "kill_after": 5,
+    "elapsed": 5.339141845703125
+  },
+  {
+    "variant": "both-output",
+    "sample": 1,
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/followup-54/variants/both-output/render.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkExecutionModes$/(legacy_stream|metered_background_stream|metered_live_stream)$/(header_literal|header_interpolation|escape_expansion)$/(text|html)$",
+      "-test.benchtime=200ms",
+      "-test.count=1"
+    ],
+    "exit_code": 0,
+    "deadline": 30,
+    "GOMAXPROCS": 2,
+    "kill_after": 5,
+    "elapsed": 5.618434906005859
+  },
+  {
+    "variant": "methodless",
+    "sample": 1,
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/followup-54/variants/methodless/render.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkExecutionModes$/(legacy_stream|metered_background_stream|metered_live_stream)$/(header_literal|header_interpolation|escape_expansion)$/(text|html)$",
+      "-test.benchtime=200ms",
+      "-test.count=1"
+    ],
+    "exit_code": 0,
+    "deadline": 30,
+    "GOMAXPROCS": 2,
+    "kill_after": 5,
+    "elapsed": 5.497655153274536
+  },
+  {
+    "variant": "buffer-fast",
+    "sample": 1,
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/followup-54/variants/buffer-fast/render.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkExecutionModes$/(legacy_stream|metered_background_stream|metered_live_stream)$/(header_literal|header_interpolation|escape_expansion)$/(text|html)$",
+      "-test.benchtime=200ms",
+      "-test.count=1"
+    ],
+    "exit_code": 0,
+    "deadline": 30,
+    "GOMAXPROCS": 2,
+    "kill_after": 5,
+    "elapsed": 5.388340950012207
+  },
+  {
+    "variant": "combined",
+    "sample": 1,
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/followup-54/variants/combined/render.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkExecutionModes$/(legacy_stream|metered_background_stream|metered_live_stream)$/(header_literal|header_interpolation|escape_expansion)$/(text|html)$",
+      "-test.benchtime=200ms",
+      "-test.count=1"
+    ],
+    "exit_code": 0,
+    "deadline": 30,
+    "GOMAXPROCS": 2,
+    "kill_after": 5,
+    "elapsed": 5.410821914672852
+  },
+  {
+    "variant": "combined",
+    "sample": 2,
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/followup-54/variants/combined/render.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkExecutionModes$/(legacy_stream|metered_background_stream|metered_live_stream)$/(header_literal|header_interpolation|escape_expansion)$/(text|html)$",
+      "-test.benchtime=200ms",
+      "-test.count=1"
+    ],
+    "exit_code": 0,
+    "deadline": 30,
+    "GOMAXPROCS": 2,
+    "kill_after": 5,
+    "elapsed": 5.421021938323975
+  },
+  {
+    "variant": "buffer-fast",
+    "sample": 2,
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/followup-54/variants/buffer-fast/render.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkExecutionModes$/(legacy_stream|metered_background_stream|metered_live_stream)$/(header_literal|header_interpolation|escape_expansion)$/(text|html)$",
+      "-test.benchtime=200ms",
+      "-test.count=1"
+    ],
+    "exit_code": 0,
+    "deadline": 30,
+    "GOMAXPROCS": 2,
+    "kill_after": 5,
+    "elapsed": 5.442057132720947
+  },
+  {
+    "variant": "methodless",
+    "sample": 2,
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/followup-54/variants/methodless/render.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkExecutionModes$/(legacy_stream|metered_background_stream|metered_live_stream)$/(header_literal|header_interpolation|escape_expansion)$/(text|html)$",
+      "-test.benchtime=200ms",
+      "-test.count=1"
+    ],
+    "exit_code": 0,
+    "deadline": 30,
+    "GOMAXPROCS": 2,
+    "kill_after": 5,
+    "elapsed": 5.8653459548950195
+  },
+  {
+    "variant": "both-output",
+    "sample": 2,
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/followup-54/variants/both-output/render.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkExecutionModes$/(legacy_stream|metered_background_stream|metered_live_stream)$/(header_literal|header_interpolation|escape_expansion)$/(text|html)$",
+      "-test.benchtime=200ms",
+      "-test.count=1"
+    ],
+    "exit_code": 0,
+    "deadline": 30,
+    "GOMAXPROCS": 2,
+    "kill_after": 5,
+    "elapsed": 5.287398099899292
+  },
+  {
+    "variant": "legacy-setup",
+    "sample": 2,
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/followup-54/variants/legacy-setup/render.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkExecutionModes$/(legacy_stream|metered_background_stream|metered_live_stream)$/(header_literal|header_interpolation|escape_expansion)$/(text|html)$",
+      "-test.benchtime=200ms",
+      "-test.count=1"
+    ],
+    "exit_code": 0,
+    "deadline": 30,
+    "GOMAXPROCS": 2,
+    "kill_after": 5,
+    "elapsed": 5.347038269042969
+  }
+]

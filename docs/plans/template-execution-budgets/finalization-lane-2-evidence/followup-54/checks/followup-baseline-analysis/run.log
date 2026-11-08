@@ -1,0 +1,17 @@
+gate-lock: held by pid <pid> on <host>, "jet-finalization-lane-2-followup-baseline-analysis 54b5614 in <checkout>", since 2026-11-08T09:58:14Z, 2 of 6 focused cores
+legacy_stream-header_literal
+legacy_stream-inheritance
+legacy_stream-nested_writing
+legacy_stream-header_interpolation
+legacy_stream-escape_expansion
+metered_background_stream-header_literal
+metered_background_stream-inheritance
+metered_background_stream-nested_writing
+metered_background_stream-header_interpolation
+metered_background_stream-escape_expansion
+metered_live_stream-header_literal
+metered_live_stream-inheritance
+metered_live_stream-nested_writing
+metered_live_stream-header_interpolation
+metered_live_stream-escape_expansion
+15 isolated workflows, 165 frozen-source profile views

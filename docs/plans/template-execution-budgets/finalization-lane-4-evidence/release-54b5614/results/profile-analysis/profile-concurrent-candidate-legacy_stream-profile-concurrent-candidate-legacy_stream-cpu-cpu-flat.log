@@ -1,0 +1,48 @@
+File: candidate.test
+Type: cpu
+Time: 2026-11-08 03:03:17 CST
+Duration: 8.24s, Total samples = 61.15s (742.13%)
+Showing nodes accounting for 50.93s, 83.29% of 61.15s total
+Dropped 293 nodes (cum <= 0.31s)
+Showing top 40 nodes out of 129
+      flat  flat%   sum%        cum   cum%
+     7.37s 12.05% 12.05%     13.33s 21.80%  bytes.(*Buffer).Write
+     5.15s  8.42% 20.47%      5.15s  8.42%  runtime.usleep
+     4.52s  7.39% 27.87%      4.52s  7.39%  runtime.madvise
+     4.50s  7.36% 35.22%     20.94s 34.24%  text/template.HTMLEscape
+     3.85s  6.30% 41.52%      3.87s  6.33%  bytes.(*Buffer).tryGrowByReslice (inline)
+     3.72s  6.08% 47.60%     17.11s 27.98%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+     2.87s  4.69% 52.30%     47.46s 77.61%  github.com/CloudyKit/jet/v6.(*Template).execute
+     2.33s  3.81% 56.11%      2.33s  3.81%  runtime.memmove
+     1.49s  2.44% 58.54%      1.49s  2.44%  runtime.pthread_cond_wait
+     1.41s  2.31% 60.85%      2.61s  4.27%  github.com/CloudyKit/jet/v6.(*Runtime).recover
+        1s  1.64% 62.49%      1.18s  1.93%  sync.(*Pool).pin
+     0.97s  1.59% 64.07%     40.39s 66.05%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+     0.81s  1.32% 65.40%      0.81s  1.32%  github.com/CloudyKit/jet/v6.(*Runtime).checkpoint
+     0.80s  1.31% 66.70%      1.70s  2.78%  github.com/CloudyKit/jet/v6.(*Runtime).resolve
+     0.80s  1.31% 68.01%      0.80s  1.31%  runtime.pthread_kill
+     0.73s  1.19% 69.21%      0.73s  1.19%  runtime.pthread_cond_signal
+     0.70s  1.14% 70.35%      0.70s  1.14%  github.com/CloudyKit/jet/v6.(*Runtime).isRestricted (inline)
+     0.66s  1.08% 71.43%      1.37s  2.24%  sync.(*Pool).Put
+     0.60s  0.98% 72.41%      1.38s  2.26%  sync.(*Pool).Get
+     0.52s  0.85% 73.26%      3.34s  5.46%  github.com/CloudyKit/jet/v6.(*Runtime).evalPrimaryExpressionGroup
+     0.47s  0.77% 74.03%      0.82s  1.34%  internal/runtime/maps.(*Map).getWithoutKeySmallFastStr
+     0.43s   0.7% 74.73%      0.54s  0.88%  encoding/json/internal/jsonwire.AppendQuote
+     0.43s   0.7% 75.44%      0.51s  0.83%  runtime.tryDeferToSpanScan
+     0.40s  0.65% 76.09%      9.13s 14.93%  encoding/json/v2.makeMapArshaler.func2
+     0.35s  0.57% 76.66%      2.38s  3.89%  github.com/CloudyKit/jet/v6.(*Runtime).evalBaseExpressionGroup
+     0.35s  0.57% 77.24%      1.06s  1.73%  reflect.(*rtype).Implements
+     0.34s  0.56% 77.79%      0.53s  0.87%  reflect.implements
+     0.32s  0.52% 78.32%      0.32s  0.52%  runtime.gorecover
+     0.31s  0.51% 78.82%      0.67s  1.10%  runtime.(*_panic).nextDefer
+     0.31s  0.51% 79.33%      0.31s  0.51%  runtime.(*_panic).nextFrame
+     0.28s  0.46% 79.79%      1.12s  1.83%  runtime.wbBufFlush1
+     0.27s  0.44% 80.23%     20.89s 34.16%  github.com/CloudyKit/fastprinter.PrintString
+     0.26s  0.43% 80.65%      0.46s  0.75%  internal/runtime/maps.(*Iter).Next
+     0.24s  0.39% 81.05%      1.21s  1.98%  encoding/json/jsontext.(*encoderState).WriteToken
+     0.24s  0.39% 81.44%      0.96s  1.57%  runtime.mallocgcSmallScanNoHeaderSC2
+     0.23s  0.38% 81.82%      0.82s  1.34%  github.com/CloudyKit/jet/v6.(*Runtime).checkNode
+     0.23s  0.38% 82.19%      0.48s  0.78%  reflect.Value.Elem
+     0.23s  0.38% 82.57%      0.39s  0.64%  runtime.resolveTypeOff
+     0.22s  0.36% 82.93%      0.36s  0.59%  reflect.Value.assignTo
+     0.22s  0.36% 83.29%      0.36s  0.59%  runtime.(*_panic).start

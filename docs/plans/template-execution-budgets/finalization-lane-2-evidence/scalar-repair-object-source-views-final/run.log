@@ -1,0 +1,2 @@
+gate-lock: held by pid <pid> on <host>, "jet-finalization-lane-2-scalar-repair-object-source-views-final f599fc9 in <checkout>", since 2026-11-08T08:49:21Z, 2 of 6 focused cores
+Eight supplementary frozen-source views completed without new captures; sequential printValue has no sampled allocation source

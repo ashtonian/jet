@@ -1,0 +1,22 @@
+package jet_test
+import (
+ "bytes"
+ "context"
+ "github.com/CloudyKit/jet/v6"
+)
+func finalExecutionOptions() jet.ExecutionOptions{return jet.ExecutionOptions{
+ MaxSteps:1000000,MaxDepth:64,MaxValueBytes:8<<20,MaxOutputBytes:1<<20,
+ ParseOptions:jet.ParseOptions{MaxSourceBytes:128<<10,MaxTotalSourceBytes:1<<20,MaxNodes:20000,MaxSteps:1000000,MaxDepth:64,MaxTemplates:64},
+}}
+func finalRestrictedSetup(f executionWorkload,html bool)(*jet.Template,error){
+ sources:=map[string]string{"workload":f.Source};for name,source:=range f.Templates{sources[name]=source}
+ s,err:=jet.NewRestrictedSet(context.Background(),sources,jet.RestrictedOptions{Text:!html,Execution:finalExecutionOptions(),Input:jet.InputOptions{MaxBytes:1<<20,MaxItems:20000,MaxSteps:1000000,MaxDepth:64}})
+ if err!=nil{return nil,err};return s.GetTemplate("workload")
+}
+func init(){
+ render:=func(ctx context.Context,t *jet.Template,v jet.VarMap,b *bytes.Buffer)(string,error){return "",t.ExecuteContext(ctx,b,v,nil,finalExecutionOptions())}
+ finalReviewModes=append(finalReviewModes,
+ finalReviewMode{"metered_background_stream",false,finalLegacySetup,render},
+ finalReviewMode{"metered_live_stream",true,finalLegacySetup,render},
+ finalReviewMode{"restricted_owned",true,finalRestrictedSetup,func(ctx context.Context,t *jet.Template,v jet.VarMap,_ *bytes.Buffer)(string,error){return t.RenderRestrictedContext(ctx,v,nil)}})
+}

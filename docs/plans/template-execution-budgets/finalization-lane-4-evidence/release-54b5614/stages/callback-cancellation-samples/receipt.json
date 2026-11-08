@@ -1,0 +1,38 @@
+{
+  "command": [
+    "gate-lock",
+    "run-focused",
+    "jet-l4-callback-cancellation-samples",
+    "--",
+    "go",
+    "test",
+    "-p=1",
+    "-parallel=2",
+    "-count=128",
+    "-timeout=180s",
+    "-run",
+    "^TestExecutionCallbackCancellationOwnership$",
+    "-v",
+    "."
+  ],
+  "queued": 1794129373.903878,
+  "deadline_seconds": 240,
+  "cleanup_seconds": 10,
+  "frozen_inputs_before_queue_manifest": "92de4e68aae778676f6fcc54911caf50da794495b18467cac4ed33e626194757",
+  "toolchain": "go version go1.27.3 darwin/arm64",
+  "environment": {
+    "CGO_ENABLED": "1",
+    "GOARCH": "arm64",
+    "GOFLAGS": "-trimpath",
+    "GOOS": "darwin"
+  },
+  "runtime_environment": {
+    "GOGC": null,
+    "GOMEMLIMIT": null,
+    "GODEBUG": null
+  },
+  "exit": 0,
+  "finished": 1794131377.8143659,
+  "frozen_inputs_after_run_manifest": "92de4e68aae778676f6fcc54911caf50da794495b18467cac4ed33e626194757",
+  "inputs_unchanged": true
+}

@@ -1,0 +1,47 @@
+File: base.test
+Type: delay
+Time: 2026-11-08 04:13:55 CST
+Showing nodes accounting for 5.91s, 100% of 5.91s total
+Dropped 109 nodes (cum <= 0.03s)
+Showing top 40 nodes out of 69
+      flat  flat%   sum%        cum   cum%
+     5.72s 96.68% 96.68%      5.72s 96.68%  runtime.unlock (partial-inline)
+     0.11s  1.80% 98.48%      0.11s  1.81%  sync.(*Mutex).Unlock
+     0.09s  1.52%   100%      0.09s  1.52%  runtime._LostContendedRuntimeLock
+         0     0%   100%      0.15s  2.59%  bytes.(*Buffer).String (inline)
+         0     0%   100%      0.31s  5.25%  bytes.(*Buffer).Write
+         0     0%   100%      0.31s  5.25%  bytes.(*Buffer).grow
+         0     0%   100%      0.04s  0.69%  github.com/CloudyKit/fastprinter.PrintString
+         0     0%   100%      0.35s  5.95%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0%   100%      0.04s  0.69%  github.com/CloudyKit/jet/v6.(*Runtime).printValue
+         0     0%   100%      0.58s  9.74%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0%   100%      0.90s 15.24%  github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext
+         0     0%   100%      0.58s  9.74%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0%   100%      0.31s  5.25%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+         0     0%   100%      0.04s  0.69%  github.com/CloudyKit/jet/v6.(*dataPrinter).text
+         0     0%   100%      0.04s  0.69%  github.com/CloudyKit/jet/v6.(*dataPrinter).value
+         0     0%   100%      0.90s 15.24%  github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes.func1.1
+         0     0%   100%      0.11s  1.80%  github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes.func1.gowrap1
+         0     0%   100%      0.90s 15.24%  github.com/CloudyKit/jet/v6_test.init.0.func5
+         0     0%   100%      0.55s  9.28%  runtime.(*mcache).nextFree
+         0     0%   100%      0.55s  9.28%  runtime.(*mcache).refill
+         0     0%   100%      0.55s  9.28%  runtime.(*mcentral).cacheSpan
+         0     0%   100%      0.57s  9.58%  runtime.(*mheap).freeSpan (inline)
+         0     0%   100%      0.57s  9.58%  runtime.(*mheap).freeSpan.func1
+         0     0%   100%      0.57s  9.59%  runtime.(*sweepLocked).sweep
+         0     0%   100%      0.05s  0.81%  runtime.asyncPreempt2.func1
+         0     0%   100%      0.03s  0.56%  runtime.bgsweep
+         0     0%   100%      0.53s  9.04%  runtime.deductSweepCredit
+         0     0%   100%      2.13s 36.07%  runtime.findRunnable
+         0     0%   100%      1.06s 17.96%  runtime.forEachP (inline)
+         0     0%   100%      1.06s 17.96%  runtime.forEachP.func1
+         0     0%   100%      1.06s 17.96%  runtime.forEachPInternal
+         0     0%   100%      0.05s  0.88%  runtime.gcAssistAlloc
+         0     0%   100%      1.36s 23.07%  runtime.gcBgMarkWorker
+         0     0%   100%      1.42s 23.95%  runtime.gcMarkDone
+         0     0%   100%      0.35s  5.96%  runtime.gcMarkDone.func2
+         0     0%   100%      0.14s  2.37%  runtime.gcMarkTermination
+         0     0%   100%      0.19s  3.27%  runtime.gcStart
+         0     0%   100%      0.19s  3.24%  runtime.gcStart.func2
+         0     0%   100%      1.17s 19.74%  runtime.gcstopm
+         0     0%   100%      3.03s 51.19%  runtime.gopreempt_m (inline)

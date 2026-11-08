@@ -1,0 +1,45 @@
+File: candidate.test
+Type: delay
+Time: 2026-11-08 03:00:17 CST
+Showing nodes accounting for 84416ns, 100% of 84416ns total
+      flat  flat%   sum%        cum   cum%
+   84416ns   100%   100%    84416ns   100%  runtime.unlock (partial-inline)
+         0     0%   100%     9250ns 10.96%  runtime.(*mheap).freeSpan (inline)
+         0     0%   100%     9250ns 10.96%  runtime.(*mheap).freeSpan.func1
+         0     0%   100%     9250ns 10.96%  runtime.(*sweepLocked).sweep
+         0     0%   100%     4833ns  5.73%  runtime.GC
+         0     0%   100%     5833ns  6.91%  runtime.allocm
+         0     0%   100%     4417ns  5.23%  runtime.bgsweep
+         0     0%   100%      917ns  1.09%  runtime.findRunnable
+         0     0%   100%    34583ns 40.97%  runtime.forEachP (inline)
+         0     0%   100%    34583ns 40.97%  runtime.forEachP.func1
+         0     0%   100%    34583ns 40.97%  runtime.forEachPInternal
+         0     0%   100%    73124ns 86.62%  runtime.gcBgMarkWorker
+         0     0%   100%     5833ns  6.91%  runtime.gcBgMarkWorker.func2
+         0     0%   100%     5833ns  6.91%  runtime.gcDrain
+         0     0%   100%     5833ns  6.91%  runtime.gcDrainMarkWorkerIdle (inline)
+         0     0%   100%    67291ns 79.71%  runtime.gcMarkDone
+         0     0%   100%    32708ns 38.75%  runtime.gcMarkDone.func2
+         0     0%   100%     4333ns  5.13%  runtime.gcMarkTermination
+         0     0%   100%     2083ns  2.47%  runtime.gcStart
+         0     0%   100%      917ns  1.09%  runtime.gopreempt_m (inline)
+         0     0%   100%      917ns  1.09%  runtime.goschedImpl
+         0     0%   100%     5833ns  6.91%  runtime.markroot
+         0     0%   100%     5833ns  6.91%  runtime.markroot.func1
+         0     0%   100%     5833ns  6.91%  runtime.mcommoninit
+         0     0%   100%     2042ns  2.42%  runtime.morestack
+         0     0%   100%     5833ns  6.91%  runtime.newm
+         0     0%   100%     2042ns  2.42%  runtime.newstack
+         0     0%   100%     1125ns  1.33%  runtime.preemptPark
+         0     0%   100%     5833ns  6.91%  runtime.ready
+         0     0%   100%     5833ns  6.91%  runtime.resumeG
+         0     0%   100%      917ns  1.09%  runtime.runSafePointFn
+         0     0%   100%     2042ns  2.42%  runtime.schedule
+         0     0%   100%     5833ns  6.91%  runtime.startm
+         0     0%   100%    32708ns 38.75%  runtime.stopTheWorldWithSema
+         0     0%   100%     9250ns 10.96%  runtime.sweepone
+         0     0%   100%    82374ns 97.58%  runtime.systemstack
+         0     0%   100%     6958ns  8.24%  runtime.wakep
+         0     0%   100%     2750ns  3.26%  testing.(*B).launch
+         0     0%   100%     2083ns  2.47%  testing.(*B).run1.func1
+         0     0%   100%     4833ns  5.73%  testing.(*B).runN

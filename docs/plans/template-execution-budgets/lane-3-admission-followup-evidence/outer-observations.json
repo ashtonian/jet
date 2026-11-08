@@ -1,0 +1,34 @@
+{
+  "matched-exclusive": {
+    "exit_code": 0,
+    "observed_by": "exec session 41296 completion",
+    "execution_deadline_seconds": 720,
+    "term_cleanup_seconds": 5,
+    "queue_log": "finish-gate.log",
+    "inner_receipts": "finish-receipts.json",
+    "observed_utc": "2026-11-08T10:14:40.560290+00:00"
+  },
+  "preliminary-profile-first-attempt": {
+    "exit_code": 1,
+    "reason": "Analysis source selector had no sampled input allocation; measured profile succeeded. Successful stages were reused on resume."
+  },
+  "preliminary-profile-resume": {
+    "exit_code": 0,
+    "observed_by": "exec session 2799 completion"
+  },
+  "profile-analysis": {
+    "first_exit_code": 1,
+    "reason": "pprof no-match peek returns 2; source/measurement stages succeeded. Resume accepts only that explicit diagnostic and reuses passed views.",
+    "resume_exit_code": 0,
+    "observed_by": "exec session 21838 completion",
+    "execution_deadline_seconds": 240,
+    "term_cleanup_seconds": 5,
+    "observed_utc": "2026-11-08T10:20:41.626585+00:00"
+  },
+  "evidence-publication": {
+    "exit_code": 0,
+    "observed_by": "exec session 72118 completion",
+    "execution_deadline_seconds": 90,
+    "term_cleanup_seconds": 5
+  }
+}

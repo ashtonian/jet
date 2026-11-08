@@ -1,0 +1,5 @@
+--- execution_output.go
++++ execution_output.go
+@@ -36 +36 @@
+-		st.reserve(&st.execution.output, uint64(st.execution.options.MaxOutputBytes), uint64(len(b)), "output", ErrOutputLimit)
++		st.reserve(&st.execution.output, 0, uint64(len(b)), "output", ErrOutputLimit)

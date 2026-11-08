@@ -1,0 +1,23 @@
+{
+  "command": [
+    "go",
+    "test",
+    "-p=1",
+    "-parallel=2",
+    "-count=1",
+    "-timeout=90s",
+    "-overlay=.git/lane3-evidence/restricted-pre-profile-overlay.json",
+    "-run",
+    "^TestRestrictedDenialWorkflow$",
+    "."
+  ],
+  "execution_deadline_seconds": 180,
+  "queue_wait_in_stage_elapsed": true,
+  "supervisor": "installed gate-lock",
+  "gate_deadline_seconds": 180,
+  "term_cleanup_seconds": 5,
+  "start": 1794098853.7751849,
+  "end": 1794098864.419014,
+  "exit_code": 1,
+  "manifest": "restricted-pre-profile-baseline-inputs.json"
+}

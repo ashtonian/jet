@@ -34,7 +34,9 @@ var (
 	safeWriterType = reflect.TypeOf(SafeWriter(nil))
 	pool_State     = sync.Pool{
 		New: func() interface{} {
-			return &Runtime{scope: &scope{}, escapeeWriter: new(escapeeWriter)}
+			st := &Runtime{escapeeWriter: new(escapeeWriter)}
+			st.scope = &st.rootScope
+			return st
 		},
 	}
 )
@@ -54,41 +56,40 @@ func (renderer RendererFunc) Render(r *Runtime) {
 }
 
 type escapeeWriter struct {
-	Writer     io.Writer
-	set        *Set
-	writeErr   error
-	rootSink   checkedWriter
-	escapeSink checkedWriter
-}
-
-// checkedWriter records failures even when a SafeWriter or Renderer ignores them.
-type checkedWriter struct {
-	writer  io.Writer
-	failure *error
-}
-
-func (w *checkedWriter) Write(b []byte) (int, error) {
-	if *w.failure != nil {
-		return 0, *w.failure
-	}
-	n, err := w.writer.Write(b)
-	if err == nil && n != len(b) {
-		err = io.ErrShortWrite
-	}
-	if err != nil {
-		*w.failure = err
-	}
-	return n, err
+	Writer       io.Writer
+	set          *Set
+	writeErr     error
+	rootSink     checkedWriter
+	redirectSink checkedWriter
 }
 
 func (w *escapeeWriter) Write(b []byte) (int, error) {
 	if w.set.escapee == nil {
 		return w.Writer.Write(b)
 	}
-	previous := w.escapeSink
-	w.escapeSink = checkedWriter{writer: w.Writer, failure: &w.writeErr}
-	defer func() { w.escapeSink = previous }()
-	w.set.escapee(&w.escapeSink, b)
+	sink, ok := w.Writer.(*checkedWriter)
+	if !ok || sink.runtime != w.rootSink.runtime {
+		return w.writeRedirected(b)
+	}
+	if sink.runtime.execution.ctx == nil && w.set.defaultHTML && sink.buffer != nil && sink.runtime.execution.terminal == nil {
+		// The built-in escaper and bytes.Buffer cannot reenter or fail.
+		w.set.escapee(sink.buffer, b)
+		return len(b), nil
+	}
+	// Capture the current checked destination; a trusted escaper may reenter
+	// execution and temporarily replace Runtime.Writer.
+	w.set.escapee(w.Writer, b)
+	if w.writeErr != nil {
+		return 0, w.writeErr
+	}
+	return len(b), nil
+}
+
+func (w *escapeeWriter) writeRedirected(b []byte) (int, error) {
+	previous := w.redirectSink
+	w.redirectSink = w.rootSink.runtime.checkedOutput(w.Writer)
+	defer func() { w.redirectSink = previous }()
+	w.set.escapee(&w.redirectSink, b)
 	if w.writeErr != nil {
 		return 0, w.writeErr
 	}
@@ -102,8 +103,11 @@ type Runtime struct {
 	content      func(*Runtime, Expression)
 	includeDepth int
 
-	context   reflect.Value
-	execution executionState
+	context      reflect.Value
+	execution    executionState
+	rootScope    scope
+	printer      dataPrinter
+	outputOrigin *NodeBase
 }
 
 // Context returns the current context value
@@ -177,6 +181,9 @@ func (state *Runtime) setValue(name string, val reflect.Value) error {
 
 // LetGlobal sets or initialises a variable in the top-most template scope.
 func (state *Runtime) LetGlobal(name string, val interface{}) {
+	if state.isRestricted() {
+		state.denyCapability("global mutation")
+	}
 	sc := state.scope
 
 	// walk up to top-most valid scope
@@ -227,6 +234,13 @@ func (state *Runtime) resolve(name string) (reflect.Value, error) {
 	}
 
 	// try globals
+	if state.isRestricted() {
+		value, ok := state.set.restricted.bindings[name]
+		if ok {
+			return indirectEface(value), nil
+		}
+		return reflect.Value{}, fmt.Errorf("identifier %q is not available", state.diagnosticText(name))
+	}
 	state.set.gmx.RLock()
 	v, ok := state.set.globals[name]
 	state.set.gmx.RUnlock()
@@ -271,7 +285,10 @@ func (st *Runtime) recover(err *error) {
 	if failure == nil {
 		failure = st.writeErr
 	}
-	st.scope = &scope{}
+	st.rootScope = scope{}
+	st.scope = &st.rootScope
+	st.printer = dataPrinter{}
+	st.outputOrigin = nil
 	*st.escapeeWriter = escapeeWriter{}
 	st.content = nil
 	st.context = reflect.Value{}
@@ -299,6 +316,9 @@ func (st *Runtime) recover(err *error) {
 
 func (st *Runtime) executeSet(left Expression, right reflect.Value) {
 	typ := left.Type()
+	if typ == NodeUnderscore {
+		return
+	}
 	if typ == NodeIdentifier {
 		err := st.setValue(left.(*IdentifierNode).Ident, right)
 		if err != nil {
@@ -316,6 +336,9 @@ func (st *Runtime) executeSet(left Expression, right reflect.Value) {
 		fields = left.(*FieldNode).Ident
 		value = st.context
 	}
+	if len(fields) == 0 {
+		left.errorf("assignment target has no field")
+	}
 	lef := len(fields) - 1
 	for i := 0; i < lef; i++ {
 		st.checkpoint(1)
@@ -326,25 +349,47 @@ func (st *Runtime) executeSet(left Expression, right reflect.Value) {
 		}
 	}
 
-RESTART:
+	value, isNil := st.indirect(value)
+	if !value.IsValid() || isNil {
+		left.errorf("cannot assign a field on an invalid or nil value")
+	}
+	if !right.IsValid() {
+		left.errorf("cannot assign an invalid value to a field or map entry")
+	}
 	switch value.Kind() {
-	case reflect.Ptr:
-		st.checkpoint(1)
-		value = value.Elem()
-		goto RESTART
 	case reflect.Struct:
-		value = value.FieldByName(fields[lef])
-		if !value.IsValid() {
+		field, ok := value.Type().FieldByName(fields[lef])
+		if !ok {
 			left.errorf("identifier %q is not available in the current scope", fields[lef])
 		}
-		value.Set(right)
+		target, err := st.fieldByIndex(value, field.Index)
+		if err != nil {
+			left.error(err)
+		}
+		if !target.CanSet() {
+			left.errorf("cannot assign to an inaccessible or unaddressable field")
+		}
+		if !right.Type().AssignableTo(target.Type()) {
+			left.errorf("cannot assign %s to field of type %s", right.Type(), target.Type())
+		}
+		target.Set(right)
 	case reflect.Map:
-		key := reflect.ValueOf(&fields[lef]).Elem()
-		st.checkpoint(uint64(key.Len()))
-		if right.IsValid() && !value.MapIndex(key).IsValid() {
+		if value.IsNil() {
+			left.errorf("cannot assign an entry in a nil map")
+		}
+		if !right.Type().AssignableTo(value.Type().Elem()) {
+			left.errorf("cannot assign %s to map value of type %s", right.Type(), value.Type().Elem())
+		}
+		key, err := st.mapKey(value, reflect.ValueOf(&fields[lef]).Elem())
+		if err != nil {
+			left.error(err)
+		}
+		if !value.MapIndex(key).IsValid() {
 			st.reserveValue(int64(value.Type().Key().Size() + value.Type().Elem().Size()))
 		}
 		value.SetMapIndex(key, right)
+	default:
+		left.errorf("cannot assign a field on %s", value.Type())
 	}
 }
 
@@ -471,28 +516,37 @@ func (st *Runtime) executeYieldBlock(block *BlockNode, blockParam, yieldParam *B
 
 func (st *Runtime) executeList(list *ListNode) (returnValue reflect.Value) {
 	st.enter()
-	defer st.leave()
+	origin := st.outputOrigin
 	inNewScope := false // to use just one scope for multiple actions with variable declarations
+	defer func() {
+		if inNewScope {
+			st.releaseScope()
+		}
+		st.outputOrigin = origin
+		st.leave()
+	}()
 
 	for i := 0; i < len(list.Nodes); i++ {
 		st.checkpoint(1)
 		node := list.Nodes[i]
+		st.checkNode(node)
 		switch node.Type() {
 
 		case NodeText:
 			node := node.(*TextNode)
+			st.outputOrigin = &node.NodeBase
 			_, err := st.Writer.Write(node.Text)
 			if err != nil {
 				node.error(err)
 			}
 		case NodeAction:
 			node := node.(*ActionNode)
+			st.outputOrigin = &node.NodeBase
 			if node.Set != nil {
 				if node.Set.Let {
 					if !inNewScope {
 						st.newScope()
 						inNewScope = true
-						defer st.releaseScope()
 					}
 					st.executeLetList(node.Set)
 				} else {
@@ -507,7 +561,7 @@ func (st *Runtime) executeList(list *ListNode) (returnValue reflect.Value) {
 						v.Interface().(Renderer).Render(st)
 						st.checkpoint(0)
 					} else {
-						st.beforeCall(v)
+						st.beforeData(v)
 						_, err := st.printValue(st.escapeeWriter, v)
 						st.checkpoint(0)
 						if err != nil {
@@ -540,6 +594,7 @@ func (st *Runtime) executeList(list *ListNode) (returnValue reflect.Value) {
 		case NodeRange:
 			returnValue = st.executeRange(node.(*RangeNode))
 		case NodeTry:
+			st.outputOrigin = &node.(*TryNode).NodeBase
 			node := node.(*TryNode)
 			returnValue = st.executeTry(node)
 		case NodeYield:
@@ -673,7 +728,11 @@ func (st *Runtime) executeTry(try *TryNode) (returnValue reflect.Value) {
 				if try.Catch.Err != nil {
 					st.newScope()
 					defer st.releaseScope()
-					st.declareValue(st.scope, try.Catch.Err.Ident, reflect.ValueOf(r))
+					caught := reflect.ValueOf(r)
+					if st.isRestricted() {
+						caught = reflect.ValueOf(st.catchDiagnostic(r))
+					}
+					st.declareValue(st.scope, try.Catch.Err.Ident, caught)
 				}
 				if try.Catch.List != nil {
 					returnValue = st.executeList(try.Catch.List)
@@ -736,6 +795,7 @@ var (
 )
 
 func (st *Runtime) evalPrimaryExpressionGroup(node Expression) reflect.Value {
+	st.checkNode(node)
 	st.enter()
 	defer st.leave()
 	switch node.Type() {
@@ -781,35 +841,12 @@ func (st *Runtime) evalPrimaryExpressionGroup(node Expression) reflect.Value {
 		return resolved
 	case NodeSliceExpr:
 		node := node.(*SliceExprNode)
-		baseExpression := st.evalPrimaryExpressionGroup(node.Base)
-
-		var index, length int
-		if node.Index != nil {
-			indexExpression := st.evalPrimaryExpressionGroup(node.Index)
-			if canNumber(indexExpression.Kind()) {
-				index = int(castInt64(indexExpression))
-			} else {
-				node.Index.errorf("non numeric value in index expression kind %s", indexExpression.Kind().String())
-			}
+		base := st.evalPrimaryExpressionGroup(node.Base)
+		result, err := st.sliceValue(base, node.Index, node.EndIndex)
+		if err != nil {
+			node.error(err)
 		}
-
-		if node.EndIndex != nil {
-			indexExpression := st.evalPrimaryExpressionGroup(node.EndIndex)
-			if canNumber(indexExpression.Kind()) {
-				length = int(castInt64(indexExpression))
-			} else {
-				node.EndIndex.errorf("non numeric value in index expression kind %s", indexExpression.Kind().String())
-			}
-		} else {
-			length = baseExpression.Len()
-		}
-
-		// validate bounds so an out-of-range slice yields a template error instead of a runtime panic
-		if index < 0 || length < index || length > baseExpression.Len() {
-			node.errorf("slice bounds out of range [%d:%d] with length %d", index, length, baseExpression.Len())
-		}
-
-		return baseExpression.Slice(index, length)
+		return result
 	}
 	return st.evalBaseExpressionGroup(node)
 }
@@ -829,6 +866,7 @@ func notNil(v reflect.Value) bool {
 }
 
 func (st *Runtime) isSet(node Node) (ok bool) {
+	st.checkNode(node)
 	st.enter()
 	defer st.leave()
 	defer func() {
@@ -1249,6 +1287,7 @@ func getTypeString(value reflect.Value) string {
 }
 
 func (st *Runtime) evalBaseExpressionGroup(node Node) reflect.Value {
+	st.checkNode(node)
 	st.enter()
 	defer st.leave()
 	switch node.Type() {
@@ -1329,6 +1368,9 @@ func (st *Runtime) evalPipeCallExpression(baseExpr reflect.Value, args CallArgs,
 		return result, nil
 	}
 
+	if st.isRestricted() {
+		st.denyCapability("native Go function")
+	}
 	argValues, err := st.evaluateArgs(baseExpr.Type(), args, pipedArg)
 	if err != nil {
 		return reflect.Value{}, fmt.Errorf("call expression: %v", err)
@@ -1771,6 +1813,7 @@ func (st *Runtime) resolveIndex(v, index reflect.Value, indexAsStr string) (refl
 		return reflect.Value{}, fmt.Errorf("there is no field or method '%s' in %s (%s)", st.diagnosticValue(index), st.diagnosticValue(v), getTypeString(v))
 	}
 
+	st.beforeData(v)
 	v, isNil := st.indirect(v)
 	if v.Kind() == reflect.Interface && isNil {
 		// Calling a method on a nil interface can't work. The
@@ -1797,6 +1840,10 @@ func (st *Runtime) resolveIndex(v, index reflect.Value, indexAsStr string) (refl
 		if indexIsStr {
 			indexAsStr = index.String()
 		}
+	}
+
+	if !indexIsStr && !index.IsValid() {
+		return reflect.Value{}, fmt.Errorf("index must be a valid value")
 	}
 
 	// Unless it's an interface, need to get to a value of type *T to guarantee
@@ -1848,14 +1895,20 @@ func (st *Runtime) resolveIndex(v, index reflect.Value, indexAsStr string) (refl
 		}
 
 		if id, ok := cache[key]; ok {
-			field := v.FieldByIndex(id)
+			field, err := st.fieldByIndex(v, id)
+			if err != nil {
+				return reflect.Value{}, err
+			}
 			return indirectEface(field), nil
 		}
 
 		// Slow path: use reflect directly
 		tField, ok := typ.FieldByName(key)
 		if ok {
-			field := v.FieldByIndex(tField.Index)
+			field, err := st.fieldByIndex(v, tField.Index)
+			if err != nil {
+				return reflect.Value{}, err
+			}
 			if tField.PkgPath != "" { // field is unexported
 				return reflect.Value{}, fmt.Errorf("%s is an unexported field of struct type %s", st.diagnosticText(indexAsStr), v.Type())
 			}
@@ -1863,13 +1916,11 @@ func (st *Runtime) resolveIndex(v, index reflect.Value, indexAsStr string) (refl
 		}
 		return reflect.Value{}, fmt.Errorf("can't use %s as field name in struct type %s", st.diagnosticText(indexAsStr), v.Type())
 	case reflect.Map:
-		// If it's a map, attempt to use the field name as a key.
-		indexVal := indexAsValue()
-		if !indexVal.Type().ConvertibleTo(v.Type().Key()) {
-			return reflect.Value{}, fmt.Errorf("can't use %s (%s) as key for map of type %s", st.diagnosticText(indexAsStr), indexVal.Type(), v.Type())
+		key, err := st.mapKey(v, indexAsValue())
+		if err != nil {
+			return reflect.Value{}, err
 		}
-		index = st.convertValue(indexVal, v.Type().Key()) // noop in most cases, but not expensive
-		return indirectEface(v.MapIndex(indexVal)), nil
+		return indirectEface(v.MapIndex(key)), nil
 	case reflect.Ptr:
 		etyp := v.Type().Elem()
 		if etyp.Kind() == reflect.Struct && indexIsStr {
@@ -1890,23 +1941,7 @@ func (st *Runtime) resolveIndex(v, index reflect.Value, indexAsStr string) (refl
 //
 // indexArg checks if a reflect.Value can be used as an index, and converts it to int if possible.
 func indexArg(index reflect.Value, cap int) (int, error) {
-	var x int64
-	switch index.Kind() {
-	case reflect.Int, reflect.Int8, reflect.Int16, reflect.Int32, reflect.Int64:
-		x = index.Int()
-	case reflect.Uint, reflect.Uint8, reflect.Uint16, reflect.Uint32, reflect.Uint64, reflect.Uintptr:
-		x = int64(index.Uint())
-	case reflect.Float32, reflect.Float64:
-		x = int64(index.Float())
-	case reflect.Invalid:
-		return 0, fmt.Errorf("cannot index slice/array/string with nil")
-	default:
-		return 0, fmt.Errorf("cannot index slice/array/string with type %s", getTypeString(index))
-	}
-	if int(x) < 0 || int(x) >= cap {
-		return 0, fmt.Errorf("index out of range: %d", x)
-	}
-	return int(x), nil
+	return boundedIndex(index, cap, false)
 }
 
 func (st *Runtime) buildCache(typ reflect.Type, cache map[string][]int, parent []int) {

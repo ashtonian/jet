@@ -1,0 +1,48 @@
+File: upstream.test
+Type: cpu
+Time: 2026-11-08 02:58:44 CST
+Duration: 9.57s, Total samples = 9.07s (94.80%)
+Showing nodes accounting for 7.73s, 85.23% of 9.07s total
+Dropped 126 nodes (cum <= 0.05s)
+Showing top 40 nodes out of 134
+      flat  flat%   sum%        cum   cum%
+     0.98s 10.80% 10.80%      0.98s 10.80%  runtime.kevent
+     0.95s 10.47% 21.28%      5.58s 61.52%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+     0.59s  6.50% 27.78%      0.92s 10.14%  bytes.(*Buffer).Write
+     0.51s  5.62% 33.41%      0.51s  5.62%  runtime.madvise
+     0.51s  5.62% 39.03%      1.27s 14.00%  text/template.HTMLEscape
+     0.34s  3.75% 42.78%      0.36s  3.97%  reflect.Value.Elem
+     0.32s  3.53% 46.31%      0.41s  4.52%  runtime.mallocgcSmallScanNoHeaderSC3
+     0.31s  3.42% 49.72%      0.31s  3.42%  runtime.memmove
+     0.30s  3.31% 53.03%      0.30s  3.31%  runtime.pthread_kill
+     0.28s  3.09% 56.12%      6.79s 74.86%  github.com/CloudyKit/jet/v6.(*Template).Execute
+     0.23s  2.54% 58.65%      0.35s  3.86%  runtime.(*_panic).nextDefer
+     0.21s  2.32% 60.97%      0.24s  2.65%  runtime.(*_panic).start
+     0.21s  2.32% 63.29%      0.35s  3.86%  sync.(*Pool).pin
+     0.16s  1.76% 65.05%      0.26s  2.87%  internal/runtime/maps.(*Map).getWithoutKeySmallFastStr
+     0.13s  1.43% 66.48%      0.46s  5.07%  github.com/CloudyKit/jet/v6.(*intsRanger).Range
+     0.13s  1.43% 67.92%      0.13s  1.43%  runtime.procPin (inline)
+     0.12s  1.32% 69.24%      0.12s  1.32%  runtime.(*_panic).nextFrame
+     0.12s  1.32% 70.56%      0.13s  1.43%  runtime.mallocgcTinySC2
+     0.12s  1.32% 71.89%      0.12s  1.32%  runtime.pthread_cond_wait
+     0.12s  1.32% 73.21%      0.12s  1.32%  runtime.usleep
+     0.12s  1.32% 74.53%      0.40s  4.41%  sync.(*Pool).Get
+     0.08s  0.88% 75.41%      0.19s  2.09%  sync.(*Pool).Put
+     0.07s  0.77% 76.19%      0.44s  4.85%  github.com/CloudyKit/jet/v6.(*Runtime).executeYieldBlock
+     0.06s  0.66% 76.85%      0.06s  0.66%  bytes.(*Buffer).tryGrowByReslice (inline)
+     0.06s  0.66% 77.51%      0.37s  4.08%  github.com/CloudyKit/jet/v6.(*Runtime).evalPrimaryExpressionGroup
+     0.06s  0.66% 78.17%      0.06s  0.66%  internal/runtime/maps.memHashAES
+     0.06s  0.66% 78.83%      0.06s  0.66%  runtime.acquirem (inline)
+     0.06s  0.66% 79.49%      0.35s  3.86%  runtime.mapaccess2_faststr
+     0.06s  0.66% 80.15%      0.06s  0.66%  runtime.nanotime1
+     0.05s  0.55% 80.71%      1.36s 14.99%  github.com/CloudyKit/fastprinter.PrintString
+     0.05s  0.55% 81.26%      0.05s  0.55%  github.com/CloudyKit/jet/v6.indirectEface
+     0.05s  0.55% 81.81%      0.05s  0.55%  internal/abi.(*Type).IsDirectIface (inline)
+     0.05s  0.55% 82.36%      0.19s  2.09%  reflect.(*rtype).Implements
+     0.05s  0.55% 82.91%      0.08s  0.88%  runtime.tryDeferToSpanScan
+     0.04s  0.44% 83.35%      0.63s  6.95%  encoding/json/v2.makeMapArshaler.func2
+     0.04s  0.44% 83.79%      0.25s  2.76%  github.com/CloudyKit/jet/v6.(*Runtime).evalBaseExpressionGroup
+     0.04s  0.44% 84.23%      0.21s  2.32%  path.Join
+     0.03s  0.33% 84.56%      0.05s  0.55%  encoding/json/internal/jsonwire.AppendQuote
+     0.03s  0.33% 84.90%      1.63s 17.97%  github.com/CloudyKit/fastprinter.PrintValue
+     0.03s  0.33% 85.23%      0.58s  6.39%  github.com/CloudyKit/jet/v6.(*Runtime).recover

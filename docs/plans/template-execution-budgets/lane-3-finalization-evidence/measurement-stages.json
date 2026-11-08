@@ -1,0 +1,1358 @@
+[
+  {
+    "name": "build-baseline",
+    "command": [
+      "go",
+      "test",
+      "-p=1",
+      "-c",
+      "-overlay=$CHECKOUT/.git/finalization/baseline-overlay.json",
+      "-o",
+      "$CHECKOUT/.git/finalization/baseline.test",
+      "."
+    ],
+    "start": 1794123410.3961651,
+    "end": 1794123411.588593,
+    "execution_deadline_seconds": 120,
+    "cleanup_seconds": 5,
+    "exit_code": 0,
+    "expected_exit": 0,
+    "GOMAXPROCS": "2",
+    "log": ".git/finalization/build-baseline.log"
+  },
+  {
+    "name": "conformance-baseline",
+    "command": [
+      "$CHECKOUT/.git/finalization/baseline.test",
+      "-test.run=^TestFinalReviewConformance$",
+      "-test.timeout=90s"
+    ],
+    "start": 1794123411.588958,
+    "end": 1794123411.87803,
+    "execution_deadline_seconds": 120,
+    "cleanup_seconds": 5,
+    "exit_code": 0,
+    "expected_exit": 0,
+    "GOMAXPROCS": "2",
+    "log": ".git/finalization/conformance-baseline.log"
+  },
+  {
+    "name": "layout-baseline",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "$CHECKOUT/.git/finalization/baseline.test",
+      "-test.run=^TestAdmissionLayoutAndRetained$",
+      "-test.v",
+      "-test.timeout=90s"
+    ],
+    "start": 1794123411.878447,
+    "end": 1794123411.890411,
+    "execution_deadline_seconds": 120,
+    "cleanup_seconds": 5,
+    "exit_code": 0,
+    "expected_exit": 0,
+    "GOMAXPROCS": "2",
+    "log": ".git/finalization/layout-baseline.log"
+  },
+  {
+    "name": "build-graph4",
+    "command": [
+      "go",
+      "test",
+      "-p=1",
+      "-c",
+      "-overlay=$CHECKOUT/.git/finalization/graph4-overlay.json",
+      "-o",
+      "$CHECKOUT/.git/finalization/graph4.test",
+      "."
+    ],
+    "start": 1794123411.975103,
+    "end": 1794123413.323408,
+    "execution_deadline_seconds": 120,
+    "cleanup_seconds": 5,
+    "exit_code": 0,
+    "expected_exit": 0,
+    "GOMAXPROCS": "2",
+    "log": ".git/finalization/build-graph4.log"
+  },
+  {
+    "name": "conformance-graph4",
+    "command": [
+      "$CHECKOUT/.git/finalization/graph4.test",
+      "-test.run=^TestFinalReviewConformance$",
+      "-test.timeout=90s"
+    ],
+    "start": 1794123413.323787,
+    "end": 1794123413.579773,
+    "execution_deadline_seconds": 120,
+    "cleanup_seconds": 5,
+    "exit_code": 0,
+    "expected_exit": 0,
+    "GOMAXPROCS": "2",
+    "log": ".git/finalization/conformance-graph4.log"
+  },
+  {
+    "name": "layout-graph4",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "$CHECKOUT/.git/finalization/graph4.test",
+      "-test.run=^TestAdmissionLayoutAndRetained$",
+      "-test.v",
+      "-test.timeout=90s"
+    ],
+    "start": 1794123413.58018,
+    "end": 1794123413.5890691,
+    "execution_deadline_seconds": 120,
+    "cleanup_seconds": 5,
+    "exit_code": 0,
+    "expected_exit": 0,
+    "GOMAXPROCS": "2",
+    "log": ".git/finalization/layout-graph4.log"
+  },
+  {
+    "name": "build-input4",
+    "command": [
+      "go",
+      "test",
+      "-p=1",
+      "-c",
+      "-overlay=$CHECKOUT/.git/finalization/input4-overlay.json",
+      "-o",
+      "$CHECKOUT/.git/finalization/input4.test",
+      "."
+    ],
+    "start": 1794123413.589409,
+    "end": 1794123414.835708,
+    "execution_deadline_seconds": 120,
+    "cleanup_seconds": 5,
+    "exit_code": 0,
+    "expected_exit": 0,
+    "GOMAXPROCS": "2",
+    "log": ".git/finalization/build-input4.log"
+  },
+  {
+    "name": "conformance-input4",
+    "command": [
+      "$CHECKOUT/.git/finalization/input4.test",
+      "-test.run=^TestFinalReviewConformance$",
+      "-test.timeout=90s"
+    ],
+    "start": 1794123414.8362,
+    "end": 1794123415.133638,
+    "execution_deadline_seconds": 120,
+    "cleanup_seconds": 5,
+    "exit_code": 0,
+    "expected_exit": 0,
+    "GOMAXPROCS": "2",
+    "log": ".git/finalization/conformance-input4.log"
+  },
+  {
+    "name": "layout-input4",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "$CHECKOUT/.git/finalization/input4.test",
+      "-test.run=^TestAdmissionLayoutAndRetained$",
+      "-test.v",
+      "-test.timeout=90s"
+    ],
+    "start": 1794123415.251332,
+    "end": 1794123415.2804039,
+    "execution_deadline_seconds": 120,
+    "cleanup_seconds": 5,
+    "exit_code": 0,
+    "expected_exit": 0,
+    "GOMAXPROCS": "2",
+    "log": ".git/finalization/layout-input4.log"
+  },
+  {
+    "name": "build-lazy0",
+    "command": [
+      "go",
+      "test",
+      "-p=1",
+      "-c",
+      "-overlay=$CHECKOUT/.git/finalization/lazy0-overlay.json",
+      "-o",
+      "$CHECKOUT/.git/finalization/lazy0.test",
+      "."
+    ],
+    "start": 1794123415.2812061,
+    "end": 1794123416.462231,
+    "execution_deadline_seconds": 120,
+    "cleanup_seconds": 5,
+    "exit_code": 0,
+    "expected_exit": 0,
+    "GOMAXPROCS": "2",
+    "log": ".git/finalization/build-lazy0.log"
+  },
+  {
+    "name": "conformance-lazy0",
+    "command": [
+      "$CHECKOUT/.git/finalization/lazy0.test",
+      "-test.run=^TestFinalReviewConformance$",
+      "-test.timeout=90s"
+    ],
+    "start": 1794123416.462611,
+    "end": 1794123416.742409,
+    "execution_deadline_seconds": 120,
+    "cleanup_seconds": 5,
+    "exit_code": 0,
+    "expected_exit": 0,
+    "GOMAXPROCS": "2",
+    "log": ".git/finalization/conformance-lazy0.log"
+  },
+  {
+    "name": "layout-lazy0",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "$CHECKOUT/.git/finalization/lazy0.test",
+      "-test.run=^TestAdmissionLayoutAndRetained$",
+      "-test.v",
+      "-test.timeout=90s"
+    ],
+    "start": 1794123416.742812,
+    "end": 1794123416.753964,
+    "execution_deadline_seconds": 120,
+    "cleanup_seconds": 5,
+    "exit_code": 0,
+    "expected_exit": 0,
+    "GOMAXPROCS": "2",
+    "log": ".git/finalization/layout-lazy0.log"
+  },
+  {
+    "name": "build-inline8",
+    "command": [
+      "go",
+      "test",
+      "-p=1",
+      "-c",
+      "-overlay=$CHECKOUT/.git/finalization/inline8-overlay.json",
+      "-o",
+      "$CHECKOUT/.git/finalization/inline8.test",
+      "."
+    ],
+    "start": 1794123416.7545931,
+    "end": 1794123418.178966,
+    "execution_deadline_seconds": 120,
+    "cleanup_seconds": 5,
+    "exit_code": 0,
+    "expected_exit": 0,
+    "GOMAXPROCS": "2",
+    "log": ".git/finalization/build-inline8.log"
+  },
+  {
+    "name": "conformance-inline8",
+    "command": [
+      "$CHECKOUT/.git/finalization/inline8.test",
+      "-test.run=^TestFinalReviewConformance$",
+      "-test.timeout=90s"
+    ],
+    "start": 1794123418.188071,
+    "end": 1794123418.440177,
+    "execution_deadline_seconds": 120,
+    "cleanup_seconds": 5,
+    "exit_code": 0,
+    "expected_exit": 0,
+    "GOMAXPROCS": "2",
+    "log": ".git/finalization/conformance-inline8.log"
+  },
+  {
+    "name": "layout-inline8",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "$CHECKOUT/.git/finalization/inline8.test",
+      "-test.run=^TestAdmissionLayoutAndRetained$",
+      "-test.v",
+      "-test.timeout=90s"
+    ],
+    "start": 1794123418.440578,
+    "end": 1794123418.448271,
+    "execution_deadline_seconds": 120,
+    "cleanup_seconds": 5,
+    "exit_code": 0,
+    "expected_exit": 0,
+    "GOMAXPROCS": "2",
+    "log": ".git/finalization/layout-inline8.log"
+  },
+  {
+    "name": "build-inline16",
+    "command": [
+      "go",
+      "test",
+      "-p=1",
+      "-c",
+      "-overlay=$CHECKOUT/.git/finalization/inline16-overlay.json",
+      "-o",
+      "$CHECKOUT/.git/finalization/inline16.test",
+      "."
+    ],
+    "start": 1794123418.448632,
+    "end": 1794123419.675987,
+    "execution_deadline_seconds": 120,
+    "cleanup_seconds": 5,
+    "exit_code": 0,
+    "expected_exit": 0,
+    "GOMAXPROCS": "2",
+    "log": ".git/finalization/build-inline16.log"
+  },
+  {
+    "name": "conformance-inline16",
+    "command": [
+      "$CHECKOUT/.git/finalization/inline16.test",
+      "-test.run=^TestFinalReviewConformance$",
+      "-test.timeout=90s"
+    ],
+    "start": 1794123419.676487,
+    "end": 1794123419.921453,
+    "execution_deadline_seconds": 120,
+    "cleanup_seconds": 5,
+    "exit_code": 0,
+    "expected_exit": 0,
+    "GOMAXPROCS": "2",
+    "log": ".git/finalization/conformance-inline16.log"
+  },
+  {
+    "name": "layout-inline16",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "$CHECKOUT/.git/finalization/inline16.test",
+      "-test.run=^TestAdmissionLayoutAndRetained$",
+      "-test.v",
+      "-test.timeout=90s"
+    ],
+    "start": 1794123419.921966,
+    "end": 1794123419.9296021,
+    "execution_deadline_seconds": 120,
+    "cleanup_seconds": 5,
+    "exit_code": 0,
+    "expected_exit": 0,
+    "GOMAXPROCS": "2",
+    "log": ".git/finalization/layout-inline16.log"
+  },
+  {
+    "name": "build-walk",
+    "command": [
+      "go",
+      "test",
+      "-p=1",
+      "-c",
+      "-overlay=$CHECKOUT/.git/finalization/walk-overlay.json",
+      "-o",
+      "$CHECKOUT/.git/finalization/walk.test",
+      "."
+    ],
+    "start": 1794123419.9299939,
+    "end": 1794123421.189003,
+    "execution_deadline_seconds": 120,
+    "cleanup_seconds": 5,
+    "exit_code": 0,
+    "expected_exit": 0,
+    "GOMAXPROCS": "2",
+    "log": ".git/finalization/build-walk.log"
+  },
+  {
+    "name": "conformance-walk",
+    "command": [
+      "$CHECKOUT/.git/finalization/walk.test",
+      "-test.run=^TestFinalReviewConformance$",
+      "-test.timeout=90s"
+    ],
+    "start": 1794123421.189593,
+    "end": 1794123421.4762619,
+    "execution_deadline_seconds": 120,
+    "cleanup_seconds": 5,
+    "exit_code": 0,
+    "expected_exit": 0,
+    "GOMAXPROCS": "2",
+    "log": ".git/finalization/conformance-walk.log"
+  },
+  {
+    "name": "layout-walk",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "$CHECKOUT/.git/finalization/walk.test",
+      "-test.run=^TestAdmissionLayoutAndRetained$",
+      "-test.v",
+      "-test.timeout=90s"
+    ],
+    "start": 1794123421.476794,
+    "end": 1794123421.488883,
+    "execution_deadline_seconds": 120,
+    "cleanup_seconds": 5,
+    "exit_code": 0,
+    "expected_exit": 0,
+    "GOMAXPROCS": "2",
+    "log": ".git/finalization/layout-walk.log"
+  },
+  {
+    "name": "build-nopool",
+    "command": [
+      "go",
+      "test",
+      "-p=1",
+      "-c",
+      "-overlay=$CHECKOUT/.git/finalization/nopool-overlay.json",
+      "-o",
+      "$CHECKOUT/.git/finalization/nopool.test",
+      "."
+    ],
+    "start": 1794123421.4893281,
+    "end": 1794123422.8416362,
+    "execution_deadline_seconds": 120,
+    "cleanup_seconds": 5,
+    "exit_code": 0,
+    "expected_exit": 0,
+    "GOMAXPROCS": "2",
+    "log": ".git/finalization/build-nopool.log"
+  },
+  {
+    "name": "conformance-nopool",
+    "command": [
+      "$CHECKOUT/.git/finalization/nopool.test",
+      "-test.run=^TestFinalReviewConformance$",
+      "-test.timeout=90s"
+    ],
+    "start": 1794123422.842114,
+    "end": 1794123423.231827,
+    "execution_deadline_seconds": 120,
+    "cleanup_seconds": 5,
+    "exit_code": 0,
+    "expected_exit": 0,
+    "GOMAXPROCS": "2",
+    "log": ".git/finalization/conformance-nopool.log"
+  },
+  {
+    "name": "layout-nopool",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "$CHECKOUT/.git/finalization/nopool.test",
+      "-test.run=^TestAdmissionLayoutAndRetained$",
+      "-test.v",
+      "-test.timeout=90s"
+    ],
+    "start": 1794123423.2346518,
+    "end": 1794123423.273504,
+    "execution_deadline_seconds": 120,
+    "cleanup_seconds": 5,
+    "exit_code": 0,
+    "expected_exit": 0,
+    "GOMAXPROCS": "2",
+    "log": ".git/finalization/layout-nopool.log"
+  },
+  {
+    "name": "dag-control-baseline",
+    "command": [
+      "$CHECKOUT/.git/finalization/baseline.test",
+      "-test.run=^TestCompilationSharedDiamondWork$",
+      "-test.timeout=90s"
+    ],
+    "start": 1794123423.275009,
+    "end": 1794123423.2879019,
+    "execution_deadline_seconds": 120,
+    "cleanup_seconds": 5,
+    "exit_code": 1,
+    "expected_exit": 1,
+    "GOMAXPROCS": "2",
+    "log": ".git/finalization/dag-control-baseline.log"
+  },
+  {
+    "name": "semantic-controls-fixed",
+    "command": [
+      "$CHECKOUT/.git/finalization/input4.test",
+      "-test.run=^(TestCompilation|TestInputAdmission|TestExecutionCompilation|TestTemplateBundle|TestRestricted)",
+      "-test.timeout=90s"
+    ],
+    "start": 1794123423.28867,
+    "end": 1794123423.32799,
+    "execution_deadline_seconds": 120,
+    "cleanup_seconds": 5,
+    "exit_code": 0,
+    "expected_exit": 0,
+    "GOMAXPROCS": "2",
+    "log": ".git/finalization/semantic-controls-fixed.log"
+  },
+  {
+    "name": "screen-baseline-0",
+    "command": [
+      "$CHECKOUT/.git/finalization/baseline.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkAdmission(Lookup|Input|Cold)$",
+      "-test.benchtime=150ms",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=90s"
+    ],
+    "start": 1794123423.3284411,
+    "end": 1794123427.469331,
+    "execution_deadline_seconds": 120,
+    "cleanup_seconds": 5,
+    "exit_code": 0,
+    "expected_exit": 0,
+    "GOMAXPROCS": "2",
+    "log": ".git/finalization/screen-baseline-0.log"
+  },
+  {
+    "name": "screen-lazy0-0",
+    "command": [
+      "$CHECKOUT/.git/finalization/lazy0.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkAdmission(Lookup|Input|Cold)$",
+      "-test.benchtime=150ms",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=90s"
+    ],
+    "start": 1794123427.4814022,
+    "end": 1794123432.4174101,
+    "execution_deadline_seconds": 120,
+    "cleanup_seconds": 5,
+    "exit_code": 0,
+    "expected_exit": 0,
+    "GOMAXPROCS": "2",
+    "log": ".git/finalization/screen-lazy0-0.log"
+  },
+  {
+    "name": "screen-input4-0",
+    "command": [
+      "$CHECKOUT/.git/finalization/input4.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkAdmission(Lookup|Input|Cold)$",
+      "-test.benchtime=150ms",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=90s"
+    ],
+    "start": 1794123432.4341419,
+    "end": 1794123436.420358,
+    "execution_deadline_seconds": 120,
+    "cleanup_seconds": 5,
+    "exit_code": 0,
+    "expected_exit": 0,
+    "GOMAXPROCS": "2",
+    "log": ".git/finalization/screen-input4-0.log"
+  },
+  {
+    "name": "screen-inline8-0",
+    "command": [
+      "$CHECKOUT/.git/finalization/inline8.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkAdmission(Lookup|Input|Cold)$",
+      "-test.benchtime=150ms",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=90s"
+    ],
+    "start": 1794123436.464705,
+    "end": 1794123440.912925,
+    "execution_deadline_seconds": 120,
+    "cleanup_seconds": 5,
+    "exit_code": 0,
+    "expected_exit": 0,
+    "GOMAXPROCS": "2",
+    "log": ".git/finalization/screen-inline8-0.log"
+  },
+  {
+    "name": "screen-inline16-0",
+    "command": [
+      "$CHECKOUT/.git/finalization/inline16.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkAdmission(Lookup|Input|Cold)$",
+      "-test.benchtime=150ms",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=90s"
+    ],
+    "start": 1794123440.913551,
+    "end": 1794123445.003677,
+    "execution_deadline_seconds": 120,
+    "cleanup_seconds": 5,
+    "exit_code": 0,
+    "expected_exit": 0,
+    "GOMAXPROCS": "2",
+    "log": ".git/finalization/screen-inline16-0.log"
+  },
+  {
+    "name": "screen-nopool-0",
+    "command": [
+      "$CHECKOUT/.git/finalization/nopool.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkAdmission(Lookup|Input|Cold)$",
+      "-test.benchtime=150ms",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=90s"
+    ],
+    "start": 1794123445.00449,
+    "end": 1794123449.113817,
+    "execution_deadline_seconds": 120,
+    "cleanup_seconds": 5,
+    "exit_code": 0,
+    "expected_exit": 0,
+    "GOMAXPROCS": "2",
+    "log": ".git/finalization/screen-nopool-0.log"
+  },
+  {
+    "name": "screen-lazy0-1",
+    "command": [
+      "$CHECKOUT/.git/finalization/lazy0.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkAdmission(Lookup|Input|Cold)$",
+      "-test.benchtime=150ms",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=90s"
+    ],
+    "start": 1794123449.114759,
+    "end": 1794123453.633913,
+    "execution_deadline_seconds": 120,
+    "cleanup_seconds": 5,
+    "exit_code": 0,
+    "expected_exit": 0,
+    "GOMAXPROCS": "2",
+    "log": ".git/finalization/screen-lazy0-1.log"
+  },
+  {
+    "name": "screen-input4-1",
+    "command": [
+      "$CHECKOUT/.git/finalization/input4.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkAdmission(Lookup|Input|Cold)$",
+      "-test.benchtime=150ms",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=90s"
+    ],
+    "start": 1794123453.640137,
+    "end": 1794123458.1746418,
+    "execution_deadline_seconds": 120,
+    "cleanup_seconds": 5,
+    "exit_code": 0,
+    "expected_exit": 0,
+    "GOMAXPROCS": "2",
+    "log": ".git/finalization/screen-input4-1.log"
+  },
+  {
+    "name": "screen-inline8-1",
+    "command": [
+      "$CHECKOUT/.git/finalization/inline8.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkAdmission(Lookup|Input|Cold)$",
+      "-test.benchtime=150ms",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=90s"
+    ],
+    "start": 1794123458.1751528,
+    "end": 1794123462.733542,
+    "execution_deadline_seconds": 120,
+    "cleanup_seconds": 5,
+    "exit_code": 0,
+    "expected_exit": 0,
+    "GOMAXPROCS": "2",
+    "log": ".git/finalization/screen-inline8-1.log"
+  },
+  {
+    "name": "screen-inline16-1",
+    "command": [
+      "$CHECKOUT/.git/finalization/inline16.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkAdmission(Lookup|Input|Cold)$",
+      "-test.benchtime=150ms",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=90s"
+    ],
+    "start": 1794123462.734074,
+    "end": 1794123467.04442,
+    "execution_deadline_seconds": 120,
+    "cleanup_seconds": 5,
+    "exit_code": 0,
+    "expected_exit": 0,
+    "GOMAXPROCS": "2",
+    "log": ".git/finalization/screen-inline16-1.log"
+  },
+  {
+    "name": "screen-nopool-1",
+    "command": [
+      "$CHECKOUT/.git/finalization/nopool.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkAdmission(Lookup|Input|Cold)$",
+      "-test.benchtime=150ms",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=90s"
+    ],
+    "start": 1794123467.044927,
+    "end": 1794123471.372236,
+    "execution_deadline_seconds": 120,
+    "cleanup_seconds": 5,
+    "exit_code": 0,
+    "expected_exit": 0,
+    "GOMAXPROCS": "2",
+    "log": ".git/finalization/screen-nopool-1.log"
+  },
+  {
+    "name": "screen-baseline-1",
+    "command": [
+      "$CHECKOUT/.git/finalization/baseline.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkAdmission(Lookup|Input|Cold)$",
+      "-test.benchtime=150ms",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=90s"
+    ],
+    "start": 1794123471.372724,
+    "end": 1794123475.512065,
+    "execution_deadline_seconds": 120,
+    "cleanup_seconds": 5,
+    "exit_code": 0,
+    "expected_exit": 0,
+    "GOMAXPROCS": "2",
+    "log": ".git/finalization/screen-baseline-1.log"
+  },
+  {
+    "name": "screen-input4-2",
+    "command": [
+      "$CHECKOUT/.git/finalization/input4.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkAdmission(Lookup|Input|Cold)$",
+      "-test.benchtime=150ms",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=90s"
+    ],
+    "start": 1794123475.512616,
+    "end": 1794123479.8978329,
+    "execution_deadline_seconds": 120,
+    "cleanup_seconds": 5,
+    "exit_code": 0,
+    "expected_exit": 0,
+    "GOMAXPROCS": "2",
+    "log": ".git/finalization/screen-input4-2.log"
+  },
+  {
+    "name": "screen-inline8-2",
+    "command": [
+      "$CHECKOUT/.git/finalization/inline8.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkAdmission(Lookup|Input|Cold)$",
+      "-test.benchtime=150ms",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=90s"
+    ],
+    "start": 1794123479.8983319,
+    "end": 1794123484.527914,
+    "execution_deadline_seconds": 120,
+    "cleanup_seconds": 5,
+    "exit_code": 0,
+    "expected_exit": 0,
+    "GOMAXPROCS": "2",
+    "log": ".git/finalization/screen-inline8-2.log"
+  },
+  {
+    "name": "screen-inline16-2",
+    "command": [
+      "$CHECKOUT/.git/finalization/inline16.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkAdmission(Lookup|Input|Cold)$",
+      "-test.benchtime=150ms",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=90s"
+    ],
+    "start": 1794123484.528484,
+    "end": 1794123489.127567,
+    "execution_deadline_seconds": 120,
+    "cleanup_seconds": 5,
+    "exit_code": 0,
+    "expected_exit": 0,
+    "GOMAXPROCS": "2",
+    "log": ".git/finalization/screen-inline16-2.log"
+  },
+  {
+    "name": "screen-nopool-2",
+    "command": [
+      "$CHECKOUT/.git/finalization/nopool.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkAdmission(Lookup|Input|Cold)$",
+      "-test.benchtime=150ms",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=90s"
+    ],
+    "start": 1794123489.138883,
+    "end": 1794123494.1201549,
+    "execution_deadline_seconds": 120,
+    "cleanup_seconds": 5,
+    "exit_code": 0,
+    "expected_exit": 0,
+    "GOMAXPROCS": "2",
+    "log": ".git/finalization/screen-nopool-2.log"
+  },
+  {
+    "name": "screen-baseline-2",
+    "command": [
+      "$CHECKOUT/.git/finalization/baseline.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkAdmission(Lookup|Input|Cold)$",
+      "-test.benchtime=150ms",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=90s"
+    ],
+    "start": 1794123494.142236,
+    "end": 1794123502.453443,
+    "execution_deadline_seconds": 120,
+    "cleanup_seconds": 5,
+    "exit_code": 0,
+    "expected_exit": 0,
+    "GOMAXPROCS": "2",
+    "log": ".git/finalization/screen-baseline-2.log"
+  },
+  {
+    "name": "screen-lazy0-2",
+    "command": [
+      "$CHECKOUT/.git/finalization/lazy0.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkAdmission(Lookup|Input|Cold)$",
+      "-test.benchtime=150ms",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=90s"
+    ],
+    "start": 1794123502.453957,
+    "end": 1794123507.0199099,
+    "execution_deadline_seconds": 120,
+    "cleanup_seconds": 5,
+    "exit_code": 0,
+    "expected_exit": 0,
+    "GOMAXPROCS": "2",
+    "log": ".git/finalization/screen-lazy0-2.log"
+  },
+  {
+    "name": "diamond-graph4",
+    "command": [
+      "$CHECKOUT/.git/finalization/graph4.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkAdmissionDiamond$",
+      "-test.benchtime=1s",
+      "-test.count=6",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=90s"
+    ],
+    "start": 1794123507.0204139,
+    "end": 1794123516.082446,
+    "execution_deadline_seconds": 120,
+    "cleanup_seconds": 5,
+    "exit_code": 0,
+    "expected_exit": 0,
+    "GOMAXPROCS": "2",
+    "log": ".git/finalization/diamond-graph4.log"
+  },
+  {
+    "name": "diamond-walk",
+    "command": [
+      "$CHECKOUT/.git/finalization/walk.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkAdmissionDiamond$",
+      "-test.benchtime=1s",
+      "-test.count=6",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=90s"
+    ],
+    "start": 1794123516.088813,
+    "end": 1794123524.752702,
+    "execution_deadline_seconds": 120,
+    "cleanup_seconds": 5,
+    "exit_code": 0,
+    "expected_exit": 0,
+    "GOMAXPROCS": "2",
+    "log": ".git/finalization/diamond-walk.log"
+  },
+  {
+    "name": "matched-baseline-0",
+    "command": [
+      "$CHECKOUT/.git/finalization/baseline.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkFinalReview$/^(legacy_stream|legacy_owned|metered_background_stream|metered_live_stream|restricted_owned)$/^(header_interpolation|include)$/^(text|html)$",
+      "-test.benchtime=1s",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=90s"
+    ],
+    "start": 1794123524.753536,
+    "end": 1794123560.189216,
+    "execution_deadline_seconds": 120,
+    "cleanup_seconds": 5,
+    "exit_code": 0,
+    "expected_exit": 0,
+    "GOMAXPROCS": "2",
+    "log": ".git/finalization/matched-baseline-0.log"
+  },
+  {
+    "name": "matched-graph4-0",
+    "command": [
+      "$CHECKOUT/.git/finalization/graph4.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkFinalReview$/^(legacy_stream|legacy_owned|metered_background_stream|metered_live_stream|restricted_owned)$/^(header_interpolation|include)$/^(text|html)$",
+      "-test.benchtime=1s",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=90s"
+    ],
+    "start": 1794123560.223031,
+    "end": 1794123594.4662778,
+    "execution_deadline_seconds": 120,
+    "cleanup_seconds": 5,
+    "exit_code": 0,
+    "expected_exit": 0,
+    "GOMAXPROCS": "2",
+    "log": ".git/finalization/matched-graph4-0.log"
+  },
+  {
+    "name": "matched-input4-0",
+    "command": [
+      "$CHECKOUT/.git/finalization/input4.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkFinalReview$/^(legacy_stream|legacy_owned|metered_background_stream|metered_live_stream|restricted_owned)$/^(header_interpolation|include)$/^(text|html)$",
+      "-test.benchtime=1s",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=90s"
+    ],
+    "start": 1794123594.466857,
+    "end": 1794123628.992547,
+    "execution_deadline_seconds": 120,
+    "cleanup_seconds": 5,
+    "exit_code": 0,
+    "expected_exit": 0,
+    "GOMAXPROCS": "2",
+    "log": ".git/finalization/matched-input4-0.log"
+  },
+  {
+    "name": "matched-graph4-1",
+    "command": [
+      "$CHECKOUT/.git/finalization/graph4.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkFinalReview$/^(legacy_stream|legacy_owned|metered_background_stream|metered_live_stream|restricted_owned)$/^(header_interpolation|include)$/^(text|html)$",
+      "-test.benchtime=1s",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=90s"
+    ],
+    "start": 1794123629.010693,
+    "end": 1794123662.4873018,
+    "execution_deadline_seconds": 120,
+    "cleanup_seconds": 5,
+    "exit_code": 0,
+    "expected_exit": 0,
+    "GOMAXPROCS": "2",
+    "log": ".git/finalization/matched-graph4-1.log"
+  },
+  {
+    "name": "matched-input4-1",
+    "command": [
+      "$CHECKOUT/.git/finalization/input4.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkFinalReview$/^(legacy_stream|legacy_owned|metered_background_stream|metered_live_stream|restricted_owned)$/^(header_interpolation|include)$/^(text|html)$",
+      "-test.benchtime=1s",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=90s"
+    ],
+    "start": 1794123662.4879098,
+    "end": 1794123695.838637,
+    "execution_deadline_seconds": 120,
+    "cleanup_seconds": 5,
+    "exit_code": 0,
+    "expected_exit": 0,
+    "GOMAXPROCS": "2",
+    "log": ".git/finalization/matched-input4-1.log"
+  },
+  {
+    "name": "matched-baseline-1",
+    "command": [
+      "$CHECKOUT/.git/finalization/baseline.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkFinalReview$/^(legacy_stream|legacy_owned|metered_background_stream|metered_live_stream|restricted_owned)$/^(header_interpolation|include)$/^(text|html)$",
+      "-test.benchtime=1s",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=90s"
+    ],
+    "start": 1794123695.839222,
+    "end": 1794123731.251977,
+    "execution_deadline_seconds": 120,
+    "cleanup_seconds": 5,
+    "exit_code": 0,
+    "expected_exit": 0,
+    "GOMAXPROCS": "2",
+    "log": ".git/finalization/matched-baseline-1.log"
+  },
+  {
+    "name": "matched-input4-2",
+    "command": [
+      "$CHECKOUT/.git/finalization/input4.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkFinalReview$/^(legacy_stream|legacy_owned|metered_background_stream|metered_live_stream|restricted_owned)$/^(header_interpolation|include)$/^(text|html)$",
+      "-test.benchtime=1s",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=90s"
+    ],
+    "start": 1794123731.2527308,
+    "end": 1794123763.381931,
+    "execution_deadline_seconds": 120,
+    "cleanup_seconds": 5,
+    "exit_code": 0,
+    "expected_exit": 0,
+    "GOMAXPROCS": "2",
+    "log": ".git/finalization/matched-input4-2.log"
+  },
+  {
+    "name": "matched-baseline-2",
+    "command": [
+      "$CHECKOUT/.git/finalization/baseline.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkFinalReview$/^(legacy_stream|legacy_owned|metered_background_stream|metered_live_stream|restricted_owned)$/^(header_interpolation|include)$/^(text|html)$",
+      "-test.benchtime=1s",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=90s"
+    ],
+    "start": 1794123763.382837,
+    "end": 1794123799.751461,
+    "execution_deadline_seconds": 120,
+    "cleanup_seconds": 5,
+    "exit_code": 0,
+    "expected_exit": 0,
+    "GOMAXPROCS": "2",
+    "log": ".git/finalization/matched-baseline-2.log"
+  },
+  {
+    "name": "matched-graph4-2",
+    "command": [
+      "$CHECKOUT/.git/finalization/graph4.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkFinalReview$/^(legacy_stream|legacy_owned|metered_background_stream|metered_live_stream|restricted_owned)$/^(header_interpolation|include)$/^(text|html)$",
+      "-test.benchtime=1s",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=90s"
+    ],
+    "start": 1794123799.769451,
+    "end": 1794123834.073329,
+    "execution_deadline_seconds": 120,
+    "cleanup_seconds": 5,
+    "exit_code": 0,
+    "expected_exit": 0,
+    "GOMAXPROCS": "2",
+    "log": ".git/finalization/matched-graph4-2.log"
+  },
+  {
+    "name": "matched-baseline-3",
+    "command": [
+      "$CHECKOUT/.git/finalization/baseline.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkFinalReview$/^(legacy_stream|legacy_owned|metered_background_stream|metered_live_stream|restricted_owned)$/^(header_interpolation|include)$/^(text|html)$",
+      "-test.benchtime=1s",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=90s"
+    ],
+    "start": 1794123834.074152,
+    "end": 1794123869.610164,
+    "execution_deadline_seconds": 120,
+    "cleanup_seconds": 5,
+    "exit_code": 0,
+    "expected_exit": 0,
+    "GOMAXPROCS": "2",
+    "log": ".git/finalization/matched-baseline-3.log"
+  },
+  {
+    "name": "matched-graph4-3",
+    "command": [
+      "$CHECKOUT/.git/finalization/graph4.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkFinalReview$/^(legacy_stream|legacy_owned|metered_background_stream|metered_live_stream|restricted_owned)$/^(header_interpolation|include)$/^(text|html)$",
+      "-test.benchtime=1s",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=90s"
+    ],
+    "start": 1794123869.643487,
+    "end": 1794123903.521512,
+    "execution_deadline_seconds": 120,
+    "cleanup_seconds": 5,
+    "exit_code": 0,
+    "expected_exit": 0,
+    "GOMAXPROCS": "2",
+    "log": ".git/finalization/matched-graph4-3.log"
+  },
+  {
+    "name": "matched-input4-3",
+    "command": [
+      "$CHECKOUT/.git/finalization/input4.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkFinalReview$/^(legacy_stream|legacy_owned|metered_background_stream|metered_live_stream|restricted_owned)$/^(header_interpolation|include)$/^(text|html)$",
+      "-test.benchtime=1s",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=90s"
+    ],
+    "start": 1794123903.522518,
+    "end": 1794123934.481796,
+    "execution_deadline_seconds": 120,
+    "cleanup_seconds": 5,
+    "exit_code": 0,
+    "expected_exit": 0,
+    "GOMAXPROCS": "2",
+    "log": ".git/finalization/matched-input4-3.log"
+  },
+  {
+    "name": "matched-graph4-4",
+    "command": [
+      "$CHECKOUT/.git/finalization/graph4.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkFinalReview$/^(legacy_stream|legacy_owned|metered_background_stream|metered_live_stream|restricted_owned)$/^(header_interpolation|include)$/^(text|html)$",
+      "-test.benchtime=1s",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=90s"
+    ],
+    "start": 1794123934.483047,
+    "end": 1794123967.921254,
+    "execution_deadline_seconds": 120,
+    "cleanup_seconds": 5,
+    "exit_code": 0,
+    "expected_exit": 0,
+    "GOMAXPROCS": "2",
+    "log": ".git/finalization/matched-graph4-4.log"
+  },
+  {
+    "name": "matched-input4-4",
+    "command": [
+      "$CHECKOUT/.git/finalization/input4.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkFinalReview$/^(legacy_stream|legacy_owned|metered_background_stream|metered_live_stream|restricted_owned)$/^(header_interpolation|include)$/^(text|html)$",
+      "-test.benchtime=1s",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=90s"
+    ],
+    "start": 1794123967.930707,
+    "end": 1794124001.289095,
+    "execution_deadline_seconds": 120,
+    "cleanup_seconds": 5,
+    "exit_code": 0,
+    "expected_exit": 0,
+    "GOMAXPROCS": "2",
+    "log": ".git/finalization/matched-input4-4.log"
+  },
+  {
+    "name": "matched-baseline-4",
+    "command": [
+      "$CHECKOUT/.git/finalization/baseline.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkFinalReview$/^(legacy_stream|legacy_owned|metered_background_stream|metered_live_stream|restricted_owned)$/^(header_interpolation|include)$/^(text|html)$",
+      "-test.benchtime=1s",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=90s"
+    ],
+    "start": 1794124001.2905128,
+    "end": 1794124037.057824,
+    "execution_deadline_seconds": 120,
+    "cleanup_seconds": 5,
+    "exit_code": 0,
+    "expected_exit": 0,
+    "GOMAXPROCS": "2",
+    "log": ".git/finalization/matched-baseline-4.log"
+  },
+  {
+    "name": "matched-input4-5",
+    "command": [
+      "$CHECKOUT/.git/finalization/input4.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkFinalReview$/^(legacy_stream|legacy_owned|metered_background_stream|metered_live_stream|restricted_owned)$/^(header_interpolation|include)$/^(text|html)$",
+      "-test.benchtime=1s",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=90s"
+    ],
+    "start": 1794124037.059715,
+    "end": 1794124071.324119,
+    "execution_deadline_seconds": 120,
+    "cleanup_seconds": 5,
+    "exit_code": 0,
+    "expected_exit": 0,
+    "GOMAXPROCS": "2",
+    "log": ".git/finalization/matched-input4-5.log"
+  },
+  {
+    "name": "matched-baseline-5",
+    "command": [
+      "$CHECKOUT/.git/finalization/baseline.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkFinalReview$/^(legacy_stream|legacy_owned|metered_background_stream|metered_live_stream|restricted_owned)$/^(header_interpolation|include)$/^(text|html)$",
+      "-test.benchtime=1s",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=90s"
+    ],
+    "start": 1794124071.373415,
+    "end": 1794124107.823313,
+    "execution_deadline_seconds": 120,
+    "cleanup_seconds": 5,
+    "exit_code": 0,
+    "expected_exit": 0,
+    "GOMAXPROCS": "2",
+    "log": ".git/finalization/matched-baseline-5.log"
+  },
+  {
+    "name": "matched-graph4-5",
+    "command": [
+      "$CHECKOUT/.git/finalization/graph4.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkFinalReview$/^(legacy_stream|legacy_owned|metered_background_stream|metered_live_stream|restricted_owned)$/^(header_interpolation|include)$/^(text|html)$",
+      "-test.benchtime=1s",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=90s"
+    ],
+    "start": 1794124107.829874,
+    "end": 1794124140.088008,
+    "execution_deadline_seconds": 120,
+    "cleanup_seconds": 5,
+    "exit_code": 0,
+    "expected_exit": 0,
+    "GOMAXPROCS": "2",
+    "log": ".git/finalization/matched-graph4-5.log"
+  },
+  {
+    "name": "profile-baseline",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "$CHECKOUT/.git/finalization/baseline.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkFinalReview$/^(metered_live_stream|restricted_owned)$/^(header_interpolation|include)$/^html$",
+      "-test.benchtime=500ms",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.timeout=90s",
+      "-test.cpuprofile=$CHECKOUT/.git/finalization/baseline-cpu.pprof",
+      "-test.memprofile=$CHECKOUT/.git/finalization/baseline-heap.pprof",
+      "-test.mutexprofile=$CHECKOUT/.git/finalization/baseline-mutex.pprof",
+      "-test.blockprofile=$CHECKOUT/.git/finalization/baseline-block.pprof"
+    ],
+    "start": 1794124140.089013,
+    "end": 1794124142.722962,
+    "execution_deadline_seconds": 120,
+    "cleanup_seconds": 5,
+    "exit_code": 0,
+    "expected_exit": 0,
+    "GOMAXPROCS": "2",
+    "log": ".git/finalization/profile-baseline.log"
+  },
+  {
+    "name": "profile-graph4",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "$CHECKOUT/.git/finalization/graph4.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkFinalReview$/^(metered_live_stream|restricted_owned)$/^(header_interpolation|include)$/^html$",
+      "-test.benchtime=500ms",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.timeout=90s",
+      "-test.cpuprofile=$CHECKOUT/.git/finalization/graph4-cpu.pprof",
+      "-test.memprofile=$CHECKOUT/.git/finalization/graph4-heap.pprof",
+      "-test.mutexprofile=$CHECKOUT/.git/finalization/graph4-mutex.pprof",
+      "-test.blockprofile=$CHECKOUT/.git/finalization/graph4-block.pprof"
+    ],
+    "start": 1794124142.724101,
+    "end": 1794124146.066751,
+    "execution_deadline_seconds": 120,
+    "cleanup_seconds": 5,
+    "exit_code": 0,
+    "expected_exit": 0,
+    "GOMAXPROCS": "2",
+    "log": ".git/finalization/profile-graph4.log"
+  },
+  {
+    "name": "profile-input4",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "$CHECKOUT/.git/finalization/input4.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkFinalReview$/^(metered_live_stream|restricted_owned)$/^(header_interpolation|include)$/^html$",
+      "-test.benchtime=500ms",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.timeout=90s",
+      "-test.cpuprofile=$CHECKOUT/.git/finalization/input4-cpu.pprof",
+      "-test.memprofile=$CHECKOUT/.git/finalization/input4-heap.pprof",
+      "-test.mutexprofile=$CHECKOUT/.git/finalization/input4-mutex.pprof",
+      "-test.blockprofile=$CHECKOUT/.git/finalization/input4-block.pprof"
+    ],
+    "start": 1794124146.0678651,
+    "end": 1794124148.947235,
+    "execution_deadline_seconds": 120,
+    "cleanup_seconds": 5,
+    "exit_code": 0,
+    "expected_exit": 0,
+    "GOMAXPROCS": "2",
+    "log": ".git/finalization/profile-input4.log"
+  }
+]

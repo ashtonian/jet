@@ -1,0 +1,30 @@
+goos: darwin
+goarch: arm64
+pkg: github.com/CloudyKit/jet/v6
+cpu: Apple M2 Max
+BenchmarkExecutionModes/metered_background_stream/header_interpolation/html-2         	 4842154	       248.1 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/metered_background_stream/nested_silent/html-2                	   18304	     65056 ns/op	    3121 B/op	     130 allocs/op
+BenchmarkExecutionModes/metered_background_stream/escape_expansion/html-2             	  136677	      8622 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/metered_background_stream/include/html-2                      	 2406016	       486.3 ns/op	      96 B/op	       5 allocs/op
+BenchmarkExecutionModes/metered_background_stream/block_content/html-2                	 4130569	       295.8 ns/op	      32 B/op	       1 allocs/op
+BenchmarkExecutionModes/metered_background_stream/data_json_256/html-2                	    3540	    320524 ns/op	  170169 B/op	    5388 allocs/op
+BenchmarkExecutionModes/metered_background_stream/data_unused_256/html-2              	10087494	       125.9 ns/op	       0 B/op	       0 allocs/op
+PASS
+       10.59 real        10.28 user         0.17 sys
+            16416768  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                1222  page reclaims
+                   0  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                3974  signals received
+                  37  voluntary context switches
+               12686  involuntary context switches
+        194489464416  instructions retired
+         35425706909  cycles elapsed
+            10961424  peak memory footprint

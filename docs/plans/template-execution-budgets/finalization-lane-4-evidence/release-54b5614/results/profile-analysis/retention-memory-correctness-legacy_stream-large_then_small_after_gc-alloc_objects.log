@@ -1,0 +1,37 @@
+File: correctness.test
+Type: alloc_objects
+Time: 2026-11-08 03:05:52 CST
+Showing nodes accounting for 16192, 96.67% of 16749 total
+Dropped 221 nodes (cum <= 83)
+      flat  flat%   sum%        cum   cum%
+      8127 48.52% 48.52%       8127 48.52%  runtime/pprof.allFrames
+      2664 15.91% 64.43%       2796 16.69%  runtime/pprof.(*profileBuilder).emitLocation
+      2020 12.06% 76.49%       2022 12.07%  github.com/CloudyKit/jet/v6.(*Runtime).recover
+      2020 12.06% 88.55%       4062 24.25%  github.com/CloudyKit/jet/v6.(*Template).Execute
+      1086  6.48% 95.03%      12165 72.63%  runtime/pprof.writeHeapProto
+       100   0.6% 95.63%        100   0.6%  regexp.makeOnePass.func1
+        87  0.52% 96.15%         87  0.52%  runtime/pprof.(*profileBuilder).stringIndex (inline)
+        21  0.13% 96.27%      10973 65.51%  runtime/pprof.(*profileBuilder).appendLocsForStack
+        18  0.11% 96.38%      12276 73.29%  github.com/CloudyKit/jet/v6_test.TestExecutionRetentionMeasurements.func1.2
+        17   0.1% 96.48%        212  1.27%  testing.(*T).Run
+         8 0.048% 96.53%        236  1.41%  regexp.compile
+         7 0.042% 96.57%      16377 97.78%  github.com/CloudyKit/jet/v6_test.TestExecutionRetentionMeasurements.func1
+         6 0.036% 96.61%        122  0.73%  regexp.makeOnePass
+         4 0.024% 96.63%      12169 72.66%  runtime/pprof.writeHeapInternal
+         3 0.018% 96.65%        131  0.78%  testing.newMatcher
+         3 0.018% 96.67%        288  1.72%  testing.runTests
+         1 0.006% 96.67%        292  1.74%  testing.(*M).Run
+         0     0% 96.67%       4062 24.25%  github.com/CloudyKit/jet/v6_test.TestExecutionRetentionMeasurements.func1.1 (partial-inline)
+         0     0% 96.67%       4062 24.25%  github.com/CloudyKit/jet/v6_test.init.func1
+         0     0% 96.67%        292  1.74%  main.main
+         0     0% 96.67%        236  1.41%  regexp.Compile (inline)
+         0     0% 96.67%        130  0.78%  regexp.compileOnePass
+         0     0% 96.67%        292  1.74%  runtime.main
+         0     0% 96.67%      12169 72.66%  runtime/pprof.WriteHeapProfile (inline)
+         0     0% 96.67%      12169 72.66%  runtime/pprof.writeHeap (inline)
+         0     0% 96.67%        180  1.07%  testing.(*matcher).fullName
+         0     0% 96.67%        148  0.88%  testing.runTests.func1
+         0     0% 96.67%        121  0.72%  testing.simpleMatch.matches
+         0     0% 96.67%        125  0.75%  testing.simpleMatch.verify
+         0     0% 96.67%      16596 99.09%  testing.tRunner
+         0     0% 96.67%        239  1.43%  testing/internal/testdeps.TestDeps.MatchString

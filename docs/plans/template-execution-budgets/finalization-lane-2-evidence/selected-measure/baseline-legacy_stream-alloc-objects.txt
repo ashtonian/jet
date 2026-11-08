@@ -1,0 +1,19 @@
+File: baseline.test
+Type: alloc_objects
+Time: 2026-11-08 02:10:53 CST
+Showing nodes accounting for 238119, 100% of 238221 total
+Dropped 23 nodes (cum <= 1191)
+      flat  flat%   sum%        cum   cum%
+    218458 91.70% 91.70%     218458 91.70%  github.com/CloudyKit/jet/v6.(*Runtime).recover
+     16384  6.88% 98.58%      16386  6.88%  runtime/pprof.(*profileBuilder).emitLocation
+      3277  1.38%   100%       3277  1.38%  compress/gzip.NewWriterLevel
+         0     0%   100%     218458 91.70%  github.com/CloudyKit/jet/v6.(*Template).Execute (inline)
+         0     0%   100%     218458 91.70%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0%   100%     218458 91.70%  github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview.func1
+         0     0%   100%     218458 91.70%  github.com/CloudyKit/jet/v6_test.init.func1
+         0     0%   100%      16386  6.88%  runtime/pprof.(*profileBuilder).appendLocsForStack
+         0     0%   100%      16386  6.88%  runtime/pprof.(*profileBuilder).build
+         0     0%   100%       3277  1.38%  runtime/pprof.newProfileBuilder
+         0     0%   100%      19663  8.25%  runtime/pprof.profileWriter
+         0     0%   100%     218458 91.70%  testing.(*B).launch
+         0     0%   100%     218557 91.75%  testing.(*B).runN

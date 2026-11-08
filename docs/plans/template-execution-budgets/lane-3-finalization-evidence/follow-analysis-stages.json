@@ -1,0 +1,458 @@
+[
+  {
+    "name": "follow-base4-cpu-flat",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-top",
+      "-nodecount=30",
+      ".git/finalization/follow-base4.test",
+      ".git/finalization/follow-base4-cpu.pprof"
+    ],
+    "start": 1794125854.402293,
+    "end": 1794125862.922972,
+    "exit_code": 0
+  },
+  {
+    "name": "follow-base4-cpu-cumulative",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-top",
+      "-cum",
+      "-nodecount=30",
+      ".git/finalization/follow-base4.test",
+      ".git/finalization/follow-base4-cpu.pprof"
+    ],
+    "start": 1794125862.923532,
+    "end": 1794125863.128799,
+    "exit_code": 0
+  },
+  {
+    "name": "follow-base4-alloc",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-top",
+      "-sample_index=alloc_space",
+      "-nodecount=30",
+      ".git/finalization/follow-base4.test",
+      ".git/finalization/follow-base4-heap.pprof"
+    ],
+    "start": 1794125863.1291368,
+    "end": 1794125863.2356951,
+    "exit_code": 0
+  },
+  {
+    "name": "follow-base4-heap",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-top",
+      "-sample_index=inuse_space",
+      "-nodecount=30",
+      ".git/finalization/follow-base4.test",
+      ".git/finalization/follow-base4-heap.pprof"
+    ],
+    "start": 1794125863.2360141,
+    "end": 1794125863.344811,
+    "exit_code": 0
+  },
+  {
+    "name": "follow-base4-mutex",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-top",
+      "-nodecount=30",
+      ".git/finalization/follow-base4.test",
+      ".git/finalization/follow-base4-mutex.pprof"
+    ],
+    "start": 1794125863.345101,
+    "end": 1794125863.461094,
+    "exit_code": 0
+  },
+  {
+    "name": "follow-base4-block",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-top",
+      "-nodecount=30",
+      ".git/finalization/follow-base4.test",
+      ".git/finalization/follow-base4-block.pprof"
+    ],
+    "start": 1794125863.461427,
+    "end": 1794125863.603392,
+    "exit_code": 0
+  },
+  {
+    "name": "follow-base4-lines-admitInputScopes",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-source_path=$CHECKOUT",
+      "-trim_path=github.com/CloudyKit/jet/v6/",
+      "-list=admitInputScopes",
+      "-sample_index=alloc_space",
+      ".git/finalization/follow-base4.test",
+      ".git/finalization/follow-base4-heap.pprof"
+    ],
+    "start": 1794125863.6037362,
+    "end": 1794125863.714653,
+    "exit_code": 0
+  },
+  {
+    "name": "follow-base4-lines-borrowInputVars",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-source_path=$CHECKOUT",
+      "-trim_path=github.com/CloudyKit/jet/v6/",
+      "-list=borrowInputVars",
+      "-sample_index=alloc_space",
+      ".git/finalization/follow-base4.test",
+      ".git/finalization/follow-base4-heap.pprof"
+    ],
+    "start": 1794125863.715033,
+    "end": 1794125863.824971,
+    "exit_code": 2
+  },
+  {
+    "name": "follow-base4-lines-clone",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-source_path=$CHECKOUT",
+      "-trim_path=github.com/CloudyKit/jet/v6/",
+      "-list=clone",
+      "-sample_index=alloc_space",
+      ".git/finalization/follow-base4.test",
+      ".git/finalization/follow-base4-heap.pprof"
+    ],
+    "start": 1794125863.8253691,
+    "end": 1794125863.9307442,
+    "exit_code": 2
+  },
+  {
+    "name": "follow-pooled4-cpu-flat",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-top",
+      "-nodecount=30",
+      ".git/finalization/follow-pooled4.test",
+      ".git/finalization/follow-pooled4-cpu.pprof"
+    ],
+    "start": 1794125863.9310741,
+    "end": 1794125864.037177,
+    "exit_code": 0
+  },
+  {
+    "name": "follow-pooled4-cpu-cumulative",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-top",
+      "-cum",
+      "-nodecount=30",
+      ".git/finalization/follow-pooled4.test",
+      ".git/finalization/follow-pooled4-cpu.pprof"
+    ],
+    "start": 1794125864.037508,
+    "end": 1794125864.144565,
+    "exit_code": 0
+  },
+  {
+    "name": "follow-pooled4-alloc",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-top",
+      "-sample_index=alloc_space",
+      "-nodecount=30",
+      ".git/finalization/follow-pooled4.test",
+      ".git/finalization/follow-pooled4-heap.pprof"
+    ],
+    "start": 1794125864.1454809,
+    "end": 1794125864.252275,
+    "exit_code": 0
+  },
+  {
+    "name": "follow-pooled4-heap",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-top",
+      "-sample_index=inuse_space",
+      "-nodecount=30",
+      ".git/finalization/follow-pooled4.test",
+      ".git/finalization/follow-pooled4-heap.pprof"
+    ],
+    "start": 1794125864.252627,
+    "end": 1794125864.363424,
+    "exit_code": 0
+  },
+  {
+    "name": "follow-pooled4-mutex",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-top",
+      "-nodecount=30",
+      ".git/finalization/follow-pooled4.test",
+      ".git/finalization/follow-pooled4-mutex.pprof"
+    ],
+    "start": 1794125864.36379,
+    "end": 1794125864.481737,
+    "exit_code": 0
+  },
+  {
+    "name": "follow-pooled4-block",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-top",
+      "-nodecount=30",
+      ".git/finalization/follow-pooled4.test",
+      ".git/finalization/follow-pooled4-block.pprof"
+    ],
+    "start": 1794125864.4821272,
+    "end": 1794125864.603006,
+    "exit_code": 0
+  },
+  {
+    "name": "follow-pooled4-lines-admitInputScopes",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-source_path=$CHECKOUT",
+      "-trim_path=github.com/CloudyKit/jet/v6/",
+      "-list=admitInputScopes",
+      "-sample_index=alloc_space",
+      ".git/finalization/follow-pooled4.test",
+      ".git/finalization/follow-pooled4-heap.pprof"
+    ],
+    "start": 1794125864.603403,
+    "end": 1794125864.7137878,
+    "exit_code": 2
+  },
+  {
+    "name": "follow-pooled4-lines-borrowInputVars",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-source_path=$CHECKOUT",
+      "-trim_path=github.com/CloudyKit/jet/v6/",
+      "-list=borrowInputVars",
+      "-sample_index=alloc_space",
+      ".git/finalization/follow-pooled4.test",
+      ".git/finalization/follow-pooled4-heap.pprof"
+    ],
+    "start": 1794125864.714219,
+    "end": 1794125864.8206909,
+    "exit_code": 2
+  },
+  {
+    "name": "follow-pooled4-lines-clone",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-source_path=$CHECKOUT",
+      "-trim_path=github.com/CloudyKit/jet/v6/",
+      "-list=clone",
+      "-sample_index=alloc_space",
+      ".git/finalization/follow-pooled4.test",
+      ".git/finalization/follow-pooled4-heap.pprof"
+    ],
+    "start": 1794125864.821107,
+    "end": 1794125864.928276,
+    "exit_code": 2
+  },
+  {
+    "name": "follow-active8-cpu-flat",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-top",
+      "-nodecount=30",
+      ".git/finalization/follow-active8.test",
+      ".git/finalization/follow-active8-cpu.pprof"
+    ],
+    "start": 1794125864.928658,
+    "end": 1794125865.0377731,
+    "exit_code": 0
+  },
+  {
+    "name": "follow-active8-cpu-cumulative",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-top",
+      "-cum",
+      "-nodecount=30",
+      ".git/finalization/follow-active8.test",
+      ".git/finalization/follow-active8-cpu.pprof"
+    ],
+    "start": 1794125865.038172,
+    "end": 1794125865.14657,
+    "exit_code": 0
+  },
+  {
+    "name": "follow-active8-alloc",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-top",
+      "-sample_index=alloc_space",
+      "-nodecount=30",
+      ".git/finalization/follow-active8.test",
+      ".git/finalization/follow-active8-heap.pprof"
+    ],
+    "start": 1794125865.14694,
+    "end": 1794125865.262133,
+    "exit_code": 0
+  },
+  {
+    "name": "follow-active8-heap",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-top",
+      "-sample_index=inuse_space",
+      "-nodecount=30",
+      ".git/finalization/follow-active8.test",
+      ".git/finalization/follow-active8-heap.pprof"
+    ],
+    "start": 1794125865.2625191,
+    "end": 1794125865.370921,
+    "exit_code": 0
+  },
+  {
+    "name": "follow-active8-mutex",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-top",
+      "-nodecount=30",
+      ".git/finalization/follow-active8.test",
+      ".git/finalization/follow-active8-mutex.pprof"
+    ],
+    "start": 1794125865.371508,
+    "end": 1794125865.483264,
+    "exit_code": 0
+  },
+  {
+    "name": "follow-active8-block",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-top",
+      "-nodecount=30",
+      ".git/finalization/follow-active8.test",
+      ".git/finalization/follow-active8-block.pprof"
+    ],
+    "start": 1794125865.483608,
+    "end": 1794125865.58878,
+    "exit_code": 0
+  },
+  {
+    "name": "follow-active8-lines-admitInputScopes",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-source_path=$CHECKOUT",
+      "-trim_path=github.com/CloudyKit/jet/v6/",
+      "-list=admitInputScopes",
+      "-sample_index=alloc_space",
+      ".git/finalization/follow-active8.test",
+      ".git/finalization/follow-active8-heap.pprof"
+    ],
+    "start": 1794125865.589161,
+    "end": 1794125865.693171,
+    "exit_code": 2
+  },
+  {
+    "name": "follow-active8-lines-borrowInputVars",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-source_path=$CHECKOUT",
+      "-trim_path=github.com/CloudyKit/jet/v6/",
+      "-list=borrowInputVars",
+      "-sample_index=alloc_space",
+      ".git/finalization/follow-active8.test",
+      ".git/finalization/follow-active8-heap.pprof"
+    ],
+    "start": 1794125865.693599,
+    "end": 1794125865.80097,
+    "exit_code": 2
+  },
+  {
+    "name": "follow-active8-lines-clone",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-source_path=$CHECKOUT",
+      "-trim_path=github.com/CloudyKit/jet/v6/",
+      "-list=clone",
+      "-sample_index=alloc_space",
+      ".git/finalization/follow-active8.test",
+      ".git/finalization/follow-active8-heap.pprof"
+    ],
+    "start": 1794125865.8014069,
+    "end": 1794125865.9146628,
+    "exit_code": 2
+  },
+  {
+    "name": "follow-pair-benchstat",
+    "command": [
+      "benchstat",
+      ".git/finalization/follow-pair-base4.txt",
+      ".git/finalization/follow-pair-pooled4.txt",
+      ".git/finalization/follow-pair-active8.txt"
+    ],
+    "start": 1794125865.924771,
+    "end": 1794125865.944063,
+    "exit_code": 0
+  },
+  {
+    "name": "follow-capacity-benchstat",
+    "command": [
+      "benchstat",
+      ".git/finalization/follow-capacity-base4.txt",
+      ".git/finalization/follow-capacity-cap8.txt",
+      ".git/finalization/follow-capacity-cap16.txt"
+    ],
+    "start": 1794125865.944347,
+    "end": 1794125865.950837,
+    "exit_code": 0
+  }
+]

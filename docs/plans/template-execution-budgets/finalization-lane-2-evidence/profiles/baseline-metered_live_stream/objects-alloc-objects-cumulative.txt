@@ -1,0 +1,32 @@
+File: baseline.test
+Type: alloc_objects
+Time: 2026-11-08 01:29:23 CST
+Showing nodes accounting for 499821, 96.96% of 515510 total
+Dropped 307 nodes (cum <= 2577)
+Showing top 25 nodes out of 30
+      flat  flat%   sum%        cum   cum%
+         3 0.00058% 0.00058%     513837 99.68%  testing.(*B).runN
+         4 0.00078% 0.0014%     499045 96.81%  github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview.func1
+         0     0% 0.0014%     498909 96.78%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0% 0.0014%     498909 96.78%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0% 0.0014%     498909 96.78%  github.com/CloudyKit/jet/v6_test.init.0.func1
+         0     0% 0.0014%     498880 96.77%  testing.(*B).launch
+         0     0% 0.0014%     317401 61.57%  github.com/CloudyKit/jet/v6.(*Runtime).startCompilation
+    181388 35.19% 35.19%     181388 35.19%  github.com/CloudyKit/jet/v6.newParseAdmission
+         0     0% 35.19%     136029 26.39%  github.com/CloudyKit/jet/v6.(*Runtime).startCompilation.func1
+     90686 17.59% 52.78%     136029 26.39%  github.com/CloudyKit/jet/v6.(*parseAdmission).admitCached
+         0     0% 52.78%      90770 17.61%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+     45343  8.80% 61.57%      90768 17.61%  github.com/CloudyKit/jet/v6.(*Runtime).printValue
+     45343  8.80% 70.37%      45425  8.81%  github.com/CloudyKit/jet/v6.(*dataPrinter).value
+     45343  8.80% 79.17%      45381  8.80%  github.com/CloudyKit/jet/v6.(*Runtime).recover
+     45347  8.80% 87.96%      45347  8.80%  github.com/CloudyKit/jet/v6.(*parseAdmission).prepareSource
+     45343  8.80% 96.76%      45343  8.80%  github.com/CloudyKit/jet/v6.(*Runtime).outputWriter (inline)
+         0     0% 96.76%      14938  2.90%  testing.(*B).run1.func1
+       344 0.067% 96.83%      14755  2.86%  github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview
+         0     0% 96.83%      13592  2.64%  testing.(*matcher).fullName
+         6 0.0012% 96.83%      13403  2.60%  testing.(*B).Run
+         0     0% 96.83%      12619  2.45%  testing/internal/testdeps.TestDeps.MatchString
+         0     0% 96.83%      12585  2.44%  regexp.Compile (inline)
+       671  0.13% 96.96%      12585  2.44%  regexp.compile
+         0     0% 96.96%      12479  2.42%  testing.simpleMatch.matches
+         0     0% 96.96%       4307  0.84%  regexp.compileOnePass

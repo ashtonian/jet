@@ -1,0 +1,28 @@
+goos: darwin
+goarch: arm64
+pkg: github.com/CloudyKit/jet/v6
+cpu: Apple M2 Max
+                                        │ <artifacts>/followup-54/terminal-repair/final-analysis/previous-guard.bench.txt │ <artifacts>/followup-54/terminal-repair/final-analysis/selected-guard.bench.txt │
+                                        │                                                            sec/op                                                             │                                                 sec/op                                                   vs base              │
+GuardRepair/metered_background_stream-2                                                                                                                     8.777µ ± 3%                                                                                               8.297µ ± 2%  -5.47% (p=0.002 n=6)
+GuardRepair/metered_live_stream-2                                                                                                                           11.07µ ± 3%                                                                                               10.44µ ± 3%  -5.74% (p=0.009 n=6)
+GuardRepair/restricted_owned-2                                                                                                                              13.60µ ± 4%                                                                                               12.63µ ± 5%  -7.18% (p=0.009 n=6)
+geomean                                                                                                                                                     10.98µ                                                                                                    10.30µ       -6.13%
+
+                                        │ <artifacts>/followup-54/terminal-repair/final-analysis/previous-guard.bench.txt │ <artifacts>/followup-54/terminal-repair/final-analysis/selected-guard.bench.txt │
+                                        │                                                             B/op                                                              │                                                 B/op                                                   vs base                │
+GuardRepair/metered_background_stream-2                                                                                                                    0.000 ± 0%                                                                                                0.000 ± 0%       ~ (p=1.000 n=6) ¹
+GuardRepair/metered_live_stream-2                                                                                                                          0.000 ± 0%                                                                                                0.000 ± 0%       ~ (p=1.000 n=6) ¹
+GuardRepair/restricted_owned-2                                                                                                                           11.01Ki ± 0%                                                                                              11.00Ki ± 0%       ~ (p=0.121 n=6)
+geomean                                                                                                                                                               ²                                                                                                          -0.00%               ²
+¹ all samples are equal
+² summaries must be >0 to compute geomean
+
+                                        │ <artifacts>/followup-54/terminal-repair/final-analysis/previous-guard.bench.txt │ <artifacts>/followup-54/terminal-repair/final-analysis/selected-guard.bench.txt │
+                                        │                                                           allocs/op                                                           │                                               allocs/op                                                vs base                │
+GuardRepair/metered_background_stream-2                                                                                                                    0.000 ± 0%                                                                                                0.000 ± 0%       ~ (p=1.000 n=6) ¹
+GuardRepair/metered_live_stream-2                                                                                                                          0.000 ± 0%                                                                                                0.000 ± 0%       ~ (p=1.000 n=6) ¹
+GuardRepair/restricted_owned-2                                                                                                                             9.000 ± 0%                                                                                                9.000 ± 0%       ~ (p=1.000 n=6) ¹
+geomean                                                                                                                                                               ²                                                                                                          +0.00%               ²
+¹ all samples are equal
+² summaries must be >0 to compute geomean

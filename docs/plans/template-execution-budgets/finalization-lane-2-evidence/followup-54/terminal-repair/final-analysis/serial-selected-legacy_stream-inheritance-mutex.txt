@@ -1,0 +1,22 @@
+File: render.test
+Type: delay
+Time: 2026-11-08 05:27:20 CST
+Showing nodes accounting for 15540ns, 100% of 15540ns total
+      flat  flat%   sum%        cum   cum%
+   15540ns   100%   100%    15540ns   100%  runtime.unlock (inline)
+         0     0%   100%    14541ns 93.57%  runtime.(*gcControllerState).enlistWorker
+         0     0%   100%    14541ns 93.57%  runtime.allocm
+         0     0%   100%      999ns  6.43%  runtime.findRunnable
+         0     0%   100%    14541ns 93.57%  runtime.gcBgMarkWorker
+         0     0%   100%    14541ns 93.57%  runtime.gcBgMarkWorker.func2
+         0     0%   100%    14541ns 93.57%  runtime.gcDrain
+         0     0%   100%    14541ns 93.57%  runtime.gcDrainMarkWorkerFractional (inline)
+         0     0%   100%      999ns  6.43%  runtime.mcall
+         0     0%   100%    14541ns 93.57%  runtime.mcommoninit
+         0     0%   100%    14541ns 93.57%  runtime.newm
+         0     0%   100%      999ns  6.43%  runtime.park_m
+         0     0%   100%      999ns  6.43%  runtime.runSafePointFn
+         0     0%   100%      999ns  6.43%  runtime.schedule
+         0     0%   100%    14541ns 93.57%  runtime.startm
+         0     0%   100%    14541ns 93.57%  runtime.systemstack
+         0     0%   100%    14541ns 93.57%  runtime.wakep

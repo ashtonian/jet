@@ -1,0 +1,36 @@
+File: candidate.test
+Type: alloc_space
+Time: 2026-11-08 03:57:25 CST
+Showing nodes accounting for 92.19MB, 100% of 92.19MB total
+Showing top 30 nodes out of 69
+      flat  flat%   sum%        cum   cum%
+   57.50MB 62.37% 62.37%    57.50MB 62.37%  github.com/CloudyKit/jet/v6.newIntsRanger (inline)
+   26.50MB 28.75% 91.12%       84MB 91.12%  github.com/CloudyKit/jet/v6.init.0.func5
+    1.60MB  1.73% 92.85%     1.60MB  1.73%  encoding/json/v2.makeString
+    1.25MB  1.36% 94.21%     1.25MB  1.36%  os.readFileContents
+    1.16MB  1.25% 95.46%     1.16MB  1.25%  runtime/pprof.StartCPUProfile
+       1MB  1.09% 96.55%        1MB  1.09%  regexp.onePassCopy
+    0.67MB  0.73% 97.28%     0.67MB  0.73%  compress/flate.(*fastGen).addBlock
+    0.51MB  0.55% 97.83%     0.51MB  0.55%  slices.Grow[go.shape.[]uint8,go.shape.uint8] (inline)
+    0.50MB  0.54% 98.37%        1MB  1.09%  regexp.makeOnePass
+    0.50MB  0.54% 98.92%     0.50MB  0.54%  regexp/syntax.(*compiler).inst
+    0.50MB  0.54% 99.46%     0.50MB  0.54%  compress/gzip.NewWriterLevel
+    0.50MB  0.54%   100%     0.50MB  0.54%  regexp.newQueue (inline)
+         0     0%   100%     0.67MB  0.73%  compress/flate.(*Writer).Close (inline)
+         0     0%   100%     0.67MB  0.73%  compress/flate.(*compressor).close
+         0     0%   100%     0.67MB  0.73%  compress/flate.(*compressor).deflateFast
+         0     0%   100%     0.67MB  0.73%  compress/flate.(*fastEncL1).encode
+         0     0%   100%     0.67MB  0.73%  compress/gzip.(*Writer).Close
+         0     0%   100%     0.51MB  0.55%  encoding/json.Marshal
+         0     0%   100%     1.60MB  1.73%  encoding/json.Unmarshal
+         0     0%   100%     0.51MB  0.55%  encoding/json/internal/jsonwire.AppendQuote
+         0     0%   100%     0.51MB  0.55%  encoding/json/jsontext.(*Encoder).WriteToken (inline)
+         0     0%   100%     0.51MB  0.55%  encoding/json/jsontext.(*encoderState).WriteToken
+         0     0%   100%     0.51MB  0.55%  encoding/json/jsontext.Token.appendString
+         0     0%   100%     0.51MB  0.55%  encoding/json/v2.Marshal
+         0     0%   100%     1.60MB  1.73%  encoding/json/v2.Unmarshal
+         0     0%   100%     0.51MB  0.55%  encoding/json/v2.makeInterfaceArshaler.func1
+         0     0%   100%     0.51MB  0.55%  encoding/json/v2.makeMapArshaler.func2
+         0     0%   100%     0.51MB  0.55%  encoding/json/v2.makeSliceArshaler.func2
+         0     0%   100%     1.60MB  1.73%  encoding/json/v2.makeSliceArshaler.func3
+         0     0%   100%     1.60MB  1.73%  encoding/json/v2.makeStringArshaler.func2

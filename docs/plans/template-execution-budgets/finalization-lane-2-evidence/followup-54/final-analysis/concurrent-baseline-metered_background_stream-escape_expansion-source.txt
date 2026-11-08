@@ -1,0 +1,232 @@
+Total: 4.47s
+ROUTINE ======================== github.com/CloudyKit/jet/v6.(*Runtime).checkpoint in execution.go
+         0       10ms (flat, cum)  0.22% of Total
+         .          .    106:func (st *Runtime) checkpoint(steps uint64) {
+         .          .    107:	if st.execution.ctx == nil && st.execution.terminal == nil {
+         .          .    108:		return
+         .          .    109:	}
+         .       10ms    110:	st.checkpointActive(steps)
+         .          .    111:}
+         .          .    112:
+         .          .    113:func (st *Runtime) checkpointActive(steps uint64) {
+         .          .    114:	st.rethrowTerminal()
+         .          .    115:	st.reserveWork(steps)
+ROUTINE ======================== github.com/CloudyKit/jet/v6.(*Runtime).checkpointActive in execution.go
+         0       10ms (flat, cum)  0.22% of Total
+         .          .    113:func (st *Runtime) checkpointActive(steps uint64) {
+         .       10ms    114:	st.rethrowTerminal()
+         .          .    115:	st.reserveWork(steps)
+         .          .    116:}
+         .          .    117:
+         .          .    118:// reserveWork follows a terminal check without an intervening native call.
+         .          .    119:func (st *Runtime) reserveWork(steps uint64) {
+ROUTINE ======================== github.com/CloudyKit/jet/v6.(*Runtime).enter in execution.go
+      10ms       10ms (flat, cum)  0.22% of Total
+      10ms       10ms    147:func (st *Runtime) enter() {
+         .          .    148:	st.checkpoint(1)
+         .          .    149:	b := &st.execution
+         .          .    150:	if b.options.MaxDepth != 0 {
+         .          .    151:		if b.depth >= b.options.MaxDepth {
+         .          .    152:			st.terminate(&LimitError{Kind: "depth", Limit: uint64(b.options.MaxDepth)})
+ROUTINE ======================== github.com/CloudyKit/jet/v6.(*Template).execute in exec.go
+      20ms      4.43s (flat, cum) 99.11% of Total
+         .          .     75:func (t *Template) execute(ctx context.Context, w io.Writer, variables VarMap, data interface{}, opts ExecutionOptions) (err error) {
+         .          .     76:	var owned *restrictedSink
+         .          .     77:	if policy := t.set.restricted; policy != nil {
+         .          .     78:		var ok bool
+         .          .     79:		owned, ok = w.(*restrictedSink)
+         .          .     80:		if !ok || owned.owner != t {
+         .          .     81:			return fmt.Errorf("%w: use RenderRestrictedContext with an owned result", ErrCapabilityDenied)
+         .          .     82:		}
+         .          .     83:		if ctx == nil {
+         .          .     84:			return ErrInvalidOptions
+         .          .     85:		}
+         .          .     86:		opts = constrainExecution(opts, policy.execution)
+         .          .     87:		inputVars := borrowInputVars(policy.globals, variables)
+         .          .     88:		defer releaseInputVars(inputVars)
+         .          .     89:		variables, data, err = admitInputScopesInto(ctx, []VarMap{policy.globals, variables}, data, policy.input, inputVars)
+         .          .     90:		if err != nil {
+         .          .     91:			return inputContextError(ctx, err)
+         .          .     92:		}
+         .          .     93:	}
+         .          .     94:	st := pool_State.Get().(*Runtime)
+         .          .     95:	defer st.recover(&err)
+         .          .     96:
+      20ms       20ms     97:	st.execution = executionState{ctx: ctx, checkContext: ctx != nil && ctx != context.Background() && ctx != context.TODO(), options: opts, remaining: opts.MaxSteps, values: uint64(opts.MaxValueBytes), output: uint64(opts.MaxOutputBytes)}
+         .       10ms     98:	st.checkpoint(0)
+         .          .     99:	st.blocks = t.processedBlocks
+         .          .    100:	st.variables = variables
+         .          .    101:	st.set = t.set
+         .          .    102:	st.writeErr = nil
+         .          .    103:	st.rootSink = st.checkedOutput(w)
+         .          .    104:	if owned != nil {
+         .          .    105:		st.rootSink.writer = &owned.buffer
+         .          .    106:		st.rootSink.buffer = &owned.buffer
+         .          .    107:		st.rootSink.retained = &owned.buffer
+         .          .    108:	}
+         .          .    109:	st.Writer = &st.rootSink
+         .          .    110:
+         .       10ms    111:	st.startCompilation(t)
+         .       10ms    112:	root := st.templateRoot(t)
+         .          .    113:
+         .          .    114:	if data != nil {
+         .          .    115:		st.context = reflect.ValueOf(data)
+         .          .    116:	}
+         .          .    117:
+         .      4.38s    118:	st.executeList(root)
+         .          .    119:	st.checkpoint(0)
+         .          .    120:	if owned != nil {
+         .          .    121:		st.reserveValue(int64(owned.buffer.Len()))
+         .          .    122:		owned.result = owned.buffer.String()
+         .          .    123:		st.checkpoint(0)
+ROUTINE ======================== github.com/CloudyKit/jet/v6.(*checkedWriter).Write in execution_output.go
+     1.05s      3.80s (flat, cum) 85.01% of Total
+      50ms       50ms     20:func (w *checkedWriter) Write(b []byte) (int, error) {
+      10ms       10ms     21:	st := w.runtime
+     160ms      160ms     22:	if st.execution.terminal != nil {
+         .          .     23:		if st.writeErr != nil {
+         .          .     24:			return 0, st.writeErr
+         .          .     25:		}
+         .          .     26:		st.rethrowTerminal()
+         .          .     27:	}
+      30ms       30ms     28:	if st.execution.ctx != nil {
+         .      920ms     29:		st.reserveWork(uint64(len(b)))
+         .          .     30:		budget := &st.execution
+      80ms       80ms     31:		if !w.committed {
+     180ms      230ms     32:			st.reserveUnchecked(&budget.output, uint64(budget.options.MaxOutputBytes), uint64(len(b)), "output", ErrOutputLimit)
+         .          .     33:		}
+     140ms      140ms     34:		if w.retained != nil {
+         .          .     35:			size, ok := addValueSizes(int64(w.retained.Len()), int64(len(b)))
+         .          .     36:			if !ok || uint64(size) > uint64(^uint(0)>>1) {
+         .          .     37:				st.failValueSize()
+         .          .     38:			}
+         .          .     39:			st.reserveUnchecked(&budget.values, uint64(budget.options.MaxValueBytes), uint64(len(b)), "value", ErrValueLimit)
+         .          .     40:		}
+         .          .     41:	}
+         .          .     42:	// bytes.Buffer.Write always accepts the complete chunk or panics.
+         .          .     43:	// Keep arbitrary writer error/short-write handling on the native path.
+     180ms      180ms     44:	if w.buffer != nil {
+     200ms      1.98s     45:		return w.buffer.Write(b)
+         .          .     46:	}
+      20ms       20ms     47:	n, err := w.writer.Write(b)
+         .          .     48:	if err == nil && n != len(b) {
+         .          .     49:		err = io.ErrShortWrite
+         .          .     50:	}
+         .          .     51:	if err != nil {
+         .          .     52:		err = st.outputFailure(err)
+ROUTINE ======================== github.com/CloudyKit/jet/v6.(*dataPrinter).value in execution_print.go
+      20ms      4.33s (flat, cum) 96.87% of Total
+         .          .     55:func (p *dataPrinter) value(v reflect.Value, nested bool) error {
+         .          .     56:	st := p.runtime
+         .          .     57:	st.enter()
+         .          .     58:	defer st.leave()
+         .          .     59:	v = indirectInterface(v)
+         .          .     60:	st.beforeData(v)
+         .          .     61:	if !v.IsValid() {
+         .          .     62:		return p.text("<nil>")
+         .          .     63:	}
+         .          .     64:	if b, ok := builtinForValue(v); ok {
+         .          .     65:		_, err := fastprinter.PrintValue(p, b.legacy)
+         .          .     66:		return err
+         .          .     67:	}
+      10ms       10ms     68:	if v.Type().Implements(formatterType) || v.Type().Implements(stringerType) || v.Type().Implements(errorType) {
+         .          .     69:		// Native formatting hooks remain unrestricted host capabilities.
+         .          .     70:		st.beforeNative(v)
+         .          .     71:		var err error
+         .          .     72:		if nested {
+         .          .     73:			_, err = fmt.Fprint(p, v.Interface())
+         .          .     74:		} else {
+         .          .     75:			_, err = fastprinter.PrintValue(p, v)
+         .          .     76:		}
+         .          .     77:		st.checkpoint(0)
+         .          .     78:		return err
+         .          .     79:	}
+         .          .     80:	var scalar []byte
+         .          .     81:	switch k := v.Kind(); {
+         .          .     82:	case k == reflect.String:
+         .      4.31s     83:		return p.text(v.String())
+         .          .     84:	case isInt(k):
+         .          .     85:		scalar = strconv.AppendInt(p.scratch[:0], v.Int(), 10)
+         .          .     86:	case isUint(k):
+         .          .     87:		scalar = strconv.AppendUint(p.scratch[:0], v.Uint(), 10)
+         .          .     88:	case k == reflect.Bool:
+         .          .     89:		scalar = strconv.AppendBool(p.scratch[:0], v.Bool())
+         .          .     90:	case isFloat(k):
+         .          .     91:		if !nested {
+         .          .     92:			_, err := fastprinter.PrintValue(p, v)
+         .          .     93:			return err
+         .          .     94:		}
+         .          .     95:		scalar = strconv.AppendFloat(p.scratch[:0], v.Float(), 'g', -1, v.Type().Bits())
+         .          .     96:	case k == reflect.Array || k == reflect.Slice:
+         .          .     97:		if !nested && k == reflect.Slice && v.Type().Elem().Kind() == reflect.Uint8 {
+         .          .     98:			_, err := p.Write(v.Bytes())
+         .          .     99:			return err
+         .          .    100:		}
+         .          .    101:		if err := p.text("["); err != nil {
+         .          .    102:			return err
+         .          .    103:		}
+         .          .    104:		for i := 0; i < v.Len(); i++ {
+         .          .    105:			if i > 0 {
+         .          .    106:				if err := p.text(" "); err != nil {
+         .          .    107:					return err
+         .          .    108:				}
+         .          .    109:			}
+         .          .    110:			if err := p.value(v.Index(i), true); err != nil {
+         .          .    111:				return err
+         .          .    112:			}
+         .          .    113:		}
+         .          .    114:		return p.text("]")
+         .          .    115:	case k == reflect.Map && v.Type().Key().Kind() == reflect.String:
+         .          .    116:		keys := st.sortedStringKeys(v)
+         .          .    117:		if err := p.text("map["); err != nil {
+         .          .    118:			return err
+         .          .    119:		}
+         .          .    120:		for i, key := range keys {
+         .          .    121:			if i > 0 {
+         .          .    122:				if err := p.text(" "); err != nil {
+         .          .    123:					return err
+         .          .    124:				}
+         .          .    125:			}
+         .          .    126:			if err := p.text(key); err != nil {
+         .          .    127:				return err
+         .          .    128:			}
+         .          .    129:			if err := p.text(":"); err != nil {
+         .          .    130:				return err
+         .          .    131:			}
+         .          .    132:			keyValue := reflect.ValueOf(key).Convert(v.Type().Key())
+         .          .    133:			if err := p.value(v.MapIndex(keyValue), true); err != nil {
+         .          .    134:				return err
+         .          .    135:			}
+         .          .    136:		}
+         .          .    137:		return p.text("]")
+         .          .    138:	default:
+         .          .    139:		st.beforeNative(v)
+         .          .    140:		_, err := fastprinter.PrintValue(p, v)
+         .          .    141:		st.checkpoint(0)
+         .          .    142:		return err
+         .          .    143:	}
+         .          .    144:	_, err := p.Write(scalar)
+         .          .    145:	return err
+      10ms       10ms    146:}
+         .          .    147:
+         .          .    148:func (st *Runtime) sortedStringKeys(v reflect.Value) []string {
+         .          .    149:	st.reserveSlots(v.Len(), int64(reflect.TypeOf("").Size()))
+         .          .    150:	keys := make([]string, 0, v.Len())
+         .          .    151:	iter := v.MapRange()
+ROUTINE ======================== github.com/CloudyKit/jet/v6.(*escapeeWriter).Write in eval.go
+         0      4.30s (flat, cum) 96.20% of Total
+         .          .     66:func (w *escapeeWriter) Write(b []byte) (int, error) {
+         .          .     67:	if w.set.escapee == nil {
+         .          .     68:		return w.Writer.Write(b)
+         .          .     69:	}
+         .          .     70:	if sink, ok := w.Writer.(*checkedWriter); !ok || sink.runtime != w.rootSink.runtime {
+         .          .     71:		return w.writeRedirected(b)
+         .          .     72:	}
+         .          .     73:	// Capture the current checked destination; a trusted escaper may reenter
+         .          .     74:	// execution and temporarily replace Runtime.Writer.
+         .      4.30s     75:	w.set.escapee(w.Writer, b)
+         .          .     76:	if w.writeErr != nil {
+         .          .     77:		return 0, w.writeErr
+         .          .     78:	}
+         .          .     79:	return len(b), nil
+         .          .     80:}

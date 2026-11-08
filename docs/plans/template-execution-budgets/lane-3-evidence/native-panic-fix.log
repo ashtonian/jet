@@ -1,0 +1,2 @@
+gate-lock: held by pid 5225 on studio, "jet-lane3-native-panic-fix 195312a in $CHECKOUT", since 2026-11-08T00:11:44Z, 2 of 6 focused cores
+ok  	github.com/CloudyKit/jet/v6	4.695s

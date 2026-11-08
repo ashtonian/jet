@@ -1,0 +1,32 @@
+File: reserve-256.test
+Type: alloc_objects
+Time: 2026-11-08 01:51:51 CST
+Showing nodes accounting for 7328, 69.60% of 10529 total
+Dropped 106 nodes (cum <= 52)
+Showing top 25 nodes out of 85
+      flat  flat%   sum%        cum   cum%
+         0     0%     0%       9983 94.81%  testing.tRunner
+         0     0%     0%       5790 54.99%  main.main
+         0     0%     0%       5790 54.99%  runtime.main
+         3 0.028% 0.028%       5790 54.99%  testing.(*M).Run
+        90  0.85%  0.88%       5775 54.85%  testing.runTests
+       210  1.99%  2.88%       5200 49.39%  testing.(*T).Run
+         0     0%  2.88%       5200 49.39%  testing.runTests.func1
+         0     0%  2.88%       4870 46.25%  testing.(*matcher).fullName
+         0     0%  2.88%       4831 45.88%  strings.Split (inline)
+      4831 45.88% 48.76%       4831 45.88%  strings.genSplit
+       244  2.32% 51.08%       4596 43.65%  github.com/CloudyKit/jet/v6.TestOutputOwnedLargeThenSmall
+         0     0% 51.08%       2100 19.94%  github.com/CloudyKit/jet/v6.restrictedTemplate
+       150  1.42% 52.50%       2072 19.68%  github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext
+         0     0% 52.50%       1922 18.25%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0% 52.50%       1922 18.25%  github.com/CloudyKit/jet/v6.(*Template).execute
+       450  4.27% 56.78%       1080 10.26%  github.com/CloudyKit/jet/v6.NewRestrictedSet
+         0     0% 56.78%       1050  9.97%  github.com/CloudyKit/jet/v6.(*Runtime).startCompilation
+         0     0% 56.78%        960  9.12%  github.com/CloudyKit/jet/v6.(*Set).GetTemplateContext
+         0     0% 56.78%        840  7.98%  github.com/CloudyKit/jet/v6.(*Set).getSiblingTemplate
+       840  7.98% 64.75%        840  7.98%  github.com/CloudyKit/jet/v6.newParseAdmission
+         0     0% 64.75%        750  7.12%  github.com/CloudyKit/jet/v6.(*Set).getTemplate
+         0     0% 64.75%        570  5.41%  github.com/CloudyKit/jet/v6.(*Set).getTemplateFromLoader
+         0     0% 64.75%        570  5.41%  github.com/CloudyKit/jet/v6.(*Set).loadFromFile
+       510  4.84% 69.60%        510  4.84%  github.com/CloudyKit/jet/v6.admitInputScopes
+         0     0% 69.60%        450  4.27%  github.com/CloudyKit/jet/v6.(*Runtime).startCompilation.func1

@@ -1,0 +1,37 @@
+File: render.test
+Type: cpu
+Time: 2026-11-08 04:46:55 CST
+Duration: 1.51s, Total samples = 1.25s (82.62%)
+Showing nodes accounting for 0.78s, 62.40% of 1.25s total
+Showing top 30 nodes out of 117
+      flat  flat%   sum%        cum   cum%
+         0     0%     0%      1.13s 90.40%  testing.(*B).runN
+     0.25s 20.00% 20.00%      1.12s 89.60%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+     0.09s  7.20% 27.20%      1.12s 89.60%  github.com/CloudyKit/jet/v6.(*Runtime).executeRange
+         0     0% 27.20%      1.12s 89.60%  github.com/CloudyKit/jet/v6.(*Template).Execute (inline)
+         0     0% 27.20%      1.12s 89.60%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0% 27.20%      1.12s 89.60%  github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes.func1
+         0     0% 27.20%      1.12s 89.60%  github.com/CloudyKit/jet/v6_test.init.func1
+         0     0% 27.20%      1.12s 89.60%  testing.(*B).launch
+     0.05s  4.00% 31.20%      0.27s 21.60%  github.com/CloudyKit/jet/v6.(*Runtime).evalPrimaryExpressionGroup
+     0.09s  7.20% 38.40%      0.21s 16.80%  github.com/CloudyKit/jet/v6.(*Runtime).advanceRanger
+         0     0% 38.40%      0.20s 16.00%  github.com/CloudyKit/jet/v6.(*Runtime).evalCallExpression (inline)
+     0.01s   0.8% 39.20%      0.20s 16.00%  github.com/CloudyKit/jet/v6.(*Runtime).evalPipeCallExpression
+     0.01s   0.8% 40.00%      0.19s 15.20%  github.com/CloudyKit/jet/v6.init.0.func5
+     0.01s   0.8% 40.80%      0.11s  8.80%  github.com/CloudyKit/jet/v6.(*Arguments).ParseInto
+     0.01s   0.8% 41.60%      0.11s  8.80%  github.com/CloudyKit/jet/v6.(*Runtime).getRanger
+     0.02s  1.60% 43.20%      0.11s  8.80%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+         0     0% 43.20%      0.11s  8.80%  runtime.systemstack
+         0     0% 43.20%      0.10s  8.00%  github.com/CloudyKit/jet/v6.(*Arguments).Get
+         0     0% 43.20%      0.10s  8.00%  reflect.(*rtype).Implements
+         0     0% 43.20%      0.10s  8.00%  reflect.implements
+     0.03s  2.40% 45.60%      0.09s  7.20%  bytes.(*Buffer).Write
+     0.03s  2.40% 48.00%      0.09s  7.20%  github.com/CloudyKit/jet/v6.(*Arguments).get
+     0.01s   0.8% 48.80%      0.08s  6.40%  github.com/CloudyKit/jet/v6.(*Runtime).evalBaseExpressionGroup
+     0.01s   0.8% 49.60%      0.07s  5.60%  github.com/CloudyKit/jet/v6.(*intsRanger).Range
+     0.06s  4.80% 54.40%      0.06s  4.80%  reflect.Value.Elem
+         0     0% 54.40%      0.06s  4.80%  runtime.gcStart.func4
+     0.06s  4.80% 59.20%      0.06s  4.80%  runtime.kevent
+         0     0% 59.20%      0.06s  4.80%  runtime.netpoll
+         0     0% 59.20%      0.06s  4.80%  runtime.startTheWorldWithSema
+     0.04s  3.20% 62.40%      0.05s  4.00%  github.com/CloudyKit/jet/v6.(*Runtime).executeList.func1

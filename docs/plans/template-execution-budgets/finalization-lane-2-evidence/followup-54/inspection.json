@@ -1,0 +1,2957 @@
+[
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/legacy_stream-header_literal-cpu.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/legacy_stream-header_literal-cpu-flat.txt",
+    "profile_sha256": "0f01e08bc5e75b1424a32f2cc47da1465813df1c1e9e54164ef54cdacbc263de"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-cum",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/legacy_stream-header_literal-cpu.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/legacy_stream-header_literal-cpu-cumulative.txt",
+    "profile_sha256": "0f01e08bc5e75b1424a32f2cc47da1465813df1c1e9e54164ef54cdacbc263de"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-list",
+      "Template.*execute|Runtime.*recover|Runtime.*checkpoint|Runtime.*enter|checkedWriter.*Write",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/legacy_stream-header_literal-cpu.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/legacy_stream-header_literal-source.txt",
+    "profile_sha256": "0f01e08bc5e75b1424a32f2cc47da1465813df1c1e9e54164ef54cdacbc263de"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-alloc_space",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/legacy_stream-header_literal-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/legacy_stream-header_literal-alloc-bytes.txt",
+    "profile_sha256": "0bf6381b6903288cfcc670a8ca2628aafeaff74eba93f9c938494ef6f53e63e6"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-alloc_objects",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/legacy_stream-header_literal-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/legacy_stream-header_literal-alloc-objects.txt",
+    "profile_sha256": "0bf6381b6903288cfcc670a8ca2628aafeaff74eba93f9c938494ef6f53e63e6"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-cum",
+      "-alloc_objects",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/legacy_stream-header_literal-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/legacy_stream-header_literal-alloc-objects-cumulative.txt",
+    "profile_sha256": "0bf6381b6903288cfcc670a8ca2628aafeaff74eba93f9c938494ef6f53e63e6"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-inuse_space",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/legacy_stream-header_literal-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/legacy_stream-header_literal-inuse-bytes.txt",
+    "profile_sha256": "0bf6381b6903288cfcc670a8ca2628aafeaff74eba93f9c938494ef6f53e63e6"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-inuse_objects",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/legacy_stream-header_literal-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/legacy_stream-header_literal-inuse-objects.txt",
+    "profile_sha256": "0bf6381b6903288cfcc670a8ca2628aafeaff74eba93f9c938494ef6f53e63e6"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-cum",
+      "-inuse_objects",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/legacy_stream-header_literal-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/legacy_stream-header_literal-inuse-objects-cumulative.txt",
+    "profile_sha256": "0bf6381b6903288cfcc670a8ca2628aafeaff74eba93f9c938494ef6f53e63e6"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/legacy_stream-header_literal-mutex.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/legacy_stream-header_literal-mutex.txt",
+    "profile_sha256": "142947774be71ffda605c3b52bc0774fd9d9989a278d962692a147c0e80b8f19"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/legacy_stream-header_literal-block.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/legacy_stream-header_literal-block.txt",
+    "profile_sha256": "233c5d4e525073c44dee7b148ebe02fa2b4ee036181d7667a814f9b3789b9a4c"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/legacy_stream-inheritance-cpu.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/legacy_stream-inheritance-cpu-flat.txt",
+    "profile_sha256": "b74d5a3c8e5ebc907bc2e55e44a501d035a708edea4aa5f1774ad1a417ea6fda"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-cum",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/legacy_stream-inheritance-cpu.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/legacy_stream-inheritance-cpu-cumulative.txt",
+    "profile_sha256": "b74d5a3c8e5ebc907bc2e55e44a501d035a708edea4aa5f1774ad1a417ea6fda"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-list",
+      "Template.*execute|Runtime.*recover|Runtime.*checkpoint|Runtime.*enter|checkedWriter.*Write",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/legacy_stream-inheritance-cpu.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/legacy_stream-inheritance-source.txt",
+    "profile_sha256": "b74d5a3c8e5ebc907bc2e55e44a501d035a708edea4aa5f1774ad1a417ea6fda"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-alloc_space",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/legacy_stream-inheritance-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/legacy_stream-inheritance-alloc-bytes.txt",
+    "profile_sha256": "fd2c160633bf3902b17756941872acfed0686dad21aa787c2f1a713352847375"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-alloc_objects",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/legacy_stream-inheritance-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/legacy_stream-inheritance-alloc-objects.txt",
+    "profile_sha256": "fd2c160633bf3902b17756941872acfed0686dad21aa787c2f1a713352847375"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-cum",
+      "-alloc_objects",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/legacy_stream-inheritance-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/legacy_stream-inheritance-alloc-objects-cumulative.txt",
+    "profile_sha256": "fd2c160633bf3902b17756941872acfed0686dad21aa787c2f1a713352847375"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-inuse_space",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/legacy_stream-inheritance-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/legacy_stream-inheritance-inuse-bytes.txt",
+    "profile_sha256": "fd2c160633bf3902b17756941872acfed0686dad21aa787c2f1a713352847375"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-inuse_objects",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/legacy_stream-inheritance-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/legacy_stream-inheritance-inuse-objects.txt",
+    "profile_sha256": "fd2c160633bf3902b17756941872acfed0686dad21aa787c2f1a713352847375"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-cum",
+      "-inuse_objects",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/legacy_stream-inheritance-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/legacy_stream-inheritance-inuse-objects-cumulative.txt",
+    "profile_sha256": "fd2c160633bf3902b17756941872acfed0686dad21aa787c2f1a713352847375"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/legacy_stream-inheritance-mutex.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/legacy_stream-inheritance-mutex.txt",
+    "profile_sha256": "72dc4a1a648ca5a891db6d554f8a03246cfeeefb6fdff0502d65c9f3ee2bbbdc"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/legacy_stream-inheritance-block.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/legacy_stream-inheritance-block.txt",
+    "profile_sha256": "a1634e2144858db783ffec0b2ca90d7d5a24fc04acdf0d6d02e4250f83cd154c"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/legacy_stream-nested_writing-cpu.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/legacy_stream-nested_writing-cpu-flat.txt",
+    "profile_sha256": "8ad35f76201f0098253cb525682b5ce6c6d320e774eca5be547062f99319ba6b"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-cum",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/legacy_stream-nested_writing-cpu.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/legacy_stream-nested_writing-cpu-cumulative.txt",
+    "profile_sha256": "8ad35f76201f0098253cb525682b5ce6c6d320e774eca5be547062f99319ba6b"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-list",
+      "Template.*execute|Runtime.*recover|Runtime.*checkpoint|Runtime.*enter|checkedWriter.*Write",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/legacy_stream-nested_writing-cpu.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/legacy_stream-nested_writing-source.txt",
+    "profile_sha256": "8ad35f76201f0098253cb525682b5ce6c6d320e774eca5be547062f99319ba6b"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-alloc_space",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/legacy_stream-nested_writing-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/legacy_stream-nested_writing-alloc-bytes.txt",
+    "profile_sha256": "470619d591918f184ffe2a1450cf345207f5b3cf9f302b95ae0e9fe1d95cf1ac"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-alloc_objects",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/legacy_stream-nested_writing-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/legacy_stream-nested_writing-alloc-objects.txt",
+    "profile_sha256": "470619d591918f184ffe2a1450cf345207f5b3cf9f302b95ae0e9fe1d95cf1ac"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-cum",
+      "-alloc_objects",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/legacy_stream-nested_writing-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/legacy_stream-nested_writing-alloc-objects-cumulative.txt",
+    "profile_sha256": "470619d591918f184ffe2a1450cf345207f5b3cf9f302b95ae0e9fe1d95cf1ac"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-inuse_space",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/legacy_stream-nested_writing-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/legacy_stream-nested_writing-inuse-bytes.txt",
+    "profile_sha256": "470619d591918f184ffe2a1450cf345207f5b3cf9f302b95ae0e9fe1d95cf1ac"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-inuse_objects",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/legacy_stream-nested_writing-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/legacy_stream-nested_writing-inuse-objects.txt",
+    "profile_sha256": "470619d591918f184ffe2a1450cf345207f5b3cf9f302b95ae0e9fe1d95cf1ac"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-cum",
+      "-inuse_objects",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/legacy_stream-nested_writing-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/legacy_stream-nested_writing-inuse-objects-cumulative.txt",
+    "profile_sha256": "470619d591918f184ffe2a1450cf345207f5b3cf9f302b95ae0e9fe1d95cf1ac"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/legacy_stream-nested_writing-mutex.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/legacy_stream-nested_writing-mutex.txt",
+    "profile_sha256": "06e66ee16a6a495eb506c712f95a48c96d3c5c826f45d307fc08a954cb242955"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/legacy_stream-nested_writing-block.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/legacy_stream-nested_writing-block.txt",
+    "profile_sha256": "6f0b0ad1f32a7f3e3993fd7ee749328f03825e6a964e9d408eb1ce42c6c59bff"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/legacy_stream-header_interpolation-cpu.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/legacy_stream-header_interpolation-cpu-flat.txt",
+    "profile_sha256": "bff2a2e2a0183eb99b293c76d9f9ad89308afab4095191b27197652375db2074"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-cum",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/legacy_stream-header_interpolation-cpu.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/legacy_stream-header_interpolation-cpu-cumulative.txt",
+    "profile_sha256": "bff2a2e2a0183eb99b293c76d9f9ad89308afab4095191b27197652375db2074"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-list",
+      "Template.*execute|Runtime.*recover|Runtime.*checkpoint|Runtime.*enter|checkedWriter.*Write",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/legacy_stream-header_interpolation-cpu.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/legacy_stream-header_interpolation-source.txt",
+    "profile_sha256": "bff2a2e2a0183eb99b293c76d9f9ad89308afab4095191b27197652375db2074"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-alloc_space",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/legacy_stream-header_interpolation-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/legacy_stream-header_interpolation-alloc-bytes.txt",
+    "profile_sha256": "35d49bac3065cf9b40e04f245e83d7f7c1e2c98825e65580fdade7ae558d3a19"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-alloc_objects",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/legacy_stream-header_interpolation-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/legacy_stream-header_interpolation-alloc-objects.txt",
+    "profile_sha256": "35d49bac3065cf9b40e04f245e83d7f7c1e2c98825e65580fdade7ae558d3a19"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-cum",
+      "-alloc_objects",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/legacy_stream-header_interpolation-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/legacy_stream-header_interpolation-alloc-objects-cumulative.txt",
+    "profile_sha256": "35d49bac3065cf9b40e04f245e83d7f7c1e2c98825e65580fdade7ae558d3a19"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-inuse_space",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/legacy_stream-header_interpolation-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/legacy_stream-header_interpolation-inuse-bytes.txt",
+    "profile_sha256": "35d49bac3065cf9b40e04f245e83d7f7c1e2c98825e65580fdade7ae558d3a19"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-inuse_objects",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/legacy_stream-header_interpolation-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/legacy_stream-header_interpolation-inuse-objects.txt",
+    "profile_sha256": "35d49bac3065cf9b40e04f245e83d7f7c1e2c98825e65580fdade7ae558d3a19"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-cum",
+      "-inuse_objects",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/legacy_stream-header_interpolation-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/legacy_stream-header_interpolation-inuse-objects-cumulative.txt",
+    "profile_sha256": "35d49bac3065cf9b40e04f245e83d7f7c1e2c98825e65580fdade7ae558d3a19"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/legacy_stream-header_interpolation-mutex.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/legacy_stream-header_interpolation-mutex.txt",
+    "profile_sha256": "a34dfee84cf937e9ee666c76c8e05228532ab27315c24c36524f34d9b945f91b"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/legacy_stream-header_interpolation-block.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/legacy_stream-header_interpolation-block.txt",
+    "profile_sha256": "20103b754e58a90dd62f1c8a6e0fc4d59ee9fbffc85e7856ff0f283a9b03685f"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/legacy_stream-escape_expansion-cpu.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/legacy_stream-escape_expansion-cpu-flat.txt",
+    "profile_sha256": "c28d96fbf70c046063588699ddf1d44e3511300f8ef9d286c5e26177e40adb58"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-cum",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/legacy_stream-escape_expansion-cpu.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/legacy_stream-escape_expansion-cpu-cumulative.txt",
+    "profile_sha256": "c28d96fbf70c046063588699ddf1d44e3511300f8ef9d286c5e26177e40adb58"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-list",
+      "Template.*execute|Runtime.*recover|Runtime.*checkpoint|Runtime.*enter|checkedWriter.*Write",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/legacy_stream-escape_expansion-cpu.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/legacy_stream-escape_expansion-source.txt",
+    "profile_sha256": "c28d96fbf70c046063588699ddf1d44e3511300f8ef9d286c5e26177e40adb58"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-alloc_space",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/legacy_stream-escape_expansion-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/legacy_stream-escape_expansion-alloc-bytes.txt",
+    "profile_sha256": "1a1163800131d3e0b420e3682b11525da0dc0a0ebb8a8c97668207d65cf58123"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-alloc_objects",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/legacy_stream-escape_expansion-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/legacy_stream-escape_expansion-alloc-objects.txt",
+    "profile_sha256": "1a1163800131d3e0b420e3682b11525da0dc0a0ebb8a8c97668207d65cf58123"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-cum",
+      "-alloc_objects",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/legacy_stream-escape_expansion-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/legacy_stream-escape_expansion-alloc-objects-cumulative.txt",
+    "profile_sha256": "1a1163800131d3e0b420e3682b11525da0dc0a0ebb8a8c97668207d65cf58123"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-inuse_space",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/legacy_stream-escape_expansion-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/legacy_stream-escape_expansion-inuse-bytes.txt",
+    "profile_sha256": "1a1163800131d3e0b420e3682b11525da0dc0a0ebb8a8c97668207d65cf58123"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-inuse_objects",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/legacy_stream-escape_expansion-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/legacy_stream-escape_expansion-inuse-objects.txt",
+    "profile_sha256": "1a1163800131d3e0b420e3682b11525da0dc0a0ebb8a8c97668207d65cf58123"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-cum",
+      "-inuse_objects",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/legacy_stream-escape_expansion-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/legacy_stream-escape_expansion-inuse-objects-cumulative.txt",
+    "profile_sha256": "1a1163800131d3e0b420e3682b11525da0dc0a0ebb8a8c97668207d65cf58123"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/legacy_stream-escape_expansion-mutex.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/legacy_stream-escape_expansion-mutex.txt",
+    "profile_sha256": "c3676935c006ccea6b8f4d624d02bcd6272ecc5d0059eb2e086e564cf67f07f4"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/legacy_stream-escape_expansion-block.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/legacy_stream-escape_expansion-block.txt",
+    "profile_sha256": "1102405735a5357a03414b1971500d1176a508e26142fc11021995c589a462dd"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_background_stream-header_literal-cpu.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_background_stream-header_literal-cpu-flat.txt",
+    "profile_sha256": "7ac9194f598e11ceb672747632b26877da05ae443338c69fd5bc9662b1085c47"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-cum",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_background_stream-header_literal-cpu.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_background_stream-header_literal-cpu-cumulative.txt",
+    "profile_sha256": "7ac9194f598e11ceb672747632b26877da05ae443338c69fd5bc9662b1085c47"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-list",
+      "Template.*execute|Runtime.*recover|Runtime.*checkpoint|Runtime.*enter|checkedWriter.*Write",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_background_stream-header_literal-cpu.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_background_stream-header_literal-source.txt",
+    "profile_sha256": "7ac9194f598e11ceb672747632b26877da05ae443338c69fd5bc9662b1085c47"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-alloc_space",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_background_stream-header_literal-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_background_stream-header_literal-alloc-bytes.txt",
+    "profile_sha256": "cd27365e8849f25b905f25d68a4ba1166bb52dacec35d902e6bd622cd2c4b776"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-alloc_objects",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_background_stream-header_literal-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_background_stream-header_literal-alloc-objects.txt",
+    "profile_sha256": "cd27365e8849f25b905f25d68a4ba1166bb52dacec35d902e6bd622cd2c4b776"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-cum",
+      "-alloc_objects",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_background_stream-header_literal-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_background_stream-header_literal-alloc-objects-cumulative.txt",
+    "profile_sha256": "cd27365e8849f25b905f25d68a4ba1166bb52dacec35d902e6bd622cd2c4b776"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-inuse_space",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_background_stream-header_literal-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_background_stream-header_literal-inuse-bytes.txt",
+    "profile_sha256": "cd27365e8849f25b905f25d68a4ba1166bb52dacec35d902e6bd622cd2c4b776"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-inuse_objects",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_background_stream-header_literal-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_background_stream-header_literal-inuse-objects.txt",
+    "profile_sha256": "cd27365e8849f25b905f25d68a4ba1166bb52dacec35d902e6bd622cd2c4b776"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-cum",
+      "-inuse_objects",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_background_stream-header_literal-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_background_stream-header_literal-inuse-objects-cumulative.txt",
+    "profile_sha256": "cd27365e8849f25b905f25d68a4ba1166bb52dacec35d902e6bd622cd2c4b776"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_background_stream-header_literal-mutex.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_background_stream-header_literal-mutex.txt",
+    "profile_sha256": "ddfdb45028fe877d10ff4fc3f45cae11d71e834ff4541d58a90dc0672df2c063"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_background_stream-header_literal-block.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_background_stream-header_literal-block.txt",
+    "profile_sha256": "d7baf50bb12a700d036509ed588b6a95fd70d987e93aacb52b81f5fe777219d3"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_background_stream-inheritance-cpu.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_background_stream-inheritance-cpu-flat.txt",
+    "profile_sha256": "9fb3352eff52921f81c61d468ce7b42ef6fa08de3e57d36c481380a0fe95045f"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-cum",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_background_stream-inheritance-cpu.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_background_stream-inheritance-cpu-cumulative.txt",
+    "profile_sha256": "9fb3352eff52921f81c61d468ce7b42ef6fa08de3e57d36c481380a0fe95045f"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-list",
+      "Template.*execute|Runtime.*recover|Runtime.*checkpoint|Runtime.*enter|checkedWriter.*Write",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_background_stream-inheritance-cpu.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_background_stream-inheritance-source.txt",
+    "profile_sha256": "9fb3352eff52921f81c61d468ce7b42ef6fa08de3e57d36c481380a0fe95045f"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-alloc_space",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_background_stream-inheritance-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_background_stream-inheritance-alloc-bytes.txt",
+    "profile_sha256": "417f7e90ce7022357a5ce837544b6a7251fc1f5f519fb845ea4bf37b7b2763da"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-alloc_objects",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_background_stream-inheritance-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_background_stream-inheritance-alloc-objects.txt",
+    "profile_sha256": "417f7e90ce7022357a5ce837544b6a7251fc1f5f519fb845ea4bf37b7b2763da"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-cum",
+      "-alloc_objects",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_background_stream-inheritance-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_background_stream-inheritance-alloc-objects-cumulative.txt",
+    "profile_sha256": "417f7e90ce7022357a5ce837544b6a7251fc1f5f519fb845ea4bf37b7b2763da"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-inuse_space",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_background_stream-inheritance-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_background_stream-inheritance-inuse-bytes.txt",
+    "profile_sha256": "417f7e90ce7022357a5ce837544b6a7251fc1f5f519fb845ea4bf37b7b2763da"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-inuse_objects",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_background_stream-inheritance-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_background_stream-inheritance-inuse-objects.txt",
+    "profile_sha256": "417f7e90ce7022357a5ce837544b6a7251fc1f5f519fb845ea4bf37b7b2763da"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-cum",
+      "-inuse_objects",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_background_stream-inheritance-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_background_stream-inheritance-inuse-objects-cumulative.txt",
+    "profile_sha256": "417f7e90ce7022357a5ce837544b6a7251fc1f5f519fb845ea4bf37b7b2763da"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_background_stream-inheritance-mutex.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_background_stream-inheritance-mutex.txt",
+    "profile_sha256": "a5aded58b11e28c04df34a7b950fe1c1b142cf3ab5efc7d03ac1b14702d58bd4"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_background_stream-inheritance-block.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_background_stream-inheritance-block.txt",
+    "profile_sha256": "3c88b47334df85dba4dcd6011b9625f0df1b494132d8302adef4b3015671da21"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_background_stream-nested_writing-cpu.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_background_stream-nested_writing-cpu-flat.txt",
+    "profile_sha256": "203bcfa9e0fd199a9f98f34d44433f178fa2653964c907d85a56ab8588ca50c5"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-cum",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_background_stream-nested_writing-cpu.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_background_stream-nested_writing-cpu-cumulative.txt",
+    "profile_sha256": "203bcfa9e0fd199a9f98f34d44433f178fa2653964c907d85a56ab8588ca50c5"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-list",
+      "Template.*execute|Runtime.*recover|Runtime.*checkpoint|Runtime.*enter|checkedWriter.*Write",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_background_stream-nested_writing-cpu.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_background_stream-nested_writing-source.txt",
+    "profile_sha256": "203bcfa9e0fd199a9f98f34d44433f178fa2653964c907d85a56ab8588ca50c5"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-alloc_space",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_background_stream-nested_writing-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_background_stream-nested_writing-alloc-bytes.txt",
+    "profile_sha256": "9790e9e2fcbcff454dad358619e8178bd28131a818e5d0badee49df1bf194242"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-alloc_objects",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_background_stream-nested_writing-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_background_stream-nested_writing-alloc-objects.txt",
+    "profile_sha256": "9790e9e2fcbcff454dad358619e8178bd28131a818e5d0badee49df1bf194242"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-cum",
+      "-alloc_objects",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_background_stream-nested_writing-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_background_stream-nested_writing-alloc-objects-cumulative.txt",
+    "profile_sha256": "9790e9e2fcbcff454dad358619e8178bd28131a818e5d0badee49df1bf194242"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-inuse_space",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_background_stream-nested_writing-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_background_stream-nested_writing-inuse-bytes.txt",
+    "profile_sha256": "9790e9e2fcbcff454dad358619e8178bd28131a818e5d0badee49df1bf194242"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-inuse_objects",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_background_stream-nested_writing-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_background_stream-nested_writing-inuse-objects.txt",
+    "profile_sha256": "9790e9e2fcbcff454dad358619e8178bd28131a818e5d0badee49df1bf194242"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-cum",
+      "-inuse_objects",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_background_stream-nested_writing-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_background_stream-nested_writing-inuse-objects-cumulative.txt",
+    "profile_sha256": "9790e9e2fcbcff454dad358619e8178bd28131a818e5d0badee49df1bf194242"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_background_stream-nested_writing-mutex.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_background_stream-nested_writing-mutex.txt",
+    "profile_sha256": "3630bed5dd6f56215ea21e50aae5ca578cdee6db89454d50772ccf4793e0bb91"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_background_stream-nested_writing-block.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_background_stream-nested_writing-block.txt",
+    "profile_sha256": "20a582617e719fc42f7bfe7abc74be67663154b7a616992b26ce993266bc5120"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_background_stream-header_interpolation-cpu.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_background_stream-header_interpolation-cpu-flat.txt",
+    "profile_sha256": "01bd6fb130fca55bda17411f2724d451f4f06c9f866b216fd40e2f01dc20812a"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-cum",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_background_stream-header_interpolation-cpu.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_background_stream-header_interpolation-cpu-cumulative.txt",
+    "profile_sha256": "01bd6fb130fca55bda17411f2724d451f4f06c9f866b216fd40e2f01dc20812a"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-list",
+      "Template.*execute|Runtime.*recover|Runtime.*checkpoint|Runtime.*enter|checkedWriter.*Write",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_background_stream-header_interpolation-cpu.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_background_stream-header_interpolation-source.txt",
+    "profile_sha256": "01bd6fb130fca55bda17411f2724d451f4f06c9f866b216fd40e2f01dc20812a"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-alloc_space",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_background_stream-header_interpolation-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_background_stream-header_interpolation-alloc-bytes.txt",
+    "profile_sha256": "192aae62253fcf3ba153c328d700f8109e42a6af6a91c470646948cadf55fa44"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-alloc_objects",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_background_stream-header_interpolation-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_background_stream-header_interpolation-alloc-objects.txt",
+    "profile_sha256": "192aae62253fcf3ba153c328d700f8109e42a6af6a91c470646948cadf55fa44"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-cum",
+      "-alloc_objects",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_background_stream-header_interpolation-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_background_stream-header_interpolation-alloc-objects-cumulative.txt",
+    "profile_sha256": "192aae62253fcf3ba153c328d700f8109e42a6af6a91c470646948cadf55fa44"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-inuse_space",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_background_stream-header_interpolation-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_background_stream-header_interpolation-inuse-bytes.txt",
+    "profile_sha256": "192aae62253fcf3ba153c328d700f8109e42a6af6a91c470646948cadf55fa44"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-inuse_objects",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_background_stream-header_interpolation-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_background_stream-header_interpolation-inuse-objects.txt",
+    "profile_sha256": "192aae62253fcf3ba153c328d700f8109e42a6af6a91c470646948cadf55fa44"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-cum",
+      "-inuse_objects",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_background_stream-header_interpolation-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_background_stream-header_interpolation-inuse-objects-cumulative.txt",
+    "profile_sha256": "192aae62253fcf3ba153c328d700f8109e42a6af6a91c470646948cadf55fa44"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_background_stream-header_interpolation-mutex.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_background_stream-header_interpolation-mutex.txt",
+    "profile_sha256": "3f78c3ab2ab673ce946a63c0bdee14b0ba723d8b1dd61c7ec20edb69aa1aba39"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_background_stream-header_interpolation-block.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_background_stream-header_interpolation-block.txt",
+    "profile_sha256": "0dae6b00a384150568db185ef0756d50ef797f01d70e0c39aab8a3b6ff38bacb"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_background_stream-escape_expansion-cpu.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_background_stream-escape_expansion-cpu-flat.txt",
+    "profile_sha256": "1beb9ad7966a6637da3684a123c1f406607d9fb4a72bc21130f64d042c0348da"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-cum",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_background_stream-escape_expansion-cpu.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_background_stream-escape_expansion-cpu-cumulative.txt",
+    "profile_sha256": "1beb9ad7966a6637da3684a123c1f406607d9fb4a72bc21130f64d042c0348da"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-list",
+      "Template.*execute|Runtime.*recover|Runtime.*checkpoint|Runtime.*enter|checkedWriter.*Write",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_background_stream-escape_expansion-cpu.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_background_stream-escape_expansion-source.txt",
+    "profile_sha256": "1beb9ad7966a6637da3684a123c1f406607d9fb4a72bc21130f64d042c0348da"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-alloc_space",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_background_stream-escape_expansion-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_background_stream-escape_expansion-alloc-bytes.txt",
+    "profile_sha256": "ec9abab376ad17806b327e60431d81282fdf107259f8a5d11b00e64792fa9396"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-alloc_objects",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_background_stream-escape_expansion-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_background_stream-escape_expansion-alloc-objects.txt",
+    "profile_sha256": "ec9abab376ad17806b327e60431d81282fdf107259f8a5d11b00e64792fa9396"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-cum",
+      "-alloc_objects",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_background_stream-escape_expansion-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_background_stream-escape_expansion-alloc-objects-cumulative.txt",
+    "profile_sha256": "ec9abab376ad17806b327e60431d81282fdf107259f8a5d11b00e64792fa9396"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-inuse_space",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_background_stream-escape_expansion-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_background_stream-escape_expansion-inuse-bytes.txt",
+    "profile_sha256": "ec9abab376ad17806b327e60431d81282fdf107259f8a5d11b00e64792fa9396"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-inuse_objects",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_background_stream-escape_expansion-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_background_stream-escape_expansion-inuse-objects.txt",
+    "profile_sha256": "ec9abab376ad17806b327e60431d81282fdf107259f8a5d11b00e64792fa9396"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-cum",
+      "-inuse_objects",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_background_stream-escape_expansion-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_background_stream-escape_expansion-inuse-objects-cumulative.txt",
+    "profile_sha256": "ec9abab376ad17806b327e60431d81282fdf107259f8a5d11b00e64792fa9396"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_background_stream-escape_expansion-mutex.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_background_stream-escape_expansion-mutex.txt",
+    "profile_sha256": "ce2f454b2ed6bcaebfa7859e0e22819b8548519ab64a49cf3189f53a2bbe3d25"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_background_stream-escape_expansion-block.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_background_stream-escape_expansion-block.txt",
+    "profile_sha256": "d6e9090a886f73290cb26c1511e7a07d16941152b5b543280360d5d311909853"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_live_stream-header_literal-cpu.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_live_stream-header_literal-cpu-flat.txt",
+    "profile_sha256": "5e2f8df707228e9583938f1f2dcf228bf209b06cbed5e083b40fcef049a74fee"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-cum",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_live_stream-header_literal-cpu.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_live_stream-header_literal-cpu-cumulative.txt",
+    "profile_sha256": "5e2f8df707228e9583938f1f2dcf228bf209b06cbed5e083b40fcef049a74fee"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-list",
+      "Template.*execute|Runtime.*recover|Runtime.*checkpoint|Runtime.*enter|checkedWriter.*Write",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_live_stream-header_literal-cpu.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_live_stream-header_literal-source.txt",
+    "profile_sha256": "5e2f8df707228e9583938f1f2dcf228bf209b06cbed5e083b40fcef049a74fee"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-alloc_space",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_live_stream-header_literal-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_live_stream-header_literal-alloc-bytes.txt",
+    "profile_sha256": "80112cafa5926e56c333055f6a288768cca6f3688ca96f0ab17b63701f380407"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-alloc_objects",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_live_stream-header_literal-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_live_stream-header_literal-alloc-objects.txt",
+    "profile_sha256": "80112cafa5926e56c333055f6a288768cca6f3688ca96f0ab17b63701f380407"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-cum",
+      "-alloc_objects",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_live_stream-header_literal-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_live_stream-header_literal-alloc-objects-cumulative.txt",
+    "profile_sha256": "80112cafa5926e56c333055f6a288768cca6f3688ca96f0ab17b63701f380407"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-inuse_space",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_live_stream-header_literal-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_live_stream-header_literal-inuse-bytes.txt",
+    "profile_sha256": "80112cafa5926e56c333055f6a288768cca6f3688ca96f0ab17b63701f380407"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-inuse_objects",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_live_stream-header_literal-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_live_stream-header_literal-inuse-objects.txt",
+    "profile_sha256": "80112cafa5926e56c333055f6a288768cca6f3688ca96f0ab17b63701f380407"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-cum",
+      "-inuse_objects",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_live_stream-header_literal-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_live_stream-header_literal-inuse-objects-cumulative.txt",
+    "profile_sha256": "80112cafa5926e56c333055f6a288768cca6f3688ca96f0ab17b63701f380407"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_live_stream-header_literal-mutex.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_live_stream-header_literal-mutex.txt",
+    "profile_sha256": "2e53a0c6fa9f891c79f6df276cd106f08f29c0df94a39d3024b75f18a0d2d404"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_live_stream-header_literal-block.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_live_stream-header_literal-block.txt",
+    "profile_sha256": "2ecd4d7f72eaeb2b39f539cd7a9ee2aac607a717806d9c32fac7bb248048d0fa"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_live_stream-inheritance-cpu.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_live_stream-inheritance-cpu-flat.txt",
+    "profile_sha256": "35fa706bac00d6c0666595a46e0de179fdefc08287ce864434364bbe3362036e"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-cum",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_live_stream-inheritance-cpu.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_live_stream-inheritance-cpu-cumulative.txt",
+    "profile_sha256": "35fa706bac00d6c0666595a46e0de179fdefc08287ce864434364bbe3362036e"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-list",
+      "Template.*execute|Runtime.*recover|Runtime.*checkpoint|Runtime.*enter|checkedWriter.*Write",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_live_stream-inheritance-cpu.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_live_stream-inheritance-source.txt",
+    "profile_sha256": "35fa706bac00d6c0666595a46e0de179fdefc08287ce864434364bbe3362036e"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-alloc_space",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_live_stream-inheritance-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_live_stream-inheritance-alloc-bytes.txt",
+    "profile_sha256": "f12baf507172420d7233dd1fe168b4edf7c022a1876c35844762287fcb4b58b4"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-alloc_objects",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_live_stream-inheritance-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_live_stream-inheritance-alloc-objects.txt",
+    "profile_sha256": "f12baf507172420d7233dd1fe168b4edf7c022a1876c35844762287fcb4b58b4"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-cum",
+      "-alloc_objects",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_live_stream-inheritance-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_live_stream-inheritance-alloc-objects-cumulative.txt",
+    "profile_sha256": "f12baf507172420d7233dd1fe168b4edf7c022a1876c35844762287fcb4b58b4"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-inuse_space",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_live_stream-inheritance-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_live_stream-inheritance-inuse-bytes.txt",
+    "profile_sha256": "f12baf507172420d7233dd1fe168b4edf7c022a1876c35844762287fcb4b58b4"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-inuse_objects",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_live_stream-inheritance-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_live_stream-inheritance-inuse-objects.txt",
+    "profile_sha256": "f12baf507172420d7233dd1fe168b4edf7c022a1876c35844762287fcb4b58b4"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-cum",
+      "-inuse_objects",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_live_stream-inheritance-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_live_stream-inheritance-inuse-objects-cumulative.txt",
+    "profile_sha256": "f12baf507172420d7233dd1fe168b4edf7c022a1876c35844762287fcb4b58b4"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_live_stream-inheritance-mutex.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_live_stream-inheritance-mutex.txt",
+    "profile_sha256": "f3f66f1c820dcda79c11ce79102aae404b870f416ba15cc777a1d05a51e6eefe"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_live_stream-inheritance-block.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_live_stream-inheritance-block.txt",
+    "profile_sha256": "309c66c42b530878e2437f3044d1bc9ac7807a22953a6867038dd79b8e378c69"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_live_stream-nested_writing-cpu.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_live_stream-nested_writing-cpu-flat.txt",
+    "profile_sha256": "58d57800b578182b08d72a8a9038e65890d65988ed1579d61c78a17abc85758a"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-cum",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_live_stream-nested_writing-cpu.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_live_stream-nested_writing-cpu-cumulative.txt",
+    "profile_sha256": "58d57800b578182b08d72a8a9038e65890d65988ed1579d61c78a17abc85758a"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-list",
+      "Template.*execute|Runtime.*recover|Runtime.*checkpoint|Runtime.*enter|checkedWriter.*Write",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_live_stream-nested_writing-cpu.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_live_stream-nested_writing-source.txt",
+    "profile_sha256": "58d57800b578182b08d72a8a9038e65890d65988ed1579d61c78a17abc85758a"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-alloc_space",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_live_stream-nested_writing-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_live_stream-nested_writing-alloc-bytes.txt",
+    "profile_sha256": "a3a66da38f43ae9e45e3ec5bda48c781283fcf22dca2762519b6946e1bdce118"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-alloc_objects",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_live_stream-nested_writing-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_live_stream-nested_writing-alloc-objects.txt",
+    "profile_sha256": "a3a66da38f43ae9e45e3ec5bda48c781283fcf22dca2762519b6946e1bdce118"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-cum",
+      "-alloc_objects",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_live_stream-nested_writing-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_live_stream-nested_writing-alloc-objects-cumulative.txt",
+    "profile_sha256": "a3a66da38f43ae9e45e3ec5bda48c781283fcf22dca2762519b6946e1bdce118"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-inuse_space",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_live_stream-nested_writing-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_live_stream-nested_writing-inuse-bytes.txt",
+    "profile_sha256": "a3a66da38f43ae9e45e3ec5bda48c781283fcf22dca2762519b6946e1bdce118"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-inuse_objects",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_live_stream-nested_writing-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_live_stream-nested_writing-inuse-objects.txt",
+    "profile_sha256": "a3a66da38f43ae9e45e3ec5bda48c781283fcf22dca2762519b6946e1bdce118"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-cum",
+      "-inuse_objects",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_live_stream-nested_writing-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_live_stream-nested_writing-inuse-objects-cumulative.txt",
+    "profile_sha256": "a3a66da38f43ae9e45e3ec5bda48c781283fcf22dca2762519b6946e1bdce118"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_live_stream-nested_writing-mutex.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_live_stream-nested_writing-mutex.txt",
+    "profile_sha256": "a45d688570c99a3d3cef1df33f9eaa45c456c3ec444830128c94e2d131035321"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_live_stream-nested_writing-block.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_live_stream-nested_writing-block.txt",
+    "profile_sha256": "ca9e7cd12b05c44b52558e3880553f907bcb2aa5f569c4a56c1ba3fbeb5719bc"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_live_stream-header_interpolation-cpu.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_live_stream-header_interpolation-cpu-flat.txt",
+    "profile_sha256": "7760ad22464a88958ff292564d2a7d5b5f2017cce61ac1a5dc6ba4bcdbb2f020"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-cum",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_live_stream-header_interpolation-cpu.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_live_stream-header_interpolation-cpu-cumulative.txt",
+    "profile_sha256": "7760ad22464a88958ff292564d2a7d5b5f2017cce61ac1a5dc6ba4bcdbb2f020"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-list",
+      "Template.*execute|Runtime.*recover|Runtime.*checkpoint|Runtime.*enter|checkedWriter.*Write",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_live_stream-header_interpolation-cpu.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_live_stream-header_interpolation-source.txt",
+    "profile_sha256": "7760ad22464a88958ff292564d2a7d5b5f2017cce61ac1a5dc6ba4bcdbb2f020"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-alloc_space",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_live_stream-header_interpolation-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_live_stream-header_interpolation-alloc-bytes.txt",
+    "profile_sha256": "793e3009eac759cb98c58da11dfb756b2dad41637cd44f636f5e99462683f0da"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-alloc_objects",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_live_stream-header_interpolation-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_live_stream-header_interpolation-alloc-objects.txt",
+    "profile_sha256": "793e3009eac759cb98c58da11dfb756b2dad41637cd44f636f5e99462683f0da"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-cum",
+      "-alloc_objects",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_live_stream-header_interpolation-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_live_stream-header_interpolation-alloc-objects-cumulative.txt",
+    "profile_sha256": "793e3009eac759cb98c58da11dfb756b2dad41637cd44f636f5e99462683f0da"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-inuse_space",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_live_stream-header_interpolation-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_live_stream-header_interpolation-inuse-bytes.txt",
+    "profile_sha256": "793e3009eac759cb98c58da11dfb756b2dad41637cd44f636f5e99462683f0da"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-inuse_objects",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_live_stream-header_interpolation-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_live_stream-header_interpolation-inuse-objects.txt",
+    "profile_sha256": "793e3009eac759cb98c58da11dfb756b2dad41637cd44f636f5e99462683f0da"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-cum",
+      "-inuse_objects",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_live_stream-header_interpolation-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_live_stream-header_interpolation-inuse-objects-cumulative.txt",
+    "profile_sha256": "793e3009eac759cb98c58da11dfb756b2dad41637cd44f636f5e99462683f0da"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_live_stream-header_interpolation-mutex.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_live_stream-header_interpolation-mutex.txt",
+    "profile_sha256": "c6f8a7837651e9970b301c22f9004c6b72b59062a54341164fc0632d5222db08"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_live_stream-header_interpolation-block.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_live_stream-header_interpolation-block.txt",
+    "profile_sha256": "09b19febc8f8e57e4973da0dff0bd1cc585d24712558685f2e33bb4fed3f9319"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_live_stream-escape_expansion-cpu.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_live_stream-escape_expansion-cpu-flat.txt",
+    "profile_sha256": "2735f64da61857f4f47ddb36c273a2915ef0cf9291742429bfd66951010e5860"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-cum",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_live_stream-escape_expansion-cpu.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_live_stream-escape_expansion-cpu-cumulative.txt",
+    "profile_sha256": "2735f64da61857f4f47ddb36c273a2915ef0cf9291742429bfd66951010e5860"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-list",
+      "Template.*execute|Runtime.*recover|Runtime.*checkpoint|Runtime.*enter|checkedWriter.*Write",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_live_stream-escape_expansion-cpu.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_live_stream-escape_expansion-source.txt",
+    "profile_sha256": "2735f64da61857f4f47ddb36c273a2915ef0cf9291742429bfd66951010e5860"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-alloc_space",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_live_stream-escape_expansion-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_live_stream-escape_expansion-alloc-bytes.txt",
+    "profile_sha256": "112ee3df7966f07827fe0d14298fd7cbb4665b89bcbbd1e2c054fc17c6890eeb"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-alloc_objects",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_live_stream-escape_expansion-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_live_stream-escape_expansion-alloc-objects.txt",
+    "profile_sha256": "112ee3df7966f07827fe0d14298fd7cbb4665b89bcbbd1e2c054fc17c6890eeb"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-cum",
+      "-alloc_objects",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_live_stream-escape_expansion-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_live_stream-escape_expansion-alloc-objects-cumulative.txt",
+    "profile_sha256": "112ee3df7966f07827fe0d14298fd7cbb4665b89bcbbd1e2c054fc17c6890eeb"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-inuse_space",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_live_stream-escape_expansion-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_live_stream-escape_expansion-inuse-bytes.txt",
+    "profile_sha256": "112ee3df7966f07827fe0d14298fd7cbb4665b89bcbbd1e2c054fc17c6890eeb"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-inuse_objects",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_live_stream-escape_expansion-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_live_stream-escape_expansion-inuse-objects.txt",
+    "profile_sha256": "112ee3df7966f07827fe0d14298fd7cbb4665b89bcbbd1e2c054fc17c6890eeb"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-cum",
+      "-inuse_objects",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_live_stream-escape_expansion-heap.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_live_stream-escape_expansion-inuse-objects-cumulative.txt",
+    "profile_sha256": "112ee3df7966f07827fe0d14298fd7cbb4665b89bcbbd1e2c054fc17c6890eeb"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_live_stream-escape_expansion-mutex.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_live_stream-escape_expansion-mutex.txt",
+    "profile_sha256": "bcda013b7522317336e79033a3fd6d61d1931e07548160fc1fd38df363cc15e4"
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=30",
+      "-source_path=<artifacts>/followup-54/baseline-source:<integration-artifacts>/release-54b5614/candidate",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<integration-artifacts>/release-54b5614/results/candidate.test",
+      "<artifacts>/followup-54/metered_live_stream-escape_expansion-block.pprof"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "output": "<artifacts>/followup-54/analysis/metered_live_stream-escape_expansion-block.txt",
+    "profile_sha256": "13e85fa4a5f32a2fcf7c98bc4fd6d08a59cfa29820fd5aaa1956f195f3094160"
+  }
+]

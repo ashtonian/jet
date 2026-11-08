@@ -1,0 +1,25 @@
+File: upstream.test
+Type: inuse_objects
+Time: 2026-11-08 03:02:50 CST
+Showing nodes accounting for 8348, 100% of 8348 total
+      flat  flat%   sum%        cum   cum%
+      8092 96.93% 96.93%       8092 96.93%  runtime.mallocgc
+       256  3.07%   100%        256  3.07%  _.goready.func1
+         0     0%   100%       5461 65.42%  runtime.(*scavengerState).init
+         0     0%   100%       1539 18.44%  runtime.allocm
+         0     0%   100%       5461 65.42%  runtime.bgscavenge
+         0     0%   100%       1092 13.08%  runtime.malg
+         0     0%   100%        513  6.15%  runtime.mcall
+         0     0%   100%       1026 12.29%  runtime.mstart
+         0     0%   100%       1026 12.29%  runtime.mstart0
+         0     0%   100%       1026 12.29%  runtime.mstart1
+         0     0%   100%       1539 18.44%  runtime.newm
+         0     0%   100%       8092 96.93%  runtime.newobject
+         0     0%   100%       1092 13.08%  runtime.newproc.func1
+         0     0%   100%       1092 13.08%  runtime.newproc1
+         0     0%   100%        513  6.15%  runtime.park_m
+         0     0%   100%       1539 18.44%  runtime.resetspinning
+         0     0%   100%       1539 18.44%  runtime.schedule
+         0     0%   100%       1539 18.44%  runtime.startm
+         0     0%   100%       1348 16.15%  runtime.systemstack
+         0     0%   100%       1539 18.44%  runtime.wakep

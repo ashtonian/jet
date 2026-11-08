@@ -1,0 +1,24 @@
+File: defaults.test
+Type: alloc_objects
+Time: 2026-11-08 04:14:14 CST
+Showing nodes accounting for 54635057, 100% of 54635057 total
+----------------------------------------------------------+-------------
+      flat  flat%   sum%        cum   cum%   calls calls% + context 	 	 
+----------------------------------------------------------+-------------
+                                              4469   100% |   github.com/CloudyKit/jet/v6.(*Template).execute
+      4469 0.0082% 0.0082%       4469 0.0082%                | github.com/CloudyKit/jet/v6.admitInputScopesInto
+----------------------------------------------------------+-------------
+                                          36678575   100% |   github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0% 0.0082%   36678575 67.13%                | github.com/CloudyKit/jet/v6.(*Template).execute
+                                          18372345 50.09% |   bytes.(*Buffer).String (inline)
+                                          18288244 49.86% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+                                              8779 0.024% |   github.com/CloudyKit/jet/v6.(*Runtime).recover
+                                              4469 0.012% |   github.com/CloudyKit/jet/v6.admitInputScopesInto
+                                              3859 0.011% |   sync.(*Pool).Get
+                                               586 0.0016% |   github.com/CloudyKit/jet/v6.releaseInputVars
+                                               293 0.0008% |   github.com/CloudyKit/jet/v6.borrowInputVars
+----------------------------------------------------------+-------------
+                                               293   100% |   github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0% 0.0082%        293 0.00054%                | github.com/CloudyKit/jet/v6.borrowInputVars
+                                               293   100% |   sync.(*Pool).Get
+----------------------------------------------------------+-------------

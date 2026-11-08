@@ -1,0 +1,9 @@
+{
+  "command": [
+    "<tools>/benchstat",
+    ".git/finalization/selected-measure/baseline.txt",
+    ".git/finalization/selected-measure/selected.txt"
+  ],
+  "exit_code": 0,
+  "deadline": 60
+}

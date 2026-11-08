@@ -1,0 +1,37 @@
+File: candidate.test
+Type: cpu
+Time: 2026-11-08 03:57:26 CST
+Duration: 1.41s, Total samples = 1.16s (82.14%)
+Showing nodes accounting for 1.15s, 99.14% of 1.16s total
+Showing top 30 nodes out of 46
+      flat  flat%   sum%        cum   cum%
+         0     0%     0%      1.15s 99.14%  testing.(*B).runN
+         0     0%     0%      1.14s 98.28%  github.com/CloudyKit/jet/v6.(*Template).Execute (inline)
+         0     0%     0%      1.14s 98.28%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0%     0%      1.14s 98.28%  github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes.func1
+         0     0%     0%      1.14s 98.28%  github.com/CloudyKit/jet/v6_test.init.func1
+         0     0%     0%      1.14s 98.28%  testing.(*B).launch
+         0     0%     0%      1.12s 96.55%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+     0.01s  0.86%  0.86%      1.11s 95.69%  github.com/CloudyKit/jet/v6.(*Runtime).printValue
+         0     0%  0.86%      1.10s 94.83%  github.com/CloudyKit/fastprinter.PrintString
+         0     0%  0.86%      1.10s 94.83%  github.com/CloudyKit/fastprinter.PrintValue
+         0     0%  0.86%      1.10s 94.83%  github.com/CloudyKit/jet/v6.(*escapeeWriter).Write
+     0.24s 20.69% 21.55%      1.10s 94.83%  text/template.HTMLEscape
+     0.21s 18.10% 39.66%      0.86s 74.14%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+     0.41s 35.34% 75.00%      0.65s 56.03%  bytes.(*Buffer).Write
+     0.17s 14.66% 89.66%      0.17s 14.66%  runtime.memmove
+     0.07s  6.03% 95.69%      0.07s  6.03%  bytes.(*Buffer).tryGrowByReslice (inline)
+         0     0% 95.69%      0.02s  1.72%  github.com/CloudyKit/jet/v6.(*Runtime).recover
+         0     0% 95.69%      0.02s  1.72%  sync.(*Pool).Put
+     0.02s  1.72% 97.41%      0.02s  1.72%  sync.(*Pool).pin
+         0     0% 97.41%      0.01s  0.86%  github.com/CloudyKit/jet/v6.(*Runtime).evalCommandExpression
+         0     0% 97.41%      0.01s  0.86%  github.com/CloudyKit/jet/v6.(*Runtime).evalPipelineExpression
+     0.01s  0.86% 98.28%      0.01s  0.86%  github.com/CloudyKit/jet/v6.(*Runtime).evalPrimaryExpressionGroup
+         0     0% 98.28%      0.01s  0.86%  github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes
+     0.01s  0.86% 99.14%      0.01s  0.86%  internal/runtime/atomic.(*UnsafePointer).Load (inline)
+         0     0% 99.14%      0.01s  0.86%  runtime.concatstring3
+         0     0% 99.14%      0.01s  0.86%  runtime.concatstrings
+         0     0% 99.14%      0.01s  0.86%  runtime.gopreempt_m
+         0     0% 99.14%      0.01s  0.86%  runtime.goschedImpl
+         0     0% 99.14%      0.01s  0.86%  runtime.mProf_Malloc
+         0     0% 99.14%      0.01s  0.86%  runtime.mallocgc

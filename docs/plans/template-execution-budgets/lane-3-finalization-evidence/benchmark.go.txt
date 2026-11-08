@@ -1,0 +1,48 @@
+package jet_test
+import (
+ "bytes"
+ "context"
+ "testing"
+ "github.com/CloudyKit/jet/v6"
+)
+type finalReviewMode struct {
+ name string
+ live bool
+ setup func(executionWorkload,bool)(*jet.Template,error)
+ render func(context.Context,*jet.Template,jet.VarMap,*bytes.Buffer)(string,error)
+}
+func finalLegacySetup(f executionWorkload,html bool)(*jet.Template,error){return f.set(html).Parse("workload",f.Source)}
+var finalReviewModes=[]finalReviewMode{
+ {"legacy_stream",false,finalLegacySetup,func(_ context.Context,t *jet.Template,v jet.VarMap,b *bytes.Buffer)(string,error){return "",t.Execute(b,v,nil)}},
+ {"legacy_owned",false,finalLegacySetup,func(_ context.Context,t *jet.Template,v jet.VarMap,_ *bytes.Buffer)(string,error){var b bytes.Buffer;err:=t.Execute(&b,v,nil);return b.String(),err}},
+}
+var finalReviewResult string
+func TestFinalReviewConformance(t *testing.T){
+ for _,m:=range finalReviewModes{for _,f:=range executionWorkloads(t){for _,html:=range []bool{false,true}{
+  t.Run(m.name+"/"+f.Name+map[bool]string{true:"/html",false:"/text"}[html],func(t *testing.T){
+   tpl,err:=m.setup(f,html);if err!=nil{t.Fatal(err)}
+   var out bytes.Buffer;result,err:=m.render(context.Background(),tpl,f.vars(),&out);if err!=nil{t.Fatal(err)}
+   if result==""{result=out.String()}
+   want:=f.Text;if html{want=f.HTML};if result!=want{t.Fatalf("got output length %d, want %d",len(result),len(want))}
+  })
+ }}}
+}
+func BenchmarkFinalReview(b *testing.B){
+ for _,m:=range finalReviewModes{for _,f:=range executionWorkloads(b){for _,html:=range []bool{false,true}{
+  b.Run(m.name+"/"+f.Name+map[bool]string{true:"/html",false:"/text"}[html],func(b *testing.B){
+   tpl,err:=m.setup(f,html);if err!=nil{b.Fatal(err)};vars:=f.vars()
+   ctx:=context.Background();if m.live{var cancel context.CancelFunc;ctx,cancel=context.WithCancel(ctx);defer cancel()}
+   var out bytes.Buffer
+   for i:=0;i<10;i++{out.Reset();if _,err=m.render(ctx,tpl,vars,&out);err!=nil{b.Fatal(err)}}
+   b.ReportAllocs();b.ResetTimer()
+   for i:=0;i<b.N;i++{out.Reset();finalReviewResult,err=m.render(ctx,tpl,vars,&out);if err!=nil{b.Fatal(err)}}
+  })
+ }}}
+}
+func BenchmarkFinalCompile(b *testing.B){
+ for _,m:=range finalReviewModes{if m.name!="legacy_stream"&&m.name!="restricted_owned"{continue}
+  for _,f:=range executionWorkloads(b){if f.Name!="header_interpolation"&&f.Name!="include"&&f.Name!="block_content"{continue}
+   b.Run(m.name+"/"+f.Name,func(b *testing.B){b.ReportAllocs();for i:=0;i<b.N;i++{if _,err:=m.setup(f,true);err!=nil{b.Fatal(err)}}})
+  }
+ }
+}

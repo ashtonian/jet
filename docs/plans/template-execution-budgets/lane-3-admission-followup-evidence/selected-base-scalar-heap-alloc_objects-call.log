@@ -1,0 +1,13 @@
+File: base.test
+Type: alloc_objects
+Time: 2026-11-08 04:13:44 CST
+Showing nodes accounting for 22215389, 100% of 22215389 total
+----------------------------------------------------------+-------------
+      flat  flat%   sum%        cum   cum%   calls calls% + context 	 	 
+----------------------------------------------------------+-------------
+                                          14955928   100% |   github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0%     0%   14955928 67.32%                | github.com/CloudyKit/jet/v6.(*Template).execute
+                                           7580503 50.69% |   bytes.(*Buffer).String (inline)
+                                           7373377 49.30% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+                                              2048 0.014% |   github.com/CloudyKit/jet/v6.(*Runtime).recover
+----------------------------------------------------------+-------------

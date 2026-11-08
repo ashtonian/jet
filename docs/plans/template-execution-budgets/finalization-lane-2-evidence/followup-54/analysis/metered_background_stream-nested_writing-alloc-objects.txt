@@ -1,0 +1,32 @@
+File: candidate.test
+Type: alloc_objects
+Time: 2026-11-08 03:57:32 CST
+Showing nodes accounting for 3498062, 99.78% of 3505806 total
+Dropped 43 nodes (cum <= 17529)
+      flat  flat%   sum%        cum   cum%
+   1753141 50.01% 50.01%    1753141 50.01%  github.com/CloudyKit/jet/v6.newIntsRanger (inline)
+   1703961 48.60% 98.61%    3457102 98.61%  github.com/CloudyKit/jet/v6.init.0.func5
+     40960  1.17% 99.78%      40960  1.17%  regexp/syntax.(*parser).maybeConcat
+         0     0% 99.78%    3457102 98.61%  github.com/CloudyKit/jet/v6.(*Runtime).evalCallExpression (inline)
+         0     0% 99.78%    3457102 98.61%  github.com/CloudyKit/jet/v6.(*Runtime).evalPipeCallExpression
+         0     0% 99.78%    3457102 98.61%  github.com/CloudyKit/jet/v6.(*Runtime).evalPrimaryExpressionGroup
+         0     0% 99.78%    3457102 98.61%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 99.78%    3457102 98.61%  github.com/CloudyKit/jet/v6.(*Runtime).executeRange
+         0     0% 99.78%    3457102 98.61%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0% 99.78%    3457102 98.61%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0% 99.78%      45420  1.30%  github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes
+         0     0% 99.78%    3457102 98.61%  github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes.func1
+         0     0% 99.78%    3457102 98.61%  github.com/CloudyKit/jet/v6_test.init.0.func2
+         0     0% 99.78%      43488  1.24%  regexp.Compile (inline)
+         0     0% 99.78%      43488  1.24%  regexp.compile
+         0     0% 99.78%      40960  1.17%  regexp/syntax.(*parser).literal
+         0     0% 99.78%      40960  1.17%  regexp/syntax.(*parser).push
+         0     0% 99.78%      40960  1.17%  regexp/syntax.Parse (inline)
+         0     0% 99.78%      40960  1.17%  regexp/syntax.parse
+         0     0% 99.78%      43488  1.24%  testing.(*B).Run
+         0     0% 99.78%    3457102 98.61%  testing.(*B).launch
+         0     0% 99.78%      45420  1.30%  testing.(*B).run1.func1
+         0     0% 99.78%    3502522 99.91%  testing.(*B).runN
+         0     0% 99.78%      43488  1.24%  testing.(*matcher).fullName
+         0     0% 99.78%      43488  1.24%  testing.simpleMatch.matches
+         0     0% 99.78%      43488  1.24%  testing/internal/testdeps.TestDeps.MatchString

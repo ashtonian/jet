@@ -66,26 +66,64 @@ func (t *Template) ExecuteContext(ctx context.Context, w io.Writer, variables Va
 	if ctx == nil || opts.MaxDepth < 0 || opts.MaxValueBytes < 0 || opts.MaxOutputBytes < 0 {
 		return fmt.Errorf("%w: context must be non-nil and limits nonnegative", ErrInvalidOptions)
 	}
+	if err := validateParseOptions(opts.ParseOptions); err != nil {
+		return err
+	}
 	return t.execute(ctx, w, variables, data, opts)
 }
 
 func (t *Template) execute(ctx context.Context, w io.Writer, variables VarMap, data interface{}, opts ExecutionOptions) (err error) {
+	var owned *restrictedSink
+	if policy := t.set.restricted; policy != nil {
+		var ok bool
+		owned, ok = w.(*restrictedSink)
+		if !ok || owned.owner != t {
+			return fmt.Errorf("%w: use RenderRestrictedContext with an owned result", ErrCapabilityDenied)
+		}
+		if ctx == nil {
+			return ErrInvalidOptions
+		}
+		if opts == (ExecutionOptions{}) {
+			opts = policy.execution
+		} else {
+			opts = constrainExecution(opts, policy.execution)
+		}
+		inputVars := borrowInputVars(policy.globals, variables)
+		defer releaseInputVars(inputVars)
+		variables, data, err = admitInputScopesInto(ctx, []VarMap{policy.globals, variables}, data, policy.input, inputVars)
+		if err != nil {
+			return inputContextError(ctx, err)
+		}
+	}
 	st := pool_State.Get().(*Runtime)
 	defer st.recover(&err)
 
-	st.execution = executionState{ctx: ctx, options: opts, remaining: opts.MaxSteps, values: uint64(opts.MaxValueBytes), output: uint64(opts.MaxOutputBytes)}
+	// Legacy execution uses the state already cleared before pooling.
+	if ctx != nil {
+		st.execution.ctx = ctx
+		st.execution.metered = true
+		st.execution.checkContext = ctx != context.Background() && ctx != context.TODO()
+		st.execution.options = opts
+		st.execution.remaining = opts.MaxSteps
+		st.execution.values = uint64(opts.MaxValueBytes)
+		st.execution.output = uint64(opts.MaxOutputBytes)
+	}
 	st.checkpoint(0)
 	st.blocks = t.processedBlocks
 	st.variables = variables
 	st.set = t.set
 	st.writeErr = nil
-	st.rootSink = checkedWriter{writer: w, failure: &st.writeErr}
-	if ctx == nil {
-		st.Writer = &st.rootSink
-	} else {
-		st.Writer = st.outputWriter(w, false)
+	st.rootSink = st.checkedOutput(w)
+	if owned != nil {
+		st.rootSink.writer = &owned.buffer
+		st.rootSink.buffer = &owned.buffer
+		st.rootSink.retained = &owned.buffer
 	}
+	st.Writer = &st.rootSink
 
+	if ctx != nil {
+		st.startCompilation(t)
+	}
 	root := st.templateRoot(t)
 
 	if data != nil {
@@ -94,5 +132,10 @@ func (t *Template) execute(ctx context.Context, w io.Writer, variables VarMap, d
 
 	st.executeList(root)
 	st.checkpoint(0)
+	if owned != nil {
+		st.reserveValue(int64(owned.buffer.Len()))
+		owned.result = owned.buffer.String()
+		st.checkpoint(0)
+	}
 	return
 }

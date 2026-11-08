@@ -1,0 +1,31 @@
+--- a/execution_output.go
++++ b/execution_output.go
+@@ -17,0 +18,25 @@
++}
++
++// legacyBufferWriter shares the checked destination and latches, with no active
++// meter. Only runtime setup selects this view for a concrete bytes.Buffer.
++type legacyBufferWriter checkedWriter
++
++func (w *legacyBufferWriter) Write(b []byte) (int, error) {
++	if w.runtime.execution.terminal == nil {
++		return w.buffer.Write(b)
++	}
++	return (*checkedWriter)(w).Write(b)
++}
++
++func (st *Runtime) checkedDestination(w io.Writer) *checkedWriter {
++	var sink *checkedWriter
++	switch w := w.(type) {
++	case *checkedWriter:
++		sink = w
++	case *legacyBufferWriter:
++		sink = (*checkedWriter)(w)
++	}
++	if sink != nil && sink.runtime == st {
++		return sink
++	}
++	return nil
+@@ -114 +139 @@
+-	if parent, ok := tx.parent.(*checkedWriter); ok && parent.runtime == st {
++	if parent := st.checkedDestination(tx.parent); parent != nil {

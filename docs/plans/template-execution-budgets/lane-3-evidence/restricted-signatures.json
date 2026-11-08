@@ -1,0 +1,639 @@
+[
+  {
+    "sha": "2858cef45f7fdc9c100fe0294f367fea63c82a15",
+    "subject": "Exclude internal planning index from review scope",
+    "author": {
+      "name": "Ashton Kinslow",
+      "email": "github@ashtonkinslow.com",
+      "date": "2026-11-08T00:50:40Z"
+    },
+    "local_verified": true,
+    "github_verified": true,
+    "github_reason": "valid",
+    "preserved_third_party": false
+  },
+  {
+    "sha": "dd594d8cd6700395b96badc0b49bfc4b6b235e89",
+    "subject": "Combine accepted builtin and compilation prerequisites",
+    "author": {
+      "name": "Ashton Kinslow",
+      "email": "github@ashtonkinslow.com",
+      "date": "2026-11-08T00:49:54Z"
+    },
+    "local_verified": true,
+    "github_verified": true,
+    "github_reason": "valid",
+    "preserved_third_party": false
+  },
+  {
+    "sha": "3e9db040a9b463edba1a3fc7819afe00b3f45bd5",
+    "subject": "Enforce restricted capabilities and shared compilation admission",
+    "author": {
+      "name": "Ashton Kinslow",
+      "email": "github@ashtonkinslow.com",
+      "date": "2026-11-08T00:49:54Z"
+    },
+    "local_verified": true,
+    "github_verified": true,
+    "github_reason": "valid",
+    "preserved_third_party": false
+  },
+  {
+    "sha": "484d70de3c8bfb6f9da06483637e14e276eff439",
+    "subject": "Preserve native loader panics during compilation",
+    "author": {
+      "name": "Ashton Kinslow",
+      "email": "github@ashtonkinslow.com",
+      "date": "2026-11-08T00:49:53Z"
+    },
+    "local_verified": true,
+    "github_verified": true,
+    "github_reason": "valid",
+    "preserved_third_party": false
+  },
+  {
+    "sha": "2d95fa9e9f02a831febbd62c0fb10995a3496e7b",
+    "subject": "Consume completed value accounting evidence and final regressions",
+    "author": {
+      "name": "Ashton Kinslow",
+      "email": "github@ashtonkinslow.com",
+      "date": "2026-11-08T00:48:44Z"
+    },
+    "local_verified": true,
+    "github_verified": true,
+    "github_reason": "valid",
+    "preserved_third_party": false
+  },
+  {
+    "sha": "c0cffa09b8b72b8dd40d9e35d8e50fc7bae3e959",
+    "subject": "Enforce immutable restricted rendering capabilities",
+    "author": {
+      "name": "Ashton Kinslow",
+      "email": "github@ashtonkinslow.com",
+      "date": "2026-11-08T00:47:59Z"
+    },
+    "local_verified": true,
+    "github_verified": true,
+    "github_reason": "valid",
+    "preserved_third_party": false
+  },
+  {
+    "sha": "a81e7dbd5036bebe9b8bcb5de3676c2e87ccd3fe",
+    "subject": "Document value accounting and publish controlled validation evidence",
+    "author": {
+      "name": "Ashton Kinslow",
+      "email": "github@ashtonkinslow.com",
+      "date": "2026-11-08T00:41:44Z"
+    },
+    "local_verified": true,
+    "github_verified": true,
+    "github_reason": "valid",
+    "preserved_third_party": false
+  },
+  {
+    "sha": "bda0fa8fe7e3f92b1580f4902ea38623cbe038e8",
+    "subject": "Consume metered builtin candidate for capability integration",
+    "author": {
+      "name": "Ashton Kinslow",
+      "email": "github@ashtonkinslow.com",
+      "date": "2026-11-08T00:17:21Z"
+    },
+    "local_verified": true,
+    "github_verified": true,
+    "github_reason": "valid",
+    "preserved_third_party": false
+  },
+  {
+    "sha": "7b7920d732c3cfbb64910b26c1206d48866b89e7",
+    "subject": "Record compilation validation and capability dependency contracts",
+    "author": {
+      "name": "Ashton Kinslow",
+      "email": "github@ashtonkinslow.com",
+      "date": "2026-11-08T00:16:35Z"
+    },
+    "local_verified": true,
+    "github_verified": true,
+    "github_reason": "valid",
+    "preserved_third_party": false
+  },
+  {
+    "sha": "d39d1d50eec1e300c20ed77cab6966e5bd9e847d",
+    "subject": "Distinguish compilation aborts from native loader panics",
+    "author": {
+      "name": "Ashton Kinslow",
+      "email": "github@ashtonkinslow.com",
+      "date": "2026-11-08T00:13:52Z"
+    },
+    "local_verified": true,
+    "github_verified": true,
+    "github_reason": "valid",
+    "preserved_third_party": false
+  },
+  {
+    "sha": "5583ec15361aea8f98c7a0d5a1fcbef25d407c0e",
+    "subject": "Bound invalid argument conversion and numeric error allocation",
+    "author": {
+      "name": "Ashton Kinslow",
+      "email": "github@ashtonkinslow.com",
+      "date": "2026-11-08T00:08:11Z"
+    },
+    "local_verified": true,
+    "github_verified": true,
+    "github_reason": "valid",
+    "preserved_third_party": false
+  },
+  {
+    "sha": "6f852e333956cc5513fcd56a154ee026730d4e22",
+    "subject": "Define metered argument and numeric error contracts",
+    "author": {
+      "name": "Ashton Kinslow",
+      "email": "github@ashtonkinslow.com",
+      "date": "2026-11-08T00:08:11Z"
+    },
+    "local_verified": true,
+    "github_verified": true,
+    "github_reason": "valid",
+    "preserved_third_party": false
+  },
+  {
+    "sha": "98f45c6b1d87b9fb8941291c94d51441c3a5b4b9",
+    "subject": "Preserve terminal limits through nested loader cleanup",
+    "author": {
+      "name": "Ashton Kinslow",
+      "email": "github@ashtonkinslow.com",
+      "date": "2026-11-07T23:54:17Z"
+    },
+    "local_verified": true,
+    "github_verified": true,
+    "github_reason": "valid",
+    "preserved_third_party": false
+  },
+  {
+    "sha": "c422a0215ed40cc17d2282688d3626a1014ac7d7",
+    "subject": "Consume terminal compilation cleanup in review base",
+    "author": {
+      "name": "Ashton Kinslow",
+      "email": "github@ashtonkinslow.com",
+      "date": "2026-11-07T23:54:16Z"
+    },
+    "local_verified": true,
+    "github_verified": true,
+    "github_reason": "valid",
+    "preserved_third_party": false
+  },
+  {
+    "sha": "5e5aa42662d9f6fc5372b7809cd03c6ddbb48486",
+    "subject": "Keep compilation failures terminal through reader cleanup",
+    "author": {
+      "name": "Ashton Kinslow",
+      "email": "github@ashtonkinslow.com",
+      "date": "2026-11-07T23:54:16Z"
+    },
+    "local_verified": true,
+    "github_verified": true,
+    "github_reason": "valid",
+    "preserved_third_party": false
+  },
+  {
+    "sha": "195312aae4023f01a3d9ec84e3e12281edcbbe15",
+    "subject": "Preserve terminal compilation failures through loader cleanup",
+    "author": {
+      "name": "Ashton Kinslow",
+      "email": "github@ashtonkinslow.com",
+      "date": "2026-11-07T23:48:22Z"
+    },
+    "local_verified": true,
+    "github_verified": true,
+    "github_reason": "valid",
+    "preserved_third_party": false
+  },
+  {
+    "sha": "e883796c80058ad4f0c92458d6b2e6e64e9e7ec9",
+    "subject": "Publish value budget and builtin identity handoff contracts",
+    "author": {
+      "name": "Ashton Kinslow",
+      "email": "github@ashtonkinslow.com",
+      "date": "2026-11-07T23:47:10Z"
+    },
+    "local_verified": true,
+    "github_verified": true,
+    "github_reason": "valid",
+    "preserved_third_party": false
+  },
+  {
+    "sha": "e8b80f15defe26e9a5588af809e45fab60ceab96",
+    "subject": "Consume fork compatibility workflow for the value budget candidate",
+    "author": {
+      "name": "Ashton Kinslow",
+      "email": "github@ashtonkinslow.com",
+      "date": "2026-11-07T23:46:14Z"
+    },
+    "local_verified": true,
+    "github_verified": true,
+    "github_reason": "valid",
+    "preserved_third_party": false
+  },
+  {
+    "sha": "906e93856aea9dd70c98526a9bad34e39c5b6b85",
+    "subject": "Account for produced values, generated output and builtin work",
+    "author": {
+      "name": "Ashton Kinslow",
+      "email": "github@ashtonkinslow.com",
+      "date": "2026-11-07T23:43:38Z"
+    },
+    "local_verified": true,
+    "github_verified": true,
+    "github_reason": "valid",
+    "preserved_third_party": false
+  },
+  {
+    "sha": "6177f3e820aaa5ed187459fcac5a5cdca31ec308",
+    "subject": "Specify bounded diagnostics and cooperative cost hooks",
+    "author": {
+      "name": "Ashton Kinslow",
+      "email": "github@ashtonkinslow.com",
+      "date": "2026-11-07T23:43:38Z"
+    },
+    "local_verified": true,
+    "github_verified": true,
+    "github_reason": "valid",
+    "preserved_third_party": false
+  },
+  {
+    "sha": "c0779815b07700501ef069db6648280c12d5c419",
+    "subject": "Prepare allocation bounds for JSON and escaping",
+    "author": {
+      "name": "Ashton Kinslow",
+      "email": "github@ashtonkinslow.com",
+      "date": "2026-11-07T23:11:10Z"
+    },
+    "local_verified": true,
+    "github_verified": true,
+    "github_reason": "valid",
+    "preserved_third_party": false
+  },
+  {
+    "sha": "cacb886f711f32aba0ac692e4e1b8891222f4ccc",
+    "subject": "Prepare checked sizes for value construction",
+    "author": {
+      "name": "Ashton Kinslow",
+      "email": "github@ashtonkinslow.com",
+      "date": "2026-11-07T23:06:54Z"
+    },
+    "local_verified": true,
+    "github_verified": true,
+    "github_reason": "valid",
+    "preserved_third_party": false
+  },
+  {
+    "sha": "580fcd44a37ffa311538ba47668ae66f3ff733f5",
+    "subject": "Record value cost inventory and bounded baseline evidence",
+    "author": {
+      "name": "Ashton Kinslow",
+      "email": "github@ashtonkinslow.com",
+      "date": "2026-11-07T23:05:29Z"
+    },
+    "local_verified": true,
+    "github_verified": true,
+    "github_reason": "valid",
+    "preserved_third_party": false
+  },
+  {
+    "sha": "bc0a5c3d78da4307867272cac57952b79d165711",
+    "subject": "Add bounded value and output compatibility fixtures",
+    "author": {
+      "name": "Ashton Kinslow",
+      "email": "github@ashtonkinslow.com",
+      "date": "2026-11-07T23:04:47Z"
+    },
+    "local_verified": true,
+    "github_verified": true,
+    "github_reason": "valid",
+    "preserved_third_party": false
+  },
+  {
+    "sha": "81d67ffd5c9609f5e22ac033b756f9cc27e9ef99",
+    "subject": "Share compilation admission across nested execution",
+    "author": {
+      "name": "Ashton Kinslow",
+      "email": "github@ashtonkinslow.com",
+      "date": "2026-11-07T23:40:11Z"
+    },
+    "local_verified": true,
+    "github_verified": true,
+    "github_reason": "valid",
+    "preserved_third_party": false
+  },
+  {
+    "sha": "ac9e5e3e2543bc4c53dc26916b762e559e13d28b",
+    "subject": "Combine execution and compilation review prerequisites",
+    "author": {
+      "name": "Ashton Kinslow",
+      "email": "github@ashtonkinslow.com",
+      "date": "2026-11-07T23:40:11Z"
+    },
+    "local_verified": true,
+    "github_verified": true,
+    "github_reason": "valid",
+    "preserved_third_party": false
+  },
+  {
+    "sha": "25981def02193aadcf0e2f38eff550a593b2b927",
+    "subject": "Preserve cold and warm graph admission parity",
+    "author": {
+      "name": "Ashton Kinslow",
+      "email": "github@ashtonkinslow.com",
+      "date": "2026-11-07T23:40:10Z"
+    },
+    "local_verified": true,
+    "github_verified": true,
+    "github_reason": "valid",
+    "preserved_third_party": false
+  },
+  {
+    "sha": "a91c96b179b47bcdeab57faaa7d3a985e2932c2c",
+    "subject": "Charge newly compiled ASTs once across cache reuse",
+    "author": {
+      "name": "Ashton Kinslow",
+      "email": "github@ashtonkinslow.com",
+      "date": "2026-11-07T23:39:34Z"
+    },
+    "local_verified": true,
+    "github_verified": true,
+    "github_reason": "valid",
+    "preserved_third_party": false
+  },
+  {
+    "sha": "ffc1d8a78a155611439405145557f0aed0d10579",
+    "subject": "Validate cooperative loaders and prepare immutable template bundles",
+    "author": {
+      "name": "Ashton Kinslow",
+      "email": "github@ashtonkinslow.com",
+      "date": "2026-11-07T23:34:54Z"
+    },
+    "local_verified": true,
+    "github_verified": true,
+    "github_reason": "valid",
+    "preserved_third_party": false
+  },
+  {
+    "sha": "6cf13002e0a9fcf0548b8a426c428802c7890553",
+    "subject": "Drive template scanning synchronously from the parser",
+    "author": {
+      "name": "Ashton Kinslow",
+      "email": "github@ashtonkinslow.com",
+      "date": "2026-11-07T23:32:22Z"
+    },
+    "local_verified": true,
+    "github_verified": true,
+    "github_reason": "valid",
+    "preserved_third_party": false
+  },
+  {
+    "sha": "7712a1f0e43ff6183b1e5f59bc30aa2487cec091",
+    "subject": "Add bounded context-aware template compilation",
+    "author": {
+      "name": "Ashton Kinslow",
+      "email": "github@ashtonkinslow.com",
+      "date": "2026-11-07T23:32:22Z"
+    },
+    "local_verified": true,
+    "github_verified": true,
+    "github_reason": "valid",
+    "preserved_third_party": false
+  },
+  {
+    "sha": "32997fd20e6986220c8c0b60bfff9cedc49d46b7",
+    "subject": "Record upstream runtime submissions and final foundation handoff",
+    "author": {
+      "name": "Ashton Kinslow",
+      "email": "github@ashtonkinslow.com",
+      "date": "2026-11-07T23:27:54Z"
+    },
+    "local_verified": true,
+    "github_verified": true,
+    "github_reason": "valid",
+    "preserved_third_party": false
+  },
+  {
+    "sha": "9432a63a5850396f8b2346ab15484b6b304adf57",
+    "subject": "Consume compatibility workflow and execution workload fixtures",
+    "author": {
+      "name": "Ashton Kinslow",
+      "email": "github@ashtonkinslow.com",
+      "date": "2026-11-07T23:25:11Z"
+    },
+    "local_verified": true,
+    "github_verified": true,
+    "github_reason": "valid",
+    "preserved_third_party": false
+  },
+  {
+    "sha": "fd1bc81a10c856c9a8139c17162669146b9626d6",
+    "subject": "Share compilation admission across nested execution",
+    "author": {
+      "name": "Ashton Kinslow",
+      "email": "github@ashtonkinslow.com",
+      "date": "2026-11-07T23:25:11Z"
+    },
+    "local_verified": true,
+    "github_verified": true,
+    "github_reason": "valid",
+    "preserved_third_party": false
+  },
+  {
+    "sha": "77025e5a5bbef3d6dd1208c49d16005e77250d77",
+    "subject": "Document runtime contracts and record ownership validation",
+    "author": {
+      "name": "Ashton Kinslow",
+      "email": "github@ashtonkinslow.com",
+      "date": "2026-11-07T23:24:54Z"
+    },
+    "local_verified": true,
+    "github_verified": true,
+    "github_reason": "valid",
+    "preserved_third_party": false
+  },
+  {
+    "sha": "1c63e7808d3f3f118b54b927d0b0b463cfa41d56",
+    "subject": "Merge execution foundation for shared compilation admission",
+    "author": {
+      "name": "Ashton Kinslow",
+      "email": "github@ashtonkinslow.com",
+      "date": "2026-11-07T23:21:52Z"
+    },
+    "local_verified": true,
+    "github_verified": true,
+    "github_reason": "valid",
+    "preserved_third_party": false
+  },
+  {
+    "sha": "bd2479e33d81b0130b72510daea3b4a3a2e69594",
+    "subject": "Prepare bounded data-only input snapshots",
+    "author": {
+      "name": "Ashton Kinslow",
+      "email": "github@ashtonkinslow.com",
+      "date": "2026-11-07T23:21:31Z"
+    },
+    "local_verified": true,
+    "github_verified": true,
+    "github_reason": "valid",
+    "preserved_third_party": false
+  },
+  {
+    "sha": "accce48cdc3d7813eba528c8b90d10697e202f02",
+    "subject": "Add fork compatibility checks and record upstream workload baseline",
+    "author": {
+      "name": "Ashton Kinslow",
+      "email": "github@ashtonkinslow.com",
+      "date": "2026-11-07T23:20:44Z"
+    },
+    "local_verified": true,
+    "github_verified": true,
+    "github_reason": "valid",
+    "preserved_third_party": false
+  },
+  {
+    "sha": "f055df683755104e9d94e2fc3ef5c6b0b937b004",
+    "subject": "Add representative execution and compilation workload fixtures",
+    "author": {
+      "name": "Ashton Kinslow",
+      "email": "github@ashtonkinslow.com",
+      "date": "2026-11-07T23:18:47Z"
+    },
+    "local_verified": true,
+    "github_verified": true,
+    "github_reason": "valid",
+    "preserved_third_party": false
+  },
+  {
+    "sha": "d2f089ce4f617dd512c7eee6b5d825f2c0b57914",
+    "subject": "Reserve numeric scan work and reuse checked sink adapters",
+    "author": {
+      "name": "Ashton Kinslow",
+      "email": "github@ashtonkinslow.com",
+      "date": "2026-11-07T23:17:51Z"
+    },
+    "local_verified": true,
+    "github_verified": true,
+    "github_reason": "valid",
+    "preserved_third_party": false
+  },
+  {
+    "sha": "9a8d22eb1e0888a09fa38e078da44c803e47a4f3",
+    "subject": "Add bounded context-aware template compilation",
+    "author": {
+      "name": "Ashton Kinslow",
+      "email": "github@ashtonkinslow.com",
+      "date": "2026-11-07T23:17:40Z"
+    },
+    "local_verified": true,
+    "github_verified": true,
+    "github_reason": "valid",
+    "preserved_third_party": false
+  },
+  {
+    "sha": "415d548faf12f442c80c3bf64cf195f41b72fb15",
+    "subject": "Exercise parser failure before the lexer reaches trailing source",
+    "author": {
+      "name": "Ashton Kinslow",
+      "email": "github@ashtonkinslow.com",
+      "date": "2026-11-07T23:17:03Z"
+    },
+    "local_verified": true,
+    "github_verified": true,
+    "github_reason": "valid",
+    "preserved_third_party": false
+  },
+  {
+    "sha": "388f28825f7681456984cb3b98c2e3eda65a0013",
+    "subject": "Render Runtime.YieldBlock once and restore its dynamic state",
+    "author": {
+      "name": "Ashton Kinslow",
+      "email": "github@ashtonkinslow.com",
+      "date": "2026-11-07T23:10:47Z"
+    },
+    "local_verified": true,
+    "github_verified": true,
+    "github_reason": "valid",
+    "preserved_third_party": false
+  },
+  {
+    "sha": "86fce7aaa6764c84e0a8df49a5f2a7d88059649c",
+    "subject": "Add synchronous execution context with shared step and depth limits",
+    "author": {
+      "name": "Ashton Kinslow",
+      "email": "github@ashtonkinslow.com",
+      "date": "2026-11-07T23:08:30Z"
+    },
+    "local_verified": true,
+    "github_verified": true,
+    "github_reason": "valid",
+    "preserved_third_party": false
+  },
+  {
+    "sha": "4d419fd6a9650c26077772c413ddb56a24b45286",
+    "subject": "Drive template scanning synchronously from the parser",
+    "author": {
+      "name": "Ashton Kinslow",
+      "email": "github@ashtonkinslow.com",
+      "date": "2026-11-07T23:03:46Z"
+    },
+    "local_verified": true,
+    "github_verified": true,
+    "github_reason": "valid",
+    "preserved_third_party": false
+  },
+  {
+    "sha": "f7f7e22b2c49f2e27db8da8fe43ff46280ab5251",
+    "subject": "Merge upstream cycle detection from CloudyKit/jet#236",
+    "author": {
+      "name": "Ashton Kinslow",
+      "email": "github@ashtonkinslow.com",
+      "date": "2026-11-07T23:01:24Z"
+    },
+    "local_verified": true,
+    "github_verified": true,
+    "github_reason": "valid",
+    "preserved_third_party": false
+  },
+  {
+    "sha": "3863ed9ca0c1eeceea24d5f99f99b7ee54d0fed2",
+    "subject": "Preserve sink failures and release execution state on unwind",
+    "author": {
+      "name": "Ashton Kinslow",
+      "email": "github@ashtonkinslow.com",
+      "date": "2026-11-07T23:00:05Z"
+    },
+    "local_verified": true,
+    "github_verified": true,
+    "github_reason": "valid",
+    "preserved_third_party": false
+  },
+  {
+    "sha": "b0bbc0761fe98bbee4b6c74f7df74454f4c2d333",
+    "subject": "docs: plan metered template execution and upstream contributions",
+    "author": {
+      "name": "Ashton Kinslow",
+      "email": "github@ashtonkinslow.com",
+      "date": "2026-11-07T22:46:30Z"
+    },
+    "local_verified": true,
+    "github_verified": true,
+    "github_reason": "valid",
+    "preserved_third_party": false
+  },
+  {
+    "sha": "c9ec08935ddf15eaf9328128e008faf0bef5e079",
+    "subject": "Return an error for cyclic template dependencies",
+    "author": {
+      "name": "flynn-eye",
+      "email": "939649107@qq.com",
+      "date": "2026-10-30T03:38:22Z"
+    },
+    "local_verified": false,
+    "github_verified": false,
+    "github_reason": "unsigned",
+    "preserved_third_party": true
+  }
+]

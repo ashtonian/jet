@@ -1,0 +1,11 @@
+File: candidate.test
+Type: delay
+Time: 2026-11-08 03:57:34 CST
+Showing nodes accounting for 2.79us, 100% of 2.79us total
+      flat  flat%   sum%        cum   cum%
+    2.79us   100%   100%     2.79us   100%  runtime.unlock (inline)
+         0     0%   100%     2.79us   100%  runtime.findRunnable
+         0     0%   100%     2.79us   100%  runtime.mcall
+         0     0%   100%     2.79us   100%  runtime.park_m
+         0     0%   100%     2.79us   100%  runtime.runSafePointFn
+         0     0%   100%     2.79us   100%  runtime.schedule

@@ -1,0 +1,30 @@
+File: base.test
+Type: alloc_objects
+Time: 2026-11-08 04:13:52 CST
+Showing nodes accounting for 53775212, 100% of 53775212 total
+----------------------------------------------------------+-------------
+      flat  flat%   sum%        cum   cum%   calls calls% + context 	 	 
+----------------------------------------------------------+-------------
+                                            690378   100% |   github.com/CloudyKit/jet/v6.(*inputAdmission).clone
+    690378  1.28%  1.28%     690378  1.28%                | github.com/CloudyKit/jet/v6.(*inputAdmission).enterContainer
+----------------------------------------------------------+-------------
+                                          52852127   100% |   github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0%  1.28%   52852127 98.28%                | github.com/CloudyKit/jet/v6.(*Template).execute
+                                          51705454 97.83% |   github.com/CloudyKit/jet/v6.admitInputScopesInto
+                                            974907  1.84% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+                                            163842  0.31% |   bytes.(*Buffer).String (inline)
+                                              7924 0.015% |   sync.(*Pool).Get
+----------------------------------------------------------+-------------
+                                          51705454   100% |   github.com/CloudyKit/jet/v6.admitInputScopesInto
+         0     0%  1.28%   51705454 96.15%                | github.com/CloudyKit/jet/v6.(*inputAdmission).clone
+                                          14016932 27.11% |   reflect.Value.SetMapIndex
+                                          13866715 26.82% |   reflect.MakeSlice
+                                           9633936 18.63% |   reflect.(*MapIter).Key
+                                           8945796 17.30% |   reflect.(*MapIter).Value
+                                           4551697  8.80% |   reflect.MakeMapWithSize
+                                            690378  1.34% |   github.com/CloudyKit/jet/v6.(*inputAdmission).enterContainer
+----------------------------------------------------------+-------------
+                                          51705454   100% |   github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0%  1.28%   51705454 96.15%                | github.com/CloudyKit/jet/v6.admitInputScopesInto
+                                          51705454   100% |   github.com/CloudyKit/jet/v6.(*inputAdmission).clone
+----------------------------------------------------------+-------------

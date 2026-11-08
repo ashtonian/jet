@@ -1,0 +1,46 @@
+File: candidate.test
+Type: inuse_objects
+Time: 2026-11-08 03:05:52 CST
+Showing nodes accounting for 129, 90.21% of 143 total
+Showing top 40 nodes out of 155
+      flat  flat%   sum%        cum   cum%
+        13  9.09%  9.09%         38 26.57%  testing.(*T).Run
+        11  7.69% 16.78%         20 13.99%  github.com/CloudyKit/jet/v6.NewRestrictedSet
+        10  6.99% 23.78%         10  6.99%  sync.(*Pool).pinSlow
+         8  5.59% 29.37%          9  6.29%  runtime.mallocgc
+         6  4.20% 33.57%          6  4.20%  bytes.growSlice
+         6  4.20% 37.76%          6  4.20%  testing.(*matcher).unique
+         5  3.50% 41.26%          5  3.50%  github.com/CloudyKit/jet/v6.NewSet
+         5  3.50% 44.76%         76 53.15%  github.com/CloudyKit/jet/v6_test.TestExecutionRetentionMeasurements.func1
+         4  2.80% 47.55%          8  5.59%  context.WithCancel
+         4  2.80% 50.35%          4  2.80%  context.withCancel (inline)
+         3  2.10% 52.45%          3  2.10%  bytes.(*Buffer).String (inline)
+         3  2.10% 54.55%          4  2.80%  github.com/CloudyKit/jet/v6.admitTemplateBundle
+         3  2.10% 56.64%          3  2.10%  internal/sync.newEntryNode[go.shape.interface {},go.shape.interface {}] (inline)
+         3  2.10% 58.74%          7  4.90%  testing.newMatcher
+         3  2.10% 60.84%         26 18.18%  testing.runTests
+         2  1.40% 62.24%          2  1.40%  github.com/CloudyKit/fastprinter.newByteSliceBufferPool.func1
+         2  1.40% 63.64%          2  1.40%  github.com/CloudyKit/jet/v6.(*Runtime).evalPrimaryExpressionGroup
+         2  1.40% 65.03%          9  6.29%  github.com/CloudyKit/jet/v6.(*Set).parse
+         2  1.40% 66.43%         28 19.58%  github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext
+         2  1.40% 67.83%          2  1.40%  github.com/CloudyKit/jet/v6.VarMap.Set (inline)
+         2  1.40% 69.23%          2  1.40%  github.com/CloudyKit/jet/v6.init.func2
+         2  1.40% 70.63%          2  1.40%  internal/sync.newIndirectNode[go.shape.interface {},go.shape.interface {}] (inline)
+         2  1.40% 72.03%          2  1.40%  path.(*lazybuf).string (inline)
+         2  1.40% 73.43%         10  6.99%  regexp.compile
+         2  1.40% 74.83%          2  1.40%  regexp.onePassCopy
+         2  1.40% 76.22%          2  1.40%  testing.(*common).Helper
+         2  1.40% 77.62%          2  1.40%  testing.(*common).frameSkip
+         2  1.40% 79.02%          2  1.40%  testing.(*common).setOutputWriter (inline)
+         2  1.40% 80.42%          2  1.40%  testing.newTestState (inline)
+         2  1.40% 81.82%          2  1.40%  testing.rewrite
+         2  1.40% 83.22%          2  1.40%  testing.splitRegexp
+         2  1.40% 84.62%          2  1.40%  time.newTimer
+         1   0.7% 85.31%          1   0.7%  github.com/CloudyKit/jet/v6.(*ListNode).append (inline)
+         1   0.7% 86.01%          1   0.7%  github.com/CloudyKit/jet/v6.(*PipeNode).append (inline)
+         1   0.7% 86.71%          1   0.7%  github.com/CloudyKit/jet/v6.(*Template).newAction
+         1   0.7% 87.41%          1   0.7%  github.com/CloudyKit/jet/v6.(*Template).newCommand
+         1   0.7% 88.11%          1   0.7%  github.com/CloudyKit/jet/v6.(*Template).newIdentifier
+         1   0.7% 88.81%          1   0.7%  github.com/CloudyKit/jet/v6.(*Template).newList
+         1   0.7% 89.51%          1   0.7%  github.com/CloudyKit/jet/v6.(*Template).newPipeline
+         1   0.7% 90.21%          2  1.40%  github.com/CloudyKit/jet/v6.(*cache).Put

@@ -1,0 +1,19 @@
+{
+  "command": [
+    "go",
+    "test",
+    "-race",
+    "-p=2",
+    "-parallel=2",
+    "-count=1",
+    "-timeout=90s",
+    "./..."
+  ],
+  "execution_deadline_seconds": 150,
+  "term_cleanup_seconds": 5,
+  "start": 1794093638.949715,
+  "end": 1794093646.342185,
+  "exit_code": 0,
+  "timed_out": false,
+  "input_manifest": "independent-full-inputs.json"
+}

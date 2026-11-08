@@ -1,0 +1,31 @@
+File: base.test
+Type: alloc_space
+Time: 2026-11-08 04:13:52 CST
+Showing nodes accounting for 2772.15MB, 99.74% of 2779.33MB total
+Dropped 19 nodes (cum <= 13.90MB)
+      flat  flat%   sum%        cum   cum%
+ 1194.83MB 42.99% 42.99%  1194.83MB 42.99%  reflect.mapassign_faststr0
+  571.29MB 20.55% 63.54%   571.29MB 20.55%  reflect.makemap
+  431.01MB 15.51% 79.05%   431.01MB 15.51%  reflect.unsafe_New
+  230.51MB  8.29% 87.35%   230.51MB  8.29%  reflect.unsafe_NewArray
+  161.50MB  5.81% 93.16%   392.01MB 14.10%  reflect.MakeSlice
+   67.51MB  2.43% 95.59%    67.51MB  2.43%  github.com/CloudyKit/jet/v6.(*inputAdmission).enterContainer
+   59.50MB  2.14% 97.73%    59.50MB  2.14%  bytes.(*Buffer).grow
+      56MB  2.01% 99.74%  2777.15MB 99.92%  github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext
+         0     0% 99.74%    59.50MB  2.14%  bytes.(*Buffer).Write
+         0     0% 99.74%    59.50MB  2.14%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 99.74%  2721.15MB 97.91%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0% 99.74%  2721.15MB 97.91%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0% 99.74%    59.50MB  2.14%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+         0     0% 99.74%  2656.64MB 95.59%  github.com/CloudyKit/jet/v6.(*inputAdmission).clone
+         0     0% 99.74%  2777.15MB 99.92%  github.com/CloudyKit/jet/v6.BenchmarkAdmissionInput.func1
+         0     0% 99.74%  2656.64MB 95.59%  github.com/CloudyKit/jet/v6.admitInputScopesInto
+         0     0% 99.74%      147MB  5.29%  reflect.(*MapIter).Key
+         0     0% 99.74%   136.50MB  4.91%  reflect.(*MapIter).Value
+         0     0% 99.74%   571.29MB 20.55%  reflect.MakeMapWithSize
+         0     0% 99.74%  1342.33MB 48.30%  reflect.Value.SetMapIndex
+         0     0% 99.74%   147.50MB  5.31%  reflect.Value.assignTo
+         0     0% 99.74%   283.50MB 10.20%  reflect.copyVal
+         0     0% 99.74%  1194.83MB 42.99%  reflect.mapassign_faststr
+         0     0% 99.74%  2777.15MB 99.92%  testing.(*B).launch
+         0     0% 99.74%  2777.15MB 99.92%  testing.(*B).runN

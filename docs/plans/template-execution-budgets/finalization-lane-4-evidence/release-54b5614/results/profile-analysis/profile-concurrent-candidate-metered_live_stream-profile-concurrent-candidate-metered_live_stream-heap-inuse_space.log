@@ -1,0 +1,18 @@
+File: candidate.test
+Type: inuse_space
+Time: 2026-11-08 03:03:53 CST
+Showing nodes accounting for 3.01MB, 100% of 3.01MB total
+      flat  flat%   sum%        cum   cum%
+    3.01MB   100%   100%     3.01MB   100%  runtime.mallocgc
+         0     0%   100%     3.01MB   100%  runtime.allocm
+         0     0%   100%        1MB 33.33%  runtime.mcall
+         0     0%   100%        2MB 66.67%  runtime.mstart
+         0     0%   100%        2MB 66.67%  runtime.mstart0
+         0     0%   100%        2MB 66.67%  runtime.mstart1
+         0     0%   100%     3.01MB   100%  runtime.newm
+         0     0%   100%     3.01MB   100%  runtime.newobject
+         0     0%   100%        1MB 33.33%  runtime.park_m
+         0     0%   100%     2.50MB 83.33%  runtime.resetspinning
+         0     0%   100%     3.01MB   100%  runtime.schedule
+         0     0%   100%     3.01MB   100%  runtime.startm
+         0     0%   100%     3.01MB   100%  runtime.wakep

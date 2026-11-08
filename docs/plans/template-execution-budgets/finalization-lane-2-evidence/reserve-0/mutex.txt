@@ -1,0 +1,20 @@
+File: reserve-0.test
+Type: delay
+Time: 2026-11-08 01:51:36 CST
+Showing nodes accounting for 5.33us, 100% of 5.33us total
+Showing top 14 nodes out of 27
+      flat  flat%   sum%        cum   cum%
+    5.33us   100%   100%     5.33us   100%  runtime.unlock (inline)
+         0     0%   100%     0.04us  0.77%  github.com/CloudyKit/jet/v6.(*Runtime).startCompilation
+         0     0%   100%     0.04us  0.77%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0%   100%     0.04us  0.77%  github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext
+         0     0%   100%     0.04us  0.77%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0%   100%     0.04us  0.77%  github.com/CloudyKit/jet/v6.newParseAdmission
+         0     0%   100%     0.04us  0.77%  github.com/CloudyKit/jet/v6_test.BenchmarkOutputReserve.func1.1
+         0     0%   100%     0.04us  0.77%  github.com/CloudyKit/jet/v6_test.BenchmarkOutputReserve.func1.2
+         0     0%   100%     0.04us  0.77%  internal/runtime/maps.NewEmptyMap (inline)
+         0     0%   100%     0.04us  0.77%  runtime.addspecial
+         0     0%   100%     5.29us 99.23%  runtime.gcBgMarkWorker
+         0     0%   100%     5.29us 99.23%  runtime.gcMarkDone
+         0     0%   100%     5.29us 99.23%  runtime.gcMarkTermination
+         0     0%   100%     5.29us 99.23%  runtime.gcMarkTermination.func3

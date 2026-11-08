@@ -1,0 +1,6 @@
+{
+  "profiles": 117,
+  "reports": 540,
+  "failures": [],
+  "interpretation": "Read the generated call/source and bytes/objects views; sparse heap is not retention proof. Capture logs contain native time/RSS observations. Instrumented timings are excluded from release comparisons."
+}

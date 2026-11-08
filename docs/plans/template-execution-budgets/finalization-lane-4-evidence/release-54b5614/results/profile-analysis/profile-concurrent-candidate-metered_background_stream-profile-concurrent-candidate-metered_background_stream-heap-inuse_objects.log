@@ -1,0 +1,21 @@
+File: candidate.test
+Type: inuse_objects
+Time: 2026-11-08 03:03:44 CST
+Showing nodes accounting for 7255, 100% of 7255 total
+      flat  flat%   sum%        cum   cum%
+      7255   100%   100%       7255   100%  runtime.mallocgc
+         0     0%   100%       5461 75.27%  runtime.(*scavengerState).init
+         0     0%   100%       1794 24.73%  runtime.allocm
+         0     0%   100%       5461 75.27%  runtime.bgscavenge
+         0     0%   100%        256  3.53%  runtime.goexit0
+         0     0%   100%        769 10.60%  runtime.mcall
+         0     0%   100%       1025 14.13%  runtime.mstart
+         0     0%   100%       1025 14.13%  runtime.mstart0
+         0     0%   100%       1025 14.13%  runtime.mstart1
+         0     0%   100%       1794 24.73%  runtime.newm
+         0     0%   100%       7255   100%  runtime.newobject
+         0     0%   100%        513  7.07%  runtime.park_m
+         0     0%   100%       1538 21.20%  runtime.resetspinning
+         0     0%   100%       1794 24.73%  runtime.schedule
+         0     0%   100%       1794 24.73%  runtime.startm
+         0     0%   100%       1794 24.73%  runtime.wakep

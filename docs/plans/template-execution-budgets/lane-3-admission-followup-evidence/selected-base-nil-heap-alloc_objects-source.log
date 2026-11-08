@@ -1,0 +1,55 @@
+Total: 40729217
+ROUTINE ======================== github.com/CloudyKit/jet/v6.(*Template).execute in .git/admission-followup/base-frozen/exec.go.txt
+         0   27165718 (flat, cum) 66.70% of Total
+         .          .     75:func (t *Template) execute(ctx context.Context, w io.Writer, variables VarMap, data interface{}, opts ExecutionOptions) (err error) {
+         .          .     76:	var owned *restrictedSink
+         .          .     77:	if policy := t.set.restricted; policy != nil {
+         .          .     78:		var ok bool
+         .          .     79:		owned, ok = w.(*restrictedSink)
+         .          .     80:		if !ok || owned.owner != t {
+         .          .     81:			return fmt.Errorf("%w: use RenderRestrictedContext with an owned result", ErrCapabilityDenied)
+         .          .     82:		}
+         .          .     83:		if ctx == nil {
+         .          .     84:			return ErrInvalidOptions
+         .          .     85:		}
+         .          .     86:		opts = constrainExecution(opts, policy.execution)
+         .          .     87:		inputVars := borrowInputVars(policy.globals, variables)
+         .          .     88:		defer releaseInputVars(inputVars)
+         .          .     89:		variables, data, err = admitInputScopesInto(ctx, []VarMap{policy.globals, variables}, data, policy.input, inputVars)
+         .          .     90:		if err != nil {
+         .          .     91:			return inputContextError(ctx, err)
+         .          .     92:		}
+         .          .     93:	}
+         .          .     94:	st := pool_State.Get().(*Runtime)
+         .          .     95:	defer st.recover(&err)
+         .          .     96:
+         .          .     97:	st.execution = executionState{ctx: ctx, checkContext: ctx != nil && ctx != context.Background() && ctx != context.TODO(), options: opts, remaining: opts.MaxSteps, values: uint64(opts.MaxValueBytes), output: uint64(opts.MaxOutputBytes)}
+         .          .     98:	st.checkpoint(0)
+         .          .     99:	st.blocks = t.processedBlocks
+         .          .    100:	st.variables = variables
+         .          .    101:	st.set = t.set
+         .          .    102:	st.writeErr = nil
+         .          .    103:	st.rootSink = st.checkedOutput(w)
+         .          .    104:	if owned != nil {
+         .          .    105:		st.rootSink.writer = &owned.buffer
+         .          .    106:		st.rootSink.buffer = &owned.buffer
+         .          .    107:		st.rootSink.retained = &owned.buffer
+         .          .    108:	}
+         .          .    109:	st.Writer = &st.rootSink
+         .          .    110:
+         .          .    111:	st.startCompilation(t)
+         .          .    112:	root := st.templateRoot(t)
+         .          .    113:
+         .          .    114:	if data != nil {
+         .          .    115:		st.context = reflect.ValueOf(data)
+         .          .    116:	}
+         .          .    117:
+         .   13796170    118:	st.executeList(root)
+         .          .    119:	st.checkpoint(0)
+         .          .    120:	if owned != nil {
+         .          .    121:		st.reserveValue(int64(owned.buffer.Len()))
+         .   13369548    122:		owned.result = owned.buffer.String()
+         .          .    123:		st.checkpoint(0)
+         .          .    124:	}
+         .          .    125:	return
+         .          .    126:}

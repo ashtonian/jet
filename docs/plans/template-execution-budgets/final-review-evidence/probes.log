@@ -1,0 +1,130 @@
+
+legacy-upstream
+gate-lock: held by pid 16978 on studio, "jet-final-legacy-upstream", since 2026-11-08T06:48:46Z, 2 of 6 focused cores
+=== RUN   TestReviewLegacyPanicBoundary
+=== RUN   TestReviewLegacyPanicBoundary/named_key_lookup
+    review_legacy_probe_test.go:12: escaped panic (string): reflect.Value.MapIndex: value of type string is not assignable to type jet_test.legacyReviewStringKey
+=== RUN   TestReviewLegacyPanicBoundary/typed_assignment
+    review_legacy_probe_test.go:12: escaped panic (string): reflect.Value.SetMapIndex: value of type float64 is not assignable to type string
+=== RUN   TestReviewLegacyPanicBoundary/nil_assignment
+    review_legacy_probe_test.go:12: escaped panic (runtime.plainError): assignment to entry in nil map
+=== RUN   TestReviewLegacyPanicBoundary/array_slice
+    review_legacy_probe_test.go:12: escaped panic (string): reflect.Value.Slice: slice of unaddressable array
+=== RUN   TestReviewLegacyPanicBoundary/odd_map
+    review_legacy_probe_test.go:12: escaped panic (string): map(): incomplete key-value pair (even number of arguments required)
+--- PASS: TestReviewLegacyPanicBoundary (0.00s)
+    --- PASS: TestReviewLegacyPanicBoundary/named_key_lookup (0.00s)
+    --- PASS: TestReviewLegacyPanicBoundary/typed_assignment (0.00s)
+    --- PASS: TestReviewLegacyPanicBoundary/nil_assignment (0.00s)
+    --- PASS: TestReviewLegacyPanicBoundary/array_slice (0.00s)
+    --- PASS: TestReviewLegacyPanicBoundary/odd_map (0.00s)
+PASS
+ok  	github.com/CloudyKit/jet/v6	0.264s
+
+legacy-candidate
+gate-lock: held by pid 16979 on studio, "jet-final-legacy-candidate", since 2026-11-08T06:48:46Z, 2 of 6 focused cores
+=== RUN   TestReviewLegacyPanicBoundary
+=== RUN   TestReviewLegacyPanicBoundary/named_key_lookup
+    review_legacy_probe_test.go:12: escaped panic (string): reflect.Value.MapIndex: value of type string is not assignable to type jet_test.legacyReviewStringKey
+=== RUN   TestReviewLegacyPanicBoundary/typed_assignment
+    review_legacy_probe_test.go:12: escaped panic (string): reflect.Value.SetMapIndex: value of type float64 is not assignable to type string
+=== RUN   TestReviewLegacyPanicBoundary/nil_assignment
+    review_legacy_probe_test.go:12: escaped panic (runtime.plainError): assignment to entry in nil map
+=== RUN   TestReviewLegacyPanicBoundary/array_slice
+    review_legacy_probe_test.go:12: escaped panic (string): reflect.Value.Slice: slice of unaddressable array
+=== RUN   TestReviewLegacyPanicBoundary/odd_map
+    review_legacy_probe_test.go:12: escaped panic (string): map(): incomplete key-value pair (even number of arguments required)
+--- PASS: TestReviewLegacyPanicBoundary (0.00s)
+    --- PASS: TestReviewLegacyPanicBoundary/named_key_lookup (0.00s)
+    --- PASS: TestReviewLegacyPanicBoundary/typed_assignment (0.00s)
+    --- PASS: TestReviewLegacyPanicBoundary/nil_assignment (0.00s)
+    --- PASS: TestReviewLegacyPanicBoundary/array_slice (0.00s)
+    --- PASS: TestReviewLegacyPanicBoundary/odd_map (0.00s)
+PASS
+ok  	github.com/CloudyKit/jet/v6	0.444s
+
+final-probes-normal
+gate-lock: held by pid 59348 on studio, "jet-final-final-probes-normal", since 2026-11-08T06:55:53Z, 2 of 6 focused cores
+=== RUN   TestReviewSinkDiagnostic
+=== RUN   TestReviewSinkDiagnostic/legacy
+    review_extra_test.go:11: lost template location: sink failed
+=== RUN   TestReviewSinkDiagnostic/metered
+    review_extra_test.go:11: lost template location: sink failed
+--- FAIL: TestReviewSinkDiagnostic (0.00s)
+    --- FAIL: TestReviewSinkDiagnostic/legacy (0.00s)
+    --- FAIL: TestReviewSinkDiagnostic/metered (0.00s)
+=== RUN   TestReviewCatchCompatibility
+=== RUN   TestReviewCatchCompatibility/legacy
+    review_extra_test.go:21: result="" buffer="Jet Runtime Error (&#34;/main&#34;:1): identifier &#34;missing&#34; not available in current (map[]) or parent scope, global, or default variables" err=<nil>
+=== RUN   TestReviewCatchCompatibility/metered
+    review_extra_test.go:21: result="" buffer="Jet Runtime Error (&#34;/main&#34;:1): identifier &#34;missing&#34; not available in current or parent scope, global, or default variables" err=<nil>
+=== RUN   TestReviewCatchCompatibility/restricted
+    review_extra_test.go:21: result="" buffer="" err=jet: capability denied: data with methods
+    review_extra_test.go:22: ordinary catch rendering failed: jet: capability denied: data with methods
+--- FAIL: TestReviewCatchCompatibility (0.00s)
+    --- PASS: TestReviewCatchCompatibility/legacy (0.00s)
+    --- PASS: TestReviewCatchCompatibility/metered (0.00s)
+    --- FAIL: TestReviewCatchCompatibility/restricted (0.00s)
+=== RUN   TestReviewRestrictedPanicBoundary
+=== RUN   TestReviewRestrictedPanicBoundary/named_key_lookup
+    review_probe_test.go:22: RenderRestrictedContext escaped panic (string): reflect.Value.MapIndex: value of type string is not assignable to type jet_test.reviewStringKey
+=== RUN   TestReviewRestrictedPanicBoundary/typed_assignment
+    review_probe_test.go:22: RenderRestrictedContext escaped panic (string): reflect.Value.SetMapIndex: value of type float64 is not assignable to type string
+=== RUN   TestReviewRestrictedPanicBoundary/nil_assignment
+    review_probe_test.go:22: RenderRestrictedContext escaped panic (runtime.plainError): assignment to entry in nil map
+=== RUN   TestReviewRestrictedPanicBoundary/unaddressable_array_slice
+    review_probe_test.go:22: RenderRestrictedContext escaped panic (string): reflect.Value.Slice: slice of unaddressable array
+=== RUN   TestReviewRestrictedPanicBoundary/odd_map_arguments
+    review_probe_test.go:22: RenderRestrictedContext escaped panic (string): map(): incomplete key-value pair (even number of arguments required)
+--- FAIL: TestReviewRestrictedPanicBoundary (0.00s)
+    --- FAIL: TestReviewRestrictedPanicBoundary/named_key_lookup (0.00s)
+    --- FAIL: TestReviewRestrictedPanicBoundary/typed_assignment (0.00s)
+    --- FAIL: TestReviewRestrictedPanicBoundary/nil_assignment (0.00s)
+    --- FAIL: TestReviewRestrictedPanicBoundary/unaddressable_array_slice (0.00s)
+    --- FAIL: TestReviewRestrictedPanicBoundary/odd_map_arguments (0.00s)
+FAIL
+FAIL	github.com/CloudyKit/jet/v6	0.233s
+FAIL
+
+final-probes-race
+gate-lock: held by pid 59555 on studio, "jet-final-final-probes-race", since 2026-11-08T06:55:54Z, 2 of 6 focused cores
+=== RUN   TestReviewSinkDiagnostic
+=== RUN   TestReviewSinkDiagnostic/legacy
+    review_extra_test.go:11: lost template location: sink failed
+=== RUN   TestReviewSinkDiagnostic/metered
+    review_extra_test.go:11: lost template location: sink failed
+--- FAIL: TestReviewSinkDiagnostic (0.00s)
+    --- FAIL: TestReviewSinkDiagnostic/legacy (0.00s)
+    --- FAIL: TestReviewSinkDiagnostic/metered (0.00s)
+=== RUN   TestReviewCatchCompatibility
+=== RUN   TestReviewCatchCompatibility/legacy
+    review_extra_test.go:21: result="" buffer="Jet Runtime Error (&#34;/main&#34;:1): identifier &#34;missing&#34; not available in current (map[]) or parent scope, global, or default variables" err=<nil>
+=== RUN   TestReviewCatchCompatibility/metered
+    review_extra_test.go:21: result="" buffer="Jet Runtime Error (&#34;/main&#34;:1): identifier &#34;missing&#34; not available in current or parent scope, global, or default variables" err=<nil>
+=== RUN   TestReviewCatchCompatibility/restricted
+    review_extra_test.go:21: result="" buffer="" err=jet: capability denied: data with methods
+    review_extra_test.go:22: ordinary catch rendering failed: jet: capability denied: data with methods
+--- FAIL: TestReviewCatchCompatibility (0.00s)
+    --- PASS: TestReviewCatchCompatibility/legacy (0.00s)
+    --- PASS: TestReviewCatchCompatibility/metered (0.00s)
+    --- FAIL: TestReviewCatchCompatibility/restricted (0.00s)
+=== RUN   TestReviewRestrictedPanicBoundary
+=== RUN   TestReviewRestrictedPanicBoundary/named_key_lookup
+    review_probe_test.go:22: RenderRestrictedContext escaped panic (string): reflect.Value.MapIndex: value of type string is not assignable to type jet_test.reviewStringKey
+=== RUN   TestReviewRestrictedPanicBoundary/typed_assignment
+    review_probe_test.go:22: RenderRestrictedContext escaped panic (string): reflect.Value.SetMapIndex: value of type float64 is not assignable to type string
+=== RUN   TestReviewRestrictedPanicBoundary/nil_assignment
+    review_probe_test.go:22: RenderRestrictedContext escaped panic (runtime.plainError): assignment to entry in nil map
+=== RUN   TestReviewRestrictedPanicBoundary/unaddressable_array_slice
+    review_probe_test.go:22: RenderRestrictedContext escaped panic (string): reflect.Value.Slice: slice of unaddressable array
+=== RUN   TestReviewRestrictedPanicBoundary/odd_map_arguments
+    review_probe_test.go:22: RenderRestrictedContext escaped panic (string): map(): incomplete key-value pair (even number of arguments required)
+--- FAIL: TestReviewRestrictedPanicBoundary (0.00s)
+    --- FAIL: TestReviewRestrictedPanicBoundary/named_key_lookup (0.00s)
+    --- FAIL: TestReviewRestrictedPanicBoundary/typed_assignment (0.00s)
+    --- FAIL: TestReviewRestrictedPanicBoundary/nil_assignment (0.00s)
+    --- FAIL: TestReviewRestrictedPanicBoundary/unaddressable_array_slice (0.00s)
+    --- FAIL: TestReviewRestrictedPanicBoundary/odd_map_arguments (0.00s)
+FAIL
+FAIL	github.com/CloudyKit/jet/v6	0.271s
+FAIL

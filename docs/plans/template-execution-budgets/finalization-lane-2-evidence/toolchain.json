@@ -1,0 +1,13 @@
+{
+  "GOARCH": "arm64",
+  "GOFLAGS": "-trimpath",
+  "GOMOD": "<checkout>/go.mod",
+  "GOOS": "darwin",
+  "GOTOOLCHAIN": "auto",
+  "GOWORK": "",
+  "version": "go version go1.27.3 darwin/arm64",
+  "dependencies": {
+    "go.mod": "39138bd19e0eb24f0cf5a3549ba910c5765e6b21ac16ee5c15644002790b4a16",
+    "go.sum": "f4907598759ad7959b479cdaebbdb706ad77612abd0f5172acab8f15548fefee"
+  }
+}

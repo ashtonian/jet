@@ -1,0 +1,24 @@
+File: correctness.test
+Type: delay
+Time: 2026-11-08 03:03:07 CST
+Showing nodes accounting for 23.90s, 99.71% of 23.97s total
+Dropped 79 nodes (cum <= 0.12s)
+      flat  flat%   sum%        cum   cum%
+    15.99s 66.70% 66.70%     15.99s 66.70%  runtime.chanrecv1
+     7.91s 33.01% 99.71%      7.91s 33.01%  sync.(*WaitGroup).Wait
+         0     0% 99.71%      7.93s 33.06%  github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes
+         0     0% 99.71%      7.91s 33.01%  github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes.func1
+         0     0% 99.71%      8.05s 33.59%  main.main
+         0     0% 99.71%      8.05s 33.59%  runtime.main
+         0     0% 99.71%     15.86s 66.15%  testing.(*B).Run
+         0     0% 99.71%      7.92s 33.05%  testing.(*B).doBench
+         0     0% 99.71%      7.91s 33.00%  testing.(*B).doBench.gowrap1
+         0     0% 99.71%      7.91s 33.00%  testing.(*B).launch
+         0     0% 99.71%      7.92s 33.05%  testing.(*B).run
+         0     0% 99.71%      7.94s 33.11%  testing.(*B).run1
+         0     0% 99.71%      7.93s 33.07%  testing.(*B).run1.func1
+         0     0% 99.71%     23.77s 99.16%  testing.(*B).runN
+         0     0% 99.71%      8.05s 33.59%  testing.(*M).Run
+         0     0% 99.71%      7.92s 33.05%  testing.(*benchState).processBench
+         0     0% 99.71%      7.93s 33.09%  testing.runBenchmarks
+         0     0% 99.71%      7.93s 33.09%  testing.runBenchmarks.func1

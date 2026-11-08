@@ -1,0 +1,27 @@
+goos: darwin
+goarch: arm64
+pkg: github.com/CloudyKit/jet/v6
+cpu: Apple M2 Max
+                                                         │ .git/finalization/follow-pair-base4.txt │ .git/finalization/follow-pair-pooled4.txt │ .git/finalization/follow-pair-active8.txt │
+                                                         │                 sec/op                  │       sec/op         vs base              │       sec/op        vs base               │
+FinalReview/restricted_owned/header_interpolation/text-2                              644.0n ±  4%           584.9n ± 5%  -9.17% (p=0.002 n=6)         546.0n ± 12%  -15.23% (p=0.002 n=6)
+FinalReview/restricted_owned/header_interpolation/html-2                              661.6n ± 12%           601.7n ± 6%  -9.06% (p=0.004 n=6)         586.6n ±  4%  -11.34% (p=0.002 n=6)
+FinalReview/restricted_owned/include/text-2                                           947.4n ±  6%           896.5n ± 6%  -5.37% (p=0.015 n=6)         882.3n ±  5%   -6.87% (p=0.004 n=6)
+FinalReview/restricted_owned/include/html-2                                           991.8n ±  6%           899.1n ± 6%  -9.34% (p=0.009 n=6)         850.7n ±  9%  -14.22% (p=0.002 n=6)
+geomean                                                                               795.4n                 729.8n       -8.25%                       700.2n        -11.97%
+
+                                                         │ .git/finalization/follow-pair-base4.txt │ .git/finalization/follow-pair-pooled4.txt │ .git/finalization/follow-pair-active8.txt │
+                                                         │                  B/op                   │        B/op         vs base               │        B/op         vs base               │
+FinalReview/restricted_owned/header_interpolation/text-2                                720.0 ± 0%           320.0 ± 0%  -55.56% (p=0.002 n=6)           320.0 ± 0%  -55.56% (p=0.002 n=6)
+FinalReview/restricted_owned/header_interpolation/html-2                                720.0 ± 0%           320.0 ± 0%  -55.56% (p=0.002 n=6)           320.0 ± 0%  -55.56% (p=0.002 n=6)
+FinalReview/restricted_owned/include/text-2                                             816.0 ± 0%           416.0 ± 0%  -49.02% (p=0.002 n=6)           416.0 ± 0%  -49.02% (p=0.002 n=6)
+FinalReview/restricted_owned/include/html-2                                             816.0 ± 0%           416.0 ± 0%  -49.02% (p=0.002 n=6)           416.0 ± 0%  -49.02% (p=0.002 n=6)
+geomean                                                                                 766.5                364.9       -52.40%                         364.9       -52.40%
+
+                                                         │ .git/finalization/follow-pair-base4.txt │ .git/finalization/follow-pair-pooled4.txt │ .git/finalization/follow-pair-active8.txt │
+                                                         │                allocs/op                │     allocs/op       vs base               │     allocs/op       vs base               │
+FinalReview/restricted_owned/header_interpolation/text-2                                9.000 ± 0%           7.000 ± 0%  -22.22% (p=0.002 n=6)           7.000 ± 0%  -22.22% (p=0.002 n=6)
+FinalReview/restricted_owned/header_interpolation/html-2                                9.000 ± 0%           7.000 ± 0%  -22.22% (p=0.002 n=6)           7.000 ± 0%  -22.22% (p=0.002 n=6)
+FinalReview/restricted_owned/include/text-2                                             14.00 ± 0%           12.00 ± 0%  -14.29% (p=0.002 n=6)           12.00 ± 0%  -14.29% (p=0.002 n=6)
+FinalReview/restricted_owned/include/html-2                                             14.00 ± 0%           12.00 ± 0%  -14.29% (p=0.002 n=6)           12.00 ± 0%  -14.29% (p=0.002 n=6)
+geomean                                                                                 11.22                9.165       -18.35%                         9.165       -18.35%

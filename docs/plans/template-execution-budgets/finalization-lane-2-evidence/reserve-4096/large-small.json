@@ -1,0 +1,22 @@
+{
+  "variant": "4096",
+  "stage": "large-small",
+  "command": [
+    "/usr/bin/time",
+    "-l",
+    "<artifacts>/reserve-4096.test",
+    "-test.run=^TestOutputOwnedLargeThenSmall$",
+    "-test.count=30",
+    "-test.memprofile=<artifacts>/reserve-4096/large-small.pprof",
+    "-test.memprofilerate=1"
+  ],
+  "environment": {
+    "GOMAXPROCS": "2"
+  },
+  "deadline_seconds": 100,
+  "cleanup_seconds": 5,
+  "exit_code": 0,
+  "binary_sha256": "1ebd725da47bc735420c7b48bc9e49f6122a27908d1e5771c54022e4412e4681",
+  "started": 1794124344.859434,
+  "finished": 1794124344.899037
+}

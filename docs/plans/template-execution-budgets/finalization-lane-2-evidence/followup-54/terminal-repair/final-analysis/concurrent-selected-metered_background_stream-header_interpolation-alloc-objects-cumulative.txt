@@ -1,0 +1,33 @@
+File: render.test
+Type: alloc_objects
+Time: 2026-11-08 05:27:37 CST
+Showing nodes accounting for 46895, 99.81% of 46982 total
+Dropped 26 nodes (cum <= 234)
+      flat  flat%   sum%        cum   cum%
+         0     0%     0%      43700 93.01%  github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes
+         0     0%     0%      43700 93.01%  testing.(*B).run1.func1
+         0     0%     0%      43700 93.01%  testing.(*B).runN
+         0     0%     0%      32567 69.32%  regexp.Compile (inline)
+      6554 13.95% 13.95%      32567 69.32%  regexp.compile
+         0     0% 13.95%      32567 69.32%  testing.(*B).Run
+         0     0% 13.95%      32567 69.32%  testing.(*matcher).fullName
+         0     0% 13.95%      32567 69.32%  testing.simpleMatch.matches
+         0     0% 13.95%      32567 69.32%  testing/internal/testdeps.TestDeps.MatchString
+         0     0% 13.95%      16385 34.88%  regexp/syntax.Parse (inline)
+      8193 17.44% 31.39%      16385 34.88%  regexp/syntax.parse
+       128  0.27% 31.66%      11133 23.70%  github.com/CloudyKit/jet/v6_test.measurementWorkloads
+     10923 23.25% 54.91%      10923 23.25%  github.com/CloudyKit/jet/v6_test.additionalExecutionWorkloads
+         0     0% 54.91%       8192 17.44%  regexp/syntax.(*parser).literal
+      8192 17.44% 72.35%       8192 17.44%  regexp/syntax.(*parser).maybeConcat
+         0     0% 72.35%       8192 17.44%  regexp/syntax.(*parser).push
+         0     0% 72.35%       6747 14.36%  regexp/syntax.(*compiler).compile
+      6747 14.36% 86.71%       6747 14.36%  regexp/syntax.(*compiler).inst (inline)
+         0     0% 86.71%       6747 14.36%  regexp/syntax.Compile
+         0     0% 86.71%       6405 13.63%  regexp/syntax.(*compiler).rune
+         0     0% 86.71%       3281  6.98%  runtime/pprof.profileWriter
+      3277  6.98% 93.68%       3277  6.98%  compress/gzip.NewWriterLevel
+         0     0% 93.68%       3277  6.98%  runtime/pprof.newProfileBuilder
+         0     0% 93.68%       2881  6.13%  regexp.compileOnePass
+      2075  4.42% 98.10%       2075  4.42%  regexp.makeOnePass
+       806  1.72% 99.81%        806  1.72%  regexp.onePassCopy
+         0     0% 99.81%        342  0.73%  regexp/syntax.(*compiler).empty (inline)

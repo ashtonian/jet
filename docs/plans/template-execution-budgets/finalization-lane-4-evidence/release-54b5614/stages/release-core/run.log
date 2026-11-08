@@ -1,0 +1,108 @@
+START core-upstream-legacy_stream-0
+END core-upstream-legacy_stream-0 exit=0
+START core-candidate-legacy_stream-0
+END core-candidate-legacy_stream-0 exit=0
+START core-correctness-legacy_stream-0
+END core-correctness-legacy_stream-0 exit=0
+START core-candidate-metered_background_stream-0
+END core-candidate-metered_background_stream-0 exit=0
+START core-upstream-legacy_owned-0
+END core-upstream-legacy_owned-0 exit=0
+START core-candidate-restricted_owned-0
+END core-candidate-restricted_owned-0 exit=0
+START core-correctness-legacy_owned-0
+END core-correctness-legacy_owned-0 exit=0
+START core-candidate-metered_live_stream-0
+END core-candidate-metered_live_stream-0 exit=0
+START core-candidate-legacy_owned-0
+END core-candidate-legacy_owned-0 exit=0
+START core-candidate-legacy_stream-1
+END core-candidate-legacy_stream-1 exit=0
+START core-correctness-legacy_stream-1
+END core-correctness-legacy_stream-1 exit=0
+START core-candidate-metered_background_stream-1
+END core-candidate-metered_background_stream-1 exit=0
+START core-upstream-legacy_owned-1
+END core-upstream-legacy_owned-1 exit=0
+START core-candidate-restricted_owned-1
+END core-candidate-restricted_owned-1 exit=0
+START core-correctness-legacy_owned-1
+END core-correctness-legacy_owned-1 exit=0
+START core-candidate-metered_live_stream-1
+END core-candidate-metered_live_stream-1 exit=0
+START core-candidate-legacy_owned-1
+END core-candidate-legacy_owned-1 exit=0
+START core-upstream-legacy_stream-1
+END core-upstream-legacy_stream-1 exit=0
+START core-correctness-legacy_stream-2
+END core-correctness-legacy_stream-2 exit=0
+START core-candidate-metered_background_stream-2
+END core-candidate-metered_background_stream-2 exit=0
+START core-upstream-legacy_owned-2
+END core-upstream-legacy_owned-2 exit=0
+START core-candidate-restricted_owned-2
+END core-candidate-restricted_owned-2 exit=0
+START core-correctness-legacy_owned-2
+END core-correctness-legacy_owned-2 exit=0
+START core-candidate-metered_live_stream-2
+END core-candidate-metered_live_stream-2 exit=0
+START core-candidate-legacy_owned-2
+END core-candidate-legacy_owned-2 exit=0
+START core-upstream-legacy_stream-2
+END core-upstream-legacy_stream-2 exit=0
+START core-candidate-legacy_stream-2
+END core-candidate-legacy_stream-2 exit=0
+START core-candidate-metered_background_stream-3
+END core-candidate-metered_background_stream-3 exit=0
+START core-upstream-legacy_owned-3
+END core-upstream-legacy_owned-3 exit=0
+START core-candidate-restricted_owned-3
+END core-candidate-restricted_owned-3 exit=0
+START core-correctness-legacy_owned-3
+END core-correctness-legacy_owned-3 exit=0
+START core-candidate-metered_live_stream-3
+END core-candidate-metered_live_stream-3 exit=0
+START core-candidate-legacy_owned-3
+END core-candidate-legacy_owned-3 exit=0
+START core-upstream-legacy_stream-3
+END core-upstream-legacy_stream-3 exit=0
+START core-candidate-legacy_stream-3
+END core-candidate-legacy_stream-3 exit=0
+START core-correctness-legacy_stream-3
+END core-correctness-legacy_stream-3 exit=0
+START core-upstream-legacy_owned-4
+END core-upstream-legacy_owned-4 exit=0
+START core-candidate-restricted_owned-4
+END core-candidate-restricted_owned-4 exit=0
+START core-correctness-legacy_owned-4
+END core-correctness-legacy_owned-4 exit=0
+START core-candidate-metered_live_stream-4
+END core-candidate-metered_live_stream-4 exit=0
+START core-candidate-legacy_owned-4
+END core-candidate-legacy_owned-4 exit=0
+START core-upstream-legacy_stream-4
+END core-upstream-legacy_stream-4 exit=0
+START core-candidate-legacy_stream-4
+END core-candidate-legacy_stream-4 exit=0
+START core-correctness-legacy_stream-4
+END core-correctness-legacy_stream-4 exit=0
+START core-candidate-metered_background_stream-4
+END core-candidate-metered_background_stream-4 exit=0
+START core-candidate-restricted_owned-5
+END core-candidate-restricted_owned-5 exit=0
+START core-correctness-legacy_owned-5
+END core-correctness-legacy_owned-5 exit=0
+START core-candidate-metered_live_stream-5
+END core-candidate-metered_live_stream-5 exit=0
+START core-candidate-legacy_owned-5
+END core-candidate-legacy_owned-5 exit=0
+START core-upstream-legacy_stream-5
+END core-upstream-legacy_stream-5 exit=0
+START core-candidate-legacy_stream-5
+END core-candidate-legacy_stream-5 exit=0
+START core-correctness-legacy_stream-5
+END core-correctness-legacy_stream-5 exit=0
+START core-candidate-metered_background_stream-5
+END core-candidate-metered_background_stream-5 exit=0
+START core-upstream-legacy_owned-5
+END core-upstream-legacy_owned-5 exit=0

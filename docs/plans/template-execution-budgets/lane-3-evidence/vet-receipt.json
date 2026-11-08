@@ -1,0 +1,15 @@
+{
+  "command": [
+    "go",
+    "vet",
+    "-p=2",
+    "./..."
+  ],
+  "execution_deadline_seconds": 120,
+  "gate_deadline_seconds": 180,
+  "term_cleanup_seconds": 5,
+  "start": 1794095853.1260312,
+  "end": 1794095854.6122901,
+  "exit_code": 0,
+  "manifest": "vet-inputs.json"
+}

@@ -1,0 +1,59 @@
+Total: 1.12GB
+ROUTINE ======================== github.com/CloudyKit/jet/v6.(*Template).execute in .git/admission-followup/defaults-exec.go.txt
+         0   663.54MB (flat, cum) 57.69% of Total
+         .          .     75:func (t *Template) execute(ctx context.Context, w io.Writer, variables VarMap, data interface{}, opts ExecutionOptions) (err error) {
+         .          .     76:	var owned *restrictedSink
+         .          .     77:	if policy := t.set.restricted; policy != nil {
+         .          .     78:		var ok bool
+         .          .     79:		owned, ok = w.(*restrictedSink)
+         .          .     80:		if !ok || owned.owner != t {
+         .          .     81:			return fmt.Errorf("%w: use RenderRestrictedContext with an owned result", ErrCapabilityDenied)
+         .          .     82:		}
+         .          .     83:		if ctx == nil {
+         .          .     84:			return ErrInvalidOptions
+         .          .     85:		}
+         .          .     86:		if opts == (ExecutionOptions{}) {
+         .          .     87:			opts = policy.execution
+         .          .     88:		} else {
+         .          .     89:			opts = constrainExecution(opts, policy.execution)
+         .          .     90:		}
+         .          .     91:		inputVars := borrowInputVars(policy.globals, variables)
+         .          .     92:		defer releaseInputVars(inputVars)
+         .          .     93:		variables, data, err = admitInputScopesInto(ctx, []VarMap{policy.globals, variables}, data, policy.input, inputVars)
+         .          .     94:		if err != nil {
+         .          .     95:			return inputContextError(ctx, err)
+         .          .     96:		}
+         .          .     97:	}
+         .          .     98:	st := pool_State.Get().(*Runtime)
+         .          .     99:	defer st.recover(&err)
+         .          .    100:
+         .          .    101:	st.execution = executionState{ctx: ctx, checkContext: ctx != nil && ctx != context.Background() && ctx != context.TODO(), options: opts, remaining: opts.MaxSteps, values: uint64(opts.MaxValueBytes), output: uint64(opts.MaxOutputBytes)}
+         .          .    102:	st.checkpoint(0)
+         .          .    103:	st.blocks = t.processedBlocks
+         .          .    104:	st.variables = variables
+         .          .    105:	st.set = t.set
+         .          .    106:	st.writeErr = nil
+         .          .    107:	st.rootSink = st.checkedOutput(w)
+         .          .    108:	if owned != nil {
+         .          .    109:		st.rootSink.writer = &owned.buffer
+         .          .    110:		st.rootSink.buffer = &owned.buffer
+         .          .    111:		st.rootSink.retained = &owned.buffer
+         .          .    112:	}
+         .          .    113:	st.Writer = &st.rootSink
+         .          .    114:
+         .          .    115:	st.startCompilation(t)
+         .          .    116:	root := st.templateRoot(t)
+         .          .    117:
+         .          .    118:	if data != nil {
+         .          .    119:		st.context = reflect.ValueOf(data)
+         .          .    120:	}
+         .          .    121:
+         .   475.53MB    122:	st.executeList(root)
+         .          .    123:	st.checkpoint(0)
+         .          .    124:	if owned != nil {
+         .          .    125:		st.reserveValue(int64(owned.buffer.Len()))
+         .      188MB    126:		owned.result = owned.buffer.String()
+         .          .    127:		st.checkpoint(0)
+         .          .    128:	}
+         .          .    129:	return
+         .          .    130:}

@@ -1,0 +1,656 @@
+[
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/profile-source/baseline",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<artifacts>/baseline.test",
+      "<artifacts>/selected-measure/baseline-legacy_stream-cpu.pprof"
+    ],
+    "exit_code": 0,
+    "execution_deadline_seconds": 25
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/profile-source/baseline",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-cum",
+      "<artifacts>/baseline.test",
+      "<artifacts>/selected-measure/baseline-legacy_stream-cpu.pprof"
+    ],
+    "exit_code": 0,
+    "execution_deadline_seconds": 25
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/profile-source/baseline",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-alloc_space",
+      "<artifacts>/baseline.test",
+      "<artifacts>/selected-measure/baseline-legacy_stream-heap.pprof"
+    ],
+    "exit_code": 0,
+    "execution_deadline_seconds": 25
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/profile-source/baseline",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-inuse_space",
+      "<artifacts>/baseline.test",
+      "<artifacts>/selected-measure/baseline-legacy_stream-heap.pprof"
+    ],
+    "exit_code": 0,
+    "execution_deadline_seconds": 25
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/profile-source/baseline",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<artifacts>/baseline.test",
+      "<artifacts>/selected-measure/baseline-legacy_stream-mutex.pprof"
+    ],
+    "exit_code": 0,
+    "execution_deadline_seconds": 25
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/profile-source/baseline",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<artifacts>/baseline.test",
+      "<artifacts>/selected-measure/baseline-legacy_stream-block.pprof"
+    ],
+    "exit_code": 0,
+    "execution_deadline_seconds": 25
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/profile-source/baseline",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-list",
+      "checkedWriter|executionWriter|checkpoint|dataPrinter.*Write",
+      "<artifacts>/baseline.test",
+      "<artifacts>/selected-measure/baseline-legacy_stream-cpu.pprof"
+    ],
+    "exit_code": 0,
+    "execution_deadline_seconds": 25
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/profile-source/baseline",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<artifacts>/baseline.test",
+      "<artifacts>/selected-measure/baseline-metered_live_stream-cpu.pprof"
+    ],
+    "exit_code": 0,
+    "execution_deadline_seconds": 25
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/profile-source/baseline",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-cum",
+      "<artifacts>/baseline.test",
+      "<artifacts>/selected-measure/baseline-metered_live_stream-cpu.pprof"
+    ],
+    "exit_code": 0,
+    "execution_deadline_seconds": 25
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/profile-source/baseline",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-alloc_space",
+      "<artifacts>/baseline.test",
+      "<artifacts>/selected-measure/baseline-metered_live_stream-heap.pprof"
+    ],
+    "exit_code": 0,
+    "execution_deadline_seconds": 25
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/profile-source/baseline",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-inuse_space",
+      "<artifacts>/baseline.test",
+      "<artifacts>/selected-measure/baseline-metered_live_stream-heap.pprof"
+    ],
+    "exit_code": 0,
+    "execution_deadline_seconds": 25
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/profile-source/baseline",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<artifacts>/baseline.test",
+      "<artifacts>/selected-measure/baseline-metered_live_stream-mutex.pprof"
+    ],
+    "exit_code": 0,
+    "execution_deadline_seconds": 25
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/profile-source/baseline",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<artifacts>/baseline.test",
+      "<artifacts>/selected-measure/baseline-metered_live_stream-block.pprof"
+    ],
+    "exit_code": 0,
+    "execution_deadline_seconds": 25
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/profile-source/baseline",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-list",
+      "checkedWriter|executionWriter|checkpoint|dataPrinter.*Write",
+      "<artifacts>/baseline.test",
+      "<artifacts>/selected-measure/baseline-metered_live_stream-cpu.pprof"
+    ],
+    "exit_code": 0,
+    "execution_deadline_seconds": 25
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/profile-source/baseline",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<artifacts>/baseline.test",
+      "<artifacts>/selected-measure/baseline-restricted_owned-cpu.pprof"
+    ],
+    "exit_code": 0,
+    "execution_deadline_seconds": 25
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/profile-source/baseline",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-cum",
+      "<artifacts>/baseline.test",
+      "<artifacts>/selected-measure/baseline-restricted_owned-cpu.pprof"
+    ],
+    "exit_code": 0,
+    "execution_deadline_seconds": 25
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/profile-source/baseline",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-alloc_space",
+      "<artifacts>/baseline.test",
+      "<artifacts>/selected-measure/baseline-restricted_owned-heap.pprof"
+    ],
+    "exit_code": 0,
+    "execution_deadline_seconds": 25
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/profile-source/baseline",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-inuse_space",
+      "<artifacts>/baseline.test",
+      "<artifacts>/selected-measure/baseline-restricted_owned-heap.pprof"
+    ],
+    "exit_code": 0,
+    "execution_deadline_seconds": 25
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/profile-source/baseline",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<artifacts>/baseline.test",
+      "<artifacts>/selected-measure/baseline-restricted_owned-mutex.pprof"
+    ],
+    "exit_code": 0,
+    "execution_deadline_seconds": 25
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/profile-source/baseline",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<artifacts>/baseline.test",
+      "<artifacts>/selected-measure/baseline-restricted_owned-block.pprof"
+    ],
+    "exit_code": 0,
+    "execution_deadline_seconds": 25
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/profile-source/baseline",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-list",
+      "checkedWriter|executionWriter|checkpoint|dataPrinter.*Write",
+      "<artifacts>/baseline.test",
+      "<artifacts>/selected-measure/baseline-restricted_owned-cpu.pprof"
+    ],
+    "exit_code": 0,
+    "execution_deadline_seconds": 25
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/profile-source/selected",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<artifacts>/selected.test",
+      "<artifacts>/selected-measure/selected-legacy_stream-cpu.pprof"
+    ],
+    "exit_code": 0,
+    "execution_deadline_seconds": 25
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/profile-source/selected",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-cum",
+      "<artifacts>/selected.test",
+      "<artifacts>/selected-measure/selected-legacy_stream-cpu.pprof"
+    ],
+    "exit_code": 0,
+    "execution_deadline_seconds": 25
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/profile-source/selected",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-alloc_space",
+      "<artifacts>/selected.test",
+      "<artifacts>/selected-measure/selected-legacy_stream-heap.pprof"
+    ],
+    "exit_code": 0,
+    "execution_deadline_seconds": 25
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/profile-source/selected",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-inuse_space",
+      "<artifacts>/selected.test",
+      "<artifacts>/selected-measure/selected-legacy_stream-heap.pprof"
+    ],
+    "exit_code": 0,
+    "execution_deadline_seconds": 25
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/profile-source/selected",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<artifacts>/selected.test",
+      "<artifacts>/selected-measure/selected-legacy_stream-mutex.pprof"
+    ],
+    "exit_code": 0,
+    "execution_deadline_seconds": 25
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/profile-source/selected",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<artifacts>/selected.test",
+      "<artifacts>/selected-measure/selected-legacy_stream-block.pprof"
+    ],
+    "exit_code": 0,
+    "execution_deadline_seconds": 25
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/profile-source/selected",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-list",
+      "checkedWriter|executionWriter|checkpoint|dataPrinter.*Write",
+      "<artifacts>/selected.test",
+      "<artifacts>/selected-measure/selected-legacy_stream-cpu.pprof"
+    ],
+    "exit_code": 0,
+    "execution_deadline_seconds": 25
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/profile-source/selected",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<artifacts>/selected.test",
+      "<artifacts>/selected-measure/selected-metered_live_stream-cpu.pprof"
+    ],
+    "exit_code": 0,
+    "execution_deadline_seconds": 25
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/profile-source/selected",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-cum",
+      "<artifacts>/selected.test",
+      "<artifacts>/selected-measure/selected-metered_live_stream-cpu.pprof"
+    ],
+    "exit_code": 0,
+    "execution_deadline_seconds": 25
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/profile-source/selected",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-alloc_space",
+      "<artifacts>/selected.test",
+      "<artifacts>/selected-measure/selected-metered_live_stream-heap.pprof"
+    ],
+    "exit_code": 0,
+    "execution_deadline_seconds": 25
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/profile-source/selected",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-inuse_space",
+      "<artifacts>/selected.test",
+      "<artifacts>/selected-measure/selected-metered_live_stream-heap.pprof"
+    ],
+    "exit_code": 0,
+    "execution_deadline_seconds": 25
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/profile-source/selected",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<artifacts>/selected.test",
+      "<artifacts>/selected-measure/selected-metered_live_stream-mutex.pprof"
+    ],
+    "exit_code": 0,
+    "execution_deadline_seconds": 25
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/profile-source/selected",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<artifacts>/selected.test",
+      "<artifacts>/selected-measure/selected-metered_live_stream-block.pprof"
+    ],
+    "exit_code": 0,
+    "execution_deadline_seconds": 25
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/profile-source/selected",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-list",
+      "checkedWriter|executionWriter|checkpoint|dataPrinter.*Write",
+      "<artifacts>/selected.test",
+      "<artifacts>/selected-measure/selected-metered_live_stream-cpu.pprof"
+    ],
+    "exit_code": 0,
+    "execution_deadline_seconds": 25
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/profile-source/selected",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<artifacts>/selected.test",
+      "<artifacts>/selected-measure/selected-restricted_owned-cpu.pprof"
+    ],
+    "exit_code": 0,
+    "execution_deadline_seconds": 25
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/profile-source/selected",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-cum",
+      "<artifacts>/selected.test",
+      "<artifacts>/selected-measure/selected-restricted_owned-cpu.pprof"
+    ],
+    "exit_code": 0,
+    "execution_deadline_seconds": 25
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/profile-source/selected",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-alloc_space",
+      "<artifacts>/selected.test",
+      "<artifacts>/selected-measure/selected-restricted_owned-heap.pprof"
+    ],
+    "exit_code": 0,
+    "execution_deadline_seconds": 25
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/profile-source/selected",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "-inuse_space",
+      "<artifacts>/selected.test",
+      "<artifacts>/selected-measure/selected-restricted_owned-heap.pprof"
+    ],
+    "exit_code": 0,
+    "execution_deadline_seconds": 25
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/profile-source/selected",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<artifacts>/selected.test",
+      "<artifacts>/selected-measure/selected-restricted_owned-mutex.pprof"
+    ],
+    "exit_code": 0,
+    "execution_deadline_seconds": 25
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/profile-source/selected",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-top",
+      "<artifacts>/selected.test",
+      "<artifacts>/selected-measure/selected-restricted_owned-block.pprof"
+    ],
+    "exit_code": 0,
+    "execution_deadline_seconds": 25
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-nodecount=22",
+      "-source_path=<artifacts>/profile-source/selected",
+      "-trim_path=<checkout>:github.com/CloudyKit/jet/v6",
+      "-list",
+      "checkedWriter|executionWriter|checkpoint|dataPrinter.*Write",
+      "<artifacts>/selected.test",
+      "<artifacts>/selected-measure/selected-restricted_owned-cpu.pprof"
+    ],
+    "exit_code": 0,
+    "execution_deadline_seconds": 25
+  }
+]

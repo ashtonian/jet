@@ -1,0 +1,37 @@
+File: render.test
+Type: cpu
+Time: 2026-11-08 05:27:34 CST
+Duration: 1.41s, Total samples = 1.19s (84.22%)
+Showing nodes accounting for 1.18s, 99.16% of 1.19s total
+Showing top 30 nodes out of 44
+      flat  flat%   sum%        cum   cum%
+         0     0%     0%      1.18s 99.16%  testing.(*B).launch
+         0     0%     0%      1.18s 99.16%  testing.(*B).runN
+         0     0%     0%      1.17s 98.32%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0%     0%      1.17s 98.32%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0%     0%      1.17s 98.32%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0%     0%      1.17s 98.32%  github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes.func1
+         0     0%     0%      1.17s 98.32%  github.com/CloudyKit/jet/v6_test.init.0.func2
+         0     0%     0%      1.16s 97.48%  github.com/CloudyKit/jet/v6.(*Runtime).printValue
+         0     0%     0%      1.16s 97.48%  github.com/CloudyKit/jet/v6.(*dataPrinter).value
+         0     0%     0%      1.15s 96.64%  github.com/CloudyKit/fastprinter.PrintString
+         0     0%     0%      1.15s 96.64%  github.com/CloudyKit/jet/v6.(*dataPrinter).text
+         0     0%     0%      1.14s 95.80%  github.com/CloudyKit/jet/v6.(*dataPrinter).Write
+         0     0%     0%      1.14s 95.80%  github.com/CloudyKit/jet/v6.(*escapeeWriter).Write
+     0.10s  8.40%  8.40%      1.14s 95.80%  text/template.HTMLEscape
+     0.35s 29.41% 37.82%      1.04s 87.39%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+     0.24s 20.17% 57.98%      0.43s 36.13%  bytes.(*Buffer).Write
+     0.18s 15.13% 73.11%      0.23s 19.33%  github.com/CloudyKit/jet/v6.(*Runtime).reserveWork
+     0.13s 10.92% 84.03%      0.13s 10.92%  runtime.memmove
+     0.08s  6.72% 90.76%      0.08s  6.72%  github.com/CloudyKit/jet/v6.(*Runtime).reserveUnchecked (inline)
+     0.06s  5.04% 95.80%      0.06s  5.04%  bytes.(*Buffer).tryGrowByReslice (inline)
+     0.01s  0.84% 96.64%      0.01s  0.84%  github.com/CloudyKit/jet/v6.(*Runtime).beforeData
+     0.01s  0.84% 97.48%      0.01s  0.84%  github.com/CloudyKit/jet/v6.(*Runtime).evalPipelineExpression
+         0     0% 97.48%      0.01s  0.84%  internal/runtime/atomic.(*Pointer[go.shape.struct { runtime.spanSetBlockHeader2; runtime.spans [512]runtime.atomicMSpanPointer }]).Load (inline)
+     0.01s  0.84% 98.32%      0.01s  0.84%  internal/runtime/atomic.(*UnsafePointer).Load (inline)
+         0     0% 98.32%      0.01s  0.84%  runtime.(*mcache).releaseAll
+         0     0% 98.32%      0.01s  0.84%  runtime.(*mcentral).uncacheSpan
+         0     0% 98.32%      0.01s  0.84%  runtime.(*spanSet).push
+         0     0% 98.32%      0.01s  0.84%  runtime.ReadMemStats
+         0     0% 98.32%      0.01s  0.84%  runtime.ReadMemStats.func1
+     0.01s  0.84% 99.16%      0.01s  0.84%  runtime.asyncPreempt

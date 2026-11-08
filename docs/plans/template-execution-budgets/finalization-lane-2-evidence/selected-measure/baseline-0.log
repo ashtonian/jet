@@ -1,0 +1,39 @@
+goos: darwin
+goarch: arm64
+pkg: github.com/CloudyKit/jet/v6
+cpu: Apple M2 Max
+BenchmarkFinalReview/legacy_stream/header_interpolation/text-2         	 8893282	       155.6 ns/op	      24 B/op	       1 allocs/op
+BenchmarkFinalReview/legacy_stream/header_interpolation/html-2         	 7910913	       147.9 ns/op	      24 B/op	       1 allocs/op
+BenchmarkFinalReview/legacy_stream/escape_expansion/text-2             	 7904226	       148.1 ns/op	      24 B/op	       1 allocs/op
+BenchmarkFinalReview/legacy_stream/escape_expansion/html-2             	  138513	      8609 ns/op	      24 B/op	       1 allocs/op
+BenchmarkFinalReview/metered_background_stream/header_interpolation/text-2         	 2213353	       522.9 ns/op	    1000 B/op	      11 allocs/op
+BenchmarkFinalReview/metered_background_stream/header_interpolation/html-2         	 2282010	       532.7 ns/op	    1000 B/op	      11 allocs/op
+BenchmarkFinalReview/metered_background_stream/escape_expansion/text-2             	 2292398	       541.8 ns/op	    1000 B/op	      11 allocs/op
+BenchmarkFinalReview/metered_background_stream/escape_expansion/html-2             	   76597	     15637 ns/op	    1000 B/op	      11 allocs/op
+BenchmarkFinalReview/metered_live_stream/header_interpolation/text-2               	 2111378	       541.9 ns/op	    1000 B/op	      11 allocs/op
+BenchmarkFinalReview/metered_live_stream/header_interpolation/html-2               	 2155856	       533.5 ns/op	    1000 B/op	      11 allocs/op
+BenchmarkFinalReview/metered_live_stream/escape_expansion/text-2                   	 2222686	       538.4 ns/op	    1000 B/op	      11 allocs/op
+BenchmarkFinalReview/metered_live_stream/escape_expansion/html-2                   	   75932	     15287 ns/op	    1000 B/op	      11 allocs/op
+BenchmarkFinalReview/restricted_owned/header_interpolation/text-2                  	 1264016	       843.9 ns/op	    1616 B/op	      17 allocs/op
+BenchmarkFinalReview/restricted_owned/header_interpolation/html-2                  	 1356432	       906.8 ns/op	    1616 B/op	      17 allocs/op
+BenchmarkFinalReview/restricted_owned/escape_expansion/text-2                      	 1216434	      1031 ns/op	    2809 B/op	      17 allocs/op
+BenchmarkFinalReview/restricted_owned/escape_expansion/html-2                      	   47067	     24473 ns/op	   12732 B/op	      23 allocs/op
+PASS
+       26.38 real        27.02 user         0.61 sys
+            16613376  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                 910  page reclaims
+                 321  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+               50716  signals received
+                  13  voluntary context switches
+              121975  involuntary context switches
+        461976703020  instructions retired
+         92357607842  cycles elapsed
+            11862568  peak memory footprint

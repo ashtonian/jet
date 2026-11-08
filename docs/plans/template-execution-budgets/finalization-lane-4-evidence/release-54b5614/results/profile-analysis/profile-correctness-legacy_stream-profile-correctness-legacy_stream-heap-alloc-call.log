@@ -1,0 +1,176 @@
+File: correctness.test
+Type: alloc_space
+Time: 2026-11-08 02:59:14 CST
+Showing nodes accounting for 3.59GB, 99.76% of 3.60GB total
+Dropped 41 nodes (cum <= 0.02GB)
+----------------------------------------------------------+-------------
+      flat  flat%   sum%        cum   cum%   calls calls% + context
+----------------------------------------------------------+-------------
+                                            1.09GB   100% |   github.com/CloudyKit/jet/v6.(*Template).Execute
+    1.09GB 30.40% 30.40%     1.09GB 30.43%                | github.com/CloudyKit/jet/v6.(*Runtime).recover
+----------------------------------------------------------+-------------
+                                            3.59GB   100% |   github.com/CloudyKit/jet/v6_test.init.func1
+    1.06GB 29.56% 59.96%     3.59GB 99.91%                | github.com/CloudyKit/jet/v6.(*Template).Execute
+                                            1.44GB 39.96% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+                                            1.09GB 30.45% |   github.com/CloudyKit/jet/v6.(*Runtime).recover
+----------------------------------------------------------+-------------
+                                            0.35GB   100% |   github.com/CloudyKit/jet/v6.(*Runtime).executeInclude (inline)
+    0.35GB  9.79% 69.74%     0.35GB  9.79%                | github.com/CloudyKit/jet/v6.(*Runtime).newScope
+----------------------------------------------------------+-------------
+                                            0.33GB 99.85% |   github.com/CloudyKit/fastprinter.PrintString
+    0.33GB  9.31% 79.05%     0.33GB  9.31%                | github.com/CloudyKit/jet/v6.(*escapeeWriter).Write
+----------------------------------------------------------+-------------
+                                            0.23GB   100% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+    0.23GB  6.43% 85.49%     0.23GB  6.43%                | github.com/CloudyKit/jet/v6.(*Runtime).executeYieldBlock
+----------------------------------------------------------+-------------
+                                            0.13GB 68.90% |   reflect.New
+                                            0.06GB 30.83% |   reflect.copyVal
+    0.18GB  5.06% 90.55%     0.18GB  5.06%                | reflect.unsafe_New
+----------------------------------------------------------+-------------
+                                            0.13GB   100% |   encoding/json/v2.Marshal (inline)
+    0.13GB  3.60% 94.15%     0.13GB  3.60%                | bytes.Clone
+----------------------------------------------------------+-------------
+                                            0.05GB   100% |   github.com/CloudyKit/jet/v6.init.0.func5 (inline)
+    0.05GB  1.36% 95.50%     0.05GB  1.36%                | github.com/CloudyKit/jet/v6.newIntsRanger
+----------------------------------------------------------+-------------
+                                            0.05GB   100% |   path.Clean (inline)
+    0.05GB  1.30% 96.81%     0.05GB  1.30%                | path.(*lazybuf).append
+----------------------------------------------------------+-------------
+                                            0.13GB   100% |   github.com/CloudyKit/jet/v6.(*Set).getSiblingTemplate
+    0.04GB  1.15% 97.96%     0.13GB  3.50%                | path.Join
+                                            0.08GB 67.05% |   path.Clean
+----------------------------------------------------------+-------------
+                                            0.04GB   100% |   path.Clean (inline)
+    0.04GB  1.04% 99.00%     0.04GB  1.04%                | path.(*lazybuf).string
+----------------------------------------------------------+-------------
+                                            0.08GB   100% |   github.com/CloudyKit/jet/v6.(*Runtime).evalPipeCallExpression
+    0.03GB  0.76% 99.76%     0.08GB  2.12%                | github.com/CloudyKit/jet/v6.init.0.func5
+                                            0.05GB 64.10% |   github.com/CloudyKit/jet/v6.newIntsRanger (inline)
+----------------------------------------------------------+-------------
+                                            0.32GB   100% |   reflect.Value.call
+         0     0% 99.76%     0.32GB  8.77%                | encoding/json.Marshal
+                                            0.32GB   100% |   encoding/json/v2.Marshal
+----------------------------------------------------------+-------------
+                                            0.32GB   100% |   encoding/json.Marshal
+         0     0% 99.76%     0.32GB  8.77%                | encoding/json/v2.Marshal
+                                            0.19GB 58.98% |   encoding/json/v2.marshalEncode
+                                            0.13GB 41.02% |   bytes.Clone (inline)
+----------------------------------------------------------+-------------
+                                            0.07GB   100% |   encoding/json/v2.makeMapArshaler.func2
+         0     0% 99.76%     0.07GB  1.93%                | encoding/json/v2.makeInterfaceArshaler.func1
+                                            0.07GB 95.01% |   encoding/json/v2.newAddressableValue
+----------------------------------------------------------+-------------
+                                            0.19GB   100% |   encoding/json/v2.makeSliceArshaler.func2
+         0     0% 99.76%     0.19GB  5.17%                | encoding/json/v2.makeMapArshaler.func2
+                                            0.07GB 37.28% |   encoding/json/v2.makeInterfaceArshaler.func1
+                                            0.06GB 32.01% |   encoding/json/v2.newAddressableValue
+                                            0.06GB 30.18% |   reflect.Value.MapIndex
+----------------------------------------------------------+-------------
+                                            0.19GB   100% |   encoding/json/v2.marshalEncode
+         0     0% 99.76%     0.19GB  5.17%                | encoding/json/v2.makeSliceArshaler.func2
+                                            0.19GB   100% |   encoding/json/v2.makeMapArshaler.func2
+----------------------------------------------------------+-------------
+                                            0.19GB   100% |   encoding/json/v2.Marshal
+         0     0% 99.76%     0.19GB  5.17%                | encoding/json/v2.marshalEncode
+                                            0.19GB   100% |   encoding/json/v2.makeSliceArshaler.func2
+----------------------------------------------------------+-------------
+                                            0.07GB 52.53% |   encoding/json/v2.makeInterfaceArshaler.func1
+                                            0.06GB 47.47% |   encoding/json/v2.makeMapArshaler.func2
+         0     0% 99.76%     0.13GB  3.49%                | encoding/json/v2.newAddressableValue
+                                            0.13GB   100% |   reflect.New
+----------------------------------------------------------+-------------
+                                            0.33GB   100% |   github.com/CloudyKit/fastprinter.PrintValue
+         0     0% 99.76%     0.33GB  9.30%                | github.com/CloudyKit/fastprinter.PrintString
+                                            0.33GB   100% |   github.com/CloudyKit/jet/v6.(*escapeeWriter).Write
+----------------------------------------------------------+-------------
+                                            0.33GB   100% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 99.76%     0.33GB  9.31%                | github.com/CloudyKit/fastprinter.PrintValue
+                                            0.33GB 99.85% |   github.com/CloudyKit/fastprinter.PrintString
+----------------------------------------------------------+-------------
+                                            0.32GB 80.58% |   github.com/CloudyKit/jet/v6.(*Runtime).evalCommandExpression (inline)
+                                            0.08GB 19.42% |   github.com/CloudyKit/jet/v6.(*Runtime).evalPrimaryExpressionGroup (inline)
+         0     0% 99.76%     0.39GB 10.90%                | github.com/CloudyKit/jet/v6.(*Runtime).evalCallExpression
+                                            0.39GB   100% |   github.com/CloudyKit/jet/v6.(*Runtime).evalPipeCallExpression
+----------------------------------------------------------+-------------
+                                            0.32GB   100% |   github.com/CloudyKit/jet/v6.(*Runtime).evalPipelineExpression
+         0     0% 99.76%     0.32GB  8.78%                | github.com/CloudyKit/jet/v6.(*Runtime).evalCommandExpression
+                                            0.32GB   100% |   github.com/CloudyKit/jet/v6.(*Runtime).evalCallExpression (inline)
+----------------------------------------------------------+-------------
+                                            0.39GB   100% |   github.com/CloudyKit/jet/v6.(*Runtime).evalCallExpression
+         0     0% 99.76%     0.39GB 10.90%                | github.com/CloudyKit/jet/v6.(*Runtime).evalPipeCallExpression
+                                            0.32GB 80.58% |   reflect.Value.Call
+                                            0.08GB 19.42% |   github.com/CloudyKit/jet/v6.init.0.func5
+----------------------------------------------------------+-------------
+                                            0.32GB   100% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 99.76%     0.32GB  8.78%                | github.com/CloudyKit/jet/v6.(*Runtime).evalPipelineExpression
+                                            0.32GB   100% |   github.com/CloudyKit/jet/v6.(*Runtime).evalCommandExpression
+----------------------------------------------------------+-------------
+                                            0.08GB   100% |   github.com/CloudyKit/jet/v6.(*Runtime).executeRange
+         0     0% 99.76%     0.08GB  2.12%                | github.com/CloudyKit/jet/v6.(*Runtime).evalPrimaryExpressionGroup
+                                            0.08GB   100% |   github.com/CloudyKit/jet/v6.(*Runtime).evalCallExpression (inline)
+----------------------------------------------------------+-------------
+                                            0.59GB   100% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 99.76%     0.59GB 16.38%                | github.com/CloudyKit/jet/v6.(*Runtime).executeInclude
+                                            0.35GB 59.74% |   github.com/CloudyKit/jet/v6.(*Runtime).newScope (inline)
+                                            0.13GB 21.37% |   github.com/CloudyKit/jet/v6.(*Set).getSiblingTemplate
+                                            0.11GB 18.89% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+----------------------------------------------------------+-------------
+                                            1.44GB   100% |   github.com/CloudyKit/jet/v6.(*Template).Execute
+                                            0.11GB  7.75% |   github.com/CloudyKit/jet/v6.(*Runtime).executeInclude
+                                            0.08GB  5.30% |   github.com/CloudyKit/jet/v6.(*Runtime).executeRange
+         0     0% 99.76%     1.44GB 39.93%                | github.com/CloudyKit/jet/v6.(*Runtime).executeList
+                                            0.59GB 41.02% |   github.com/CloudyKit/jet/v6.(*Runtime).executeInclude
+                                            0.33GB 23.32% |   github.com/CloudyKit/fastprinter.PrintValue
+                                            0.32GB 22.00% |   github.com/CloudyKit/jet/v6.(*Runtime).evalPipelineExpression
+                                            0.23GB 16.11% |   github.com/CloudyKit/jet/v6.(*Runtime).executeYieldBlock
+                                            0.08GB  5.30% |   github.com/CloudyKit/jet/v6.(*Runtime).executeRange
+----------------------------------------------------------+-------------
+                                            0.08GB   100% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 99.76%     0.08GB  2.12%                | github.com/CloudyKit/jet/v6.(*Runtime).executeRange
+                                            0.08GB   100% |   github.com/CloudyKit/jet/v6.(*Runtime).evalPrimaryExpressionGroup
+                                            0.08GB   100% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+----------------------------------------------------------+-------------
+                                            0.13GB   100% |   github.com/CloudyKit/jet/v6.(*Runtime).executeInclude
+         0     0% 99.76%     0.13GB  3.50%                | github.com/CloudyKit/jet/v6.(*Set).getSiblingTemplate
+                                            0.13GB   100% |   path.Join
+----------------------------------------------------------+-------------
+                                            3.60GB   100% |   testing.(*B).runN
+         0     0% 99.76%     3.60GB 99.93%                | github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes.func1
+                                            3.59GB   100% |   github.com/CloudyKit/jet/v6_test.init.func1
+----------------------------------------------------------+-------------
+                                            3.59GB   100% |   github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes.func1
+         0     0% 99.76%     3.59GB 99.91%                | github.com/CloudyKit/jet/v6_test.init.func1
+                                            3.59GB   100% |   github.com/CloudyKit/jet/v6.(*Template).Execute
+----------------------------------------------------------+-------------
+                                            0.08GB   100% |   path.Join
+         0     0% 99.76%     0.08GB  2.35%                | path.Clean
+                                            0.05GB 55.49% |   path.(*lazybuf).append (inline)
+                                            0.04GB 44.51% |   path.(*lazybuf).string (inline)
+----------------------------------------------------------+-------------
+                                            0.13GB   100% |   encoding/json/v2.newAddressableValue
+         0     0% 99.76%     0.13GB  3.49%                | reflect.New
+                                            0.13GB   100% |   reflect.unsafe_New
+----------------------------------------------------------+-------------
+                                            0.32GB   100% |   github.com/CloudyKit/jet/v6.(*Runtime).evalPipeCallExpression
+         0     0% 99.76%     0.32GB  8.78%                | reflect.Value.Call
+                                            0.32GB   100% |   reflect.Value.call
+----------------------------------------------------------+-------------
+                                            0.06GB   100% |   encoding/json/v2.makeMapArshaler.func2
+         0     0% 99.76%     0.06GB  1.56%                | reflect.Value.MapIndex
+                                            0.06GB   100% |   reflect.copyVal
+----------------------------------------------------------+-------------
+                                            0.32GB   100% |   reflect.Value.Call
+         0     0% 99.76%     0.32GB  8.78%                | reflect.Value.call
+                                            0.32GB 99.85% |   encoding/json.Marshal
+----------------------------------------------------------+-------------
+                                            0.06GB   100% |   reflect.Value.MapIndex
+         0     0% 99.76%     0.06GB  1.56%                | reflect.copyVal
+                                            0.06GB   100% |   reflect.unsafe_New
+----------------------------------------------------------+-------------
+         0     0% 99.76%     3.60GB 99.93%                | testing.(*B).launch
+                                            3.60GB   100% |   testing.(*B).runN
+----------------------------------------------------------+-------------
+                                            3.60GB   100% |   testing.(*B).launch
+         0     0% 99.76%     3.60GB   100%                | testing.(*B).runN
+                                            3.60GB   100% |   github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes.func1
+----------------------------------------------------------+-------------

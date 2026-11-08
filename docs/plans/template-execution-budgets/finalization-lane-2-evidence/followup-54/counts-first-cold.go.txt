@@ -1,0 +1,75 @@
+package jet_test
+
+import (
+	"bytes"
+	"context"
+	"encoding/json"
+	"errors"
+	"strings"
+	"testing"
+)
+
+type followupCountContext struct {
+	context.Context
+	cancel          context.CancelFunc
+	calls, cancelAt int
+}
+
+func (c *followupCountContext) Err() error {
+	c.calls++
+	if c.cancelAt != 0 && c.calls >= c.cancelAt {
+		c.cancel()
+	}
+	return c.Context.Err()
+}
+
+func TestFollowupCancellationOpportunities(t *testing.T) {
+	for _, m := range executionModes {
+		if m.name == "legacy_owned" {
+			continue
+		}
+		for _, f := range executionWorkloads(t) {
+			for _, html := range []bool{false, true} {
+				_, tpl := prepareMeasurement(t, m, context.Background(), f, html)
+				vars := f.vars()
+				run := func(at int) (int, error) {
+					base, cancel := context.WithCancel(context.Background())
+					defer cancel()
+					ctx := &followupCountContext{Context: base, cancel: cancel, cancelAt: at}
+					var out bytes.Buffer
+					got, err := m.render(ctx, tpl, vars, f.Data, &out)
+					if at == 0 {
+						if strings.HasSuffix(m.name, "_stream") {
+							got = out.String()
+						}
+						want := f.Text
+						if html {
+							want = f.HTML
+						}
+						if err != nil || got != want {
+							t.Fatalf("%s/%s html=%t got %q: %v", m.name, f.Name, html, got, err)
+						}
+					}
+					return ctx.calls, err
+				}
+				calls, _ := run(0)
+				row, err := json.Marshal(struct {
+					Mode, Fixture string
+					HTML          bool
+					Checks        int
+				}{m.name, f.Name, html, calls})
+				if err != nil {
+					t.Fatal(err)
+				}
+				t.Log(string(row))
+				if calls != 0 {
+					for _, at := range []int{1, (calls + 1) / 2, calls} {
+						if _, err := run(at); !errors.Is(err, context.Canceled) {
+							t.Fatalf("%s/%s html=%t at=%d/%d got %v", m.name, f.Name, html, at, calls, err)
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,20 @@
+{
+  "command": [
+    "gate-lock",
+    "run-check",
+    "jet-l4-release-profile-analysis-resume",
+    "--",
+    "/opt/homebrew/opt/python@3.15/bin/python3.15",
+    "$JET_CHECKOUT/docs/plans/template-execution-budgets/finalization-lane-4-evidence/run_stage.py",
+    "--admitted",
+    "$JET_CHECKOUT/.git/finalization-evidence/release-profile-analysis-resume",
+    "python3",
+    "docs/plans/template-execution-budgets/finalization-lane-4-evidence/analyze_profiles.py",
+    ".git/finalization-evidence/release-54b5614"
+  ],
+  "queued": 1794128945.377374,
+  "deadline_seconds": 1800,
+  "cleanup_seconds": 10,
+  "exit": 0,
+  "finished": 1794128980.556906
+}

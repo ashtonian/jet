@@ -1,0 +1,44 @@
+File: upstream.test
+Type: delay
+Time: 2026-11-08 02:59:04 CST
+Showing nodes accounting for 142.71us, 100% of 142.71us total
+Dropped 41 nodes (cum <= 0.71us)
+      flat  flat%   sum%        cum   cum%
+  142.71us   100%   100%   142.71us   100%  runtime.unlock (partial-inline)
+         0     0%   100%    19.12us 13.40%  _.goready.func1
+         0     0%   100%    19.12us 13.40%  github.com/CloudyKit/jet/v6.(*lexer).emit (inline)
+         0     0%   100%    19.12us 13.40%  github.com/CloudyKit/jet/v6.(*lexer).run.func1
+         0     0%   100%    19.12us 13.40%  github.com/CloudyKit/jet/v6.lexSpace
+         0     0%   100%     3.12us  2.19%  runtime.(*mheap).freeSpan (inline)
+         0     0%   100%     3.12us  2.19%  runtime.(*mheap).freeSpan.func1
+         0     0%   100%     3.12us  2.19%  runtime.(*sweepLocked).sweep
+         0     0%   100%    19.12us 13.40%  runtime.allocm
+         0     0%   100%     2.87us  2.01%  runtime.bgsweep
+         0     0%   100%    19.12us 13.40%  runtime.chansend
+         0     0%   100%    19.12us 13.40%  runtime.chansend1
+         0     0%   100%    11.83us  8.29%  runtime.findRunnable
+         0     0%   100%    74.87us 52.47%  runtime.forEachP (inline)
+         0     0%   100%    74.87us 52.47%  runtime.forEachP.func1
+         0     0%   100%    74.87us 52.47%  runtime.forEachPInternal
+         0     0%   100%    98.96us 69.34%  runtime.gcBgMarkWorker
+         0     0%   100%    98.96us 69.34%  runtime.gcMarkDone
+         0     0%   100%    24.08us 16.88%  runtime.gcMarkDone.func2
+         0     0%   100%     6.83us  4.79%  runtime.gcstopm
+         0     0%   100%    19.96us 13.99%  runtime.gopreempt_m (inline)
+         0     0%   100%    19.12us 13.40%  runtime.goready (inline)
+         0     0%   100%    19.96us 13.99%  runtime.goschedImpl
+         0     0%   100%     1.33us  0.93%  runtime.mcall
+         0     0%   100%    19.12us 13.40%  runtime.mcommoninit
+         0     0%   100%    19.96us 13.99%  runtime.morestack
+         0     0%   100%    19.12us 13.40%  runtime.newm
+         0     0%   100%    19.96us 13.99%  runtime.newstack
+         0     0%   100%     1.33us  0.93%  runtime.park_m
+         0     0%   100%    19.12us 13.40%  runtime.ready
+         0     0%   100%        5us  3.50%  runtime.runSafePointFn
+         0     0%   100%    11.83us  8.29%  runtime.schedule
+         0     0%   100%    19.12us 13.40%  runtime.send
+         0     0%   100%    19.12us 13.40%  runtime.startm
+         0     0%   100%    24.08us 16.88%  runtime.stopTheWorldWithSema
+         0     0%   100%     2.87us  2.01%  runtime.sweepone
+         0     0%   100%   121.41us 85.08%  runtime.systemstack
+         0     0%   100%    19.12us 13.40%  runtime.wakep

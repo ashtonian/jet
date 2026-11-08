@@ -1,0 +1,185 @@
+File: candidate.test
+Type: alloc_space
+Time: 2026-11-08 03:00:17 CST
+Showing nodes accounting for 4631.30MB, 98.78% of 4688.57MB total
+Dropped 53 nodes (cum <= 23.44MB)
+Showing top 40 nodes out of 61
+----------------------------------------------------------+-------------
+      flat  flat%   sum%        cum   cum%   calls calls% + context
+----------------------------------------------------------+-------------
+                                         1006.28MB   100% |   bytes.(*Buffer).grow
+ 1006.28MB 21.46% 21.46%  1006.28MB 21.46%                | bytes.growSlice
+----------------------------------------------------------+-------------
+                                          876.24MB   100% |   github.com/CloudyKit/jet/v6.(*Template).execute
+  876.24MB 18.69% 40.15%   876.24MB 18.69%                | reflect.mapassign_faststr0
+----------------------------------------------------------+-------------
+                                         1565.32MB   100% |   bytes.(*Buffer).Write
+  559.03MB 11.92% 52.07%  1565.32MB 33.39%                | bytes.(*Buffer).grow
+                                         1006.28MB 64.29% |   bytes.growSlice
+----------------------------------------------------------+-------------
+                                          543.11MB   100% |   github.com/CloudyKit/jet/v6.(*Template).execute (inline)
+  543.11MB 11.58% 63.66%   543.11MB 11.58%                | bytes.(*Buffer).String
+----------------------------------------------------------+-------------
+  526.53MB 11.23% 74.89%  4677.80MB 99.77%                | github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext
+                                         4151.27MB 88.74% |   github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+----------------------------------------------------------+-------------
+                                          291.50MB 78.68% |   github.com/CloudyKit/jet/v6.(*Template).execute
+                                              32MB  8.64% |   encoding/json/v2.marshalEncode
+                                           24.50MB  6.61% |   github.com/CloudyKit/jet/v6.(*dataJSONEncoder).value
+                                           22.50MB  6.07% |   github.com/CloudyKit/jet/v6.(*Runtime).sortedStringKeys
+  370.51MB  7.90% 82.79%   370.51MB  7.90%                | reflect.unsafe_New
+----------------------------------------------------------+-------------
+                                          165.01MB   100% |   github.com/CloudyKit/jet/v6.(*Runtime).executeInclude (inline)
+  165.01MB  3.52% 86.31%   165.01MB  3.52%                | github.com/CloudyKit/jet/v6.(*Runtime).newScope
+----------------------------------------------------------+-------------
+                                          438.87MB   100% |   github.com/CloudyKit/jet/v6.(*Runtime).marshalDataJSON
+  149.01MB  3.18% 89.49%   438.87MB  9.36%                | github.com/CloudyKit/jet/v6.(*dataJSONEncoder).value
+                                          189.86MB 43.26% |   github.com/CloudyKit/jet/v6.(*dataJSONEncoder).stringValue
+                                           72.50MB 16.52% |   github.com/CloudyKit/jet/v6.(*Runtime).sortedStringKeys
+                                           24.50MB  5.58% |   reflect.unsafe_New
+----------------------------------------------------------+-------------
+                                          138.01MB   100% |   github.com/CloudyKit/jet/v6.(*Template).execute
+  138.01MB  2.94% 92.43%   138.01MB  2.94%                | reflect.makemap
+----------------------------------------------------------+-------------
+                                          315.02MB   100% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+  100.50MB  2.14% 94.58%   315.02MB  6.72%                | github.com/CloudyKit/jet/v6.(*Runtime).executeYieldBlock
+                                          214.51MB 68.10% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+----------------------------------------------------------+-------------
+                                           40.01MB   100% |   encoding/json/v2.Marshal (inline)
+   40.01MB  0.85% 95.43%    40.01MB  0.85%                | bytes.Clone
+----------------------------------------------------------+-------------
+                                          189.86MB   100% |   github.com/CloudyKit/jet/v6.(*dataJSONEncoder).value
+      38MB  0.81% 96.24%   189.86MB  4.05%                | github.com/CloudyKit/jet/v6.(*dataJSONEncoder).stringValue
+                                           80.36MB 42.32% |   bytes.(*Buffer).Write
+                                           71.50MB 37.66% |   encoding/json.Marshal (inline)
+----------------------------------------------------------+-------------
+                                           72.50MB   100% |   github.com/CloudyKit/jet/v6.(*dataJSONEncoder).value
+      36MB  0.77% 97.01%    72.50MB  1.55%                | github.com/CloudyKit/jet/v6.(*Runtime).sortedStringKeys
+                                           22.50MB 31.03% |   reflect.unsafe_New
+----------------------------------------------------------+-------------
+                                           28.56MB   100% |   github.com/CloudyKit/jet/v6.(*Template).execute
+   28.56MB  0.61% 97.62%    28.56MB  0.61%                | reflect.unsafe_NewArray
+----------------------------------------------------------+-------------
+                                              24MB   100% |   github.com/CloudyKit/jet/v6.init.0.func5 (inline)
+      24MB  0.51% 98.13%       24MB  0.51%                | github.com/CloudyKit/jet/v6.newIntsRanger
+----------------------------------------------------------+-------------
+                                           51.50MB   100% |   github.com/CloudyKit/jet/v6.(*Set).getSiblingTemplate
+      21MB  0.45% 98.58%    51.50MB  1.10%                | path.Join
+----------------------------------------------------------+-------------
+                                           33.50MB   100% |   github.com/CloudyKit/jet/v6.(*Runtime).evalPipeCallExpression
+    9.50MB   0.2% 98.78%    33.50MB  0.71%                | github.com/CloudyKit/jet/v6.init.0.func5
+                                              24MB 71.64% |   github.com/CloudyKit/jet/v6.newIntsRanger (inline)
+----------------------------------------------------------+-------------
+                                         1482.46MB 94.71% |   github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+                                           80.36MB  5.13% |   github.com/CloudyKit/jet/v6.(*dataJSONEncoder).stringValue
+         0     0% 98.78%  1565.32MB 33.39%                | bytes.(*Buffer).Write
+                                         1565.32MB   100% |   bytes.(*Buffer).grow
+----------------------------------------------------------+-------------
+                                           71.50MB 99.29% |   github.com/CloudyKit/jet/v6.(*dataJSONEncoder).stringValue (inline)
+         0     0% 98.78%    72.01MB  1.54%                | encoding/json.Marshal
+                                           72.01MB   100% |   encoding/json/v2.Marshal
+----------------------------------------------------------+-------------
+                                           72.01MB   100% |   encoding/json.Marshal
+         0     0% 98.78%    72.01MB  1.54%                | encoding/json/v2.Marshal
+                                           40.01MB 55.56% |   bytes.Clone (inline)
+                                              32MB 44.44% |   encoding/json/v2.marshalEncode
+----------------------------------------------------------+-------------
+                                              32MB   100% |   encoding/json/v2.Marshal
+         0     0% 98.78%       32MB  0.68%                | encoding/json/v2.marshalEncode
+                                              32MB   100% |   reflect.unsafe_New
+----------------------------------------------------------+-------------
+                                          770.03MB 99.61% |   github.com/CloudyKit/jet/v6.(*dataPrinter).text
+         0     0% 98.78%   773.03MB 16.49%                | github.com/CloudyKit/fastprinter.PrintString
+                                          769.03MB 99.48% |   github.com/CloudyKit/jet/v6.(*dataPrinter).Write
+----------------------------------------------------------+-------------
+                                          438.87MB 92.91% |   github.com/CloudyKit/jet/v6.(*Runtime).evalCommandExpression (inline)
+                                           33.50MB  7.09% |   github.com/CloudyKit/jet/v6.(*Runtime).evalPrimaryExpressionGroup (inline)
+         0     0% 98.78%   472.37MB 10.07%                | github.com/CloudyKit/jet/v6.(*Runtime).evalCallExpression
+                                          472.37MB   100% |   github.com/CloudyKit/jet/v6.(*Runtime).evalPipeCallExpression
+----------------------------------------------------------+-------------
+                                          438.87MB   100% |   github.com/CloudyKit/jet/v6.(*Runtime).evalPipelineExpression
+         0     0% 98.78%   438.87MB  9.36%                | github.com/CloudyKit/jet/v6.(*Runtime).evalCommandExpression
+                                          438.87MB   100% |   github.com/CloudyKit/jet/v6.(*Runtime).evalCallExpression (inline)
+----------------------------------------------------------+-------------
+                                          472.37MB   100% |   github.com/CloudyKit/jet/v6.(*Runtime).evalCallExpression
+         0     0% 98.78%   472.37MB 10.07%                | github.com/CloudyKit/jet/v6.(*Runtime).evalPipeCallExpression
+                                          438.87MB 92.91% |   github.com/CloudyKit/jet/v6.(*Runtime).marshalDataJSON
+                                           33.50MB  7.09% |   github.com/CloudyKit/jet/v6.init.0.func5
+----------------------------------------------------------+-------------
+                                          438.87MB   100% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 98.78%   438.87MB  9.36%                | github.com/CloudyKit/jet/v6.(*Runtime).evalPipelineExpression
+                                          438.87MB   100% |   github.com/CloudyKit/jet/v6.(*Runtime).evalCommandExpression
+----------------------------------------------------------+-------------
+                                           33.50MB   100% |   github.com/CloudyKit/jet/v6.(*Runtime).executeRange
+         0     0% 98.78%    33.50MB  0.71%                | github.com/CloudyKit/jet/v6.(*Runtime).evalPrimaryExpressionGroup
+                                           33.50MB   100% |   github.com/CloudyKit/jet/v6.(*Runtime).evalCallExpression (inline)
+----------------------------------------------------------+-------------
+                                          216.51MB   100% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 98.78%   216.51MB  4.62%                | github.com/CloudyKit/jet/v6.(*Runtime).executeInclude
+                                          165.01MB 76.21% |   github.com/CloudyKit/jet/v6.(*Runtime).newScope (inline)
+                                           51.50MB 23.79% |   github.com/CloudyKit/jet/v6.(*Runtime).loadTemplate
+----------------------------------------------------------+-------------
+                                         2272.85MB   100% |   github.com/CloudyKit/jet/v6.(*Template).execute
+                                          214.51MB  9.44% |   github.com/CloudyKit/jet/v6.(*Runtime).executeYieldBlock
+                                              33MB  1.45% |   github.com/CloudyKit/jet/v6.(*Runtime).executeRange
+         0     0% 98.78%  2272.85MB 48.48%                | github.com/CloudyKit/jet/v6.(*Runtime).executeList
+                                          929.43MB 40.89% |   github.com/CloudyKit/jet/v6.(*Runtime).printValue
+                                          554.03MB 24.38% |   github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+                                          438.87MB 19.31% |   github.com/CloudyKit/jet/v6.(*Runtime).evalPipelineExpression
+                                          315.02MB 13.86% |   github.com/CloudyKit/jet/v6.(*Runtime).executeYieldBlock
+                                          216.51MB  9.53% |   github.com/CloudyKit/jet/v6.(*Runtime).executeInclude
+                                           33.50MB  1.47% |   github.com/CloudyKit/jet/v6.(*Runtime).executeRange
+----------------------------------------------------------+-------------
+                                           33.50MB   100% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 98.78%    33.50MB  0.71%                | github.com/CloudyKit/jet/v6.(*Runtime).executeRange
+                                           33.50MB   100% |   github.com/CloudyKit/jet/v6.(*Runtime).evalPrimaryExpressionGroup
+                                              33MB 98.51% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+----------------------------------------------------------+-------------
+                                           51.50MB   100% |   github.com/CloudyKit/jet/v6.(*Runtime).executeInclude
+         0     0% 98.78%    51.50MB  1.10%                | github.com/CloudyKit/jet/v6.(*Runtime).loadTemplate
+                                           51.50MB   100% |   github.com/CloudyKit/jet/v6.(*Set).getSiblingTemplate
+----------------------------------------------------------+-------------
+                                          438.87MB   100% |   github.com/CloudyKit/jet/v6.(*Runtime).evalPipeCallExpression
+         0     0% 98.78%   438.87MB  9.36%                | github.com/CloudyKit/jet/v6.(*Runtime).marshalDataJSON
+                                          438.87MB   100% |   github.com/CloudyKit/jet/v6.(*dataJSONEncoder).value
+----------------------------------------------------------+-------------
+                                          929.43MB   100% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 98.78%   929.43MB 19.82%                | github.com/CloudyKit/jet/v6.(*Runtime).printValue
+                                          929.43MB   100% |   github.com/CloudyKit/jet/v6.(*dataPrinter).value
+----------------------------------------------------------+-------------
+                                           51.50MB   100% |   github.com/CloudyKit/jet/v6.(*Runtime).loadTemplate
+         0     0% 98.78%    51.50MB  1.10%                | github.com/CloudyKit/jet/v6.(*Set).getSiblingTemplate
+                                           51.50MB   100% |   path.Join
+----------------------------------------------------------+-------------
+                                         4151.27MB   100% |   github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext
+         0     0% 98.78%  4151.27MB 88.54%                | github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+                                         4151.27MB   100% |   github.com/CloudyKit/jet/v6.(*Template).execute
+----------------------------------------------------------+-------------
+                                         4151.27MB   100% |   github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0% 98.78%  4151.27MB 88.54%                | github.com/CloudyKit/jet/v6.(*Template).execute
+                                         2272.85MB 54.75% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+                                          876.24MB 21.11% |   reflect.mapassign_faststr0
+                                          543.11MB 13.08% |   bytes.(*Buffer).String (inline)
+                                          291.50MB  7.02% |   reflect.unsafe_New
+                                          138.01MB  3.32% |   reflect.makemap
+                                           28.56MB  0.69% |   reflect.unsafe_NewArray
+----------------------------------------------------------+-------------
+                                          928.43MB 62.63% |   github.com/CloudyKit/jet/v6.(*dataPrinter).Write
+                                          554.03MB 37.37% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 98.78%  1482.46MB 31.62%                | github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+                                         1482.46MB   100% |   bytes.(*Buffer).Write
+----------------------------------------------------------+-------------
+                                          769.03MB 82.83% |   github.com/CloudyKit/fastprinter.PrintString
+                                          159.40MB 17.17% |   github.com/CloudyKit/jet/v6.(*dataPrinter).value
+         0     0% 98.78%   928.43MB 19.80%                | github.com/CloudyKit/jet/v6.(*dataPrinter).Write
+                                          928.43MB   100% |   github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+----------------------------------------------------------+-------------
+                                          770.03MB   100% |   github.com/CloudyKit/jet/v6.(*dataPrinter).value
+         0     0% 98.78%   770.03MB 16.42%                | github.com/CloudyKit/jet/v6.(*dataPrinter).text
+                                          770.03MB   100% |   github.com/CloudyKit/fastprinter.PrintString
+----------------------------------------------------------+-------------
+                                          929.43MB   100% |   github.com/CloudyKit/jet/v6.(*Runtime).printValue
+         0     0% 98.78%   929.43MB 19.82%                | github.com/CloudyKit/jet/v6.(*dataPrinter).value
+                                          770.03MB 82.85% |   github.com/CloudyKit/jet/v6.(*dataPrinter).text
+                                          159.40MB 17.15% |   github.com/CloudyKit/jet/v6.(*dataPrinter).Write
+----------------------------------------------------------+-------------

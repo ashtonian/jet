@@ -216,7 +216,7 @@ var stringType = reflect.TypeOf("")
 
 var newMap = Func(func(a Arguments) reflect.Value {
 	if a.NumOfArguments()%2 > 0 {
-		panic("map(): incomplete key-value pair (even number of arguments required)")
+		a.Panicf("map(): incomplete key-value pair (even number of arguments required)")
 	}
 
 	a.runtime.reserveSlots(a.NumOfArguments()/2, int64(reflect.TypeOf("").Size()+reflect.TypeOf((*interface{})(nil)).Elem().Size()))
@@ -224,7 +224,7 @@ var newMap = Func(func(a Arguments) reflect.Value {
 
 	for i := 0; i < a.NumOfArguments(); i += 2 {
 		key := a.Get(i)
-		if !key.IsValid() {
+		if !key.IsValid() || !key.CanInterface() {
 			a.Panicf("map(): key argument at position %d is not a valid value!", i)
 		}
 		if !key.Type().ConvertibleTo(stringType) {
@@ -233,14 +233,14 @@ var newMap = Func(func(a Arguments) reflect.Value {
 		if key.Kind() == reflect.String {
 			a.runtime.checkpoint(uint64(key.Len()))
 		}
-		if a.runtime.execution.ctx != nil {
-			if key.Type() != stringType {
-				key = a.runtime.convertValue(key, stringType)
-			}
-			m.SetMapIndex(key, a.Get(i+1))
-		} else {
-			m.SetMapIndex(a.Get(i), a.Get(i+1))
+		if key.Type() != stringType {
+			key = a.runtime.convertValue(key, stringType)
 		}
+		value := a.Get(i + 1)
+		if !value.IsValid() || !value.CanInterface() {
+			a.Panicf("map(): value argument at position %d is not a valid value", i+1)
+		}
+		m.SetMapIndex(key, value)
 	}
 
 	return m
@@ -250,7 +250,11 @@ var newSlice = Func(func(a Arguments) reflect.Value {
 	a.runtime.reserveSlots(a.NumOfArguments(), int64(reflect.TypeOf((*interface{})(nil)).Elem().Size()))
 	arr := make([]interface{}, a.NumOfArguments())
 	for i := 0; i < a.NumOfArguments(); i++ {
-		arr[i] = a.Get(i).Interface()
+		value := a.Get(i)
+		if !value.IsValid() || !value.CanInterface() {
+			a.Panicf("slice(): argument at position %d is not a valid accessible value", i)
+		}
+		arr[i] = value.Interface()
 	}
 	return reflect.ValueOf(arr)
 })

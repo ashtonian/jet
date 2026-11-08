@@ -1,0 +1,11 @@
+File: render.test
+Type: inuse_objects
+Time: 2026-11-08 04:46:28 CST
+Showing nodes accounting for 1092, 100% of 1092 total
+      flat  flat%   sum%        cum   cum%
+         0     0%     0%       1092   100%  runtime.malg
+      1092   100%   100%       1092   100%  runtime.mallocgc
+         0     0%   100%       1092   100%  runtime.newobject
+         0     0%   100%       1092   100%  runtime.newproc.func1
+         0     0%   100%       1092   100%  runtime.newproc1
+         0     0%   100%       1092   100%  runtime.systemstack

@@ -1,0 +1,20 @@
+{
+  "cycle": "c9ec08935ddf15eaf9328128e008faf0bef5e079",
+  "pull_lexer": "6cf13002e0a9fcf0548b8a426c428802c7890553",
+  "compilation": "5e5aa42662d9f6fc5372b7809cd03c6ddbb48486",
+  "canonical_pull": [
+    "4d419fd",
+    "415d548"
+  ],
+  "canonical_compilation": "9a8d22e",
+  "compilation_previous": "25981def02193aadcf0e2f38eff550a593b2b927",
+  "runtime_foundation": "d2f089ce4f617dd512c7eee6b5d825f2c0b57914",
+  "compatibility_workflow": "accce48cdc3d7813eba528c8b90d10697e202f02",
+  "runtime_compilation_base": "c422a0215ed40cc17d2282688d3626a1014ac7d7",
+  "runtime_compilation": "98f45c6b1d87b9fb8941291c94d51441c3a5b4b9",
+  "canonical_bridge": "fd1bc81",
+  "canonical_latest": "195312aae4023f01a3d9ec84e3e12281edcbbe15",
+  "scope": "ashtonian/jet only; owner forbids upstream PRs",
+  "runtime_compilation_base_previous": "ac9e5e3e2543bc4c53dc26916b762e559e13d28b",
+  "runtime_compilation_previous": "81d67ffd5c9609f5e22ac033b756f9cc27e9ef99"
+}

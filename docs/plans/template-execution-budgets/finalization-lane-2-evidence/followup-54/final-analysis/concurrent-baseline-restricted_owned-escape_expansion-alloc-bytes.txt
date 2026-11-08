@@ -1,0 +1,27 @@
+File: render.test
+Type: alloc_space
+Time: 2026-11-08 04:46:52 CST
+Showing nodes accounting for 1560.20MB, 99.15% of 1573.51MB total
+Dropped 61 nodes (cum <= 7.87MB)
+      flat  flat%   sum%        cum   cum%
+ 1149.55MB 73.06% 73.06%  1149.55MB 73.06%  bytes.growSlice
+  393.15MB 24.99% 98.04%   393.15MB 24.99%  bytes.(*Buffer).String (inline)
+    9.50MB   0.6% 98.65%  1560.20MB 99.15%  github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext
+    7.50MB  0.48% 99.12%  1157.05MB 73.53%  bytes.(*Buffer).grow
+    0.50MB 0.032% 99.15%    11.01MB   0.7%  github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes
+         0     0% 99.15%  1157.05MB 73.53%  bytes.(*Buffer).Write
+         0     0% 99.15%  1157.55MB 73.56%  github.com/CloudyKit/fastprinter.PrintString
+         0     0% 99.15%  1157.55MB 73.56%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 99.15%  1157.55MB 73.56%  github.com/CloudyKit/jet/v6.(*Runtime).printValue
+         0     0% 99.15%  1550.70MB 98.55%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0% 99.15%  1550.70MB 98.55%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0% 99.15%  1157.05MB 73.53%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+         0     0% 99.15%  1157.05MB 73.53%  github.com/CloudyKit/jet/v6.(*dataPrinter).Write
+         0     0% 99.15%  1157.55MB 73.56%  github.com/CloudyKit/jet/v6.(*dataPrinter).text
+         0     0% 99.15%  1157.55MB 73.56%  github.com/CloudyKit/jet/v6.(*dataPrinter).value
+         0     0% 99.15%  1157.05MB 73.53%  github.com/CloudyKit/jet/v6.(*escapeeWriter).Write
+         0     0% 99.15%  1560.20MB 99.15%  github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes.func1.1
+         0     0% 99.15%  1560.20MB 99.15%  github.com/CloudyKit/jet/v6_test.init.0.func5
+         0     0% 99.15%    11.01MB   0.7%  testing.(*B).run1.func1
+         0     0% 99.15%    11.01MB   0.7%  testing.(*B).runN
+         0     0% 99.15%  1157.05MB 73.53%  text/template.HTMLEscape

@@ -1,0 +1,22 @@
+package jet_test
+
+import (
+ "context"
+ "runtime"
+ "testing"
+)
+
+func BenchmarkOutputReserve(b *testing.B) {
+ fixtures:=[]executionWorkload{{Name:"empty",Source:"",Text:"",HTML:""},{Name:"tiny",Source:"x",Text:"x",HTML:"x"}}
+ for _,f:=range executionWorkloads(b){switch f.Name{case "header_interpolation","escape_expansion","body_8192","body_65536","try_success","try_rollback":fixtures=append(fixtures,f)}}
+ for _,f:=range fixtures{b.Run(f.Name,func(b *testing.B){
+  tpl,err:=finalRestrictedSetup(f,true);if err!=nil{b.Fatal(err)}
+  vars:=f.vars();ctx,cancel:=context.WithCancel(context.Background());defer cancel()
+  run:=func(){result,err:=tpl.RenderRestrictedContext(ctx,vars,nil);if err!=nil||result!=f.HTML{b.Fatalf("result len %d, want %d: %v",len(result),len(f.HTML),err)};runtime.KeepAlive(result)}
+  b.Run("warm",func(b *testing.B){b.ReportAllocs();for i:=0;i<b.N;i++{run()}})
+  if f.Name=="tiny"||f.Name=="escape_expansion"||f.Name=="body_65536" {
+   for _,workers:=range []int{2,8}{b.Run(map[int]string{2:"parallel2",8:"parallel8"}[workers],func(b *testing.B){b.SetParallelism(workers/2);b.ReportAllocs();b.RunParallel(func(pb *testing.PB){for pb.Next(){run()}})})}
+   b.Run("postGC",func(b *testing.B){b.ReportAllocs();for i:=0;i<b.N;i++{runtime.GC();run()}})
+  }
+ })}
+}

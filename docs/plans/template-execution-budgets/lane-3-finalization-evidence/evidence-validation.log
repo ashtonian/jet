@@ -1,0 +1,28 @@
+gate-lock: held by pid 179 on $HOST, "jet-lane3-final-evidence 7f7f38a in $CHECKOUT", since 2026-11-08T08:37:43Z, 2 of 6 focused cores
+{
+  "command": "python3 .git/finalization/validate_evidence.py",
+  "exit_code": 0,
+  "start": 1794127064.1723788,
+  "end": 1794127066.9695868,
+  "execution_deadline_seconds": 180,
+  "cleanup_seconds": 5,
+  "variant_patches_verified": [
+    "baseline",
+    "graph4",
+    "input4",
+    "lazy0",
+    "inline8",
+    "inline16",
+    "walk",
+    "nopool",
+    "follow-base4",
+    "follow-cap8",
+    "follow-cap16",
+    "follow-pooled4",
+    "follow-active8"
+  ],
+  "docs_sha256": {
+    "docs/plans/template-execution-budgets/lane-3-finalization.md": "aee76989acbe6214c8d89a8fe8c680dea6a9a6d4ed5b3463308e9cd094201ce0",
+    "docs/plans/template-execution-budgets/lane-3-finalization-evidence/index.md": "4bb50db9661d8179008b574f7a13f0f92b683dc616f152e30b18c3ebc22e64d7"
+  }
+}

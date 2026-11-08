@@ -1,0 +1,11 @@
+goos: darwin
+goarch: arm64
+pkg: github.com/CloudyKit/jet/v6
+cpu: Apple M2 Max
+BenchmarkAdmissionInput/empty-2         	 4650121	       255.9 ns/op	     130 B/op	       3 allocs/op
+BenchmarkAdmissionInput/scalar-2        	 4287084	       277.7 ns/op	     130 B/op	       3 allocs/op
+BenchmarkAdmissionInput/small_map-2     	 1991871	       565.4 ns/op	     514 B/op	       8 allocs/op
+BenchmarkAdmissionInput/nested-2        	  300358	      4517 ns/op	    5026 B/op	      66 allocs/op
+BenchmarkAdmissionInput/shared-2        	  640222	      1655 ns/op	    1098 B/op	      19 allocs/op
+BenchmarkAdmissionInput/large-2         	   31713	     38879 ns/op	   23007 B/op	     647 allocs/op
+PASS

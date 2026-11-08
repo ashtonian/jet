@@ -1,0 +1,22 @@
+{
+  "command": [
+    "git",
+    "-C",
+    "../jet-lane-3",
+    "diff",
+    "--name-only",
+    "2858cef45f7fdc9c100fe0294f367fea63c82a15",
+    "0e277b3017b4afae1f984663c4e9244b4de0b290",
+    "--",
+    "*.go",
+    "go.mod",
+    "go.sum",
+    "testData",
+    "docs/execution.md",
+    "docs/execution-costs.md",
+    "docs/compilation.md",
+    "docs/restricted.md"
+  ],
+  "exit": 0,
+  "changed_files": []
+}

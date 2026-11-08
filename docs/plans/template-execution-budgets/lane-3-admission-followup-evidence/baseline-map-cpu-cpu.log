@@ -1,0 +1,43 @@
+File: candidate.test
+Type: cpu
+Time: 2026-11-08 03:59:59 CST
+Duration: 4.73s, Total samples = 4.62s (97.66%)
+Showing nodes accounting for 3.50s, 75.76% of 4.62s total
+Dropped 103 nodes (cum <= 0.02s)
+Showing top 35 nodes out of 164
+      flat  flat%   sum%        cum   cum%
+     1.33s 28.79% 28.79%      1.33s 28.79%  runtime.kevent
+     0.29s  6.28% 35.06%      0.29s  6.28%  runtime.pthread_kill
+     0.23s  4.98% 40.04%      0.23s  4.98%  context.(*cancelCtx).Err
+     0.18s  3.90% 43.94%      0.18s  3.90%  runtime.usleep
+     0.09s  1.95% 45.89%      0.23s  4.98%  github.com/CloudyKit/jet/v6.(*Runtime).reserveWork
+     0.09s  1.95% 47.84%      0.11s  2.38%  runtime.mallocgcSmallScanNoHeader
+     0.08s  1.73% 49.57%      0.08s  1.73%  github.com/CloudyKit/jet/v6.constrainParse
+     0.07s  1.52% 51.08%      0.10s  2.16%  github.com/CloudyKit/jet/v6.(*Runtime).recover
+     0.07s  1.52% 52.60%      2.35s 50.87%  github.com/CloudyKit/jet/v6.(*Template).execute
+     0.07s  1.52% 54.11%      0.15s  3.25%  runtime.(*_panic).nextDefer
+     0.07s  1.52% 55.63%      0.07s  1.52%  runtime.pthread_cond_wait
+     0.06s  1.30% 56.93%      0.08s  1.73%  internal/runtime/maps.(*Iter).Next
+     0.06s  1.30% 58.23%      0.08s  1.73%  runtime.mallocgcSmallScanNoHeaderSC6
+     0.05s  1.08% 59.31%      0.67s 14.50%  github.com/CloudyKit/jet/v6.(*inputAdmission).clone
+     0.05s  1.08% 60.39%      0.05s  1.08%  internal/abi.(*Type).Uncommon (inline)
+     0.05s  1.08% 61.47%      0.05s  1.08%  runtime.popDefer
+     0.05s  1.08% 62.55%      0.07s  1.52%  runtime.tryDeferToSpanScan
+     0.04s  0.87% 63.42%      0.26s  5.63%  github.com/CloudyKit/jet/v6.(*Runtime).checkpoint
+     0.04s  0.87% 64.29%      0.04s  0.87%  runtime.deferprocStack
+     0.04s  0.87% 65.15%      0.04s  0.87%  runtime.findObject
+     0.04s  0.87% 66.02%      0.05s  1.08%  runtime.mallocgcSmallScanNoHeaderSC2
+     0.04s  0.87% 66.88%      0.04s  0.87%  runtime.pthread_cond_signal
+     0.04s  0.87% 67.75%      0.04s  0.87%  runtime.pthread_cond_timedwait_relative_np
+     0.04s  0.87% 68.61%      0.07s  1.52%  runtime.resolveTypeOff
+     0.04s  0.87% 69.48%      0.04s  0.87%  sync.(*Pool).pin
+     0.03s  0.65% 70.13%      0.10s  2.16%  github.com/CloudyKit/jet/v6.(*inputAdmission).step
+     0.03s  0.65% 70.78%      0.11s  2.38%  github.com/CloudyKit/jet/v6.constrainExecution
+     0.03s  0.65% 71.43%      0.04s  0.87%  reflect.(*rtype).MethodByName
+     0.03s  0.65% 72.08%      0.13s  2.81%  reflect.(*rtype).ptrTo
+     0.03s  0.65% 72.73%      0.16s  3.46%  reflect.Value.SetMapIndex
+     0.03s  0.65% 73.38%      0.07s  1.52%  reflect.implements
+     0.03s  0.65% 74.03%      0.03s  0.65%  runtime.(*_panic).nextFrame
+     0.03s  0.65% 74.68%      0.03s  0.65%  runtime.madvise
+     0.03s  0.65% 75.32%      0.03s  0.65%  runtime.nanotime1
+     0.02s  0.43% 75.76%      0.11s  2.38%  github.com/CloudyKit/jet/v6.(*Runtime).beforeData

@@ -1,0 +1,36 @@
+File: render.test
+Type: alloc_space
+Time: 2026-11-08 05:27:26 CST
+Showing nodes accounting for 14966.57kB, 100% of 14966.57kB total
+Showing top 30 nodes out of 74
+      flat  flat%   sum%        cum   cum%
+ 2565.36kB 17.14% 17.14%  2565.36kB 17.14%  os.readFileContents
+ 1538.75kB 10.28% 27.42%  1538.75kB 10.28%  regexp.onePassCopy
+ 1536.42kB 10.27% 37.69%  4127.65kB 27.58%  github.com/CloudyKit/jet/v6_test.additionalExecutionWorkloads
+ 1184.27kB  7.91% 45.60%  1184.27kB  7.91%  runtime/pprof.StartCPUProfile
+ 1048.19kB  7.00% 52.60%  1048.19kB  7.00%  strings.(*byteStringReplacer).Replace
+ 1031.02kB  6.89% 59.49%  1031.02kB  6.89%  slices.Grow[go.shape.[]uint8,go.shape.uint8] (inline)
+ 1025.66kB  6.85% 66.35%  1025.66kB  6.85%  regexp/syntax.(*compiler).inst (inline)
+  688.56kB  4.60% 70.95%   688.56kB  4.60%  compress/flate.(*fastGen).addBlock
+  655.29kB  4.38% 75.32%  1750.92kB 11.70%  compress/flate.NewWriter (inline)
+  583.01kB  3.90% 79.22%   583.01kB  3.90%  compress/flate.newFastEnc (inline)
+  544.67kB  3.64% 82.86%   544.67kB  3.64%  encoding/json/v2.makeString
+  516.64kB  3.45% 86.31%  2267.56kB 15.15%  runtime/pprof.(*profileBuilder).emitLocation
+  512.62kB  3.43% 89.74%   512.62kB  3.43%  compress/flate.newHuffmanEncoder (inline)
+  512.08kB  3.42% 93.16%   512.08kB  3.42%  compress/gzip.NewWriterLevel
+  512.02kB  3.42% 96.58%   512.02kB  3.42%  internal/bytealg.MakeNoZero
+  512.01kB  3.42%   100% 10314.10kB 68.91%  github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes
+         0     0%   100%   688.56kB  4.60%  compress/flate.(*Writer).Close (inline)
+         0     0%   100%   688.56kB  4.60%  compress/flate.(*compressor).close
+         0     0%   100%   688.56kB  4.60%  compress/flate.(*compressor).deflateFast
+         0     0%   100%  1095.63kB  7.32%  compress/flate.(*compressor).init
+         0     0%   100%   688.56kB  4.60%  compress/flate.(*fastEncL1).encode
+         0     0%   100%   512.62kB  3.43%  compress/flate.newHuffmanBitWriter
+         0     0%   100%   688.56kB  4.60%  compress/gzip.(*Writer).Close
+         0     0%   100%  1750.92kB 11.70%  compress/gzip.(*Writer).Write
+         0     0%   100%  1031.02kB  6.89%  encoding/json.Marshal (inline)
+         0     0%   100%   544.67kB  3.64%  encoding/json.Unmarshal (inline)
+         0     0%   100%  1031.02kB  6.89%  encoding/json/internal/jsonwire.AppendQuote
+         0     0%   100%  1031.02kB  6.89%  encoding/json/jsontext.(*Encoder).WriteToken (inline)
+         0     0%   100%  1031.02kB  6.89%  encoding/json/jsontext.(*encoderState).WriteToken
+         0     0%   100%  1031.02kB  6.89%  encoding/json/jsontext.Token.appendString

@@ -1,0 +1,23 @@
+File: upstream.test
+Type: inuse_space
+Time: 2026-11-08 03:05:52 CST
+Showing nodes accounting for 1276.20kB, 98.53% of 1295.22kB total
+Dropped 129 nodes (cum <= 6.48kB)
+      flat  flat%   sum%        cum   cum%
+     512kB 39.53% 39.53%      512kB 39.53%  bytes.(*Buffer).String (inline)
+     508kB 39.22% 78.75%      508kB 39.22%  bytes.growSlice
+     256kB 19.77% 98.52%      256kB 19.77%  internal/bytealg.MakeNoZero
+    0.16kB 0.012% 98.53%  1284.45kB 99.17%  github.com/CloudyKit/jet/v6_test.TestExecutionRetentionMeasurements.func1
+    0.05kB 0.0036% 98.53%  1025.24kB 79.16%  github.com/CloudyKit/jet/v6_test.init.func2
+         0     0% 98.53%      508kB 39.22%  bytes.(*Buffer).Write
+         0     0% 98.53%      508kB 39.22%  bytes.(*Buffer).grow
+         0     0% 98.53%   512.53kB 39.57%  github.com/CloudyKit/fastprinter.PrintString
+         0     0% 98.53%   512.53kB 39.57%  github.com/CloudyKit/fastprinter.PrintValue
+         0     0% 98.53%   512.53kB 39.57%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 98.53%   513.20kB 39.62%  github.com/CloudyKit/jet/v6.(*Template).Execute
+         0     0% 98.53%      508kB 39.22%  github.com/CloudyKit/jet/v6.(*escapeeWriter).Write
+         0     0% 98.53%  1025.24kB 79.16%  github.com/CloudyKit/jet/v6_test.TestExecutionRetentionMeasurements.func1.1
+         0     0% 98.53%      256kB 19.77%  strings.(*Builder).Grow
+         0     0% 98.53%      256kB 19.77%  strings.(*Builder).grow
+         0     0% 98.53%      256kB 19.77%  strings.Repeat
+         0     0% 98.53%  1290.07kB 99.60%  testing.tRunner

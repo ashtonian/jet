@@ -1,0 +1,37 @@
+File: render.test
+Type: cpu
+Time: 2026-11-08 04:46:26 CST
+Duration: 1.61s, Total samples = 1.42s (88.03%)
+Showing nodes accounting for 1.22s, 85.92% of 1.42s total
+Showing top 30 nodes out of 119
+      flat  flat%   sum%        cum   cum%
+     0.35s 24.65% 24.65%      0.35s 24.65%  runtime.kevent
+     0.15s 10.56% 35.21%      0.16s 11.27%  context.(*cancelCtx).Err
+     0.12s  8.45% 43.66%      0.87s 61.27%  github.com/CloudyKit/jet/v6.(*Template).execute
+     0.07s  4.93% 48.59%      0.13s  9.15%  github.com/CloudyKit/jet/v6.(*inputAdmission).step
+     0.05s  3.52% 52.11%      0.13s  9.15%  github.com/CloudyKit/jet/v6.(*Runtime).checkpoint
+     0.04s  2.82% 54.93%      0.10s  7.04%  runtime.mallocgcSmallScanNoHeaderSC6
+     0.03s  2.11% 57.04%      0.16s 11.27%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+     0.03s  2.11% 59.15%      0.09s  6.34%  github.com/CloudyKit/jet/v6.(*Runtime).reserveWork
+     0.03s  2.11% 61.27%      0.03s  2.11%  github.com/CloudyKit/jet/v6.constrainParse
+     0.03s  2.11% 63.38%      0.03s  2.11%  runtime.(*_panic).nextDefer
+     0.03s  2.11% 65.49%      0.03s  2.11%  runtime.releasem (inline)
+     0.03s  2.11% 67.61%      0.03s  2.11%  sync.(*Pool).pin
+     0.02s  1.41% 69.01%      0.02s  1.41%  github.com/CloudyKit/jet/v6.(*Runtime).executeList.func1
+     0.02s  1.41% 70.42%      0.89s 62.68%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+     0.02s  1.41% 71.83%      0.05s  3.52%  github.com/CloudyKit/jet/v6.(*inputAdmission).clone
+     0.02s  1.41% 73.24%      0.24s 16.90%  github.com/CloudyKit/jet/v6.admitInputScopesInto
+     0.02s  1.41% 74.65%      0.02s  1.41%  runtime.gorecover
+     0.02s  1.41% 76.06%      0.02s  1.41%  runtime.madvise
+     0.02s  1.41% 77.46%      0.02s  1.41%  runtime.tryDeferToSpanScan
+     0.02s  1.41% 78.87%      0.03s  2.11%  runtime.typePointers.next
+     0.01s   0.7% 79.58%      0.02s  1.41%  bytes.(*Buffer).grow
+     0.01s   0.7% 80.28%      0.06s  4.23%  github.com/CloudyKit/jet/v6.(*Runtime).recover
+     0.01s   0.7% 80.99%      0.01s   0.7%  github.com/CloudyKit/jet/v6.(*Runtime).rethrowTerminal (inline)
+     0.01s   0.7% 81.69%      0.08s  5.63%  github.com/CloudyKit/jet/v6.(*Runtime).startCompilation
+     0.01s   0.7% 82.39%      0.02s  1.41%  github.com/CloudyKit/jet/v6.(*Runtime).templateRoot
+     0.01s   0.7% 83.10%         1s 70.42%  github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext
+     0.01s   0.7% 83.80%      0.06s  4.23%  github.com/CloudyKit/jet/v6.(*inputAdmission).reserveBytes
+     0.01s   0.7% 84.51%      0.06s  4.23%  github.com/CloudyKit/jet/v6.(*inputAdmission).reserveItems
+     0.01s   0.7% 85.21%      0.04s  2.82%  github.com/CloudyKit/jet/v6.(*parseAdmission).admitCached
+     0.01s   0.7% 85.92%      0.03s  2.11%  github.com/CloudyKit/jet/v6.(*parseAdmission).init

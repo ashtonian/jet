@@ -1,0 +1,166 @@
+File: upstream.test
+Type: alloc_space
+Time: 2026-11-08 03:02:59 CST
+Showing nodes accounting for 25568.40MB, 99.76% of 25628.65MB total
+Dropped 110 nodes (cum <= 128.14MB)
+----------------------------------------------------------+-------------
+      flat  flat%   sum%        cum   cum%   calls calls% + context
+----------------------------------------------------------+-------------
+                                        11949.47MB   100% |   bytes.(*Buffer).grow
+11949.47MB 46.63% 46.63% 11949.47MB 46.63%                | bytes.growSlice
+----------------------------------------------------------+-------------
+                                         5361.51MB   100% |   github.com/CloudyKit/jet/v6_test.init.func2 (inline)
+ 5361.51MB 20.92% 67.55%  5361.51MB 20.92%                | bytes.(*Buffer).String
+----------------------------------------------------------+-------------
+                                        14382.12MB   100% |   bytes.(*Buffer).Write
+ 2432.65MB  9.49% 77.04% 14382.12MB 56.12%                | bytes.(*Buffer).grow
+                                        11949.47MB 83.09% |   bytes.growSlice
+----------------------------------------------------------+-------------
+                                        25615.52MB   100% |   github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes.func1.1
+ 1851.08MB  7.22% 84.26% 25615.52MB 99.95%                | github.com/CloudyKit/jet/v6_test.init.func2
+                                        18402.93MB 71.84% |   github.com/CloudyKit/jet/v6.(*Template).Execute
+                                         5361.51MB 20.93% |   bytes.(*Buffer).String (inline)
+----------------------------------------------------------+-------------
+                                         1178.52MB 67.54% |   reflect.New
+                                          562.01MB 32.21% |   reflect.copyVal
+ 1745.03MB  6.81% 91.07%  1745.03MB  6.81%                | reflect.unsafe_New
+----------------------------------------------------------+-------------
+                                         1169.59MB   100% |   encoding/json/v2.Marshal (inline)
+ 1169.59MB  4.56% 95.63%  1169.59MB  4.56%                | bytes.Clone
+----------------------------------------------------------+-------------
+                                          892.53MB   100% |   github.com/CloudyKit/jet/v6.(*Template).Execute
+  888.02MB  3.46% 99.10%   892.53MB  3.48%                | github.com/CloudyKit/jet/v6.(*Runtime).recover
+----------------------------------------------------------+-------------
+                                          167.56MB   100% |   encoding/json/internal/jsonwire.AppendQuote (inline)
+  167.56MB  0.65% 99.75%   167.56MB  0.65%                | slices.Grow[go.shape.[]uint8,go.shape.uint8]
+----------------------------------------------------------+-------------
+                                         3094.68MB   100% |   reflect.Value.Call
+    3.50MB 0.014% 99.76%  3094.68MB 12.08%                | reflect.Value.call
+                                         3086.68MB 99.74% |   encoding/json.Marshal
+----------------------------------------------------------+-------------
+                                        12006.97MB 83.49% |   text/template.HTMLEscape
+                                         2375.14MB 16.51% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 99.76% 14382.12MB 56.12%                | bytes.(*Buffer).Write
+                                        14382.12MB   100% |   bytes.(*Buffer).grow
+----------------------------------------------------------+-------------
+                                         3086.68MB   100% |   reflect.Value.call
+         0     0% 99.76%  3086.68MB 12.04%                | encoding/json.Marshal
+                                         3086.68MB   100% |   encoding/json/v2.Marshal
+----------------------------------------------------------+-------------
+                                          167.56MB   100% |   encoding/json/jsontext.Token.appendString
+         0     0% 99.76%   167.56MB  0.65%                | encoding/json/internal/jsonwire.AppendQuote
+                                          167.56MB   100% |   slices.Grow[go.shape.[]uint8,go.shape.uint8] (inline)
+----------------------------------------------------------+-------------
+                                          136.29MB 80.38% |   encoding/json/v2.marshalValueAny (inline)
+                                           33.26MB 19.62% |   encoding/json/v2.makeMapArshaler.func2 (inline)
+         0     0% 99.76%   169.56MB  0.66%                | encoding/json/jsontext.(*Encoder).WriteToken
+                                          169.56MB   100% |   encoding/json/jsontext.(*encoderState).WriteToken
+----------------------------------------------------------+-------------
+                                          169.56MB   100% |   encoding/json/jsontext.(*Encoder).WriteToken
+         0     0% 99.76%   169.56MB  0.66%                | encoding/json/jsontext.(*encoderState).WriteToken
+                                          167.56MB 98.82% |   encoding/json/jsontext.Token.appendString
+----------------------------------------------------------+-------------
+                                          167.56MB   100% |   encoding/json/jsontext.(*encoderState).WriteToken
+         0     0% 99.76%   167.56MB  0.65%                | encoding/json/jsontext.Token.appendString
+                                          167.56MB   100% |   encoding/json/internal/jsonwire.AppendQuote
+----------------------------------------------------------+-------------
+                                         3086.68MB   100% |   encoding/json.Marshal
+         0     0% 99.76%  3086.68MB 12.04%                | encoding/json/v2.Marshal
+                                         1914.59MB 62.03% |   encoding/json/v2.marshalEncode
+                                         1169.59MB 37.89% |   bytes.Clone (inline)
+----------------------------------------------------------+-------------
+                                          724.80MB   100% |   encoding/json/v2.makeMapArshaler.func2
+         0     0% 99.76%   724.80MB  2.83%                | encoding/json/v2.makeInterfaceArshaler.func1
+                                          552.51MB 76.23% |   encoding/json/v2.newAddressableValue
+                                          172.29MB 23.77% |   encoding/json/v2.marshalValueAny
+----------------------------------------------------------+-------------
+                                         1912.59MB   100% |   encoding/json/v2.makeSliceArshaler.func2
+         0     0% 99.76%  1912.59MB  7.46%                | encoding/json/v2.makeMapArshaler.func2
+                                          724.80MB 37.90% |   encoding/json/v2.makeInterfaceArshaler.func1
+                                          588.01MB 30.74% |   encoding/json/v2.newAddressableValue
+                                          562.01MB 29.38% |   reflect.Value.MapIndex
+                                           33.26MB  1.74% |   encoding/json/jsontext.(*Encoder).WriteToken (inline)
+----------------------------------------------------------+-------------
+                                         1912.59MB   100% |   encoding/json/v2.marshalEncode
+         0     0% 99.76%  1912.59MB  7.46%                | encoding/json/v2.makeSliceArshaler.func2
+                                         1912.59MB   100% |   encoding/json/v2.makeMapArshaler.func2
+----------------------------------------------------------+-------------
+                                         1914.59MB   100% |   encoding/json/v2.Marshal
+         0     0% 99.76%  1914.59MB  7.47%                | encoding/json/v2.marshalEncode
+                                         1912.59MB 99.90% |   encoding/json/v2.makeSliceArshaler.func2
+----------------------------------------------------------+-------------
+                                          172.29MB   100% |   encoding/json/v2.makeInterfaceArshaler.func1
+         0     0% 99.76%   172.29MB  0.67%                | encoding/json/v2.marshalValueAny
+                                          136.29MB 79.11% |   encoding/json/jsontext.(*Encoder).WriteToken (inline)
+                                              36MB 20.89% |   encoding/json/v2.newAddressableValue
+----------------------------------------------------------+-------------
+                                          588.01MB 49.98% |   encoding/json/v2.makeMapArshaler.func2
+                                          552.51MB 46.96% |   encoding/json/v2.makeInterfaceArshaler.func1
+                                              36MB  3.06% |   encoding/json/v2.marshalValueAny
+         0     0% 99.76%  1176.52MB  4.59%                | encoding/json/v2.newAddressableValue
+                                         1176.52MB   100% |   reflect.New
+----------------------------------------------------------+-------------
+                                         7458.16MB   100% |   github.com/CloudyKit/fastprinter.PrintValue
+         0     0% 99.76%  7458.16MB 29.10%                | github.com/CloudyKit/fastprinter.PrintString
+                                         7426.56MB 99.58% |   github.com/CloudyKit/jet/v6.(*escapeeWriter).Write
+----------------------------------------------------------+-------------
+                                        12038.58MB   100% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 99.76% 12038.58MB 46.97%                | github.com/CloudyKit/fastprinter.PrintValue
+                                         7458.16MB 61.95% |   github.com/CloudyKit/fastprinter.PrintString
+                                         4580.41MB 38.05% |   github.com/CloudyKit/jet/v6.(*escapeeWriter).Write
+----------------------------------------------------------+-------------
+                                         3095.18MB   100% |   github.com/CloudyKit/jet/v6.(*Runtime).evalCommandExpression (inline)
+         0     0% 99.76%  3095.18MB 12.08%                | github.com/CloudyKit/jet/v6.(*Runtime).evalCallExpression
+                                         3095.18MB   100% |   github.com/CloudyKit/jet/v6.(*Runtime).evalPipeCallExpression
+----------------------------------------------------------+-------------
+                                         3095.18MB   100% |   github.com/CloudyKit/jet/v6.(*Runtime).evalPipelineExpression
+         0     0% 99.76%  3095.18MB 12.08%                | github.com/CloudyKit/jet/v6.(*Runtime).evalCommandExpression
+                                         3095.18MB   100% |   github.com/CloudyKit/jet/v6.(*Runtime).evalCallExpression (inline)
+----------------------------------------------------------+-------------
+                                         3095.18MB   100% |   github.com/CloudyKit/jet/v6.(*Runtime).evalCallExpression
+         0     0% 99.76%  3095.18MB 12.08%                | github.com/CloudyKit/jet/v6.(*Runtime).evalPipeCallExpression
+                                         3094.68MB   100% |   reflect.Value.Call
+----------------------------------------------------------+-------------
+                                         3095.18MB   100% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 99.76%  3095.18MB 12.08%                | github.com/CloudyKit/jet/v6.(*Runtime).evalPipelineExpression
+                                         3095.18MB   100% |   github.com/CloudyKit/jet/v6.(*Runtime).evalCommandExpression
+----------------------------------------------------------+-------------
+                                        17508.90MB   100% |   github.com/CloudyKit/jet/v6.(*Template).Execute
+         0     0% 99.76% 17508.90MB 68.32%                | github.com/CloudyKit/jet/v6.(*Runtime).executeList
+                                        12038.58MB 68.76% |   github.com/CloudyKit/fastprinter.PrintValue
+                                         3095.18MB 17.68% |   github.com/CloudyKit/jet/v6.(*Runtime).evalPipelineExpression
+                                         2375.14MB 13.57% |   bytes.(*Buffer).Write
+----------------------------------------------------------+-------------
+                                        18402.93MB   100% |   github.com/CloudyKit/jet/v6_test.init.func2
+         0     0% 99.76% 18402.93MB 71.81%                | github.com/CloudyKit/jet/v6.(*Template).Execute
+                                        17508.90MB 95.14% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+                                          892.53MB  4.85% |   github.com/CloudyKit/jet/v6.(*Runtime).recover
+----------------------------------------------------------+-------------
+                                         7426.56MB 61.85% |   github.com/CloudyKit/fastprinter.PrintString
+                                         4580.41MB 38.15% |   github.com/CloudyKit/fastprinter.PrintValue
+         0     0% 99.76% 12006.97MB 46.85%                | github.com/CloudyKit/jet/v6.(*escapeeWriter).Write
+                                        12006.97MB   100% |   text/template.HTMLEscape
+----------------------------------------------------------+-------------
+         0     0% 99.76% 25615.52MB 99.95%                | github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes.func1.1
+                                        25615.52MB   100% |   github.com/CloudyKit/jet/v6_test.init.func2
+----------------------------------------------------------+-------------
+                                         1176.52MB 99.83% |   encoding/json/v2.newAddressableValue
+         0     0% 99.76%  1178.52MB  4.60%                | reflect.New
+                                         1178.52MB   100% |   reflect.unsafe_New
+----------------------------------------------------------+-------------
+                                         3094.68MB   100% |   github.com/CloudyKit/jet/v6.(*Runtime).evalPipeCallExpression
+         0     0% 99.76%  3094.68MB 12.08%                | reflect.Value.Call
+                                         3094.68MB   100% |   reflect.Value.call
+----------------------------------------------------------+-------------
+                                          562.01MB   100% |   encoding/json/v2.makeMapArshaler.func2
+         0     0% 99.76%   562.01MB  2.19%                | reflect.Value.MapIndex
+                                          562.01MB   100% |   reflect.copyVal
+----------------------------------------------------------+-------------
+                                          562.01MB   100% |   reflect.Value.MapIndex
+         0     0% 99.76%   562.01MB  2.19%                | reflect.copyVal
+                                          562.01MB   100% |   reflect.unsafe_New
+----------------------------------------------------------+-------------
+                                        12006.97MB   100% |   github.com/CloudyKit/jet/v6.(*escapeeWriter).Write
+         0     0% 99.76% 12006.97MB 46.85%                | text/template.HTMLEscape
+                                        12006.97MB   100% |   bytes.(*Buffer).Write
+----------------------------------------------------------+-------------

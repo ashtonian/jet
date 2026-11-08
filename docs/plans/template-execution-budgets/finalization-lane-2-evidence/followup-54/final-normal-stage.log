@@ -1,0 +1,59 @@
+gate-lock: held by pid <pid> on <host>, "jet-finalization-lane-2-followup-final-normal 54b5614 in <checkout>", since 2026-11-08T10:30:29Z, 2 of 6 focused cores
+--- FAIL: TestFollowupCancellationOpportunities (0.00s)
+    zz_finalization_followup_counts_test.go:64: {"Mode":"legacy_stream","Fixture":"header_literal","HTML":false,"Checks":0}
+    zz_finalization_followup_counts_test.go:64: {"Mode":"legacy_stream","Fixture":"header_literal","HTML":true,"Checks":0}
+    zz_finalization_followup_counts_test.go:64: {"Mode":"legacy_stream","Fixture":"header_interpolation","HTML":false,"Checks":0}
+    zz_finalization_followup_counts_test.go:64: {"Mode":"legacy_stream","Fixture":"header_interpolation","HTML":true,"Checks":0}
+    zz_finalization_followup_counts_test.go:64: {"Mode":"legacy_stream","Fixture":"body_8192","HTML":false,"Checks":0}
+    zz_finalization_followup_counts_test.go:64: {"Mode":"legacy_stream","Fixture":"body_8192","HTML":true,"Checks":0}
+    zz_finalization_followup_counts_test.go:64: {"Mode":"legacy_stream","Fixture":"body_65536","HTML":false,"Checks":0}
+    zz_finalization_followup_counts_test.go:64: {"Mode":"legacy_stream","Fixture":"body_65536","HTML":true,"Checks":0}
+    zz_finalization_followup_counts_test.go:64: {"Mode":"legacy_stream","Fixture":"nested_writing","HTML":false,"Checks":0}
+    zz_finalization_followup_counts_test.go:64: {"Mode":"legacy_stream","Fixture":"nested_writing","HTML":true,"Checks":0}
+    zz_finalization_followup_counts_test.go:64: {"Mode":"legacy_stream","Fixture":"nested_silent","HTML":false,"Checks":0}
+    zz_finalization_followup_counts_test.go:64: {"Mode":"legacy_stream","Fixture":"nested_silent","HTML":true,"Checks":0}
+    zz_finalization_followup_counts_test.go:64: {"Mode":"legacy_stream","Fixture":"escape_safe","HTML":false,"Checks":0}
+    zz_finalization_followup_counts_test.go:64: {"Mode":"legacy_stream","Fixture":"escape_safe","HTML":true,"Checks":0}
+    zz_finalization_followup_counts_test.go:64: {"Mode":"legacy_stream","Fixture":"escape_expansion","HTML":false,"Checks":0}
+    zz_finalization_followup_counts_test.go:64: {"Mode":"legacy_stream","Fixture":"escape_expansion","HTML":true,"Checks":0}
+    zz_finalization_followup_counts_test.go:64: {"Mode":"legacy_stream","Fixture":"string_replace","HTML":false,"Checks":0}
+    zz_finalization_followup_counts_test.go:64: {"Mode":"legacy_stream","Fixture":"string_replace","HTML":true,"Checks":0}
+    zz_finalization_followup_counts_test.go:64: {"Mode":"legacy_stream","Fixture":"string_concat","HTML":false,"Checks":0}
+    zz_finalization_followup_counts_test.go:64: {"Mode":"legacy_stream","Fixture":"string_concat","HTML":true,"Checks":0}
+    zz_finalization_followup_counts_test.go:64: {"Mode":"legacy_stream","Fixture":"include","HTML":false,"Checks":0}
+    zz_finalization_followup_counts_test.go:64: {"Mode":"legacy_stream","Fixture":"include","HTML":true,"Checks":0}
+    zz_finalization_followup_counts_test.go:64: {"Mode":"legacy_stream","Fixture":"inheritance","HTML":false,"Checks":0}
+    zz_finalization_followup_counts_test.go:64: {"Mode":"legacy_stream","Fixture":"inheritance","HTML":true,"Checks":0}
+    zz_finalization_followup_counts_test.go:64: {"Mode":"legacy_stream","Fixture":"block_content","HTML":false,"Checks":0}
+    zz_finalization_followup_counts_test.go:64: {"Mode":"legacy_stream","Fixture":"block_content","HTML":true,"Checks":0}
+    zz_finalization_followup_counts_test.go:64: {"Mode":"legacy_stream","Fixture":"try_success","HTML":false,"Checks":0}
+    zz_finalization_followup_counts_test.go:64: {"Mode":"legacy_stream","Fixture":"try_success","HTML":true,"Checks":0}
+    zz_finalization_followup_counts_test.go:64: {"Mode":"legacy_stream","Fixture":"try_rollback","HTML":false,"Checks":0}
+    zz_finalization_followup_counts_test.go:64: {"Mode":"legacy_stream","Fixture":"try_rollback","HTML":true,"Checks":0}
+    zz_finalization_followup_counts_test.go:64: {"Mode":"metered_background_stream","Fixture":"header_literal","HTML":false,"Checks":9}
+    zz_finalization_followup_counts_test.go:64: {"Mode":"metered_background_stream","Fixture":"header_literal","HTML":true,"Checks":9}
+    zz_finalization_followup_counts_test.go:64: {"Mode":"metered_background_stream","Fixture":"header_interpolation","HTML":false,"Checks":19}
+    zz_finalization_followup_counts_test.go:64: {"Mode":"metered_background_stream","Fixture":"header_interpolation","HTML":true,"Checks":19}
+    zz_finalization_followup_counts_test.go:64: {"Mode":"metered_background_stream","Fixture":"body_8192","HTML":false,"Checks":19}
+    zz_finalization_followup_counts_test.go:64: {"Mode":"metered_background_stream","Fixture":"body_8192","HTML":true,"Checks":19}
+    zz_finalization_followup_counts_test.go:64: {"Mode":"metered_background_stream","Fixture":"body_65536","HTML":false,"Checks":47}
+    zz_finalization_followup_counts_test.go:64: {"Mode":"metered_background_stream","Fixture":"body_65536","HTML":true,"Checks":47}
+    zz_finalization_followup_counts_test.go:64: {"Mode":"metered_background_stream","Fixture":"nested_writing","HTML":false,"Checks":3224}
+    zz_finalization_followup_counts_test.go:64: {"Mode":"metered_background_stream","Fixture":"nested_writing","HTML":true,"Checks":3224}
+    zz_finalization_followup_counts_test.go:64: {"Mode":"metered_background_stream","Fixture":"nested_silent","HTML":false,"Checks":9496}
+    zz_finalization_followup_counts_test.go:64: {"Mode":"metered_background_stream","Fixture":"nested_silent","HTML":true,"Checks":9496}
+    zz_finalization_followup_counts_test.go:64: {"Mode":"metered_background_stream","Fixture":"escape_safe","HTML":false,"Checks":17}
+    zz_finalization_followup_counts_test.go:64: {"Mode":"metered_background_stream","Fixture":"escape_safe","HTML":true,"Checks":17}
+    zz_finalization_followup_counts_test.go:64: {"Mode":"metered_background_stream","Fixture":"escape_expansion","HTML":false,"Checks":17}
+    zz_finalization_followup_counts_test.go:64: {"Mode":"metered_background_stream","Fixture":"escape_expansion","HTML":true,"Checks":1297}
+    zz_finalization_followup_counts_test.go:64: {"Mode":"metered_background_stream","Fixture":"string_replace","HTML":false,"Checks":35}
+    zz_finalization_followup_counts_test.go:64: {"Mode":"metered_background_stream","Fixture":"string_replace","HTML":true,"Checks":35}
+    zz_finalization_followup_counts_test.go:64: {"Mode":"metered_background_stream","Fixture":"string_concat","HTML":false,"Checks":24}
+    zz_finalization_followup_counts_test.go:64: {"Mode":"metered_background_stream","Fixture":"string_concat","HTML":true,"Checks":24}
+    zz_finalization_followup_counts_test.go:64: {"Mode":"metered_background_stream","Fixture":"include","HTML":false,"Checks":109}
+    zz_finalization_followup_counts_test.go:68: metered_background_stream/include html=false at=55/109 got <nil>
+FAIL
+FAIL	github.com/CloudyKit/jet/v6	0.301s
+FAIL
+
+receipt: <artifacts>/followup-final-normal/result.json

@@ -1,0 +1,123 @@
+Total: 45015119
+ROUTINE ======================== github.com/CloudyKit/jet/v6.(*inputAdmission).clone in input.go
+         0   22058396 (flat, cum) 49.00% of Total
+         .          .    151:func (a *inputAdmission) clone(v reflect.Value, depth int) reflect.Value {
+         .          .    152:	a.step(1)
+         .          .    153:	if depth > a.opts.MaxDepth {
+         .          .    154:		a.limit("depth")
+         .          .    155:	}
+         .          .    156:	if !v.IsValid() {
+         .          .    157:		return reflect.Value{}
+         .          .    158:	}
+         .          .    159:	if !v.CanInterface() {
+         .          .    160:		a.deny("inaccessible value")
+         .          .    161:	}
+         .          .    162:	if v.Type().NumMethod() != 0 || reflect.PtrTo(v.Type()).NumMethod() != 0 {
+         .          .    163:		a.deny("values with methods")
+         .          .    164:	}
+         .          .    165:	if v.Kind() == reflect.Interface {
+         .          .    166:		if v.IsNil() {
+         .          .    167:			return reflect.Zero(v.Type())
+         .          .    168:		}
+         .          .    169:		return a.clone(v.Elem(), depth+1)
+         .          .    170:	}
+         .          .    171:	switch v.Kind() {
+         .          .    172:	case reflect.Bool, reflect.Int, reflect.Int8, reflect.Int16, reflect.Int32, reflect.Int64, reflect.Uint, reflect.Uint8, reflect.Uint16, reflect.Uint32, reflect.Uint64, reflect.Float32, reflect.Float64:
+         .          .    173:		a.reserveBytes(uint64(v.Type().Size()), 1)
+         .          .    174:		if v.CanAddr() {
+         .          .    175:			return reflect.ValueOf(v.Interface())
+         .          .    176:		}
+         .          .    177:		return v
+         .          .    178:	case reflect.String:
+         .          .    179:		a.reserveBytes(uint64(v.Len()), 1)
+         .          .    180:		if v.CanAddr() {
+         .          .    181:			return reflect.ValueOf(v.Interface())
+         .          .    182:		}
+         .          .    183:		return v
+         .          .    184:	case reflect.Array, reflect.Slice:
+         .          .    185:		if v.Kind() == reflect.Slice && v.IsNil() {
+         .          .    186:			return reflect.Zero(v.Type())
+         .          .    187:		}
+         .          .    188:		if v.Kind() == reflect.Slice {
+         .          .    189:			key := inputIdentity{kind: v.Kind(), typ: v.Type(), pointer: v.Pointer(), length: v.Len()}
+         .          .    190:			a.enterContainer(key)
+         .          .    191:			defer a.leaveContainer()
+         .          .    192:		}
+         .          .    193:		a.reserveItems(uint64(v.Len()))
+         .          .    194:		a.reserveBytes(uint64(v.Len()), uint64(v.Type().Elem().Size()))
+         .          .    195:		var out reflect.Value
+         .          .    196:		if v.Kind() == reflect.Slice {
+         .          .    197:			out = reflect.MakeSlice(v.Type(), v.Len(), v.Len())
+         .          .    198:		} else {
+         .          .    199:			out = reflect.New(v.Type()).Elem()
+         .          .    200:		}
+         .          .    201:		for i := 0; i < v.Len(); i++ {
+         .          .    202:			child := a.clone(v.Index(i), depth+1)
+         .          .    203:			if child.IsValid() {
+         .          .    204:				out.Index(i).Set(child)
+         .          .    205:			}
+         .          .    206:		}
+         .          .    207:		return out
+         .          .    208:	case reflect.Map:
+         .          .    209:		if v.Type().Key().Kind() != reflect.String || v.Type().Key().NumMethod() != 0 || reflect.PtrTo(v.Type().Key()).NumMethod() != 0 {
+         .          .    210:			a.deny("map keys must be method-free strings")
+         .          .    211:		}
+         .          .    212:		if v.IsNil() {
+         .          .    213:			return reflect.Zero(v.Type())
+         .          .    214:		}
+         .          .    215:		key := inputIdentity{kind: v.Kind(), typ: v.Type(), pointer: v.Pointer()}
+         .          .    216:		a.enterContainer(key)
+         .          .    217:		defer a.leaveContainer()
+         .          .    218:		a.reserveItems(uint64(v.Len()))
+         .          .    219:		a.reserveBytes(uint64(v.Len()), uint64(v.Type().Key().Size()+v.Type().Elem().Size()))
+         .    5308658    220:		out := reflect.MakeMapWithSize(v.Type(), v.Len())
+         .          .    221:		iterator := v.MapRange()
+         .          .    222:		for iterator.Next() {
+         .    6193246    223:			name := iterator.Key()
+         .          .    224:			a.reserveBytes(uint64(name.Len()), 1)
+         .    5177422    225:			child := a.clone(iterator.Value(), depth+1)
+         .          .    226:			if !child.IsValid() {
+         .          .    227:				child = reflect.Zero(v.Type().Elem())
+         .          .    228:			}
+         .    5379070    229:			out.SetMapIndex(name, child)
+         .          .    230:		}
+         .          .    231:		return out
+         .          .    232:	default:
+         .          .    233:		a.deny("unsupported " + v.Kind().String())
+         .          .    234:	}
+ROUTINE ======================== github.com/CloudyKit/jet/v6.admitInputScopesInto in input.go
+         0   22058396 (flat, cum) 49.00% of Total
+         .          .     49:func admitInputScopesInto(ctx context.Context, scopes []VarMap, data interface{}, opts InputOptions, seed VarMap) (out VarMap, snapshot interface{}, err error) {
+         .          .     50:	if ctx == nil || opts.MaxBytes <= 0 || opts.MaxItems == 0 || opts.MaxSteps == 0 || opts.MaxDepth <= 0 || opts.MaxDepth > 64 {
+         .          .     51:		return nil, nil, fmt.Errorf("%w: positive input budgets and depth <=64 required", ErrInputLimit)
+         .          .     52:	}
+         .          .     53:	a := &inputAdmission{ctx: ctx, opts: opts}
+         .          .     54:	out = seed
+         .          .     55:	defer func() {
+         .          .     56:		if p := recover(); p != nil {
+         .          .     57:			if failure, ok := p.(inputAbort); ok {
+         .          .     58:				err = failure.error
+         .          .     59:				out = nil
+         .          .     60:				snapshot = nil
+         .          .     61:			} else {
+         .          .     62:				panic(p)
+         .          .     63:			}
+         .          .     64:		}
+         .          .     65:	}()
+         .          .     66:	for _, scope := range scopes {
+         .          .     67:		a.reserveItems(uint64(len(scope)))
+         .          .     68:		a.reserveBytes(uint64(len(scope)), uint64(5*(strconv.IntSize/8)))
+         .          .     69:		if len(scope) > 0 && out == nil {
+         .          .     70:			out = make(VarMap, len(scope))
+         .          .     71:		}
+         .          .     72:		for name, value := range scope {
+         .          .     73:			a.reserveBytes(uint64(len(name)), 1)
+         .          .     74:			out[name] = a.clone(value, 1)
+         .          .     75:		}
+         .          .     76:	}
+         .   22058396     77:	value := a.clone(reflect.ValueOf(data), 1)
+         .          .     78:	if value.IsValid() {
+         .          .     79:		snapshot = value.Interface()
+         .          .     80:	}
+         .          .     81:	a.step(0)
+         .          .     82:	return out, snapshot, nil

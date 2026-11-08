@@ -1,0 +1,21 @@
+File: render.test
+Type: delay
+Time: 2026-11-08 05:27:48 CST
+Showing nodes accounting for 4749ns, 100% of 4749ns total
+      flat  flat%   sum%        cum   cum%
+    4541ns 95.62% 95.62%     4541ns 95.62%  runtime.unlock (inline)
+     208ns  4.38%   100%      208ns  4.38%  sync.(*Mutex).Unlock
+         0     0%   100%      208ns  4.38%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0%   100%      208ns  4.38%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0%   100%      208ns  4.38%  github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes.func1.1
+         0     0%   100%      208ns  4.38%  github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes.func1.gowrap1
+         0     0%   100%      208ns  4.38%  github.com/CloudyKit/jet/v6_test.init.0.func2
+         0     0%   100%     4541ns 95.62%  runtime.gcBgMarkWorker
+         0     0%   100%     4541ns 95.62%  runtime.gcMarkDone
+         0     0%   100%     4541ns 95.62%  runtime.gcMarkTermination
+         0     0%   100%     4541ns 95.62%  runtime.gcMarkTermination.func3
+         0     0%   100%     4541ns 95.62%  runtime.startTheWorldWithSema
+         0     0%   100%     4541ns 95.62%  runtime.systemstack
+         0     0%   100%      208ns  4.38%  sync.(*Pool).Get
+         0     0%   100%      208ns  4.38%  sync.(*Pool).pin
+         0     0%   100%      208ns  4.38%  sync.(*Pool).pinSlow

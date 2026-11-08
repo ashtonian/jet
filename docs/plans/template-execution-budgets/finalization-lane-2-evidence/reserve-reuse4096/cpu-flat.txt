@@ -1,0 +1,21 @@
+File: reserve-reuse4096.test
+Type: cpu
+Time: 2026-11-08 01:56:45 CST
+Duration: 1.61s, Total samples = 1360ms (84.26%)
+Showing nodes accounting for 1040ms, 76.47% of 1360ms total
+Showing top 14 nodes out of 118
+      flat  flat%   sum%        cum   cum%
+     150ms 11.03% 11.03%      150ms 11.03%  runtime.kevent
+     120ms  8.82% 19.85%      340ms 25.00%  runtime.pcvalue
+     110ms  8.09% 27.94%      140ms 10.29%  runtime.step
+     100ms  7.35% 35.29%      400ms 29.41%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+     100ms  7.35% 42.65%      100ms  7.35%  runtime.madvise
+      80ms  5.88% 48.53%      150ms 11.03%  github.com/CloudyKit/jet/v6.(*Runtime).reserveWork
+      80ms  5.88% 54.41%       80ms  5.88%  runtime.memmove
+      70ms  5.15% 59.56%       70ms  5.15%  runtime.(*moduledata).textAddr
+      60ms  4.41% 63.97%       60ms  4.41%  context.(*cancelCtx).Err
+      40ms  2.94% 66.91%      140ms 10.29%  bytes.(*Buffer).Write
+      40ms  2.94% 69.85%      440ms 32.35%  text/template.HTMLEscape
+      30ms  2.21% 72.06%       30ms  2.21%  bytes.(*Buffer).tryGrowByReslice (inline)
+      30ms  2.21% 74.26%       30ms  2.21%  runtime.acquirem (inline)
+      30ms  2.21% 76.47%       40ms  2.94%  runtime.findfunc

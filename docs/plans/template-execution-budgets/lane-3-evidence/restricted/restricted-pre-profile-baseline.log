@@ -1,0 +1,7 @@
+gate-lock: held by pid 71127 on $HOST, "jet-lane3-restricted-pre-profile-baseline bda0fa8 in $CHECKOUT", since 2026-11-08T00:47:34Z, 2 of 6 focused cores
+--- FAIL: TestRestrictedDenialWorkflow (0.00s)
+    --- FAIL: TestRestrictedDenialWorkflow/function (0.00s)
+        restricted_test.go:22: result="called" err=<nil> called=true
+FAIL
+FAIL	github.com/CloudyKit/jet/v6	0.225s
+FAIL

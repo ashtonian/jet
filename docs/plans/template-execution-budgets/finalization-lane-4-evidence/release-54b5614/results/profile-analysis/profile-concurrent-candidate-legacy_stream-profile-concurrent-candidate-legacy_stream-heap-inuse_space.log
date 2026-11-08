@@ -1,0 +1,42 @@
+File: candidate.test
+Type: inuse_space
+Time: 2026-11-08 03:03:26 CST
+Showing nodes accounting for 3599.30kB, 100% of 3599.30kB total
+      flat  flat%   sum%        cum   cum%
+ 3077.24kB 85.50% 85.50%  3077.24kB 85.50%  runtime.mallocgc
+  522.06kB 14.50%   100%   522.06kB 14.50%  reflect.compiledTypelinks
+         0     0%   100%   522.06kB 14.50%  encoding/json.Unmarshal (inline)
+         0     0%   100%   522.06kB 14.50%  encoding/json/v2.Unmarshal
+         0     0%   100%   522.06kB 14.50%  encoding/json/v2.makeSliceArshaler.func3
+         0     0%   100%   522.06kB 14.50%  encoding/json/v2.makeStructArshaler.func1
+         0     0%   100%   522.06kB 14.50%  encoding/json/v2.makeStructArshaler.func3
+         0     0%   100%   522.06kB 14.50%  encoding/json/v2.makeStructFields
+         0     0%   100%   522.06kB 14.50%  encoding/json/v2.makeStructFields.func3
+         0     0%   100%   522.06kB 14.50%  encoding/json/v2.unmarshalDecode
+         0     0%   100%   522.06kB 14.50%  github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes
+         0     0%   100%   522.06kB 14.50%  github.com/CloudyKit/jet/v6_test.executionWorkloads
+         0     0%   100%   522.06kB 14.50%  github.com/CloudyKit/jet/v6_test.measurementWorkloads
+         0     0%   100%   522.06kB 14.50%  reflect.(*rtype).ptrTo
+         0     0%   100%   522.06kB 14.50%  reflect.PointerTo (inline)
+         0     0%   100%   522.06kB 14.50%  reflect.typesByString
+         0     0%   100%     2565kB 71.26%  runtime.allocm
+         0     0%   100%      513kB 14.25%  runtime.goexit0
+         0     0%   100%   512.23kB 14.23%  runtime.malg
+         0     0%   100%     1026kB 28.51%  runtime.mcall
+         0     0%   100%     1539kB 42.76%  runtime.mstart
+         0     0%   100%     1539kB 42.76%  runtime.mstart0
+         0     0%   100%     1539kB 42.76%  runtime.mstart1
+         0     0%   100%     2565kB 71.26%  runtime.newm
+         0     0%   100%  3077.24kB 85.50%  runtime.newobject
+         0     0%   100%   512.23kB 14.23%  runtime.newproc.func1
+         0     0%   100%   512.23kB 14.23%  runtime.newproc1
+         0     0%   100%      513kB 14.25%  runtime.park_m
+         0     0%   100%     2565kB 71.26%  runtime.resetspinning
+         0     0%   100%     2565kB 71.26%  runtime.schedule
+         0     0%   100%     2565kB 71.26%  runtime.startm
+         0     0%   100%   512.23kB 14.23%  runtime.systemstack
+         0     0%   100%     2565kB 71.26%  runtime.wakep
+         0     0%   100%   522.06kB 14.50%  sync.(*Once).Do
+         0     0%   100%   522.06kB 14.50%  sync.(*Once).doSlow
+         0     0%   100%   522.06kB 14.50%  testing.(*B).run1.func1
+         0     0%   100%   522.06kB 14.50%  testing.(*B).runN

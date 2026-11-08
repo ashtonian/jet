@@ -1,0 +1,12 @@
+File: render.test
+Type: delay
+Time: 2026-11-08 04:47:22 CST
+Showing nodes accounting for 4.33us, 100% of 4.33us total
+      flat  flat%   sum%        cum   cum%
+    4.33us   100%   100%     4.33us   100%  runtime.unlock (inline)
+         0     0%   100%     4.33us   100%  runtime.forEachP (inline)
+         0     0%   100%     4.33us   100%  runtime.forEachP.func1
+         0     0%   100%     4.33us   100%  runtime.forEachPInternal
+         0     0%   100%     4.33us   100%  runtime.gcBgMarkWorker
+         0     0%   100%     4.33us   100%  runtime.gcMarkDone
+         0     0%   100%     4.33us   100%  runtime.systemstack

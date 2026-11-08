@@ -1,0 +1,37 @@
+File: render.test
+Type: delay
+Time: 2026-11-08 04:47:38 CST
+Showing nodes accounting for 68.79us, 100% of 68.79us total
+Dropped 1 node (cum <= 0.34us)
+Showing top 30 nodes out of 42
+      flat  flat%   sum%        cum   cum%
+   55.33us 80.44% 80.44%    55.33us 80.44%  runtime.unlock (partial-inline)
+   13.46us 19.56%   100%    13.46us 19.56%  sync.(*Mutex).Unlock
+         0     0%   100%     6.25us  9.09%  github.com/CloudyKit/fastprinter.PrintString
+         0     0%   100%     6.25us  9.09%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0%   100%     6.25us  9.09%  github.com/CloudyKit/jet/v6.(*Runtime).printValue
+         0     0%   100%     3.62us  5.27%  github.com/CloudyKit/jet/v6.(*Runtime).recover
+         0     0%   100%    13.46us 19.56%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0%   100%    13.46us 19.56%  github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext
+         0     0%   100%    13.46us 19.56%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0%   100%     3.62us  5.27%  github.com/CloudyKit/jet/v6.(*Template).execute.deferwrap2
+         0     0%   100%     6.25us  9.09%  github.com/CloudyKit/jet/v6.(*dataPrinter).text
+         0     0%   100%     6.25us  9.09%  github.com/CloudyKit/jet/v6.(*dataPrinter).value
+         0     0%   100%     0.58us  0.85%  github.com/CloudyKit/jet/v6.borrowInputVars
+         0     0%   100%    13.46us 19.56%  github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes.func1.1
+         0     0%   100%    13.46us 19.56%  github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes.func1.gowrap1
+         0     0%   100%    13.46us 19.56%  github.com/CloudyKit/jet/v6_test.init.0.func5
+         0     0%   100%     4.83us  7.03%  runtime.(*mheap).freeSpan (inline)
+         0     0%   100%     4.83us  7.03%  runtime.(*mheap).freeSpan.func1
+         0     0%   100%     4.83us  7.03%  runtime.(*sweepLocked).sweep
+         0     0%   100%     4.58us  6.66%  runtime.GC
+         0     0%   100%     0.75us  1.09%  runtime.findRunnable
+         0     0%   100%    39.29us 57.12%  runtime.forEachP (inline)
+         0     0%   100%    39.29us 57.12%  runtime.forEachP.func1
+         0     0%   100%    39.29us 57.12%  runtime.forEachPInternal
+         0     0%   100%    49.75us 72.32%  runtime.gcBgMarkWorker
+         0     0%   100%    49.75us 72.32%  runtime.gcMarkDone
+         0     0%   100%    10.46us 15.20%  runtime.gcMarkDone.func2
+         0     0%   100%     0.75us  1.09%  runtime.gcstopm
+         0     0%   100%     0.75us  1.09%  runtime.gopreempt_m
+         0     0%   100%     0.75us  1.09%  runtime.goschedImpl

@@ -1,0 +1,39 @@
+File: candidate.test
+Type: inuse_space
+Time: 2026-11-08 03:05:52 CST
+Showing nodes accounting for 268.20kB, 98.35% of 272.70kB total
+Dropped 80 nodes (cum <= 1.36kB)
+      flat  flat%   sum%        cum   cum%
+     256kB 93.88% 93.88%      256kB 93.88%  internal/bytealg.MakeNoZero
+       3kB  1.10% 94.98%        3kB  1.10%  runtime.mallocgc
+    2.59kB  0.95% 95.93%     6.70kB  2.46%  testing.(*T).Run
+    2.50kB  0.92% 96.85%     3.19kB  1.17%  github.com/CloudyKit/jet/v6.NewRestrictedSet
+    1.42kB  0.52% 97.37%     1.42kB  0.52%  regexp.onePassCopy
+    1.38kB   0.5% 97.87%     1.38kB   0.5%  regexp/syntax.(*compiler).inst (inline)
+    0.80kB  0.29% 98.16%     2.95kB  1.08%  testing.runTests
+    0.27kB 0.097% 98.26%   261.40kB 95.86%  github.com/CloudyKit/jet/v6_test.TestExecutionRetentionMeasurements.func1
+    0.17kB 0.063% 98.32%     3.12kB  1.15%  regexp.compile
+    0.05kB 0.017% 98.34%     5.18kB  1.90%  github.com/CloudyKit/jet/v6_test.TestExecutionRetentionMeasurements
+    0.02kB 0.0086% 98.35%     3.12kB  1.14%  testing.(*M).Run
+         0     0% 98.35%     3.19kB  1.17%  github.com/CloudyKit/jet/v6_test.init.0.func3
+         0     0% 98.35%     4.35kB  1.60%  github.com/CloudyKit/jet/v6_test.prepareMeasurement
+         0     0% 98.35%     3.12kB  1.14%  main.main
+         0     0% 98.35%     3.12kB  1.15%  regexp.Compile (inline)
+         0     0% 98.35%     1.44kB  0.53%  regexp.compileOnePass
+         0     0% 98.35%     1.38kB   0.5%  regexp/syntax.(*compiler).compile
+         0     0% 98.35%     1.38kB   0.5%  regexp/syntax.(*compiler).rune
+         0     0% 98.35%     1.42kB  0.52%  regexp/syntax.Compile
+         0     0% 98.35%     3.12kB  1.14%  runtime.main
+         0     0% 98.35%     1.88kB  0.69%  runtime.malg
+         0     0% 98.35%     2.88kB  1.05%  runtime.newobject
+         0     0% 98.35%        2kB  0.73%  runtime.newproc.func1
+         0     0% 98.35%        2kB  0.73%  runtime.newproc1
+         0     0% 98.35%        2kB  0.73%  runtime.systemstack
+         0     0% 98.35%      256kB 93.88%  strings.(*Builder).Grow
+         0     0% 98.35%      256kB 93.88%  strings.(*Builder).grow
+         0     0% 98.35%      256kB 93.88%  strings.Repeat
+         0     0% 98.35%     3.61kB  1.32%  testing.(*matcher).fullName
+         0     0% 98.35%     1.57kB  0.58%  testing.runTests.func1
+         0     0% 98.35%     3.12kB  1.15%  testing.simpleMatch.matches
+         0     0% 98.35%   268.15kB 98.33%  testing.tRunner
+         0     0% 98.35%     3.12kB  1.15%  testing/internal/testdeps.TestDeps.MatchString

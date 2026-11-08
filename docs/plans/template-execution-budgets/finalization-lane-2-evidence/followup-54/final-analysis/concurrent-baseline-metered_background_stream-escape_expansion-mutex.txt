@@ -1,0 +1,36 @@
+File: render.test
+Type: delay
+Time: 2026-11-08 04:46:46 CST
+Showing nodes accounting for 11541ns, 100% of 11541ns total
+Showing top 30 nodes out of 41
+      flat  flat%   sum%        cum   cum%
+   11291ns 97.83% 97.83%    11291ns 97.83%  sync.(*Mutex).Unlock
+     250ns  2.17%   100%      250ns  2.17%  runtime.unlock
+         0     0%   100%      250ns  2.17%  encoding/json.Unmarshal (inline)
+         0     0%   100%      250ns  2.17%  encoding/json/v2.Unmarshal
+         0     0%   100%      250ns  2.17%  encoding/json/v2.makeInterfaceArshaler.func2
+         0     0%   100%      250ns  2.17%  encoding/json/v2.makeMapArshaler.func3
+         0     0%   100%      250ns  2.17%  encoding/json/v2.makeSliceArshaler.func3
+         0     0%   100%      250ns  2.17%  encoding/json/v2.makeString
+         0     0%   100%      250ns  2.17%  encoding/json/v2.makeStringArshaler.func2
+         0     0%   100%      250ns  2.17%  encoding/json/v2.makeStructArshaler.func3
+         0     0%   100%      250ns  2.17%  encoding/json/v2.unmarshalDecode
+         0     0%   100%    11291ns 97.83%  github.com/CloudyKit/fastprinter.PrintString
+         0     0%   100%    11291ns 97.83%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0%   100%    11291ns 97.83%  github.com/CloudyKit/jet/v6.(*Runtime).printValue
+         0     0%   100%    11291ns 97.83%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0%   100%    11291ns 97.83%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0%   100%    11291ns 97.83%  github.com/CloudyKit/jet/v6.(*dataPrinter).text
+         0     0%   100%    11291ns 97.83%  github.com/CloudyKit/jet/v6.(*dataPrinter).value
+         0     0%   100%      250ns  2.17%  github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes
+         0     0%   100%    11291ns 97.83%  github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes.func1.1
+         0     0%   100%    11291ns 97.83%  github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes.func1.gowrap1
+         0     0%   100%      250ns  2.17%  github.com/CloudyKit/jet/v6_test.executionWorkloads
+         0     0%   100%    11291ns 97.83%  github.com/CloudyKit/jet/v6_test.init.0.func2
+         0     0%   100%      250ns  2.17%  github.com/CloudyKit/jet/v6_test.measurementWorkloads
+         0     0%   100%      250ns  2.17%  runtime.(*mcache).allocLarge
+         0     0%   100%      250ns  2.17%  runtime.(*mheap).alloc
+         0     0%   100%      250ns  2.17%  runtime.(*mheap).alloc.func1
+         0     0%   100%      250ns  2.17%  runtime.(*mheap).freeSpan (inline)
+         0     0%   100%      250ns  2.17%  runtime.(*mheap).freeSpan.func1
+         0     0%   100%      250ns  2.17%  runtime.(*mheap).reclaim

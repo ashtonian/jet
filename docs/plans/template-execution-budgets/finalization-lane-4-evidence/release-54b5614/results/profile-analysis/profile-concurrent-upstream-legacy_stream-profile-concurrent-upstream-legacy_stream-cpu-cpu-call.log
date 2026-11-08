@@ -1,0 +1,208 @@
+File: upstream.test
+Type: cpu
+Time: 2026-11-08 03:02:42 CST
+Duration: 8.23s, Total samples = 61.05s (741.91%)
+Showing nodes accounting for 54.55s, 89.35% of 61.05s total
+Dropped 304 nodes (cum <= 0.31s)
+Showing top 40 nodes out of 122
+----------------------------------------------------------+-------------
+      flat  flat%   sum%        cum   cum%   calls calls% + context
+----------------------------------------------------------+-------------
+                                            11.72s 92.94% |   runtime.lock2
+    12.60s 20.64% 20.64%     12.61s 20.66%                | runtime.usleep
+----------------------------------------------------------+-------------
+    10.35s 16.95% 37.59%     10.35s 16.95%                | runtime.madvise
+----------------------------------------------------------+-------------
+                                            16.20s 98.42% |   text/template.HTMLEscape
+                                             0.26s  1.58% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+     8.20s 13.43% 51.02%     16.46s 26.96%                | bytes.(*Buffer).Write
+                                             6.31s 38.34% |   bytes.(*Buffer).tryGrowByReslice (inline)
+                                             1.90s 11.54% |   runtime.memmove
+----------------------------------------------------------+-------------
+                                             6.31s   100% |   bytes.(*Buffer).Write (inline)
+     6.29s 10.30% 61.33%      6.31s 10.34%                | bytes.(*Buffer).tryGrowByReslice
+----------------------------------------------------------+-------------
+                                            19.23s   100% |   github.com/CloudyKit/fastprinter.PrintValue
+     2.98s  4.88% 66.21%     19.23s 31.50%                | text/template.HTMLEscape
+                                            16.20s 84.24% |   bytes.(*Buffer).Write
+----------------------------------------------------------+-------------
+                                             1.90s 92.23% |   bytes.(*Buffer).Write
+     2.06s  3.37% 69.58%      2.06s  3.37%                | runtime.memmove
+----------------------------------------------------------+-------------
+                                             1.26s 66.67% |   runtime.lock2
+     1.89s  3.10% 72.68%      1.89s  3.10%                | runtime.pthread_cond_wait
+----------------------------------------------------------+-------------
+     1.68s  2.75% 75.43%      1.68s  2.75%                | runtime.pthread_cond_signal
+----------------------------------------------------------+-------------
+     1.62s  2.65% 78.08%      1.62s  2.65%                | runtime.pthread_kill
+----------------------------------------------------------+-------------
+                                             0.96s 96.97% |   runtime.wbBufFlush1
+     0.78s  1.28% 79.36%      0.99s  1.62%                | runtime.tryDeferToSpanScan
+----------------------------------------------------------+-------------
+                                             0.44s 77.19% |   sync.(*Pool).Get
+                                             0.13s 22.81% |   sync.(*Pool).Put
+     0.49s   0.8% 80.16%      0.57s  0.93%                | sync.(*Pool).pin
+----------------------------------------------------------+-------------
+                                             0.09s 19.57% |   encoding/json/internal/jsonwire.AppendQuote
+     0.46s  0.75% 80.92%      0.46s  0.75%                | runtime.asyncPreempt
+----------------------------------------------------------+-------------
+                                             0.53s   100% |   encoding/json/jsontext.(*encoderState).WriteToken
+     0.37s  0.61% 81.52%      0.53s  0.87%                | encoding/json/internal/jsonwire.AppendQuote
+                                             0.09s 16.98% |   runtime.asyncPreempt
+----------------------------------------------------------+-------------
+                                             1.38s 75.41% |   gcWriteBarrier
+                                             0.34s 18.58% |   runtime.bulkBarrierPreWrite
+     0.34s  0.56% 82.08%      1.83s  3.00%                | runtime.wbBufFlush1
+                                             0.96s 52.46% |   runtime.tryDeferToSpanScan
+                                             0.43s 23.50% |   runtime.findObject
+----------------------------------------------------------+-------------
+                                             7.49s   100% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+     0.30s  0.49% 82.57%      7.49s 12.27%                | encoding/json/v2.makeMapArshaler.func2
+                                             2.87s 38.32% |   encoding/json/v2.makeInterfaceArshaler.func1
+                                             0.61s  8.14% |   encoding/json/jsontext.(*encoderState).WriteToken
+                                             0.54s  7.21% |   encoding/json/v2.newAddressableValue
+                                             0.42s  5.61% |   gcWriteBarrier
+                                             0.39s  5.21% |   reflect.Value.Set
+                                             0.37s  4.94% |   runtime.bulkBarrierPreWrite
+                                             0.35s  4.67% |   internal/runtime/maps.(*Iter).Next
+                                             0.35s  4.67% |   runtime.mallocgc
+                                             0.14s  1.87% |   runtime.mapaccess2_faststr
+                                             0.11s  1.47% |   sync.(*Pool).Get
+                                             0.10s  1.34% |   reflect.Value.assignTo
+                                             0.09s  1.20% |   sync.(*Pool).Put
+----------------------------------------------------------+-------------
+                                             0.43s   100% |   runtime.wbBufFlush1
+     0.30s  0.49% 83.06%      0.43s   0.7%                | runtime.findObject
+----------------------------------------------------------+-------------
+                                            29.44s   100% |   github.com/CloudyKit/jet/v6.(*Template).Execute
+     0.29s  0.48% 83.54%     29.44s 48.22%                | github.com/CloudyKit/jet/v6.(*Runtime).executeList
+                                            20.16s 68.48% |   github.com/CloudyKit/fastprinter.PrintValue
+                                             7.49s 25.44% |   encoding/json/v2.makeMapArshaler.func2
+                                             0.61s  2.07% |   github.com/CloudyKit/jet/v6.(*Runtime).evalPrimaryExpressionGroup
+                                             0.26s  0.88% |   bytes.(*Buffer).Write
+                                             0.20s  0.68% |   reflect.(*rtype).Implements
+                                             0.07s  0.24% |   runtime.mallocgc
+----------------------------------------------------------+-------------
+                                            31.53s   100% |   github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes.func1.1
+     0.27s  0.44% 83.98%     31.53s 51.65%                | github.com/CloudyKit/jet/v6.(*Template).Execute
+                                            29.44s 93.37% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+                                             0.58s  1.84% |   runtime.mallocgcSmallScanNoHeaderSC3
+                                             0.54s  1.71% |   sync.(*Pool).Get
+                                             0.29s  0.92% |   gcWriteBarrier
+                                             0.27s  0.86% |   sync.(*Pool).Put
+----------------------------------------------------------+-------------
+     0.25s  0.41% 84.39%     31.81s 52.10%                | github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes.func1.1
+                                            31.53s 99.12% |   github.com/CloudyKit/jet/v6.(*Template).Execute
+----------------------------------------------------------+-------------
+                                             0.61s   100% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+     0.24s  0.39% 84.78%      0.61s     1%                | github.com/CloudyKit/jet/v6.(*Runtime).evalPrimaryExpressionGroup
+                                             0.19s 31.15% |   runtime.mapaccess2_faststr
+----------------------------------------------------------+-------------
+                                             0.25s 71.43% |   reflect.Value.Set
+                                             0.10s 28.57% |   encoding/json/v2.makeMapArshaler.func2
+     0.24s  0.39% 85.18%      0.35s  0.57%                | reflect.Value.assignTo
+----------------------------------------------------------+-------------
+                                             0.43s 61.43% |   runtime.mallocgcSmallScanNoHeaderSC2
+                                             0.26s 37.14% |   runtime.mallocgcSmallScanNoHeaderSC3
+     0.23s  0.38% 85.55%      0.70s  1.15%                | runtime.mallocgcSmallScanSlowPath
+----------------------------------------------------------+-------------
+                                             0.27s 48.21% |   github.com/CloudyKit/jet/v6.(*Template).Execute
+                                             0.20s 35.71% |   github.com/CloudyKit/fastprinter.PrintValue
+                                             0.09s 16.07% |   encoding/json/v2.makeMapArshaler.func2
+     0.22s  0.36% 85.91%      0.56s  0.92%                | sync.(*Pool).Put
+                                             0.18s 32.14% |   gcWriteBarrier
+                                             0.13s 23.21% |   sync.(*Pool).pin
+----------------------------------------------------------+-------------
+                                             0.42s 26.42% |   encoding/json/v2.makeMapArshaler.func2
+                                             0.29s 18.24% |   github.com/CloudyKit/jet/v6.(*Template).Execute
+                                             0.24s 15.09% |   encoding/json/jsontext.(*encoderState).WriteToken
+                                             0.21s 13.21% |   sync.(*Pool).Get
+                                             0.18s 11.32% |   sync.(*Pool).Put
+                                             0.11s  6.92% |   internal/runtime/maps.(*Iter).Next
+     0.21s  0.34% 86.26%      1.59s  2.60%                | gcWriteBarrier
+                                             1.38s 86.79% |   runtime.wbBufFlush1
+----------------------------------------------------------+-------------
+                                             0.50s 87.72% |   encoding/json/v2.makeInterfaceArshaler.func1
+                                             0.07s 12.28% |   encoding/json/v2.newAddressableValue
+     0.21s  0.34% 86.60%      0.57s  0.93%                | reflect.Value.Elem
+----------------------------------------------------------+-------------
+                                             0.35s   100% |   encoding/json/v2.makeMapArshaler.func2
+     0.20s  0.33% 86.93%      0.35s  0.57%                | internal/runtime/maps.(*Iter).Next
+                                             0.11s 31.43% |   gcWriteBarrier
+----------------------------------------------------------+-------------
+                                             0.61s 54.46% |   encoding/json/v2.makeMapArshaler.func2
+                                             0.50s 44.64% |   encoding/json/v2.makeInterfaceArshaler.func1
+     0.17s  0.28% 87.21%      1.12s  1.83%                | encoding/json/jsontext.(*encoderState).WriteToken
+                                             0.53s 47.32% |   encoding/json/internal/jsonwire.AppendQuote
+                                             0.24s 21.43% |   gcWriteBarrier
+----------------------------------------------------------+-------------
+                                             0.79s   100% |   runtime.mallocgc
+     0.15s  0.25% 87.45%      0.79s  1.29%                | runtime.mallocgcSmallScanNoHeaderSC2
+                                             0.43s 54.43% |   runtime.mallocgcSmallScanSlowPath
+                                             0.09s 11.39% |   runtime.lock2
+----------------------------------------------------------+-------------
+                                             0.54s 65.06% |   github.com/CloudyKit/jet/v6.(*Template).Execute
+                                             0.18s 21.69% |   github.com/CloudyKit/fastprinter.PrintValue
+                                             0.11s 13.25% |   encoding/json/v2.makeMapArshaler.func2
+     0.15s  0.25% 87.70%      0.83s  1.36%                | sync.(*Pool).Get
+                                             0.44s 53.01% |   sync.(*Pool).pin
+                                             0.21s 25.30% |   gcWriteBarrier
+----------------------------------------------------------+-------------
+                                             0.80s 65.57% |   encoding/json/v2.newAddressableValue
+                                             0.35s 28.69% |   encoding/json/v2.makeMapArshaler.func2
+                                             0.07s  5.74% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+     0.13s  0.21% 87.91%      1.22s  2.00%                | runtime.mallocgc
+                                             0.79s 64.75% |   runtime.mallocgcSmallScanNoHeaderSC2
+----------------------------------------------------------+-------------
+                                             0.58s   100% |   github.com/CloudyKit/jet/v6.(*Template).Execute
+     0.13s  0.21% 88.12%      0.58s  0.95%                | runtime.mallocgcSmallScanNoHeaderSC3
+                                             0.26s 44.83% |   runtime.mallocgcSmallScanSlowPath
+----------------------------------------------------------+-------------
+                                             0.28s 58.33% |   github.com/CloudyKit/fastprinter.PrintValue
+                                             0.20s 41.67% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+     0.12s   0.2% 88.32%      0.48s  0.79%                | reflect.(*rtype).Implements
+----------------------------------------------------------+-------------
+                                             0.37s 57.81% |   encoding/json/v2.makeMapArshaler.func2
+                                             0.27s 42.19% |   reflect.Value.Set
+     0.09s  0.15% 88.47%      0.64s  1.05%                | runtime.bulkBarrierPreWrite
+                                             0.34s 53.12% |   runtime.wbBufFlush1
+----------------------------------------------------------+-------------
+                                             0.09s  0.68% |   runtime.mallocgcSmallScanNoHeaderSC2
+     0.09s  0.15% 88.62%     13.24s 21.69%                | runtime.lock2
+                                            11.72s 88.52% |   runtime.usleep
+                                             1.26s  9.52% |   runtime.pthread_cond_wait
+----------------------------------------------------------+-------------
+                                             0.32s   100% |   encoding/json/v2.newAddressableValue
+     0.09s  0.15% 88.76%      0.32s  0.52%                | runtime.resolveTypeOff
+----------------------------------------------------------+-------------
+                                             2.87s   100% |   encoding/json/v2.makeMapArshaler.func2
+     0.08s  0.13% 88.89%      2.87s  4.70%                | encoding/json/v2.makeInterfaceArshaler.func1
+                                             0.87s 30.31% |   encoding/json/v2.newAddressableValue
+                                             0.50s 17.42% |   encoding/json/jsontext.(*encoderState).WriteToken
+                                             0.50s 17.42% |   reflect.Value.Elem
+                                             0.30s 10.45% |   reflect.Value.Set
+----------------------------------------------------------+-------------
+                                             0.39s 56.52% |   encoding/json/v2.makeMapArshaler.func2
+                                             0.30s 43.48% |   encoding/json/v2.makeInterfaceArshaler.func1
+     0.08s  0.13% 89.03%      0.69s  1.13%                | reflect.Value.Set
+                                             0.27s 39.13% |   runtime.bulkBarrierPreWrite
+                                             0.25s 36.23% |   reflect.Value.assignTo
+----------------------------------------------------------+-------------
+                                            20.16s   100% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+     0.07s  0.11% 89.14%     20.16s 33.02%                | github.com/CloudyKit/fastprinter.PrintValue
+                                            19.23s 95.39% |   text/template.HTMLEscape
+                                             0.28s  1.39% |   reflect.(*rtype).Implements
+                                             0.20s  0.99% |   sync.(*Pool).Put
+                                             0.18s  0.89% |   sync.(*Pool).Get
+----------------------------------------------------------+-------------
+                                             0.19s 57.58% |   github.com/CloudyKit/jet/v6.(*Runtime).evalPrimaryExpressionGroup
+                                             0.14s 42.42% |   encoding/json/v2.makeMapArshaler.func2
+     0.07s  0.11% 89.25%      0.33s  0.54%                | runtime.mapaccess2_faststr
+----------------------------------------------------------+-------------
+                                             0.87s 61.70% |   encoding/json/v2.makeInterfaceArshaler.func1
+                                             0.54s 38.30% |   encoding/json/v2.makeMapArshaler.func2
+     0.06s 0.098% 89.35%      1.41s  2.31%                | encoding/json/v2.newAddressableValue
+                                             0.80s 56.74% |   runtime.mallocgc
+                                             0.32s 22.70% |   runtime.resolveTypeOff
+                                             0.07s  4.96% |   reflect.Value.Elem
+----------------------------------------------------------+-------------

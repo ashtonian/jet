@@ -1,0 +1,14 @@
+File: candidate.test
+Type: delay
+Time: 2026-11-08 03:57:25 CST
+Showing nodes accounting for 249ns, 100% of 249ns total
+      flat  flat%   sum%        cum   cum%
+     249ns   100%   100%      249ns   100%  runtime.unlock
+         0     0%   100%      249ns   100%  runtime.(*mheap).freeSpan (inline)
+         0     0%   100%      249ns   100%  runtime.(*mheap).freeSpan.func1
+         0     0%   100%      249ns   100%  runtime.(*sweepLocked).sweep
+         0     0%   100%      249ns   100%  runtime.GC
+         0     0%   100%      249ns   100%  runtime.sweepone
+         0     0%   100%      249ns   100%  runtime.systemstack
+         0     0%   100%      249ns   100%  testing.(*B).launch
+         0     0%   100%      249ns   100%  testing.(*B).runN

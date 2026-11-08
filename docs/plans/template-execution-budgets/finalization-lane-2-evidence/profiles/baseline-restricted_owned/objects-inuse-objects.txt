@@ -1,0 +1,31 @@
+File: baseline.test
+Type: inuse_objects
+Time: 2026-11-08 01:29:25 CST
+Showing nodes accounting for 101, 88.60% of 114 total
+Showing top 25 nodes out of 156
+      flat  flat%   sum%        cum   cum%
+        14 12.28% 12.28%         14 12.28%  encoding/json/v2.makeMapArshaler
+        13 11.40% 23.68%         51 44.74%  encoding/json/v2.makeStructFields
+        11  9.65% 33.33%         12 10.53%  runtime.mallocgc
+         7  6.14% 39.47%          7  6.14%  encoding/json/v2.makeStructArshaler
+         7  6.14% 45.61%          7  6.14%  internal/sync.newEntryNode[go.shape.interface {},go.shape.interface {}] (inline)
+         6  5.26% 50.88%          7  6.14%  encoding/json/v2.makeSliceArshaler
+         4  3.51% 54.39%          6  5.26%  encoding/json/v2.parseFieldOptions
+         4  3.51% 57.89%          4  3.51%  reflect.addReflectOff
+         4  3.51% 61.40%          4  3.51%  sync.(*Pool).pinSlow
+         3  2.63% 64.04%          3  2.63%  encoding/json/v2.makeInterfaceArshaler
+         3  2.63% 66.67%          3  2.63%  encoding/json/v2.makeStringArshaler (inline)
+         3  2.63% 69.30%          3  2.63%  internal/sync.newIndirectNode[go.shape.interface {},go.shape.interface {}] (inline)
+         3  2.63% 71.93%          3  2.63%  os.newFile
+         3  2.63% 74.56%          3  2.63%  reflect.compiledTypelinks
+         2  1.75% 76.32%          2  1.75%  github.com/CloudyKit/jet/v6.(*Runtime).evalPrimaryExpressionGroup
+         2  1.75% 78.07%          2  1.75%  regexp.(*bitState).reset
+         2  1.75% 79.82%          7  6.14%  regexp.compile
+         2  1.75% 81.58%          3  2.63%  regexp.newOnePassMachine
+         2  1.75% 83.33%          2  1.75%  slices.Grow[go.shape.[]uint8,go.shape.uint8] (inline)
+         1  0.88% 84.21%          1  0.88%  bytes.(*Buffer).String
+         1  0.88% 85.09%         32 28.07%  encoding/json/v2.makeStructFields.func3
+         1  0.88% 85.96%          1  0.88%  fmt.(*buffer).writeString
+         1  0.88% 86.84%          1  0.88%  fmt.init.func1
+         1  0.88% 87.72%          1  0.88%  internal/abi.NewName
+         1  0.88% 88.60%         11  9.65%  reflect.(*rtype).ptrTo

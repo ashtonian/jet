@@ -1,0 +1,31 @@
+File: reserve-0.test
+Type: inuse_objects
+Time: 2026-11-08 01:51:34 CST
+Showing nodes accounting for 36, 100% of 36 total
+Showing top 25 nodes out of 95
+      flat  flat%   sum%        cum   cum%
+         7 19.44% 19.44%          8 22.22%  runtime.mallocgc
+         5 13.89% 33.33%          5 13.89%  sync.(*Pool).pinSlow
+         2  5.56% 38.89%          2  5.56%  github.com/CloudyKit/fastprinter.newByteSliceBufferPool.func1
+         2  5.56% 44.44%          2  5.56%  github.com/CloudyKit/jet/v6.init.func1
+         2  5.56% 50.00%          2  5.56%  os.newFile
+         2  5.56% 55.56%         10 27.78%  regexp.compile
+         2  5.56% 61.11%          2  5.56%  regexp.onePassCopy
+         1  2.78% 63.89%          1  2.78%  fmt.(*buffer).write (inline)
+         1  2.78% 66.67%          5 13.89%  fmt.Sprintf
+         1  2.78% 69.44%          1  2.78%  fmt.init.func1
+         1  2.78% 72.22%          7 19.44%  github.com/CloudyKit/jet/v6.TestOutputOwnedLargeThenSmall
+         1  2.78% 75.00%          1  2.78%  internal/sync.newIndirectNode[go.shape.interface {},go.shape.interface {}]
+         1  2.78% 77.78%          1  2.78%  regexp.makeOnePass.func1
+         1  2.78% 80.56%          2  5.56%  regexp.newOnePassMachine
+         1  2.78% 83.33%          1  2.78%  regexp/syntax.(*Regexp).CapNames
+         1  2.78% 86.11%          1  2.78%  regexp/syntax.(*compiler).init (inline)
+         1  2.78% 88.89%          1  2.78%  regexp/syntax.(*compiler).inst (inline)
+         1  2.78% 91.67%          1  2.78%  regexp/syntax.(*parser).maybeConcat
+         1  2.78% 94.44%          1  2.78%  runtime.mallocgcSmallScanNoHeaderSC2
+         1  2.78% 97.22%          1  2.78%  testing.rewrite
+         1  2.78%   100%          1  2.78%  unicode/utf8.AppendRune (inline)
+         0     0%   100%          1  2.78%  fmt.(*fmt).fmtFloat
+         0     0%   100%          1  2.78%  fmt.(*fmt).pad
+         0     0%   100%          1  2.78%  fmt.(*pp).doPrintf
+         0     0%   100%          1  2.78%  fmt.(*pp).fmtFloat

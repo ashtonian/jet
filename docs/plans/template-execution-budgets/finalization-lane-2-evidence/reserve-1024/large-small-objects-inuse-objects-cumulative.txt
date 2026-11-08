@@ -1,0 +1,31 @@
+File: reserve-1024.test
+Type: inuse_objects
+Time: 2026-11-08 01:52:08 CST
+Showing nodes accounting for 15, 42.86% of 35 total
+Showing top 25 nodes out of 91
+      flat  flat%   sum%        cum   cum%
+         0     0%     0%         16 45.71%  main.main
+         0     0%     0%         16 45.71%  runtime.main
+         0     0%     0%         16 45.71%  testing.(*M).Run
+         0     0%     0%         16 45.71%  testing.tRunner
+         0     0%     0%         14 40.00%  testing.runTests
+         0     0%     0%         12 34.29%  testing/internal/testdeps.TestDeps.MatchString
+         0     0%     0%         11 31.43%  testing.newMatcher
+         0     0%     0%         11 31.43%  testing.simpleMatch.verify
+         0     0%     0%         10 28.57%  regexp.Compile (inline)
+         2  5.71%  5.71%         10 28.57%  regexp.compile
+         0     0%  5.71%         10 28.57%  sync.(*Pool).Get
+         1  2.86%  8.57%          8 22.86%  github.com/CloudyKit/jet/v6.TestOutputOwnedLargeThenSmall
+         0     0%  8.57%          7 20.00%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0%  8.57%          7 20.00%  github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext
+         0     0%  8.57%          7 20.00%  github.com/CloudyKit/jet/v6.(*Template).execute
+         6 17.14% 25.71%          6 17.14%  runtime.mallocgc
+         1  2.86% 28.57%          5 14.29%  fmt.Sprintf
+         0     0% 28.57%          5 14.29%  runtime.newobject
+         0     0% 28.57%          5 14.29%  sync.(*Pool).pin
+         5 14.29% 42.86%          5 14.29%  sync.(*Pool).pinSlow
+         0     0% 42.86%          5 14.29%  testing.(*T).report
+         0     0% 42.86%          5 14.29%  testing.fmtDuration
+         0     0% 42.86%          5 14.29%  testing.tRunner.func1
+         0     0% 42.86%          4 11.43%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 42.86%          4 11.43%  runtime.newproc.func1

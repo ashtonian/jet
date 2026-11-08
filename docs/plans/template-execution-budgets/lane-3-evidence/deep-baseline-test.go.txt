@@ -1,0 +1,44 @@
+package jet
+
+import (
+ "context"
+ "fmt"
+ "os"
+ "os/exec"
+ "runtime/debug"
+ "strings"
+ "testing"
+ "time"
+)
+
+func TestLane3DeepBaseline(t *testing.T) {
+ if kind := os.Getenv("JET_LANE3_BASELINE"); kind != "" {
+  debug.SetMaxStack(256 << 10)
+  loader := NewInMemLoader()
+  set := NewSet(loader)
+  var err error
+  switch kind {
+  case "expression":
+   _, err = set.Parse("deep.jet", "{{" + strings.Repeat("(", 2000) + "1" + strings.Repeat(")", 2000) + "}}")
+  case "list":
+   _, err = set.Parse("deep.jet", strings.Repeat("{{if true}}", 2000) + "ok" + strings.Repeat("{{end}}", 2000))
+  case "dependency":
+   for i:=0; i<2000; i++ { loader.Set(fmt.Sprintf("%d.jet", i), fmt.Sprintf(`{{import "%d.jet"}}`, i+1)) }
+   loader.Set("2000.jet", "ok")
+   _, err = set.GetTemplate("0.jet")
+  }
+  if err != nil { t.Fatal(err) }
+  return
+ }
+ for _, kind := range []string{"expression", "list", "dependency"} {
+  t.Run(kind, func(t *testing.T) {
+   ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+   defer cancel()
+   cmd := exec.CommandContext(ctx, os.Args[0], "-test.run=^TestLane3DeepBaseline$")
+   cmd.Env = append(os.Environ(), "JET_LANE3_BASELINE="+kind, "GOTRACEBACK=single")
+   out, err := cmd.CombinedOutput()
+   if ctx.Err()!=nil || err==nil || !strings.Contains(string(out), "stack overflow") { t.Fatalf("expected bounded stack overflow: err=%v ctx=%v output=%.500s", err, ctx.Err(), out) }
+   t.Logf("%s: confirmed child stack overflow (256 KiB stack, 10s external deadline)", kind)
+  })
+ }
+}

@@ -1,0 +1,242 @@
+[
+  {
+    "sha": "631cf353e8508856776af55ebbfb1ef2b447b3c2",
+    "local_exit": 0,
+    "local": "gpg: Signature made Sun Nov  8 01:16:00 2026 CST\ngpg:                using RSA key F6636B543217293818FDAE098D8E2EDE4DB48014\ngpg: Good signature from \"Ashton Kinslow <github@ashtonkinslow.com>\" [ultimate]\n",
+    "github_exit": 0,
+    "github": {
+      "reason": "valid",
+      "verified": true
+    }
+  },
+  {
+    "sha": "20657d04455127da24ec0f04831ed4e11be3cbe7",
+    "local_exit": 0,
+    "local": "gpg: Signature made Sun Nov  8 01:23:11 2026 CST\ngpg:                using RSA key F6636B543217293818FDAE098D8E2EDE4DB48014\ngpg: Good signature from \"Ashton Kinslow <github@ashtonkinslow.com>\" [ultimate]\n",
+    "github_exit": 0,
+    "github": {
+      "reason": "valid",
+      "verified": true
+    }
+  },
+  {
+    "sha": "ff5e57bf434c738bf95de6f62ee92e5c6fc70bed",
+    "local_exit": 0,
+    "local": "gpg: Signature made Sun Nov  8 01:23:25 2026 CST\ngpg:                using RSA key F6636B543217293818FDAE098D8E2EDE4DB48014\ngpg: Good signature from \"Ashton Kinslow <github@ashtonkinslow.com>\" [ultimate]\n",
+    "github_exit": 0,
+    "github": {
+      "reason": "valid",
+      "verified": true
+    }
+  },
+  {
+    "sha": "4deac706140619086f08bd87dbc8f9d4aedc077e",
+    "local_exit": 0,
+    "local": "gpg: Signature made Sun Nov  8 01:25:53 2026 CST\ngpg:                using RSA key F6636B543217293818FDAE098D8E2EDE4DB48014\ngpg: Good signature from \"Ashton Kinslow <github@ashtonkinslow.com>\" [ultimate]\n",
+    "github_exit": 0,
+    "github": {
+      "reason": "valid",
+      "verified": true
+    }
+  },
+  {
+    "sha": "f1466f7cb549fc453fb38f3dbdae7cde8adce609",
+    "local_exit": 0,
+    "local": "gpg: Signature made Sun Nov  8 01:26:38 2026 CST\ngpg:                using RSA key F6636B543217293818FDAE098D8E2EDE4DB48014\ngpg: Good signature from \"Ashton Kinslow <github@ashtonkinslow.com>\" [ultimate]\n",
+    "github_exit": 0,
+    "github": {
+      "reason": "valid",
+      "verified": true
+    }
+  },
+  {
+    "sha": "2a02e061503671c174590803afa6b9af158b38e4",
+    "local_exit": 0,
+    "local": "gpg: Signature made Sun Nov  8 01:50:23 2026 CST\ngpg:                using RSA key F6636B543217293818FDAE098D8E2EDE4DB48014\ngpg: Good signature from \"Ashton Kinslow <github@ashtonkinslow.com>\" [ultimate]\n",
+    "github_exit": 0,
+    "github": {
+      "reason": "valid",
+      "verified": true
+    }
+  },
+  {
+    "sha": "d925dc7d0fea81bf60bd92405d751a835a55d3b8",
+    "local_exit": 0,
+    "local": "gpg: Signature made Sun Nov  8 01:56:17 2026 CST\ngpg:                using RSA key F6636B543217293818FDAE098D8E2EDE4DB48014\ngpg: Good signature from \"Ashton Kinslow <github@ashtonkinslow.com>\" [ultimate]\n",
+    "github_exit": 0,
+    "github": {
+      "reason": "valid",
+      "verified": true
+    }
+  },
+  {
+    "sha": "51b1e37447263653a4d33b8da74e025ebe50ffe4",
+    "local_exit": 0,
+    "local": "gpg: Signature made Sun Nov  8 02:04:51 2026 CST\ngpg:                using RSA key F6636B543217293818FDAE098D8E2EDE4DB48014\ngpg: Good signature from \"Ashton Kinslow <github@ashtonkinslow.com>\" [ultimate]\n",
+    "github_exit": 0,
+    "github": {
+      "reason": "valid",
+      "verified": true
+    }
+  },
+  {
+    "sha": "04e691bc8ac2d48c28e3c05f976136a10c69b284",
+    "local_exit": 0,
+    "local": "gpg: Signature made Sun Nov  8 02:04:58 2026 CST\ngpg:                using RSA key F6636B543217293818FDAE098D8E2EDE4DB48014\ngpg: Good signature from \"Ashton Kinslow <github@ashtonkinslow.com>\" [ultimate]\n",
+    "github_exit": 0,
+    "github": {
+      "reason": "valid",
+      "verified": true
+    }
+  },
+  {
+    "sha": "56d25c8228b1f2565c10357d272a6ba410ed992a",
+    "local_exit": 0,
+    "local": "gpg: Signature made Sun Nov  8 02:13:29 2026 CST\ngpg:                using RSA key F6636B543217293818FDAE098D8E2EDE4DB48014\ngpg: Good signature from \"Ashton Kinslow <github@ashtonkinslow.com>\" [ultimate]\n",
+    "github_exit": 0,
+    "github": {
+      "reason": "valid",
+      "verified": true
+    }
+  },
+  {
+    "sha": "df73f0870903036f4cb053ea61dc84b188cd1491",
+    "local_exit": 0,
+    "local": "gpg: Signature made Sun Nov  8 02:13:43 2026 CST\ngpg:                using RSA key F6636B543217293818FDAE098D8E2EDE4DB48014\ngpg: Good signature from \"Ashton Kinslow <github@ashtonkinslow.com>\" [ultimate]\n",
+    "github_exit": 0,
+    "github": {
+      "reason": "valid",
+      "verified": true
+    }
+  },
+  {
+    "sha": "f7c2b675e1c88f7731276efeece790ad5e5fbaea",
+    "local_exit": 0,
+    "local": "gpg: Signature made Sun Nov  8 02:19:01 2026 CST\ngpg:                using RSA key F6636B543217293818FDAE098D8E2EDE4DB48014\ngpg: Good signature from \"Ashton Kinslow <github@ashtonkinslow.com>\" [ultimate]\n",
+    "github_exit": 0,
+    "github": {
+      "reason": "valid",
+      "verified": true
+    }
+  },
+  {
+    "sha": "1d8f0747546bbcec500d998e5986de35343e25d3",
+    "local_exit": 0,
+    "local": "gpg: Signature made Sun Nov  8 02:19:15 2026 CST\ngpg:                using RSA key F6636B543217293818FDAE098D8E2EDE4DB48014\ngpg: Good signature from \"Ashton Kinslow <github@ashtonkinslow.com>\" [ultimate]\n",
+    "github_exit": 0,
+    "github": {
+      "reason": "valid",
+      "verified": true
+    }
+  },
+  {
+    "sha": "7f7f38a6ac54a34775dfc7cd108491e8e3e41e4e",
+    "local_exit": 0,
+    "local": "gpg: Signature made Sun Nov  8 02:23:28 2026 CST\ngpg:                using RSA key F6636B543217293818FDAE098D8E2EDE4DB48014\ngpg: Good signature from \"Ashton Kinslow <github@ashtonkinslow.com>\" [ultimate]\n",
+    "github_exit": 0,
+    "github": {
+      "reason": "valid",
+      "verified": true
+    }
+  },
+  {
+    "sha": "fae8b0a1a3f16a12820c63d9517b692c2e8def24",
+    "local_exit": 0,
+    "local": "gpg: Signature made Sun Nov  8 02:30:30 2026 CST\ngpg:                using RSA key F6636B543217293818FDAE098D8E2EDE4DB48014\ngpg: Good signature from \"Ashton Kinslow <github@ashtonkinslow.com>\" [ultimate]\n",
+    "github_exit": 0,
+    "github": {
+      "reason": "valid",
+      "verified": true
+    }
+  },
+  {
+    "sha": "90ff52faa9645b0fa9fff60c8d879a11d231d4d7",
+    "local_exit": 0,
+    "local": "gpg: Signature made Sun Nov  8 02:31:20 2026 CST\ngpg:                using RSA key F6636B543217293818FDAE098D8E2EDE4DB48014\ngpg: Good signature from \"Ashton Kinslow <github@ashtonkinslow.com>\" [ultimate]\n",
+    "github_exit": 0,
+    "github": {
+      "reason": "valid",
+      "verified": true
+    }
+  },
+  {
+    "sha": "0fb28eea333e524518428149ca25013440eaf3ff",
+    "local_exit": 0,
+    "local": "gpg: Signature made Sun Nov  8 02:32:57 2026 CST\ngpg:                using RSA key F6636B543217293818FDAE098D8E2EDE4DB48014\ngpg: Good signature from \"Ashton Kinslow <github@ashtonkinslow.com>\" [ultimate]\n",
+    "github_exit": 0,
+    "github": {
+      "reason": "valid",
+      "verified": true
+    }
+  },
+  {
+    "sha": "ce59bdd23b16ebbf91ee483a72a6b555267f4691",
+    "local_exit": 0,
+    "local": "gpg: Signature made Sun Nov  8 02:39:36 2026 CST\ngpg:                using RSA key F6636B543217293818FDAE098D8E2EDE4DB48014\ngpg: Good signature from \"Ashton Kinslow <github@ashtonkinslow.com>\" [ultimate]\n",
+    "github_exit": 0,
+    "github": {
+      "reason": "valid",
+      "verified": true
+    }
+  },
+  {
+    "sha": "f599fc95992f104dd6e8cab180df04c9f964b5fa",
+    "local_exit": 0,
+    "local": "gpg: Signature made Sun Nov  8 02:44:28 2026 CST\ngpg:                using RSA key F6636B543217293818FDAE098D8E2EDE4DB48014\ngpg: Good signature from \"Ashton Kinslow <github@ashtonkinslow.com>\" [ultimate]\n",
+    "github_exit": 0,
+    "github": {
+      "reason": "valid",
+      "verified": true
+    }
+  },
+  {
+    "sha": "55b055972cab71c38166c77daff76831abd16b9b",
+    "local_exit": 0,
+    "local": "gpg: Signature made Sun Nov  8 02:50:52 2026 CST\ngpg:                using RSA key F6636B543217293818FDAE098D8E2EDE4DB48014\ngpg: Good signature from \"Ashton Kinslow <github@ashtonkinslow.com>\" [ultimate]\n",
+    "github_exit": 0,
+    "github": {
+      "reason": "valid",
+      "verified": true
+    }
+  },
+  {
+    "sha": "d2d0b1fad2d81c3f53e506e1adbc00b4df15f6ab",
+    "local_exit": 0,
+    "local": "gpg: Signature made Sun Nov  8 02:50:59 2026 CST\ngpg:                using RSA key F6636B543217293818FDAE098D8E2EDE4DB48014\ngpg: Good signature from \"Ashton Kinslow <github@ashtonkinslow.com>\" [ultimate]\n",
+    "github_exit": 0,
+    "github": {
+      "reason": "valid",
+      "verified": true
+    }
+  },
+  {
+    "sha": "5ba5bda09b16fd84ce488d005e75c95def711c29",
+    "local_exit": 0,
+    "local": "gpg: Signature made Sun Nov  8 02:52:02 2026 CST\ngpg:                using RSA key F6636B543217293818FDAE098D8E2EDE4DB48014\ngpg: Good signature from \"Ashton Kinslow <github@ashtonkinslow.com>\" [ultimate]\n",
+    "github_exit": 0,
+    "github": {
+      "reason": "valid",
+      "verified": true
+    }
+  },
+  {
+    "sha": "137f73d04bcbdc7b32418e2f851529806b18b29b",
+    "local_exit": 0,
+    "local": "gpg: Signature made Sun Nov  8 02:53:24 2026 CST\ngpg:                using RSA key F6636B543217293818FDAE098D8E2EDE4DB48014\ngpg: Good signature from \"Ashton Kinslow <github@ashtonkinslow.com>\" [ultimate]\n",
+    "github_exit": 0,
+    "github": {
+      "reason": "valid",
+      "verified": true
+    }
+  },
+  {
+    "sha": "54b561484e1465edea963ed04579bcd24a7dbf76",
+    "local_exit": 0,
+    "local": "gpg: Signature made Sun Nov  8 02:53:44 2026 CST\ngpg:                using RSA key F6636B543217293818FDAE098D8E2EDE4DB48014\ngpg: Good signature from \"Ashton Kinslow <github@ashtonkinslow.com>\" [ultimate]\n",
+    "github_exit": 0,
+    "github": {
+      "reason": "valid",
+      "verified": true
+    }
+  }
+]

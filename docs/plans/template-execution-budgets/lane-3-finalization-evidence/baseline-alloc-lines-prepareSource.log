@@ -1,0 +1,4 @@
+Total: 3.08GB
+ROUTINE ======================== github.com/CloudyKit/jet/v6.(*parseAdmission).prepareSource in github.com/CloudyKit/jet/v6/.git/finalization/baseline-source/compile.go
+  511.10MB   511.10MB (flat, cum) 16.21% of Total
+ Error: could not find file github.com/CloudyKit/jet/v6/.git/finalization/baseline-source/compile.go on path $CHECKOUT

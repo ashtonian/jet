@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "utc": "2026-11-08T10:22:55.797838+00:00",
+  "checks": [
+    "JSON parse",
+    "all measurement and normal/race/vet receipts passed",
+    "six samples per matched cell, five core/diagnostic and six data-shape rows",
+    "frozen overlay source resolution",
+    "all production source hashes; exactly one checked ordinary-comment difference",
+    "signed implementation source equivalence",
+    "report/index links",
+    "Go/Markdown whitespace"
+  ],
+  "implementation": "7001b1e",
+  "command": [
+    "python3",
+    ".git/admission-followup/verify_evidence.py"
+  ],
+  "script_sha256": "bffbbeb96e805bdc8d65e588f98f9730a746602e76648882235a8ac98e065c71",
+  "execution_deadline_seconds": 90,
+  "term_cleanup_seconds": 5
+}

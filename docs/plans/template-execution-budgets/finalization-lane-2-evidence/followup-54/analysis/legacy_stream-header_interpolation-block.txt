@@ -1,0 +1,28 @@
+File: candidate.test
+Type: delay
+Time: 2026-11-08 03:57:26 CST
+Showing nodes accounting for 2702.01ms, 100% of 2702.01ms total
+Dropped 3 nodes (cum <= 13.51ms)
+      flat  flat%   sum%        cum   cum%
+ 2702.01ms   100%   100%  2702.01ms   100%  runtime.chanrecv1
+         0     0%   100%  1291.63ms 47.80%  github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes
+         0     0%   100%  1410.38ms 52.20%  main.main
+         0     0%   100%  1410.38ms 52.20%  runtime.main
+         0     0%   100%   112.81ms  4.18%  runtime/pprof.StopCPUProfile
+         0     0%   100%   112.81ms  4.18%  sync.(*Once).Do (inline)
+         0     0%   100%   112.81ms  4.18%  sync.(*Once).doSlow
+         0     0%   100%  2589.20ms 95.82%  testing.(*B).Run
+         0     0%   100%  1291.20ms 47.79%  testing.(*B).doBench
+         0     0%   100%  1291.20ms 47.79%  testing.(*B).run
+         0     0%   100%  1297.99ms 48.04%  testing.(*B).run1
+         0     0%   100%  1291.63ms 47.80%  testing.(*B).run1.func1
+         0     0%   100%  2589.20ms 95.82%  testing.(*B).runN
+         0     0%   100%  1410.38ms 52.20%  testing.(*M).Run
+         0     0%   100%   112.81ms  4.18%  testing.(*M).Run.deferwrap1
+         0     0%   100%   112.81ms  4.18%  testing.(*M).after
+         0     0%   100%   112.81ms  4.18%  testing.(*M).after.func1
+         0     0%   100%   112.81ms  4.18%  testing.(*M).writeProfiles
+         0     0%   100%  1291.20ms 47.79%  testing.(*benchState).processBench
+         0     0%   100%  1297.57ms 48.02%  testing.runBenchmarks
+         0     0%   100%  1297.57ms 48.02%  testing.runBenchmarks.func1
+         0     0%   100%   112.81ms  4.18%  testing/internal/testdeps.TestDeps.StopCPUProfile

@@ -1,0 +1,5 @@
+File: render.test
+Type: delay
+Time: 2026-11-08 04:46:53 CST
+Showing nodes accounting for 0, 0% of 0 total
+      flat  flat%   sum%        cum   cum%

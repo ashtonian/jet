@@ -1,0 +1,36 @@
+File: candidate.test
+Type: alloc_space
+Time: 2026-11-08 03:57:34 CST
+Showing nodes accounting for 10275.71kB, 100% of 10275.71kB total
+Showing top 30 nodes out of 65
+      flat  flat%   sum%        cum   cum%
+ 2146.50kB 20.89% 20.89%  2146.50kB 20.89%  encoding/json/v2.makeString
+ 1282.68kB 12.48% 33.37%  1282.68kB 12.48%  os.readFileContents
+ 1184.27kB 11.52% 44.90%  1184.27kB 11.52%  runtime/pprof.StartCPUProfile
+ 1032.06kB 10.04% 54.94%  1547.45kB 15.06%  github.com/CloudyKit/jet/v6_test.additionalExecutionWorkloads
+ 1025.38kB  9.98% 64.92%  1025.38kB  9.98%  regexp/syntax.(*compiler).inst (inline)
+ 1024.16kB  9.97% 74.89%  2561.59kB 24.93%  regexp.compile
+  528.17kB  5.14% 80.03%   528.17kB  5.14%  regexp.(*bitState).reset
+  515.38kB  5.02% 85.04%   515.38kB  5.02%  slices.Grow[go.shape.[]uint8,go.shape.uint8] (inline)
+     513kB  4.99% 90.03%      513kB  4.99%  runtime/pprof.(*protobuf).varint
+  512.05kB  4.98% 95.02%   512.05kB  4.98%  regexp.newQueue (inline)
+  512.05kB  4.98%   100%   512.05kB  4.98%  runtime.mallocgc
+         0     0%   100%   515.38kB  5.02%  encoding/json.Marshal (inline)
+         0     0%   100%  2146.50kB 20.89%  encoding/json.Unmarshal
+         0     0%   100%   515.38kB  5.02%  encoding/json/internal/jsonwire.AppendQuote
+         0     0%   100%   515.38kB  5.02%  encoding/json/jsontext.(*Encoder).WriteToken (inline)
+         0     0%   100%   515.38kB  5.02%  encoding/json/jsontext.(*encoderState).WriteToken
+         0     0%   100%   515.38kB  5.02%  encoding/json/jsontext.Token.appendString
+         0     0%   100%   515.38kB  5.02%  encoding/json/v2.Marshal
+         0     0%   100%  2146.50kB 20.89%  encoding/json/v2.Unmarshal
+         0     0%   100%   515.38kB  5.02%  encoding/json/v2.makeInterfaceArshaler.func1
+         0     0%   100%   544.67kB  5.30%  encoding/json/v2.makeInterfaceArshaler.func2
+         0     0%   100%   515.38kB  5.02%  encoding/json/v2.makeMapArshaler.func2
+         0     0%   100%   544.67kB  5.30%  encoding/json/v2.makeMapArshaler.func3
+         0     0%   100%   515.38kB  5.02%  encoding/json/v2.makeSliceArshaler.func2
+         0     0%   100%  2146.50kB 20.89%  encoding/json/v2.makeSliceArshaler.func3
+         0     0%   100%  2146.50kB 20.89%  encoding/json/v2.makeStringArshaler.func2
+         0     0%   100%  2146.50kB 20.89%  encoding/json/v2.makeStructArshaler.func3
+         0     0%   100%   515.38kB  5.02%  encoding/json/v2.marshalEncode
+         0     0%   100%   515.38kB  5.02%  encoding/json/v2.marshalValueAny
+         0     0%   100%  2146.50kB 20.89%  encoding/json/v2.unmarshalDecode

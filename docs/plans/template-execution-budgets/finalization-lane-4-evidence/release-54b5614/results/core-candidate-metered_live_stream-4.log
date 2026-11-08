@@ -1,0 +1,53 @@
+goos: darwin
+goarch: arm64
+pkg: github.com/CloudyKit/jet/v6
+cpu: Apple M2 Max
+BenchmarkExecutionModes/metered_live_stream/header_literal/text-2         	 9121339	       133.3 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/metered_live_stream/header_literal/html-2         	 9395724	       129.9 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/metered_live_stream/header_interpolation/text-2   	 4705232	       257.2 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/metered_live_stream/header_interpolation/html-2   	 4591015	       268.9 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/metered_live_stream/body_8192/text-2              	 2641495	       466.5 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/metered_live_stream/body_8192/html-2              	  171331	      6941 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/metered_live_stream/body_65536/text-2             	  482020	      2625 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/metered_live_stream/body_65536/html-2             	   22699	     52888 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/metered_live_stream/nested_writing/text-2         	   34736	     35082 ns/op	    1584 B/op	      66 allocs/op
+BenchmarkExecutionModes/metered_live_stream/nested_writing/html-2         	   34593	     34639 ns/op	    1584 B/op	      66 allocs/op
+BenchmarkExecutionModes/metered_live_stream/nested_silent/text-2          	   15055	     79843 ns/op	    3120 B/op	     130 allocs/op
+BenchmarkExecutionModes/metered_live_stream/nested_silent/html-2          	   15070	     79582 ns/op	    3120 B/op	     130 allocs/op
+BenchmarkExecutionModes/metered_live_stream/escape_safe/text-2            	 4270136	       282.1 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/metered_live_stream/escape_safe/html-2            	  919945	      1280 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/metered_live_stream/escape_expansion/text-2       	 4432297	       268.3 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/metered_live_stream/escape_expansion/html-2       	  118771	     10241 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/metered_live_stream/string_replace/text-2         	  176608	      6780 ns/op	    1048 B/op	       3 allocs/op
+BenchmarkExecutionModes/metered_live_stream/string_replace/html-2         	  150462	      7722 ns/op	    1048 B/op	       3 allocs/op
+BenchmarkExecutionModes/metered_live_stream/string_concat/text-2          	 2346592	       553.9 ns/op	    1040 B/op	       2 allocs/op
+BenchmarkExecutionModes/metered_live_stream/string_concat/html-2          	  907789	      1247 ns/op	    1040 B/op	       2 allocs/op
+BenchmarkExecutionModes/metered_live_stream/include/text-2                	 2310950	       514.9 ns/op	      96 B/op	       5 allocs/op
+BenchmarkExecutionModes/metered_live_stream/include/html-2                	 2197352	       534.2 ns/op	      96 B/op	       5 allocs/op
+BenchmarkExecutionModes/metered_live_stream/inheritance/text-2            	 5106034	       242.5 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/metered_live_stream/inheritance/html-2            	 5026798	       236.1 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/metered_live_stream/block_content/text-2          	 3488668	       335.9 ns/op	      32 B/op	       1 allocs/op
+BenchmarkExecutionModes/metered_live_stream/block_content/html-2          	 3470190	       339.6 ns/op	      32 B/op	       1 allocs/op
+BenchmarkExecutionModes/metered_live_stream/try_success/text-2            	 3583564	       338.1 ns/op	     176 B/op	       2 allocs/op
+BenchmarkExecutionModes/metered_live_stream/try_success/html-2            	 3444021	       348.6 ns/op	     176 B/op	       2 allocs/op
+BenchmarkExecutionModes/metered_live_stream/try_rollback/text-2           	 1000000	      1188 ns/op	     480 B/op	       8 allocs/op
+BenchmarkExecutionModes/metered_live_stream/try_rollback/html-2           	 1000000	      1212 ns/op	     480 B/op	       8 allocs/op
+PASS
+       44.77 real        44.20 user         0.74 sys
+            15712256  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                1197  page reclaims
+                   0  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+               11673  signals received
+                  32  voluntary context switches
+               59098  involuntary context switches
+        760091965818  instructions retired
+        151267625825  cycles elapsed
+            10584592  peak memory footprint

@@ -1,0 +1,53 @@
+gate-lock: held by pid 29514 on $HOST, "jet-lane3-admission-profile-analysis-resume 0e277b3 in $CHECKOUT", since 2026-11-08T07:55:27Z, 2 of 6 focused cores
+baseline alloc summary
+File: baseline.test
+Type: alloc_space
+Time: 2026-11-08 01:49:02 CST
+Showing nodes accounting for 3127.96MB, 99.24% of 3152.05MB total
+Dropped 52 nodes (cum <= 15.76MB)
+Showing top 30 nodes out of 31
+      flat  flat%   sum%        cum   cum%
+  841.65MB 26.70% 26.70%  1352.75MB 42.92%  github.com/CloudyKit/jet/v6.(*parseAdmission).admitCached
+  700.07MB 22.21% 48.91%   700.07MB 22.21%  github.com/CloudyKit/jet/v6.newParseAdmission
+  511.10MB 16.21% 65.13%   511.10MB 16.21%  github.com/CloudyKit/jet/v6.(*parseAdmission).prepareSource
+  432.12MB 13.71% 78.84%   432.12MB 13.71%  github.com/CloudyKit/jet/v6.admitInputScopes
+  167.01MB  5.30% 84.13%   167.51MB  5.31%  github.com/CloudyKit/jet/v6.(*dataPrinter).value
+   84.01MB  2.67% 86.80%  1704.78MB 54.08%  github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext
+   78.50MB  2.49% 89.29%    78.50MB  2.49%  github.com/CloudyKit/jet/v6.(*Runtime).outputWriter (inline)
+   77.50MB  2.46% 91.75%   245.01MB  7.77%  github.com/CloudyKit/jet/v6.(*Runtime).printValue
+   73.50MB  2.33% 94.08%    73.50MB  2.33%  bytes.(*Buffer).grow
+graph4 alloc summary
+File: graph4.test
+Type: alloc_space
+Time: 2026-11-08 01:49:06 CST
+Showing nodes accounting for 2.03GB, 99.47% of 2.04GB total
+Dropped 55 nodes (cum <= 0.01GB)
+      flat  flat%   sum%        cum   cum%
+    0.65GB 31.88% 31.88%     0.65GB 31.88%  github.com/CloudyKit/jet/v6.admitInputScopes
+    0.36GB 17.80% 49.68%     0.36GB 17.83%  github.com/CloudyKit/jet/v6.(*dataPrinter).value
+    0.19GB  9.38% 59.06%     0.56GB 27.20%  github.com/CloudyKit/jet/v6.(*Runtime).printValue
+    0.19GB  9.35% 68.41%     0.19GB  9.35%  github.com/CloudyKit/jet/v6.(*Runtime).outputWriter (inline)
+    0.17GB  8.35% 76.76%     0.17GB  8.35%  github.com/CloudyKit/jet/v6.(*Runtime).newScope (inline)
+    0.13GB  6.46% 83.22%     0.13GB  6.46%  github.com/CloudyKit/jet/v6.(*Runtime).recover
+    0.13GB  6.29% 89.51%     1.22GB 59.75%  github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext
+    0.11GB  5.26% 94.78%     0.11GB  5.26%  bytes.(*Buffer).grow
+    0.04GB  1.89% 96.67%     0.04GB  1.89%  bytes.(*Buffer).String (inline)
+    0.02GB  1.00% 97.67%     0.06GB  2.80%  path.Join
+input4 alloc summary
+File: input4.test
+Type: alloc_space
+Time: 2026-11-08 01:49:08 CST
+Showing nodes accounting for 1.66GB, 99.52% of 1.67GB total
+Dropped 53 nodes (cum <= 0.01GB)
+      flat  flat%   sum%        cum   cum%
+    0.54GB 32.30% 32.30%     0.54GB 32.30%  github.com/CloudyKit/jet/v6.admitInputScopes
+    0.33GB 19.90% 52.20%     0.33GB 19.90%  github.com/CloudyKit/jet/v6.(*dataPrinter).value
+    0.16GB  9.55% 61.75%     0.16GB  9.55%  github.com/CloudyKit/jet/v6.(*Runtime).outputWriter (inline)
+    0.14GB  8.61% 70.36%     0.48GB 28.51%  github.com/CloudyKit/jet/v6.(*Runtime).printValue
+    0.14GB  8.18% 78.54%     0.14GB  8.18%  github.com/CloudyKit/jet/v6.(*Runtime).recover
+    0.10GB  6.04% 84.58%     0.10GB  6.04%  github.com/CloudyKit/jet/v6.(*Runtime).newScope (inline)
+    0.10GB  5.95% 90.52%     1.01GB 60.58%  github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext
+    0.08GB  4.78% 95.30%     0.08GB  4.78%  bytes.(*Buffer).grow
+    0.03GB  1.85% 97.15%     0.03GB  1.85%  bytes.(*Buffer).String (inline)
+    0.02GB  0.91% 98.05%     0.04GB  2.37%  path.Join
+analysis complete

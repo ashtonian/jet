@@ -1,0 +1,12 @@
+START build-upstream
+END build-upstream exit=0
+START conformance-upstream
+END conformance-upstream exit=0
+START build-correctness
+END build-correctness exit=0
+START conformance-correctness
+END conformance-correctness exit=0
+START build-candidate
+END build-candidate exit=0
+START conformance-candidate
+END conformance-candidate exit=0

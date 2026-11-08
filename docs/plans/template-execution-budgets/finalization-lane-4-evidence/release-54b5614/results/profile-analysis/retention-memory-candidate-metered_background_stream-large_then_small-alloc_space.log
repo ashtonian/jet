@@ -1,0 +1,47 @@
+File: candidate.test
+Type: alloc_space
+Time: 2026-11-08 03:05:52 CST
+Showing nodes accounting for 347.02kB, 97.47% of 356.02kB total
+Dropped 102 nodes (cum <= 1.78kB)
+Showing top 40 nodes out of 51
+      flat  flat%   sum%        cum   cum%
+     256kB 71.91% 71.91%      256kB 71.91%  internal/bytealg.MakeNoZero
+   33.25kB  9.34% 81.25%    33.25kB  9.34%  regexp/syntax.(*compiler).inst (inline)
+   18.88kB  5.30% 86.55%    18.88kB  5.30%  regexp.onePassCopy
+    6.94kB  1.95% 88.50%    15.31kB  4.30%  regexp.makeOnePass
+    4.50kB  1.26% 89.76%     4.50kB  1.26%  regexp.newQueue (inline)
+       4kB  1.12% 90.88%     4.08kB  1.15%  github.com/CloudyKit/jet/v6.(*parseAdmission).readSource
+    3.88kB  1.09% 91.97%     3.88kB  1.09%  regexp.makeOnePass.func1
+    3.50kB  0.98% 92.96%     3.50kB  0.98%  regexp/syntax.(*parser).newRegexp (inline)
+    3.08kB  0.86% 93.82%     3.08kB  0.86%  strings.genSplit
+       3kB  0.84% 94.66%        3kB  0.84%  runtime.mallocgc
+    2.88kB  0.81% 95.47%     2.88kB  0.81%  regexp/syntax.(*parser).maybeConcat
+    2.67kB  0.75% 96.22%    66.49kB 18.68%  testing.(*T).Run
+    1.56kB  0.44% 96.66%    78.38kB 22.01%  regexp.compile
+       1kB  0.28% 96.94%     8.19kB  2.30%  regexp/syntax.parse
+    0.80kB  0.22% 97.16%    38.94kB 10.94%  testing.runTests
+    0.44kB  0.12% 97.29%     3.31kB  0.93%  regexp/syntax.(*parser).push
+    0.41kB  0.11% 97.40%   264.36kB 74.25%  github.com/CloudyKit/jet/v6_test.TestExecutionRetentionMeasurements.func1
+    0.13kB 0.037% 97.44%    20.05kB  5.63%  testing.newMatcher
+    0.09kB 0.026% 97.47%    49.05kB 13.78%  github.com/CloudyKit/jet/v6_test.TestExecutionRetentionMeasurements
+    0.02kB 0.0066% 97.47%    39.10kB 10.98%  testing.(*M).Run
+         0     0% 97.47%     6.24kB  1.75%  github.com/CloudyKit/jet/v6.(*Set).GetTemplateContext
+         0     0% 97.47%     5.62kB  1.58%  github.com/CloudyKit/jet/v6.(*Set).getSiblingTemplate
+         0     0% 97.47%     5.57kB  1.56%  github.com/CloudyKit/jet/v6.(*Set).getTemplate
+         0     0% 97.47%     5.29kB  1.49%  github.com/CloudyKit/jet/v6.(*Set).getTemplateFromLoader
+         0     0% 97.47%     5.24kB  1.47%  github.com/CloudyKit/jet/v6.(*Set).loadFromFile
+         0     0% 97.47%     6.24kB  1.75%  github.com/CloudyKit/jet/v6_test.init.0.func1
+         0     0% 97.47%     7.27kB  2.04%  github.com/CloudyKit/jet/v6_test.prepareMeasurement
+         0     0% 97.47%    39.10kB 10.98%  main.main
+         0     0% 97.47%    78.38kB 22.01%  regexp.Compile (inline)
+         0     0% 97.47%    34.19kB  9.60%  regexp.compileOnePass
+         0     0% 97.47%    32.88kB  9.23%  regexp/syntax.(*compiler).compile
+         0     0% 97.47%    32.25kB  9.06%  regexp/syntax.(*compiler).rune
+         0     0% 97.47%     5.88kB  1.65%  regexp/syntax.(*parser).literal
+         0     0% 97.47%    33.62kB  9.44%  regexp/syntax.Compile
+         0     0% 97.47%     8.19kB  2.30%  regexp/syntax.Parse (inline)
+         0     0% 97.47%    39.10kB 10.98%  runtime.main
+         0     0% 97.47%     1.88kB  0.53%  runtime.malg
+         0     0% 97.47%     2.88kB  0.81%  runtime.newobject
+         0     0% 97.47%        2kB  0.56%  runtime.newproc.func1
+         0     0% 97.47%        2kB  0.56%  runtime.newproc1

@@ -1,0 +1,24 @@
+goos: darwin
+goarch: arm64
+pkg: github.com/CloudyKit/jet/v6
+cpu: Apple M2 Max
+BenchmarkOutputReserve/escape_expansion/warm-2    	   27484	     43514 ns/op	   12377 B/op	      17 allocs/op
+PASS
+        1.83 real         1.70 user         0.02 sys
+            16711680  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                1235  page reclaims
+                   0  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                1194  signals received
+                  31  voluntary context switches
+                2697  involuntary context switches
+         33271027414  instructions retired
+          5910388519  cycles elapsed
+            10846712  peak memory footprint

@@ -1,0 +1,16 @@
+File: lease.test
+Type: alloc_objects
+Time: 2026-11-08 02:43:04 CST
+Showing nodes accounting for 39388308, 100% of 39403214 total
+Dropped 39 nodes (cum <= 197016)
+      flat  flat%   sum%        cum   cum%
+         0     0%     0%   39394469   100%  testing.(*B).runN
+         0     0%     0%   39394453   100%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0%     0%   39394453   100%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0%     0%   39394453   100%  github.com/CloudyKit/jet/v6_test.BenchmarkScalarSequential.func1
+         0     0%     0%   39394453   100%  testing.(*B).launch
+         0     0%     0%   39388308   100%  github.com/CloudyKit/jet/v6.(*Runtime).startCompilation
+  22724341 57.67% 57.67%   22724341 57.67%  github.com/CloudyKit/jet/v6.newParseAdmission
+         0     0% 57.67%   16663967 42.29%  github.com/CloudyKit/jet/v6.(*Runtime).startCompilation.func1
+  11026753 27.98% 85.66%   16663967 42.29%  github.com/CloudyKit/jet/v6.(*parseAdmission).admitCached
+   5637214 14.31%   100%    5637214 14.31%  github.com/CloudyKit/jet/v6.(*parseAdmission).prepareSource

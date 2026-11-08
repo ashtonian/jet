@@ -1,0 +1,26 @@
+gate-lock: held by pid <pid> on <host>, "jet-lane-2-amplification-baseline b0bbc07 in <checkout>", since 2026-11-07T23:01:04Z, 2 of 6 focused cores
+=== RUN   TestValueOutputAmplification
+=== RUN   TestValueOutputAmplification/doubling
+    value_output_probe_test.go:40: output="131072" accepted=6 attempted=6 writes=1 error=<nil> sink_limit=false allocated_bytes=558248 allocations=94
+=== RUN   TestValueOutputAmplification/repeat
+    value_output_probe_test.go:40: output="131072" accepted=6 attempted=6 writes=1 error=<nil> sink_limit=false allocated_bytes=133272 allocations=34
+=== RUN   TestValueOutputAmplification/replace
+    value_output_probe_test.go:40: output="131072" accepted=6 attempted=6 writes=1 error=<nil> sink_limit=false allocated_bytes=141520 allocations=36
+=== RUN   TestValueOutputAmplification/split
+    value_output_probe_test.go:40: output="4096" accepted=4 attempted=4 writes=1 error=<nil> sink_limit=false allocated_bytes=71736 allocations=35
+=== RUN   TestValueOutputAmplification/nestedTry
+    value_output_probe_test.go:40: output="" accepted=0 attempted=16384 writes=1 error=<nil> sink_limit=false allocated_bytes=66104 allocations=16
+=== RUN   TestValueOutputAmplification/rollback
+    value_output_probe_test.go:40: output="ok" accepted=2 attempted=2 writes=1 error=<nil> sink_limit=false allocated_bytes=182720 allocations=72
+=== RUN   TestValueOutputAmplification/discard
+    value_output_probe_test.go:40: output="ok" accepted=2 attempted=2 writes=1 error=<nil> sink_limit=false allocated_bytes=19592 allocations=47
+--- PASS: TestValueOutputAmplification (0.02s)
+    --- PASS: TestValueOutputAmplification/doubling (0.00s)
+    --- PASS: TestValueOutputAmplification/repeat (0.00s)
+    --- PASS: TestValueOutputAmplification/replace (0.01s)
+    --- PASS: TestValueOutputAmplification/split (0.00s)
+    --- PASS: TestValueOutputAmplification/nestedTry (0.00s)
+    --- PASS: TestValueOutputAmplification/rollback (0.00s)
+    --- PASS: TestValueOutputAmplification/discard (0.00s)
+PASS
+ok  	github.com/CloudyKit/jet/v6	0.313s

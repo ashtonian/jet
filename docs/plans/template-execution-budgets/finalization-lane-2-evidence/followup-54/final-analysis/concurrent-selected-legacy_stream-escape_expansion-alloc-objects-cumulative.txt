@@ -1,0 +1,37 @@
+File: render.test
+Type: alloc_objects
+Time: 2026-11-08 04:47:27 CST
+Showing nodes accounting for 106398, 90.58% of 117461 total
+Dropped 30 nodes (cum <= 587)
+Showing top 30 nodes out of 46
+      flat  flat%   sum%        cum   cum%
+         0     0%     0%     114175 97.20%  github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes
+         0     0%     0%     114175 97.20%  testing.(*B).run1.func1
+         0     0%     0%     114175 97.20%  testing.(*B).runN
+         0     0%     0%      80729 68.73%  testing.(*B).Run
+         0     0%     0%      80729 68.73%  testing.(*matcher).fullName
+         0     0%     0%      75268 64.08%  regexp.Compile (inline)
+         0     0%     0%      75268 64.08%  regexp.compile
+         0     0%     0%      75268 64.08%  testing.simpleMatch.matches
+         0     0%     0%      75268 64.08%  testing/internal/testdeps.TestDeps.MatchString
+         0     0%     0%      39497 33.63%  regexp/syntax.Parse (inline)
+         0     0%     0%      39497 33.63%  regexp/syntax.parse
+         0     0%     0%      37449 31.88%  regexp/syntax.(*parser).literal
+     34816 29.64% 29.64%      34816 29.64%  regexp/syntax.(*parser).maybeConcat
+         0     0% 29.64%      34816 29.64%  regexp/syntax.(*parser).push
+         0     0% 29.64%      33939 28.89%  regexp.compileOnePass
+         0     0% 29.64%      33446 28.47%  github.com/CloudyKit/jet/v6_test.measurementWorkloads
+       585   0.5% 30.14%      33353 28.39%  regexp.makeOnePass
+         0     0% 30.14%      32789 27.91%  github.com/CloudyKit/jet/v6_test.additionalExecutionWorkloads
+         0     0% 30.14%      32768 27.90%  encoding/json.Marshal (inline)
+         0     0% 30.14%      32768 27.90%  encoding/json/v2.Marshal
+         0     0% 30.14%      32768 27.90%  encoding/json/v2.makeInterfaceArshaler.func1
+         0     0% 30.14%      32768 27.90%  encoding/json/v2.makeMapArshaler.func2
+         0     0% 30.14%      32768 27.90%  encoding/json/v2.makeSliceArshaler.func2
+         0     0% 30.14%      32768 27.90%  encoding/json/v2.marshalEncode
+         0     0% 30.14%      32768 27.90%  encoding/json/v2.newAddressableValue
+         0     0% 30.14%      32768 27.90%  reflect.New
+     32768 27.90% 58.04%      32768 27.90%  reflect.unsafe_New
+     32768 27.90% 85.93%      32768 27.90%  regexp.makeOnePass.func1
+         0     0% 85.93%       5461  4.65%  strings.Split (inline)
+      5461  4.65% 90.58%       5461  4.65%  strings.genSplit

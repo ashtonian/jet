@@ -1,0 +1,31 @@
+File: candidate.test
+Type: alloc_objects
+Time: 2026-11-08 03:03:53 CST
+Showing nodes accounting for 239155212, 99.80% of 239643519 total
+Dropped 115 nodes (cum <= 1198217)
+      flat  flat%   sum%        cum   cum%
+  83461367 34.83% 34.83%   83461367 34.83%  reflect.unsafe_New
+  60467743 25.23% 60.06%  239403856 99.90%  github.com/CloudyKit/jet/v6.(*dataJSONEncoder).value
+  35127831 14.66% 74.72%   94380894 39.38%  github.com/CloudyKit/jet/v6.(*dataJSONEncoder).stringValue
+  24380047 10.17% 84.89%   59934050 25.01%  github.com/CloudyKit/jet/v6.(*Runtime).sortedStringKeys
+  23713849  9.90% 94.79%   23713849  9.90%  bytes.Clone (inline)
+  11829609  4.94% 99.72%   11829609  4.94%  internal/reflectlite.Swapper
+    109228 0.046% 99.77%  239556776   100%  github.com/CloudyKit/jet/v6.builtinMarshalJSON
+     43692 0.018% 99.79%  239447548 99.92%  github.com/CloudyKit/jet/v6.(*Runtime).marshalDataJSON
+     21846 0.0091% 99.80%  239585831   100%  github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes.func1.1
+         0     0% 99.80%   58985695 24.61%  encoding/json.Marshal (inline)
+         0     0% 99.80%   58985695 24.61%  encoding/json/v2.Marshal
+         0     0% 99.80%   35259203 14.71%  encoding/json/v2.marshalEncode
+         0     0% 99.80%  239556776   100%  github.com/CloudyKit/jet/v6.(*Runtime).evalCallExpression (inline)
+         0     0% 99.80%  239556776   100%  github.com/CloudyKit/jet/v6.(*Runtime).evalCommandExpression
+         0     0% 99.80%  239556776   100%  github.com/CloudyKit/jet/v6.(*Runtime).evalPipeCallExpression
+         0     0% 99.80%  239556776   100%  github.com/CloudyKit/jet/v6.(*Runtime).evalPipelineExpression
+         0     0% 99.80%  239558427   100%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 99.80%  239563985   100%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0% 99.80%  239563985   100%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0% 99.80%  239563985   100%  github.com/CloudyKit/jet/v6_test.init.0.func2
+         0     0% 99.80%   23724394  9.90%  reflect.(*MapIter).Key
+         0     0% 99.80%   35258904 14.71%  reflect.New
+         0     0% 99.80%   24478069 10.21%  reflect.Value.MapIndex
+         0     0% 99.80%   48202463 20.11%  reflect.copyVal
+         0     0% 99.80%   11829609  4.94%  sort.Slice

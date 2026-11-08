@@ -1,0 +1,21 @@
+File: reserve-reuse4096.test
+Type: alloc_space
+Time: 2026-11-08 01:56:46 CST
+Showing nodes accounting for 207137.72kB, 98.99% of 209259.86kB total
+Dropped 338 nodes (cum <= 1046.30kB)
+Showing top 14 nodes out of 21
+      flat  flat%   sum%        cum   cum%
+142776.02kB 68.23% 68.23% 142776.02kB 68.23%  bytes.(*Buffer).String (inline)
+20821.59kB  9.95% 78.18% 20821.59kB  9.95%  github.com/CloudyKit/jet/v6.admitInputScopes
+16359.75kB  7.82% 86.00% 26026.88kB 12.44%  github.com/CloudyKit/jet/v6.(*parseAdmission).admitCached
+13385.81kB  6.40% 92.39% 13385.81kB  6.40%  github.com/CloudyKit/jet/v6.newParseAdmission
+ 9667.53kB  4.62% 97.01%  9667.53kB  4.62%  github.com/CloudyKit/jet/v6.(*parseAdmission).prepareSource
+ 2974.50kB  1.42% 98.44% 206242.35kB 98.56%  github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext
+ 1152.30kB  0.55% 98.99%  1152.30kB  0.55%  runtime/pprof.StartCPUProfile
+    0.14kB 6.7e-05% 98.99% 206981.04kB 98.91%  testing.(*B).runN
+    0.07kB 3.4e-05% 98.99%  1219.23kB  0.58%  testing.(*M).Run
+         0     0% 98.99% 39412.12kB 18.83%  github.com/CloudyKit/jet/v6.(*Runtime).startCompilation
+         0     0% 98.99% 26026.88kB 12.44%  github.com/CloudyKit/jet/v6.(*Runtime).startCompilation.func1
+         0     0% 98.99% 203267.85kB 97.14%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0% 98.99% 203267.85kB 97.14%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0% 98.99% 206242.35kB 98.56%  github.com/CloudyKit/jet/v6_test.BenchmarkOutputReserve.func1.1

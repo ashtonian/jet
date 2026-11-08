@@ -1,0 +1,28 @@
+File: candidate.test
+Type: inuse_space
+Time: 2026-11-08 03:05:52 CST
+Showing nodes accounting for 1412.53kB, 98.89% of 1428.39kB total
+Dropped 126 nodes (cum <= 7.14kB)
+      flat  flat%   sum%        cum   cum%
+     892kB 62.45% 62.45%      892kB 62.45%  bytes.growSlice
+  256.12kB 17.93% 80.38%   256.12kB 17.93%  bytes.(*Buffer).String (inline)
+     256kB 17.92% 98.30%      256kB 17.92%  internal/bytealg.MakeNoZero
+    8.05kB  0.56% 98.86%     8.05kB  0.56%  github.com/CloudyKit/fastprinter.newByteSliceBufferPool.func1
+    0.27kB 0.019% 98.88%  1418.20kB 99.29%  github.com/CloudyKit/jet/v6_test.TestExecutionRetentionMeasurements.func1
+    0.09kB 0.0066% 98.89%  1159.04kB 81.14%  github.com/CloudyKit/jet/v6_test.init.func2
+         0     0% 98.89%      892kB 62.45%  bytes.(*Buffer).Write
+         0     0% 98.89%      892kB 62.45%  bytes.(*Buffer).grow
+         0     0% 98.89%   900.55kB 63.05%  github.com/CloudyKit/fastprinter.PrintString
+         0     0% 98.89%   900.55kB 63.05%  github.com/CloudyKit/fastprinter.PrintValue
+         0     0% 98.89%   900.65kB 63.05%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 98.89%   900.55kB 63.05%  github.com/CloudyKit/jet/v6.(*Runtime).printValue
+         0     0% 98.89%   902.84kB 63.21%  github.com/CloudyKit/jet/v6.(*Template).Execute (inline)
+         0     0% 98.89%   902.84kB 63.21%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0% 98.89%      892kB 62.45%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+         0     0% 98.89%      892kB 62.45%  github.com/CloudyKit/jet/v6.(*escapeeWriter).Write
+         0     0% 98.89%  1159.04kB 81.14%  github.com/CloudyKit/jet/v6_test.TestExecutionRetentionMeasurements.func1.1 (inline)
+         0     0% 98.89%      256kB 17.92%  strings.(*Builder).Grow
+         0     0% 98.89%      256kB 17.92%  strings.(*Builder).grow
+         0     0% 98.89%      256kB 17.92%  strings.Repeat
+         0     0% 98.89%     9.70kB  0.68%  sync.(*Pool).Get
+         0     0% 98.89%  1423.82kB 99.68%  testing.tRunner

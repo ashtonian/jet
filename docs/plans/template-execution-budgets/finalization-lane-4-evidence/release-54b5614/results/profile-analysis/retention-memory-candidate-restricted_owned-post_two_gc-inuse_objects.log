@@ -1,0 +1,46 @@
+File: candidate.test
+Type: inuse_objects
+Time: 2026-11-08 03:05:52 CST
+Showing nodes accounting for 107, 96.40% of 111 total
+Showing top 40 nodes out of 113
+      flat  flat%   sum%        cum   cum%
+        13 11.71% 11.71%         38 34.23%  testing.(*T).Run
+        11  9.91% 21.62%         20 18.02%  github.com/CloudyKit/jet/v6.NewRestrictedSet
+         7  6.31% 27.93%          7  6.31%  runtime.mallocgc
+         6  5.41% 33.33%          6  5.41%  testing.(*matcher).unique
+         5  4.50% 37.84%          5  4.50%  github.com/CloudyKit/jet/v6.NewSet
+         5  4.50% 42.34%         46 41.44%  github.com/CloudyKit/jet/v6_test.TestExecutionRetentionMeasurements.func1
+         4  3.60% 45.95%          8  7.21%  context.WithCancel
+         4  3.60% 49.55%          4  3.60%  context.withCancel (inline)
+         3  2.70% 52.25%          4  3.60%  github.com/CloudyKit/jet/v6.admitTemplateBundle
+         3  2.70% 54.95%          3  2.70%  internal/sync.newEntryNode[go.shape.interface {},go.shape.interface {}] (inline)
+         3  2.70% 57.66%          7  6.31%  testing.newMatcher
+         3  2.70% 60.36%         26 23.42%  testing.runTests
+         2  1.80% 62.16%          9  8.11%  github.com/CloudyKit/jet/v6.(*Set).parse
+         2  1.80% 63.96%          2  1.80%  github.com/CloudyKit/jet/v6.VarMap.Set (inline)
+         2  1.80% 65.77%          2  1.80%  internal/sync.newIndirectNode[go.shape.interface {},go.shape.interface {}] (inline)
+         2  1.80% 67.57%          2  1.80%  path.(*lazybuf).string (inline)
+         2  1.80% 69.37%         10  9.01%  regexp.compile
+         2  1.80% 71.17%          2  1.80%  regexp.onePassCopy
+         2  1.80% 72.97%          2  1.80%  testing.(*common).Helper
+         2  1.80% 74.77%          2  1.80%  testing.(*common).setOutputWriter (inline)
+         2  1.80% 76.58%          2  1.80%  testing.newTestState (inline)
+         2  1.80% 78.38%          2  1.80%  testing.rewrite
+         2  1.80% 80.18%          2  1.80%  testing.splitRegexp
+         2  1.80% 81.98%          2  1.80%  time.newTimer
+         1   0.9% 82.88%          1   0.9%  bytes.(*Buffer).String (inline)
+         1   0.9% 83.78%          1   0.9%  github.com/CloudyKit/jet/v6.(*ListNode).append (inline)
+         1   0.9% 84.68%          1   0.9%  github.com/CloudyKit/jet/v6.(*PipeNode).append (inline)
+         1   0.9% 85.59%          1   0.9%  github.com/CloudyKit/jet/v6.(*Template).newAction
+         1   0.9% 86.49%          1   0.9%  github.com/CloudyKit/jet/v6.(*Template).newCommand
+         1   0.9% 87.39%          1   0.9%  github.com/CloudyKit/jet/v6.(*Template).newIdentifier
+         1   0.9% 88.29%          1   0.9%  github.com/CloudyKit/jet/v6.(*Template).newList
+         1   0.9% 89.19%          1   0.9%  github.com/CloudyKit/jet/v6.(*Template).newPipeline
+         1   0.9% 90.09%          2  1.80%  github.com/CloudyKit/jet/v6.(*cache).Put
+         1   0.9% 90.99%         28 25.23%  github.com/CloudyKit/jet/v6_test.TestExecutionRetentionMeasurements
+         1   0.9% 91.89%          1   0.9%  internal/bytealg.MakeNoZero
+         1   0.9% 92.79%          1   0.9%  regexp.makeOnePass.func1
+         1   0.9% 93.69%          1   0.9%  regexp/syntax.(*Regexp).CapNames
+         1   0.9% 94.59%          1   0.9%  regexp/syntax.(*compiler).init (inline)
+         1   0.9% 95.50%          1   0.9%  regexp/syntax.(*compiler).inst (inline)
+         1   0.9% 96.40%          1   0.9%  regexp/syntax.(*parser).maybeConcat

@@ -1,0 +1,2 @@
+gate-lock: held by pid <pid> on <host>, "jet-lane-2-final-core e883796 in <checkout>", since 2026-11-08T00:01:15Z, 2 of 6 focused cores
+ok  	github.com/CloudyKit/jet/v6	0.337s

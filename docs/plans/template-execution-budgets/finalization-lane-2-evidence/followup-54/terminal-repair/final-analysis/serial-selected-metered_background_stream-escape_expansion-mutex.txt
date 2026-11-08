@@ -1,0 +1,12 @@
+File: render.test
+Type: delay
+Time: 2026-11-08 05:27:36 CST
+Showing nodes accounting for 334ns, 100% of 334ns total
+      flat  flat%   sum%        cum   cum%
+     334ns   100%   100%      334ns   100%  runtime.unlock
+         0     0%   100%      334ns   100%  runtime.(*mheap).freeSpan (inline)
+         0     0%   100%      334ns   100%  runtime.(*mheap).freeSpan.func1
+         0     0%   100%      334ns   100%  runtime.(*sweepLocked).sweep
+         0     0%   100%      334ns   100%  runtime.bgsweep
+         0     0%   100%      334ns   100%  runtime.sweepone
+         0     0%   100%      334ns   100%  runtime.systemstack

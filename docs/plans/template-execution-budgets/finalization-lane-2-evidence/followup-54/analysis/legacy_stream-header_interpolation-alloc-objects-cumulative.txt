@@ -1,0 +1,23 @@
+File: candidate.test
+Type: alloc_objects
+Time: 2026-11-08 03:57:26 CST
+Showing nodes accounting for 37865, 99.70% of 37980 total
+Dropped 38 nodes (cum <= 189)
+      flat  flat%   sum%        cum   cum%
+         0     0%     0%      34696 91.35%  github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes
+         0     0%     0%      34696 91.35%  testing.(*B).run1.func1
+         0     0%     0%      34696 91.35%  testing.(*B).runN
+         0     0%     0%      32768 86.28%  regexp.Compile (inline)
+         0     0%     0%      32768 86.28%  regexp.compile
+         0     0%     0%      32768 86.28%  regexp.onePassPrefix
+         0     0%     0%      32768 86.28%  strings.(*Builder).WriteRune
+         0     0%     0%      32768 86.28%  testing.(*B).Run
+         0     0%     0%      32768 86.28%  testing.(*matcher).fullName
+         0     0%     0%      32768 86.28%  testing.simpleMatch.matches
+         0     0%     0%      32768 86.28%  testing/internal/testdeps.TestDeps.MatchString
+     32768 86.28% 86.28%      32768 86.28%  unicode/utf8.AppendRune (inline)
+         0     0% 86.28%       3283  8.64%  runtime/pprof.profileWriter
+      3277  8.63% 94.91%       3277  8.63%  compress/gzip.NewWriterLevel
+         0     0% 94.91%       3277  8.63%  runtime/pprof.newProfileBuilder
+         0     0% 94.91%       1928  5.08%  github.com/CloudyKit/jet/v6_test.measurementWorkloads
+      1820  4.79% 99.70%       1895  4.99%  github.com/CloudyKit/jet/v6_test.additionalExecutionWorkloads

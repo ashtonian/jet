@@ -8,6 +8,7 @@ import (
 	"io"
 	"math"
 	"runtime"
+	"sync"
 )
 
 // ParseOptions bounds one compilation and its dependency graph. Zero is unlimited.
@@ -65,16 +66,20 @@ func (e *ParseLimitError) Unwrap() error {
 // ParseContext parses inline source synchronously. Dependencies use the same
 // admission. A failed operation never publishes a partial template.
 func (s *Set) ParseContext(ctx context.Context, name, source string, opts ParseOptions) (t *Template, err error) {
-	a, err := newParseAdmission(ctx, opts)
+	a, err := s.parseAdmission(ctx, opts)
 	if err != nil {
 		return nil, err
 	}
+	defer a.release()
 	defer func() {
 		if err != nil {
 			t = nil
 		}
 	}()
 	defer a.recover(&err)
+	if s.restricted != nil && len(name) > 1024 {
+		return nil, ErrCapabilityDenied
+	}
 	name, err = normalizeParseName(name)
 	if err != nil {
 		return nil, err
@@ -90,10 +95,11 @@ func (s *Set) ParseContext(ctx context.Context, name, source string, opts ParseO
 // Loader calls and reads are owned synchronously: an arbitrary blocking Loader
 // cannot be interrupted. ContextLoader can cooperate without a detached worker.
 func (s *Set) GetTemplateContext(ctx context.Context, name string, opts ParseOptions) (t *Template, err error) {
-	a, err := newParseAdmission(ctx, opts)
+	a, err := s.parseAdmission(ctx, opts)
 	if err != nil {
 		return nil, err
 	}
+	defer a.release()
 	defer func() {
 		if err != nil {
 			t = nil
@@ -144,32 +150,65 @@ func (a *parseAdmission) recover(err *error) {
 
 // This state belongs to one synchronous operation, never a Set or cached AST.
 type parseAdmission struct {
-	ctx      context.Context
-	opts     ParseOptions
-	active   map[string]bool
-	sources  map[string]int64
-	cached   map[*Template]bool
-	total    int64
-	nodes    uint64
-	steps    uint64
-	depth    int
-	terminal error
+	ctx          context.Context
+	opts         ParseOptions
+	sources      []parseSource
+	sourceIndex  map[string]int
+	cached       []*Template
+	cachedIndex  map[*Template]bool
+	smallSources [4]parseSource
+	smallCached  [4]*Template
+	total        int64
+	nodes        uint64
+	steps        uint64
+	depth        int
+	parsing      int
+	terminal     error
+}
+
+type parseSource struct {
+	name   string
+	size   int64
+	active bool
 }
 
 type parseMetadata struct {
 	sourceBytes int64
 	nodes       uint64
 	depth       int
+	// Nonzero only for a fully compiled, acyclic graph owned by this Set.
+	graphDepth int
 }
 
+var parseAdmissions = sync.Pool{New: func() interface{} { return new(parseAdmission) }}
+
 func newParseAdmission(ctx context.Context, opts ParseOptions) (*parseAdmission, error) {
-	if ctx == nil || opts.MaxSourceBytes < 0 || opts.MaxTotalSourceBytes < 0 || opts.MaxDepth < 0 {
-		return nil, ErrInvalidParseOptions
-	}
-	if err := ctx.Err(); err != nil {
+	a := parseAdmissions.Get().(*parseAdmission)
+	if err := a.init(ctx, opts); err != nil {
+		a.release()
 		return nil, err
 	}
-	return &parseAdmission{ctx: ctx, opts: opts, active: make(map[string]bool), sources: make(map[string]int64), cached: make(map[*Template]bool)}, nil
+	return a, nil
+}
+
+func (a *parseAdmission) release() {
+	// Retain only fixed storage. Large graphs and caller references leave the pool.
+	*a = parseAdmission{}
+	parseAdmissions.Put(a)
+}
+
+func (a *parseAdmission) init(ctx context.Context, opts ParseOptions) error {
+	if ctx == nil {
+		return ErrInvalidParseOptions
+	}
+	if err := validateParseOptions(opts); err != nil {
+		return err
+	}
+	if err := ctx.Err(); err != nil {
+		return err
+	}
+	a.ctx, a.opts = ctx, opts
+	return nil
 }
 
 func (a *parseAdmission) check() {
@@ -217,27 +256,55 @@ func (a *parseAdmission) enter() {
 	a.depth++
 }
 
-func (a *parseAdmission) prepareSource(name string) {
-	a.step(1)
-	if a.active[name] {
-		panic(compilationAbort{fmt.Errorf("%w: %s", ErrTemplateCycle, parseDiagnostic(name))})
+func (a *parseAdmission) findSource(name string) (int, bool) {
+	if a.sourceIndex != nil {
+		i, ok := a.sourceIndex[name]
+		return i, ok
 	}
-	if _, ok := a.sources[name]; !ok {
-		if a.opts.MaxTemplates > 0 && uint64(len(a.sources)) >= a.opts.MaxTemplates {
-			a.limit("templates", a.opts.MaxTemplates)
+	for i := range a.sources {
+		if a.sources[i].name == name {
+			return i, true
 		}
-		a.sources[name] = 0
 	}
+	return 0, false
 }
 
-func (a *parseAdmission) source(name string, size int64) {
-	a.prepareSource(name)
+func (a *parseAdmission) prepareSource(name string) int {
+	a.step(1)
+	if i, ok := a.findSource(name); ok {
+		if a.sources[i].active {
+			panic(compilationAbort{fmt.Errorf("%w: %s", ErrTemplateCycle, parseDiagnostic(name))})
+		}
+		return i
+	}
+	if a.opts.MaxTemplates > 0 && uint64(len(a.sources)) >= a.opts.MaxTemplates {
+		a.limit("templates", a.opts.MaxTemplates)
+	}
+	if a.sources == nil {
+		a.sources = a.smallSources[:0]
+	}
+	i := len(a.sources)
+	a.sources = append(a.sources, parseSource{name: name})
+	if a.sourceIndex != nil {
+		a.sourceIndex[name] = i
+	} else if len(a.sources) > len(a.smallSources) {
+		a.step(uint64(len(a.sources)))
+		a.sourceIndex = make(map[string]int, len(a.sources))
+		for j := range a.sources {
+			a.sourceIndex[a.sources[j].name] = j
+		}
+	}
+	return i
+}
+
+func (a *parseAdmission) source(name string, size int64) int {
+	i := a.prepareSource(name)
 	if a.opts.MaxSourceBytes > 0 && size > a.opts.MaxSourceBytes {
 		a.limit("source bytes", uint64(a.opts.MaxSourceBytes))
 	}
-	old := a.sources[name]
+	old := a.sources[i].size
 	if size <= old {
-		return
+		return i
 	}
 	extra := size - old
 	if a.opts.MaxTotalSourceBytes > 0 && extra > a.opts.MaxTotalSourceBytes-a.total {
@@ -247,7 +314,36 @@ func (a *parseAdmission) source(name string, size int64) {
 		a.limit("total source bytes", math.MaxInt64)
 	}
 	a.total += extra
-	a.sources[name] = size
+	a.sources[i].size = size
+	return i
+}
+
+func (a *parseAdmission) hasCached(t *Template) bool {
+	if a.cachedIndex != nil {
+		return a.cachedIndex[t]
+	}
+	for _, old := range a.cached {
+		if old == t {
+			return true
+		}
+	}
+	return false
+}
+
+func (a *parseAdmission) markCached(t *Template) {
+	if a.cached == nil {
+		a.cached = a.smallCached[:0]
+	}
+	a.cached = append(a.cached, t)
+	if a.cachedIndex != nil {
+		a.cachedIndex[t] = true
+	} else if len(a.cached) > len(a.smallCached) {
+		a.step(uint64(len(a.cached)))
+		a.cachedIndex = make(map[*Template]bool, len(a.cached))
+		for _, old := range a.cached {
+			a.cachedIndex[old] = true
+		}
+	}
 }
 
 func (a *parseAdmission) addNodes(n uint64) {
@@ -289,26 +385,70 @@ func (t *Template) leaveParse() {
 }
 
 func (a *parseAdmission) admitCached(t *Template) {
-	a.prepareSource(t.Name)
-	// Check depth on every path through a diamond, even if size was charged before.
-	if a.opts.MaxDepth > 0 && t.metadata.depth > a.opts.MaxDepth-a.depth {
+	// Successful compilation certifies the whole immutable graph. With no
+	// limits or active parse ancestors there is nothing to re-account.
+	if a.opts == (ParseOptions{}) && a.depth == 0 && t.metadata.graphDepth > 0 {
+		a.check()
+		return
+	}
+	i := a.source(t.Name, t.metadata.sourceBytes)
+	height := t.metadata.graphDepth
+	if height == 0 {
+		height = t.metadata.depth
+	}
+	// The transitive height checks every diamond path before skipping a visit.
+	if a.opts.MaxDepth > 0 && height > a.opts.MaxDepth-a.depth {
 		a.limit("depth", uint64(a.opts.MaxDepth))
+	}
+	seen := a.hasCached(t)
+	// A cold parse can introduce another version of a previously seen name.
+	// Walk its cached dependencies to compare them with every active ancestor.
+	if t.metadata.graphDepth > 0 && seen && a.parsing == 0 {
+		return
+	}
+	if !seen {
+		a.addNodes(t.metadata.nodes)
+		a.markCached(t)
+	}
+	if t.extends == nil && len(t.imports) == 0 {
+		return
 	}
 	a.enter()
 	defer func() { a.depth-- }()
-	a.source(t.Name, t.metadata.sourceBytes)
-	if !a.cached[t] {
-		a.addNodes(t.metadata.nodes)
-		a.cached[t] = true
-	}
-	a.active[t.Name] = true
-	defer delete(a.active, t.Name)
+	a.sources[i].active = true
+	defer func() { a.sources[i].active = false }()
 	if t.extends != nil {
 		a.admitCached(t.extends)
 	}
 	for _, dependency := range t.imports {
 		a.admitCached(dependency)
 	}
+}
+
+func (t *Template) recordGraphDepth() {
+	height := t.metadata.depth
+	include := func(child *Template) bool {
+		t.admission.step(1)
+		if child.set != t.set || child.metadata.graphDepth == 0 {
+			return false
+		}
+		if child.metadata.graphDepth == int(^uint(0)>>1) {
+			t.admission.limit("depth", uint64(child.metadata.graphDepth))
+		}
+		if h := child.metadata.graphDepth + 1; h > height {
+			height = h
+		}
+		return true
+	}
+	if t.extends != nil && !include(t.extends) {
+		return
+	}
+	for _, child := range t.imports {
+		if !include(child) {
+			return
+		}
+	}
+	t.metadata.graphDepth = height
 }
 
 func parseDiagnostic(s string) string {
@@ -320,7 +460,7 @@ func parseDiagnostic(s string) string {
 }
 
 func (a *parseAdmission) readSource(name string, reader io.Reader) string {
-	a.prepareSource(name)
+	source := a.prepareSource(name)
 	var buf bytes.Buffer
 	var chunk [4096]byte
 	empty := 0
@@ -332,7 +472,7 @@ func (a *parseAdmission) readSource(name string, reader io.Reader) string {
 			readSize = int(cap-size) + 1
 		}
 		if cap := a.opts.MaxTotalSourceBytes; cap > 0 {
-			allowed := cap - a.total + a.sources[name] - size
+			allowed := cap - a.total + a.sources[source].size - size
 			if allowed < int64(readSize) {
 				readSize = int(allowed) + 1
 			}
@@ -400,4 +540,11 @@ func (t *Template) recordCallDepth(call *CallExprNode) {
 		}
 	}
 	t.recordExpression(call, depth)
+}
+
+func validateParseOptions(opts ParseOptions) error {
+	if opts.MaxSourceBytes < 0 || opts.MaxTotalSourceBytes < 0 || opts.MaxDepth < 0 {
+		return ErrInvalidParseOptions
+	}
+	return nil
 }

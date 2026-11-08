@@ -1,0 +1,46 @@
+File: upstream.test
+Type: inuse_space
+Time: 2026-11-08 03:05:52 CST
+Showing nodes accounting for 268.46kB, 97.54% of 275.22kB total
+Dropped 113 nodes (cum <= 1.38kB)
+      flat  flat%   sum%        cum   cum%
+     256kB 93.02% 93.02%      256kB 93.02%  internal/bytealg.MakeNoZero
+    8.67kB  3.15% 96.17%     8.71kB  3.17%  runtime.mallocgc
+    2.59kB  0.94% 97.11%     5.58kB  2.03%  testing.(*T).Run
+    0.80kB  0.29% 97.40%     2.95kB  1.07%  testing.runTests
+    0.17kB 0.062% 97.46%     2.19kB  0.79%  regexp.compile
+    0.16kB 0.057% 97.52%   259.25kB 94.20%  github.com/CloudyKit/jet/v6_test.TestExecutionRetentionMeasurements.func1
+    0.05kB 0.017% 97.54%     4.05kB  1.47%  github.com/CloudyKit/jet/v6_test.TestExecutionRetentionMeasurements
+    0.02kB 0.0085% 97.54%     3.09kB  1.12%  testing.(*M).Run
+         0     0% 97.54%        2kB  0.73%  github.com/CloudyKit/jet/v6_test.prepareMeasurement
+         0     0% 97.54%     3.09kB  1.12%  main.main
+         0     0% 97.54%     2.19kB  0.79%  regexp.Compile (inline)
+         0     0% 97.54%     5.20kB  1.89%  runtime.allocm
+         0     0% 97.54%     5.20kB  1.89%  runtime.gcBgMarkWorker.func2
+         0     0% 97.54%     5.20kB  1.89%  runtime.gcDrain
+         0     0% 97.54%     5.20kB  1.89%  runtime.gcDrainMarkWorkerIdle (inline)
+         0     0% 97.54%     2.25kB  0.82%  runtime.mProfStackInit (inline)
+         0     0% 97.54%     3.09kB  1.12%  runtime.main
+         0     0% 97.54%     2.25kB  0.82%  runtime.makeProfStackFP (inline)
+         0     0% 97.54%     2.25kB  0.82%  runtime.makeslice
+         0     0% 97.54%     3.28kB  1.19%  runtime.malg
+         0     0% 97.54%     5.20kB  1.89%  runtime.markroot
+         0     0% 97.54%     5.20kB  1.89%  runtime.markroot.func1
+         0     0% 97.54%     2.73kB  0.99%  runtime.mcommoninit
+         0     0% 97.54%     5.20kB  1.89%  runtime.newm
+         0     0% 97.54%     6.29kB  2.29%  runtime.newobject
+         0     0% 97.54%     2.47kB   0.9%  runtime.newproc.func1
+         0     0% 97.54%     2.47kB   0.9%  runtime.newproc1
+         0     0% 97.54%     5.20kB  1.89%  runtime.ready
+         0     0% 97.54%     5.20kB  1.89%  runtime.resumeG
+         0     0% 97.54%     5.20kB  1.89%  runtime.startm
+         0     0% 97.54%     7.66kB  2.78%  runtime.systemstack
+         0     0% 97.54%     5.20kB  1.89%  runtime.wakep
+         0     0% 97.54%      256kB 93.02%  strings.(*Builder).Grow
+         0     0% 97.54%      256kB 93.02%  strings.(*Builder).grow
+         0     0% 97.54%      256kB 93.02%  strings.Repeat
+         0     0% 97.54%     2.48kB   0.9%  testing.(*matcher).fullName
+         0     0% 97.54%     1.57kB  0.57%  testing.runTests.func1
+         0     0% 97.54%     2.19kB  0.79%  testing.simpleMatch.matches
+         0     0% 97.54%   264.88kB 96.24%  testing.tRunner
+         0     0% 97.54%     2.19kB  0.79%  testing/internal/testdeps.TestDeps.MatchString

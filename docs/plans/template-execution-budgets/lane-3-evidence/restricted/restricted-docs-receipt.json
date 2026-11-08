@@ -1,0 +1,10 @@
+{
+  "command": "python3 .git/lane3-evidence/docs_validation.py",
+  "execution_deadline_seconds": 180,
+  "term_cleanup_seconds": 5,
+  "start": 1794099470.202566,
+  "end": 1794099472.474171,
+  "exit_code": 0,
+  "errors": [],
+  "manifest": "restricted-docs-inputs.json"
+}

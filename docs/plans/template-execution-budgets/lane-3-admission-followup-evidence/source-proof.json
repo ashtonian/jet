@@ -1,0 +1,22 @@
+{
+  "base/input.go": {
+    "frozen": "<CHECKOUT>/.git/admission-followup/base-frozen/input.go.txt",
+    "sha256": "3bbaa82a02b52502bee4d501320031754b12c8233b534eed9f4712abed9c4ce4",
+    "expected": "3bbaa82a02b52502bee4d501320031754b12c8233b534eed9f4712abed9c4ce4"
+  },
+  "base/exec.go": {
+    "frozen": "<CHECKOUT>/.git/admission-followup/base-frozen/exec.go.txt",
+    "sha256": "503b545ee81fdb09955c4bbc1f53390e645408bfbfa2b6844bc0cbc9f7c71c7e",
+    "expected": "503b545ee81fdb09955c4bbc1f53390e645408bfbfa2b6844bc0cbc9f7c71c7e"
+  },
+  "defaults/input.go": {
+    "frozen": "<CHECKOUT>/.git/admission-followup/direct-frozen/input.go.txt",
+    "sha256": "45a84d4fe6a2495271f2dc762302fab9fd7221195ebc29072e0929d05fdf72fc",
+    "expected": "45a84d4fe6a2495271f2dc762302fab9fd7221195ebc29072e0929d05fdf72fc"
+  },
+  "defaults/exec.go": {
+    "frozen": "<CHECKOUT>/.git/admission-followup/defaults-exec.go.txt",
+    "sha256": "89d9e48a0b828593d81d5636971156f074f0f16bb2d161343deaa1afbb596809",
+    "expected": "89d9e48a0b828593d81d5636971156f074f0f16bb2d161343deaa1afbb596809"
+  }
+}

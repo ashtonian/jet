@@ -1,0 +1,33 @@
+goos: darwin
+goarch: arm64
+pkg: github.com/CloudyKit/jet/v6
+cpu: Apple M2 Max
+BenchmarkScalarSequential/int/background-2         	 2351182	       497.9 ns/op	     848 B/op	       7 allocs/op
+BenchmarkScalarSequential/int/live-2               	--- FAIL: BenchmarkScalarSequential/int/live-2
+    zz_finalization_scalar_test.go:39: fixture output "": context canceled
+BenchmarkScalarSequential/collection/background-2  	 1563601	       797.6 ns/op	     848 B/op	       7 allocs/op
+BenchmarkScalarSequential/collection/live-2        	--- FAIL: BenchmarkScalarSequential/collection/live-2
+    zz_finalization_scalar_test.go:39: fixture output "": context canceled
+BenchmarkScalarSequential/string/background-2      	 2451424	       498.2 ns/op	     848 B/op	       7 allocs/op
+BenchmarkScalarSequential/string/live-2            	--- FAIL: BenchmarkScalarSequential/string/live-2
+    zz_finalization_scalar_test.go:39: fixture output "": context canceled
+--- FAIL: BenchmarkScalarSequential
+FAIL
+        6.00 real         5.48 user         0.18 sys
+            14434304  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                1096  page reclaims
+                   0  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                8892  signals received
+                   9  voluntary context switches
+               32692  involuntary context switches
+         83267404396  instructions retired
+         18557950160  cycles elapsed
+            10076712  peak memory footprint

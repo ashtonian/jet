@@ -1,0 +1,32 @@
+File: baseline.test
+Type: alloc_objects
+Time: 2026-11-08 01:29:21 CST
+Showing nodes accounting for 138414, 95.91% of 144322 total
+Dropped 295 nodes (cum <= 721)
+Showing top 25 nodes out of 34
+      flat  flat%   sum%        cum   cum%
+    128644 89.14% 89.14%     128646 89.14%  github.com/CloudyKit/jet/v6.(*Runtime).recover
+      3247  2.25% 91.39%       3247  2.25%  regexp.makeOnePass.func1
+      1862  1.29% 92.68%       1862  1.29%  regexp/syntax.(*compiler).inst (inline)
+      1162  0.81% 93.48%       1162  0.81%  regexp/syntax.(*parser).newRegexp (inline)
+      1153   0.8% 94.28%       1153   0.8%  regexp/syntax.(*parser).maybeConcat
+       825  0.57% 94.85%       1978  1.37%  regexp/syntax.(*parser).push
+       671  0.46% 95.32%      12131  8.41%  regexp.compile
+       343  0.24% 95.56%      14300  9.91%  github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview
+       337  0.23% 95.79%       3965  2.75%  regexp/syntax.parse
+       152  0.11% 95.89%       4003  2.77%  regexp.makeOnePass
+         6 0.0042% 95.90%      12949  8.97%  testing.(*B).Run
+         5 0.0035% 95.90%       1016   0.7%  github.com/CloudyKit/jet/v6_test.executionWorkloads
+         4 0.0028% 95.90%     128832 89.27%  github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview.func1
+         3 0.0021% 95.91%     143167 99.20%  testing.(*B).runN
+         0     0% 95.91%        984  0.68%  encoding/json.Unmarshal (inline)
+         0     0% 95.91%        984  0.68%  encoding/json/v2.Unmarshal
+         0     0% 95.91%        967  0.67%  encoding/json/v2.makeSliceArshaler.func3
+         0     0% 95.91%        931  0.65%  encoding/json/v2.makeStructArshaler.func3
+         0     0% 95.91%        976  0.68%  encoding/json/v2.unmarshalDecode
+         0     0% 95.91%     128704 89.18%  github.com/CloudyKit/jet/v6.(*Template).Execute (inline)
+         0     0% 95.91%     128704 89.18%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0% 95.91%     128704 89.18%  github.com/CloudyKit/jet/v6_test.init.func1
+         0     0% 95.91%      12131  8.41%  regexp.Compile (inline)
+         0     0% 95.91%       4307  2.98%  regexp.compileOnePass
+         0     0% 95.91%       1525  1.06%  regexp/syntax.(*compiler).compile

@@ -1,0 +1,17 @@
+File: render.test
+Type: delay
+Time: 2026-11-08 04:47:15 CST
+Showing nodes accounting for 21.33us, 100% of 21.33us total
+Dropped 4 nodes (cum <= 0.11us)
+      flat  flat%   sum%        cum   cum%
+   21.33us   100%   100%    21.33us   100%  runtime.unlock (inline)
+         0     0%   100%    21.25us 99.61%  runtime.allocm
+         0     0%   100%    21.25us 99.61%  runtime.handoffp
+         0     0%   100%    21.25us 99.61%  runtime.mcommoninit
+         0     0%   100%    21.25us 99.61%  runtime.mstart
+         0     0%   100%    21.25us 99.61%  runtime.mstart0
+         0     0%   100%    21.25us 99.61%  runtime.mstart1
+         0     0%   100%    21.25us 99.61%  runtime.newm
+         0     0%   100%    21.25us 99.61%  runtime.retake
+         0     0%   100%    21.25us 99.61%  runtime.startm
+         0     0%   100%    21.25us 99.61%  runtime.sysmon

@@ -1,0 +1,7 @@
+Compiler excerpt; complete raw log hash is recorded separately.
+./execution.go:84:6: can inline (*Runtime).rethrowTerminal with cost 13 as: method(*Runtime) func() { if st.execution.terminal != nil { panic(executionAbort{...}) } }
+./execution.go:119:6: cannot inline (*Runtime).reserveWork: function too complex: cost 215 exceeds budget 80
+./execution.go:113:6: can inline (*Runtime).checkpointActive with cost 75 as: method(*Runtime) func(uint64) { (*Runtime).rethrowTerminal(st); (*Runtime).reserveWork(st, steps) }
+./execution.go:106:6: cannot inline (*Runtime).checkpoint: function too complex: cost 91 exceeds budget 80
+./execution.go:147:6: cannot inline (*Runtime).enter: function too complex: cost 114 exceeds budget 80
+./eval.go:538:7: can inline (*Runtime).executeList.deferwrap1 with cost 8 as: func() { (*Runtime).releaseScope(.autotmp_12) }

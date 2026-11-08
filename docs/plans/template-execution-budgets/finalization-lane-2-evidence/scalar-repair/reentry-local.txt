@@ -1,0 +1,150 @@
+goos: darwin
+goarch: arm64
+pkg: github.com/CloudyKit/jet/v6
+cpu: Apple M2 Max
+BenchmarkScalarReentry/background-2         	 1036402	      1127 ns/op	    1576 B/op	      14 allocs/op
+BenchmarkScalarReentry/live-2               	 1000000	      1211 ns/op	    1576 B/op	      14 allocs/op
+PASS
+        3.65 real         3.39 user         0.09 sys
+            15089664  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                1138  page reclaims
+                   0  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                5344  signals received
+                   0  voluntary context switches
+               15111  involuntary context switches
+         52951580871  instructions retired
+         11404047213  cycles elapsed
+            10748432  peak memory footprint
+goos: darwin
+goarch: arm64
+pkg: github.com/CloudyKit/jet/v6
+cpu: Apple M2 Max
+BenchmarkScalarReentry/background-2         	 1056393	      1031 ns/op	    1576 B/op	      14 allocs/op
+BenchmarkScalarReentry/live-2               	 1000000	      1115 ns/op	    1576 B/op	      14 allocs/op
+PASS
+        3.26 real         3.24 user         0.08 sys
+            14237696  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                 795  page reclaims
+                 293  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                5468  signals received
+                   2  voluntary context switches
+               14761  involuntary context switches
+         55467845638  instructions retired
+         11224766296  cycles elapsed
+             9945640  peak memory footprint
+goos: darwin
+goarch: arm64
+pkg: github.com/CloudyKit/jet/v6
+cpu: Apple M2 Max
+BenchmarkScalarReentry/background-2         	  948222	      1208 ns/op	    1576 B/op	      14 allocs/op
+BenchmarkScalarReentry/live-2               	  949104	      1247 ns/op	    1576 B/op	      14 allocs/op
+PASS
+        2.70 real         2.37 user         0.08 sys
+            26525696  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                1540  page reclaims
+                 300  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                3575  signals received
+                   4  voluntary context switches
+               13195  involuntary context switches
+         36652878020  instructions retired
+          8086945453  cycles elapsed
+            21742120  peak memory footprint
+goos: darwin
+goarch: arm64
+pkg: github.com/CloudyKit/jet/v6
+cpu: Apple M2 Max
+BenchmarkScalarReentry/background-2         	  966475	      1045 ns/op	    1576 B/op	      14 allocs/op
+BenchmarkScalarReentry/live-2               	  946004	      1135 ns/op	    1576 B/op	      14 allocs/op
+PASS
+        2.13 real         2.15 user         0.05 sys
+            14516224  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                 810  page reclaims
+                 289  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                3597  signals received
+                   0  voluntary context switches
+               10222  involuntary context switches
+         36727600538  instructions retired
+          7468637017  cycles elapsed
+            10207760  peak memory footprint
+goos: darwin
+goarch: arm64
+pkg: github.com/CloudyKit/jet/v6
+cpu: Apple M2 Max
+BenchmarkScalarReentry/background-2         	  911971	      1125 ns/op	    1576 B/op	      14 allocs/op
+BenchmarkScalarReentry/live-2               	  955666	      1164 ns/op	    1576 B/op	      14 allocs/op
+PASS
+        3.05 real         2.98 user         0.09 sys
+            14368768  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                 799  page reclaims
+                 293  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                4661  signals received
+                   4  voluntary context switches
+               23009  involuntary context switches
+         47967299561  instructions retired
+         10240480772  cycles elapsed
+            10093120  peak memory footprint
+goos: darwin
+goarch: arm64
+pkg: github.com/CloudyKit/jet/v6
+cpu: Apple M2 Max
+BenchmarkScalarReentry/background-2         	 1073116	      1152 ns/op	    1576 B/op	      14 allocs/op
+BenchmarkScalarReentry/live-2               	  941742	      1202 ns/op	    1576 B/op	      14 allocs/op
+PASS
+        3.40 real         3.46 user         0.09 sys
+            14417920  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                 794  page reclaims
+                 302  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                5329  signals received
+                   4  voluntary context switches
+               15445  involuntary context switches
+         54618589531  instructions retired
+         11626763764  cycles elapsed
+            10076712  peak memory footprint

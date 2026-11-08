@@ -1,0 +1,21 @@
+File: reserve-4096.test
+Type: inuse_space
+Time: 2026-11-08 01:52:24 CST
+Showing nodes accounting for 13.86kB, 98.78% of 14.03kB total
+Dropped 19 nodes (cum <= 0.07kB)
+Showing top 14 nodes out of 80
+      flat  flat%   sum%        cum   cum%
+    4.02kB 28.67% 28.67%     4.02kB 28.67%  github.com/CloudyKit/fastprinter.newByteSliceBufferPool.func1
+    2.64kB 18.82% 47.49%     2.64kB 18.82%  runtime.mallocgc
+    2.30kB 16.37% 63.86%     2.30kB 16.37%  regexp.onePassCopy
+    1.38kB  9.80% 73.66%     1.38kB  9.80%  regexp/syntax.(*compiler).inst (inline)
+    1.12kB  8.02% 81.68%     1.12kB  8.02%  syscall.runtime_envs
+    1.03kB  7.35% 89.03%     1.03kB  7.35%  sync.(*Pool).pinSlow
+    0.42kB  3.01% 92.04%     0.42kB  3.01%  github.com/CloudyKit/jet/v6.init.func1
+    0.19kB  1.34% 93.37%     4.09kB 29.18%  regexp.compile
+    0.17kB  1.22% 94.60%     0.17kB  1.22%  fmt.init.func1
+    0.16kB  1.11% 95.71%     0.16kB  1.11%  internal/sync.newIndirectNode[go.shape.interface {},go.shape.interface {}]
+    0.12kB  0.89% 96.60%     0.12kB  0.89%  regexp/syntax.(*parser).maybeConcat
+    0.11kB  0.78% 97.38%     5.05kB 36.02%  github.com/CloudyKit/jet/v6.TestOutputOwnedLargeThenSmall
+    0.10kB  0.72% 98.11%     0.10kB  0.72%  os.newFile
+    0.09kB  0.67% 98.78%     0.34kB  2.45%  regexp.newOnePassMachine

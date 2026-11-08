@@ -1,0 +1,36 @@
+File: render.test
+Type: alloc_objects
+Time: 2026-11-08 04:47:39 CST
+Showing nodes accounting for 1406963, 99.23% of 1417834 total
+Dropped 56 nodes (cum <= 7089)
+      flat  flat%   sum%        cum   cum%
+    147465 10.40% 10.40%    1343603 94.76%  github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext
+         0     0% 10.40%    1343603 94.76%  github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes.func1.1
+         0     0% 10.40%    1343603 94.76%  github.com/CloudyKit/jet/v6_test.init.0.func5
+         0     0% 10.40%    1196138 84.36%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0% 10.40%    1196138 84.36%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0% 10.40%    1057151 74.56%  github.com/CloudyKit/fastprinter.PrintString
+         0     0% 10.40%    1057151 74.56%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 10.40%    1057151 74.56%  github.com/CloudyKit/jet/v6.(*Runtime).printValue
+         0     0% 10.40%    1057151 74.56%  github.com/CloudyKit/jet/v6.(*dataPrinter).text
+         0     0% 10.40%    1057151 74.56%  github.com/CloudyKit/jet/v6.(*dataPrinter).value
+         0     0% 10.40%    1054975 74.41%  bytes.(*Buffer).Write
+    131079  9.25% 19.65%    1054975 74.41%  bytes.(*Buffer).grow
+         0     0% 19.65%    1054975 74.41%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+         0     0% 19.65%    1054975 74.41%  github.com/CloudyKit/jet/v6.(*dataPrinter).Write
+         0     0% 19.65%    1054975 74.41%  github.com/CloudyKit/jet/v6.(*escapeeWriter).Write
+         0     0% 19.65%    1054975 74.41%  text/template.HTMLEscape
+    923896 65.16% 84.81%     923896 65.16%  bytes.growSlice
+    138987  9.80% 94.61%     138987  9.80%  bytes.(*Buffer).String (inline)
+         0     0% 94.61%      70953  5.00%  github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes
+         0     0% 94.61%      70953  5.00%  testing.(*B).run1.func1
+         0     0% 94.61%      70953  5.00%  testing.(*B).runN
+         0     0% 94.61%      70846  5.00%  regexp.Compile (inline)
+         0     0% 94.61%      70846  5.00%  regexp.compile
+         0     0% 94.61%      70846  5.00%  testing.(*B).Run
+         0     0% 94.61%      70846  5.00%  testing.(*matcher).fullName
+         0     0% 94.61%      70846  5.00%  testing.simpleMatch.matches
+         0     0% 94.61%      70846  5.00%  testing/internal/testdeps.TestDeps.MatchString
+         0     0% 94.61%      69185  4.88%  regexp.compileOnePass
+         0     0% 94.61%      68813  4.85%  regexp.makeOnePass
+     65536  4.62% 99.23%      65536  4.62%  regexp.makeOnePass.func1

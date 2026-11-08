@@ -1,0 +1,48 @@
+File: candidate.test
+Type: cpu
+Time: 2026-11-08 03:03:53 CST
+Duration: 8.58s, Total samples = 61.45s (716.26%)
+Showing nodes accounting for 51.80s, 84.30% of 61.45s total
+Dropped 396 nodes (cum <= 0.31s)
+Showing top 40 nodes out of 157
+      flat  flat%   sum%        cum   cum%
+    16.66s 27.11% 27.11%     16.67s 27.13%  runtime.usleep
+    11.82s 19.24% 46.35%     11.82s 19.24%  runtime.madvise
+     5.84s  9.50% 55.85%      5.84s  9.50%  runtime.pthread_cond_wait
+     3.74s  6.09% 61.94%      3.74s  6.09%  runtime.pthread_cond_signal
+     2.25s  3.66% 65.60%      2.25s  3.66%  runtime.pthread_kill
+     1.03s  1.68% 67.27%      1.26s  2.05%  runtime.tryDeferToSpanScan
+     0.83s  1.35% 68.62%      0.83s  1.35%  runtime.asyncPreempt
+     0.77s  1.25% 69.88%      0.97s  1.58%  context.(*cancelCtx).Err
+     0.73s  1.19% 71.07%      1.84s  2.99%  github.com/CloudyKit/jet/v6.(*Runtime).reserveWork
+     0.66s  1.07% 72.14%      4.15s  6.75%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+     0.54s  0.88% 73.02%      2.10s  3.42%  runtime.wbBufFlush1
+     0.51s  0.83% 73.85%      2.24s  3.65%  bytes.(*Buffer).Write
+     0.51s  0.83% 74.68%      0.54s  0.88%  runtime.typePointers.next
+     0.48s  0.78% 75.46%      4.12s  6.70%  text/template.HTMLEscape
+     0.46s  0.75% 76.21%     18.51s 30.12%  github.com/CloudyKit/jet/v6.(*Template).execute
+     0.44s  0.72% 76.92%      0.44s  0.72%  runtime.memmove
+     0.43s   0.7% 77.62%      1.48s  2.41%  gcWriteBarrier
+     0.37s   0.6% 78.23%      0.37s   0.6%  runtime.procyieldAsm
+     0.31s   0.5% 78.73%      0.39s  0.63%  runtime.findObject
+     0.30s  0.49% 79.22%      0.33s  0.54%  github.com/CloudyKit/jet/v6.(*Runtime).reserveUnchecked (inline)
+     0.30s  0.49% 79.71%      0.47s  0.76%  internal/runtime/maps.(*Iter).Next
+     0.27s  0.44% 80.15%      1.96s  3.19%  runtime.bulkBarrierPreWrite
+     0.25s  0.41% 80.55%      0.57s  0.93%  runtime.mallocgcSmallScanSlowPath
+     0.21s  0.34% 80.90%      0.35s  0.57%  runtime.(*_panic).nextDefer
+     0.20s  0.33% 81.22%      1.08s  1.76%  github.com/CloudyKit/jet/v6.(*Runtime).checkpoint
+     0.19s  0.31% 81.53%      0.38s  0.62%  github.com/CloudyKit/jet/v6.constrainExecution
+     0.17s  0.28% 81.81%      0.83s  1.35%  github.com/CloudyKit/jet/v6.(*Runtime).recover
+     0.17s  0.28% 82.08%      0.47s  0.76%  sync.(*Pool).Put
+     0.16s  0.26% 82.34%      3.15s  5.13%  github.com/CloudyKit/jet/v6.admitInputScopesInto
+     0.16s  0.26% 82.60%      0.32s  0.52%  runtime.mallocgcSmallNoScanSlowPath
+     0.15s  0.24% 82.85%      0.67s  1.09%  runtime.(*wbBuf).get2 (inline)
+     0.14s  0.23% 83.08%     10.67s 17.36%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+     0.12s   0.2% 83.27%      0.51s  0.83%  runtime.(*wbBuf).get1 (inline)
+     0.11s  0.18% 83.45%      0.38s  0.62%  runtime.(*_panic).start
+     0.10s  0.16% 83.61%      0.42s  0.68%  github.com/CloudyKit/jet/v6.(*Runtime).enter
+     0.10s  0.16% 83.78%      1.95s  3.17%  github.com/CloudyKit/jet/v6.(*inputAdmission).clone
+     0.09s  0.15% 83.92%      0.59s  0.96%  runtime.mallocgcSmallScanNoHeaderSC2
+     0.08s  0.13% 84.05%      1.16s  1.89%  runtime.(*mcache).refill
+     0.08s  0.13% 84.18%      0.31s   0.5%  runtime.scanObject
+     0.07s  0.11% 84.30%      0.32s  0.52%  github.com/CloudyKit/jet/v6.(*Runtime).beforeData

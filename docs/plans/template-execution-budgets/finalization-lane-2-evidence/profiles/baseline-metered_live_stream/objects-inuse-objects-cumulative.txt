@@ -1,0 +1,31 @@
+File: baseline.test
+Type: inuse_objects
+Time: 2026-11-08 01:29:23 CST
+Showing nodes accounting for 44, 43.14% of 102 total
+Showing top 25 nodes out of 130
+      flat  flat%   sum%        cum   cum%
+         0     0%     0%         85 83.33%  testing.(*B).runN
+         0     0%     0%         82 80.39%  github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview
+         0     0%     0%         82 80.39%  testing.(*B).run1.func1
+         0     0%     0%         73 71.57%  encoding/json.Unmarshal (inline)
+         0     0%     0%         73 71.57%  encoding/json/v2.Unmarshal
+         0     0%     0%         73 71.57%  encoding/json/v2.unmarshalDecode
+         0     0%     0%         73 71.57%  github.com/CloudyKit/jet/v6_test.executionWorkloads
+         0     0%     0%         67 65.69%  sync.(*Once).Do (partial-inline)
+         0     0%     0%         67 65.69%  sync.(*Once).doSlow
+         0     0%     0%         64 62.75%  encoding/json/v2.makeSliceArshaler.func3
+         0     0%     0%         56 54.90%  encoding/json/v2.makeStructArshaler.func3
+         0     0%     0%         52 50.98%  encoding/json/v2.makeStructArshaler.func1
+        13 12.75% 12.75%         52 50.98%  encoding/json/v2.makeStructFields
+         0     0% 12.75%         42 41.18%  encoding/json/v2.lookupArshaler
+         0     0% 12.75%         34 33.33%  encoding/json/v2.makeDefaultArshaler
+         1  0.98% 13.73%         33 32.35%  encoding/json/v2.makeStructFields.func3
+        14 13.73% 27.45%         14 13.73%  encoding/json/v2.makeMapArshaler
+         1  0.98% 28.43%         11 10.78%  reflect.(*rtype).ptrTo
+         0     0% 28.43%         11 10.78%  reflect.PointerTo (inline)
+         9  8.82% 37.25%         10  9.80%  runtime.mallocgc
+         0     0% 37.25%         10  9.80%  testing.(*B).Run
+         0     0% 37.25%          8  7.84%  encoding/json/v2.makeSliceArshaler.func1
+         0     0% 37.25%          8  7.84%  internal/sync.(*HashTrieMap[go.shape.interface {},go.shape.interface {}]).LoadOrStore
+         0     0% 37.25%          8  7.84%  sync.(*Map).LoadOrStore (inline)
+         6  5.88% 43.14%          7  6.86%  encoding/json/v2.makeSliceArshaler

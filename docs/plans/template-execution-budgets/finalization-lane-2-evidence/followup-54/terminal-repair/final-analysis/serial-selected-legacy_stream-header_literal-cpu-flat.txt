@@ -1,0 +1,37 @@
+File: render.test
+Type: cpu
+Time: 2026-11-08 05:27:16 CST
+Duration: 1.31s, Total samples = 1.10s (83.83%)
+Showing nodes accounting for 1.10s, 100% of 1.10s total
+Showing top 30 nodes out of 37
+      flat  flat%   sum%        cum   cum%
+     0.18s 16.36% 16.36%      1.02s 92.73%  github.com/CloudyKit/jet/v6.(*Template).execute
+     0.16s 14.55% 30.91%      0.34s 30.91%  github.com/CloudyKit/jet/v6.(*Runtime).recover
+     0.15s 13.64% 44.55%      0.17s 15.45%  sync.(*Pool).pin
+     0.08s  7.27% 51.82%      0.31s 28.18%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+     0.07s  6.36% 58.18%      0.18s 16.36%  sync.(*Pool).Put
+     0.05s  4.55% 62.73%      0.05s  4.55%  github.com/CloudyKit/jet/v6.(*Runtime).checkedOutput (inline)
+     0.05s  4.55% 67.27%      0.05s  4.55%  github.com/CloudyKit/jet/v6.(*Runtime).enter (inline)
+     0.05s  4.55% 71.82%      0.05s  4.55%  runtime.memmove
+     0.04s  3.64% 75.45%      0.04s  3.64%  github.com/CloudyKit/jet/v6.(*Runtime).executeList.func1
+     0.04s  3.64% 79.09%      1.06s 96.36%  github.com/CloudyKit/jet/v6_test.init.func1
+     0.03s  2.73% 81.82%      0.09s  8.18%  bytes.(*Buffer).Write
+     0.03s  2.73% 84.55%      0.04s  3.64%  github.com/CloudyKit/jet/v6.(*Runtime).templateRoot
+     0.03s  2.73% 87.27%      1.09s 99.09%  github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes.func1
+     0.02s  1.82% 89.09%      0.04s  3.64%  github.com/CloudyKit/jet/v6.(*Runtime).checkNode
+     0.02s  1.82% 90.91%      0.02s  1.82%  github.com/CloudyKit/jet/v6.(*Runtime).isRestricted (inline)
+     0.02s  1.82% 92.73%      0.02s  1.82%  runtime.procPin (inline)
+     0.02s  1.82% 94.55%      0.02s  1.82%  runtime.procUnpin (inline)
+     0.02s  1.82% 96.36%      0.10s  9.09%  sync.(*Pool).Get
+     0.01s  0.91% 97.27%      0.01s  0.91%  bytes.(*Buffer).tryGrowByReslice (inline)
+     0.01s  0.91% 98.18%      0.01s  0.91%  github.com/CloudyKit/jet/v6.(*Runtime).rethrowTerminal (inline)
+     0.01s  0.91% 99.09%      0.10s  9.09%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+     0.01s  0.91%   100%      0.01s  0.91%  regexp.onePassCopy
+         0     0%   100%      0.01s  0.91%  github.com/CloudyKit/jet/v6.(*Runtime).checkpoint (inline)
+         0     0%   100%      1.02s 92.73%  github.com/CloudyKit/jet/v6.(*Template).Execute (inline)
+         0     0%   100%      0.01s  0.91%  github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes
+         0     0%   100%      0.01s  0.91%  regexp.Compile (inline)
+         0     0%   100%      0.01s  0.91%  regexp.compile
+         0     0%   100%      0.01s  0.91%  regexp.compileOnePass
+         0     0%   100%      0.02s  1.82%  sync.runtime_procPin
+         0     0%   100%      0.02s  1.82%  sync.runtime_procUnpin

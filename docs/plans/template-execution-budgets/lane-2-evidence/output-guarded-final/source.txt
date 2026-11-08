@@ -1,0 +1,47 @@
+Total: 283.86kB
+ROUTINE ======================== github.com/CloudyKit/jet/v6.(*Runtime).beginOutputTransaction in <checkout>/execution_output.go
+      192B       288B (flat, cum) 0.099% of Total
+         .          .     50:func (st *Runtime) beginOutputTransaction() *outputTransaction {
+         .          .     51:	st.checkpoint(0)
+      192B       192B     52:	tx := &outputTransaction{parent: st.Writer}
+         .        96B     53:	st.Writer = st.outputWriter(&tx.buffer, true)
+         .          .     54:	return tx
+         .          .     55:}
+         .          .     56:
+         .          .     57:func (st *Runtime) commitOutputTransaction(tx *outputTransaction) {
+         .          .     58:	st.checkpoint(0)
+ROUTINE ======================== github.com/CloudyKit/jet/v6.(*executionWriter).write in <checkout>/execution_output.go
+         0       312B (flat, cum)  0.11% of Total
+         .          .     32:func (w *executionWriter) write(b []byte, generated bool) (int, error) {
+         .          .     33:	st := w.runtime
+         .          .     34:	st.checkpoint(uint64(len(b)))
+         .          .     35:	if generated {
+         .       312B     36:		st.reserve(&st.execution.output, uint64(st.execution.options.MaxOutputBytes), uint64(len(b)), "output", ErrOutputLimit)
+         .          .     37:	}
+         .          .     38:	if w.retained {
+         .          .     39:		buffer := w.writer.(*bytes.Buffer)
+         .          .     40:		size, ok := addValueSizes(int64(buffer.Len()), int64(len(b)))
+         .          .     41:		if !ok || uint64(size) > uint64(^uint(0)>>1) {
+ROUTINE ======================== github.com/CloudyKit/jet/v6.builtinRepeat in <checkout>/builtin_strings.go
+       48B    48.09kB (flat, cum) 16.94% of Total
+         .          .     63:func builtinRepeat(a Arguments) reflect.Value {
+         .          .     64:	a.RequireNumOfArguments("repeat", 2, 2)
+         .        48B     65:	s, count := a.stringArg(0), a.intArg(1)
+         .          .     66:	if count < 0 {
+         .          .     67:		a.Panicf("repeat(): count must be nonnegative")
+         .          .     68:	}
+         .          .     69:	if count == 0 || len(s) == 0 {
+         .          .     70:		return reflect.ValueOf("")
+         .          .     71:	}
+         .          .     72:	if count == 1 {
+         .          .     73:		return reflect.ValueOf(s)
+         .          .     74:	}
+         .          .     75:	size, ok := multiplyValueSize(int64(len(s)), int64(count))
+         .          .     76:	n := a.runtime.valueLength(size, ok)
+         .          .     77:	a.runtime.checkpoint(uint64(n))
+       48B    48.05kB     78:	return reflect.ValueOf(strings.Repeat(s, count))
+         .          .     79:}
+         .          .     80:
+         .          .     81:func builtinReplace(a Arguments) reflect.Value {
+         .          .     82:	a.RequireNumOfArguments("replace", 4, 4)
+         .          .     83:	s, old, replacement, count := a.stringArg(0), a.stringArg(1), a.stringArg(2), a.intArg(3)

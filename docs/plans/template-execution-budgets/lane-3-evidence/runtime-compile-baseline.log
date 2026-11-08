@@ -1,0 +1,6 @@
+gate-lock: held by pid 55672 on studio, "jet-lane3-runtime-compile-baseline 1c63e78 in $CHECKOUT", since 2026-11-07T23:23:29Z, 2 of 6 focused cores
+--- FAIL: TestExecutionCompilationSharedGraph (0.00s)
+    execution_compile_test.go:38: <nil>
+FAIL
+FAIL	github.com/CloudyKit/jet/v6	0.223s
+FAIL

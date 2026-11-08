@@ -1,0 +1,36 @@
+File: render.test
+Type: alloc_space
+Time: 2026-11-08 04:47:25 CST
+Showing nodes accounting for 12164.79kB, 100% of 12164.79kB total
+Showing top 30 nodes out of 60
+      flat  flat%   sum%        cum   cum%
+    2659kB 21.86% 21.86%     2659kB 21.86%  encoding/json/v2.makeString
+ 1924.02kB 15.82% 37.67%  1924.02kB 15.82%  os.readFileContents
+ 1538.88kB 12.65% 50.32%  1538.88kB 12.65%  regexp/syntax.(*compiler).inst (inline)
+ 1184.27kB  9.74% 60.06%  1184.27kB  9.74%  runtime/pprof.StartCPUProfile
+ 1025.88kB  8.43% 68.49%  1025.88kB  8.43%  regexp.onePassCopy
+  655.29kB  5.39% 73.88%  1238.30kB 10.18%  compress/flate.NewWriter (inline)
+  583.01kB  4.79% 78.67%   583.01kB  4.79%  compress/flate.newFastEnc (inline)
+  532.26kB  4.38% 83.05%  1046.26kB  8.60%  runtime/pprof.(*profileBuilder).emitLocation
+  524.09kB  4.31% 87.36%   524.09kB  4.31%  strings.(*byteStringReplacer).Replace
+     514kB  4.23% 91.58%      514kB  4.23%  runtime/pprof.(*protobuf).varint (inline)
+  512.08kB  4.21% 95.79%   512.08kB  4.21%  compress/gzip.NewWriterLevel
+  512.01kB  4.21%   100%   512.01kB  4.21%  regexp/syntax.(*parser).maybeConcat
+         0     0%   100%   583.01kB  4.79%  compress/flate.(*compressor).init
+         0     0%   100%  1238.30kB 10.18%  compress/gzip.(*Writer).Write
+         0     0%   100%     2659kB 21.86%  encoding/json.Unmarshal (inline)
+         0     0%   100%     2659kB 21.86%  encoding/json/v2.Unmarshal
+         0     0%   100%  1601.83kB 13.17%  encoding/json/v2.makeInterfaceArshaler.func2
+         0     0%   100%  1601.83kB 13.17%  encoding/json/v2.makeMapArshaler.func3
+         0     0%   100%     2659kB 21.86%  encoding/json/v2.makeSliceArshaler.func3
+         0     0%   100%     2659kB 21.86%  encoding/json/v2.makeStringArshaler.func2
+         0     0%   100%     2659kB 21.86%  encoding/json/v2.makeStructArshaler.func3
+         0     0%   100%     2659kB 21.86%  encoding/json/v2.unmarshalDecode
+         0     0%   100%  8183.87kB 67.28%  github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes
+         0     0%   100%   524.09kB  4.31%  github.com/CloudyKit/jet/v6_test.additionalExecutionWorkloads
+         0     0%   100%  4583.02kB 37.67%  github.com/CloudyKit/jet/v6_test.executionWorkloads
+         0     0%   100%  5107.11kB 41.98%  github.com/CloudyKit/jet/v6_test.measurementWorkloads
+         0     0%   100%   524.09kB  4.31%  html.EscapeString (inline)
+         0     0%   100%  1184.27kB  9.74%  main.main
+         0     0%   100%  1924.02kB 15.82%  os.ReadFile
+         0     0%   100%  3076.76kB 25.29%  regexp.Compile (inline)

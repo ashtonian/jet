@@ -1,0 +1,27 @@
+START profile-upstream-legacy_stream
+END profile-upstream-legacy_stream exit=0
+START profile-upstream-legacy_owned
+END profile-upstream-legacy_owned exit=0
+START profile-correctness-legacy_stream
+END profile-correctness-legacy_stream exit=0
+START profile-correctness-legacy_owned
+END profile-correctness-legacy_owned exit=0
+START profile-candidate-legacy_stream
+END profile-candidate-legacy_stream exit=0
+START profile-candidate-legacy_owned
+END profile-candidate-legacy_owned exit=0
+START profile-candidate-metered_background_stream
+END profile-candidate-metered_background_stream exit=0
+START profile-candidate-metered_live_stream
+END profile-candidate-metered_live_stream exit=0
+START profile-candidate-restricted_owned
+END profile-candidate-restricted_owned exit=0
+Traceback (most recent call last):
+  File "$JET_CHECKOUT/docs/plans/template-execution-budgets/finalization-lane-4-evidence/run_matrix.py", line 358, in <module>
+    run(work, sys.argv[2])
+    ~~~^^^^^^^^^^^^^^^^^^^
+  File "$JET_CHECKOUT/docs/plans/template-execution-budgets/finalization-lane-4-evidence/run_matrix.py", line 297, in run
+    cores = int(os.environ['GOMAXPROCS'])
+                ~~~~~~~~~~^^^^^^^^^^^^^^
+  File "<frozen os>", line 729, in __getitem__
+KeyError: 'GOMAXPROCS'

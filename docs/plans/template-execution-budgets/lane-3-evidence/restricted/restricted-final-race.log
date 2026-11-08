@@ -1,0 +1,2 @@
+gate-lock: held by pid 46387 on $HOST, "jet-lane3-restricted-final-race bda0fa8 in $CHECKOUT", since 2026-11-08T00:45:46Z, 2 of 6 focused cores
+ok  	github.com/CloudyKit/jet/v6	5.762s

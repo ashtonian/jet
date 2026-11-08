@@ -1,0 +1,197 @@
+{
+  "canonical_source": "2d95fa9e9f02a831febbd62c0fb10995a3496e7b",
+  "profile_implementation": "c0cffa09b8b72b8dd40d9e35d8e50fc7bae3e959",
+  "pre_profile_source": "bda0fa8fe7e3f92b1580f4902ea38623cbe038e8",
+  "normal_race_inputs": "matching production and restricted fixtures at the implementation commit; final peer commit changes only value tests/docs; full CI covers integrated source",
+  "stages": [
+    {
+      "command": [
+        "go",
+        "test",
+        "-p=1",
+        "-parallel=2",
+        "-count=1",
+        "-timeout=90s",
+        "-run",
+        "^(TestRestricted|TestExecutionOwnsBlockingWriter|TestCompilation|TestInputAdmission|TestTemplateBundle)",
+        "."
+      ],
+      "execution_deadline_seconds": 180,
+      "queue_wait_in_stage_elapsed": true,
+      "supervisor": "installed gate-lock",
+      "gate_deadline_seconds": 180,
+      "term_cleanup_seconds": 5,
+      "start": 1794098719.263686,
+      "end": 1794098724.623332,
+      "exit_code": 0,
+      "manifest": "restricted/restricted-final-normal2-inputs.json",
+      "label": "restricted-final-normal2",
+      "log": "restricted/restricted-final-normal2.log",
+      "expected_exit": 0,
+      "result": "pass"
+    },
+    {
+      "command": [
+        "go",
+        "test",
+        "-race",
+        "-p=1",
+        "-parallel=2",
+        "-count=1",
+        "-timeout=90s",
+        "-run",
+        "^(TestRestricted|TestExecutionOwnsBlockingWriter|TestCompilation|TestInputAdmission|TestTemplateBundle)",
+        "."
+      ],
+      "execution_deadline_seconds": 180,
+      "queue_wait_in_stage_elapsed": true,
+      "supervisor": "installed gate-lock",
+      "gate_deadline_seconds": 180,
+      "term_cleanup_seconds": 5,
+      "start": 1794098745.705716,
+      "end": 1794098769.726141,
+      "exit_code": 0,
+      "manifest": "restricted/restricted-final-race-inputs.json",
+      "label": "restricted-final-race",
+      "log": "restricted/restricted-final-race.log",
+      "expected_exit": 0,
+      "result": "pass"
+    },
+    {
+      "command": [
+        "go",
+        "test",
+        "-p=1",
+        "-parallel=2",
+        "-count=1",
+        "-timeout=90s",
+        "-overlay=.git/lane3-evidence/restricted-pre-profile-overlay.json",
+        "-run",
+        "^TestRestrictedDenialWorkflow$",
+        "."
+      ],
+      "execution_deadline_seconds": 180,
+      "queue_wait_in_stage_elapsed": true,
+      "supervisor": "installed gate-lock",
+      "gate_deadline_seconds": 180,
+      "term_cleanup_seconds": 5,
+      "start": 1794098853.7751849,
+      "end": 1794098864.419014,
+      "exit_code": 1,
+      "manifest": "restricted/restricted-pre-profile-baseline-inputs.json",
+      "label": "restricted-pre-profile-baseline",
+      "log": "restricted/restricted-pre-profile-baseline.log",
+      "expected_exit": 1,
+      "result": "expected failing baseline"
+    },
+    {
+      "command": [
+        "go",
+        "test",
+        "-p=1",
+        "-parallel=2",
+        "-count=1",
+        "-timeout=90s",
+        "-overlay=.git/lane3-evidence/compiler-review-overlay.json",
+        "-run",
+        "^(TestCompilation|TestLexer|TestLex)",
+        "."
+      ],
+      "execution_deadline_seconds": 180,
+      "queue_wait_in_stage_elapsed": true,
+      "supervisor": "installed gate-lock",
+      "gate_deadline_seconds": 180,
+      "term_cleanup_seconds": 5,
+      "start": 1794099020.4103491,
+      "end": 1794099025.929707,
+      "exit_code": 0,
+      "manifest": "restricted/compiler-review-normal-inputs.json",
+      "label": "compiler-review-normal",
+      "log": "restricted/compiler-review-normal.log",
+      "expected_exit": 0,
+      "result": "pass"
+    },
+    {
+      "command": [
+        "go",
+        "vet",
+        "-p=2",
+        "./..."
+      ],
+      "execution_deadline_seconds": 120,
+      "gate_deadline_seconds": 180,
+      "term_cleanup_seconds": 5,
+      "start": 1794099042.748352,
+      "end": 1794099044.789663,
+      "exit_code": 0,
+      "manifest": "restricted/vet-inputs.json",
+      "label": "final-vet",
+      "log": "restricted/vet.log",
+      "result": "pass"
+    },
+    {
+      "command": "python3 .git/lane3-evidence/docs_validation.py",
+      "execution_deadline_seconds": 180,
+      "term_cleanup_seconds": 5,
+      "start": 1794099470.202566,
+      "end": 1794099472.474171,
+      "exit_code": 0,
+      "errors": [],
+      "manifest": "restricted/restricted-docs-inputs.json",
+      "label": "final-docs-and-review-scope",
+      "log": "restricted/restricted-docs.log",
+      "result": "pass"
+    }
+  ],
+  "ci": [
+    {
+      "head": "2d95fa9e9f02a831febbd62c0fb10995a3496e7b",
+      "result": "pass",
+      "record": "restricted/ci-42431462657.json"
+    },
+    {
+      "head": "2858cef45f7fdc9c100fe0294f367fea63c82a15",
+      "result": "pass",
+      "record": "restricted/ci-42431657520.json"
+    },
+    {
+      "head": "dd594d8cd6700395b96badc0b49bfc4b6b235e89",
+      "result": "pass",
+      "record": "restricted/ci-42431657452.json"
+    }
+  ],
+  "failed_attempts": [
+    {
+      "log": "restricted/restricted-workflows.log",
+      "result": "failed fixture/build assertion; not accepted coverage"
+    },
+    {
+      "log": "restricted/restricted-repair.log",
+      "result": "failed fixture/build assertion; not accepted coverage"
+    },
+    {
+      "log": "restricted/restricted-repair2.log",
+      "result": "failed fixture/build assertion; not accepted coverage"
+    },
+    {
+      "log": "restricted/restricted-normal.log",
+      "result": "failed fixture/build assertion; not accepted coverage"
+    },
+    {
+      "log": "restricted/restricted-final-normal.log",
+      "result": "failed fixture/build assertion; not accepted coverage"
+    }
+  ],
+  "admission_rejection": "initial Python run-focused wrapper rejected before execution; corrected harness invokes direct go test through installed gate-lock; raw .git/lane3-evidence/restricted-normal-gate.log retained",
+  "signatures": "restricted-signatures.json",
+  "review_refs": "restricted-review-refs.json",
+  "managed_admissions": "restricted/restricted-managed-receipts.json",
+  "publication": "Sanitized local host/path identifiers and unrelated queue notices; raw originals and hashes retained in this checkout. No test result content removed.",
+  "effective_focused_environment": {
+    "GOMAXPROCS": 2,
+    "go_p": 1,
+    "test_parallel": 2,
+    "source": "installed run-focused admission, direct test command and durable held-core logs; outer runner environment alone is not the child environment"
+  },
+  "review_source_proof": "restricted-review-source-proof.json"
+}

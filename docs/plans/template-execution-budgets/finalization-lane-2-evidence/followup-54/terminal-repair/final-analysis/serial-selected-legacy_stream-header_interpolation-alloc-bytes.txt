@@ -1,0 +1,36 @@
+File: render.test
+Type: alloc_space
+Time: 2026-11-08 05:27:23 CST
+Showing nodes accounting for 9375.40kB, 100% of 9375.40kB total
+Showing top 30 nodes out of 61
+      flat  flat%   sum%        cum   cum%
+ 2049.19kB 21.86% 21.86%  2049.19kB 21.86%  regexp/syntax.(*compiler).inst
+ 1282.68kB 13.68% 35.54%  1282.68kB 13.68%  os.readFileContents
+ 1184.27kB 12.63% 48.17%  1184.27kB 12.63%  runtime/pprof.StartCPUProfile
+ 1089.33kB 11.62% 59.79%  1089.33kB 11.62%  encoding/json/v2.makeString
+  688.56kB  7.34% 67.13%   688.56kB  7.34%  compress/flate.(*fastGen).addBlock
+  520.04kB  5.55% 72.68%   520.04kB  5.55%  slices.Grow[go.shape.[]uint8,go.shape.uint8] (inline)
+  512.88kB  5.47% 78.15%   512.88kB  5.47%  regexp.onePassCopy
+  512.31kB  5.46% 83.62%  1024.32kB 10.93%  regexp.makeOnePass
+  512.08kB  5.46% 89.08%   512.08kB  5.46%  compress/gzip.NewWriterLevel
+  512.05kB  5.46% 94.54%   512.05kB  5.46%  regexp/syntax.(*parser).newRegexp
+  512.01kB  5.46%   100%   512.01kB  5.46%  regexp.makeOnePass.func1
+         0     0%   100%   688.56kB  7.34%  compress/flate.(*Writer).Close (inline)
+         0     0%   100%   688.56kB  7.34%  compress/flate.(*compressor).close
+         0     0%   100%   688.56kB  7.34%  compress/flate.(*compressor).deflateFast
+         0     0%   100%   688.56kB  7.34%  compress/flate.(*fastEncL1).encode
+         0     0%   100%   688.56kB  7.34%  compress/gzip.(*Writer).Close
+         0     0%   100%   520.04kB  5.55%  encoding/json.Marshal
+         0     0%   100%  1089.33kB 11.62%  encoding/json.Unmarshal
+         0     0%   100%   520.04kB  5.55%  encoding/json/internal/jsonwire.AppendQuote
+         0     0%   100%   520.04kB  5.55%  encoding/json/jsontext.(*Encoder).WriteToken (inline)
+         0     0%   100%   520.04kB  5.55%  encoding/json/jsontext.(*encoderState).WriteToken
+         0     0%   100%   520.04kB  5.55%  encoding/json/jsontext.Token.appendString
+         0     0%   100%   520.04kB  5.55%  encoding/json/v2.Marshal
+         0     0%   100%  1089.33kB 11.62%  encoding/json/v2.Unmarshal
+         0     0%   100%   520.04kB  5.55%  encoding/json/v2.makeInterfaceArshaler.func1
+         0     0%   100%   520.04kB  5.55%  encoding/json/v2.makeMapArshaler.func2
+         0     0%   100%   520.04kB  5.55%  encoding/json/v2.makeSliceArshaler.func2
+         0     0%   100%  1089.33kB 11.62%  encoding/json/v2.makeSliceArshaler.func3
+         0     0%   100%  1089.33kB 11.62%  encoding/json/v2.makeStringArshaler.func2
+         0     0%   100%  1089.33kB 11.62%  encoding/json/v2.makeStructArshaler.func3

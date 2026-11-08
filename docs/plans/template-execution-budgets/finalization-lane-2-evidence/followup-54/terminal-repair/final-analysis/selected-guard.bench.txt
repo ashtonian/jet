@@ -1,0 +1,22 @@
+goos: darwin
+goarch: arm64
+pkg: github.com/CloudyKit/jet/v6
+cpu: Apple M2 Max
+BenchmarkGuardRepair/metered_background_stream-2 141720 8436 ns/op 0 B/op 0 allocs/op
+BenchmarkGuardRepair/metered_background_stream-2 144128 8346 ns/op 0 B/op 0 allocs/op
+BenchmarkGuardRepair/metered_background_stream-2 142288 8229 ns/op 0 B/op 0 allocs/op
+BenchmarkGuardRepair/metered_background_stream-2 144580 8235 ns/op 0 B/op 0 allocs/op
+BenchmarkGuardRepair/metered_background_stream-2 141049 8366 ns/op 0 B/op 0 allocs/op
+BenchmarkGuardRepair/metered_background_stream-2 142662 8249 ns/op 0 B/op 0 allocs/op
+BenchmarkGuardRepair/metered_live_stream-2 107018 10339 ns/op 0 B/op 0 allocs/op
+BenchmarkGuardRepair/metered_live_stream-2 110198 10745 ns/op 0 B/op 0 allocs/op
+BenchmarkGuardRepair/metered_live_stream-2 118148 10192 ns/op 0 B/op 0 allocs/op
+BenchmarkGuardRepair/metered_live_stream-2 109148 10537 ns/op 0 B/op 0 allocs/op
+BenchmarkGuardRepair/metered_live_stream-2 117567 10284 ns/op 0 B/op 0 allocs/op
+BenchmarkGuardRepair/metered_live_stream-2 119269 10789 ns/op 0 B/op 0 allocs/op
+BenchmarkGuardRepair/restricted_owned-2 89126 12516 ns/op 11269 B/op 9 allocs/op
+BenchmarkGuardRepair/restricted_owned-2 96866 12270 ns/op 11269 B/op 9 allocs/op
+BenchmarkGuardRepair/restricted_owned-2 96992 12543 ns/op 11269 B/op 9 allocs/op
+BenchmarkGuardRepair/restricted_owned-2 89361 13229 ns/op 11269 B/op 9 allocs/op
+BenchmarkGuardRepair/restricted_owned-2 97101 12712 ns/op 11269 B/op 9 allocs/op
+BenchmarkGuardRepair/restricted_owned-2 89754 13211 ns/op 11268 B/op 9 allocs/op

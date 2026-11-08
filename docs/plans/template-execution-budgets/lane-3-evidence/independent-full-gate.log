@@ -1,0 +1,3 @@
+gate-lock: held by pid 19548 on studio, "jet-lane3-independent-full 9a8d22e in $CHECKOUT", since 2026-11-07T23:20:27Z
+normal {"command": ["go", "test", "-p=2", "-parallel=2", "-count=1", "-timeout=90s", "./..."], "execution_deadline_seconds": 150, "term_cleanup_seconds": 5, "start": 1794093628.253126, "end": 1794093638.9483788, "exit_code": 0, "timed_out": false, "input_manifest": "independent-full-inputs.json"}
+race {"command": ["go", "test", "-race", "-p=2", "-parallel=2", "-count=1", "-timeout=90s", "./..."], "execution_deadline_seconds": 150, "term_cleanup_seconds": 5, "start": 1794093638.949715, "end": 1794093646.342185, "exit_code": 0, "timed_out": false, "input_manifest": "independent-full-inputs.json"}

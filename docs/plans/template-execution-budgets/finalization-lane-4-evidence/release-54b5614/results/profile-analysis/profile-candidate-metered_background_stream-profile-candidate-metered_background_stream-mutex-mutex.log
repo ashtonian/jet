@@ -1,0 +1,17 @@
+File: candidate.test
+Type: delay
+Time: 2026-11-08 02:59:55 CST
+Showing nodes accounting for 9083ns, 100% of 9083ns total
+      flat  flat%   sum%        cum   cum%
+    9083ns   100%   100%     9083ns   100%  runtime.unlock (inline)
+         0     0%   100%     3166ns 34.86%  runtime.forEachP (inline)
+         0     0%   100%     3166ns 34.86%  runtime.forEachP.func1
+         0     0%   100%     3166ns 34.86%  runtime.forEachPInternal
+         0     0%   100%     9083ns   100%  runtime.gcBgMarkWorker
+         0     0%   100%     9083ns   100%  runtime.gcMarkDone
+         0     0%   100%      542ns  5.97%  runtime.gcMarkDone.func2
+         0     0%   100%     5375ns 59.18%  runtime.gcMarkTermination
+         0     0%   100%     5375ns 59.18%  runtime.gcMarkTermination.func3
+         0     0%   100%     5375ns 59.18%  runtime.startTheWorldWithSema
+         0     0%   100%      542ns  5.97%  runtime.stopTheWorldWithSema
+         0     0%   100%     9083ns   100%  runtime.systemstack

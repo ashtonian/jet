@@ -1,0 +1,37 @@
+File: render.test
+Type: alloc_objects
+Time: 2026-11-08 04:46:49 CST
+Showing nodes accounting for 69049, 100% of 69065 total
+Dropped 21 nodes (cum <= 345)
+Showing top 30 nodes out of 47
+      flat  flat%   sum%        cum   cum%
+     32768 47.45% 47.45%      32768 47.45%  unicode/utf8.AppendRune (inline)
+     10923 15.82% 63.26%      10923 15.82%  internal/bytealg.MakeNoZero
+      8192 11.86% 75.12%       8192 11.86%  sync.(*Pool).pinSlow
+      4939  7.15% 82.27%       4939  7.15%  regexp/syntax.(*compiler).inst (inline)
+      3277  4.74% 87.02%       3277  4.74%  compress/gzip.NewWriterLevel
+      3277  4.74% 91.76%      45529 65.92%  regexp.compile
+      3277  4.74% 96.51%       3277  4.74%  regexp.newQueue (inline)
+      1096  1.59% 98.09%       1096  1.59%  encoding/json/v2.makeString
+       683  0.99% 99.08%        683  0.99%  regexp.onePassCopy
+       585  0.85% 99.93%       3862  5.59%  regexp.makeOnePass
+        32 0.046%   100%      10955 15.86%  github.com/CloudyKit/jet/v6_test.additionalExecutionWorkloads
+         0     0%   100%       1096  1.59%  encoding/json.Unmarshal (inline)
+         0     0%   100%       1096  1.59%  encoding/json/v2.Unmarshal
+         0     0%   100%       1024  1.48%  encoding/json/v2.makeInterfaceArshaler.func2
+         0     0%   100%       1024  1.48%  encoding/json/v2.makeMapArshaler.func3
+         0     0%   100%       1096  1.59%  encoding/json/v2.makeSliceArshaler.func3
+         0     0%   100%       1096  1.59%  encoding/json/v2.makeStringArshaler.func2
+         0     0%   100%       1096  1.59%  encoding/json/v2.makeStructArshaler.func3
+         0     0%   100%       1096  1.59%  encoding/json/v2.unmarshalDecode
+         0     0%   100%      65777 95.24%  github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes
+         0     0%   100%       1101  1.59%  github.com/CloudyKit/jet/v6_test.executionWorkloads
+         0     0%   100%      12056 17.46%  github.com/CloudyKit/jet/v6_test.measurementWorkloads
+         0     0%   100%       8192 11.86%  regexp.(*Regexp).MatchString (inline)
+         0     0%   100%       8192 11.86%  regexp.(*Regexp).doMatch (inline)
+         0     0%   100%       8192 11.86%  regexp.(*Regexp).doOnePass
+         0     0%   100%       8192 11.86%  regexp.(*Regexp).find
+         0     0%   100%      45529 65.92%  regexp.Compile (inline)
+         0     0%   100%       4545  6.58%  regexp.compileOnePass
+         0     0%   100%       8192 11.86%  regexp.newOnePassMachine (inline)
+         0     0%   100%      32768 47.45%  regexp.onePassPrefix

@@ -1,0 +1,31 @@
+File: reserve-4096.test
+Type: inuse_objects
+Time: 2026-11-08 01:52:26 CST
+Showing nodes accounting for 48, 42.86% of 112 total
+Showing top 25 nodes out of 152
+      flat  flat%   sum%        cum   cum%
+         0     0%     0%         85 75.89%  testing.(*B).runN
+         0     0%     0%         83 74.11%  testing.(*B).run1.func1
+         0     0%     0%         81 72.32%  github.com/CloudyKit/jet/v6_test.BenchmarkOutputReserve
+         0     0%     0%         73 65.18%  encoding/json.Unmarshal (inline)
+         0     0%     0%         73 65.18%  encoding/json/v2.Unmarshal
+         0     0%     0%         73 65.18%  encoding/json/v2.unmarshalDecode
+         0     0%     0%         73 65.18%  github.com/CloudyKit/jet/v6_test.executionWorkloads
+         0     0%     0%         67 59.82%  sync.(*Once).Do (partial-inline)
+         0     0%     0%         67 59.82%  sync.(*Once).doSlow
+         0     0%     0%         64 57.14%  encoding/json/v2.makeSliceArshaler.func3
+         0     0%     0%         56 50.00%  encoding/json/v2.makeStructArshaler.func3
+         0     0%     0%         52 46.43%  encoding/json/v2.makeStructArshaler.func1
+        13 11.61% 11.61%         52 46.43%  encoding/json/v2.makeStructFields
+         0     0% 11.61%         42 37.50%  encoding/json/v2.lookupArshaler
+         0     0% 11.61%         34 30.36%  encoding/json/v2.makeDefaultArshaler
+         1  0.89% 12.50%         33 29.46%  encoding/json/v2.makeStructFields.func3
+        19 16.96% 29.46%         20 17.86%  runtime.mallocgc
+         0     0% 29.46%         15 13.39%  runtime.newobject
+        14 12.50% 41.96%         14 12.50%  encoding/json/v2.makeMapArshaler
+         0     0% 41.96%         13 11.61%  runtime.systemstack
+         1  0.89% 42.86%         11  9.82%  reflect.(*rtype).ptrTo
+         0     0% 42.86%         11  9.82%  reflect.PointerTo (inline)
+         0     0% 42.86%         10  8.93%  testing.(*B).Run
+         0     0% 42.86%          8  7.14%  encoding/json/v2.makeSliceArshaler.func1
+         0     0% 42.86%          8  7.14%  internal/sync.(*HashTrieMap[go.shape.interface {},go.shape.interface {}]).LoadOrStore

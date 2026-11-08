@@ -1,0 +1,11 @@
+{
+  "source": ".git/finalization-evidence/release-54b5614",
+  "adaptations": [
+    "Replace checkout, home and Go installation paths with placeholders.",
+    "Omit host-gate queue/holder notices; receipts preserve this stage timing and admission.",
+    "Normalize trailing whitespace in text logs.",
+    "Intern repeated input maps by the SHA-256 of their sorted JSON representation."
+  ],
+  "raw_binary_profiles": "Retained locally at the original source paths; hashes are included. No binary or pprof file is copied.",
+  "acceptance": "Core target failed. Missing final-program groups remain explicit; packaging is blocked."
+}
