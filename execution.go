@@ -104,19 +104,13 @@ func (st *Runtime) rethrowRecovered(recovered interface{}) {
 // checkpoint reserves work before it happens, using subtraction to avoid wrap.
 // Additional budget dimensions must reserve against this same execution state.
 func (st *Runtime) checkpoint(steps uint64) {
-	if st.execution.ctx == nil && st.execution.terminal == nil {
-		return
+	if st.execution.ctx != nil || st.execution.terminal != nil {
+		st.reserveWork(steps)
 	}
-	st.checkpointActive(steps)
 }
 
-func (st *Runtime) checkpointActive(steps uint64) {
-	st.rethrowTerminal()
-	st.reserveWork(steps)
-}
-
-// reserveWork follows a terminal check without an intervening native call.
 func (st *Runtime) reserveWork(steps uint64) {
+	st.rethrowTerminal()
 	b := &st.execution
 	if b.ctx == nil {
 		return
@@ -145,7 +139,13 @@ func (st *Runtime) reserveUnchecked(remaining *uint64, limit, requested uint64, 
 }
 
 func (st *Runtime) enter() {
-	st.checkpoint(1)
+	if st.execution.ctx != nil || st.execution.terminal != nil || st.execution.options.MaxDepth != 0 {
+		st.enterActive()
+	}
+}
+
+func (st *Runtime) enterActive() {
+	st.reserveWork(1)
 	b := &st.execution
 	if b.options.MaxDepth != 0 {
 		if b.depth >= b.options.MaxDepth {

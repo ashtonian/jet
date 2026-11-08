@@ -89,10 +89,10 @@ func TestExecutionClearsCancelledState(t *testing.T) {
 	var retained *Runtime
 	ctx, cancel := context.WithCancel(context.Background())
 	vars := VarMap{}.SetFunc("cancel", func(a Arguments) reflect.Value { retained = a.Runtime(); cancel(); return reflect.Value{} })
-	if err := runtimeTemplate(t, `{{ cancel() }}`).ExecuteContext(ctx, ioutil.Discard, vars, nil, ExecutionOptions{}); !errors.Is(err, context.Canceled) {
+	if err := runtimeTemplate(t, `{{ cancel() }}`).ExecuteContext(ctx, ioutil.Discard, vars, nil, ExecutionOptions{MaxSteps: 10000, MaxDepth: 64, MaxValueBytes: 10000, MaxOutputBytes: 10000}); !errors.Is(err, context.Canceled) {
 		t.Fatal(err)
 	}
-	if retained.execution.ctx != nil || retained.execution.terminal != nil || retained.execution.depth != 0 || retained.writeErr != nil || retained.Writer != nil || retained.set != nil {
+	if !reflect.DeepEqual(retained.execution, executionState{}) || retained.execution.depth != 0 || retained.writeErr != nil || retained.Writer != nil || retained.set != nil {
 		t.Fatal("execution state retained")
 	}
 	if err := runtimeTemplate(t, "ok").Execute(ioutil.Discard, nil, nil); err != nil {

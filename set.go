@@ -27,6 +27,7 @@ type Set struct {
 	leftComment     string
 	rightComment    string
 	restricted      *restrictedPolicy
+	defaultHTML     bool
 }
 
 // Option is the type of option functions that can be used in NewSet().
@@ -39,11 +40,12 @@ func NewSet(loader Loader, opts ...Option) *Set {
 	}
 
 	s := &Set{
-		loader:  loader,
-		cache:   &cache{},
-		escapee: template.HTMLEscape,
-		globals: VarMap{},
-		gmx:     &sync.RWMutex{},
+		loader:      loader,
+		cache:       &cache{},
+		escapee:     template.HTMLEscape,
+		defaultHTML: true,
+		globals:     VarMap{},
+		gmx:         &sync.RWMutex{},
 		extensions: []string{
 			"", // in case the path is given with the correct extension already
 			".jet",
@@ -78,6 +80,7 @@ func WithSafeWriter(w SafeWriter) Option {
 	return func(s *Set) {
 		s.checkMutable()
 		s.escapee = w
+		s.defaultHTML = false
 	}
 }
 
