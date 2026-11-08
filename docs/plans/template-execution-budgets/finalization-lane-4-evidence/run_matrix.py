@@ -1,5 +1,6 @@
 """Run under installed gate-lock run-exclusive; prepare only archives source."""
 
+import copy
 import hashlib
 import json
 import os
@@ -16,6 +17,10 @@ UPSTREAM = '202464510d5b57f0afa9c5563f75babc1616682c'
 CORRECTNESS = '822cf702300c6226fa56a3fcf2f8466dc6b9b712'
 COMMON = ['execution_workloads_test.go', 'execution_measurements_test.go',
           'testData/execution_workloads.json']
+RUNTIME_ENV = ('GOGC', 'GOMEMLIMIT', 'GODEBUG', 'GOFLAGS', 'GOTOOLCHAIN', 'CGO_ENABLED')
+GO_ENV = ('GOOS', 'GOARCH', 'GOROOT', 'GOVERSION', 'GOFLAGS', 'CGO_ENABLED', 'GOEXPERIMENT',
+          'GOAMD64', 'GOARM64', 'GOTOOLCHAIN', 'CC', 'CXX', 'CGO_CFLAGS', 'CGO_CPPFLAGS',
+          'CGO_CXXFLAGS', 'CGO_LDFLAGS')
 
 
 def interrupted(signum, _frame):
@@ -32,8 +37,72 @@ def stop_process(process):
     try:
         process.wait(timeout=5)
     except subprocess.TimeoutExpired:
-        os.killpg(process.pid, signal.SIGKILL)
+        try:
+            os.killpg(process.pid, signal.SIGKILL)
+        except ProcessLookupError:
+            pass
         process.wait(timeout=2)
+
+
+def effective_environment(directory):
+    return {'runtime': {key: os.environ.get(key) for key in RUNTIME_ENV},
+            'go': json.loads(subprocess.check_output(['go', 'env', '-json'] + list(GO_ENV),
+                                                     cwd=directory, text=True, timeout=15))}
+
+
+def valid_artifacts(receipt):
+    return bool(receipt.get('artifacts')) and all(
+        Path(path).exists() and hashlib.sha256(Path(path).read_bytes()).hexdigest() == digest
+        for path, digest in receipt['artifacts'].items())
+
+
+def prerequisites_valid(build, conformance, expected, binary):
+    return (build.get('exit') == 0 and conformance.get('exit') == 0 and binary.exists()
+            and all(receipt.get('specification', {}).get(key) == value
+                    for receipt in (build, conformance) for key, value in expected.items())
+            and valid_artifacts(build) and valid_artifacts(conformance)
+            and conformance.get('specification', {}).get('binary_sha256') == hashlib.sha256(binary.read_bytes()).hexdigest())
+
+
+def execute_stage(label, output, cwd, command, env, specification, receipts, seconds, artifacts=()):
+    previous = receipts.get(label, {})
+    old_specification = dict(previous.get('specification', {}))
+    reuse_specification = dict(specification)
+    if label.startswith('build-'):
+        old_specification.pop('driver_sha256', None)
+        reuse_specification.pop('driver_sha256', None)
+    if old_specification == reuse_specification and previous.get('exit') == 0 and valid_artifacts(previous):
+        print('REUSE ' + label, flush=True)
+        return True
+    print('START ' + label, flush=True)
+    receipt = {'specification': copy.deepcopy(specification), 'start': time.time(), 'deadline_seconds': seconds,
+               'cleanup_seconds': 7}
+    receipts[label] = receipt
+    (output / 'stages.json').write_text(json.dumps(receipts, indent=2))
+    interruption = None
+    with (output / (label + '.log')).open('w') as log:
+        process = subprocess.Popen(command, cwd=cwd, env=env, stdout=log,
+                                   stderr=subprocess.STDOUT, start_new_session=True)
+        try:
+            code = process.wait(timeout=seconds)
+        except subprocess.TimeoutExpired:
+            stop_process(process)
+            code = 124
+        except (KeyboardInterrupt, SystemExit) as error:
+            stop_process(process)
+            code = error.code if isinstance(error, SystemExit) else 130
+            interruption = error
+    receipt.update(exit=code, end=time.time())
+    paths = [output / (label + '.log')] + list(artifacts)
+    receipt['artifacts'] = {str(path): hashlib.sha256(path.read_bytes()).hexdigest()
+                            for path in paths if path.exists()}
+    if code == 0 and any(not path.exists() for path in artifacts):
+        receipt.update(exit=65, reason='declared artifact missing')
+    (output / 'stages.json').write_text(json.dumps(receipts, indent=2))
+    print('END ' + label + ' exit=' + str(receipt['exit']), flush=True)
+    if interruption is not None:
+        raise interruption
+    return receipt['exit'] == 0
 
 
 def manifest(directory):
@@ -66,7 +135,7 @@ def prepare(work, candidate):
     proof['harness'] = {filename: hashlib.sha256((REPO / filename).read_bytes()).hexdigest()
                         for filename in COMMON}
     proof['toolchain'] = subprocess.check_output(['go', 'version'], text=True).strip()
-    proof['go_env'] = json.loads(subprocess.check_output(['go', 'env', '-json'], text=True))
+    proof['environment'] = effective_environment(REPO)
     proof['driver_sha256'] = hashlib.sha256(Path(__file__).read_bytes()).hexdigest()
     (work / 'sources.json').write_text(json.dumps(proof, indent=2))
 
@@ -87,6 +156,7 @@ def run(work, group):
     stages = output / 'stages.json'
     receipts = json.loads(stages.read_text()) if stages.exists() else {}
     failures = []
+    environments = {tree: effective_environment(work / tree) for tree in ('upstream', 'correctness', 'candidate')}
 
     def stage(label, tree, arguments, seconds=600, cores=2):
         env = dict(os.environ, GOMAXPROCS=str(cores))
@@ -94,47 +164,19 @@ def run(work, group):
         specification = {'command': command, 'tree': tree, 'GOMAXPROCS': str(cores),
                          'inputs': proof[tree]['inputs'], 'toolchain': proof['toolchain'],
                          'driver_sha256': hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
-                         'environment': {key: env.get(key) for key in ('GOFLAGS', 'GOTOOLCHAIN', 'CGO_ENABLED')}}
-        previous = receipts.get(label)
-        old_specification = dict(previous.get('specification', {})) if previous else {}
-        reuse_specification = dict(specification)
-        if label.startswith('build-'):
-            old_specification.pop('driver_sha256', None)
-            reuse_specification.pop('driver_sha256', None)
-        reusable = previous and old_specification == reuse_specification and previous.get('exit') == 0
-        if reusable:
-            reusable = all(Path(path).exists() and hashlib.sha256(Path(path).read_bytes()).hexdigest() == digest
-                           for path, digest in previous.get('artifacts', {}).items())
-        if reusable:
-            print('REUSE ' + label, flush=True)
-            return True
-        print('START ' + label, flush=True)
-        receipt = {'specification': specification, 'start': time.time(), 'deadline_seconds': seconds,
-                   'cleanup_seconds': 7}
-        with (output / (label + '.log')).open('w') as log:
-            process = subprocess.Popen(command, cwd=work / tree, env=env, stdout=log,
-                                       stderr=subprocess.STDOUT, start_new_session=True)
-            try:
-                code = process.wait(timeout=seconds)
-            except subprocess.TimeoutExpired:
-                stop_process(process)
-                code = 124
-            except (KeyboardInterrupt, SystemExit) as error:
-                stop_process(process)
-                code = error.code if isinstance(error, SystemExit) else 130
-        receipt.update(exit=code, end=time.time())
-        artifacts = [output / (label + '.log')]
+                         'environment': environments[tree]}
+        artifacts = []
         if label.startswith('build-'):
             artifacts.append(Path(binary(tree)))
-        artifacts.extend(output.glob(label + '-*.pprof'))
-        receipt['artifacts'] = {str(path): hashlib.sha256(path.read_bytes()).hexdigest()
-                                for path in artifacts if path.exists()}
-        receipts[label] = receipt
-        stages.write_text(json.dumps(receipts, indent=2))
-        print('END ' + label + ' exit=' + str(code), flush=True)
-        if code:
+        else:
+            specification['binary_sha256'] = hashlib.sha256(Path(binary(tree)).read_bytes()).hexdigest()
+        for argument in command:
+            if any(argument.startswith('-test.' + name + 'profile=') for name in ('cpu', 'mem', 'mutex', 'block')):
+                artifacts.append(Path(argument.split('=', 1)[1]))
+        passed = execute_stage(label, output, work / tree, command, env, specification, receipts, seconds, artifacts)
+        if not passed:
             failures.append(label)
-        return code == 0
+        return passed
 
     def finish():
         if failures:
@@ -144,9 +186,8 @@ def run(work, group):
         build = receipts.get('build-' + tree, {})
         conformance = receipts.get('conformance-' + tree, {})
         path = Path(binary(tree))
-        if (build.get('exit') == 0 and conformance.get('exit') == 0 and path.exists()
-                and build.get('specification', {}).get('inputs') == proof[tree]['inputs']
-                and build.get('artifacts', {}).get(str(path)) == hashlib.sha256(path.read_bytes()).hexdigest()):
+        expected = {'inputs': proof[tree]['inputs'], 'toolchain': proof['toolchain'], 'environment': environments[tree]}
+        if prerequisites_valid(build, conformance, expected, path):
             return True
         receipts[label] = {'skipped': 'build/conformance prerequisite incomplete', 'tree': tree}
         stages.write_text(json.dumps(receipts, indent=2))
@@ -183,6 +224,14 @@ def run(work, group):
                    ('upstream', 'legacy_owned'), ('candidate', 'restricted_owned'),
                    ('correctness', 'legacy_owned'), ('candidate', 'metered_live_stream'),
                    ('candidate', 'legacy_owned')]
+        plan_path = output / 'coverage-plan.json'
+        plan = json.loads(plan_path.read_text()) if plan_path.exists() else {}
+        plan[group] = {'streams': streams, 'samples': 6, 'formats': ['text', 'html'],
+                       'fixtures': [f['name'] for f in fixtures],
+                       'workers': sorted({1, 2, 8, int(os.environ['GOMAXPROCS'])}),
+                       'shared': [True, False], 'concurrent_fixtures': [
+                           'header_interpolation', 'body_8192', 'nested_silent', 'escape_expansion', 'data_json_256']}
+        plan_path.write_text(json.dumps(plan, indent=2))
         for sample in range(6):
             order = streams[sample % len(streams):] + streams[:sample % len(streams)]
             for tree, mode in order:

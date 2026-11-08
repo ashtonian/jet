@@ -71,6 +71,8 @@ func additionalExecutionWorkloads() []executionWorkload {
 	if err != nil {
 		panic(err)
 	}
+	meteredDiagnostic := `Jet Runtime Error ("/workload":1): identifier "missing" not available in current or parent scope, global, or default variables`
+	restrictedDiagnostic := `Jet Runtime Error ("/workload":1): identifier "missing" is not available`
 	return []executionWorkload{
 		{Name: "data_json_256", Source: "{{ json(.) }}", Data: items, Text: string(encoded), HTML: html.EscapeString(string(encoded))},
 		{Name: "data_unused_256", Source: "ready", Data: items, Text: "ready", HTML: "ready"},
@@ -79,7 +81,11 @@ func additionalExecutionWorkloads() []executionWorkload {
 		{Name: "array", Source: "{{ .[0] }}:{{ len(.) }}", Data: [2]string{"a", "b"}, Text: "a:2", HTML: "a:2"},
 		{Name: "typed_nil", Source: "{{ len(.) }}", Data: map[string]string(nil), Text: "0", HTML: "0"},
 		{Name: "builtin_alias", Source: "{{ fold := lower }}{{ fold(value) }}", Variables: map[string]interface{}{"value": "ALIAS"}, Text: "alias", HTML: "alias"},
-		{Name: "catch_diagnostic", Source: "{{ try }}{{ missing }}{{ catch err }}{{ err }}{{ end }}", Text: `Jet Runtime Error ("/workload":1): identifier "missing" not available in current (map[]) or parent scope, global, or default variables`, HTML: `Jet Runtime Error (&#34;/workload&#34;:1): identifier &#34;missing&#34; not available in current (map[]) or parent scope, global, or default variables`},
+		{Name: "catch_diagnostic", Source: "{{ try }}{{ missing }}{{ catch err }}{{ err }}{{ end }}", Text: `Jet Runtime Error ("/workload":1): identifier "missing" not available in current (map[]) or parent scope, global, or default variables`, HTML: `Jet Runtime Error (&#34;/workload&#34;:1): identifier &#34;missing&#34; not available in current (map[]) or parent scope, global, or default variables`, ModeOutput: map[string][2]string{
+			"metered_background_stream": {meteredDiagnostic, html.EscapeString(meteredDiagnostic)},
+			"metered_live_stream":       {meteredDiagnostic, html.EscapeString(meteredDiagnostic)},
+			"restricted_owned":          {restrictedDiagnostic, html.EscapeString(restrictedDiagnostic)},
+		}},
 	}
 }
 
@@ -119,6 +125,12 @@ func TestExecutionModeConformance(t *testing.T) {
 					want := f.Text
 					if html {
 						want = f.HTML
+					}
+					if output, ok := f.ModeOutput[m.name]; ok {
+						want = output[0]
+						if html {
+							want = output[1]
+						}
 					}
 					if got != want {
 						t.Fatalf("got %q, want %q", got, want)
@@ -285,11 +297,13 @@ func BenchmarkConcurrentExecutionModes(b *testing.B) {
 				for _, count := range workers {
 					for _, shared := range []bool{true, false} {
 						b.Run(fmt.Sprintf("%s/%s/%s/workers_%d/shared_%t", m.name, f.Name, format, count, shared), func(b *testing.B) {
-							ctx, cancel := m.context()
-							defer cancel()
 							templates := make([]*jet.Template, count)
 							variables := make([]jet.VarMap, count)
+							contexts := make([]context.Context, count)
 							for i := range templates {
+								ctx, cancel := m.context()
+								defer cancel()
+								contexts[i] = ctx
 								variables[i] = f.vars()
 								if shared && i > 0 {
 									templates[i] = templates[0]
@@ -312,7 +326,7 @@ func BenchmarkConcurrentExecutionModes(b *testing.B) {
 									for i := worker; i < b.N; i += count {
 										out.Reset()
 										var err error
-										result, err = m.render(ctx, templates[worker], variables[worker], f.Data, &out)
+										result, err = m.render(contexts[worker], templates[worker], variables[worker], f.Data, &out)
 										if err != nil {
 											failures <- err
 											return

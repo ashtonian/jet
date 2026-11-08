@@ -10,13 +10,14 @@ import (
 )
 
 type executionWorkload struct {
-	Name      string
-	Source    string
-	Variables map[string]interface{}
-	Text      string
-	HTML      string
-	Templates map[string]string
-	Data      interface{}
+	Name       string
+	Source     string
+	Variables  map[string]interface{}
+	Text       string
+	HTML       string
+	Templates  map[string]string
+	Data       interface{}
+	ModeOutput map[string][2]string
 }
 
 func executionWorkloads(tb testing.TB) []executionWorkload {
