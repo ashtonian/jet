@@ -1,0 +1,16 @@
+package jet_test
+import("bytes";"testing";"github.com/CloudyKit/jet/v6")
+type legacyReviewStringKey string
+func TestReviewLegacyPanicBoundary(t *testing.T){
+ for _,tc:=range []struct{name,source string;data interface{}}{
+ {"named_key_lookup",`{{ .x }}`,map[legacyReviewStringKey]string{"x":"ok"}},
+ {"typed_assignment",`{{ .x = 1 }}`,map[string]string{"x":"ok"}},
+ {"nil_assignment",`{{ .x = 1 }}`,map[string]interface{}(nil)},
+ {"array_slice",`{{ .[:] }}`,[2]int{1,2}},
+ {"odd_map",`{{ map("x") }}`,nil},
+ }{t.Run(tc.name,func(t *testing.T){
+ defer func(){if p:=recover();p!=nil{t.Logf("escaped panic (%T): %v",p,p)}}()
+ s:=jet.NewSet(jet.NewInMemLoader());tpl,err:=s.Parse("main",tc.source);if err!=nil{t.Fatal(err)}
+ var out bytes.Buffer;err=tpl.Execute(&out,nil,tc.data);t.Logf("out=%q err=%v",out.String(),err)
+ })}
+}

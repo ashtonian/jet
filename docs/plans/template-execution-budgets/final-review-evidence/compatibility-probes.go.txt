@@ -1,0 +1,28 @@
+package jet_test
+import("bytes";"context";"errors";"strings";"testing";"github.com/CloudyKit/jet/v6")
+type reviewFailWriter struct{err error}
+func(w reviewFailWriter)Write(p []byte)(int,error){return 0,w.err}
+func TestReviewSinkDiagnostic(t *testing.T){
+ sentinel:=errors.New("sink failed")
+ for _,mode:=range []string{"legacy","metered"}{t.Run(mode,func(t *testing.T){
+ s:=jet.NewSet(jet.NewInMemLoader());tpl,err:=s.Parse("receipt.jet",`header {{ "body" }}`);if err!=nil{t.Fatal(err)}
+ if mode=="legacy"{err=tpl.Execute(reviewFailWriter{sentinel},nil,nil)}else{err=tpl.ExecuteContext(context.Background(),reviewFailWriter{sentinel},nil,nil,jet.ExecutionOptions{})}
+ if !errors.Is(err,sentinel){t.Fatalf("lost cause: %v",err)}
+ if !strings.Contains(err.Error(),"receipt.jet"){t.Errorf("lost template location: %v",err)}
+ })}
+}
+func TestReviewCatchCompatibility(t *testing.T){
+ source:=`{{ try }}{{ missing }}{{ catch err }}{{ err }}{{ end }}`
+ for _,mode:=range []string{"legacy","metered","restricted"}{t.Run(mode,func(t *testing.T){
+ var s *jet.Set;var err error
+ if mode=="restricted"{opts:=reviewOptions();opts.Text=false;s,err=jet.NewRestrictedSet(context.Background(),map[string]string{"main":source},opts)}else{s=jet.NewSet(jet.NewInMemLoader())};if err!=nil{t.Fatal(err)}
+ tpl,err:=s.Parse("main",source);if err!=nil{t.Fatal(err)};var out bytes.Buffer;var result string
+ if mode=="restricted"{result,err=tpl.RenderRestrictedContext(context.Background(),nil,nil)}else if mode=="metered"{err=tpl.ExecuteContext(context.Background(),&out,nil,nil,jet.ExecutionOptions{})}else{err=tpl.Execute(&out,nil,nil)}
+ t.Logf("result=%q buffer=%q err=%v",result,out.String(),err)
+ if err!=nil{t.Errorf("ordinary catch rendering failed: %v",err)}
+ })}
+}
+func TestReviewRestrictedNilSlice(t *testing.T){
+ s,err:=jet.NewRestrictedSet(context.Background(),map[string]string{"main":`{{ slice(nil) }}`},reviewOptions());if err!=nil{t.Fatal(err)};tpl,err:=s.GetTemplate("main");if err!=nil{t.Fatal(err)}
+ defer func(){if p:=recover();p!=nil{t.Errorf("panic (%T): %v",p,p)}}();out,err:=tpl.RenderRestrictedContext(context.Background(),nil,nil);t.Logf("out=%q err=%v",out,err)
+}
