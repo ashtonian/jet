@@ -1,0 +1,27 @@
+File: render.test
+Type: alloc_space
+Time: 2026-11-08 04:47:22 CST
+Showing nodes accounting for 498.03MB, 97.93% of 508.54MB total
+Dropped 50 nodes (cum <= 2.54MB)
+      flat  flat%   sum%        cum   cum%
+  212.01MB 41.69% 41.69%   212.01MB 41.69%  bytes.(*Buffer).grow
+  202.01MB 39.72% 81.41%   498.53MB 98.03%  github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext
+      84MB 16.52% 97.93%       84MB 16.52%  bytes.(*Buffer).String (inline)
+         0     0% 97.93%   212.01MB 41.69%  bytes.(*Buffer).Write
+         0     0% 97.93%   212.51MB 41.79%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 97.93%   296.52MB 58.31%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0% 97.93%   296.52MB 58.31%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0% 97.93%   212.01MB 41.69%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+         0     0% 97.93%     7.28MB  1.43%  github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes
+         0     0% 97.93%   498.53MB 98.03%  github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes.func1
+         0     0% 97.93%   498.53MB 98.03%  github.com/CloudyKit/jet/v6_test.init.0.func5
+         0     0% 97.93%     2.78MB  0.55%  github.com/CloudyKit/jet/v6_test.measurementWorkloads
+         0     0% 97.93%     4.50MB  0.89%  regexp.Compile (inline)
+         0     0% 97.93%     4.50MB  0.89%  regexp.compile
+         0     0% 97.93%     4.50MB  0.89%  testing.(*B).Run
+         0     0% 97.93%   498.53MB 98.03%  testing.(*B).launch
+         0     0% 97.93%     7.28MB  1.43%  testing.(*B).run1.func1
+         0     0% 97.93%   505.81MB 99.46%  testing.(*B).runN
+         0     0% 97.93%     4.50MB  0.89%  testing.(*matcher).fullName
+         0     0% 97.93%     4.50MB  0.89%  testing.simpleMatch.matches
+         0     0% 97.93%     4.50MB  0.89%  testing/internal/testdeps.TestDeps.MatchString

@@ -1,0 +1,14 @@
+File: render.test
+Type: delay
+Time: 2026-11-08 04:47:31 CST
+Showing nodes accounting for 41ns, 100% of 41ns total
+      flat  flat%   sum%        cum   cum%
+      41ns   100%   100%       41ns   100%  runtime.unlock (inline)
+         0     0%   100%       41ns   100%  runtime.ReadMemStats
+         0     0%   100%       41ns   100%  runtime.stopTheWorld
+         0     0%   100%       41ns   100%  runtime.stopTheWorld.func1
+         0     0%   100%       41ns   100%  runtime.stopTheWorldWithSema
+         0     0%   100%       41ns   100%  runtime.systemstack
+         0     0%   100%       41ns   100%  testing.(*B).StartTimer
+         0     0%   100%       41ns   100%  testing.(*B).launch
+         0     0%   100%       41ns   100%  testing.(*B).runN

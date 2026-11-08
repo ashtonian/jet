@@ -1,0 +1,38 @@
+File: render.test
+Type: cpu
+Time: 2026-11-08 04:47:38 CST
+Duration: 1.38s, Total samples = 2.24s (162.46%)
+Showing nodes accounting for 1.61s, 71.88% of 2.24s total
+Dropped 49 nodes (cum <= 0.01s)
+Showing top 30 nodes out of 87
+      flat  flat%   sum%        cum   cum%
+         0     0%     0%      1.43s 63.84%  runtime.systemstack
+     1.11s 49.55% 49.55%      1.11s 49.55%  runtime.madvise
+         0     0% 49.55%      1.10s 49.11%  runtime.(*mheap).alloc.func1
+         0     0% 49.55%      1.09s 48.66%  runtime.(*mheap).allocSpan
+         0     0% 49.55%      1.07s 47.77%  runtime.sysUsed (inline)
+         0     0% 49.55%      1.07s 47.77%  runtime.sysUsedOS (inline)
+         0     0% 49.55%      0.61s 27.23%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0% 49.55%      0.61s 27.23%  github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext
+         0     0% 49.55%      0.61s 27.23%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0% 49.55%      0.61s 27.23%  github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes.func1.1
+         0     0% 49.55%      0.61s 27.23%  github.com/CloudyKit/jet/v6_test.init.0.func5
+         0     0% 49.55%      0.59s 26.34%  github.com/CloudyKit/fastprinter.PrintString
+         0     0% 49.55%      0.59s 26.34%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 49.55%      0.59s 26.34%  github.com/CloudyKit/jet/v6.(*Runtime).printValue
+         0     0% 49.55%      0.59s 26.34%  github.com/CloudyKit/jet/v6.(*dataPrinter).text
+         0     0% 49.55%      0.59s 26.34%  github.com/CloudyKit/jet/v6.(*dataPrinter).value
+         0     0% 49.55%      0.58s 25.89%  github.com/CloudyKit/jet/v6.(*dataPrinter).Write
+         0     0% 49.55%      0.57s 25.45%  github.com/CloudyKit/jet/v6.(*escapeeWriter).Write
+     0.03s  1.34% 50.89%      0.57s 25.45%  text/template.HTMLEscape
+     0.15s  6.70% 57.59%      0.54s 24.11%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+         0     0% 57.59%      0.25s 11.16%  runtime.lock (partial-inline)
+     0.01s  0.45% 58.04%      0.25s 11.16%  runtime.lock2
+         0     0% 58.04%      0.25s 11.16%  runtime.lockWithRank (inline)
+     0.24s 10.71% 68.75%      0.24s 10.71%  runtime.usleep
+         0     0% 68.75%      0.22s  9.82%  runtime.osyield (inline)
+     0.07s  3.12% 71.88%      0.21s  9.38%  bytes.(*Buffer).Write
+         0     0% 71.88%      0.19s  8.48%  runtime.morestack
+         0     0% 71.88%      0.19s  8.48%  runtime.newstack
+         0     0% 71.88%      0.18s  8.04%  runtime.gopreempt_m (inline)
+         0     0% 71.88%      0.18s  8.04%  runtime.goschedImpl

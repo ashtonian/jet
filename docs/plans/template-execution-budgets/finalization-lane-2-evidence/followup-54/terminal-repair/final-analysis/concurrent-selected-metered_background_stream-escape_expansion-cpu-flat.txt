@@ -1,0 +1,25 @@
+File: render.test
+Type: cpu
+Time: 2026-11-08 05:27:37 CST
+Duration: 1.57s, Total samples = 2.37s (151.01%)
+Showing nodes accounting for 2.32s, 97.89% of 2.37s total
+Dropped 36 nodes (cum <= 0.01s)
+      flat  flat%   sum%        cum   cum%
+     0.62s 26.16% 26.16%      1.18s 49.79%  bytes.(*Buffer).Write
+     0.38s 16.03% 42.19%      0.39s 16.46%  bytes.(*Buffer).tryGrowByReslice (inline)
+     0.38s 16.03% 58.23%      2.06s 86.92%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+     0.28s 11.81% 70.04%      0.38s 16.03%  github.com/CloudyKit/jet/v6.(*Runtime).reserveWork
+     0.24s 10.13% 80.17%      2.30s 97.05%  text/template.HTMLEscape
+     0.22s  9.28% 89.45%      0.22s  9.28%  github.com/CloudyKit/jet/v6.(*Runtime).reserveUnchecked (inline)
+     0.17s  7.17% 96.62%      0.17s  7.17%  runtime.memmove
+     0.01s  0.42% 97.05%      2.33s 98.31%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+     0.01s  0.42% 97.47%      2.31s 97.47%  github.com/CloudyKit/jet/v6.(*dataPrinter).Write
+     0.01s  0.42% 97.89%      2.35s 99.16%  github.com/CloudyKit/jet/v6_test.init.0.func2
+         0     0% 97.89%      2.31s 97.47%  github.com/CloudyKit/fastprinter.PrintString
+         0     0% 97.89%      2.31s 97.47%  github.com/CloudyKit/jet/v6.(*Runtime).printValue
+         0     0% 97.89%      2.34s 98.73%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0% 97.89%      2.34s 98.73%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0% 97.89%      2.31s 97.47%  github.com/CloudyKit/jet/v6.(*dataPrinter).text
+         0     0% 97.89%      2.31s 97.47%  github.com/CloudyKit/jet/v6.(*dataPrinter).value
+         0     0% 97.89%      2.30s 97.05%  github.com/CloudyKit/jet/v6.(*escapeeWriter).Write
+         0     0% 97.89%      2.35s 99.16%  github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes.func1.1

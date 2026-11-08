@@ -1,0 +1,37 @@
+File: render.test
+Type: cpu
+Time: 2026-11-08 05:27:58 CST
+Duration: 1.41s, Total samples = 1.27s (90.18%)
+Showing nodes accounting for 1.27s, 100% of 1.27s total
+Showing top 30 nodes out of 121
+      flat  flat%   sum%        cum   cum%
+     0.45s 35.43% 35.43%      0.45s 35.43%  runtime.kevent
+     0.15s 11.81% 47.24%      0.15s 11.81%  runtime.pthread_kill
+     0.09s  7.09% 54.33%      0.17s 13.39%  bytes.(*Buffer).Write
+     0.07s  5.51% 59.84%      0.07s  5.51%  runtime.usleep
+     0.06s  4.72% 64.57%      0.07s  5.51%  context.(*cancelCtx).Err
+     0.06s  4.72% 69.29%      0.14s 11.02%  github.com/CloudyKit/jet/v6.(*Runtime).reserveWork
+     0.06s  4.72% 74.02%      0.06s  4.72%  runtime.memmove
+     0.05s  3.94% 77.95%      0.40s 31.50%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+     0.05s  3.94% 81.89%      0.45s 35.43%  text/template.HTMLEscape
+     0.04s  3.15% 85.04%      0.04s  3.15%  github.com/CloudyKit/jet/v6.(*Runtime).reserveUnchecked (inline)
+     0.02s  1.57% 86.61%      0.02s  1.57%  bytes.(*Buffer).tryGrowByReslice (inline)
+     0.02s  1.57% 88.19%      0.02s  1.57%  runtime.tryDeferToSpanScan
+     0.01s  0.79% 88.98%      0.01s  0.79%  github.com/CloudyKit/jet/v6.(*Runtime).isRestricted
+     0.01s  0.79% 89.76%      0.01s  0.79%  github.com/CloudyKit/jet/v6.addValueSizes (inline)
+     0.01s  0.79% 90.55%      0.01s  0.79%  runtime.(*consistentHeapStats).release
+     0.01s  0.79% 91.34%      0.01s  0.79%  runtime.(*mheap).initSpan
+     0.01s  0.79% 92.13%      0.01s  0.79%  runtime.(*unwinder).resolveInternal
+     0.01s  0.79% 92.91%      0.01s  0.79%  runtime.madvise
+     0.01s  0.79% 93.70%      0.01s  0.79%  runtime.popDefer
+     0.01s  0.79% 94.49%      0.01s  0.79%  runtime.procyieldAsm
+     0.01s  0.79% 95.28%      0.01s  0.79%  runtime.pthread_cond_signal
+     0.01s  0.79% 96.06%      0.01s  0.79%  runtime.pthread_cond_timedwait_relative_np
+     0.01s  0.79% 96.85%      0.02s  1.57%  runtime.scanObject
+     0.01s  0.79% 97.64%      0.01s  0.79%  runtime.taggedPointerPack
+     0.01s  0.79% 98.43%      0.02s  1.57%  sync.(*Pool).Get
+     0.01s  0.79% 99.21%      0.01s  0.79%  sync.(*Pool).pin
+     0.01s  0.79%   100%      0.01s  0.79%  sync/atomic.(*Value).Load (inline)
+         0     0%   100%      0.03s  2.36%  bytes.(*Buffer).String
+         0     0%   100%      0.01s  0.79%  bytes.(*Buffer).grow
+         0     0%   100%      0.01s  0.79%  bytes.growSlice

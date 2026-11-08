@@ -1,0 +1,36 @@
+File: render.test
+Type: alloc_space
+Time: 2026-11-08 05:27:39 CST
+Showing nodes accounting for 10760.12kB, 100% of 10760.12kB total
+Showing top 30 nodes out of 57
+      flat  flat%   sum%        cum   cum%
+ 3077.06kB 28.60% 28.60%  3077.06kB 28.60%  regexp/syntax.(*compiler).inst (inline)
+ 2052.31kB 19.07% 47.67%  2052.31kB 19.07%  regexp.onePassCopy
+ 1762.94kB 16.38% 64.05%  1762.94kB 16.38%  runtime/pprof.StartCPUProfile
+  655.29kB  6.09% 70.14%   655.29kB  6.09%  compress/flate.NewWriter (inline)
+  641.34kB  5.96% 76.10%   641.34kB  5.96%  os.readFileContents
+  520.04kB  4.83% 80.94%   520.04kB  4.83%  github.com/CloudyKit/jet/v6_test.additionalExecutionWorkloads
+     514kB  4.78% 85.71%      514kB  4.78%  github.com/CloudyKit/fastprinter.newByteSliceBufferPool.func1
+     513kB  4.77% 90.48%      513kB  4.77%  bytes.growSlice
+  512.08kB  4.76% 95.24%   512.08kB  4.76%  compress/gzip.NewWriterLevel
+  512.05kB  4.76%   100%   512.05kB  4.76%  regexp/syntax.(*parser).newRegexp (inline)
+         0     0%   100%      513kB  4.77%  bytes.(*Buffer).Write
+         0     0%   100%      513kB  4.77%  bytes.(*Buffer).grow
+         0     0%   100%   655.29kB  6.09%  compress/gzip.(*Writer).Write
+         0     0%   100%     1027kB  9.54%  github.com/CloudyKit/fastprinter.PrintString
+         0     0%   100%     1027kB  9.54%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0%   100%     1027kB  9.54%  github.com/CloudyKit/jet/v6.(*Runtime).printValue
+         0     0%   100%     1027kB  9.54%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0%   100%     1027kB  9.54%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0%   100%      513kB  4.77%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+         0     0%   100%      513kB  4.77%  github.com/CloudyKit/jet/v6.(*dataPrinter).Write
+         0     0%   100%     1027kB  9.54%  github.com/CloudyKit/jet/v6.(*dataPrinter).text
+         0     0%   100%     1027kB  9.54%  github.com/CloudyKit/jet/v6.(*dataPrinter).value
+         0     0%   100%      513kB  4.77%  github.com/CloudyKit/jet/v6.(*escapeeWriter).Write
+         0     0%   100%  6802.82kB 63.22%  github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes
+         0     0%   100%     1027kB  9.54%  github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes.func1.1
+         0     0%   100%   641.34kB  5.96%  github.com/CloudyKit/jet/v6_test.executionWorkloads
+         0     0%   100%     1027kB  9.54%  github.com/CloudyKit/jet/v6_test.init.0.func2
+         0     0%   100%  1161.38kB 10.79%  github.com/CloudyKit/jet/v6_test.measurementWorkloads
+         0     0%   100%  1762.94kB 16.38%  main.main
+         0     0%   100%   641.34kB  5.96%  os.ReadFile

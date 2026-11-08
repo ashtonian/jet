@@ -1,0 +1,37 @@
+File: render.test
+Type: alloc_objects
+Time: 2026-11-08 05:27:56 CST
+Showing nodes accounting for 3391631, 99.34% of 3414047 total
+Dropped 49 nodes (cum <= 17070)
+Showing top 30 nodes out of 39
+      flat  flat%   sum%        cum   cum%
+   1605656 47.03% 47.03%    2998338 87.82%  github.com/CloudyKit/jet/v6.init.0.func5
+   1392682 40.79% 87.82%    1392682 40.79%  github.com/CloudyKit/jet/v6.newIntsRanger (inline)
+    155690  4.56% 92.38%     155690  4.56%  bytes.growSlice
+     65540  1.92% 94.30%    3326095 97.42%  github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext
+     57372  1.68% 95.98%      57372  1.68%  bytes.(*Buffer).String (inline)
+     49155  1.44% 97.42%     204845  6.00%  bytes.(*Buffer).grow
+     32768  0.96% 98.38%      32768  0.96%  regexp.makeOnePass.func1
+     32768  0.96% 99.34%      32768  0.96%  strings.genSplit
+         0     0% 99.34%     204845  6.00%  bytes.(*Buffer).Write
+         0     0% 99.34%    2998338 87.82%  github.com/CloudyKit/jet/v6.(*Runtime).evalCallExpression (inline)
+         0     0% 99.34%    2998338 87.82%  github.com/CloudyKit/jet/v6.(*Runtime).evalPipeCallExpression
+         0     0% 99.34%    2998338 87.82%  github.com/CloudyKit/jet/v6.(*Runtime).evalPrimaryExpressionGroup
+         0     0% 99.34%    3203183 93.82%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 99.34%    3203183 93.82%  github.com/CloudyKit/jet/v6.(*Runtime).executeRange
+         0     0% 99.34%    3260555 95.50%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0% 99.34%    3260555 95.50%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0% 99.34%     204845  6.00%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+         0     0% 99.34%      51766  1.52%  github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes
+         0     0% 99.34%    3326223 97.43%  github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes.func1
+         0     0% 99.34%    3326095 97.42%  github.com/CloudyKit/jet/v6_test.init.0.func5
+         0     0% 99.34%      32773  0.96%  main.main
+         0     0% 99.34%      48110  1.41%  regexp.Compile (inline)
+         0     0% 99.34%      48110  1.41%  regexp.compile
+         0     0% 99.34%      39694  1.16%  regexp.compileOnePass
+         0     0% 99.34%      39322  1.15%  regexp.makeOnePass
+         0     0% 99.34%      32773  0.96%  runtime.main
+         0     0% 99.34%      32768  0.96%  strings.Split (inline)
+         0     0% 99.34%      48110  1.41%  testing.(*B).Run
+         0     0% 99.34%    3326095 97.42%  testing.(*B).launch
+         0     0% 99.34%      51894  1.52%  testing.(*B).run1.func1

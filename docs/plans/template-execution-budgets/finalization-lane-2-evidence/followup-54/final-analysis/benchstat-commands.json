@@ -1,0 +1,47 @@
+[
+  {
+    "command": [
+      "<user>/go/bin/benchstat",
+      "<artifacts>/followup-54/final-analysis/baseline.bench.txt",
+      "<artifacts>/followup-54/final-analysis/selected.bench.txt"
+    ],
+    "exit_code": 0,
+    "deadline": 30
+  },
+  {
+    "command": [
+      "<user>/go/bin/benchstat",
+      "<artifacts>/followup-54/final-analysis/legacy_stream-upstream.bench.txt",
+      "<artifacts>/followup-54/final-analysis/legacy_stream-selected.bench.txt"
+    ],
+    "exit_code": 0,
+    "deadline": 30
+  },
+  {
+    "command": [
+      "<user>/go/bin/benchstat",
+      "<artifacts>/followup-54/final-analysis/metered_background_stream-upstream.bench.txt",
+      "<artifacts>/followup-54/final-analysis/metered_background_stream-selected.bench.txt"
+    ],
+    "exit_code": 0,
+    "deadline": 30
+  },
+  {
+    "command": [
+      "<user>/go/bin/benchstat",
+      "<artifacts>/followup-54/final-analysis/metered_live_stream-upstream.bench.txt",
+      "<artifacts>/followup-54/final-analysis/metered_live_stream-selected.bench.txt"
+    ],
+    "exit_code": 0,
+    "deadline": 30
+  },
+  {
+    "command": [
+      "<user>/go/bin/benchstat",
+      "<artifacts>/followup-54/final-analysis/restricted_owned-upstream.bench.txt",
+      "<artifacts>/followup-54/final-analysis/restricted_owned-selected.bench.txt"
+    ],
+    "exit_code": 0,
+    "deadline": 30
+  }
+]

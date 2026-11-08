@@ -1,0 +1,28 @@
+File: render.test
+Type: delay
+Time: 2026-11-08 04:47:17 CST
+Showing nodes accounting for 3056.42ms, 100% of 3056.42ms total
+Dropped 3 nodes (cum <= 15.28ms)
+      flat  flat%   sum%        cum   cum%
+ 3056.42ms   100%   100%  3056.42ms   100%  runtime.chanrecv1
+         0     0%   100%  1447.03ms 47.34%  github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes
+         0     0%   100%  1609.40ms 52.66%  main.main
+         0     0%   100%  1609.40ms 52.66%  runtime.main
+         0     0%   100%   155.24ms  5.08%  runtime/pprof.StopCPUProfile
+         0     0%   100%   155.24ms  5.08%  sync.(*Once).Do (inline)
+         0     0%   100%   155.24ms  5.08%  sync.(*Once).doSlow
+         0     0%   100%  2901.18ms 94.92%  testing.(*B).Run
+         0     0%   100%  1446.58ms 47.33%  testing.(*B).doBench
+         0     0%   100%  1446.58ms 47.33%  testing.(*B).run
+         0     0%   100%  1454.60ms 47.59%  testing.(*B).run1
+         0     0%   100%  1447.03ms 47.34%  testing.(*B).run1.func1
+         0     0%   100%  2901.18ms 94.92%  testing.(*B).runN
+         0     0%   100%  1609.40ms 52.66%  testing.(*M).Run
+         0     0%   100%   155.24ms  5.08%  testing.(*M).Run.deferwrap1
+         0     0%   100%   155.24ms  5.08%  testing.(*M).after
+         0     0%   100%   155.24ms  5.08%  testing.(*M).after.func1
+         0     0%   100%   155.24ms  5.08%  testing.(*M).writeProfiles
+         0     0%   100%  1446.58ms 47.33%  testing.(*benchState).processBench
+         0     0%   100%  1454.15ms 47.58%  testing.runBenchmarks
+         0     0%   100%  1454.15ms 47.58%  testing.runBenchmarks.func1
+         0     0%   100%   155.24ms  5.08%  testing/internal/testdeps.TestDeps.StopCPUProfile

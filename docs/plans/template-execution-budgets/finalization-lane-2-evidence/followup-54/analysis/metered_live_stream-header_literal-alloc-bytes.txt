@@ -1,0 +1,36 @@
+File: candidate.test
+Type: alloc_space
+Time: 2026-11-08 03:57:37 CST
+Showing nodes accounting for 10449.95kB, 100% of 10449.95kB total
+Showing top 30 nodes out of 46
+      flat  flat%   sum%        cum   cum%
+ 2723.33kB 26.06% 26.06%  2723.33kB 26.06%  encoding/json/v2.makeString
+ 1924.02kB 18.41% 44.47%  1924.02kB 18.41%  os.readFileContents
+ 1544.32kB 14.78% 59.25%  2056.33kB 19.68%  github.com/CloudyKit/jet/v6_test.additionalExecutionWorkloads
+ 1184.27kB 11.33% 70.58%  1184.27kB 11.33%  runtime/pprof.StartCPUProfile
+ 1025.03kB  9.81% 80.39%  1025.03kB  9.81%  regexp/syntax.(*compiler).inst (inline)
+  512.88kB  4.91% 85.30%   512.88kB  4.91%  regexp.onePassCopy
+  512.08kB  4.90% 90.20%   512.08kB  4.90%  compress/gzip.NewWriterLevel
+  512.01kB  4.90% 95.10%   512.01kB  4.90%  reflect.unsafe_New
+  512.01kB  4.90%   100%  2049.91kB 19.62%  regexp.compile
+         0     0%   100%   512.01kB  4.90%  encoding/json.Marshal (inline)
+         0     0%   100%  2723.33kB 26.06%  encoding/json.Unmarshal (inline)
+         0     0%   100%   512.01kB  4.90%  encoding/json/v2.Marshal
+         0     0%   100%  2723.33kB 26.06%  encoding/json/v2.Unmarshal
+         0     0%   100%     1634kB 15.64%  encoding/json/v2.makeInterfaceArshaler.func2
+         0     0%   100%   512.01kB  4.90%  encoding/json/v2.makeMapArshaler.func2
+         0     0%   100%     1634kB 15.64%  encoding/json/v2.makeMapArshaler.func3
+         0     0%   100%   512.01kB  4.90%  encoding/json/v2.makeSliceArshaler.func2
+         0     0%   100%  2723.33kB 26.06%  encoding/json/v2.makeSliceArshaler.func3
+         0     0%   100%  2723.33kB 26.06%  encoding/json/v2.makeStringArshaler.func2
+         0     0%   100%  2723.33kB 26.06%  encoding/json/v2.makeStructArshaler.func3
+         0     0%   100%   512.01kB  4.90%  encoding/json/v2.marshalEncode
+         0     0%   100%   512.01kB  4.90%  encoding/json/v2.newAddressableValue
+         0     0%   100%  2723.33kB 26.06%  encoding/json/v2.unmarshalDecode
+         0     0%   100%  8753.60kB 83.77%  github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes
+         0     0%   100%  4647.35kB 44.47%  github.com/CloudyKit/jet/v6_test.executionWorkloads
+         0     0%   100%  6703.68kB 64.15%  github.com/CloudyKit/jet/v6_test.measurementWorkloads
+         0     0%   100%  1184.27kB 11.33%  main.main
+         0     0%   100%  1924.02kB 18.41%  os.ReadFile
+         0     0%   100%   512.01kB  4.90%  reflect.New
+         0     0%   100%  2049.91kB 19.62%  regexp.Compile (inline)

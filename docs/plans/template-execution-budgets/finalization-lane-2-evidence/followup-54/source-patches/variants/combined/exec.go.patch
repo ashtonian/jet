@@ -1,0 +1,12 @@
+--- a/exec.go
++++ b/exec.go
+@@ -97 +97,8 @@
+-	st.execution = executionState{ctx: ctx, checkContext: ctx != nil && ctx != context.Background() && ctx != context.TODO(), options: opts, remaining: opts.MaxSteps, values: uint64(opts.MaxValueBytes), output: uint64(opts.MaxOutputBytes)}
++	// Pool return clears executionState, including compilation scratch.
++	// Initialize only the inputs that change for this render.
++	st.execution.ctx = ctx
++	st.execution.checkContext = ctx != nil && ctx != context.Background() && ctx != context.TODO()
++	st.execution.options = opts
++	st.execution.remaining = opts.MaxSteps
++	st.execution.values = uint64(opts.MaxValueBytes)
++	st.execution.output = uint64(opts.MaxOutputBytes)

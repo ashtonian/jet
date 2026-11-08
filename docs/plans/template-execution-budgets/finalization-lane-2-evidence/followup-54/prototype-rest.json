@@ -1,0 +1,257 @@
+[
+  {
+    "variant": "baseline",
+    "sample": 0,
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/followup-54/variants/baseline/render.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkExecutionModes$/(legacy_stream|metered_background_stream|metered_live_stream)$/(nested_writing|header_interpolation)$/text$",
+      "-test.benchtime=200ms",
+      "-test.count=1"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "kill_after": 5,
+    "elapsed": 1.8104710578918457
+  },
+  {
+    "variant": "setup",
+    "sample": 0,
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/followup-54/variants/setup/render.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkExecutionModes$/(legacy_stream|metered_background_stream|metered_live_stream)$/(nested_writing|header_interpolation)$/text$",
+      "-test.benchtime=200ms",
+      "-test.count=1"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "kill_after": 5,
+    "elapsed": 1.590162992477417
+  },
+  {
+    "variant": "scope",
+    "sample": 0,
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/followup-54/variants/scope/render.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkExecutionModes$/(legacy_stream|metered_background_stream|metered_live_stream)$/(nested_writing|header_interpolation)$/text$",
+      "-test.benchtime=200ms",
+      "-test.count=1"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "kill_after": 5,
+    "elapsed": 1.7595787048339844
+  },
+  {
+    "variant": "dispatch",
+    "sample": 0,
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/followup-54/variants/dispatch/render.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkExecutionModes$/(legacy_stream|metered_background_stream|metered_live_stream)$/(nested_writing|header_interpolation)$/text$",
+      "-test.benchtime=200ms",
+      "-test.count=1"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "kill_after": 5,
+    "elapsed": 1.6170191764831543
+  },
+  {
+    "variant": "combined",
+    "sample": 0,
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/followup-54/variants/combined/render.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkExecutionModes$/(legacy_stream|metered_background_stream|metered_live_stream)$/(nested_writing|header_interpolation)$/text$",
+      "-test.benchtime=200ms",
+      "-test.count=1"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "kill_after": 5,
+    "elapsed": 1.6851060390472412
+  },
+  {
+    "variant": "combined",
+    "sample": 1,
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/followup-54/variants/combined/render.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkExecutionModes$/(legacy_stream|metered_background_stream|metered_live_stream)$/(nested_writing|header_interpolation)$/text$",
+      "-test.benchtime=200ms",
+      "-test.count=1"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "kill_after": 5,
+    "elapsed": 1.7043089866638184
+  },
+  {
+    "variant": "dispatch",
+    "sample": 1,
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/followup-54/variants/dispatch/render.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkExecutionModes$/(legacy_stream|metered_background_stream|metered_live_stream)$/(nested_writing|header_interpolation)$/text$",
+      "-test.benchtime=200ms",
+      "-test.count=1"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "kill_after": 5,
+    "elapsed": 1.581589937210083
+  },
+  {
+    "variant": "scope",
+    "sample": 1,
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/followup-54/variants/scope/render.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkExecutionModes$/(legacy_stream|metered_background_stream|metered_live_stream)$/(nested_writing|header_interpolation)$/text$",
+      "-test.benchtime=200ms",
+      "-test.count=1"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "kill_after": 5,
+    "elapsed": 1.788257122039795
+  },
+  {
+    "variant": "setup",
+    "sample": 1,
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/followup-54/variants/setup/render.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkExecutionModes$/(legacy_stream|metered_background_stream|metered_live_stream)$/(nested_writing|header_interpolation)$/text$",
+      "-test.benchtime=200ms",
+      "-test.count=1"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "kill_after": 5,
+    "elapsed": 1.568108081817627
+  },
+  {
+    "variant": "baseline",
+    "sample": 1,
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/followup-54/variants/baseline/render.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkExecutionModes$/(legacy_stream|metered_background_stream|metered_live_stream)$/(nested_writing|header_interpolation)$/text$",
+      "-test.benchtime=200ms",
+      "-test.count=1"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "kill_after": 5,
+    "elapsed": 1.610368013381958
+  },
+  {
+    "variant": "baseline",
+    "sample": 2,
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/followup-54/variants/baseline/render.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkExecutionModes$/(legacy_stream|metered_background_stream|metered_live_stream)$/(nested_writing|header_interpolation)$/text$",
+      "-test.benchtime=200ms",
+      "-test.count=1"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "kill_after": 5,
+    "elapsed": 1.649015188217163
+  },
+  {
+    "variant": "setup",
+    "sample": 2,
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/followup-54/variants/setup/render.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkExecutionModes$/(legacy_stream|metered_background_stream|metered_live_stream)$/(nested_writing|header_interpolation)$/text$",
+      "-test.benchtime=200ms",
+      "-test.count=1"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "kill_after": 5,
+    "elapsed": 1.5758731365203857
+  },
+  {
+    "variant": "scope",
+    "sample": 2,
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/followup-54/variants/scope/render.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkExecutionModes$/(legacy_stream|metered_background_stream|metered_live_stream)$/(nested_writing|header_interpolation)$/text$",
+      "-test.benchtime=200ms",
+      "-test.count=1"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "kill_after": 5,
+    "elapsed": 1.7884502410888672
+  },
+  {
+    "variant": "dispatch",
+    "sample": 2,
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/followup-54/variants/dispatch/render.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkExecutionModes$/(legacy_stream|metered_background_stream|metered_live_stream)$/(nested_writing|header_interpolation)$/text$",
+      "-test.benchtime=200ms",
+      "-test.count=1"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "kill_after": 5,
+    "elapsed": 1.6018950939178467
+  },
+  {
+    "variant": "combined",
+    "sample": 2,
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<artifacts>/followup-54/variants/combined/render.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkExecutionModes$/(legacy_stream|metered_background_stream|metered_live_stream)$/(nested_writing|header_interpolation)$/text$",
+      "-test.benchtime=200ms",
+      "-test.count=1"
+    ],
+    "exit_code": 0,
+    "deadline": 20,
+    "kill_after": 5,
+    "elapsed": 1.7792091369628906
+  }
+]

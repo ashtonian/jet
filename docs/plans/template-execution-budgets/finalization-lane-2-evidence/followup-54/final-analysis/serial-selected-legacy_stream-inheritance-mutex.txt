@@ -1,0 +1,18 @@
+File: render.test
+Type: delay
+Time: 2026-11-08 04:46:55 CST
+Showing nodes accounting for 78621ns, 100% of 78621ns total
+Dropped 23 nodes (cum <= 393ns)
+      flat  flat%   sum%        cum   cum%
+   78621ns   100%   100%    78621ns   100%  runtime.unlock (partial-inline)
+         0     0%   100%      957ns  1.22%  runtime.findRunnable
+         0     0%   100%    77499ns 98.57%  runtime.gcBgMarkWorker
+         0     0%   100%    77499ns 98.57%  runtime.gcMarkDone
+         0     0%   100%    77499ns 98.57%  runtime.gcMarkTermination
+         0     0%   100%    77499ns 98.57%  runtime.gcMarkTermination.func3
+         0     0%   100%      957ns  1.22%  runtime.mcall
+         0     0%   100%      957ns  1.22%  runtime.park_m
+         0     0%   100%      957ns  1.22%  runtime.runSafePointFn
+         0     0%   100%      957ns  1.22%  runtime.schedule
+         0     0%   100%    77499ns 98.57%  runtime.startTheWorldWithSema
+         0     0%   100%    77664ns 98.78%  runtime.systemstack

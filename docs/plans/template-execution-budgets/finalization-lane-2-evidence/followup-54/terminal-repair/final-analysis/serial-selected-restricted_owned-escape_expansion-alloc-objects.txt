@@ -1,0 +1,37 @@
+File: render.test
+Type: alloc_objects
+Time: 2026-11-08 05:27:59 CST
+Showing nodes accounting for 842069, 99.00% of 850566 total
+Dropped 44 nodes (cum <= 4252)
+Showing top 30 nodes out of 47
+      flat  flat%   sum%        cum   cum%
+    587074 69.02% 69.02%     587074 69.02%  bytes.growSlice
+     86097 10.12% 79.14%      86097 10.12%  bytes.(*Buffer).String (inline)
+     65540  7.71% 86.85%     800154 94.07%  github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext
+     57347  6.74% 93.59%     644421 75.76%  bytes.(*Buffer).grow
+     10923  1.28% 94.88%      10923  1.28%  internal/bytealg.MakeNoZero
+      9362  1.10% 95.98%       9362  1.10%  regexp.newQueue (inline)
+      8192  0.96% 96.94%       8192  0.96%  regexp/syntax.(*parser).maybeConcat
+      8192  0.96% 97.90%       8192  0.96%  testing.(*matcher).unique
+      6777   0.8% 98.70%       6777   0.8%  regexp/syntax.(*compiler).inst (inline)
+      1820  0.21% 98.91%      12764  1.50%  github.com/CloudyKit/jet/v6_test.additionalExecutionWorkloads
+       745 0.088% 99.00%      10107  1.19%  regexp.makeOnePass
+         0     0% 99.00%     644421 75.76%  bytes.(*Buffer).Write
+         0     0% 99.00%     644421 75.76%  github.com/CloudyKit/fastprinter.PrintString
+         0     0% 99.00%     644421 75.76%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 99.00%     644421 75.76%  github.com/CloudyKit/jet/v6.(*Runtime).printValue
+         0     0% 99.00%     734614 86.37%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0% 99.00%     734614 86.37%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0% 99.00%     644421 75.76%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+         0     0% 99.00%     644421 75.76%  github.com/CloudyKit/jet/v6.(*dataPrinter).Write
+         0     0% 99.00%     644421 75.76%  github.com/CloudyKit/jet/v6.(*dataPrinter).text
+         0     0% 99.00%     644421 75.76%  github.com/CloudyKit/jet/v6.(*dataPrinter).value
+         0     0% 99.00%     644421 75.76%  github.com/CloudyKit/jet/v6.(*escapeeWriter).Write
+         0     0% 99.00%      47000  5.53%  github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes
+         0     0% 99.00%     800282 94.09%  github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes.func1
+         0     0% 99.00%     800154 94.07%  github.com/CloudyKit/jet/v6_test.init.0.func5
+         0     0% 99.00%      12774  1.50%  github.com/CloudyKit/jet/v6_test.measurementWorkloads
+         0     0% 99.00%      26034  3.06%  regexp.Compile (inline)
+         0     0% 99.00%      26034  3.06%  regexp.compile
+         0     0% 99.00%      11065  1.30%  regexp.compileOnePass
+         0     0% 99.00%       6777   0.8%  regexp/syntax.(*compiler).compile

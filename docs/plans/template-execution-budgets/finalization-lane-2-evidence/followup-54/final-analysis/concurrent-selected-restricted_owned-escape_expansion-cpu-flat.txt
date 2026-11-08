@@ -1,0 +1,38 @@
+File: render.test
+Type: cpu
+Time: 2026-11-08 04:47:38 CST
+Duration: 1.38s, Total samples = 2.24s (162.46%)
+Showing nodes accounting for 2.10s, 93.75% of 2.24s total
+Dropped 49 nodes (cum <= 0.01s)
+Showing top 30 nodes out of 87
+      flat  flat%   sum%        cum   cum%
+     1.11s 49.55% 49.55%      1.11s 49.55%  runtime.madvise
+     0.24s 10.71% 60.27%      0.24s 10.71%  runtime.usleep
+     0.16s  7.14% 67.41%      0.16s  7.14%  runtime.pthread_kill
+     0.15s  6.70% 74.11%      0.54s 24.11%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+     0.07s  3.12% 77.23%      0.21s  9.38%  bytes.(*Buffer).Write
+     0.05s  2.23% 79.46%      0.05s  2.23%  bytes.(*Buffer).tryGrowByReslice (inline)
+     0.05s  2.23% 81.70%      0.07s  3.12%  context.(*cancelCtx).Err
+     0.05s  2.23% 83.93%      0.05s  2.23%  runtime.memmove
+     0.04s  1.79% 85.71%      0.14s  6.25%  github.com/CloudyKit/jet/v6.(*Runtime).reserveWork
+     0.03s  1.34% 87.05%      0.03s  1.34%  github.com/CloudyKit/jet/v6.(*Runtime).rethrowTerminal (inline)
+     0.03s  1.34% 88.39%      0.57s 25.45%  text/template.HTMLEscape
+     0.02s  0.89% 89.29%      0.02s  0.89%  bytes.(*Buffer).Len (inline)
+     0.02s  0.89% 90.18%      0.02s  0.89%  github.com/CloudyKit/jet/v6.(*Runtime).reserveUnchecked (inline)
+     0.02s  0.89% 91.07%      0.02s  0.89%  runtime.procyieldAsm
+     0.02s  0.89% 91.96%      0.02s  0.89%  sync/atomic.(*Value).Load (inline)
+     0.01s  0.45% 92.41%      0.02s  0.89%  runtime.(*mheap).initSpan
+     0.01s  0.45% 92.86%      0.25s 11.16%  runtime.lock2
+     0.01s  0.45% 93.30%      0.02s  0.89%  runtime.scanframeworker
+     0.01s  0.45% 93.75%      0.04s  1.79%  runtime.scanstack
+         0     0% 93.75%      0.06s  2.68%  bytes.(*Buffer).grow
+         0     0% 93.75%      0.05s  2.23%  bytes.growSlice
+         0     0% 93.75%      0.59s 26.34%  github.com/CloudyKit/fastprinter.PrintString
+         0     0% 93.75%      0.59s 26.34%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 93.75%      0.59s 26.34%  github.com/CloudyKit/jet/v6.(*Runtime).printValue
+         0     0% 93.75%      0.61s 27.23%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0% 93.75%      0.61s 27.23%  github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext
+         0     0% 93.75%      0.61s 27.23%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0% 93.75%      0.58s 25.89%  github.com/CloudyKit/jet/v6.(*dataPrinter).Write
+         0     0% 93.75%      0.59s 26.34%  github.com/CloudyKit/jet/v6.(*dataPrinter).text
+         0     0% 93.75%      0.59s 26.34%  github.com/CloudyKit/jet/v6.(*dataPrinter).value

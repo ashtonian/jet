@@ -1,0 +1,17 @@
+gate-lock: held by pid <pid> on <host>, "jet-lane2-followup-output-factor 54b5614 in <checkout>", since 2026-11-08T10:14:36Z
+gate-lock: held by pid <pid> on <host>, "jet-lane2-followup-output-factor 54b5614 in <checkout>", since 2026-11-08T10:14:37Z
+0 combined 0
+0 buffer-fast 0
+0 methodless 0
+0 both-output 0
+0 legacy-setup 0
+1 legacy-setup 0
+1 both-output 0
+1 methodless 0
+1 buffer-fast 0
+1 combined 0
+2 combined 0
+2 buffer-fast 0
+2 methodless 0
+2 both-output 0
+2 legacy-setup 0

@@ -1,0 +1,22 @@
+File: render.test
+Type: delay
+Time: 2026-11-08 04:47:00 CST
+Showing nodes accounting for 20.71us, 100% of 20.71us total
+      flat  flat%   sum%        cum   cum%
+   20.71us   100%   100%    20.71us   100%  runtime.unlock (partial-inline)
+         0     0%   100%     2.62us 12.68%  runtime.(*mheap).freeSpan (inline)
+         0     0%   100%     2.62us 12.68%  runtime.(*mheap).freeSpan.func1
+         0     0%   100%     2.62us 12.68%  runtime.(*sweepLocked).sweep
+         0     0%   100%    18.08us 87.32%  runtime.allocm
+         0     0%   100%     2.62us 12.68%  runtime.bgsweep
+         0     0%   100%    18.08us 87.32%  runtime.gcBgMarkWorker
+         0     0%   100%    18.08us 87.32%  runtime.gcMarkDone
+         0     0%   100%    18.08us 87.32%  runtime.gcMarkTermination
+         0     0%   100%    18.08us 87.32%  runtime.gcMarkTermination.func3
+         0     0%   100%    18.08us 87.32%  runtime.mcommoninit
+         0     0%   100%    18.08us 87.32%  runtime.newm
+         0     0%   100%    18.08us 87.32%  runtime.startTheWorldWithSema
+         0     0%   100%    18.08us 87.32%  runtime.startm
+         0     0%   100%     2.62us 12.68%  runtime.sweepone
+         0     0%   100%    20.71us   100%  runtime.systemstack
+         0     0%   100%    18.08us 87.32%  runtime.wakep

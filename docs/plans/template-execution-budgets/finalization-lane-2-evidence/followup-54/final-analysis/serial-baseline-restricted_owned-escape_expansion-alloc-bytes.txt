@@ -1,0 +1,28 @@
+File: render.test
+Type: alloc_space
+Time: 2026-11-08 04:46:35 CST
+Showing nodes accounting for 1060.32MB, 99.11% of 1069.90MB total
+Dropped 67 nodes (cum <= 5.35MB)
+      flat  flat%   sum%        cum   cum%
+  744.44MB 69.58% 69.58%   744.44MB 69.58%  bytes.growSlice
+  302.89MB 28.31% 97.89%   302.89MB 28.31%  bytes.(*Buffer).String (inline)
+       8MB  0.75% 98.64%   752.44MB 70.33%  bytes.(*Buffer).grow
+       5MB  0.47% 99.11%  1060.82MB 99.15%  github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext
+         0     0% 99.11%   752.44MB 70.33%  bytes.(*Buffer).Write
+         0     0% 99.11%   752.94MB 70.37%  github.com/CloudyKit/fastprinter.PrintString
+         0     0% 99.11%   752.94MB 70.37%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 99.11%   752.94MB 70.37%  github.com/CloudyKit/jet/v6.(*Runtime).printValue
+         0     0% 99.11%  1055.82MB 98.68%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0% 99.11%  1055.82MB 98.68%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0% 99.11%   752.44MB 70.33%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+         0     0% 99.11%   752.44MB 70.33%  github.com/CloudyKit/jet/v6.(*dataPrinter).Write
+         0     0% 99.11%   752.94MB 70.37%  github.com/CloudyKit/jet/v6.(*dataPrinter).text
+         0     0% 99.11%   752.94MB 70.37%  github.com/CloudyKit/jet/v6.(*dataPrinter).value
+         0     0% 99.11%   752.44MB 70.33%  github.com/CloudyKit/jet/v6.(*escapeeWriter).Write
+         0     0% 99.11%     5.71MB  0.53%  github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes
+         0     0% 99.11%  1060.82MB 99.15%  github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes.func1
+         0     0% 99.11%  1060.82MB 99.15%  github.com/CloudyKit/jet/v6_test.init.0.func5
+         0     0% 99.11%  1060.82MB 99.15%  testing.(*B).launch
+         0     0% 99.11%     5.71MB  0.53%  testing.(*B).run1.func1
+         0     0% 99.11%  1066.53MB 99.69%  testing.(*B).runN
+         0     0% 99.11%   752.44MB 70.33%  text/template.HTMLEscape

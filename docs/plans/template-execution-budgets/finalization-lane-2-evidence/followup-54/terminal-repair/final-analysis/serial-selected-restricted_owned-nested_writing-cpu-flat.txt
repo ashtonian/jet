@@ -1,0 +1,37 @@
+File: render.test
+Type: cpu
+Time: 2026-11-08 05:27:54 CST
+Duration: 1.71s, Total samples = 1430ms (83.44%)
+Showing nodes accounting for 1280ms, 89.51% of 1430ms total
+Showing top 30 nodes out of 102
+      flat  flat%   sum%        cum   cum%
+      90ms  6.29%  6.29%      130ms  9.09%  context.(*cancelCtx).Err
+      90ms  6.29% 12.59%       90ms  6.29%  github.com/CloudyKit/jet/v6.(*Runtime).reserveUnchecked (inline)
+      80ms  5.59% 18.18%       90ms  6.29%  github.com/CloudyKit/jet/v6.(*Runtime).checkNode
+      80ms  5.59% 23.78%     1320ms 92.31%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+      80ms  5.59% 29.37%       90ms  6.29%  runtime.ifaceeq
+      70ms  4.90% 34.27%      290ms 20.28%  github.com/CloudyKit/jet/v6.(*Runtime).reserveWork
+      70ms  4.90% 39.16%      180ms 12.59%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+      60ms  4.20% 43.36%      420ms 29.37%  github.com/CloudyKit/jet/v6.(*Runtime).advanceRanger
+      60ms  4.20% 47.55%      200ms 13.99%  github.com/CloudyKit/jet/v6.(*Runtime).allowCall
+      50ms  3.50% 51.05%       50ms  3.50%  reflect.Value.Elem
+      40ms  2.80% 53.85%       80ms  5.59%  bytes.(*Buffer).Write
+      40ms  2.80% 56.64%      160ms 11.19%  github.com/CloudyKit/jet/v6.(*Runtime).evalBaseExpressionGroup
+      40ms  2.80% 59.44%       40ms  2.80%  runtime.kevent
+      40ms  2.80% 62.24%       40ms  2.80%  runtime.madvise
+      40ms  2.80% 65.03%       40ms  2.80%  sync/atomic.(*Value).Load (inline)
+      30ms  2.10% 67.13%      130ms  9.09%  github.com/CloudyKit/jet/v6.(*Runtime).enter (inline)
+      30ms  2.10% 69.23%      100ms  6.99%  github.com/CloudyKit/jet/v6.(*Runtime).enterActive
+      30ms  2.10% 71.33%       30ms  2.10%  github.com/CloudyKit/jet/v6.(*Runtime).leave (partial-inline)
+      30ms  2.10% 73.43%       70ms  4.90%  github.com/CloudyKit/jet/v6.(*intsRanger).Range
+      30ms  2.10% 75.52%       70ms  4.90%  github.com/CloudyKit/jet/v6.builtinForValue
+      20ms  1.40% 76.92%      290ms 20.28%  github.com/CloudyKit/jet/v6.(*Runtime).beforeCall
+      20ms  1.40% 78.32%      290ms 20.28%  github.com/CloudyKit/jet/v6.(*Runtime).checkpoint (inline)
+      20ms  1.40% 79.72%       40ms  2.80%  github.com/CloudyKit/jet/v6.(*Runtime).executeList.func1
+      20ms  1.40% 81.12%       20ms  1.40%  internal/abi.(*Type).IsDirectIface (inline)
+      20ms  1.40% 82.52%       30ms  2.10%  reflect.packEfaceData
+      20ms  1.40% 83.92%       20ms  1.40%  reflect.resolveNameOff
+      20ms  1.40% 85.31%       20ms  1.40%  runtime.(*spanInlineMarkBits).init
+      20ms  1.40% 86.71%       30ms  2.10%  runtime.mapaccess1_fast64
+      20ms  1.40% 88.11%       40ms  2.80%  runtime.mapaccess2_faststr
+      20ms  1.40% 89.51%       20ms  1.40%  runtime.memmove

@@ -1,0 +1,5 @@
+--- a/execution_print.go
++++ b/execution_print.go
+@@ -68 +68 @@
+-	if v.Type().Implements(formatterType) || v.Type().Implements(stringerType) || v.Type().Implements(errorType) {
++	if typ := v.Type(); typ.NumMethod() != 0 && (typ.Implements(formatterType) || typ.Implements(stringerType) || typ.Implements(errorType)) {

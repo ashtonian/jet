@@ -1,0 +1,37 @@
+File: candidate.test
+Type: alloc_objects
+Time: 2026-11-08 03:57:39 CST
+Showing nodes accounting for 48948, 99.90% of 48996 total
+Dropped 36 nodes (cum <= 244)
+Showing top 30 nodes out of 34
+      flat  flat%   sum%        cum   cum%
+     32768 66.88% 66.88%      32768 66.88%  regexp.makeOnePass.func1
+     10955 22.36% 89.24%      10987 22.42%  github.com/CloudyKit/jet/v6_test.additionalExecutionWorkloads
+      3277  6.69% 95.93%       3277  6.69%  compress/gzip.NewWriterLevel
+       745  1.52% 97.45%        745  1.52%  regexp/syntax.(*compiler).inst (inline)
+       617  1.26% 98.71%        617  1.26%  slices.Grow[go.shape.[]uint8,go.shape.uint8] (inline)
+       586  1.20% 99.90%        586  1.20%  regexp.onePassCopy
+         0     0% 99.90%        593  1.21%  encoding/json.Unmarshal (inline)
+         0     0% 99.90%        585  1.19%  encoding/json/internal/jsonwire.AppendUnquote
+         0     0% 99.90%        585  1.19%  encoding/json/internal/jsonwire.UnquoteMayCopy
+         0     0% 99.90%        593  1.21%  encoding/json/v2.Unmarshal
+         0     0% 99.90%        585  1.19%  encoding/json/v2.makeInterfaceArshaler.func2
+         0     0% 99.90%        585  1.19%  encoding/json/v2.makeMapArshaler.func3
+         0     0% 99.90%        593  1.21%  encoding/json/v2.makeSliceArshaler.func3
+         0     0% 99.90%        593  1.21%  encoding/json/v2.makeStringArshaler.func2
+         0     0% 99.90%        593  1.21%  encoding/json/v2.makeStructArshaler.func3
+         0     0% 99.90%        593  1.21%  encoding/json/v2.unmarshalDecode
+         0     0% 99.90%      45684 93.24%  github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes
+         0     0% 99.90%        598  1.22%  github.com/CloudyKit/jet/v6_test.executionWorkloads
+         0     0% 99.90%      11585 23.64%  github.com/CloudyKit/jet/v6_test.measurementWorkloads
+         0     0% 99.90%      34099 69.60%  regexp.Compile (inline)
+         0     0% 99.90%      34099 69.60%  regexp.compile
+         0     0% 99.90%      33354 68.07%  regexp.compileOnePass
+         0     0% 99.90%      32768 66.88%  regexp.makeOnePass
+         0     0% 99.90%        745  1.52%  regexp/syntax.(*compiler).compile
+         0     0% 99.90%        745  1.52%  regexp/syntax.(*compiler).rune
+         0     0% 99.90%        745  1.52%  regexp/syntax.Compile
+         0     0% 99.90%       3277  6.69%  runtime/pprof.newProfileBuilder
+         0     0% 99.90%       3291  6.72%  runtime/pprof.profileWriter
+         0     0% 99.90%      34099 69.60%  testing.(*B).Run
+         0     0% 99.90%      45684 93.24%  testing.(*B).run1.func1

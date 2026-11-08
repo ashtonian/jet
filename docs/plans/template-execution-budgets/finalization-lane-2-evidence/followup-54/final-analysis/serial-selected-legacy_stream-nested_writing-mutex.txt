@@ -1,0 +1,22 @@
+File: render.test
+Type: delay
+Time: 2026-11-08 04:46:56 CST
+Showing nodes accounting for 2125ns, 100% of 2125ns total
+      flat  flat%   sum%        cum   cum%
+    2125ns   100%   100%     2125ns   100%  runtime.unlock (inline)
+         0     0%   100%     1625ns 76.47%  runtime.allocm
+         0     0%   100%      500ns 23.53%  runtime.findRunnable
+         0     0%   100%     1625ns 76.47%  runtime.forEachP (inline)
+         0     0%   100%     1625ns 76.47%  runtime.forEachP.func1
+         0     0%   100%     1625ns 76.47%  runtime.forEachPInternal
+         0     0%   100%     1625ns 76.47%  runtime.gcBgMarkWorker
+         0     0%   100%     1625ns 76.47%  runtime.gcMarkDone
+         0     0%   100%     1625ns 76.47%  runtime.handoffp
+         0     0%   100%      500ns 23.53%  runtime.mcall
+         0     0%   100%     1625ns 76.47%  runtime.mcommoninit
+         0     0%   100%     1625ns 76.47%  runtime.newm
+         0     0%   100%      500ns 23.53%  runtime.park_m
+         0     0%   100%      500ns 23.53%  runtime.runSafePointFn
+         0     0%   100%      500ns 23.53%  runtime.schedule
+         0     0%   100%     1625ns 76.47%  runtime.startm
+         0     0%   100%     1625ns 76.47%  runtime.systemstack

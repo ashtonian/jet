@@ -1,0 +1,37 @@
+File: render.test
+Type: alloc_objects
+Time: 2026-11-08 04:47:00 CST
+Showing nodes accounting for 50094, 92.06% of 54415 total
+Dropped 20 nodes (cum <= 272)
+Showing top 30 nodes out of 38
+      flat  flat%   sum%        cum   cum%
+         0     0%     0%      39843 73.22%  github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes
+         0     0%     0%      39843 73.22%  testing.(*B).run1.func1
+         0     0%     0%      39843 73.22%  testing.(*B).runN
+         0     0%     0%      36481 67.04%  github.com/CloudyKit/jet/v6_test.measurementWorkloads
+      3673  6.75%  6.75%      36462 67.01%  github.com/CloudyKit/jet/v6_test.additionalExecutionWorkloads
+         0     0%  6.75%      32768 60.22%  encoding/json.Marshal (inline)
+         0     0%  6.75%      32768 60.22%  encoding/json/v2.Marshal
+         0     0%  6.75%      32768 60.22%  encoding/json/v2.makeInterfaceArshaler.func1
+         0     0%  6.75%      32768 60.22%  encoding/json/v2.makeMapArshaler.func2
+         0     0%  6.75%      32768 60.22%  encoding/json/v2.makeSliceArshaler.func2
+         0     0%  6.75%      32768 60.22%  encoding/json/v2.marshalEncode
+         0     0%  6.75%      32768 60.22%  encoding/json/v2.newAddressableValue
+         0     0%  6.75%      32768 60.22%  reflect.New
+     32768 60.22% 66.97%      32768 60.22%  reflect.unsafe_New
+         0     0% 66.97%       9107 16.74%  runtime.main
+         0     0% 66.97%       8192 15.05%  internal/sysinfo.init
+         0     0% 66.97%       8192 15.05%  runtime.doInit (inline)
+         0     0% 66.97%       8192 15.05%  runtime.doInit1
+      8192 15.05% 82.02%       8192 15.05%  sync.OnceValue[go.shape.string] (inline)
+         0     0% 82.02%       5465 10.04%  runtime/pprof.(*profileBuilder).build
+         0     0% 82.02%       5465 10.04%  runtime/pprof.profileWriter
+         0     0% 82.02%       5461 10.04%  runtime/pprof.(*profileBuilder).appendLocsForStack
+      5461 10.04% 92.06%       5461 10.04%  runtime/pprof.(*profileBuilder).emitLocation
+         0     0% 92.06%       3362  6.18%  regexp.Compile (inline)
+         0     0% 92.06%       3362  6.18%  regexp.compile
+         0     0% 92.06%       3362  6.18%  testing.(*B).Run
+         0     0% 92.06%       3362  6.18%  testing.(*matcher).fullName
+         0     0% 92.06%       3362  6.18%  testing.simpleMatch.matches
+         0     0% 92.06%       3362  6.18%  testing/internal/testdeps.TestDeps.MatchString
+         0     0% 92.06%       2617  4.81%  regexp.compileOnePass

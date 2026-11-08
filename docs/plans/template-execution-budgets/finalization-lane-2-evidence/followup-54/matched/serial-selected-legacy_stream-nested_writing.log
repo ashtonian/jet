@@ -1,0 +1,24 @@
+goos: darwin
+goarch: arm64
+pkg: github.com/CloudyKit/jet/v6
+cpu: Apple M2 Max
+BenchmarkExecutionModes/legacy_stream/nested_writing/text-2         	   69840	     16435 ns/op	    1584 B/op	      66 allocs/op
+PASS
+        1.52 real         1.32 user         0.02 sys
+            15925248  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                1183  page reclaims
+                  13  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                 436  signals received
+                   7  voluntary context switches
+                1200  involuntary context switches
+         26899286759  instructions retired
+          4534438182  cycles elapsed
+             9634344  peak memory footprint

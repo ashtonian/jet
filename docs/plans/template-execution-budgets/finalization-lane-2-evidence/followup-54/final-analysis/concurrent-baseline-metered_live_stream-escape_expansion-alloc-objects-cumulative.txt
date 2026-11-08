@@ -1,0 +1,37 @@
+File: render.test
+Type: alloc_objects
+Time: 2026-11-08 04:46:49 CST
+Showing nodes accounting for 60131, 87.06% of 69065 total
+Dropped 21 nodes (cum <= 345)
+Showing top 30 nodes out of 47
+      flat  flat%   sum%        cum   cum%
+         0     0%     0%      65777 95.24%  github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes
+         0     0%     0%      65777 95.24%  testing.(*B).run1.func1
+         0     0%     0%      65777 95.24%  testing.(*B).runN
+         0     0%     0%      53721 77.78%  testing.(*B).Run
+         0     0%     0%      53721 77.78%  testing.(*matcher).fullName
+         0     0%     0%      53721 77.78%  testing.simpleMatch.matches
+         0     0%     0%      53721 77.78%  testing/internal/testdeps.TestDeps.MatchString
+         0     0%     0%      45529 65.92%  regexp.Compile (inline)
+      3277  4.74%  4.74%      45529 65.92%  regexp.compile
+         0     0%  4.74%      32768 47.45%  regexp.onePassPrefix
+         0     0%  4.74%      32768 47.45%  strings.(*Builder).WriteRune
+     32768 47.45% 52.19%      32768 47.45%  unicode/utf8.AppendRune (inline)
+         0     0% 52.19%      12056 17.46%  github.com/CloudyKit/jet/v6_test.measurementWorkloads
+        32 0.046% 52.24%      10955 15.86%  github.com/CloudyKit/jet/v6_test.additionalExecutionWorkloads
+     10923 15.82% 68.05%      10923 15.82%  internal/bytealg.MakeNoZero
+         0     0% 68.05%      10923 15.82%  strings.(*Builder).Grow
+         0     0% 68.05%      10923 15.82%  strings.(*Builder).grow
+         0     0% 68.05%      10923 15.82%  strings.Repeat
+         0     0% 68.05%       8192 11.86%  regexp.(*Regexp).MatchString (inline)
+         0     0% 68.05%       8192 11.86%  regexp.(*Regexp).doMatch (inline)
+         0     0% 68.05%       8192 11.86%  regexp.(*Regexp).doOnePass
+         0     0% 68.05%       8192 11.86%  regexp.(*Regexp).find
+         0     0% 68.05%       8192 11.86%  regexp.newOnePassMachine (inline)
+         0     0% 68.05%       8192 11.86%  sync.(*Pool).Get
+         0     0% 68.05%       8192 11.86%  sync.(*Pool).pin
+      8192 11.86% 79.91%       8192 11.86%  sync.(*Pool).pinSlow
+         0     0% 79.91%       4939  7.15%  regexp/syntax.(*compiler).compile
+      4939  7.15% 87.06%       4939  7.15%  regexp/syntax.(*compiler).inst (inline)
+         0     0% 87.06%       4939  7.15%  regexp/syntax.Compile
+         0     0% 87.06%       4768  6.90%  regexp/syntax.(*compiler).rune

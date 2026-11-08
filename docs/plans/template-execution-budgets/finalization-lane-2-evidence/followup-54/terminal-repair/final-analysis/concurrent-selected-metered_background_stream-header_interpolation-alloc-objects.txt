@@ -1,0 +1,33 @@
+File: render.test
+Type: alloc_objects
+Time: 2026-11-08 05:27:37 CST
+Showing nodes accounting for 46895, 99.81% of 46982 total
+Dropped 26 nodes (cum <= 234)
+      flat  flat%   sum%        cum   cum%
+     10923 23.25% 23.25%      10923 23.25%  github.com/CloudyKit/jet/v6_test.additionalExecutionWorkloads
+      8193 17.44% 40.69%      16385 34.88%  regexp/syntax.parse
+      8192 17.44% 58.12%       8192 17.44%  regexp/syntax.(*parser).maybeConcat
+      6747 14.36% 72.49%       6747 14.36%  regexp/syntax.(*compiler).inst (inline)
+      6554 13.95% 86.44%      32567 69.32%  regexp.compile
+      3277  6.98% 93.41%       3277  6.98%  compress/gzip.NewWriterLevel
+      2075  4.42% 97.83%       2075  4.42%  regexp.makeOnePass
+       806  1.72% 99.54%        806  1.72%  regexp.onePassCopy
+       128  0.27% 99.81%      11133 23.70%  github.com/CloudyKit/jet/v6_test.measurementWorkloads
+         0     0% 99.81%      43700 93.01%  github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes
+         0     0% 99.81%      32567 69.32%  regexp.Compile (inline)
+         0     0% 99.81%       2881  6.13%  regexp.compileOnePass
+         0     0% 99.81%       6747 14.36%  regexp/syntax.(*compiler).compile
+         0     0% 99.81%        342  0.73%  regexp/syntax.(*compiler).empty (inline)
+         0     0% 99.81%       6405 13.63%  regexp/syntax.(*compiler).rune
+         0     0% 99.81%       8192 17.44%  regexp/syntax.(*parser).literal
+         0     0% 99.81%       8192 17.44%  regexp/syntax.(*parser).push
+         0     0% 99.81%       6747 14.36%  regexp/syntax.Compile
+         0     0% 99.81%      16385 34.88%  regexp/syntax.Parse (inline)
+         0     0% 99.81%       3277  6.98%  runtime/pprof.newProfileBuilder
+         0     0% 99.81%       3281  6.98%  runtime/pprof.profileWriter
+         0     0% 99.81%      32567 69.32%  testing.(*B).Run
+         0     0% 99.81%      43700 93.01%  testing.(*B).run1.func1
+         0     0% 99.81%      43700 93.01%  testing.(*B).runN
+         0     0% 99.81%      32567 69.32%  testing.(*matcher).fullName
+         0     0% 99.81%      32567 69.32%  testing.simpleMatch.matches
+         0     0% 99.81%      32567 69.32%  testing/internal/testdeps.TestDeps.MatchString

@@ -1,0 +1,37 @@
+File: render.test
+Type: cpu
+Time: 2026-11-08 04:46:34 CST
+Duration: 1.41s, Total samples = 1.30s (92.19%)
+Showing nodes accounting for 1.29s, 99.23% of 1.30s total
+Showing top 30 nodes out of 123
+      flat  flat%   sum%        cum   cum%
+     0.36s 27.69% 27.69%      0.36s 27.69%  runtime.kevent
+     0.13s 10.00% 37.69%      0.52s 40.00%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+     0.13s 10.00% 47.69%      0.13s 10.00%  runtime.usleep
+     0.10s  7.69% 55.38%      0.10s  7.69%  runtime.pthread_kill
+     0.09s  6.92% 62.31%      0.22s 16.92%  bytes.(*Buffer).Write
+     0.09s  6.92% 69.23%      0.10s  7.69%  context.(*cancelCtx).Err
+     0.07s  5.38% 74.62%      0.07s  5.38%  runtime.memmove
+     0.06s  4.62% 79.23%      0.16s 12.31%  github.com/CloudyKit/jet/v6.(*Runtime).reserveWork
+     0.04s  3.08% 82.31%      0.04s  3.08%  runtime.madvise
+     0.02s  1.54% 83.85%      0.02s  1.54%  runtime.pthread_cond_wait
+     0.01s  0.77% 84.62%      0.01s  0.77%  bytes.(*Buffer).Len (inline)
+     0.01s  0.77% 85.38%      0.01s  0.77%  bytes.(*Buffer).tryGrowByReslice (inline)
+     0.01s  0.77% 86.15%      0.01s  0.77%  bytes.growSlice.func1
+     0.01s  0.77% 86.92%      0.01s  0.77%  github.com/CloudyKit/jet/v6.(*Runtime).checkpoint
+     0.01s  0.77% 87.69%      0.01s  0.77%  github.com/CloudyKit/jet/v6.(*parseAdmission).prepareSource
+     0.01s  0.77% 88.46%      0.01s  0.77%  github.com/CloudyKit/jet/v6.borrowInputVars
+     0.01s  0.77% 89.23%      0.01s  0.77%  internal/runtime/atomic.(*UnsafePointer).StoreNoWB
+     0.01s  0.77% 90.00%      0.01s  0.77%  internal/runtime/maps.(*Iter).Next
+     0.01s  0.77% 90.77%      0.01s  0.77%  runtime.(*sysMemStat).add
+     0.01s  0.77% 91.54%      0.01s  0.77%  runtime.alignDown (inline)
+     0.01s  0.77% 92.31%      0.01s  0.77%  runtime.asyncPreempt
+     0.01s  0.77% 93.08%      0.04s  3.08%  runtime.mallocgcSmallNoscan
+     0.01s  0.77% 93.85%      0.01s  0.77%  runtime.nextFreeFast (inline)
+     0.01s  0.77% 94.62%      0.01s  0.77%  runtime.pthread_cond_signal
+     0.01s  0.77% 95.38%      0.01s  0.77%  runtime.pthread_cond_timedwait_relative_np
+     0.01s  0.77% 96.15%      0.01s  0.77%  runtime.scanblock
+     0.01s  0.77% 96.92%      0.02s  1.54%  runtime.tryDeferToSpanScan
+     0.01s  0.77% 97.69%      0.01s  0.77%  runtime.typePointers.next
+     0.01s  0.77% 98.46%      0.01s  0.77%  runtime.unlock2
+     0.01s  0.77% 99.23%      0.01s  0.77%  sync/atomic.(*Value).Load (inline)

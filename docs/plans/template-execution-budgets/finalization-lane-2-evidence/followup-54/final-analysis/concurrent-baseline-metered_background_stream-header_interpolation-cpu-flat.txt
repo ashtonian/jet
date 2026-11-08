@@ -1,0 +1,38 @@
+File: render.test
+Type: cpu
+Time: 2026-11-08 04:46:41 CST
+Duration: 1.55s, Total samples = 2.20s (142.01%)
+Showing nodes accounting for 1.71s, 77.73% of 2.20s total
+Dropped 56 nodes (cum <= 0.01s)
+Showing top 30 nodes out of 63
+      flat  flat%   sum%        cum   cum%
+     0.19s  8.64%  8.64%      0.21s  9.55%  github.com/CloudyKit/jet/v6.(*Runtime).reserveWork
+     0.14s  6.36% 15.00%         2s 90.91%  github.com/CloudyKit/jet/v6.(*Template).execute
+     0.12s  5.45% 20.45%      0.32s 14.55%  github.com/CloudyKit/jet/v6.(*Runtime).checkpoint
+     0.12s  5.45% 25.91%      0.13s  5.91%  sync.(*Pool).pin
+     0.10s  4.55% 30.45%      0.16s  7.27%  github.com/CloudyKit/jet/v6.(*Runtime).enter
+     0.08s  3.64% 34.09%      1.17s 53.18%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+     0.08s  3.64% 37.73%      0.21s  9.55%  sync.(*Pool).Put
+     0.07s  3.18% 40.91%      2.14s 97.27%  github.com/CloudyKit/jet/v6_test.init.0.func2
+     0.06s  2.73% 43.64%      0.26s 11.82%  github.com/CloudyKit/jet/v6.(*Runtime).recover
+     0.06s  2.73% 46.36%      0.06s  2.73%  runtime.memequal
+     0.05s  2.27% 48.64%      0.05s  2.27%  bytes.(*Buffer).tryGrowByReslice (inline)
+     0.05s  2.27% 50.91%      0.13s  5.91%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+     0.05s  2.27% 53.18%      0.15s  6.82%  reflect.(*rtype).Implements
+     0.05s  2.27% 55.45%      0.07s  3.18%  reflect.implements
+     0.05s  2.27% 57.73%      0.05s  2.27%  runtime.ifaceeq
+     0.04s  1.82% 59.55%      0.04s  1.82%  github.com/CloudyKit/jet/v6.(*Runtime).printValue.func1
+     0.04s  1.82% 61.36%      0.04s  1.82%  github.com/CloudyKit/jet/v6.(*parseAdmission).init
+     0.03s  1.36% 62.73%      0.21s  9.55%  github.com/CloudyKit/jet/v6.(*Runtime).evalPrimaryExpressionGroup
+     0.03s  1.36% 64.09%      0.28s 12.73%  github.com/CloudyKit/jet/v6.(*Runtime).startCompilation
+     0.03s  1.36% 65.45%      2.03s 92.27%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+     0.03s  1.36% 66.82%      0.18s  8.18%  github.com/CloudyKit/jet/v6.(*parseAdmission).admitCached
+     0.03s  1.36% 68.18%      2.17s 98.64%  github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes.func1.1
+     0.03s  1.36% 69.55%      0.03s  1.36%  github.com/CloudyKit/jet/v6_test.measurementExecutionOptions (inline)
+     0.03s  1.36% 70.91%      0.03s  1.36%  internal/runtime/maps.(*Map).getWithoutKeySmallFastStr
+     0.03s  1.36% 72.27%      0.03s  1.36%  runtime.deferprocStack
+     0.03s  1.36% 73.64%      0.03s  1.36%  runtime.procUnpin (inline)
+     0.03s  1.36% 75.00%      0.07s  3.18%  sync.(*Pool).Get
+     0.02s  0.91% 75.91%      0.17s  7.73%  github.com/CloudyKit/fastprinter.PrintString
+     0.02s  0.91% 76.82%      0.02s  0.91%  github.com/CloudyKit/jet/v6.(*Runtime).beforeData
+     0.02s  0.91% 77.73%      0.04s  1.82%  github.com/CloudyKit/jet/v6.(*Runtime).checkNode

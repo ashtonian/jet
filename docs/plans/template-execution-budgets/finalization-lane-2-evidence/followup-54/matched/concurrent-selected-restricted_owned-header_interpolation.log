@@ -1,0 +1,24 @@
+goos: darwin
+goarch: arm64
+pkg: github.com/CloudyKit/jet/v6
+cpu: Apple M2 Max
+BenchmarkConcurrentExecutionModes/restricted_owned/header_interpolation/text/workers_2/shared_true-2         	 3244729	       423.0 ns/op	     152 B/op	       3 allocs/op
+PASS
+        1.88 real         2.98 user         0.09 sys
+            16777216  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                1243  page reclaims
+                   0  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                1960  signals received
+                  29  voluntary context switches
+               11711  involuntary context switches
+         37533850988  instructions retired
+          9963358817  cycles elapsed
+            10240528  peak memory footprint

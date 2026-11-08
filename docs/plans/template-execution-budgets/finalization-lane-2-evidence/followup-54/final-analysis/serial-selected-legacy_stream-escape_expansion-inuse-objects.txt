@@ -1,0 +1,10 @@
+File: render.test
+Type: inuse_objects
+Time: 2026-11-08 04:47:00 CST
+Showing nodes accounting for 8192, 100% of 8192 total
+      flat  flat%   sum%        cum   cum%
+      8192   100%   100%       8192   100%  sync.OnceValue[go.shape.string] (inline)
+         0     0%   100%       8192   100%  internal/sysinfo.init
+         0     0%   100%       8192   100%  runtime.doInit (inline)
+         0     0%   100%       8192   100%  runtime.doInit1
+         0     0%   100%       8192   100%  runtime.main

@@ -1,0 +1,36 @@
+File: render.test
+Type: cpu
+Time: 2026-11-08 04:47:06 CST
+Duration: 1.41s, Total samples = 1.17s (82.83%)
+Showing nodes accounting for 1.17s, 100% of 1.17s total
+      flat  flat%   sum%        cum   cum%
+         0     0%     0%      1.15s 98.29%  github.com/CloudyKit/fastprinter.PrintString
+         0     0%     0%      1.15s 98.29%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0%     0%      1.15s 98.29%  github.com/CloudyKit/jet/v6.(*Runtime).printValue
+         0     0%     0%      1.15s 98.29%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0%     0%      1.15s 98.29%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0%     0%      1.15s 98.29%  github.com/CloudyKit/jet/v6.(*dataPrinter).Write
+         0     0%     0%      1.15s 98.29%  github.com/CloudyKit/jet/v6.(*dataPrinter).text
+         0     0%     0%      1.15s 98.29%  github.com/CloudyKit/jet/v6.(*dataPrinter).value
+         0     0%     0%      1.15s 98.29%  github.com/CloudyKit/jet/v6.(*escapeeWriter).Write
+         0     0%     0%      1.15s 98.29%  github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes.func1
+         0     0%     0%      1.15s 98.29%  github.com/CloudyKit/jet/v6_test.init.0.func2
+         0     0%     0%      1.15s 98.29%  testing.(*B).launch
+         0     0%     0%      1.15s 98.29%  testing.(*B).runN
+     0.14s 11.97% 11.97%      1.15s 98.29%  text/template.HTMLEscape
+     0.28s 23.93% 35.90%      1.01s 86.32%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+     0.30s 25.64% 61.54%      0.45s 38.46%  bytes.(*Buffer).Write
+     0.19s 16.24% 77.78%      0.22s 18.80%  github.com/CloudyKit/jet/v6.(*Runtime).reserveWork
+     0.10s  8.55% 86.32%      0.10s  8.55%  runtime.memmove
+     0.08s  6.84% 93.16%      0.08s  6.84%  github.com/CloudyKit/jet/v6.(*Runtime).reserveUnchecked (inline)
+     0.05s  4.27% 97.44%      0.05s  4.27%  bytes.(*Buffer).tryGrowByReslice (inline)
+         0     0% 97.44%      0.02s  1.71%  runtime.gopreempt_m (inline)
+         0     0% 97.44%      0.02s  1.71%  runtime.goschedImpl
+         0     0% 97.44%      0.02s  1.71%  runtime.morestack
+         0     0% 97.44%      0.02s  1.71%  runtime.newstack
+         0     0% 97.44%      0.02s  1.71%  runtime.notewakeup
+     0.02s  1.71% 99.15%      0.02s  1.71%  runtime.pthread_cond_signal
+         0     0% 99.15%      0.02s  1.71%  runtime.semawakeup
+         0     0% 99.15%      0.02s  1.71%  runtime.startm
+         0     0% 99.15%      0.02s  1.71%  runtime.wakep
+     0.01s  0.85%   100%      0.01s  0.85%  github.com/CloudyKit/jet/v6.(*Runtime).rethrowTerminal (inline)

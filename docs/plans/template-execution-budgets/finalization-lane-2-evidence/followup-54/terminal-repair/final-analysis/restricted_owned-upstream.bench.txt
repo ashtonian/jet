@@ -1,0 +1,34 @@
+goos: darwin
+goarch: arm64
+pkg: github.com/CloudyKit/jet/v6
+cpu: Apple M2 Max
+BenchmarkRuntimeFollowup/header_literal/text-2 18003116 73.95 ns/op 152 B/op 4 allocs/op
+BenchmarkRuntimeFollowup/header_literal/text-2 18143023 66.75 ns/op 152 B/op 4 allocs/op
+BenchmarkRuntimeFollowup/header_literal/text-2 19386262 62.71 ns/op 152 B/op 4 allocs/op
+BenchmarkRuntimeFollowup/header_literal/text-2 18949574 62.63 ns/op 152 B/op 4 allocs/op
+BenchmarkRuntimeFollowup/header_literal/text-2 17950892 69.28 ns/op 152 B/op 4 allocs/op
+BenchmarkRuntimeFollowup/header_literal/text-2 15912717 66.87 ns/op 152 B/op 4 allocs/op
+BenchmarkRuntimeFollowup/header_interpolation/text-2 10076278 119.2 ns/op 160 B/op 4 allocs/op
+BenchmarkRuntimeFollowup/header_interpolation/text-2 10090774 119.5 ns/op 160 B/op 4 allocs/op
+BenchmarkRuntimeFollowup/header_interpolation/text-2 10851986 110.8 ns/op 160 B/op 4 allocs/op
+BenchmarkRuntimeFollowup/header_interpolation/text-2 11006523 110.4 ns/op 160 B/op 4 allocs/op
+BenchmarkRuntimeFollowup/header_interpolation/text-2 9976537 116.5 ns/op 160 B/op 4 allocs/op
+BenchmarkRuntimeFollowup/header_interpolation/text-2 10384290 130.0 ns/op 160 B/op 4 allocs/op
+BenchmarkRuntimeFollowup/nested_writing/text-2 88052 13736 ns/op 2864 B/op 73 allocs/op
+BenchmarkRuntimeFollowup/nested_writing/text-2 87968 14044 ns/op 2864 B/op 73 allocs/op
+BenchmarkRuntimeFollowup/nested_writing/text-2 92475 13651 ns/op 2864 B/op 73 allocs/op
+BenchmarkRuntimeFollowup/nested_writing/text-2 93265 13521 ns/op 2864 B/op 73 allocs/op
+BenchmarkRuntimeFollowup/nested_writing/text-2 94946 13066 ns/op 2864 B/op 73 allocs/op
+BenchmarkRuntimeFollowup/nested_writing/text-2 91246 13022 ns/op 2864 B/op 73 allocs/op
+BenchmarkRuntimeFollowup/inheritance/text-2 11856188 104.7 ns/op 160 B/op 4 allocs/op
+BenchmarkRuntimeFollowup/inheritance/text-2 11618318 104.5 ns/op 160 B/op 4 allocs/op
+BenchmarkRuntimeFollowup/inheritance/text-2 12327584 105.4 ns/op 160 B/op 4 allocs/op
+BenchmarkRuntimeFollowup/inheritance/text-2 12824331 100.4 ns/op 160 B/op 4 allocs/op
+BenchmarkRuntimeFollowup/inheritance/text-2 12705140 94.42 ns/op 160 B/op 4 allocs/op
+BenchmarkRuntimeFollowup/inheritance/text-2 12876146 94.83 ns/op 160 B/op 4 allocs/op
+BenchmarkRuntimeFollowup/escape_expansion/html-2 207517 5881 ns/op 11275 B/op 10 allocs/op
+BenchmarkRuntimeFollowup/escape_expansion/html-2 206971 5896 ns/op 11275 B/op 10 allocs/op
+BenchmarkRuntimeFollowup/escape_expansion/html-2 218046 5456 ns/op 11275 B/op 10 allocs/op
+BenchmarkRuntimeFollowup/escape_expansion/html-2 197294 5972 ns/op 11276 B/op 10 allocs/op
+BenchmarkRuntimeFollowup/escape_expansion/html-2 209168 5427 ns/op 11275 B/op 10 allocs/op
+BenchmarkRuntimeFollowup/escape_expansion/html-2 211476 5729 ns/op 11275 B/op 10 allocs/op

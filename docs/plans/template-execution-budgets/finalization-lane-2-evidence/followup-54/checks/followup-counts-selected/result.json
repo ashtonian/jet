@@ -1,0 +1,41 @@
+{
+  "head": "54b561484e1465edea963ed04579bcd24a7dbf76",
+  "command": [
+    "gate-lock",
+    "run-focused",
+    "jet-finalization-lane-2-followup-counts-selected",
+    "--",
+    "go",
+    "test",
+    "-p=1",
+    "-parallel=2",
+    "-timeout=90s",
+    "-count=1",
+    "-v",
+    "-run",
+    "^TestFollowupCancellationOpportunities$",
+    "."
+  ],
+  "execution_timeout_seconds": 120,
+  "kill_after_seconds": 5,
+  "queued_at": 1794133942.591959,
+  "harness_sha256": "c5a1663a901325e674b18ee210eb295cb80fee07311bd7fc3c6cdc462dd8a4ff",
+  "go_version": "go version go1.27.3 darwin/arm64",
+  "go_env": {
+    "GOARCH": "arm64",
+    "GOFLAGS": "-trimpath",
+    "GOMOD": "<checkout>/go.mod",
+    "GOOS": "darwin",
+    "GOTOOLCHAIN": "auto",
+    "GOWORK": ""
+  },
+  "environment": {
+    "GATE_LOCK_WAIT": "1",
+    "GATE_LOCK_COMMAND_TIMEOUT": "120",
+    "GATE_LOCK_COMMAND_KILL_AFTER": "5"
+  },
+  "exit_code": 0,
+  "finished_at": 1794133947.245304,
+  "inputs_unchanged": true,
+  "input_manifest": "../../manifests/34e5bbe3545c2138cfbdb253fd1aa49e2e597aec6f2cceeb56265824235cb758.json"
+}

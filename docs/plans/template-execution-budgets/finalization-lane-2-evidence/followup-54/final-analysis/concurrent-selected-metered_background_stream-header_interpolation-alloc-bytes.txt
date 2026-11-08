@@ -1,0 +1,36 @@
+File: render.test
+Type: alloc_space
+Time: 2026-11-08 04:47:30 CST
+Showing nodes accounting for 13271.95kB, 100% of 13271.95kB total
+Showing top 30 nodes out of 45
+      flat  flat%   sum%        cum   cum%
+ 4102.97kB 30.91% 30.91%  4102.97kB 30.91%  regexp/syntax.(*compiler).inst (inline)
+ 3235.83kB 24.38% 55.30%  3235.83kB 24.38%  encoding/json/v2.makeString
+ 1539.31kB 11.60% 66.89%  1539.31kB 11.60%  regexp.onePassCopy
+ 1184.27kB  8.92% 75.82%  1184.27kB  8.92%  runtime/pprof.StartCPUProfile
+  641.34kB  4.83% 80.65%   641.34kB  4.83%  os.readFileContents
+  520.04kB  3.92% 84.57%   520.04kB  3.92%  bytes.Clone (inline)
+  512.08kB  3.86% 88.43%   512.08kB  3.86%  compress/gzip.NewWriterLevel
+  512.08kB  3.86% 92.28%   512.08kB  3.86%  regexp.newQueue (inline)
+  512.02kB  3.86% 96.14%  1032.06kB  7.78%  github.com/CloudyKit/jet/v6_test.additionalExecutionWorkloads
+  512.01kB  3.86%   100%   512.01kB  3.86%  regexp.makeOnePass.func1
+         0     0%   100%   520.04kB  3.92%  encoding/json.Marshal (inline)
+         0     0%   100%  3235.83kB 24.38%  encoding/json.Unmarshal (inline)
+         0     0%   100%   520.04kB  3.92%  encoding/json/v2.Marshal
+         0     0%   100%  3235.83kB 24.38%  encoding/json/v2.Unmarshal
+         0     0%   100%  1601.83kB 12.07%  encoding/json/v2.makeInterfaceArshaler.func2
+         0     0%   100%  1601.83kB 12.07%  encoding/json/v2.makeMapArshaler.func3
+         0     0%   100%  3235.83kB 24.38%  encoding/json/v2.makeSliceArshaler.func3
+         0     0%   100%  3235.83kB 24.38%  encoding/json/v2.makeStringArshaler.func2
+         0     0%   100%  3235.83kB 24.38%  encoding/json/v2.makeStructArshaler.func3
+         0     0%   100%  3235.83kB 24.38%  encoding/json/v2.unmarshalDecode
+         0     0%   100% 11575.60kB 87.22%  github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes
+         0     0%   100%  3877.17kB 29.21%  github.com/CloudyKit/jet/v6_test.executionWorkloads
+         0     0%   100%  4909.24kB 36.99%  github.com/CloudyKit/jet/v6_test.measurementWorkloads
+         0     0%   100%  1184.27kB  8.92%  main.main
+         0     0%   100%   641.34kB  4.83%  os.ReadFile
+         0     0%   100%  6666.37kB 50.23%  regexp.Compile (inline)
+         0     0%   100%  6666.37kB 50.23%  regexp.compile
+         0     0%   100%  2563.40kB 19.31%  regexp.compileOnePass
+         0     0%   100%  1024.09kB  7.72%  regexp.makeOnePass
+         0     0%   100%  4102.97kB 30.91%  regexp/syntax.(*compiler).compile

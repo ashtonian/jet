@@ -1,6 +1,8 @@
 # Output finalization: F3 and structural cost
 
-Base `0e277b3017b4afae1f984663c4e9244b4de0b290`; current code `f599fc95992f104dd6e8cab180df04c9f964b5fa` on `work/finalization-lane-2`. The original output commit `56d25c8` and ready handoff `f7c2b675e1c88f7731276efeece790ad5e5fbaea` contained a scalar scratch borrowing regression and are superseded by the repair below. Focused correctness and affected measurements now pass; the repaired lane is ready for integration. **Combined performance, packaged CI and external-resolution acceptance remain open.** Nothing was published upstream, no new PR was created, and existing review branches were not rewritten.
+Current follow-up code: `ec0221fb7ecd4f5416a289b8e019d60c65793872`, based on combined `54b561484e1465edea963ed04579bcd24a7dbf76`. Protection and diagnostic performance validation pass; the complete integrated release target, CI and packaging remain open. The earlier `5ba5bda` handoff is historical. This report does not grant final acceptance.
+
+Historical F3 base `0e277b3017b4afae1f984663c4e9244b4de0b290`; code `f599fc95992f104dd6e8cab180df04c9f964b5fa` on `work/finalization-lane-2`. The original output commit `56d25c8` and ready handoff `f7c2b675e1c88f7731276efeece790ad5e5fbaea` contained a scalar scratch borrowing regression and are superseded by the repair below. Focused correctness and affected measurements now pass; the repaired lane is ready for integration. **Combined performance, packaged CI and external-resolution acceptance remain open.** Nothing was published upstream, no new PR was created, and existing review branches were not rewritten.
 
 ## Behavior and preservation
 
@@ -126,3 +128,68 @@ Four existing matched CPU/heap/mutex/block captures yield [40 primary views](fin
 CPU flat/cumulative profiles are dominated by runtime GC/syscalls (repaired reentry runtime.kevent 61.76% flat); this is not evidence of a network bottleneck. Jet dataPrinter.value is 6.80% cumulative and printer cleanup .57% flat in that capture; overlapping percentages are not additive. Mutex delay is runtime GC/scheduling and block delay is testing/pprof channel waits. The live samples are sparse: controls report zero sampled live heap; repaired sequential reports regexp/testing storage, and repaired reentry reports sample-weighted scavenger initialization. The latter's estimated 5,461 objects is not a literal object census. Profile-process peak RSS is 14,876,672 → 15,302,656 B sequential and 15,204,352 → 14,925,824 B reentry; these single-process samples establish neither a retention improvement nor a heap/RSS bound. Profiling uses default 512 KiB memory sampling and runs separately from timing; the older rate-1 capacity-screen caveats still apply.
 
 The first measurement harness canceled a context between benchmark calibration calls; that failed attempt is excluded and retained. Moving context creation inside each calibration invocation repaired the harness, after which only affected binaries/stages were rebuilt. The historical output/strategy evidence above remains attributed to `56d25c8`; lane 4 must use the repaired tree plus lanes 1/3 for final combined profiles, full CI, latency/concurrency/overshoot, <=20% target and external module resolution. Local signatures are verified; GitHub verification awaits lane 4's authorized fork publication. No final acceptance or sandbox claim follows from this lane handoff.
+
+## Runtime cost follow-up on combined 54b5614
+
+Signed code commits `958cbed0ce48c8e47e7c2d7f8b2b4738f38b5bad` and `ec0221fb7ecd4f5416a289b8e019d60c65793872` preserve the integrated base in ancestry. The second commit repairs an active escaping regression measured in the first. Consume the complete branch, not `958cbed` alone. The fixed release corpus at the combined base failed at median ratios 1.5662 legacy, 2.1237 Background, 2.3719 live and 2.3598 restricted; the diagnostic subset below does not replace that 15-fixture text/HTML gate.
+
+The changes address measured setup, dispatch and output boundaries:
+
+- Runtime initializes only per-render inputs after pool cleanup; legacy execution uses the already cleared execution state. The full compilation state and full Runtime reset remain intact.
+- A single list defer releases any declaration scope and restores origin/depth in the original unwind order. It removes the loop-registered defer that prevented open-coded cleanup.
+- One immutable `metered` bit records that a context was supplied. The checkpoint always checks the terminal latch, then reserves through the canonical work function in that mode. Both reserveWork callers already check the latch and active context, with no intervening native call; duplicate pure guards are removed. Current Go compiler diagnostics confirm inline checkpoint/entry guards. Every cancellation opportunity and allowance remains present.
+- A method-free value cannot implement Formatter/Stringer/error; its formatter dispatch avoids three unnecessary interface queries. Native hooks retain their path and checks.
+- A private Set provenance bit identifies only NewSet's built-in HTML escaper. WithSafeWriter clears it. For legacy execution into a concrete owned checked bytes.Buffer destination, that built-in can write directly: neither component reenters or returns a write error. Custom escapers, active budgets, foreign/redirected destinations and transactions keep their applicable checked boundaries. No extra output pool, quota reserve or user option was added.
+
+The only Set seam is the provenance bit and its constructor/WithSafeWriter assignments; no graph/cache/admission behavior changes. Keep lane 3's restricted zero-options/policy.execution branch and input borrow/defer-release/admission block before Runtime acquisition when integrating. The scalar workspace lease, lane 1 semantics and lane 3 compilation state/reset are preserved. The direct Runtime fixture in restricted_test.go initializes the new immutable mode.
+
+### Causal and protection controls
+
+Separate literal, inheritance, nested-writing, interpolation and escaping profiles precede the changes. The failing legacy literal capture attributes 23.7% of sampled CPU to full execution-state initialization; nested writing exposes runtime defer machinery. Single-factor setup/scope/dispatch overlays provide three 200ms samples each. Their role is diagnosis, not acceptance. The first selector covered literal text/HTML only; those valid cells were retained and the missing nested/interpolation cells added with a corrected selector.
+
+Shared buffer wrappers and a separate work-validation helper were rejected after metered/live regressions. A separate legacy destination view did not justify its dispatch abstraction. The first selected implementation then showed +8.99% live escaping versus 54b5614. The guard repair preserves inline entry and removes the duplicated checks; a direct six-sample 958cbed/repair comparison improves Background/live/restricted escaping by 5.47%/5.74%/7.18% (p=.002/.009/.009). The refreshed comparison against 54b5614 detects no active-escaping timing change (p=.093/.818/.619); this is not an equivalence claim.
+
+| Current-source validation | Evidence | Result |
+| --- | --- | --- |
+| Normal runtime/output/value/builtin/restricted/conformance and cancellation-observation scope | [normal](finalization-lane-2-evidence/followup-54/checks/followup-mode-normal/result.json) | Pass |
+| Same focused scope with race | [race](finalization-lane-2-evidence/followup-54/checks/followup-mode-race/result.json) | Pass |
+| Same scope, Darwin Go 1.16.15 | [minimum Go](finalization-lane-2-evidence/followup-54/checks/followup-mode-go116/result.json) | Pass; existing external-linker warning retained |
+| Vet | [vet](finalization-lane-2-evidence/followup-54/checks/followup-mode-vet/result.json) | Pass |
+| Public output/borrow/full-reset cases without the temporary measurement test | [committed tree](finalization-lane-2-evidence/followup-54/checks/followup-committed-tree/result.json) | Pass |
+| Exact cancellation observations, 15 fixtures × 2 formats × 4 modes | [proof](finalization-lane-2-evidence/followup-54/terminal-repair/mode-cancellation-proof.json) | All 120 counts match 54b5614; first/middle/last cancellation controls pass |
+
+The count probe uses the benchmark's ten warmups. Its initial cold include count included child compilation and made later warm thresholds invalid; that harness failure is retained separately and excluded. The runner was also corrected to hash every ignored injected measurement test; final protection/build receipts include it, and the committed-tree check removes that dependency.
+
+The new public reentrant-escaper control passes unchanged 54b5614 and the fix. Two externally bounded counterfactuals establish the fast-path prerequisites: failing to clear the custom-escaper provenance bit allows `after` to append after a latched sink failure; omitting the active-meter guard lets 1,025 escaped bytes bypass the 1,024-byte limit. Both are expected failures, not production candidates. [Custom boundary](finalization-lane-2-evidence/followup-54/checks/followup-custom-boundary-negative/run.log), [meter boundary](finalization-lane-2-evidence/followup-54/checks/followup-meter-boundary-negative/run.log).
+
+### Matched diagnostic timings
+
+The final refresh has six interleaved one-second samples against exact 54b5614, normal Go 1.27.3 darwin/arm64, GOMAXPROCS=2, unchanged positive quotas, fixtures and ownership. Four text cases and one HTML escaping case are deliberately isolated. The earlier upstream reference is reused only with its recorded frozen binary, fixture and benchmark inputs unchanged; it was interleaved in the preceding batch, not this refresh. This does not satisfy the full fresh integrated upstream-relative acceptance program. [All samples and reference ratios](finalization-lane-2-evidence/followup-54/terminal-repair/final-analysis/timings.json), [paired intervals](finalization-lane-2-evidence/followup-54/terminal-repair/final-analysis/paired-benchstat.txt), [guard repair intervals](finalization-lane-2-evidence/followup-54/terminal-repair/final-analysis/guard-repair-benchstat.txt).
+
+Medians, 54b5614 → ec0221f:
+
+| Fixture/format | Legacy | Background | Live | Restricted owned |
+| --- | ---: | ---: | ---: | ---: |
+| Literal/text | 78.95 → 38.63 ns | 121.2 → 92.81 ns | 130.2 → 101.2 ns | 270.5 → 229.9 ns |
+| Interpolation/text | 150.2 → 103.0 ns | 240.5 → 197.3 ns | 260.4 → 214.8 ns | 529.4 → 481.6 ns |
+| Inheritance/text | 134.6 → 73.92 ns | 211.4 → 167.9 ns | 241.9 → 197.6 ns | 382.1 → 330.5 ns |
+| Nested writing/text | 25.47 → 16.71 µs | 29.24 → 21.74 µs | 33.24 → 25.79 µs | 40.71 → 33.29 µs |
+| Escape expansion/HTML | 6.508 → 4.499 µs | 8.414 → 8.297 µs | 10.33 → 10.44 µs | 12.58 → 12.63 µs |
+
+All non-escape improvements and legacy escaping have p=.002, n=6. Active escaping has no detected change; allocation counts/B-op have no detected change. The five-case median ratios versus 54b5614 are .656 legacy, .794 Background, .816 live and .865 restricted. Against the retained upstream reference they are 1.224/2.540/2.764/3.226. Severe remaining small-template gaps stay visible: restricted interpolation is 4.087× its owned-result reference; live inheritance 3.271×, and legacy interpolation/nested-writing 1.325×/1.308×. These are diagnostic references, not the weighted release gate, and the <=20% target remains unwaived.
+
+### Profile interpretation and remaining limits
+
+The current source has fresh serial captures for all twenty diagnostic cells and two-worker/shared-Set captures for interpolation/text and escaping/HTML in all four modes. Each worker owns its live context. Twenty-eight unchanged 54b5614 baseline captures are reused. The selected/current pair therefore has 56 captures and 616 CPU flat/cumulative/source, allocation/live byte/object, mutex and block views. The complete intermediate 958cbed capture set remains historical evidence of the regression. [Current inspection](finalization-lane-2-evidence/followup-54/terminal-repair/final-analysis/inspection.json), [capture summary and RSS](finalization-lane-2-evidence/followup-54/terminal-repair/final-analysis/profile-summary.json), [source/receipt proof](finalization-lane-2-evidence/followup-54/source-proof.json).
+
+Legacy built-in escaping now spends its sampled CPU in standard escaping, bytes.Buffer copying and memmove; the redundant checkedWriter dispatch is absent from that proven path. Active escaping retains its checked sink and work reservations. In current live nested writing, reserveWork is 26.72% cumulative, including cancelCtx.Err at 12.21%; checked output is 14.50% cumulative. These overlap and must not be added. Remaining costs include checked dispatch, native/interpreter entry, reflection/rangers and compilation admission. On measured Go 1.27.3, cancelCtx.Err uses an atomic load; the profiles do not show a context-mutex bottleneck.
+
+Allocating nested workloads retain ranger/builtin construction costs. Restricted escaping retains owned buffer growth/copy costs: the current allocated-object view attributes 69.02% to growSlice and 10.12% to the owned string copy; total process object counts differ with benchmark calibration and are not per-operation counts. The normal samples remain the B/op/allocs/op evidence. Profiling uses default-equivalent 512 KiB memory sampling, separately from timing. Twenty-four of 28 current live-object views have zero sampled totals; the others contain sample-weighted runtime/setup metadata. These observations establish neither zero retention nor a goroutine/object census.
+
+Mutex/block views chiefly show runtime allocation/scheduling, occasional sync.Pool warmup and testing/WaitGroup/profile waits. Two workers do not establish general scaling or p99 behavior. Peak RSS is distinct from live Go heap: the profiled concurrent restricted escape pair reaches 132,562,944 → 53,673,984 bytes while current sampled live heap is zero; both exhibit allocation/GC/paging work. This single-profile pair is not an RSS improvement claim or a heap bound. Existing cold/post-GC/capacity-screen limitations above remain historical, not fresh acceptance evidence.
+
+### Integration handoff
+
+The production code and preserved-author history are signed and locally verified. Experimental source variants are represented by exact patches against 54b5614; raw binaries/profiles remain local with hashes, commands, input/toolchain manifests, execution deadlines, bounded group cleanup and receipts. Portable copies remove host paths and other owners' queue labels. Internal plans/evidence stay fork-only and are excluded from upstream submission diffs.
+
+Lane 4 integrates lane 3 first, then this complete branch, preserving its restricted input-admission hunk. It still owns exact combined minimum/current normal/race CI, the full representative text/HTML <=20% median gate, p50/p99/concurrency/overshoot and external fork resolution/packaging. GitHub signature verification follows its authorized normal fork push. No upstream PR/issue/tag/release was created, no review branch was rewritten, and no final acceptance or sandbox claim is made.

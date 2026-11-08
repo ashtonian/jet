@@ -1,0 +1,46 @@
+--- a/execution.go
++++ b/execution.go
+@@ -107,7 +107,16 @@
+-	if st.execution.ctx == nil && st.execution.terminal == nil {
+-		return
+-	}
+-	st.checkpointActive(steps)
+-}
+-
+-func (st *Runtime) checkpointActive(steps uint64) {
++	if st.execution.ctx != nil || st.execution.terminal != nil {
++		st.reserveWork(steps)
++	}
++}
++
++func (st *Runtime) reserveWork(steps uint64) {
++	b := &st.execution
++	if b.terminal != nil || b.checkContext || (b.options.MaxSteps != 0 && steps > b.remaining) {
++		st.checkWork(steps)
++	}
++	if b.ctx != nil && b.options.MaxSteps != 0 {
++		b.remaining -= steps
++	}
++}
++
++func (st *Runtime) checkWork(steps uint64) {
+@@ -115,5 +123,0 @@
+-	st.reserveWork(steps)
+-}
+-
+-// reserveWork follows a terminal check without an intervening native call.
+-func (st *Runtime) reserveWork(steps uint64) {
+@@ -127 +131,3 @@
+-	st.reserveUnchecked(&b.remaining, b.options.MaxSteps, steps, "steps", ErrStepLimit)
++	if b.options.MaxSteps != 0 && steps > b.remaining {
++		st.terminate(&LimitError{Kind: "steps", Limit: b.options.MaxSteps, cause: ErrStepLimit})
++	}
+@@ -148 +154,7 @@
+-	st.checkpoint(1)
++	if st.execution.ctx != nil || st.execution.terminal != nil || st.execution.options.MaxDepth != 0 {
++		st.enterActive()
++	}
++}
++
++func (st *Runtime) enterActive() {
++	st.reserveWork(1)

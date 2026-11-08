@@ -1,0 +1,26 @@
+File: candidate.test
+Type: delay
+Time: 2026-11-08 03:57:26 CST
+Showing nodes accounting for 458ns, 100% of 458ns total
+      flat  flat%   sum%        cum   cum%
+     458ns   100%   100%      458ns   100%  runtime.unlock (inline)
+         0     0%   100%      250ns 54.59%  github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes
+         0     0%   100%      250ns 54.59%  github.com/CloudyKit/jet/v6_test.executionWorkloads
+         0     0%   100%      250ns 54.59%  github.com/CloudyKit/jet/v6_test.measurementWorkloads
+         0     0%   100%      250ns 54.59%  os.ReadFile
+         0     0%   100%      250ns 54.59%  os.readFileContents
+         0     0%   100%      250ns 54.59%  runtime.(*mcache).allocLarge
+         0     0%   100%      250ns 54.59%  runtime.(*mheap).alloc
+         0     0%   100%      250ns 54.59%  runtime.(*mheap).alloc.func1
+         0     0%   100%      250ns 54.59%  runtime.(*mheap).reclaim
+         0     0%   100%      250ns 54.59%  runtime.(*mheap).reclaimChunk
+         0     0%   100%      208ns 45.41%  runtime.goschedImpl
+         0     0%   100%      208ns 45.41%  runtime.gosched_m
+         0     0%   100%      250ns 54.59%  runtime.makeslice
+         0     0%   100%      250ns 54.59%  runtime.mallocgc
+         0     0%   100%      250ns 54.59%  runtime.mallocgcLarge
+         0     0%   100%      208ns 45.41%  runtime.mcall
+         0     0%   100%      250ns 54.59%  runtime.systemstack
+         0     0%   100%      208ns 45.41%  runtime.wakep
+         0     0%   100%      250ns 54.59%  testing.(*B).run1.func1
+         0     0%   100%      250ns 54.59%  testing.(*B).runN

@@ -1,0 +1,16 @@
+File: render.test
+Type: delay
+Time: 2026-11-08 05:27:45 CST
+Showing nodes accounting for 667ns, 100% of 667ns total
+      flat  flat%   sum%        cum   cum%
+     667ns   100%   100%      667ns   100%  runtime.unlock (partial-inline)
+         0     0%   100%      417ns 62.52%  runtime.(*mheap).freeSpan (inline)
+         0     0%   100%      417ns 62.52%  runtime.(*mheap).freeSpan.func1
+         0     0%   100%      417ns 62.52%  runtime.(*sweepLocked).sweep
+         0     0%   100%      417ns 62.52%  runtime.bgsweep
+         0     0%   100%      250ns 37.48%  runtime.gcBgMarkWorker
+         0     0%   100%      250ns 37.48%  runtime.gcMarkDone
+         0     0%   100%      250ns 37.48%  runtime.gcMarkDone.func2
+         0     0%   100%      250ns 37.48%  runtime.stopTheWorldWithSema
+         0     0%   100%      417ns 62.52%  runtime.sweepone
+         0     0%   100%      667ns   100%  runtime.systemstack

@@ -1,0 +1,37 @@
+File: render.test
+Type: alloc_objects
+Time: 2026-11-08 04:47:14 CST
+Showing nodes accounting for 45111, 100% of 45118 total
+Dropped 8 nodes (cum <= 225)
+Showing top 30 nodes out of 41
+      flat  flat%   sum%        cum   cum%
+     10923 24.21% 24.21%      21846 48.42%  github.com/CloudyKit/jet/v6_test.additionalExecutionWorkloads
+     10923 24.21% 48.42%      10923 24.21%  internal/bytealg.MakeNoZero
+      8192 18.16% 66.58%       8192 18.16%  slices.Grow[go.shape.[]uint8,go.shape.uint8] (inline)
+      6555 14.53% 81.11%       6555 14.53%  runtime/pprof.allFrames
+      3277  7.26% 88.37%       3277  7.26%  compress/gzip.NewWriterLevel
+      3128  6.93% 95.30%       3128  6.93%  regexp/syntax.(*compiler).inst (inline)
+      1820  4.03% 99.34%       1820  4.03%  reflect.mapassign_faststr0
+       293  0.65%   100%        293  0.65%  regexp.onePassCopy
+         0     0%   100%      10012 22.19%  encoding/json.Unmarshal (inline)
+         0     0%   100%       8192 18.16%  encoding/json/internal/jsonwire.AppendUnquote
+         0     0%   100%       8192 18.16%  encoding/json/internal/jsonwire.UnquoteMayCopy
+         0     0%   100%      10012 22.19%  encoding/json/v2.Unmarshal
+         0     0%   100%       1820  4.03%  encoding/json/v2.makeMapArshaler.func3
+         0     0%   100%      10012 22.19%  encoding/json/v2.makeSliceArshaler.func3
+         0     0%   100%       8192 18.16%  encoding/json/v2.makeStringArshaler.func2
+         0     0%   100%      10012 22.19%  encoding/json/v2.makeStructArshaler.func3
+         0     0%   100%      10012 22.19%  encoding/json/v2.unmarshalDecode
+         0     0%   100%      35281 78.20%  github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes
+         0     0%   100%      10014 22.20%  github.com/CloudyKit/jet/v6_test.executionWorkloads
+         0     0%   100%      31860 70.61%  github.com/CloudyKit/jet/v6_test.measurementWorkloads
+         0     0%   100%       1820  4.03%  reflect.Value.SetMapIndex
+         0     0%   100%       1820  4.03%  reflect.mapassign_faststr
+         0     0%   100%       3421  7.58%  regexp.Compile (inline)
+         0     0%   100%       3421  7.58%  regexp.compile
+         0     0%   100%        293  0.65%  regexp.compileOnePass
+         0     0%   100%       3128  6.93%  regexp/syntax.(*compiler).compile
+         0     0%   100%       3128  6.93%  regexp/syntax.(*compiler).rune
+         0     0%   100%       3128  6.93%  regexp/syntax.Compile
+         0     0%   100%       6555 14.53%  runtime/pprof.(*profileBuilder).appendLocsForStack
+         0     0%   100%       6555 14.53%  runtime/pprof.(*profileBuilder).build

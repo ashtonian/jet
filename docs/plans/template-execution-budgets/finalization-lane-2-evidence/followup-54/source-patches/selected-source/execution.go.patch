@@ -1,0 +1,31 @@
+--- a/execution.go
++++ b/execution.go
+@@ -107,7 +107,6 @@
+-	if st.execution.ctx == nil && st.execution.terminal == nil {
+-		return
+-	}
+-	st.checkpointActive(steps)
+-}
+-
+-func (st *Runtime) checkpointActive(steps uint64) {
++	if st.execution.ctx != nil || st.execution.terminal != nil {
++		st.reserveWork(steps)
++	}
++}
++
++func (st *Runtime) reserveWork(steps uint64) {
+@@ -115,5 +113,0 @@
+-	st.reserveWork(steps)
+-}
+-
+-// reserveWork follows a terminal check without an intervening native call.
+-func (st *Runtime) reserveWork(steps uint64) {
+@@ -148 +142,7 @@
+-	st.checkpoint(1)
++	if st.execution.ctx != nil || st.execution.terminal != nil || st.execution.options.MaxDepth != 0 {
++		st.enterActive()
++	}
++}
++
++func (st *Runtime) enterActive() {
++	st.reserveWork(1)

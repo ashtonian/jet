@@ -1,0 +1,41 @@
+{
+  "head": "54b561484e1465edea963ed04579bcd24a7dbf76",
+  "command": [
+    "gate-lock",
+    "run-focused",
+    "jet-finalization-lane-2-followup-custom-boundary-negative",
+    "--",
+    "go",
+    "test",
+    "-p=1",
+    "-parallel=2",
+    "-timeout=90s",
+    "-count=1",
+    "-overlay=.git/finalization/followup-54/counterfactual/custom-unsafe/overlay.json",
+    "-run",
+    "^TestOutputReentrantEscaperTerminal$",
+    "."
+  ],
+  "execution_timeout_seconds": 120,
+  "kill_after_seconds": 5,
+  "queued_at": 1794133806.645555,
+  "harness_sha256": "893a8f30884f25c096c1146717b1f1122cd89b87719d451055ed52194cf9f0d8",
+  "go_version": "go version go1.27.3 darwin/arm64",
+  "go_env": {
+    "GOARCH": "arm64",
+    "GOFLAGS": "-trimpath",
+    "GOMOD": "<checkout>/go.mod",
+    "GOOS": "darwin",
+    "GOTOOLCHAIN": "auto",
+    "GOWORK": ""
+  },
+  "environment": {
+    "GATE_LOCK_WAIT": "1",
+    "GATE_LOCK_COMMAND_TIMEOUT": "120",
+    "GATE_LOCK_COMMAND_KILL_AFTER": "5"
+  },
+  "exit_code": 1,
+  "finished_at": 1794133819.607612,
+  "inputs_unchanged": true,
+  "input_manifest": "../../manifests/5cca8ffda85de6a59359002c0681c2e41032cd69f72f9bdb641f00e89cb16542.json"
+}

@@ -1,0 +1,6 @@
+Compiler excerpt; complete raw log hash is recorded separately.
+./execution.go:84:6: can inline (*Runtime).rethrowTerminal with cost 16 as: method(*Runtime) func() { if err != nil { panic(executionAbort{...}) } }
+./execution.go:115:6: cannot inline (*Runtime).reserveWork: function too complex: cost 209 exceeds budget 80
+./execution.go:106:6: cannot inline (*Runtime).checkpoint: function too complex: cost 84 exceeds budget 80
+./execution.go:146:6: cannot inline (*Runtime).enterActive: function too complex: cost 114 exceeds budget 80
+./execution.go:140:6: can inline (*Runtime).enter with cost 78 as: method(*Runtime) func() { if st.execution.ctx != nil || st.execution.terminal != nil || st.execution.options.MaxDepth != 0 { (*Runtime).enterActive(st) } }

@@ -1,0 +1,36 @@
+File: render.test
+Type: alloc_space
+Time: 2026-11-08 05:27:30 CST
+Showing nodes accounting for 10296.66kB, 100% of 10296.66kB total
+Showing top 30 nodes out of 71
+      flat  flat%   sum%        cum   cum%
+ 1537.72kB 14.93% 14.93%  1537.72kB 14.93%  regexp/syntax.(*compiler).inst
+ 1184.27kB 11.50% 26.44%  1184.27kB 11.50%  runtime/pprof.StartCPUProfile
+ 1089.33kB 10.58% 37.02%  1089.33kB 10.58%  encoding/json/v2.makeString
+ 1032.02kB 10.02% 47.04%  1032.02kB 10.02%  slices.Grow[go.shape.[]uint8,go.shape.uint8] (inline)
+ 1024.08kB  9.95% 56.98%  1024.08kB  9.95%  regexp/syntax.(*parser).maybeConcat
+  688.56kB  6.69% 63.67%   688.56kB  6.69%  compress/flate.(*fastGen).addBlock
+  655.29kB  6.36% 70.04%   655.29kB  6.36%  compress/flate.NewWriter (inline)
+  524.09kB  5.09% 75.13%   524.09kB  5.09%  strings.(*byteStringReplacer).Replace
+     513kB  4.98% 80.11%      513kB  4.98%  regexp.onePassCopy
+  512.14kB  4.97% 85.08%  2068.25kB 20.09%  github.com/CloudyKit/jet/v6_test.additionalExecutionWorkloads
+  512.08kB  4.97% 90.05%   512.08kB  4.97%  compress/gzip.NewWriterLevel
+  512.05kB  4.97% 95.03%   512.05kB  4.97%  regexp/syntax.(*parser).newRegexp
+  512.02kB  4.97%   100%   512.02kB  4.97%  regexp/syntax.(*parser).collapse
+         0     0%   100%   688.56kB  6.69%  compress/flate.(*Writer).Close (inline)
+         0     0%   100%   688.56kB  6.69%  compress/flate.(*compressor).close
+         0     0%   100%   688.56kB  6.69%  compress/flate.(*compressor).deflateFast
+         0     0%   100%   688.56kB  6.69%  compress/flate.(*fastEncL1).encode
+         0     0%   100%   688.56kB  6.69%  compress/gzip.(*Writer).Close
+         0     0%   100%   655.29kB  6.36%  compress/gzip.(*Writer).Write
+         0     0%   100%  1032.02kB 10.02%  encoding/json.Marshal (inline)
+         0     0%   100%  1089.33kB 10.58%  encoding/json.Unmarshal
+         0     0%   100%  1032.02kB 10.02%  encoding/json/internal/jsonwire.AppendQuote
+         0     0%   100%  1032.02kB 10.02%  encoding/json/jsontext.(*Encoder).WriteToken (inline)
+         0     0%   100%  1032.02kB 10.02%  encoding/json/jsontext.(*encoderState).WriteToken
+         0     0%   100%  1032.02kB 10.02%  encoding/json/jsontext.Token.appendString
+         0     0%   100%  1032.02kB 10.02%  encoding/json/v2.Marshal
+         0     0%   100%  1089.33kB 10.58%  encoding/json/v2.Unmarshal
+         0     0%   100%   515.38kB  5.01%  encoding/json/v2.makeInterfaceArshaler.func1
+         0     0%   100%  1089.33kB 10.58%  encoding/json/v2.makeInterfaceArshaler.func2
+         0     0%   100%  1032.02kB 10.02%  encoding/json/v2.makeMapArshaler.func2

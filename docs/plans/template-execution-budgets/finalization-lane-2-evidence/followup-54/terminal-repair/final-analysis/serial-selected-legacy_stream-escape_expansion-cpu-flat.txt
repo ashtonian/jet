@@ -1,0 +1,34 @@
+File: render.test
+Type: cpu
+Time: 2026-11-08 05:27:23 CST
+Duration: 2.32s, Total samples = 2.07s (89.24%)
+Showing nodes accounting for 2.04s, 98.55% of 2.07s total
+Dropped 7 nodes (cum <= 0.01s)
+      flat  flat%   sum%        cum   cum%
+     0.78s 37.68% 37.68%      1.40s 67.63%  bytes.(*Buffer).Write
+     0.55s 26.57% 64.25%      1.95s 94.20%  text/template.HTMLEscape
+     0.45s 21.74% 85.99%      0.45s 21.74%  runtime.memmove
+     0.18s  8.70% 94.69%      0.18s  8.70%  bytes.(*Buffer).tryGrowByReslice (inline)
+     0.02s  0.97% 95.65%      0.02s  0.97%  runtime.pthread_cond_signal
+     0.02s  0.97% 96.62%      0.02s  0.97%  sync.(*Pool).pin
+     0.01s  0.48% 97.10%         2s 96.62%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+     0.01s  0.48% 97.58%      0.03s  1.45%  github.com/CloudyKit/jet/v6.(*Runtime).recover
+     0.01s  0.48% 98.07%      2.05s 99.03%  github.com/CloudyKit/jet/v6.(*Template).execute
+     0.01s  0.48% 98.55%      0.02s  0.97%  sync.(*Pool).Put
+         0     0% 98.55%      1.97s 95.17%  github.com/CloudyKit/fastprinter.PrintString
+         0     0% 98.55%      1.98s 95.65%  github.com/CloudyKit/fastprinter.PrintValue
+         0     0% 98.55%      1.98s 95.65%  github.com/CloudyKit/jet/v6.(*Runtime).printValue
+         0     0% 98.55%      2.05s 99.03%  github.com/CloudyKit/jet/v6.(*Template).Execute (inline)
+         0     0% 98.55%      1.95s 94.20%  github.com/CloudyKit/jet/v6.(*escapeeWriter).Write
+         0     0% 98.55%      2.05s 99.03%  github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes.func1
+         0     0% 98.55%      2.05s 99.03%  github.com/CloudyKit/jet/v6_test.init.func1
+         0     0% 98.55%      0.02s  0.97%  runtime.gopreempt_m (inline)
+         0     0% 98.55%      0.02s  0.97%  runtime.goschedImpl
+         0     0% 98.55%      0.02s  0.97%  runtime.morestack
+         0     0% 98.55%      0.02s  0.97%  runtime.newstack
+         0     0% 98.55%      0.02s  0.97%  runtime.notewakeup
+         0     0% 98.55%      0.02s  0.97%  runtime.semawakeup
+         0     0% 98.55%      0.02s  0.97%  runtime.startm
+         0     0% 98.55%      0.02s  0.97%  runtime.wakep
+         0     0% 98.55%      2.05s 99.03%  testing.(*B).launch
+         0     0% 98.55%      2.05s 99.03%  testing.(*B).runN

@@ -1,0 +1,41 @@
+{
+  "head": "958cbed0ce48c8e47e7c2d7f8b2b4738f38b5bad",
+  "command": [
+    "gate-lock",
+    "run-focused",
+    "jet-finalization-lane-2-followup-terminal-inline-state-latch",
+    "--",
+    "go",
+    "test",
+    "-p=1",
+    "-parallel=2",
+    "-overlay=.git/finalization/followup-54/terminal-repair/state-latch/overlay.json",
+    "-gcflags=github.com/CloudyKit/jet/v6=-m=2",
+    "-c",
+    "-o",
+    ".git/finalization/followup-54/terminal-repair/state-latch/diagnostic.test",
+    "."
+  ],
+  "execution_timeout_seconds": 120,
+  "kill_after_seconds": 5,
+  "queued_at": 1794135975.7837062,
+  "harness_sha256": "c5a1663a901325e674b18ee210eb295cb80fee07311bd7fc3c6cdc462dd8a4ff",
+  "go_version": "go version go1.27.3 darwin/arm64",
+  "go_env": {
+    "GOARCH": "arm64",
+    "GOFLAGS": "-trimpath",
+    "GOMOD": "<checkout>/go.mod",
+    "GOOS": "darwin",
+    "GOTOOLCHAIN": "auto",
+    "GOWORK": ""
+  },
+  "environment": {
+    "GATE_LOCK_WAIT": "1",
+    "GATE_LOCK_COMMAND_TIMEOUT": "120",
+    "GATE_LOCK_COMMAND_KILL_AFTER": "5"
+  },
+  "exit_code": 0,
+  "finished_at": 1794135982.198058,
+  "inputs_unchanged": true,
+  "input_manifest": "../../manifests/0ecb15f35620b849d87be2129cf68a96787aa446fa2adef193f7ee9954fd97b4.json"
+}

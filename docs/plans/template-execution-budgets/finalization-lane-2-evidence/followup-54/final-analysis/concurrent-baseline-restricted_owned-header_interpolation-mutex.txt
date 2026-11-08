@@ -1,0 +1,37 @@
+File: render.test
+Type: delay
+Time: 2026-11-08 04:46:51 CST
+Showing nodes accounting for 73.29us, 100% of 73.29us total
+Dropped 1 node (cum <= 0.37us)
+Showing top 30 nodes out of 47
+      flat  flat%   sum%        cum   cum%
+   43.37us 59.18% 59.18%    43.37us 59.18%  sync.(*Mutex).Unlock
+   29.92us 40.82%   100%    29.92us 40.82%  runtime.unlock (partial-inline)
+         0     0%   100%    12.88us 17.57%  bytes.(*Buffer).Write
+         0     0%   100%    12.88us 17.57%  bytes.(*Buffer).grow
+         0     0%   100%    22.96us 31.32%  github.com/CloudyKit/fastprinter.PrintString
+         0     0%   100%    35.83us 48.89%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0%   100%    22.96us 31.32%  github.com/CloudyKit/jet/v6.(*Runtime).printValue
+         0     0%   100%     4.21us  5.74%  github.com/CloudyKit/jet/v6.(*Runtime).recover
+         0     0%   100%    56.25us 76.75%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0%   100%    56.25us 76.75%  github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext
+         0     0%   100%    56.25us 76.75%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0%   100%     4.21us  5.74%  github.com/CloudyKit/jet/v6.(*Template).execute.deferwrap2
+         0     0%   100%    12.88us 17.57%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+         0     0%   100%    22.96us 31.32%  github.com/CloudyKit/jet/v6.(*dataPrinter).text
+         0     0%   100%    22.96us 31.32%  github.com/CloudyKit/jet/v6.(*dataPrinter).value
+         0     0%   100%     1.75us  2.39%  github.com/CloudyKit/jet/v6.borrowInputVars
+         0     0%   100%     4.92us  6.71%  github.com/CloudyKit/jet/v6.releaseInputVars
+         0     0%   100%    56.25us 76.75%  github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes.func1.1
+         0     0%   100%    43.37us 59.18%  github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes.func1.gowrap1
+         0     0%   100%    56.25us 76.75%  github.com/CloudyKit/jet/v6_test.init.0.func5
+         0     0%   100%     3.96us  5.40%  runtime.(*mcache).nextFree
+         0     0%   100%     3.96us  5.40%  runtime.(*mcache).refill
+         0     0%   100%     3.96us  5.40%  runtime.(*mcentral).cacheSpan
+         0     0%   100%     4.08us  5.57%  runtime.(*mheap).freeSpan (inline)
+         0     0%   100%     4.08us  5.57%  runtime.(*mheap).freeSpan.func1
+         0     0%   100%     4.08us  5.57%  runtime.(*sweepLocked).sweep
+         0     0%   100%     3.96us  5.40%  runtime.deductSweepCredit
+         0     0%   100%    14.75us 20.12%  runtime.forEachP (inline)
+         0     0%   100%    14.75us 20.12%  runtime.forEachP.func1
+         0     0%   100%    14.75us 20.12%  runtime.forEachPInternal

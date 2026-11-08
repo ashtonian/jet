@@ -1,0 +1,17 @@
+File: render.test
+Type: delay
+Time: 2026-11-08 05:27:17 CST
+Showing nodes accounting for 17458ns, 100% of 17458ns total
+      flat  flat%   sum%        cum   cum%
+   17458ns   100%   100%    17458ns   100%  runtime.unlock (inline)
+         0     0%   100%    16625ns 95.23%  runtime.gcBgMarkWorker
+         0     0%   100%    16625ns 95.23%  runtime.gcMarkDone
+         0     0%   100%    16625ns 95.23%  runtime.gcMarkTermination
+         0     0%   100%    16625ns 95.23%  runtime.gcMarkTermination.func3
+         0     0%   100%      833ns  4.77%  runtime.gopreempt_m (inline)
+         0     0%   100%      833ns  4.77%  runtime.goschedImpl
+         0     0%   100%      833ns  4.77%  runtime.morestack
+         0     0%   100%      833ns  4.77%  runtime.newstack
+         0     0%   100%    16625ns 95.23%  runtime.startTheWorldWithSema
+         0     0%   100%    16625ns 95.23%  runtime.systemstack
+         0     0%   100%      833ns  4.77%  runtime.wakep

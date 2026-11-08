@@ -1,0 +1,11 @@
+gate-lock: held by pid <pid> on <host>, "jet-lane2-followup-work-view-factors 54b5614 in <checkout>", since 2026-11-08T10:21:32Z
+gate-lock: held by pid <pid> on <host>, "jet-lane2-followup-work-view-factors 54b5614 in <checkout>", since 2026-11-08T10:21:32Z
+0 combined 0
+0 work-fast 0
+0 legacy-view 0
+1 legacy-view 0
+1 work-fast 0
+1 combined 0
+2 combined 0
+2 work-fast 0
+2 legacy-view 0

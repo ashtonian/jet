@@ -1,0 +1,29 @@
+File: render.test
+Type: alloc_objects
+Time: 2026-11-08 04:47:22 CST
+Showing nodes accounting for 10520116, 99.89% of 10531309 total
+Dropped 48 nodes (cum <= 52656)
+      flat  flat%   sum%        cum   cum%
+   3670099 34.85% 34.85%    3670099 34.85%  bytes.(*Buffer).String (inline)
+   3473620 32.98% 67.83%    3473620 32.98%  bytes.(*Buffer).grow
+   3309769 31.43% 99.26%   10453616 99.26%  github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext
+     65536  0.62% 99.88%      65536  0.62%  regexp.makeOnePass.func1
+      1092  0.01% 99.89%      71309  0.68%  regexp.makeOnePass
+         0     0% 99.89%    3473620 32.98%  bytes.(*Buffer).Write
+         0     0% 99.89%    3473748 32.98%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 99.89%    7143847 67.83%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0% 99.89%    7143847 67.83%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0% 99.89%    3473620 32.98%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+         0     0% 99.89%      74331  0.71%  github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes
+         0     0% 99.89%   10453616 99.26%  github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes.func1
+         0     0% 99.89%   10453616 99.26%  github.com/CloudyKit/jet/v6_test.init.0.func5
+         0     0% 99.89%      73465   0.7%  regexp.Compile (inline)
+         0     0% 99.89%      73465   0.7%  regexp.compile
+         0     0% 99.89%      71602  0.68%  regexp.compileOnePass
+         0     0% 99.89%      73465   0.7%  testing.(*B).Run
+         0     0% 99.89%   10453616 99.26%  testing.(*B).launch
+         0     0% 99.89%      74331  0.71%  testing.(*B).run1.func1
+         0     0% 99.89%   10527947   100%  testing.(*B).runN
+         0     0% 99.89%      73465   0.7%  testing.(*matcher).fullName
+         0     0% 99.89%      73465   0.7%  testing.simpleMatch.matches
+         0     0% 99.89%      73465   0.7%  testing/internal/testdeps.TestDeps.MatchString

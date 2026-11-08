@@ -1,0 +1,37 @@
+File: render.test
+Type: alloc_objects
+Time: 2026-11-08 04:46:52 CST
+Showing nodes accounting for 1346327, 98.89% of 1361499 total
+Dropped 41 nodes (cum <= 6807)
+Showing top 30 nodes out of 41
+      flat  flat%   sum%        cum   cum%
+    874618 64.24% 64.24%     874618 64.24%  bytes.growSlice
+    155657 11.43% 75.67%    1287485 94.56%  github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext
+    134195  9.86% 85.53%     134195  9.86%  bytes.(*Buffer).String (inline)
+    122887  9.03% 94.55%     997505 73.27%  bytes.(*Buffer).grow
+     32768  2.41% 96.96%      32768  2.41%  reflect.unsafe_New
+     10923   0.8% 97.76%      68550  5.03%  github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes
+      9363  0.69% 98.45%       9363  0.69%  regexp/syntax.(*parser).newRegexp (inline)
+      4096   0.3% 98.75%      13459  0.99%  regexp/syntax.parse
+      1820  0.13% 98.89%      34588  2.54%  github.com/CloudyKit/jet/v6_test.additionalExecutionWorkloads
+         0     0% 98.89%     997505 73.27%  bytes.(*Buffer).Write
+         0     0% 98.89%      32768  2.41%  encoding/json.Marshal (inline)
+         0     0% 98.89%      32768  2.41%  encoding/json/v2.Marshal
+         0     0% 98.89%      32768  2.41%  encoding/json/v2.makeMapArshaler.func2
+         0     0% 98.89%      32768  2.41%  encoding/json/v2.makeSliceArshaler.func2
+         0     0% 98.89%      32768  2.41%  encoding/json/v2.marshalEncode
+         0     0% 98.89%      32768  2.41%  encoding/json/v2.newAddressableValue
+         0     0% 98.89%     997633 73.27%  github.com/CloudyKit/fastprinter.PrintString
+         0     0% 98.89%     997633 73.27%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 98.89%     997633 73.27%  github.com/CloudyKit/jet/v6.(*Runtime).printValue
+         0     0% 98.89%    1131828 83.13%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0% 98.89%    1131828 83.13%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0% 98.89%     997505 73.27%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+         0     0% 98.89%     997505 73.27%  github.com/CloudyKit/jet/v6.(*dataPrinter).Write
+         0     0% 98.89%     997633 73.27%  github.com/CloudyKit/jet/v6.(*dataPrinter).text
+         0     0% 98.89%     997633 73.27%  github.com/CloudyKit/jet/v6.(*dataPrinter).value
+         0     0% 98.89%     997505 73.27%  github.com/CloudyKit/jet/v6.(*escapeeWriter).Write
+         0     0% 98.89%    1287485 94.56%  github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes.func1.1
+         0     0% 98.89%    1287485 94.56%  github.com/CloudyKit/jet/v6_test.init.0.func5
+         0     0% 98.89%      35215  2.59%  github.com/CloudyKit/jet/v6_test.measurementWorkloads
+         0     0% 98.89%      32768  2.41%  reflect.New

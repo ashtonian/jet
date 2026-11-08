@@ -1,0 +1,37 @@
+File: render.test
+Type: alloc_objects
+Time: 2026-11-08 05:27:21 CST
+Showing nodes accounting for 6019420, 99.82% of 6030556 total
+Dropped 43 nodes (cum <= 30152)
+Showing top 30 nodes out of 34
+      flat  flat%   sum%        cum   cum%
+   3014702 49.99% 49.99%    5947527 98.62%  github.com/CloudyKit/jet/v6.init.0.func5
+   2932825 48.63% 98.62%    2932825 48.63%  github.com/CloudyKit/jet/v6.newIntsRanger (inline)
+     32768  0.54% 99.17%      32768  0.54%  reflect.unsafe_New
+     32768  0.54% 99.71%      32768  0.54%  regexp.makeOnePass.func1
+      3277 0.054% 99.76%      39660  0.66%  regexp.compile
+      1820  0.03% 99.79%      34609  0.57%  github.com/CloudyKit/jet/v6_test.additionalExecutionWorkloads
+      1260 0.021% 99.82%      34028  0.56%  regexp.makeOnePass
+         0     0% 99.82%      32768  0.54%  encoding/json.Marshal (inline)
+         0     0% 99.82%      32768  0.54%  encoding/json/v2.Marshal
+         0     0% 99.82%      32768  0.54%  encoding/json/v2.makeMapArshaler.func2
+         0     0% 99.82%      32768  0.54%  encoding/json/v2.makeSliceArshaler.func2
+         0     0% 99.82%      32768  0.54%  encoding/json/v2.marshalEncode
+         0     0% 99.82%      32768  0.54%  encoding/json/v2.newAddressableValue
+         0     0% 99.82%    5947527 98.62%  github.com/CloudyKit/jet/v6.(*Runtime).evalCallExpression (inline)
+         0     0% 99.82%    5947527 98.62%  github.com/CloudyKit/jet/v6.(*Runtime).evalPipeCallExpression
+         0     0% 99.82%    5947527 98.62%  github.com/CloudyKit/jet/v6.(*Runtime).evalPrimaryExpressionGroup
+         0     0% 99.82%    5947527 98.62%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 99.82%    5947527 98.62%  github.com/CloudyKit/jet/v6.(*Runtime).executeRange
+         0     0% 99.82%    5947527 98.62%  github.com/CloudyKit/jet/v6.(*Template).Execute (inline)
+         0     0% 99.82%    5947527 98.62%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0% 99.82%      73872  1.22%  github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes
+         0     0% 99.82%    5947527 98.62%  github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes.func1
+         0     0% 99.82%    5947527 98.62%  github.com/CloudyKit/jet/v6_test.init.func1
+         0     0% 99.82%      34622  0.57%  github.com/CloudyKit/jet/v6_test.measurementWorkloads
+         0     0% 99.82%      32768  0.54%  reflect.New
+         0     0% 99.82%      39660  0.66%  regexp.Compile (inline)
+         0     0% 99.82%      34893  0.58%  regexp.compileOnePass
+         0     0% 99.82%      39250  0.65%  testing.(*B).Run
+         0     0% 99.82%    5947527 98.62%  testing.(*B).launch
+         0     0% 99.82%      73872  1.22%  testing.(*B).run1.func1

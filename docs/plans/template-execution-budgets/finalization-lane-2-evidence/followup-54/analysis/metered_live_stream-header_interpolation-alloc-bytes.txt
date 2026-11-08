@@ -1,0 +1,36 @@
+File: candidate.test
+Type: alloc_space
+Time: 2026-11-08 03:57:42 CST
+Showing nodes accounting for 15125.24kB, 100% of 15125.24kB total
+Showing top 30 nodes out of 82
+      flat  flat%   sum%        cum   cum%
+ 2562.06kB 16.94% 16.94%  2562.06kB 16.94%  regexp/syntax.(*compiler).inst (inline)
+ 1762.94kB 11.66% 28.59%  1762.94kB 11.66%  runtime/pprof.StartCPUProfile
+ 1544.32kB 10.21% 38.80%  3092.45kB 20.45%  github.com/CloudyKit/jet/v6_test.additionalExecutionWorkloads
+ 1282.68kB  8.48% 47.29%  1282.68kB  8.48%  os.readFileContents
+  655.29kB  4.33% 51.62%  1782.97kB 11.79%  compress/flate.NewWriter (inline)
+  583.01kB  3.85% 55.47%   583.01kB  3.85%  compress/flate.newFastEnc (inline)
+  544.67kB  3.60% 59.07%  1127.67kB  7.46%  compress/flate.(*compressor).init
+  544.67kB  3.60% 62.67%   544.67kB  3.60%  encoding/json/v2.makeString
+  524.09kB  3.47% 66.14%   524.09kB  3.47%  strings.(*byteStringReplacer).Replace
+  512.88kB  3.39% 69.53%   512.88kB  3.39%  regexp.onePassCopy
+  512.34kB  3.39% 72.92%   512.34kB  3.39%  regexp.makeOnePass
+  512.08kB  3.39% 76.30%   512.08kB  3.39%  compress/gzip.NewWriterLevel
+  512.08kB  3.39% 79.69%  5123.42kB 33.87%  regexp.compile
+  512.05kB  3.39% 83.07%   512.05kB  3.39%  regexp/syntax.(*parser).newRegexp (inline)
+  512.02kB  3.39% 86.46%   512.02kB  3.39%  internal/bytealg.MakeNoZero
+  512.02kB  3.39% 89.84%   512.02kB  3.39%  reflect.makemap
+  512.02kB  3.39% 93.23%   512.02kB  3.39%  sync.(*Pool).pinSlow
+  512.01kB  3.39% 96.61%   512.01kB  3.39%  reflect.unsafe_New
+  512.01kB  3.39%   100%   512.01kB  3.39%  regexp/syntax.(*Regexp).CapNames
+         0     0%   100%  1782.97kB 11.79%  compress/gzip.(*Writer).Write
+         0     0%   100%   512.01kB  3.39%  encoding/json.Marshal (inline)
+         0     0%   100%  1056.69kB  6.99%  encoding/json.Unmarshal
+         0     0%   100%   512.01kB  3.39%  encoding/json/v2.Marshal
+         0     0%   100%  1056.69kB  6.99%  encoding/json/v2.Unmarshal
+         0     0%   100%   512.01kB  3.39%  encoding/json/v2.makeMapArshaler.func2
+         0     0%   100%   512.02kB  3.39%  encoding/json/v2.makeMapArshaler.func3
+         0     0%   100%   512.01kB  3.39%  encoding/json/v2.makeSliceArshaler.func2
+         0     0%   100%  1056.69kB  6.99%  encoding/json/v2.makeSliceArshaler.func3
+         0     0%   100%   544.67kB  3.60%  encoding/json/v2.makeStringArshaler.func2
+         0     0%   100%  1056.69kB  6.99%  encoding/json/v2.makeStructArshaler.func3

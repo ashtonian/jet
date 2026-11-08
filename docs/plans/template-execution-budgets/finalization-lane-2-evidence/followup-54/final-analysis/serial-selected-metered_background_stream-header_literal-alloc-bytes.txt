@@ -1,0 +1,36 @@
+File: render.test
+Type: alloc_space
+Time: 2026-11-08 04:47:01 CST
+Showing nodes accounting for 14349.60kB, 100% of 14349.60kB total
+Showing top 30 nodes out of 73
+      flat  flat%   sum%        cum   cum%
+ 3178.64kB 22.15% 22.15%  3178.64kB 22.15%  encoding/json/v2.makeString
+ 1924.02kB 13.41% 35.56%  1924.02kB 13.41%  os.readFileContents
+ 1184.27kB  8.25% 43.81%  1184.27kB  8.25%  runtime/pprof.StartCPUProfile
+ 1032.18kB  7.19% 51.01%  2071.66kB 14.44%  github.com/CloudyKit/jet/v6_test.additionalExecutionWorkloads
+    1026kB  7.15% 58.16%     1026kB  7.15%  regexp.onePassCopy
+ 1025.03kB  7.14% 65.30%  1025.03kB  7.14%  regexp/syntax.(*compiler).inst
+  688.56kB  4.80% 70.10%   688.56kB  4.80%  compress/flate.(*fastGen).addBlock
+  655.29kB  4.57% 74.66%  1199.96kB  8.36%  compress/flate.NewWriter (inline)
+  544.67kB  3.80% 78.46%   544.67kB  3.80%  compress/flate.(*compressor).init
+  524.09kB  3.65% 82.11%   524.09kB  3.65%  strings.(*byteStringReplacer).Replace
+  515.38kB  3.59% 85.70%   515.38kB  3.59%  runtime/pprof.(*protobuf).string
+  515.38kB  3.59% 89.30%   515.38kB  3.59%  slices.Grow[go.shape.[]uint8,go.shape.uint8] (inline)
+  512.05kB  3.57% 92.86%   512.05kB  3.57%  runtime.mallocgc
+  512.01kB  3.57% 96.43%   512.01kB  3.57%  reflect.unsafe_New
+  512.01kB  3.57%   100%   512.01kB  3.57%  regexp.makeOnePass.func1
+         0     0%   100%   688.56kB  4.80%  compress/flate.(*Writer).Close (inline)
+         0     0%   100%   688.56kB  4.80%  compress/flate.(*compressor).close
+         0     0%   100%   688.56kB  4.80%  compress/flate.(*compressor).deflateFast
+         0     0%   100%   688.56kB  4.80%  compress/flate.(*fastEncL1).encode
+         0     0%   100%   688.56kB  4.80%  compress/gzip.(*Writer).Close
+         0     0%   100%  1199.96kB  8.36%  compress/gzip.(*Writer).Write
+         0     0%   100%   515.38kB  3.59%  encoding/json.Marshal (inline)
+         0     0%   100%  3690.65kB 25.72%  encoding/json.Unmarshal
+         0     0%   100%   515.38kB  3.59%  encoding/json/internal/jsonwire.AppendQuote
+         0     0%   100%   515.38kB  3.59%  encoding/json/jsontext.(*Encoder).WriteToken (inline)
+         0     0%   100%   515.38kB  3.59%  encoding/json/jsontext.(*encoderState).WriteToken
+         0     0%   100%   515.38kB  3.59%  encoding/json/jsontext.Token.appendString
+         0     0%   100%   515.38kB  3.59%  encoding/json/v2.Marshal
+         0     0%   100%  3690.65kB 25.72%  encoding/json/v2.Unmarshal
+         0     0%   100%   515.38kB  3.59%  encoding/json/v2.makeInterfaceArshaler.func1

@@ -1,0 +1,24 @@
+--- a/eval.go
++++ b/eval.go
+@@ -70 +70,2 @@
+-	if sink, ok := w.Writer.(*checkedWriter); !ok || sink.runtime != w.rootSink.runtime {
++	sink, ok := w.Writer.(*checkedWriter)
++	if !ok || sink.runtime != w.rootSink.runtime {
+@@ -71,0 +73,5 @@
++	}
++	if w.set.defaultHTML && sink.buffer != nil && sink.runtime.execution.terminal == nil {
++		// The built-in escaper and bytes.Buffer cannot reenter or fail.
++		w.set.escapee(sink.buffer, b)
++		return len(b), nil
+@@ -514 +519,0 @@
+-	defer func() { st.outputOrigin = origin; st.leave() }()
+@@ -515,0 +521,7 @@
++	defer func() {
++		if inNewScope {
++			st.releaseScope()
++		}
++		st.outputOrigin = origin
++		st.leave()
++	}()
+@@ -538 +549,0 @@
+-						defer st.releaseScope()

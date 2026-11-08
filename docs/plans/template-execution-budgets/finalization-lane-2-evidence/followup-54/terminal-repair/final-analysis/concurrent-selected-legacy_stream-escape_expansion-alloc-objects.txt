@@ -1,0 +1,29 @@
+File: render.test
+Type: alloc_objects
+Time: 2026-11-08 05:27:28 CST
+Showing nodes accounting for 59032, 99.50% of 59330 total
+Dropped 22 nodes (cum <= 296)
+      flat  flat%   sum%        cum   cum%
+     32768 55.23% 55.23%      32768 55.23%  regexp.makeOnePass.func1
+     12141 20.46% 75.69%      12141 20.46%  regexp.onePassCopy
+      6257 10.55% 86.24%       6257 10.55%  regexp/syntax.(*compiler).inst (inline)
+      5461  9.20% 95.44%       5461  9.20%  runtime.mallocgc
+      1820  3.07% 98.51%       1820  3.07%  github.com/CloudyKit/jet/v6_test.additionalExecutionWorkloads
+       585  0.99% 99.50%      33353 56.22%  regexp.makeOnePass
+         0     0% 99.50%      53640 90.41%  github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes
+         0     0% 99.50%       1889  3.18%  github.com/CloudyKit/jet/v6_test.measurementWorkloads
+         0     0% 99.50%      51751 87.23%  regexp.Compile (inline)
+         0     0% 99.50%      51751 87.23%  regexp.compile
+         0     0% 99.50%      45494 76.68%  regexp.compileOnePass
+         0     0% 99.50%       6257 10.55%  regexp/syntax.(*compiler).compile
+         0     0% 99.50%       6257 10.55%  regexp/syntax.(*compiler).rune
+         0     0% 99.50%       6257 10.55%  regexp/syntax.Compile
+         0     0% 99.50%       5461  9.20%  runtime.(*scavengerState).init
+         0     0% 99.50%       5461  9.20%  runtime.bgscavenge
+         0     0% 99.50%       5461  9.20%  runtime.newobject
+         0     0% 99.50%      51751 87.23%  testing.(*B).Run
+         0     0% 99.50%      53640 90.41%  testing.(*B).run1.func1
+         0     0% 99.50%      53640 90.41%  testing.(*B).runN
+         0     0% 99.50%      51751 87.23%  testing.(*matcher).fullName
+         0     0% 99.50%      51751 87.23%  testing.simpleMatch.matches
+         0     0% 99.50%      51751 87.23%  testing/internal/testdeps.TestDeps.MatchString

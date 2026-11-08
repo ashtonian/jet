@@ -1,0 +1,38 @@
+File: render.test
+Type: cpu
+Time: 2026-11-08 04:46:49 CST
+Duration: 1.85s, Total samples = 3.02s (163.53%)
+Showing nodes accounting for 2.15s, 71.19% of 3.02s total
+Dropped 58 nodes (cum <= 0.02s)
+Showing top 30 nodes out of 175
+      flat  flat%   sum%        cum   cum%
+     0.45s 14.90% 14.90%      0.45s 14.90%  runtime.pthread_kill
+     0.34s 11.26% 26.16%      0.34s 11.26%  runtime.usleep
+     0.26s  8.61% 34.77%      0.26s  8.61%  runtime.madvise
+     0.11s  3.64% 38.41%      0.12s  3.97%  context.(*cancelCtx).Err
+     0.08s  2.65% 41.06%      0.17s  5.63%  github.com/CloudyKit/jet/v6.(*Runtime).reserveWork
+     0.07s  2.32% 43.38%      0.13s  4.30%  runtime.mallocgcSmallScanNoHeaderSC6
+     0.07s  2.32% 45.70%      0.07s  2.32%  runtime.typePointers.next
+     0.06s  1.99% 47.68%      1.55s 51.32%  github.com/CloudyKit/jet/v6.(*Template).execute
+     0.06s  1.99% 49.67%      0.15s  4.97%  runtime.wbBufFlush1
+     0.05s  1.66% 51.32%      0.20s  6.62%  github.com/CloudyKit/jet/v6.(*Runtime).checkpoint
+     0.04s  1.32% 52.65%      0.07s  2.32%  github.com/CloudyKit/jet/v6.(*inputAdmission).step
+     0.04s  1.32% 53.97%      0.04s  1.32%  github.com/CloudyKit/jet/v6.constrainParse
+     0.04s  1.32% 55.30%      0.05s  1.66%  internal/runtime/maps.(*Iter).Next
+     0.04s  1.32% 56.62%      0.05s  1.66%  runtime.tryDeferToSpanScan
+     0.03s  0.99% 57.62%      0.03s  0.99%  github.com/CloudyKit/jet/v6.(*Runtime).checkNode
+     0.03s  0.99% 58.61%      0.14s  4.64%  github.com/CloudyKit/jet/v6.(*Runtime).recover
+     0.03s  0.99% 59.60%      0.28s  9.27%  github.com/CloudyKit/jet/v6.admitInputScopesInto
+     0.03s  0.99% 60.60%      0.06s  1.99%  reflect.(*rtype).Implements
+     0.03s  0.99% 61.59%      0.07s  2.32%  runtime.(*_panic).nextDefer
+     0.03s  0.99% 62.58%      0.03s  0.99%  runtime.(*mspan).moveInlineMarks
+     0.03s  0.99% 63.58%      0.18s  5.96%  runtime.bulkBarrierPreWrite
+     0.03s  0.99% 64.57%      0.03s  0.99%  runtime.findfunc
+     0.03s  0.99% 65.56%      0.03s  0.99%  runtime.nanotime1
+     0.03s  0.99% 66.56%      0.04s  1.32%  runtime.resolveTypeOff
+     0.03s  0.99% 67.55%      0.07s  2.32%  sync.(*Pool).Put
+     0.03s  0.99% 68.54%      0.05s  1.66%  sync.(*Pool).pin
+     0.02s  0.66% 69.21%      0.10s  3.31%  bytes.(*Buffer).Write
+     0.02s  0.66% 69.87%      0.07s  2.32%  github.com/CloudyKit/jet/v6.(*Runtime).evalPrimaryExpressionGroup
+     0.02s  0.66% 70.53%      0.03s  0.99%  github.com/CloudyKit/jet/v6.(*Runtime).printValue.func1
+     0.02s  0.66% 71.19%      1.70s 56.29%  github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext

@@ -1,0 +1,37 @@
+File: render.test
+Type: alloc_objects
+Time: 2026-11-08 05:27:33 CST
+Showing nodes accounting for 4083828, 98.98% of 4125709 total
+Dropped 46 nodes (cum <= 20628)
+Showing top 30 nodes out of 34
+      flat  flat%   sum%        cum   cum%
+         0     0%     0%    4122425 99.92%  testing.(*B).runN
+         0     0%     0%    4014173 97.30%  github.com/CloudyKit/jet/v6.(*Runtime).evalCallExpression (inline)
+         0     0%     0%    4014173 97.30%  github.com/CloudyKit/jet/v6.(*Runtime).evalPipeCallExpression
+         0     0%     0%    4014173 97.30%  github.com/CloudyKit/jet/v6.(*Runtime).evalPrimaryExpressionGroup
+         0     0%     0%    4014173 97.30%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0%     0%    4014173 97.30%  github.com/CloudyKit/jet/v6.(*Runtime).executeRange
+         0     0%     0%    4014173 97.30%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0%     0%    4014173 97.30%  github.com/CloudyKit/jet/v6.(*Template).execute
+   1867804 45.27% 45.27%    4014173 97.30%  github.com/CloudyKit/jet/v6.init.0.func5
+         0     0% 45.27%    4014173 97.30%  github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes.func1
+         0     0% 45.27%    4014173 97.30%  github.com/CloudyKit/jet/v6_test.init.0.func2
+         0     0% 45.27%    4014173 97.30%  testing.(*B).launch
+   2146369 52.02% 97.30%    2146369 52.02%  github.com/CloudyKit/jet/v6.newIntsRanger (inline)
+         0     0% 97.30%     108252  2.62%  github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes
+         0     0% 97.30%     108252  2.62%  testing.(*B).run1.func1
+         0     0% 97.30%      73457  1.78%  testing.(*B).Run
+         0     0% 97.30%      73457  1.78%  testing.(*matcher).fullName
+         0     0% 97.30%      73418  1.78%  regexp.Compile (inline)
+         0     0% 97.30%      73418  1.78%  regexp.compile
+         0     0% 97.30%      73418  1.78%  testing.simpleMatch.matches
+         0     0% 97.30%      73418  1.78%  testing/internal/testdeps.TestDeps.MatchString
+         0     0% 97.30%      68577  1.66%  regexp.compileOnePass
+      2235 0.054% 97.35%      67771  1.64%  regexp.makeOnePass
+     65536  1.59% 98.94%      65536  1.59%  regexp.makeOnePass.func1
+         0     0% 98.94%      34795  0.84%  github.com/CloudyKit/jet/v6_test.measurementWorkloads
+      1884 0.046% 98.98%      34684  0.84%  github.com/CloudyKit/jet/v6_test.additionalExecutionWorkloads
+         0     0% 98.98%      32800   0.8%  encoding/json.Marshal (inline)
+         0     0% 98.98%      32800   0.8%  encoding/json/v2.Marshal
+         0     0% 98.98%      32768  0.79%  encoding/json/v2.makeMapArshaler.func2
+         0     0% 98.98%      32768  0.79%  encoding/json/v2.makeSliceArshaler.func2

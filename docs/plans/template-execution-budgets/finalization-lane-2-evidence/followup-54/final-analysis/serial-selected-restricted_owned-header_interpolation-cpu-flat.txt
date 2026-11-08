@@ -1,0 +1,37 @@
+File: render.test
+Type: cpu
+Time: 2026-11-08 04:47:20 CST
+Duration: 1.82s, Total samples = 1620ms (89.22%)
+Showing nodes accounting for 1180ms, 72.84% of 1620ms total
+Showing top 30 nodes out of 152
+      flat  flat%   sum%        cum   cum%
+     200ms 12.35% 12.35%      200ms 12.35%  runtime.kevent
+     140ms  8.64% 20.99%      160ms  9.88%  context.(*cancelCtx).Err
+     100ms  6.17% 27.16%      160ms  9.88%  github.com/CloudyKit/jet/v6.(*Runtime).reserveWork
+      70ms  4.32% 31.48%       90ms  5.56%  internal/runtime/maps.(*Iter).Next
+      50ms  3.09% 34.57%       70ms  4.32%  sync.(*Pool).pin
+      40ms  2.47% 37.04%       50ms  3.09%  github.com/CloudyKit/jet/v6.(*inputAdmission).reserveBytes
+      40ms  2.47% 39.51%      100ms  6.17%  github.com/CloudyKit/jet/v6.(*inputAdmission).step
+      40ms  2.47% 41.98%      330ms 20.37%  github.com/CloudyKit/jet/v6.admitInputScopesInto
+      30ms  1.85% 43.83%      580ms 35.80%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+      30ms  1.85% 45.68%     1300ms 80.25%  github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext
+      30ms  1.85% 47.53%       40ms  2.47%  runtime.(*_panic).nextDefer
+      30ms  1.85% 49.38%       50ms  3.09%  runtime.mallocgcSmallNoScanSC6
+      30ms  1.85% 51.23%       40ms  2.47%  runtime.mallocgcSmallScanNoHeaderSC6
+      30ms  1.85% 53.09%       60ms  3.70%  sync.(*Pool).Get
+      20ms  1.23% 54.32%       50ms  3.09%  github.com/CloudyKit/jet/v6.(*Runtime).enterActive
+      20ms  1.23% 55.56%       20ms  1.23%  github.com/CloudyKit/jet/v6.(*Runtime).isRestricted (inline)
+      20ms  1.23% 56.79%      220ms 13.58%  github.com/CloudyKit/jet/v6.(*Runtime).printValue
+      20ms  1.23% 58.02%       20ms  1.23%  github.com/CloudyKit/jet/v6.(*Runtime).reserveUnchecked (inline)
+      20ms  1.23% 59.26%     1220ms 75.31%  github.com/CloudyKit/jet/v6.(*Template).execute
+      20ms  1.23% 60.49%      190ms 11.73%  github.com/CloudyKit/jet/v6.(*dataPrinter).value
+      20ms  1.23% 61.73%       40ms  2.47%  github.com/CloudyKit/jet/v6.constrainExecution
+      20ms  1.23% 62.96%       20ms  1.23%  github.com/CloudyKit/jet/v6.constrainParse
+      20ms  1.23% 64.20%       20ms  1.23%  internal/abi.(*Type).Uncommon (inline)
+      20ms  1.23% 65.43%       20ms  1.23%  internal/chacha8rand.block
+      20ms  1.23% 66.67%       20ms  1.23%  internal/runtime/maps.(*ctrlGroup).get (inline)
+      20ms  1.23% 67.90%       20ms  1.23%  runtime.(*_panic).start
+      20ms  1.23% 69.14%       20ms  1.23%  runtime.madvise
+      20ms  1.23% 70.37%       90ms  5.56%  runtime.makeslice
+      20ms  1.23% 71.60%       80ms  4.94%  runtime.mallocgc
+      20ms  1.23% 72.84%       20ms  1.23%  runtime.mapaccess2_fast64

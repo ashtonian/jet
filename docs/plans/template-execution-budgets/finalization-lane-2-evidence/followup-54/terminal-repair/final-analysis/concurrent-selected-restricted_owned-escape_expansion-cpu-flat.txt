@@ -1,0 +1,38 @@
+File: render.test
+Type: cpu
+Time: 2026-11-08 05:28:01 CST
+Duration: 1.42s, Total samples = 2.26s (159.72%)
+Showing nodes accounting for 2.09s, 92.48% of 2.26s total
+Dropped 57 nodes (cum <= 0.01s)
+Showing top 30 nodes out of 104
+      flat  flat%   sum%        cum   cum%
+     0.49s 21.68% 21.68%      0.49s 21.68%  runtime.madvise
+     0.25s 11.06% 32.74%      0.25s 11.06%  runtime.usleep
+     0.24s 10.62% 43.36%      0.24s 10.62%  runtime.pthread_kill
+     0.21s  9.29% 52.65%      0.90s 39.82%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+     0.14s  6.19% 58.85%      0.40s 17.70%  bytes.(*Buffer).Write
+     0.14s  6.19% 65.04%      0.17s  7.52%  context.(*cancelCtx).Err
+     0.12s  5.31% 70.35%      0.12s  5.31%  runtime.memmove
+     0.06s  2.65% 73.01%      0.25s 11.06%  github.com/CloudyKit/jet/v6.(*Runtime).reserveWork
+     0.05s  2.21% 75.22%      0.95s 42.04%  text/template.HTMLEscape
+     0.04s  1.77% 76.99%      0.04s  1.77%  github.com/CloudyKit/jet/v6.addValueSizes (inline)
+     0.04s  1.77% 78.76%      0.04s  1.77%  runtime.typePointers.next
+     0.03s  1.33% 80.09%      0.03s  1.33%  bytes.(*Buffer).tryGrowByReslice (inline)
+     0.03s  1.33% 81.42%      0.03s  1.33%  github.com/CloudyKit/jet/v6.(*Runtime).reserveUnchecked (inline)
+     0.03s  1.33% 82.74%      0.12s  5.31%  runtime.mallocgcSmallNoscan
+     0.03s  1.33% 84.07%      0.03s  1.33%  runtime.pthread_cond_timedwait_relative_np
+     0.03s  1.33% 85.40%      0.09s  3.98%  runtime.scanObject
+     0.03s  1.33% 86.73%      0.03s  1.33%  sync/atomic.(*Value).Load (inline)
+     0.02s  0.88% 87.61%      0.02s  0.88%  internal/runtime/atomic.(*UnsafePointer).Load (inline)
+     0.02s  0.88% 88.50%      0.02s  0.88%  runtime.kevent
+     0.02s  0.88% 89.38%      0.02s  0.88%  runtime.procyieldAsm
+     0.02s  0.88% 90.27%      0.02s  0.88%  runtime.pthread_cond_signal
+     0.01s  0.44% 90.71%      0.02s  0.88%  runtime.(*mheap).initSpan
+     0.01s  0.44% 91.15%      0.28s 12.39%  runtime.lock2
+     0.01s  0.44% 91.59%      0.04s  1.77%  runtime.markroot
+     0.01s  0.44% 92.04%      0.02s  0.88%  runtime.tryDeferToSpanScan
+     0.01s  0.44% 92.48%      0.02s  0.88%  runtime.wbBufFlush1
+         0     0% 92.48%      0.06s  2.65%  bytes.(*Buffer).String
+         0     0% 92.48%      0.14s  6.19%  bytes.(*Buffer).grow
+         0     0% 92.48%      0.14s  6.19%  bytes.growSlice
+         0     0% 92.48%      0.95s 42.04%  github.com/CloudyKit/fastprinter.PrintString

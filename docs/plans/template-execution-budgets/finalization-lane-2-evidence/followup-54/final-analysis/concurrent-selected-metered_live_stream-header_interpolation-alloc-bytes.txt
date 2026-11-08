@@ -1,0 +1,36 @@
+File: render.test
+Type: alloc_space
+Time: 2026-11-08 04:47:33 CST
+Showing nodes accounting for 11405kB, 100% of 11405kB total
+Showing top 30 nodes out of 67
+      flat  flat%   sum%        cum   cum%
+ 1539.06kB 13.49% 13.49%  1539.06kB 13.49%  regexp.onePassCopy
+ 1537.19kB 13.48% 26.97%  1537.19kB 13.48%  regexp/syntax.(*compiler).inst
+ 1184.27kB 10.38% 37.36%  1184.27kB 10.38%  runtime/pprof.StartCPUProfile
+ 1024.02kB  8.98% 46.34%  1024.02kB  8.98%  unicode/utf8.AppendRune
+  688.56kB  6.04% 52.37%   688.56kB  6.04%  compress/flate.(*fastGen).addBlock
+  655.29kB  5.75% 58.12%   655.29kB  5.75%  compress/flate.NewWriter (inline)
+  641.34kB  5.62% 63.74%   641.34kB  5.62%  os.readFileContents
+  544.67kB  4.78% 68.52%   544.67kB  4.78%  encoding/json/v2.makeString
+  516.01kB  4.52% 73.04%   516.01kB  4.52%  runtime/pprof.(*profMap).lookup
+     514kB  4.51% 77.55%      514kB  4.51%  slices.Grow[go.shape.[]uint8,go.shape.uint8] (inline)
+  512.28kB  4.49% 82.04%   512.28kB  4.49%  regexp.makeOnePass
+  512.14kB  4.49% 86.53%  1026.14kB  9.00%  github.com/CloudyKit/jet/v6_test.additionalExecutionWorkloads
+  512.08kB  4.49% 91.02%   512.08kB  4.49%  compress/gzip.NewWriterLevel
+  512.05kB  4.49% 95.51%  1167.34kB 10.24%  runtime/pprof.(*profileBuilder).emitLocation
+  512.03kB  4.49%   100%   512.03kB  4.49%  testing.rewrite
+         0     0%   100%   688.56kB  6.04%  compress/flate.(*Writer).Close (inline)
+         0     0%   100%   688.56kB  6.04%  compress/flate.(*compressor).close
+         0     0%   100%   688.56kB  6.04%  compress/flate.(*compressor).deflateFast
+         0     0%   100%   688.56kB  6.04%  compress/flate.(*fastEncL1).encode
+         0     0%   100%   688.56kB  6.04%  compress/gzip.(*Writer).Close
+         0     0%   100%   655.29kB  5.75%  compress/gzip.(*Writer).Write
+         0     0%   100%      514kB  4.51%  encoding/json.Marshal (inline)
+         0     0%   100%   544.67kB  4.78%  encoding/json.Unmarshal
+         0     0%   100%      514kB  4.51%  encoding/json/internal/jsonwire.AppendQuote
+         0     0%   100%      514kB  4.51%  encoding/json/jsontext.(*Encoder).WriteToken (inline)
+         0     0%   100%      514kB  4.51%  encoding/json/jsontext.(*encoderState).WriteToken
+         0     0%   100%      514kB  4.51%  encoding/json/jsontext.Token.appendString
+         0     0%   100%      514kB  4.51%  encoding/json/v2.Marshal
+         0     0%   100%   544.67kB  4.78%  encoding/json/v2.Unmarshal
+         0     0%   100%      514kB  4.51%  encoding/json/v2.makeInterfaceArshaler.func1

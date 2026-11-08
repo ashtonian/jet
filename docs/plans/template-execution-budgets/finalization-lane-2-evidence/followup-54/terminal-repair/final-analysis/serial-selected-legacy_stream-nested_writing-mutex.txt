@@ -1,0 +1,12 @@
+File: render.test
+Type: delay
+Time: 2026-11-08 05:27:21 CST
+Showing nodes accounting for 7.04us, 100% of 7.04us total
+      flat  flat%   sum%        cum   cum%
+    7.04us   100%   100%     7.04us   100%  runtime.unlock (inline)
+         0     0%   100%     7.04us   100%  runtime.gcBgMarkWorker
+         0     0%   100%     7.04us   100%  runtime.gcMarkDone
+         0     0%   100%     7.04us   100%  runtime.gcMarkTermination
+         0     0%   100%     7.04us   100%  runtime.gcMarkTermination.func3
+         0     0%   100%     7.04us   100%  runtime.startTheWorldWithSema
+         0     0%   100%     7.04us   100%  runtime.systemstack

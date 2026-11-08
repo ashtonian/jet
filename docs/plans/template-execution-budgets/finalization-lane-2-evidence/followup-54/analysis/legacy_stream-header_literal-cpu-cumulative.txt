@@ -1,0 +1,37 @@
+File: candidate.test
+Type: cpu
+Time: 2026-11-08 03:57:21 CST
+Duration: 1.41s, Total samples = 1.14s (80.72%)
+Showing nodes accounting for 1.13s, 99.12% of 1.14s total
+Showing top 30 nodes out of 34
+      flat  flat%   sum%        cum   cum%
+     0.01s  0.88%  0.88%      1.13s 99.12%  github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes.func1
+         0     0%  0.88%      1.13s 99.12%  testing.(*B).launch
+         0     0%  0.88%      1.13s 99.12%  testing.(*B).runN
+     0.03s  2.63%  3.51%      1.10s 96.49%  github.com/CloudyKit/jet/v6_test.init.func1
+     0.02s  1.75%  5.26%      1.07s 93.86%  github.com/CloudyKit/jet/v6.(*Template).Execute (inline)
+     0.36s 31.58% 36.84%      1.05s 92.11%  github.com/CloudyKit/jet/v6.(*Template).execute
+     0.10s  8.77% 45.61%      0.31s 27.19%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+     0.10s  8.77% 54.39%      0.17s 14.91%  github.com/CloudyKit/jet/v6.(*Runtime).recover
+     0.12s 10.53% 64.91%      0.12s 10.53%  github.com/CloudyKit/jet/v6.(*Runtime).checkpoint
+     0.02s  1.75% 66.67%      0.08s  7.02%  github.com/CloudyKit/jet/v6.(*Runtime).startCompilation
+     0.01s  0.88% 67.54%      0.07s  6.14%  sync.(*Pool).Put
+     0.05s  4.39% 71.93%      0.06s  5.26%  runtime.(*_panic).nextDefer
+     0.06s  5.26% 77.19%      0.06s  5.26%  runtime.memequal
+     0.05s  4.39% 81.58%      0.05s  4.39%  github.com/CloudyKit/jet/v6.(*Runtime).executeList.func1
+     0.05s  4.39% 85.96%      0.05s  4.39%  sync.(*Pool).pin
+     0.03s  2.63% 88.60%      0.04s  3.51%  github.com/CloudyKit/jet/v6.(*Runtime).templateRoot
+     0.01s  0.88% 89.47%      0.03s  2.63%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+     0.02s  1.75% 91.23%      0.03s  2.63%  sync.(*Pool).Get
+     0.02s  1.75% 92.98%      0.02s  1.75%  bytes.(*Buffer).Reset (inline)
+         0     0% 92.98%      0.02s  1.75%  bytes.(*Buffer).Write
+     0.02s  1.75% 94.74%      0.02s  1.75%  runtime.deferprocStack
+     0.02s  1.75% 96.49%      0.02s  1.75%  runtime.memmove
+     0.02s  1.75% 98.25%      0.02s  1.75%  runtime.procUnpin (inline)
+         0     0% 98.25%      0.02s  1.75%  sync.runtime_procUnpin
+         0     0% 98.25%      0.01s  0.88%  github.com/CloudyKit/jet/v6.(*Runtime).enter
+         0     0% 98.25%      0.01s  0.88%  runtime.findRunnable
+         0     0% 98.25%      0.01s  0.88%  runtime.mcall
+         0     0% 98.25%      0.01s  0.88%  runtime.notewakeup
+         0     0% 98.25%      0.01s  0.88%  runtime.park_m
+     0.01s  0.88% 99.12%      0.01s  0.88%  runtime.popDefer
