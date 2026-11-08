@@ -1,0 +1,22 @@
+File: render.test
+Type: delay
+Time: 2026-11-08 04:47:30 CST
+Showing nodes accounting for 532.58us, 100% of 532.58us total
+      flat  flat%   sum%        cum   cum%
+  532.58us   100%   100%   532.58us   100%  runtime.unlock (inline)
+         0     0%   100%   527.04us 98.96%  runtime.allocm
+         0     0%   100%     5.54us  1.04%  runtime.gcBgMarkWorker
+         0     0%   100%     5.54us  1.04%  runtime.gcMarkDone
+         0     0%   100%     5.54us  1.04%  runtime.gcMarkTermination
+         0     0%   100%     5.54us  1.04%  runtime.gcMarkTermination.func3
+         0     0%   100%   527.04us 98.96%  runtime.handoffp
+         0     0%   100%   527.04us 98.96%  runtime.mcommoninit
+         0     0%   100%   527.04us 98.96%  runtime.mstart
+         0     0%   100%   527.04us 98.96%  runtime.mstart0
+         0     0%   100%   527.04us 98.96%  runtime.mstart1
+         0     0%   100%   527.04us 98.96%  runtime.newm
+         0     0%   100%   527.04us 98.96%  runtime.retake
+         0     0%   100%     5.54us  1.04%  runtime.startTheWorldWithSema
+         0     0%   100%   527.04us 98.96%  runtime.startm
+         0     0%   100%   527.04us 98.96%  runtime.sysmon
+         0     0%   100%     5.54us  1.04%  runtime.systemstack

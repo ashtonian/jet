@@ -1,0 +1,11 @@
+gate-lock: held by pid <pid> on <host>, "jet-finalization-lane-2-followup-meter-boundary-negative 54b5614 in <checkout>", since 2026-11-08T10:30:07Z, 2 of 6 focused cores
+--- FAIL: TestExecutionMeasurementBounds (0.00s)
+    --- FAIL: TestExecutionMeasurementBounds/restricted_false/over_escaped (0.00s)
+        execution_measurement_modes_test.go:64: result length 1025, error <nil>
+    --- FAIL: TestExecutionMeasurementBounds/restricted_true/over_escaped (0.00s)
+        execution_measurement_modes_test.go:64: result length 1025, error <nil>
+FAIL
+FAIL	github.com/CloudyKit/jet/v6	0.233s
+FAIL
+
+receipt: <artifacts>/followup-meter-boundary-negative/result.json

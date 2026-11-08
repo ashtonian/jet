@@ -1,0 +1,36 @@
+File: render.test
+Type: alloc_space
+Time: 2026-11-08 04:46:37 CST
+Showing nodes accounting for 13038.48kB, 100% of 13038.48kB total
+Showing top 30 nodes out of 65
+      flat  flat%   sum%        cum   cum%
+ 3077.41kB 23.60% 23.60%  3077.41kB 23.60%  regexp/syntax.(*compiler).inst
+ 1924.02kB 14.76% 38.36%  1924.02kB 14.76%  os.readFileContents
+ 1184.27kB  9.08% 47.44%  1184.27kB  9.08%  runtime/pprof.StartCPUProfile
+ 1024.16kB  7.85% 55.30%  1024.16kB  7.85%  regexp.newQueue (inline)
+  655.29kB  5.03% 60.32%   655.29kB  5.03%  compress/flate.NewWriter (inline)
+  544.67kB  4.18% 64.50%   544.67kB  4.18%  encoding/json/v2.makeString
+  520.04kB  3.99% 68.49%   520.04kB  3.99%  bytes.Clone (inline)
+  520.04kB  3.99% 72.48%  1554.71kB 11.92%  github.com/CloudyKit/jet/v6_test.additionalExecutionWorkloads
+  514.63kB  3.95% 76.42%   514.63kB  3.95%  slices.Grow[go.shape.[]uint8,go.shape.uint8] (inline)
+  513.31kB  3.94% 80.36%   513.31kB  3.94%  regexp.onePassCopy
+  512.44kB  3.93% 84.29%  2048.60kB 15.71%  regexp.makeOnePass
+  512.08kB  3.93% 88.22%   512.08kB  3.93%  compress/gzip.NewWriterLevel
+  512.06kB  3.93% 92.15%  1024.12kB  7.85%  regexp/syntax.parse
+  512.05kB  3.93% 96.07%   512.05kB  3.93%  regexp/syntax.(*parser).newRegexp (inline)
+  512.01kB  3.93%   100%   512.01kB  3.93%  regexp.makeOnePass.func1
+         0     0%   100%   655.29kB  5.03%  compress/gzip.(*Writer).Write
+         0     0%   100%  1034.67kB  7.94%  encoding/json.Marshal (inline)
+         0     0%   100%   544.67kB  4.18%  encoding/json.Unmarshal
+         0     0%   100%   514.63kB  3.95%  encoding/json/internal/jsonwire.AppendQuote
+         0     0%   100%   514.63kB  3.95%  encoding/json/jsontext.(*Encoder).WriteToken (inline)
+         0     0%   100%   514.63kB  3.95%  encoding/json/jsontext.(*encoderState).WriteToken
+         0     0%   100%   514.63kB  3.95%  encoding/json/jsontext.Token.appendString
+         0     0%   100%  1034.67kB  7.94%  encoding/json/v2.Marshal
+         0     0%   100%   544.67kB  4.18%  encoding/json/v2.Unmarshal
+         0     0%   100%   514.63kB  3.95%  encoding/json/v2.makeInterfaceArshaler.func1
+         0     0%   100%   544.67kB  4.18%  encoding/json/v2.makeInterfaceArshaler.func2
+         0     0%   100%   514.63kB  3.95%  encoding/json/v2.makeMapArshaler.func2
+         0     0%   100%   544.67kB  4.18%  encoding/json/v2.makeMapArshaler.func3
+         0     0%   100%   514.63kB  3.95%  encoding/json/v2.makeSliceArshaler.func2
+         0     0%   100%   544.67kB  4.18%  encoding/json/v2.makeSliceArshaler.func3

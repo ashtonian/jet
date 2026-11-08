@@ -1,0 +1,41 @@
+goos: darwin
+goarch: arm64
+pkg: github.com/CloudyKit/jet/v6
+cpu: Apple M2 Max
+BenchmarkExecutionModes/legacy_stream/header_literal/text-2         	 5765436	        42.07 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/legacy_stream/header_literal/html-2         	 5764374	        42.04 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/legacy_stream/header_interpolation/text-2   	 2115240	       113.0 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/legacy_stream/header_interpolation/html-2   	 1926940	       120.2 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/legacy_stream/escape_expansion/text-2       	 2093371	       115.8 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/legacy_stream/escape_expansion/html-2       	   37476	      6409 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/metered_background_stream/header_literal/text-2         	 2630680	        91.68 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/metered_background_stream/header_literal/html-2         	 2602795	        92.97 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/metered_background_stream/header_interpolation/text-2   	 1000000	       212.6 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/metered_background_stream/header_interpolation/html-2   	 1000000	       223.7 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/metered_background_stream/escape_expansion/text-2       	 1000000	       225.2 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/metered_background_stream/escape_expansion/html-2       	   26738	      9150 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/metered_live_stream/header_literal/text-2               	 2272297	       102.4 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/metered_live_stream/header_literal/html-2               	 2336492	       105.3 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/metered_live_stream/header_interpolation/text-2         	  985052	       232.8 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/metered_live_stream/header_interpolation/html-2         	 1000000	       237.7 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/metered_live_stream/escape_expansion/text-2             	  972594	       243.3 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/metered_live_stream/escape_expansion/html-2             	   21703	     10974 ns/op	       0 B/op	       0 allocs/op
+PASS
+        5.41 real         5.31 user         0.06 sys
+            13959168  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                1070  page reclaims
+                   6  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                  89  signals received
+                   5  voluntary context switches
+                7805  involuntary context switches
+         96164010879  instructions retired
+         17882461312  cycles elapsed
+             9044496  peak memory footprint

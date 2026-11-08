@@ -1,0 +1,37 @@
+File: candidate.test
+Type: alloc_objects
+Time: 2026-11-08 03:57:34 CST
+Showing nodes accounting for 28153, 98.76% of 28507 total
+Dropped 29 nodes (cum <= 142)
+Showing top 30 nodes out of 36
+      flat  flat%   sum%        cum   cum%
+         0     0%     0%      23553 82.62%  github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes
+         0     0%     0%      23553 82.62%  testing.(*B).run1.func1
+         0     0%     0%      23553 82.62%  testing.(*B).runN
+         0     0%     0%      11996 42.08%  testing/internal/testdeps.TestDeps.MatchString
+         0     0%     0%      11980 42.02%  regexp.Compile (inline)
+      6554 22.99% 22.99%      11980 42.02%  regexp.compile
+         0     0% 22.99%      11980 42.02%  testing.(*B).Run
+         0     0% 22.99%      11980 42.02%  testing.(*matcher).fullName
+         0     0% 22.99%      11980 42.02%  testing.simpleMatch.matches
+         0     0% 22.99%      11573 40.60%  github.com/CloudyKit/jet/v6_test.measurementWorkloads
+     10955 38.43% 61.42%      11031 38.70%  github.com/CloudyKit/jet/v6_test.additionalExecutionWorkloads
+         0     0% 61.42%       4698 16.48%  runtime.main
+         0     0% 61.42%       4681 16.42%  regexp.compileOnePass
+         0     0% 61.42%       4681 16.42%  regexp.makeOnePass
+      4681 16.42% 77.84%       4681 16.42%  regexp.newQueue (inline)
+         0     0% 77.84%       4681 16.42%  runtime.makechan
+      4681 16.42% 94.26%       4681 16.42%  runtime.mallocgc
+         0     0% 94.26%        745  2.61%  regexp/syntax.(*compiler).compile
+       745  2.61% 96.87%        745  2.61%  regexp/syntax.(*compiler).inst (inline)
+         0     0% 96.87%        745  2.61%  regexp/syntax.(*compiler).rune
+         0     0% 96.87%        745  2.61%  regexp/syntax.Compile
+         0     0% 96.87%        542  1.90%  github.com/CloudyKit/jet/v6_test.executionWorkloads
+         0     0% 96.87%        537  1.88%  encoding/json.Unmarshal (inline)
+         0     0% 96.87%        537  1.88%  encoding/json/v2.Unmarshal
+         0     0% 96.87%        537  1.88%  encoding/json/v2.makeSliceArshaler.func3
+       537  1.88% 98.76%        537  1.88%  encoding/json/v2.makeString
+         0     0% 98.76%        537  1.88%  encoding/json/v2.makeStringArshaler.func2
+         0     0% 98.76%        537  1.88%  encoding/json/v2.makeStructArshaler.func3
+         0     0% 98.76%        537  1.88%  encoding/json/v2.unmarshalDecode
+         0     0% 98.76%        256   0.9%  runtime/pprof.(*profileBuilder).appendLocsForStack

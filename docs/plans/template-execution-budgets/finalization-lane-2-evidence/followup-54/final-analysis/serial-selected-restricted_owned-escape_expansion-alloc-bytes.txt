@@ -1,0 +1,34 @@
+File: render.test
+Type: alloc_space
+Time: 2026-11-08 04:47:23 CST
+Showing nodes accounting for 1082.37MB, 98.89% of 1094.54MB total
+Dropped 52 nodes (cum <= 5.47MB)
+      flat  flat%   sum%        cum   cum%
+  785.03MB 71.72% 71.72%   785.03MB 71.72%  bytes.growSlice
+  285.84MB 26.11% 97.84%   285.84MB 26.11%  bytes.(*Buffer).String (inline)
+    6.50MB  0.59% 98.43%   791.53MB 72.32%  bytes.(*Buffer).grow
+       4MB  0.37% 98.80%  1082.87MB 98.93%  github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext
+       1MB 0.091% 98.89%        6MB  0.55%  regexp.compile
+         0     0% 98.89%   791.53MB 72.32%  bytes.(*Buffer).Write
+         0     0% 98.89%   792.54MB 72.41%  github.com/CloudyKit/fastprinter.PrintString
+         0     0% 98.89%   792.54MB 72.41%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 98.89%   792.54MB 72.41%  github.com/CloudyKit/jet/v6.(*Runtime).printValue
+         0     0% 98.89%  1078.87MB 98.57%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0% 98.89%  1078.87MB 98.57%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0% 98.89%   791.53MB 72.32%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+         0     0% 98.89%   791.53MB 72.32%  github.com/CloudyKit/jet/v6.(*dataPrinter).Write
+         0     0% 98.89%   792.54MB 72.41%  github.com/CloudyKit/jet/v6.(*dataPrinter).text
+         0     0% 98.89%   792.54MB 72.41%  github.com/CloudyKit/jet/v6.(*dataPrinter).value
+         0     0% 98.89%   791.53MB 72.32%  github.com/CloudyKit/jet/v6.(*escapeeWriter).Write
+         0     0% 98.89%     8.84MB  0.81%  github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes
+         0     0% 98.89%  1082.87MB 98.93%  github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes.func1
+         0     0% 98.89%  1082.87MB 98.93%  github.com/CloudyKit/jet/v6_test.init.0.func5
+         0     0% 98.89%        6MB  0.55%  regexp.Compile (inline)
+         0     0% 98.89%     6.01MB  0.55%  testing.(*B).Run
+         0     0% 98.89%  1082.87MB 98.93%  testing.(*B).launch
+         0     0% 98.89%     8.84MB  0.81%  testing.(*B).run1.func1
+         0     0% 98.89%  1091.71MB 99.74%  testing.(*B).runN
+         0     0% 98.89%     6.01MB  0.55%  testing.(*matcher).fullName
+         0     0% 98.89%     5.50MB   0.5%  testing.simpleMatch.matches
+         0     0% 98.89%        6MB  0.55%  testing/internal/testdeps.TestDeps.MatchString
+         0     0% 98.89%   791.53MB 72.32%  text/template.HTMLEscape

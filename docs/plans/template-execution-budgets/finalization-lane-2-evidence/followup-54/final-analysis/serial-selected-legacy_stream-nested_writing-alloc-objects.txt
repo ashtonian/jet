@@ -1,0 +1,19 @@
+File: render.test
+Type: alloc_objects
+Time: 2026-11-08 04:46:56 CST
+Showing nodes accounting for 4767858, 99.58% of 4788180 total
+Dropped 81 nodes (cum <= 23940)
+      flat  flat%   sum%        cum   cum%
+   2801749 58.51% 58.51%    2801749 58.51%  github.com/CloudyKit/jet/v6.newIntsRanger (inline)
+   1966109 41.06% 99.58%    4767858 99.58%  github.com/CloudyKit/jet/v6.init.0.func5
+         0     0% 99.58%    4767858 99.58%  github.com/CloudyKit/jet/v6.(*Runtime).evalCallExpression (inline)
+         0     0% 99.58%    4767858 99.58%  github.com/CloudyKit/jet/v6.(*Runtime).evalPipeCallExpression
+         0     0% 99.58%    4767858 99.58%  github.com/CloudyKit/jet/v6.(*Runtime).evalPrimaryExpressionGroup
+         0     0% 99.58%    4767858 99.58%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 99.58%    4767858 99.58%  github.com/CloudyKit/jet/v6.(*Runtime).executeRange
+         0     0% 99.58%    4767858 99.58%  github.com/CloudyKit/jet/v6.(*Template).Execute (inline)
+         0     0% 99.58%    4767858 99.58%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0% 99.58%    4776050 99.75%  github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes.func1
+         0     0% 99.58%    4767858 99.58%  github.com/CloudyKit/jet/v6_test.init.func1
+         0     0% 99.58%    4767858 99.58%  testing.(*B).launch
+         0     0% 99.58%    4784898 99.93%  testing.(*B).runN

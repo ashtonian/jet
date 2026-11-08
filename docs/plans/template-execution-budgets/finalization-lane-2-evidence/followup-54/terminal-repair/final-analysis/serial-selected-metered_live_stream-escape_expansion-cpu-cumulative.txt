@@ -1,0 +1,37 @@
+File: render.test
+Type: cpu
+Time: 2026-11-08 05:27:45 CST
+Duration: 1.41s, Total samples = 1.18s (83.58%)
+Showing nodes accounting for 1.15s, 97.46% of 1.18s total
+Showing top 30 nodes out of 40
+      flat  flat%   sum%        cum   cum%
+         0     0%     0%      1.16s 98.31%  github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes.func1
+         0     0%     0%      1.16s 98.31%  github.com/CloudyKit/jet/v6_test.init.0.func2
+         0     0%     0%      1.16s 98.31%  testing.(*B).launch
+         0     0%     0%      1.16s 98.31%  testing.(*B).runN
+         0     0%     0%      1.15s 97.46%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0%     0%      1.15s 97.46%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0%     0%      1.14s 96.61%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0%     0%      1.13s 95.76%  github.com/CloudyKit/fastprinter.PrintString
+         0     0%     0%      1.13s 95.76%  github.com/CloudyKit/jet/v6.(*Runtime).printValue
+     0.01s  0.85%  0.85%      1.13s 95.76%  github.com/CloudyKit/jet/v6.(*dataPrinter).Write
+         0     0%  0.85%      1.13s 95.76%  github.com/CloudyKit/jet/v6.(*dataPrinter).text
+         0     0%  0.85%      1.13s 95.76%  github.com/CloudyKit/jet/v6.(*dataPrinter).value
+         0     0%  0.85%      1.12s 94.92%  github.com/CloudyKit/jet/v6.(*escapeeWriter).Write
+     0.17s 14.41% 15.25%      1.12s 94.92%  text/template.HTMLEscape
+     0.16s 13.56% 28.81%      0.95s 80.51%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+     0.13s 11.02% 39.83%      0.40s 33.90%  github.com/CloudyKit/jet/v6.(*Runtime).reserveWork
+     0.24s 20.34% 60.17%      0.39s 33.05%  bytes.(*Buffer).Write
+     0.13s 11.02% 71.19%      0.21s 17.80%  context.(*cancelCtx).Err
+     0.11s  9.32% 80.51%      0.11s  9.32%  runtime.memmove
+     0.08s  6.78% 87.29%      0.08s  6.78%  sync/atomic.(*Value).Load (inline)
+     0.06s  5.08% 92.37%      0.06s  5.08%  github.com/CloudyKit/jet/v6.(*Runtime).reserveUnchecked (inline)
+     0.04s  3.39% 95.76%      0.04s  3.39%  bytes.(*Buffer).tryGrowByReslice (inline)
+         0     0% 95.76%      0.02s  1.69%  runtime.gopreempt_m (inline)
+         0     0% 95.76%      0.02s  1.69%  runtime.goschedImpl
+         0     0% 95.76%      0.02s  1.69%  runtime.morestack
+         0     0% 95.76%      0.02s  1.69%  runtime.newstack
+         0     0% 95.76%      0.02s  1.69%  runtime.notewakeup
+     0.02s  1.69% 97.46%      0.02s  1.69%  runtime.pthread_cond_signal
+         0     0% 97.46%      0.02s  1.69%  runtime.semawakeup
+         0     0% 97.46%      0.02s  1.69%  runtime.startm

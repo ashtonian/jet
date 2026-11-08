@@ -1,0 +1,6 @@
+gate-lock: held by pid <pid> on <host>, "jet-finalization-lane-2-followup-custom-boundary-negative 54b5614 in <checkout>", since 2026-11-08T10:30:07Z, 2 of 6 focused cores
+--- FAIL: TestOutputReentrantEscaperTerminal (0.00s)
+    execution_output_reentry_test.go:46: metered=false entered=true caught=true after=(5,<nil>) output="&lt;after" calls=1 err=Jet Runtime Error ("/terminal.jet":1): sink failed
+FAIL
+FAIL	github.com/CloudyKit/jet/v6	0.429s
+FAIL

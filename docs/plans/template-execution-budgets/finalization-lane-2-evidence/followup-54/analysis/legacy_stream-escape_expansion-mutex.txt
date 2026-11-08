@@ -1,0 +1,12 @@
+File: candidate.test
+Type: delay
+Time: 2026-11-08 03:57:28 CST
+Showing nodes accounting for 17.38us, 100% of 17.38us total
+      flat  flat%   sum%        cum   cum%
+   17.38us   100%   100%    17.38us   100%  runtime.unlock (inline)
+         0     0%   100%    17.38us   100%  runtime.gcBgMarkWorker
+         0     0%   100%    17.38us   100%  runtime.gcMarkDone
+         0     0%   100%    17.38us   100%  runtime.gcMarkTermination
+         0     0%   100%    17.38us   100%  runtime.gcMarkTermination.func3
+         0     0%   100%    17.38us   100%  runtime.startTheWorldWithSema
+         0     0%   100%    17.38us   100%  runtime.systemstack

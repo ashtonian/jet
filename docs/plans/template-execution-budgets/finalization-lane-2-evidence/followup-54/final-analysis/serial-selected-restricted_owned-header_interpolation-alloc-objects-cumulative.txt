@@ -1,0 +1,29 @@
+File: render.test
+Type: alloc_objects
+Time: 2026-11-08 04:47:22 CST
+Showing nodes accounting for 10520116, 99.89% of 10531309 total
+Dropped 48 nodes (cum <= 52656)
+      flat  flat%   sum%        cum   cum%
+         0     0%     0%   10527947   100%  testing.(*B).runN
+   3309769 31.43% 31.43%   10453616 99.26%  github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext
+         0     0% 31.43%   10453616 99.26%  github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes.func1
+         0     0% 31.43%   10453616 99.26%  github.com/CloudyKit/jet/v6_test.init.0.func5
+         0     0% 31.43%   10453616 99.26%  testing.(*B).launch
+         0     0% 31.43%    7143847 67.83%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0% 31.43%    7143847 67.83%  github.com/CloudyKit/jet/v6.(*Template).execute
+   3670099 34.85% 66.28%    3670099 34.85%  bytes.(*Buffer).String (inline)
+         0     0% 66.28%    3473748 32.98%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 66.28%    3473620 32.98%  bytes.(*Buffer).Write
+   3473620 32.98% 99.26%    3473620 32.98%  bytes.(*Buffer).grow
+         0     0% 99.26%    3473620 32.98%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+         0     0% 99.26%      74331  0.71%  github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes
+         0     0% 99.26%      74331  0.71%  testing.(*B).run1.func1
+         0     0% 99.26%      73465   0.7%  regexp.Compile (inline)
+         0     0% 99.26%      73465   0.7%  regexp.compile
+         0     0% 99.26%      73465   0.7%  testing.(*B).Run
+         0     0% 99.26%      73465   0.7%  testing.(*matcher).fullName
+         0     0% 99.26%      73465   0.7%  testing.simpleMatch.matches
+         0     0% 99.26%      73465   0.7%  testing/internal/testdeps.TestDeps.MatchString
+         0     0% 99.26%      71602  0.68%  regexp.compileOnePass
+      1092  0.01% 99.27%      71309  0.68%  regexp.makeOnePass
+     65536  0.62% 99.89%      65536  0.62%  regexp.makeOnePass.func1

@@ -1,0 +1,47 @@
+goos: darwin
+goarch: arm64
+pkg: github.com/CloudyKit/jet/v6
+cpu: Apple M2 Max
+BenchmarkExecutionModes/legacy_stream/header_literal/text-2         	 5540437	        42.88 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/legacy_stream/header_literal/html-2         	 5591602	        42.60 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/legacy_stream/header_interpolation/text-2   	 2192586	       111.9 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/legacy_stream/header_interpolation/html-2   	 1909623	       123.8 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/legacy_stream/nested_writing/text-2         	   14446	     16539 ns/op	    1584 B/op	      66 allocs/op
+BenchmarkExecutionModes/legacy_stream/nested_writing/html-2         	   14521	     16649 ns/op	    1584 B/op	      66 allocs/op
+BenchmarkExecutionModes/legacy_stream/escape_expansion/text-2       	 2074196	       115.1 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/legacy_stream/escape_expansion/html-2       	   39790	      6056 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/metered_background_stream/header_literal/text-2         	 2622337	        92.30 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/metered_background_stream/header_literal/html-2         	 2576186	        92.52 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/metered_background_stream/header_interpolation/text-2   	 1000000	       213.7 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/metered_background_stream/header_interpolation/html-2   	 1000000	       225.3 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/metered_background_stream/nested_writing/text-2         	   10000	     22576 ns/op	    1584 B/op	      66 allocs/op
+BenchmarkExecutionModes/metered_background_stream/nested_writing/html-2         	   10000	     22545 ns/op	    1584 B/op	      66 allocs/op
+BenchmarkExecutionModes/metered_background_stream/escape_expansion/text-2       	 1000000	       223.4 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/metered_background_stream/escape_expansion/html-2       	   27912	      8557 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/metered_live_stream/header_literal/text-2               	 2335324	       102.4 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/metered_live_stream/header_literal/html-2               	 2351656	       102.2 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/metered_live_stream/header_interpolation/text-2         	 1000000	       228.2 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/metered_live_stream/header_interpolation/html-2         	  972183	       241.3 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/metered_live_stream/nested_writing/text-2               	    9355	     26722 ns/op	    1584 B/op	      66 allocs/op
+BenchmarkExecutionModes/metered_live_stream/nested_writing/html-2               	    8931	     27251 ns/op	    1584 B/op	      66 allocs/op
+BenchmarkExecutionModes/metered_live_stream/escape_expansion/text-2             	  969728	       240.1 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/metered_live_stream/escape_expansion/html-2             	   22508	     10563 ns/op	       0 B/op	       0 allocs/op
+PASS
+        7.40 real         7.05 user         0.08 sys
+            14991360  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                1137  page reclaims
+                   0  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                 252  signals received
+                   1  voluntary context switches
+                9592  involuntary context switches
+        132648286006  instructions retired
+         23779776555  cycles elapsed
+            10256912  peak memory footprint

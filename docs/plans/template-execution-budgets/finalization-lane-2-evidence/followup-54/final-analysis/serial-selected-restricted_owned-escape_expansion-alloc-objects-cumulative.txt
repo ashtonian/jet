@@ -1,0 +1,37 @@
+File: render.test
+Type: alloc_objects
+Time: 2026-11-08 04:47:23 CST
+Showing nodes accounting for 918674, 94.90% of 968034 total
+Dropped 47 nodes (cum <= 4840)
+Showing top 30 nodes out of 33
+      flat  flat%   sum%        cum   cum%
+         0     0%     0%     960658 99.24%  testing.(*B).runN
+     65539  6.77%  6.77%     913949 94.41%  github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext
+         0     0%  6.77%     913949 94.41%  github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes.func1
+         0     0%  6.77%     913949 94.41%  github.com/CloudyKit/jet/v6_test.init.0.func5
+         0     0%  6.77%     913949 94.41%  testing.(*B).launch
+         0     0%  6.77%     848410 87.64%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0%  6.77%     848410 87.64%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0%  6.77%     750100 77.49%  github.com/CloudyKit/fastprinter.PrintString
+         0     0%  6.77%     750100 77.49%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0%  6.77%     750100 77.49%  github.com/CloudyKit/jet/v6.(*Runtime).printValue
+         0     0%  6.77%     750100 77.49%  github.com/CloudyKit/jet/v6.(*dataPrinter).text
+         0     0%  6.77%     750100 77.49%  github.com/CloudyKit/jet/v6.(*dataPrinter).value
+         0     0%  6.77%     747924 77.26%  bytes.(*Buffer).Write
+    106502 11.00% 17.77%     747924 77.26%  bytes.(*Buffer).grow
+         0     0% 17.77%     747924 77.26%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+         0     0% 17.77%     747924 77.26%  github.com/CloudyKit/jet/v6.(*dataPrinter).Write
+         0     0% 17.77%     747924 77.26%  github.com/CloudyKit/jet/v6.(*escapeeWriter).Write
+         0     0% 17.77%     747924 77.26%  text/template.HTMLEscape
+    641422 66.26% 84.03%     641422 66.26%  bytes.growSlice
+     97565 10.08% 94.11%      97565 10.08%  bytes.(*Buffer).String (inline)
+         0     0% 94.11%      50682  5.24%  regexp.Compile (inline)
+      6554  0.68% 94.79%      50682  5.24%  regexp.compile
+         0     0% 94.79%      50682  5.24%  testing/internal/testdeps.TestDeps.MatchString
+         0     0% 94.79%      46709  4.83%  github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes
+         0     0% 94.79%      46709  4.83%  testing.(*B).run1.func1
+         0     0% 94.79%      46666  4.82%  testing.(*B).Run
+         0     0% 94.79%      46666  4.82%  testing.(*matcher).fullName
+         0     0% 94.79%      46586  4.81%  testing.simpleMatch.matches
+         0     0% 94.79%      34818  3.60%  regexp.compileOnePass
+      1092  0.11% 94.90%      33860  3.50%  regexp.makeOnePass

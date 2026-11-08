@@ -1,0 +1,37 @@
+File: render.test
+Type: alloc_objects
+Time: 2026-11-08 04:47:14 CST
+Showing nodes accounting for 39870, 88.37% of 45118 total
+Dropped 8 nodes (cum <= 225)
+Showing top 30 nodes out of 41
+      flat  flat%   sum%        cum   cum%
+         0     0%     0%      35281 78.20%  github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes
+         0     0%     0%      35281 78.20%  testing.(*B).run1.func1
+         0     0%     0%      35281 78.20%  testing.(*B).runN
+         0     0%     0%      31860 70.61%  github.com/CloudyKit/jet/v6_test.measurementWorkloads
+     10923 24.21% 24.21%      21846 48.42%  github.com/CloudyKit/jet/v6_test.additionalExecutionWorkloads
+     10923 24.21% 48.42%      10923 24.21%  internal/bytealg.MakeNoZero
+         0     0% 48.42%      10923 24.21%  strings.(*Builder).Grow
+         0     0% 48.42%      10923 24.21%  strings.(*Builder).grow
+         0     0% 48.42%      10923 24.21%  strings.Repeat
+         0     0% 48.42%      10014 22.20%  github.com/CloudyKit/jet/v6_test.executionWorkloads
+         0     0% 48.42%      10012 22.19%  encoding/json.Unmarshal (inline)
+         0     0% 48.42%      10012 22.19%  encoding/json/v2.Unmarshal
+         0     0% 48.42%      10012 22.19%  encoding/json/v2.makeSliceArshaler.func3
+         0     0% 48.42%      10012 22.19%  encoding/json/v2.makeStructArshaler.func3
+         0     0% 48.42%      10012 22.19%  encoding/json/v2.unmarshalDecode
+         0     0% 48.42%       9832 21.79%  runtime/pprof.profileWriter
+         0     0% 48.42%       8192 18.16%  encoding/json/internal/jsonwire.AppendUnquote
+         0     0% 48.42%       8192 18.16%  encoding/json/internal/jsonwire.UnquoteMayCopy
+         0     0% 48.42%       8192 18.16%  encoding/json/v2.makeStringArshaler.func2
+      8192 18.16% 66.58%       8192 18.16%  slices.Grow[go.shape.[]uint8,go.shape.uint8] (inline)
+         0     0% 66.58%       6555 14.53%  runtime/pprof.(*profileBuilder).appendLocsForStack
+         0     0% 66.58%       6555 14.53%  runtime/pprof.(*profileBuilder).build
+      6555 14.53% 81.11%       6555 14.53%  runtime/pprof.allFrames
+         0     0% 81.11%       3421  7.58%  regexp.Compile (inline)
+         0     0% 81.11%       3421  7.58%  regexp.compile
+         0     0% 81.11%       3421  7.58%  testing.(*B).Run
+         0     0% 81.11%       3421  7.58%  testing.(*matcher).fullName
+         0     0% 81.11%       3421  7.58%  testing.simpleMatch.matches
+         0     0% 81.11%       3421  7.58%  testing/internal/testdeps.TestDeps.MatchString
+      3277  7.26% 88.37%       3277  7.26%  compress/gzip.NewWriterLevel

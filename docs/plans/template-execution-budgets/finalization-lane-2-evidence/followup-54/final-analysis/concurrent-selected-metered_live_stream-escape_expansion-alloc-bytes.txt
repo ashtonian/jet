@@ -1,0 +1,36 @@
+File: render.test
+Type: alloc_space
+Time: 2026-11-08 04:47:36 CST
+Showing nodes accounting for 16544.76kB, 100% of 16544.76kB total
+Showing top 30 nodes out of 90
+      flat  flat%   sum%        cum   cum%
+ 2563.03kB 15.49% 15.49%  2563.03kB 15.49%  regexp/syntax.(*compiler).inst
+ 1762.94kB 10.66% 26.15%  1762.94kB 10.66%  runtime/pprof.StartCPUProfile
+ 1539.94kB  9.31% 35.45%  1539.94kB  9.31%  regexp.onePassCopy
+ 1282.68kB  7.75% 43.21%  1282.68kB  7.75%  os.readFileContents
+ 1024.52kB  6.19% 49.40%  3072.66kB 18.57%  regexp.makeOnePass
+ 1024.28kB  6.19% 55.59%  1024.28kB  6.19%  github.com/CloudyKit/jet/v6_test.additionalExecutionWorkloads
+ 1024.12kB  6.19% 61.78%  1024.12kB  6.19%  regexp.newQueue (inline)
+ 1024.02kB  6.19% 67.97%  1024.02kB  6.19%  regexp.makeOnePass.func1
+  655.29kB  3.96% 71.93%   655.29kB  3.96%  compress/flate.NewWriter (inline)
+  544.67kB  3.29% 75.22%   544.67kB  3.29%  encoding/json/v2.makeString
+     514kB  3.11% 78.33%      514kB  3.11%  bytes.growSlice
+  512.88kB  3.10% 81.43%   512.88kB  3.10%  unicode.map.init.1
+  512.12kB  3.10% 84.53%   512.12kB  3.10%  regexp/syntax.(*parser).maybeConcat
+  512.12kB  3.10% 87.62%   512.12kB  3.10%  sync.(*Pool).pinSlow
+  512.05kB  3.09% 90.72%   512.05kB  3.09%  regexp/syntax.(*parser).newRegexp
+  512.05kB  3.09% 93.81%   512.05kB  3.09%  runtime.mallocgc
+  512.03kB  3.09% 96.91%   512.03kB  3.09%  github.com/CloudyKit/jet/v6.NewSet
+  512.01kB  3.09%   100%   512.01kB  3.09%  regexp/syntax.(*Regexp).CapNames
+         0     0%   100%      514kB  3.11%  bytes.(*Buffer).Write
+         0     0%   100%      514kB  3.11%  bytes.(*Buffer).grow
+         0     0%   100%   655.29kB  3.96%  compress/gzip.(*Writer).Write
+         0     0%   100%   544.67kB  3.29%  encoding/json.Unmarshal
+         0     0%   100%   544.67kB  3.29%  encoding/json/v2.Unmarshal
+         0     0%   100%   544.67kB  3.29%  encoding/json/v2.makeSliceArshaler.func3
+         0     0%   100%   544.67kB  3.29%  encoding/json/v2.makeStringArshaler.func2
+         0     0%   100%   544.67kB  3.29%  encoding/json/v2.makeStructArshaler.func3
+         0     0%   100%   544.67kB  3.29%  encoding/json/v2.unmarshalDecode
+         0     0%   100%   512.12kB  3.10%  fmt.Fprintf
+         0     0%   100%   512.12kB  3.10%  fmt.newPrinter
+         0     0%   100%      514kB  3.11%  github.com/CloudyKit/fastprinter.PrintString

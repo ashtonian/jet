@@ -1,0 +1,410 @@
+[
+  {
+    "source": "baseline-source/eval.go",
+    "base_revision": "54b561484e1465edea963ed04579bcd24a7dbf76",
+    "file": "eval.go",
+    "sha256": "a6a0d75ca85d1514c975ad9e8bdf1760f53d2ef7a8be3e8c6798bc3968a824fc",
+    "patch": "source-patches/baseline-source/eval.go.patch",
+    "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "source": "baseline-source/exec.go",
+    "base_revision": "54b561484e1465edea963ed04579bcd24a7dbf76",
+    "file": "exec.go",
+    "sha256": "503b545ee81fdb09955c4bbc1f53390e645408bfbfa2b6844bc0cbc9f7c71c7e",
+    "patch": "source-patches/baseline-source/exec.go.patch",
+    "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "source": "baseline-source/execution.go",
+    "base_revision": "54b561484e1465edea963ed04579bcd24a7dbf76",
+    "file": "execution.go",
+    "sha256": "49c31f80552052377440e0dc86af926e9c2a964c27b34e8d4cc6e0568ff33947",
+    "patch": "source-patches/baseline-source/execution.go.patch",
+    "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "source": "baseline-source/execution_output.go",
+    "base_revision": "54b561484e1465edea963ed04579bcd24a7dbf76",
+    "file": "execution_output.go",
+    "sha256": "4b9f1176d5eb4835783c32f81c9b44e84cab9049b8f5a46ab67e98c0aa29cb3b",
+    "patch": "source-patches/baseline-source/execution_output.go.patch",
+    "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "source": "baseline-source/execution_print.go",
+    "base_revision": "54b561484e1465edea963ed04579bcd24a7dbf76",
+    "file": "execution_print.go",
+    "sha256": "92b4c21e0c04c9e6ef91de0df32f6ced43436873c09c15453c36ac22720e6337",
+    "patch": "source-patches/baseline-source/execution_print.go.patch",
+    "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "source": "baseline-source/restricted.go",
+    "base_revision": "54b561484e1465edea963ed04579bcd24a7dbf76",
+    "file": "restricted.go",
+    "sha256": "72e4dd56c4db4ac1af3428a057471fa073ac8f3bd842c82b3d0da274d97637e3",
+    "patch": "source-patches/baseline-source/restricted.go.patch",
+    "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "source": "baseline-source/set.go",
+    "base_revision": "54b561484e1465edea963ed04579bcd24a7dbf76",
+    "file": "set.go",
+    "sha256": "a04c02a62fdc3b1ec9aa3b731cfec04302e02d582bd96526f765319219a15f50",
+    "patch": "source-patches/baseline-source/set.go.patch",
+    "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "source": "counterfactual/custom-unsafe/set.go",
+    "base_revision": "54b561484e1465edea963ed04579bcd24a7dbf76",
+    "file": "set.go",
+    "sha256": "bd2f4ac2a7c56f1395feb06ee4cfdd963d861bb21c264ed5229a0e997a142b40",
+    "patch": "source-patches/counterfactual/custom-unsafe/set.go.patch",
+    "patch_sha256": "02e0fcb934008cee34ca42ed4e912a749cbb7c00ff913ca57c99e112d03cef87"
+  },
+  {
+    "source": "counterfactual/meter-unsafe/eval.go",
+    "base_revision": "54b561484e1465edea963ed04579bcd24a7dbf76",
+    "file": "eval.go",
+    "sha256": "95766122e611386938c6bb8a08366aac7959239356451a8792c54d7b120ee54f",
+    "patch": "source-patches/counterfactual/meter-unsafe/eval.go.patch",
+    "patch_sha256": "ca924be6c54a67c8488748f3e93b50fc4f2dfbaa37b2c17315fce6dd4810a359"
+  },
+  {
+    "source": "selected-source/eval.go",
+    "base_revision": "54b561484e1465edea963ed04579bcd24a7dbf76",
+    "file": "eval.go",
+    "sha256": "e681481272b3213a12ac582935942f18ac1d98f2ade3c52240de73332bf3985e",
+    "patch": "source-patches/selected-source/eval.go.patch",
+    "patch_sha256": "0d74404977cb41d5b505ffacf83d65c6dcbd2feee5b44088628b9603cf250a00"
+  },
+  {
+    "source": "selected-source/exec.go",
+    "base_revision": "54b561484e1465edea963ed04579bcd24a7dbf76",
+    "file": "exec.go",
+    "sha256": "2ecfb34b5ec4c4641f247205372546fab2b3de8a75fa1bd6274c6f6d801796a1",
+    "patch": "source-patches/selected-source/exec.go.patch",
+    "patch_sha256": "34d8b5780ed31bf068bb6e5eab91f76d0e8119d2e3e614018ca6c06805701bae"
+  },
+  {
+    "source": "selected-source/execution.go",
+    "base_revision": "54b561484e1465edea963ed04579bcd24a7dbf76",
+    "file": "execution.go",
+    "sha256": "f3f58964a13f2faf8be20a0a030f854964c0aea45f8abd9cab92cccd021915d3",
+    "patch": "source-patches/selected-source/execution.go.patch",
+    "patch_sha256": "f8f87ea6478677ea8a0aeceb86a6d9bd837e86bbd4705adec3b86221dc01a882"
+  },
+  {
+    "source": "selected-source/execution_output.go",
+    "base_revision": "54b561484e1465edea963ed04579bcd24a7dbf76",
+    "file": "execution_output.go",
+    "sha256": "4b9f1176d5eb4835783c32f81c9b44e84cab9049b8f5a46ab67e98c0aa29cb3b",
+    "patch": "source-patches/selected-source/execution_output.go.patch",
+    "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "source": "selected-source/execution_print.go",
+    "base_revision": "54b561484e1465edea963ed04579bcd24a7dbf76",
+    "file": "execution_print.go",
+    "sha256": "b598c8a80e8cce1dda1857efaa62fb3e6a73cdefa039edd0b2ee293823e79e75",
+    "patch": "source-patches/selected-source/execution_print.go.patch",
+    "patch_sha256": "93cf4263e32259099d5d3ad35d8a7f51dfa2c324a7bf6ad8da3cbef17cb562e6"
+  },
+  {
+    "source": "selected-source/restricted.go",
+    "base_revision": "54b561484e1465edea963ed04579bcd24a7dbf76",
+    "file": "restricted.go",
+    "sha256": "72e4dd56c4db4ac1af3428a057471fa073ac8f3bd842c82b3d0da274d97637e3",
+    "patch": "source-patches/selected-source/restricted.go.patch",
+    "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "source": "selected-source/set.go",
+    "base_revision": "54b561484e1465edea963ed04579bcd24a7dbf76",
+    "file": "set.go",
+    "sha256": "cd1dfc25cd60c38219aed31bdb64653c66eee010287b61f69aaacfe396623e30",
+    "patch": "source-patches/selected-source/set.go.patch",
+    "patch_sha256": "b16bb1b0d129c99bd6e6b2a59414caf37f3f9a2b467938db40782ba72b7d5556"
+  },
+  {
+    "source": "terminal-repair/local-error/execution.go",
+    "base_revision": "54b561484e1465edea963ed04579bcd24a7dbf76",
+    "file": "execution.go",
+    "sha256": "04a1bfa310e8923a766ba745937a03823be08e722e50b3bd92707928d6fc9374",
+    "patch": "source-patches/terminal-repair/local-error/execution.go.patch",
+    "patch_sha256": "3839817b7f340a40ab14541378c10bc9b32b1b7f5b3efbe52720f577ce9078fc"
+  },
+  {
+    "source": "terminal-repair/source/eval.go",
+    "base_revision": "54b561484e1465edea963ed04579bcd24a7dbf76",
+    "file": "eval.go",
+    "sha256": "e681481272b3213a12ac582935942f18ac1d98f2ade3c52240de73332bf3985e",
+    "patch": "source-patches/terminal-repair/source/eval.go.patch",
+    "patch_sha256": "0d74404977cb41d5b505ffacf83d65c6dcbd2feee5b44088628b9603cf250a00"
+  },
+  {
+    "source": "terminal-repair/source/exec.go",
+    "base_revision": "54b561484e1465edea963ed04579bcd24a7dbf76",
+    "file": "exec.go",
+    "sha256": "cf989a2e8b141e4822f40f8bd233ede67255799ce8768a96e02103eff4fda97d",
+    "patch": "source-patches/terminal-repair/source/exec.go.patch",
+    "patch_sha256": "0039ae6ca725f37322a4e8bebc03d18605ed5265fe771eca65ae0cd7cf938fe8"
+  },
+  {
+    "source": "terminal-repair/source/execution.go",
+    "base_revision": "54b561484e1465edea963ed04579bcd24a7dbf76",
+    "file": "execution.go",
+    "sha256": "8c3af0fd5a106ec6f5aa06e5df912562d5a65d5b58b31d097a5c2fc730d65de9",
+    "patch": "source-patches/terminal-repair/source/execution.go.patch",
+    "patch_sha256": "26f80cd6f3966839e1f890cf789551efd4e37c400b1baea7c48391ea4c1797ed"
+  },
+  {
+    "source": "terminal-repair/source/execution_output.go",
+    "base_revision": "54b561484e1465edea963ed04579bcd24a7dbf76",
+    "file": "execution_output.go",
+    "sha256": "4b9f1176d5eb4835783c32f81c9b44e84cab9049b8f5a46ab67e98c0aa29cb3b",
+    "patch": "source-patches/terminal-repair/source/execution_output.go.patch",
+    "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "source": "terminal-repair/source/execution_print.go",
+    "base_revision": "54b561484e1465edea963ed04579bcd24a7dbf76",
+    "file": "execution_print.go",
+    "sha256": "b598c8a80e8cce1dda1857efaa62fb3e6a73cdefa039edd0b2ee293823e79e75",
+    "patch": "source-patches/terminal-repair/source/execution_print.go.patch",
+    "patch_sha256": "93cf4263e32259099d5d3ad35d8a7f51dfa2c324a7bf6ad8da3cbef17cb562e6"
+  },
+  {
+    "source": "terminal-repair/source/restricted.go",
+    "base_revision": "54b561484e1465edea963ed04579bcd24a7dbf76",
+    "file": "restricted.go",
+    "sha256": "72e4dd56c4db4ac1af3428a057471fa073ac8f3bd842c82b3d0da274d97637e3",
+    "patch": "source-patches/terminal-repair/source/restricted.go.patch",
+    "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "source": "terminal-repair/source/set.go",
+    "base_revision": "54b561484e1465edea963ed04579bcd24a7dbf76",
+    "file": "set.go",
+    "sha256": "cd1dfc25cd60c38219aed31bdb64653c66eee010287b61f69aaacfe396623e30",
+    "patch": "source-patches/terminal-repair/source/set.go.patch",
+    "patch_sha256": "b16bb1b0d129c99bd6e6b2a59414caf37f3f9a2b467938db40782ba72b7d5556"
+  },
+  {
+    "source": "terminal-repair/state-latch/execution.go",
+    "base_revision": "54b561484e1465edea963ed04579bcd24a7dbf76",
+    "file": "execution.go",
+    "sha256": "e03a73a6b4f30a8919f8860a43a95fede04a71aba038570800e353da9fdcc2e2",
+    "patch": "source-patches/terminal-repair/state-latch/execution.go.patch",
+    "patch_sha256": "12eba5e5546a845e8c0642afae0a3d3c2414ca805aa02303efb3641c2f0bb090"
+  },
+  {
+    "source": "variants/baseline/eval.go",
+    "base_revision": "54b561484e1465edea963ed04579bcd24a7dbf76",
+    "file": "eval.go",
+    "sha256": "a6a0d75ca85d1514c975ad9e8bdf1760f53d2ef7a8be3e8c6798bc3968a824fc",
+    "patch": "source-patches/variants/baseline/eval.go.patch",
+    "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "source": "variants/baseline/exec.go",
+    "base_revision": "54b561484e1465edea963ed04579bcd24a7dbf76",
+    "file": "exec.go",
+    "sha256": "503b545ee81fdb09955c4bbc1f53390e645408bfbfa2b6844bc0cbc9f7c71c7e",
+    "patch": "source-patches/variants/baseline/exec.go.patch",
+    "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "source": "variants/baseline/execution.go",
+    "base_revision": "54b561484e1465edea963ed04579bcd24a7dbf76",
+    "file": "execution.go",
+    "sha256": "49c31f80552052377440e0dc86af926e9c2a964c27b34e8d4cc6e0568ff33947",
+    "patch": "source-patches/variants/baseline/execution.go.patch",
+    "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "source": "variants/both-output/execution_output.go",
+    "base_revision": "54b561484e1465edea963ed04579bcd24a7dbf76",
+    "file": "execution_output.go",
+    "sha256": "5a6e45ef40330b7827c3d071e64bc9f51a4d29af8f139dbd1e59ab45b01597f3",
+    "patch": "source-patches/variants/both-output/execution_output.go.patch",
+    "patch_sha256": "b7a8bf7e7d7c128ed782dc12b4a899af5bf7c9152f607fbd4e55d9ed7de187b9"
+  },
+  {
+    "source": "variants/both-output/execution_print.go",
+    "base_revision": "54b561484e1465edea963ed04579bcd24a7dbf76",
+    "file": "execution_print.go",
+    "sha256": "b598c8a80e8cce1dda1857efaa62fb3e6a73cdefa039edd0b2ee293823e79e75",
+    "patch": "source-patches/variants/both-output/execution_print.go.patch",
+    "patch_sha256": "93cf4263e32259099d5d3ad35d8a7f51dfa2c324a7bf6ad8da3cbef17cb562e6"
+  },
+  {
+    "source": "variants/buffer-fast/execution_output.go",
+    "base_revision": "54b561484e1465edea963ed04579bcd24a7dbf76",
+    "file": "execution_output.go",
+    "sha256": "5a6e45ef40330b7827c3d071e64bc9f51a4d29af8f139dbd1e59ab45b01597f3",
+    "patch": "source-patches/variants/buffer-fast/execution_output.go.patch",
+    "patch_sha256": "b7a8bf7e7d7c128ed782dc12b4a899af5bf7c9152f607fbd4e55d9ed7de187b9"
+  },
+  {
+    "source": "variants/buffer-fast/execution_print.go",
+    "base_revision": "54b561484e1465edea963ed04579bcd24a7dbf76",
+    "file": "execution_print.go",
+    "sha256": "92b4c21e0c04c9e6ef91de0df32f6ced43436873c09c15453c36ac22720e6337",
+    "patch": "source-patches/variants/buffer-fast/execution_print.go.patch",
+    "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "source": "variants/combined/eval.go",
+    "base_revision": "54b561484e1465edea963ed04579bcd24a7dbf76",
+    "file": "eval.go",
+    "sha256": "918b33104f1fa7b51aead6d0e8b1cc4ee289ea001f3ddf99b3d456211232db25",
+    "patch": "source-patches/variants/combined/eval.go.patch",
+    "patch_sha256": "c391fec115fd1753e60691a1516db98015b9f7d726c88e977be7a12cb3239d62"
+  },
+  {
+    "source": "variants/combined/exec.go",
+    "base_revision": "54b561484e1465edea963ed04579bcd24a7dbf76",
+    "file": "exec.go",
+    "sha256": "510790ac2f75d82d92d578397bb6f3abd4e4bcc3a381160c7e7215d10d5098d7",
+    "patch": "source-patches/variants/combined/exec.go.patch",
+    "patch_sha256": "3a218813ddd39fbd22ab817f6e0ba92d0f915dd9416446f17415af46bfaf2ed0"
+  },
+  {
+    "source": "variants/combined/execution.go",
+    "base_revision": "54b561484e1465edea963ed04579bcd24a7dbf76",
+    "file": "execution.go",
+    "sha256": "f3f58964a13f2faf8be20a0a030f854964c0aea45f8abd9cab92cccd021915d3",
+    "patch": "source-patches/variants/combined/execution.go.patch",
+    "patch_sha256": "f8f87ea6478677ea8a0aeceb86a6d9bd837e86bbd4705adec3b86221dc01a882"
+  },
+  {
+    "source": "variants/dispatch/eval.go",
+    "base_revision": "54b561484e1465edea963ed04579bcd24a7dbf76",
+    "file": "eval.go",
+    "sha256": "a6a0d75ca85d1514c975ad9e8bdf1760f53d2ef7a8be3e8c6798bc3968a824fc",
+    "patch": "source-patches/variants/dispatch/eval.go.patch",
+    "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "source": "variants/dispatch/exec.go",
+    "base_revision": "54b561484e1465edea963ed04579bcd24a7dbf76",
+    "file": "exec.go",
+    "sha256": "503b545ee81fdb09955c4bbc1f53390e645408bfbfa2b6844bc0cbc9f7c71c7e",
+    "patch": "source-patches/variants/dispatch/exec.go.patch",
+    "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "source": "variants/dispatch/execution.go",
+    "base_revision": "54b561484e1465edea963ed04579bcd24a7dbf76",
+    "file": "execution.go",
+    "sha256": "f3f58964a13f2faf8be20a0a030f854964c0aea45f8abd9cab92cccd021915d3",
+    "patch": "source-patches/variants/dispatch/execution.go.patch",
+    "patch_sha256": "f8f87ea6478677ea8a0aeceb86a6d9bd837e86bbd4705adec3b86221dc01a882"
+  },
+  {
+    "source": "variants/legacy-setup/exec.go",
+    "base_revision": "54b561484e1465edea963ed04579bcd24a7dbf76",
+    "file": "exec.go",
+    "sha256": "03300fdb86c454ea2bdfb0b74c56060dd9935f533cd26de676bfc344c864f858",
+    "patch": "source-patches/variants/legacy-setup/exec.go.patch",
+    "patch_sha256": "fc293a58dd9d828c6d02f8b8227be0e8c47454650f07802dc7ecb798dd9af162"
+  },
+  {
+    "source": "variants/legacy-view/eval.go",
+    "base_revision": "54b561484e1465edea963ed04579bcd24a7dbf76",
+    "file": "eval.go",
+    "sha256": "9406efca86bb398b503086a46eca3432b36c1b6e2b1aa21a1cb2cff4635b2eda",
+    "patch": "source-patches/variants/legacy-view/eval.go.patch",
+    "patch_sha256": "af53bc27279879c45996dd3fc88a53edefc88900e1bfce8dd36720c92bf86c03"
+  },
+  {
+    "source": "variants/legacy-view/exec.go",
+    "base_revision": "54b561484e1465edea963ed04579bcd24a7dbf76",
+    "file": "exec.go",
+    "sha256": "703e264d0408ec42459991df105f2fc171b98858c4cf82e47709a7e362b74349",
+    "patch": "source-patches/variants/legacy-view/exec.go.patch",
+    "patch_sha256": "8a371d6566dd5e69733598bc8a32a2576cc0405d854244652bd29c663d0021fd"
+  },
+  {
+    "source": "variants/legacy-view/execution_output.go",
+    "base_revision": "54b561484e1465edea963ed04579bcd24a7dbf76",
+    "file": "execution_output.go",
+    "sha256": "06a1f04f875ec78afa456975f8f1c48e884c2661eb59f538082239ca22c49563",
+    "patch": "source-patches/variants/legacy-view/execution_output.go.patch",
+    "patch_sha256": "45d50f218d499a065c855bca6d2c816da5bc62f365addeaf7bdd83cc3ae04fb3"
+  },
+  {
+    "source": "variants/methodless/execution_output.go",
+    "base_revision": "54b561484e1465edea963ed04579bcd24a7dbf76",
+    "file": "execution_output.go",
+    "sha256": "4b9f1176d5eb4835783c32f81c9b44e84cab9049b8f5a46ab67e98c0aa29cb3b",
+    "patch": "source-patches/variants/methodless/execution_output.go.patch",
+    "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "source": "variants/methodless/execution_print.go",
+    "base_revision": "54b561484e1465edea963ed04579bcd24a7dbf76",
+    "file": "execution_print.go",
+    "sha256": "b598c8a80e8cce1dda1857efaa62fb3e6a73cdefa039edd0b2ee293823e79e75",
+    "patch": "source-patches/variants/methodless/execution_print.go.patch",
+    "patch_sha256": "93cf4263e32259099d5d3ad35d8a7f51dfa2c324a7bf6ad8da3cbef17cb562e6"
+  },
+  {
+    "source": "variants/scope/eval.go",
+    "base_revision": "54b561484e1465edea963ed04579bcd24a7dbf76",
+    "file": "eval.go",
+    "sha256": "918b33104f1fa7b51aead6d0e8b1cc4ee289ea001f3ddf99b3d456211232db25",
+    "patch": "source-patches/variants/scope/eval.go.patch",
+    "patch_sha256": "c391fec115fd1753e60691a1516db98015b9f7d726c88e977be7a12cb3239d62"
+  },
+  {
+    "source": "variants/scope/exec.go",
+    "base_revision": "54b561484e1465edea963ed04579bcd24a7dbf76",
+    "file": "exec.go",
+    "sha256": "503b545ee81fdb09955c4bbc1f53390e645408bfbfa2b6844bc0cbc9f7c71c7e",
+    "patch": "source-patches/variants/scope/exec.go.patch",
+    "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "source": "variants/scope/execution.go",
+    "base_revision": "54b561484e1465edea963ed04579bcd24a7dbf76",
+    "file": "execution.go",
+    "sha256": "49c31f80552052377440e0dc86af926e9c2a964c27b34e8d4cc6e0568ff33947",
+    "patch": "source-patches/variants/scope/execution.go.patch",
+    "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "source": "variants/setup/eval.go",
+    "base_revision": "54b561484e1465edea963ed04579bcd24a7dbf76",
+    "file": "eval.go",
+    "sha256": "a6a0d75ca85d1514c975ad9e8bdf1760f53d2ef7a8be3e8c6798bc3968a824fc",
+    "patch": "source-patches/variants/setup/eval.go.patch",
+    "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "source": "variants/setup/exec.go",
+    "base_revision": "54b561484e1465edea963ed04579bcd24a7dbf76",
+    "file": "exec.go",
+    "sha256": "510790ac2f75d82d92d578397bb6f3abd4e4bcc3a381160c7e7215d10d5098d7",
+    "patch": "source-patches/variants/setup/exec.go.patch",
+    "patch_sha256": "3a218813ddd39fbd22ab817f6e0ba92d0f915dd9416446f17415af46bfaf2ed0"
+  },
+  {
+    "source": "variants/setup/execution.go",
+    "base_revision": "54b561484e1465edea963ed04579bcd24a7dbf76",
+    "file": "execution.go",
+    "sha256": "49c31f80552052377440e0dc86af926e9c2a964c27b34e8d4cc6e0568ff33947",
+    "patch": "source-patches/variants/setup/execution.go.patch",
+    "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "source": "variants/work-fast/execution.go",
+    "base_revision": "54b561484e1465edea963ed04579bcd24a7dbf76",
+    "file": "execution.go",
+    "sha256": "431083575d2e98630b575c25b58cd355aac123777eb4835baf0fa0792598a568",
+    "patch": "source-patches/variants/work-fast/execution.go.patch",
+    "patch_sha256": "be562bee4d2c346838793272c9e5a59cd55b2d98e9f0b4df68a73d874dcc33a7"
+  }
+]

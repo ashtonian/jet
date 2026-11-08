@@ -1,0 +1,4 @@
+gate-lock: held by pid <pid> on <host>, "jet-finalization-lane-2-followup-profile-summary 958cbed in <checkout>", since 2026-11-08T10:54:11Z, 2 of 6 focused cores
+56 captures cross-checked: CPU flat/cumulative, allocation/live bytes and objects, contention, RSS and frozen source mapping
+
+receipt: <artifacts>/followup-profile-summary/result.json

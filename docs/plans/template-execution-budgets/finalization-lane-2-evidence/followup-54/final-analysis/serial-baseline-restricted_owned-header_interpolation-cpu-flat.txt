@@ -1,0 +1,37 @@
+File: render.test
+Type: cpu
+Time: 2026-11-08 04:46:32 CST
+Duration: 1.92s, Total samples = 1640ms (85.58%)
+Showing nodes accounting for 1220ms, 74.39% of 1640ms total
+Showing top 30 nodes out of 155
+      flat  flat%   sum%        cum   cum%
+     260ms 15.85% 15.85%      260ms 15.85%  runtime.kevent
+     110ms  6.71% 22.56%      110ms  6.71%  context.(*cancelCtx).Err
+      80ms  4.88% 27.44%      140ms  8.54%  github.com/CloudyKit/jet/v6.(*inputAdmission).step
+      60ms  3.66% 31.10%      100ms  6.10%  github.com/CloudyKit/jet/v6.(*Runtime).reserveWork
+      60ms  3.66% 34.76%     1220ms 74.39%  github.com/CloudyKit/jet/v6.(*Template).execute
+      60ms  3.66% 38.41%       60ms  3.66%  sync.(*Pool).pin
+      50ms  3.05% 41.46%      320ms 19.51%  github.com/CloudyKit/jet/v6.admitInputScopesInto
+      40ms  2.44% 43.90%      440ms 26.83%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+      30ms  1.83% 45.73%       50ms  3.05%  github.com/CloudyKit/jet/v6.(*Runtime).recover
+      30ms  1.83% 47.56%       90ms  5.49%  github.com/CloudyKit/jet/v6.(*inputAdmission).clone
+      30ms  1.83% 49.39%       80ms  4.88%  github.com/CloudyKit/jet/v6.(*inputAdmission).reserveItems
+      30ms  1.83% 51.22%       80ms  4.88%  github.com/CloudyKit/jet/v6.(*parseAdmission).admitCached
+      30ms  1.83% 53.05%       50ms  3.05%  github.com/CloudyKit/jet/v6.constrainExecution
+      30ms  1.83% 54.88%       30ms  1.83%  runtime.pthread_kill
+      20ms  1.22% 56.10%       30ms  1.83%  github.com/CloudyKit/jet/v6.(*Runtime).checkNode
+      20ms  1.22% 57.32%      160ms  9.76%  github.com/CloudyKit/jet/v6.(*Runtime).printValue
+      20ms  1.22% 58.54%       90ms  5.49%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+      20ms  1.22% 59.76%       30ms  1.83%  github.com/CloudyKit/jet/v6.(*parseAdmission).init
+      20ms  1.22% 60.98%       40ms  2.44%  github.com/CloudyKit/jet/v6.(*parseAdmission).step
+      20ms  1.22% 62.20%       20ms  1.22%  github.com/CloudyKit/jet/v6.constrainParse
+      20ms  1.22% 63.41%       20ms  1.22%  internal/abi.(*Type).Uncommon (inline)
+      20ms  1.22% 64.63%       20ms  1.22%  internal/runtime/maps.(*Iter).Next
+      20ms  1.22% 65.85%       20ms  1.22%  reflect.(*rtype).Kind (inline)
+      20ms  1.22% 67.07%       40ms  2.44%  reflect.(*rtype).NumMethod
+      20ms  1.22% 68.29%       20ms  1.22%  runtime.madvise
+      20ms  1.22% 69.51%       40ms  2.44%  runtime.mallocgcSmallNoScanSC6
+      20ms  1.22% 70.73%       30ms  1.83%  runtime.mallocgcSmallScanNoHeaderSC6
+      20ms  1.22% 71.95%       30ms  1.83%  runtime.resolveTypeOff
+      20ms  1.22% 73.17%       20ms  1.22%  runtime.usleep
+      20ms  1.22% 74.39%       50ms  3.05%  sync.(*Pool).Put

@@ -1,0 +1,10 @@
+File: render.test
+Type: inuse_space
+Time: 2026-11-08 04:47:00 CST
+Showing nodes accounting for 512.03kB, 100% of 512.03kB total
+      flat  flat%   sum%        cum   cum%
+  512.03kB   100%   100%   512.03kB   100%  sync.OnceValue[go.shape.string] (inline)
+         0     0%   100%   512.03kB   100%  internal/sysinfo.init
+         0     0%   100%   512.03kB   100%  runtime.doInit (inline)
+         0     0%   100%   512.03kB   100%  runtime.doInit1
+         0     0%   100%   512.03kB   100%  runtime.main

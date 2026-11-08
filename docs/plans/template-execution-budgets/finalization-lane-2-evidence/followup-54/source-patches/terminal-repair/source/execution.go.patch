@@ -1,0 +1,35 @@
+--- a/execution.go
++++ b/execution.go
+@@ -61,0 +62 @@
++	metered          bool // Fixed at entry when a context is supplied.
+@@ -107,7 +107,0 @@
+-	if st.execution.ctx == nil && st.execution.terminal == nil {
+-		return
+-	}
+-	st.checkpointActive(steps)
+-}
+-
+-func (st *Runtime) checkpointActive(steps uint64) {
+@@ -115,4 +109,7 @@
+-	st.reserveWork(steps)
+-}
+-
+-// reserveWork follows a terminal check without an intervening native call.
++	if st.execution.metered {
++		st.reserveWork(steps)
++	}
++}
++
++// Callers check the terminal latch and non-nil context before this reservation,
++// with no intervening native call.
+@@ -121,3 +117,0 @@
+-	if b.ctx == nil {
+-		return
+-	}
+@@ -147,0 +142,6 @@
++	if st.execution.metered || st.execution.terminal != nil || st.execution.options.MaxDepth != 0 {
++		st.enterActive()
++	}
++}
++
++func (st *Runtime) enterActive() {

@@ -1,0 +1,36 @@
+File: candidate.test
+Type: alloc_space
+Time: 2026-11-08 03:57:28 CST
+Showing nodes accounting for 8938.24kB, 100% of 8938.24kB total
+Showing top 30 nodes out of 45
+      flat  flat%   sum%        cum   cum%
+ 1924.02kB 21.53% 21.53%  1924.02kB 21.53%  os.readFileContents
+ 1537.07kB 17.20% 38.72%  1537.07kB 17.20%  regexp/syntax.(*compiler).inst (inline)
+ 1184.27kB 13.25% 51.97%  1184.27kB 13.25%  runtime/pprof.StartCPUProfile
+ 1032.05kB 11.55% 63.52%  1556.14kB 17.41%  github.com/CloudyKit/jet/v6_test.additionalExecutionWorkloads
+  688.56kB  7.70% 71.22%   688.56kB  7.70%  compress/flate.(*fastGen).addBlock
+  524.09kB  5.86% 77.09%   524.09kB  5.86%  strings.(*byteStringReplacer).Replace
+  512.08kB  5.73% 82.81%   512.08kB  5.73%  compress/gzip.NewWriterLevel
+  512.05kB  5.73% 88.54%   512.05kB  5.73%  regexp/syntax.(*parser).newRegexp (inline)
+  512.03kB  5.73% 94.27%   512.03kB  5.73%  testing.(*matcher).unique
+  512.01kB  5.73%   100%   512.01kB  5.73%  regexp.makeOnePass.func1
+         0     0%   100%   688.56kB  7.70%  compress/flate.(*Writer).Close (inline)
+         0     0%   100%   688.56kB  7.70%  compress/flate.(*compressor).close
+         0     0%   100%   688.56kB  7.70%  compress/flate.(*compressor).deflateFast
+         0     0%   100%   688.56kB  7.70%  compress/flate.(*fastEncL1).encode
+         0     0%   100%   688.56kB  7.70%  compress/gzip.(*Writer).Close
+         0     0%   100%  6553.33kB 73.32%  github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes
+         0     0%   100%  1924.02kB 21.53%  github.com/CloudyKit/jet/v6_test.executionWorkloads
+         0     0%   100%  3480.16kB 38.94%  github.com/CloudyKit/jet/v6_test.measurementWorkloads
+         0     0%   100%   524.09kB  5.86%  html.EscapeString (inline)
+         0     0%   100%  1184.27kB 13.25%  main.main
+         0     0%   100%  1924.02kB 21.53%  os.ReadFile
+         0     0%   100%  2561.13kB 28.65%  regexp.Compile (inline)
+         0     0%   100%  2561.13kB 28.65%  regexp.compile
+         0     0%   100%   512.01kB  5.73%  regexp.compileOnePass
+         0     0%   100%   512.01kB  5.73%  regexp.makeOnePass
+         0     0%   100%  1537.07kB 17.20%  regexp/syntax.(*compiler).compile
+         0     0%   100%  1537.07kB 17.20%  regexp/syntax.(*compiler).rune
+         0     0%   100%   512.05kB  5.73%  regexp/syntax.(*parser).literal
+         0     0%   100%  1537.07kB 17.20%  regexp/syntax.Compile
+         0     0%   100%   512.05kB  5.73%  regexp/syntax.Parse (inline)

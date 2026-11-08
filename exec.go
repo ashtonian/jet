@@ -98,7 +98,16 @@ func (t *Template) execute(ctx context.Context, w io.Writer, variables VarMap, d
 	st := pool_State.Get().(*Runtime)
 	defer st.recover(&err)
 
-	st.execution = executionState{ctx: ctx, checkContext: ctx != nil && ctx != context.Background() && ctx != context.TODO(), options: opts, remaining: opts.MaxSteps, values: uint64(opts.MaxValueBytes), output: uint64(opts.MaxOutputBytes)}
+	// Legacy execution uses the state already cleared before pooling.
+	if ctx != nil {
+		st.execution.ctx = ctx
+		st.execution.metered = true
+		st.execution.checkContext = ctx != context.Background() && ctx != context.TODO()
+		st.execution.options = opts
+		st.execution.remaining = opts.MaxSteps
+		st.execution.values = uint64(opts.MaxValueBytes)
+		st.execution.output = uint64(opts.MaxOutputBytes)
+	}
 	st.checkpoint(0)
 	st.blocks = t.processedBlocks
 	st.variables = variables
@@ -112,7 +121,9 @@ func (t *Template) execute(ctx context.Context, w io.Writer, variables VarMap, d
 	}
 	st.Writer = &st.rootSink
 
-	st.startCompilation(t)
+	if ctx != nil {
+		st.startCompilation(t)
+	}
 	root := st.templateRoot(t)
 
 	if data != nil {

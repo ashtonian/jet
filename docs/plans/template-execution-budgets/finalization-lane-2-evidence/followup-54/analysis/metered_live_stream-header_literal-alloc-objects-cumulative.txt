@@ -1,0 +1,32 @@
+File: candidate.test
+Type: alloc_objects
+Time: 2026-11-08 03:57:37 CST
+Showing nodes accounting for 73603, 99.53% of 73947 total
+Dropped 20 nodes (cum <= 369)
+      flat  flat%   sum%        cum   cum%
+         0     0%     0%      70669 95.57%  github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes
+         0     0%     0%      70669 95.57%  testing.(*B).run1.func1
+         0     0%     0%      70669 95.57%  testing.(*B).runN
+         0     0%     0%      36491 49.35%  github.com/CloudyKit/jet/v6_test.measurementWorkloads
+      3673  4.97%  4.97%      36441 49.28%  github.com/CloudyKit/jet/v6_test.additionalExecutionWorkloads
+         0     0%  4.97%      34178 46.22%  regexp.Compile (inline)
+     32768 44.31% 49.28%      34178 46.22%  regexp.compile
+         0     0% 49.28%      34178 46.22%  testing.(*B).Run
+         0     0% 49.28%      34178 46.22%  testing.(*matcher).fullName
+         0     0% 49.28%      34178 46.22%  testing.simpleMatch.matches
+         0     0% 49.28%      34178 46.22%  testing/internal/testdeps.TestDeps.MatchString
+         0     0% 49.28%      32768 44.31%  encoding/json.Marshal (inline)
+         0     0% 49.28%      32768 44.31%  encoding/json/v2.Marshal
+         0     0% 49.28%      32768 44.31%  encoding/json/v2.makeMapArshaler.func2
+         0     0% 49.28%      32768 44.31%  encoding/json/v2.makeSliceArshaler.func2
+         0     0% 49.28%      32768 44.31%  encoding/json/v2.marshalEncode
+         0     0% 49.28%      32768 44.31%  encoding/json/v2.newAddressableValue
+         0     0% 49.28%      32768 44.31%  reflect.New
+     32768 44.31% 93.59%      32768 44.31%  reflect.unsafe_New
+      3277  4.43% 98.02%       3277  4.43%  compress/gzip.NewWriterLevel
+         0     0% 98.02%       3277  4.43%  runtime/pprof.newProfileBuilder
+         0     0% 98.02%       3277  4.43%  runtime/pprof.profileWriter
+         0     0% 98.02%       1117  1.51%  regexp/syntax.(*compiler).compile
+      1117  1.51% 99.53%       1117  1.51%  regexp/syntax.(*compiler).inst (inline)
+         0     0% 99.53%       1117  1.51%  regexp/syntax.(*compiler).rune
+         0     0% 99.53%       1117  1.51%  regexp/syntax.Compile

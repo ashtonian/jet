@@ -1,0 +1,32 @@
+File: render.test
+Type: alloc_objects
+Time: 2026-11-08 05:27:40 CST
+Showing nodes accounting for 54812, 99.66% of 54998 total
+Dropped 27 nodes (cum <= 274)
+      flat  flat%   sum%        cum   cum%
+     32768 59.58% 59.58%      32768 59.58%  regexp.makeOnePass.func1
+     10923 19.86% 79.44%      10944 19.90%  github.com/CloudyKit/jet/v6_test.additionalExecutionWorkloads
+      4681  8.51% 87.95%       4681  8.51%  regexp/syntax.(*parser).newRegexp (inline)
+      3277  5.96% 93.91%       3277  5.96%  compress/gzip.NewWriterLevel
+      1491  2.71% 96.62%       1491  2.71%  regexp/syntax.(*compiler).inst (inline)
+       927  1.69% 98.31%        927  1.69%  regexp.onePassCopy
+       745  1.35% 99.66%      33513 60.93%  regexp.makeOnePass
+         0     0% 99.66%      51716 94.03%  github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes
+         0     0% 99.66%      11065 20.12%  github.com/CloudyKit/jet/v6_test.measurementWorkloads
+         0     0% 99.66%      40612 73.84%  regexp.Compile (inline)
+         0     0% 99.66%      40612 73.84%  regexp.compile
+         0     0% 99.66%      34440 62.62%  regexp.compileOnePass
+         0     0% 99.66%       1491  2.71%  regexp/syntax.(*compiler).compile
+         0     0% 99.66%       1491  2.71%  regexp/syntax.(*compiler).rune
+         0     0% 99.66%       4681  8.51%  regexp/syntax.(*parser).literal
+         0     0% 99.66%       1491  2.71%  regexp/syntax.Compile
+         0     0% 99.66%       4681  8.51%  regexp/syntax.Parse (inline)
+         0     0% 99.66%       4681  8.51%  regexp/syntax.parse
+         0     0% 99.66%       3277  5.96%  runtime/pprof.newProfileBuilder
+         0     0% 99.66%       3281  5.97%  runtime/pprof.profileWriter
+         0     0% 99.66%      40651 73.91%  testing.(*B).Run
+         0     0% 99.66%      51716 94.03%  testing.(*B).run1.func1
+         0     0% 99.66%      51716 94.03%  testing.(*B).runN
+         0     0% 99.66%      40651 73.91%  testing.(*matcher).fullName
+         0     0% 99.66%      40612 73.84%  testing.simpleMatch.matches
+         0     0% 99.66%      40612 73.84%  testing/internal/testdeps.TestDeps.MatchString

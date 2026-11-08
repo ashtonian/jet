@@ -1,0 +1,37 @@
+File: candidate.test
+Type: alloc_objects
+Time: 2026-11-08 03:57:42 CST
+Showing nodes accounting for 72485, 58.88% of 123116 total
+Dropped 22 nodes (cum <= 615)
+Showing top 30 nodes out of 60
+      flat  flat%   sum%        cum   cum%
+         0     0%     0%     119820 97.32%  testing.(*B).runN
+         0     0%     0%     103436 84.02%  github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes
+         0     0%     0%     103436 84.02%  testing.(*B).run1.func1
+         0     0%     0%      58320 47.37%  github.com/CloudyKit/jet/v6_test.measurementWorkloads
+      3672  2.98%  2.98%      47384 38.49%  github.com/CloudyKit/jet/v6_test.additionalExecutionWorkloads
+         0     0%  2.98%      45116 36.65%  regexp.Compile (inline)
+      3277  2.66%  5.64%      45116 36.65%  regexp.compile
+         0     0%  5.64%      45116 36.65%  testing.(*B).Run
+         0     0%  5.64%      45116 36.65%  testing.(*matcher).fullName
+         0     0%  5.64%      45116 36.65%  testing.simpleMatch.matches
+         0     0%  5.64%      45116 36.65%  testing/internal/testdeps.TestDeps.MatchString
+         0     0%  5.64%      32768 26.62%  encoding/json.Marshal (inline)
+         0     0%  5.64%      32768 26.62%  encoding/json/v2.Marshal
+         0     0%  5.64%      32768 26.62%  encoding/json/v2.makeMapArshaler.func2
+         0     0%  5.64%      32768 26.62%  encoding/json/v2.makeSliceArshaler.func2
+         0     0%  5.64%      32768 26.62%  encoding/json/v2.marshalEncode
+         0     0%  5.64%      32768 26.62%  encoding/json/v2.newAddressableValue
+         0     0%  5.64%      32768 26.62%  reflect.New
+     32768 26.62% 32.26%      32768 26.62%  reflect.unsafe_New
+     32768 26.62% 58.88%      32768 26.62%  regexp/syntax.(*Regexp).CapNames
+         0     0% 58.88%      16384 13.31%  github.com/CloudyKit/fastprinter.PrintString
+         0     0% 58.88%      16384 13.31%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 58.88%      16384 13.31%  github.com/CloudyKit/jet/v6.(*Runtime).printValue
+         0     0% 58.88%      16384 13.31%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0% 58.88%      16384 13.31%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0% 58.88%      16384 13.31%  github.com/CloudyKit/jet/v6.(*dataPrinter).text
+         0     0% 58.88%      16384 13.31%  github.com/CloudyKit/jet/v6.(*dataPrinter).value
+         0     0% 58.88%      16384 13.31%  github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes.func1
+         0     0% 58.88%      16384 13.31%  github.com/CloudyKit/jet/v6_test.init.0.func2
+         0     0% 58.88%      16384 13.31%  sync.(*Pool).Get

@@ -1,0 +1,30 @@
+File: render.test
+Type: cpu
+Time: 2026-11-08 04:47:14 CST
+Duration: 1.41s, Total samples = 1.14s (80.71%)
+Showing nodes accounting for 1.14s, 100% of 1.14s total
+      flat  flat%   sum%        cum   cum%
+     0.34s 29.82% 29.82%      0.47s 41.23%  bytes.(*Buffer).Write
+     0.19s 16.67% 46.49%      1.05s 92.11%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+     0.18s 15.79% 62.28%      0.22s 19.30%  context.(*cancelCtx).Err
+     0.09s  7.89% 70.18%      0.39s 34.21%  github.com/CloudyKit/jet/v6.(*Runtime).reserveWork
+     0.09s  7.89% 78.07%      1.14s   100%  text/template.HTMLEscape
+     0.06s  5.26% 83.33%      0.06s  5.26%  bytes.(*Buffer).tryGrowByReslice (inline)
+     0.06s  5.26% 88.60%      0.06s  5.26%  github.com/CloudyKit/jet/v6.(*Runtime).rethrowTerminal (inline)
+     0.06s  5.26% 93.86%      0.06s  5.26%  runtime.memmove
+     0.04s  3.51% 97.37%      0.04s  3.51%  sync/atomic.(*Value).Load (inline)
+     0.02s  1.75% 99.12%      0.02s  1.75%  github.com/CloudyKit/jet/v6.(*Runtime).reserveUnchecked (inline)
+     0.01s  0.88%   100%      0.01s  0.88%  runtime.asyncPreempt
+         0     0%   100%      1.14s   100%  github.com/CloudyKit/fastprinter.PrintString
+         0     0%   100%      1.14s   100%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0%   100%      1.14s   100%  github.com/CloudyKit/jet/v6.(*Runtime).printValue
+         0     0%   100%      1.14s   100%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0%   100%      1.14s   100%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0%   100%      1.14s   100%  github.com/CloudyKit/jet/v6.(*dataPrinter).Write
+         0     0%   100%      1.14s   100%  github.com/CloudyKit/jet/v6.(*dataPrinter).text
+         0     0%   100%      1.14s   100%  github.com/CloudyKit/jet/v6.(*dataPrinter).value
+         0     0%   100%      1.14s   100%  github.com/CloudyKit/jet/v6.(*escapeeWriter).Write
+         0     0%   100%      1.14s   100%  github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes.func1
+         0     0%   100%      1.14s   100%  github.com/CloudyKit/jet/v6_test.init.0.func2
+         0     0%   100%      1.14s   100%  testing.(*B).launch
+         0     0%   100%      1.14s   100%  testing.(*B).runN

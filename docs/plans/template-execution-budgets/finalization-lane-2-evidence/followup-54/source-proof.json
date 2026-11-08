@@ -1,0 +1,77 @@
+{
+  "code_sha": "ec0221fb7ecd4f5416a289b8e019d60c65793872",
+  "base_sha": "54b561484e1465edea963ed04579bcd24a7dbf76",
+  "superseded_code_sha": "958cbed0ce48c8e47e7c2d7f8b2b4738f38b5bad",
+  "current_checks": {
+    "followup-mode-normal": {
+      "passed": true,
+      "relevant_source_inputs_match": true,
+      "source_paths_checked": 136,
+      "receipt": "followup-mode-normal/result.json"
+    },
+    "followup-mode-race": {
+      "passed": true,
+      "relevant_source_inputs_match": true,
+      "source_paths_checked": 136,
+      "receipt": "followup-mode-race/result.json"
+    },
+    "followup-mode-go116": {
+      "passed": true,
+      "relevant_source_inputs_match": true,
+      "source_paths_checked": 136,
+      "receipt": "followup-mode-go116/result.json"
+    },
+    "followup-mode-vet": {
+      "passed": true,
+      "relevant_source_inputs_match": true,
+      "source_paths_checked": 136,
+      "receipt": "followup-mode-vet/result.json"
+    },
+    "followup-committed-tree": {
+      "passed": true,
+      "relevant_source_inputs_match": true,
+      "source_paths_checked": 135,
+      "receipt": "followup-committed-tree/result.json"
+    },
+    "followup-guard-final-analysis": {
+      "passed": true,
+      "relevant_source_inputs_match": true,
+      "source_paths_checked": 136,
+      "receipt": "followup-guard-final-analysis/result.json"
+    },
+    "followup-guard-profile-summary": {
+      "passed": true,
+      "relevant_source_inputs_match": true,
+      "source_paths_checked": 136,
+      "receipt": "followup-guard-profile-summary/result.json"
+    }
+  },
+  "local_signatures": {
+    "958cbed0ce48c8e47e7c2d7f8b2b4738f38b5bad": "gpg: Signature made Sun Nov  8 04:35:53 2026 CST\ngpg:                using RSA key F6636B543217293818FDAE098D8E2EDE4DB48014\ngpg: Good signature from \"Ashton Kinslow <github@ashtonkinslow.com>\" [ultimate]",
+    "ec0221fb7ecd4f5416a289b8e019d60c65793872": "gpg: Signature made Sun Nov  8 05:16:07 2026 CST\ngpg:                using RSA key F6636B543217293818FDAE098D8E2EDE4DB48014\ngpg: Good signature from \"Ashton Kinslow <github@ashtonkinslow.com>\" [ultimate]"
+  },
+  "selected_build_matches_current_source": true,
+  "matched": {
+    "completed_processes": 161,
+    "inputs_unchanged_during_run": true
+  },
+  "terminal-repair/matched": {
+    "completed_processes": 142,
+    "inputs_unchanged_during_run": true
+  },
+  "cancellation": {
+    "checks_identical": true,
+    "cells": 120
+  },
+  "profiles": {
+    "current_selected": 28,
+    "unchanged_baseline_reused": 28,
+    "current_pair_views": 616,
+    "intermediate_958cbed_views": 616,
+    "current_new_inspection_views": 308
+  },
+  "github_verification": "pending authorized lane4 fork publication; no lane2 push",
+  "injected_measurement_test": "archived as counts.go.txt, removed from checkout; committed-tree cases pass",
+  "upstream_reference": "Earlier interleaved upstream timings reused from immutable binary/fixture/harness inputs; refreshed full release gate remains pending",
+  "full_release_acceptance": false
+}

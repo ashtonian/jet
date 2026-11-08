@@ -1,0 +1,2 @@
+[work/finalization-lane-2 ec0221f] Keep reservation guards at checked execution boundaries
+ 3 files changed, 9 insertions(+), 8 deletions(-)

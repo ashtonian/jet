@@ -1,0 +1,36 @@
+File: render.test
+Type: alloc_space
+Time: 2026-11-08 04:47:27 CST
+Showing nodes accounting for 14276.09kB, 100% of 14276.09kB total
+Showing top 30 nodes out of 76
+      flat  flat%   sum%        cum   cum%
+ 2051.69kB 14.37% 14.37%  2051.69kB 14.37%  regexp/syntax.(*compiler).inst
+ 1924.02kB 13.48% 27.85%  1924.02kB 13.48%  os.readFileContents
+ 1539.94kB 10.79% 38.64%  1539.94kB 10.79%  regexp.onePassCopy
+ 1184.27kB  8.30% 46.93%  1184.27kB  8.30%  runtime/pprof.StartCPUProfile
+ 1024.13kB  7.17% 54.10%  1024.13kB  7.17%  regexp/syntax.(*parser).maybeConcat
+  688.56kB  4.82% 58.93%   688.56kB  4.82%  compress/flate.(*fastGen).addBlock
+  655.29kB  4.59% 63.52%  1238.30kB  8.67%  compress/flate.NewWriter (inline)
+  583.01kB  4.08% 67.60%   583.01kB  4.08%  compress/flate.newFastEnc (inline)
+  524.09kB  3.67% 71.27%   524.09kB  3.67%  strings.(*byteStringReplacer).Replace
+  516.01kB  3.61% 74.89%   516.01kB  3.61%  encoding/json/v2.makeString
+  512.44kB  3.59% 78.48%  1024.45kB  7.18%  regexp.makeOnePass
+  512.44kB  3.59% 82.07%   512.44kB  3.59%  slices.Grow[go.shape.[]uint8,go.shape.uint8] (inline)
+  512.08kB  3.59% 85.65%   512.08kB  3.59%  compress/gzip.NewWriterLevel
+  512.05kB  3.59% 89.24%   512.05kB  3.59%  regexp/syntax.(*parser).newRegexp
+  512.05kB  3.59% 92.83%   512.05kB  3.59%  strings.genSplit
+  512.01kB  3.59% 96.41%   512.01kB  3.59%  reflect.unsafe_New
+  512.01kB  3.59%   100%   512.01kB  3.59%  regexp.makeOnePass.func1
+         0     0%   100%   688.56kB  4.82%  compress/flate.(*Writer).Close (inline)
+         0     0%   100%   688.56kB  4.82%  compress/flate.(*compressor).close
+         0     0%   100%   688.56kB  4.82%  compress/flate.(*compressor).deflateFast
+         0     0%   100%   583.01kB  4.08%  compress/flate.(*compressor).init
+         0     0%   100%   688.56kB  4.82%  compress/flate.(*fastEncL1).encode
+         0     0%   100%   688.56kB  4.82%  compress/gzip.(*Writer).Close
+         0     0%   100%  1238.30kB  8.67%  compress/gzip.(*Writer).Write
+         0     0%   100%   512.01kB  3.59%  encoding/json.Marshal
+         0     0%   100%  1028.45kB  7.20%  encoding/json.Unmarshal
+         0     0%   100%   512.44kB  3.59%  encoding/json/internal/jsonwire.AppendUnquote
+         0     0%   100%   512.44kB  3.59%  encoding/json/internal/jsonwire.UnquoteMayCopy
+         0     0%   100%   512.01kB  3.59%  encoding/json/v2.Marshal
+         0     0%   100%  1028.45kB  7.20%  encoding/json/v2.Unmarshal

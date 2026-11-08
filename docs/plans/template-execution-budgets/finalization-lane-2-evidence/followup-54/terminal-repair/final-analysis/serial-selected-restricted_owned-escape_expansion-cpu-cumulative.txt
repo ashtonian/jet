@@ -1,0 +1,37 @@
+File: render.test
+Type: cpu
+Time: 2026-11-08 05:27:58 CST
+Duration: 1.41s, Total samples = 1270ms (90.18%)
+Showing nodes accounting for 850ms, 66.93% of 1270ms total
+Showing top 30 nodes out of 121
+      flat  flat%   sum%        cum   cum%
+         0     0%     0%      680ms 53.54%  runtime.systemstack
+         0     0%     0%      530ms 41.73%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0%     0%      530ms 41.73%  github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext
+         0     0%     0%      530ms 41.73%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0%     0%      530ms 41.73%  github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes.func1
+         0     0%     0%      530ms 41.73%  github.com/CloudyKit/jet/v6_test.init.0.func5
+         0     0%     0%      530ms 41.73%  testing.(*B).launch
+         0     0%     0%      530ms 41.73%  testing.(*B).runN
+         0     0%     0%      480ms 37.80%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0%     0%      470ms 37.01%  github.com/CloudyKit/jet/v6.(*Runtime).printValue
+         0     0%     0%      470ms 37.01%  github.com/CloudyKit/jet/v6.(*dataPrinter).value
+         0     0%     0%      460ms 36.22%  github.com/CloudyKit/fastprinter.PrintString
+         0     0%     0%      460ms 36.22%  github.com/CloudyKit/jet/v6.(*dataPrinter).text
+         0     0%     0%      450ms 35.43%  github.com/CloudyKit/jet/v6.(*dataPrinter).Write
+         0     0%     0%      450ms 35.43%  github.com/CloudyKit/jet/v6.(*escapeeWriter).Write
+     450ms 35.43% 35.43%      450ms 35.43%  runtime.kevent
+         0     0% 35.43%      450ms 35.43%  runtime.netpoll
+      50ms  3.94% 39.37%      450ms 35.43%  text/template.HTMLEscape
+         0     0% 39.37%      440ms 34.65%  runtime.startTheWorldWithSema
+         0     0% 39.37%      430ms 33.86%  runtime.gcStart.func4
+      50ms  3.94% 43.31%      400ms 31.50%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+      90ms  7.09% 50.39%      170ms 13.39%  bytes.(*Buffer).Write
+         0     0% 50.39%      150ms 11.81%  runtime.preemptM
+     150ms 11.81% 62.20%      150ms 11.81%  runtime.pthread_kill
+         0     0% 62.20%      150ms 11.81%  runtime.signalM (inline)
+      60ms  4.72% 66.93%      140ms 11.02%  github.com/CloudyKit/jet/v6.(*Runtime).reserveWork
+         0     0% 66.93%      100ms  7.87%  runtime.forEachP.func1
+         0     0% 66.93%      100ms  7.87%  runtime.forEachPInternal
+         0     0% 66.93%      100ms  7.87%  runtime.preemptall
+         0     0% 66.93%      100ms  7.87%  runtime.preemptone

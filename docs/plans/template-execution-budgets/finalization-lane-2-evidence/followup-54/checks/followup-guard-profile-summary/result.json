@@ -1,0 +1,33 @@
+{
+  "head": "ec0221fb7ecd4f5416a289b8e019d60c65793872",
+  "command": [
+    "gate-lock",
+    "run-check",
+    "jet-finalization-lane-2-followup-guard-profile-summary",
+    "--",
+    "python3",
+    ".git/finalization/followup-54/terminal-repair/summarize_profiles.py"
+  ],
+  "execution_timeout_seconds": 90,
+  "kill_after_seconds": 5,
+  "queued_at": 1794137638.832902,
+  "harness_sha256": "c5a1663a901325e674b18ee210eb295cb80fee07311bd7fc3c6cdc462dd8a4ff",
+  "go_version": "go version go1.27.3 darwin/arm64",
+  "go_env": {
+    "GOARCH": "arm64",
+    "GOFLAGS": "-trimpath",
+    "GOMOD": "<checkout>/go.mod",
+    "GOOS": "darwin",
+    "GOTOOLCHAIN": "auto",
+    "GOWORK": ""
+  },
+  "environment": {
+    "GATE_LOCK_WAIT": "1",
+    "GATE_LOCK_COMMAND_TIMEOUT": "90",
+    "GATE_LOCK_COMMAND_KILL_AFTER": "5"
+  },
+  "exit_code": 0,
+  "finished_at": 1794137641.453653,
+  "inputs_unchanged": true,
+  "input_manifest": "../../manifests/1bea4b5c89607a6af4b14268d45f5f0abd16b5ea75238700f15d660db3d0947e.json"
+}

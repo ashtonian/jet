@@ -1,0 +1,30 @@
+gate-lock: held by pid <pid> on <host>, "jet-finalization-lane-2-followup-guard-final-analysis ec0221f in <checkout>", since 2026-11-08T11:32:33Z, 2 of 6 focused cores
+inspected serial-selected-legacy_stream-header_literal
+inspected serial-selected-legacy_stream-inheritance
+inspected serial-selected-legacy_stream-nested_writing
+inspected serial-selected-legacy_stream-header_interpolation
+inspected serial-selected-legacy_stream-escape_expansion
+inspected concurrent-selected-legacy_stream-header_interpolation
+inspected concurrent-selected-legacy_stream-escape_expansion
+inspected serial-selected-metered_background_stream-header_literal
+inspected serial-selected-metered_background_stream-inheritance
+inspected serial-selected-metered_background_stream-nested_writing
+inspected serial-selected-metered_background_stream-header_interpolation
+inspected serial-selected-metered_background_stream-escape_expansion
+inspected concurrent-selected-metered_background_stream-header_interpolation
+inspected concurrent-selected-metered_background_stream-escape_expansion
+inspected serial-selected-metered_live_stream-header_literal
+inspected serial-selected-metered_live_stream-inheritance
+inspected serial-selected-metered_live_stream-nested_writing
+inspected serial-selected-metered_live_stream-header_interpolation
+inspected serial-selected-metered_live_stream-escape_expansion
+inspected concurrent-selected-metered_live_stream-header_interpolation
+inspected concurrent-selected-metered_live_stream-escape_expansion
+inspected serial-selected-restricted_owned-header_literal
+inspected serial-selected-restricted_owned-inheritance
+inspected serial-selected-restricted_owned-nested_writing
+inspected serial-selected-restricted_owned-header_interpolation
+inspected serial-selected-restricted_owned-escape_expansion
+inspected concurrent-selected-restricted_owned-header_interpolation
+inspected concurrent-selected-restricted_owned-escape_expansion
+20 repaired-source subset comparisons; prior upstream reference retained; 308 current profile views plus reused baseline captures

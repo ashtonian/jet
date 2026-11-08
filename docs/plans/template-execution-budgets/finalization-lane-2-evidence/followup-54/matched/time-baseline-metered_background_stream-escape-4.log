@@ -1,0 +1,24 @@
+goos: darwin
+goarch: arm64
+pkg: github.com/CloudyKit/jet/v6
+cpu: Apple M2 Max
+BenchmarkExecutionModes/metered_background_stream/escape_expansion/html-2         	  146542	      8561 ns/op	       0 B/op	       0 allocs/op
+PASS
+        1.34 real         1.32 user         0.01 sys
+            13697024  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                1056  page reclaims
+                   1  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                  28  signals received
+                   1  voluntary context switches
+                1073  involuntary context switches
+         29721791629  instructions retired
+          4513906017  cycles elapsed
+             8995344  peak memory footprint

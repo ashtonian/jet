@@ -1,0 +1,32 @@
+File: render.test
+Type: delay
+Time: 2026-11-08 05:27:39 CST
+Showing nodes accounting for 4383.09ms, 100% of 4383.09ms total
+Dropped 5 nodes (cum <= 21.92ms)
+      flat  flat%   sum%        cum   cum%
+ 2977.51ms 67.93% 67.93%  2977.51ms 67.93%  runtime.chanrecv1
+ 1405.58ms 32.07%   100%  1405.58ms 32.07%  sync.(*WaitGroup).Wait
+         0     0%   100%  1407.29ms 32.11%  github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes
+         0     0%   100%  1405.58ms 32.07%  github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes.func1
+         0     0%   100%     1570ms 35.82%  main.main
+         0     0%   100%     1570ms 35.82%  runtime.main
+         0     0%   100%   154.87ms  3.53%  runtime/pprof.StopCPUProfile
+         0     0%   100%   154.87ms  3.53%  sync.(*Once).Do (inline)
+         0     0%   100%   154.87ms  3.53%  sync.(*Once).doSlow
+         0     0%   100%  2822.42ms 64.39%  testing.(*B).Run
+         0     0%   100%  1406.77ms 32.10%  testing.(*B).doBench
+         0     0%   100%  1405.50ms 32.07%  testing.(*B).doBench.gowrap1
+         0     0%   100%  1405.50ms 32.07%  testing.(*B).launch
+         0     0%   100%  1406.77ms 32.10%  testing.(*B).run
+         0     0%   100%  1415.64ms 32.30%  testing.(*B).run1
+         0     0%   100%  1407.37ms 32.11%  testing.(*B).run1.func1
+         0     0%   100%     4228ms 96.46%  testing.(*B).runN
+         0     0%   100%     1570ms 35.82%  testing.(*M).Run
+         0     0%   100%   154.87ms  3.53%  testing.(*M).Run.deferwrap1
+         0     0%   100%   154.87ms  3.53%  testing.(*M).after
+         0     0%   100%   154.87ms  3.53%  testing.(*M).after.func1
+         0     0%   100%   154.87ms  3.53%  testing.(*M).writeProfiles
+         0     0%   100%  1406.77ms 32.10%  testing.(*benchState).processBench
+         0     0%   100%  1415.13ms 32.29%  testing.runBenchmarks
+         0     0%   100%  1415.13ms 32.29%  testing.runBenchmarks.func1
+         0     0%   100%   154.87ms  3.53%  testing/internal/testdeps.TestDeps.StopCPUProfile

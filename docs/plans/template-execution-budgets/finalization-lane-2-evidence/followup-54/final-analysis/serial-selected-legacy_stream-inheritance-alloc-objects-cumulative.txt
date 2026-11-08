@@ -1,0 +1,37 @@
+File: render.test
+Type: alloc_objects
+Time: 2026-11-08 04:46:55 CST
+Showing nodes accounting for 24850, 95.36% of 26060 total
+Dropped 17 nodes (cum <= 130)
+Showing top 30 nodes out of 40
+      flat  flat%   sum%        cum   cum%
+         0     0%     0%      21945 84.21%  regexp.Compile (inline)
+         0     0%     0%      21945 84.21%  regexp.compile
+         0     0%     0%      21945 84.21%  testing/internal/testdeps.TestDeps.MatchString
+         0     0%     0%      11855 45.49%  github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes
+         0     0%     0%      11855 45.49%  testing.(*B).run1.func1
+         0     0%     0%      11855 45.49%  testing.(*B).runN
+         0     0%     0%      11295 43.34%  regexp/syntax.Compile
+         0     0%     0%      11022 42.29%  testing.(*B).Run
+         0     0%     0%      11022 42.29%  testing.(*matcher).fullName
+         0     0%     0%      11022 42.29%  testing.simpleMatch.matches
+         0     0%     0%      10924 41.92%  main.main
+         0     0%     0%      10924 41.92%  runtime.main
+         0     0%     0%      10924 41.92%  testing.(*M).Run
+     10923 41.91% 41.91%      10923 41.91%  regexp/syntax.(*compiler).init (inline)
+         0     0% 41.91%      10923 41.91%  testing.newMatcher
+         0     0% 41.91%      10923 41.91%  testing.runBenchmarks
+         0     0% 41.91%      10923 41.91%  testing.simpleMatch.verify
+         0     0% 41.91%       6554 25.15%  regexp.compileOnePass
+         0     0% 41.91%       6554 25.15%  regexp.makeOnePass
+      6554 25.15% 67.06%       6554 25.15%  regexp.newQueue (inline)
+         0     0% 67.06%       4096 15.72%  regexp/syntax.(*parser).literal
+      4096 15.72% 82.78%       4096 15.72%  regexp/syntax.(*parser).maybeConcat
+         0     0% 82.78%       4096 15.72%  regexp/syntax.(*parser).push
+         0     0% 82.78%       4096 15.72%  regexp/syntax.Parse (inline)
+         0     0% 82.78%       4096 15.72%  regexp/syntax.parse
+         0     0% 82.78%       3281 12.59%  runtime/pprof.profileWriter
+      3277 12.57% 95.36%       3277 12.57%  compress/gzip.NewWriterLevel
+         0     0% 95.36%       3277 12.57%  runtime/pprof.newProfileBuilder
+         0     0% 95.36%        833  3.20%  github.com/CloudyKit/jet/v6_test.measurementWorkloads
+         0     0% 95.36%        801  3.07%  github.com/CloudyKit/jet/v6_test.executionWorkloads

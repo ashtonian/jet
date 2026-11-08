@@ -1,0 +1,32 @@
+File: render.test
+Type: alloc_objects
+Time: 2026-11-08 04:47:06 CST
+Showing nodes accounting for 29308, 99.44% of 29474 total
+Dropped 28 nodes (cum <= 147)
+      flat  flat%   sum%        cum   cum%
+     10923 37.06% 37.06%      10923 37.06%  internal/bytealg.MakeNoZero
+      8192 27.79% 64.85%       8192 27.79%  testing.(*matcher).unique
+      4681 15.88% 80.74%       4681 15.88%  regexp.newQueue (inline)
+      3277 11.12% 91.85%       3277 11.12%  compress/gzip.NewWriterLevel
+      2235  7.58% 99.44%       2235  7.58%  regexp/syntax.(*compiler).inst (inline)
+         0     0% 99.44%      26082 88.49%  github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes
+         0     0% 99.44%      10955 37.17%  github.com/CloudyKit/jet/v6_test.additionalExecutionWorkloads
+         0     0% 99.44%      10974 37.23%  github.com/CloudyKit/jet/v6_test.measurementWorkloads
+         0     0% 99.44%       6916 23.46%  regexp.Compile (inline)
+         0     0% 99.44%       6916 23.46%  regexp.compile
+         0     0% 99.44%       4681 15.88%  regexp.compileOnePass
+         0     0% 99.44%       4681 15.88%  regexp.makeOnePass
+         0     0% 99.44%       2235  7.58%  regexp/syntax.(*compiler).compile
+         0     0% 99.44%       2235  7.58%  regexp/syntax.(*compiler).rune
+         0     0% 99.44%       2235  7.58%  regexp/syntax.Compile
+         0     0% 99.44%       3277 11.12%  runtime/pprof.newProfileBuilder
+         0     0% 99.44%       3387 11.49%  runtime/pprof.profileWriter
+         0     0% 99.44%      10923 37.06%  strings.(*Builder).Grow
+         0     0% 99.44%      10923 37.06%  strings.(*Builder).grow
+         0     0% 99.44%      10923 37.06%  strings.Repeat
+         0     0% 99.44%      15108 51.26%  testing.(*B).Run
+         0     0% 99.44%      26082 88.49%  testing.(*B).run1.func1
+         0     0% 99.44%      26082 88.49%  testing.(*B).runN
+         0     0% 99.44%      15108 51.26%  testing.(*matcher).fullName
+         0     0% 99.44%       6916 23.46%  testing.simpleMatch.matches
+         0     0% 99.44%       6916 23.46%  testing/internal/testdeps.TestDeps.MatchString

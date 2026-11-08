@@ -1,0 +1,37 @@
+File: render.test
+Type: alloc_objects
+Time: 2026-11-08 04:46:47 CST
+Showing nodes accounting for 79934, 96.80% of 82575 total
+Dropped 29 nodes (cum <= 412)
+Showing top 30 nodes out of 32
+      flat  flat%   sum%        cum   cum%
+     32768 39.68% 39.68%      46475 56.28%  github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes
+         0     0% 39.68%      46475 56.28%  testing.(*B).run1.func1
+         0     0% 39.68%      46475 56.28%  testing.(*B).runN
+         0     0% 39.68%      44573 53.98%  regexp.Compile (inline)
+      3277  3.97% 43.65%      44573 53.98%  regexp.compile
+         0     0% 43.65%      44573 53.98%  testing/internal/testdeps.TestDeps.MatchString
+         0     0% 43.65%      34037 41.22%  regexp.compileOnePass
+       585  0.71% 44.36%      33353 40.39%  regexp.makeOnePass
+         0     0% 44.36%      32773 39.69%  main.main
+         0     0% 44.36%      32773 39.69%  runtime.main
+         0     0% 44.36%      32773 39.69%  testing.(*M).Run
+     32768 39.68% 84.04%      32768 39.68%  regexp.makeOnePass.func1
+         0     0% 84.04%      32768 39.68%  testing.newMatcher
+         0     0% 84.04%      32768 39.68%  testing.runBenchmarks
+         0     0% 84.04%      32768 39.68%  testing.simpleMatch.verify
+         0     0% 84.04%      11805 14.30%  testing.(*B).Run
+         0     0% 84.04%      11805 14.30%  testing.(*matcher).fullName
+         0     0% 84.04%      11805 14.30%  testing.simpleMatch.matches
+         0     0% 84.04%       4681  5.67%  regexp/syntax.(*parser).literal
+      4681  5.67% 89.71%       4681  5.67%  regexp/syntax.(*parser).newRegexp (inline)
+         0     0% 89.71%       4681  5.67%  regexp/syntax.Parse (inline)
+         0     0% 89.71%       4681  5.67%  regexp/syntax.parse
+         0     0% 89.71%       3327  4.03%  runtime/pprof.profileWriter
+      3277  3.97% 93.68%       3277  3.97%  compress/gzip.NewWriterLevel
+         0     0% 93.68%       3277  3.97%  runtime/pprof.newProfileBuilder
+         0     0% 93.68%       2578  3.12%  regexp/syntax.(*compiler).compile
+      2578  3.12% 96.80%       2578  3.12%  regexp/syntax.(*compiler).inst (inline)
+         0     0% 96.80%       2578  3.12%  regexp/syntax.Compile
+         0     0% 96.80%       2236  2.71%  regexp/syntax.(*compiler).rune
+         0     0% 96.80%       1902  2.30%  github.com/CloudyKit/jet/v6_test.measurementWorkloads

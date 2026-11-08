@@ -1,0 +1,37 @@
+File: candidate.test
+Type: alloc_objects
+Time: 2026-11-08 03:57:22 CST
+Showing nodes accounting for 79736, 89.03% of 89564 total
+Dropped 19 nodes (cum <= 447)
+Showing top 30 nodes out of 44
+      flat  flat%   sum%        cum   cum%
+         0     0%     0%      56791 63.41%  github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes
+         0     0%     0%      56791 63.41%  testing.(*B).run1.func1
+         0     0%     0%      56791 63.41%  testing.(*B).runN
+         0     0%     0%      48380 54.02%  github.com/CloudyKit/jet/v6_test.measurementWorkloads
+         0     0%     0%      43691 48.78%  github.com/CloudyKit/jet/v6_test.additionalExecutionWorkloads
+         0     0%     0%      32769 36.59%  runtime.main
+         0     0%     0%      32768 36.59%  encoding/json.Marshal (inline)
+         0     0%     0%      32768 36.59%  encoding/json/v2.Marshal
+         0     0%     0%      32768 36.59%  encoding/json/v2.makeMapArshaler.func2
+         0     0%     0%      32768 36.59%  encoding/json/v2.makeSliceArshaler.func2
+         0     0%     0%      32768 36.59%  encoding/json/v2.marshalEncode
+         0     0%     0%      32768 36.59%  reflect.Value.MapIndex
+         0     0%     0%      32768 36.59%  reflect.copyVal
+     32768 36.59% 36.59%      32768 36.59%  reflect.unsafe_New
+         0     0% 36.59%      32768 36.59%  runtime.gcenable
+     32768 36.59% 73.17%      32768 36.59%  runtime.mallocgc
+         0     0% 73.17%      32768 36.59%  runtime.newobject
+     10923 12.20% 85.37%      10923 12.20%  internal/bytealg.MakeNoZero
+         0     0% 85.37%      10923 12.20%  strings.(*Builder).Grow
+         0     0% 85.37%      10923 12.20%  strings.(*Builder).grow
+         0     0% 85.37%      10923 12.20%  strings.Repeat
+         0     0% 85.37%       8411  9.39%  regexp.Compile (inline)
+      3277  3.66% 89.03%       8411  9.39%  regexp.compile
+         0     0% 89.03%       8411  9.39%  testing.(*B).Run
+         0     0% 89.03%       8411  9.39%  testing.(*matcher).fullName
+         0     0% 89.03%       8411  9.39%  testing.simpleMatch.matches
+         0     0% 89.03%       8411  9.39%  testing/internal/testdeps.TestDeps.MatchString
+         0     0% 89.03%       4689  5.24%  github.com/CloudyKit/jet/v6_test.executionWorkloads
+         0     0% 89.03%       4681  5.23%  encoding/json.Unmarshal (inline)
+         0     0% 89.03%       4681  5.23%  encoding/json/v2.Unmarshal

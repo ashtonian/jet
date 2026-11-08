@@ -65,7 +65,7 @@ func (p *dataPrinter) value(v reflect.Value, nested bool) error {
 		_, err := fastprinter.PrintValue(p, b.legacy)
 		return err
 	}
-	if v.Type().Implements(formatterType) || v.Type().Implements(stringerType) || v.Type().Implements(errorType) {
+	if typ := v.Type(); typ.NumMethod() != 0 && (typ.Implements(formatterType) || typ.Implements(stringerType) || typ.Implements(errorType)) {
 		// Native formatting hooks remain unrestricted host capabilities.
 		st.beforeNative(v)
 		var err error

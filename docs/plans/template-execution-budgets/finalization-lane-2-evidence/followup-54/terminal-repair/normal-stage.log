@@ -1,0 +1,1259 @@
+gate-lock: held by pid <pid> on <host>, "jet-finalization-lane-2-followup-terminal-normal 958cbed in <checkout>", since 2026-11-08T11:00:27Z, 2 of 6 focused cores
+=== RUN   TestExecutionCompilationSourceVersions
+--- PASS: TestExecutionCompilationSourceVersions (0.00s)
+=== RUN   TestRestrictedInputScopeReuseIsolation
+--- PASS: TestRestrictedInputScopeReuseIsolation (0.00s)
+=== RUN   TestRestrictedConcurrentVarsMapReuse
+--- PASS: TestRestrictedConcurrentVarsMapReuse (0.00s)
+=== RUN   TestBuiltinInvalidArguments
+=== RUN   TestBuiltinInvalidArguments/{{_lower(map("k",_1))_}}
+=== RUN   TestBuiltinInvalidArguments/{{_repeat("x",_slice(1))_}}
+=== RUN   TestBuiltinInvalidArguments/{{_split(slice(1),_",")_}}
+=== RUN   TestBuiltinInvalidArguments/{{_slice(nil)_}}
+=== RUN   TestBuiltinInvalidArguments/{{_array(nil)_}}
+=== RUN   TestBuiltinInvalidArguments/{{_len(p)_}}
+--- PASS: TestBuiltinInvalidArguments (0.00s)
+    --- PASS: TestBuiltinInvalidArguments/{{_lower(map("k",_1))_}} (0.00s)
+    --- PASS: TestBuiltinInvalidArguments/{{_repeat("x",_slice(1))_}} (0.00s)
+    --- PASS: TestBuiltinInvalidArguments/{{_split(slice(1),_",")_}} (0.00s)
+    --- PASS: TestBuiltinInvalidArguments/{{_slice(nil)_}} (0.00s)
+    --- PASS: TestBuiltinInvalidArguments/{{_array(nil)_}} (0.00s)
+    --- PASS: TestBuiltinInvalidArguments/{{_len(p)_}} (0.00s)
+=== RUN   TestBuiltinMapConvertsValidatedKeyOnce
+--- PASS: TestBuiltinMapConvertsValidatedKeyOnce (0.00s)
+=== RUN   TestBuiltinValueBudgets
+=== RUN   TestBuiltinValueBudgets/repeat
+=== RUN   TestBuiltinValueBudgets/replace
+=== RUN   TestBuiltinValueBudgets/split
+=== RUN   TestBuiltinValueBudgets/upper
+=== RUN   TestBuiltinValueBudgets/lower
+=== RUN   TestBuiltinValueBudgets/html
+=== RUN   TestBuiltinValueBudgets/url
+=== RUN   TestBuiltinValueBudgets/json
+=== RUN   TestBuiltinValueBudgets/writeJson
+--- PASS: TestBuiltinValueBudgets (0.00s)
+    --- PASS: TestBuiltinValueBudgets/repeat (0.00s)
+    --- PASS: TestBuiltinValueBudgets/replace (0.00s)
+    --- PASS: TestBuiltinValueBudgets/split (0.00s)
+    --- PASS: TestBuiltinValueBudgets/upper (0.00s)
+    --- PASS: TestBuiltinValueBudgets/lower (0.00s)
+    --- PASS: TestBuiltinValueBudgets/html (0.00s)
+    --- PASS: TestBuiltinValueBudgets/url (0.00s)
+    --- PASS: TestBuiltinValueBudgets/json (0.00s)
+    --- PASS: TestBuiltinValueBudgets/writeJson (0.00s)
+=== RUN   TestBuiltinSharedChildren
+=== RUN   TestBuiltinSharedChildren/{{_x_:=_"a"_}}{{_range_ints(0,_16)_}}{{_x_=_slice(x,_x)_}}{{_end_}}ok
+=== RUN   TestBuiltinSharedChildren/{{_x_:=_"a"_}}{{_range_ints(0,_8)_}}{{_x_=_map("a",_x,_"b",_x)_}}{{_end_}}ok
+--- PASS: TestBuiltinSharedChildren (0.00s)
+    --- PASS: TestBuiltinSharedChildren/{{_x_:=_"a"_}}{{_range_ints(0,_16)_}}{{_x_=_slice(x,_x)_}}{{_end_}}ok (0.00s)
+    --- PASS: TestBuiltinSharedChildren/{{_x_:=_"a"_}}{{_range_ints(0,_8)_}}{{_x_=_map("a",_x,_"b",_x)_}}{{_end_}}ok (0.00s)
+=== RUN   TestBuiltinDataCycles
+=== RUN   TestBuiltinDataCycles/{{_json(v)_}}
+=== RUN   TestBuiltinDataCycles/{{_writeJson(v)_}}
+=== RUN   TestBuiltinDataCycles/{{_v_}}
+=== RUN   TestBuiltinDataCycles/{{_"x"_+_v_}}
+--- PASS: TestBuiltinDataCycles (0.00s)
+    --- PASS: TestBuiltinDataCycles/{{_json(v)_}} (0.00s)
+    --- PASS: TestBuiltinDataCycles/{{_writeJson(v)_}} (0.00s)
+    --- PASS: TestBuiltinDataCycles/{{_v_}} (0.00s)
+    --- PASS: TestBuiltinDataCycles/{{_"x"_+_v_}} (0.00s)
+=== RUN   TestBuiltinAliasesAndNativeArguments
+=== RUN   TestBuiltinAliasesAndNativeArguments/{{_f_:=_repeat_}}{{_f("ab",_3)_}}|{{_"a"_|_f(2)_}}|{{_f_==_repeat_}}
+=== RUN   TestBuiltinAliasesAndNativeArguments/{{_m_:=_map("f",_repeat)_}}{{_m.f("ab",_3)_}}
+=== RUN   TestBuiltinAliasesAndNativeArguments/{{_apply(repeat)_}}|{{_native(repeat)_}}|{{_resolve()_}}
+--- PASS: TestBuiltinAliasesAndNativeArguments (0.00s)
+    --- PASS: TestBuiltinAliasesAndNativeArguments/{{_f_:=_repeat_}}{{_f("ab",_3)_}}|{{_"a"_|_f(2)_}}|{{_f_==_repeat_}} (0.00s)
+    --- PASS: TestBuiltinAliasesAndNativeArguments/{{_m_:=_map("f",_repeat)_}}{{_m.f("ab",_3)_}} (0.00s)
+    --- PASS: TestBuiltinAliasesAndNativeArguments/{{_apply(repeat)_}}|{{_native(repeat)_}}|{{_resolve()_}} (0.00s)
+=== RUN   TestBuiltinIntegerBoundaries
+--- PASS: TestBuiltinIntegerBoundaries (0.00s)
+=== RUN   TestCooperativeCostHooks
+=== RUN   TestCooperativeCostHooks/steps
+=== RUN   TestCooperativeCostHooks/values
+=== RUN   TestCooperativeCostHooks/negative
+--- PASS: TestCooperativeCostHooks (0.00s)
+    --- PASS: TestCooperativeCostHooks/steps (0.00s)
+    --- PASS: TestCooperativeCostHooks/values (0.00s)
+    --- PASS: TestCooperativeCostHooks/negative (0.00s)
+=== RUN   TestRestrictedCatchDiagnostic
+=== RUN   TestRestrictedCatchDiagnostic/{{_try_}}{{_missing_}}{{_catch_err_}}{{_err_}}{{_end_}}
+=== RUN   TestRestrictedCatchDiagnostic/{{_try_}}{{_missing_}}{{_catch_err_}}{{_m_:=_map("message",_err)_}}{{_m.message_}}{{_end_}}
+=== RUN   TestRestrictedCatchDiagnostic/{{_try_}}{{_map("x")_}}{{_catch_err_}}{{_err_}}{{_end_}}
+--- PASS: TestRestrictedCatchDiagnostic (0.00s)
+    --- PASS: TestRestrictedCatchDiagnostic/{{_try_}}{{_missing_}}{{_catch_err_}}{{_err_}}{{_end_}} (0.00s)
+    --- PASS: TestRestrictedCatchDiagnostic/{{_try_}}{{_missing_}}{{_catch_err_}}{{_m_:=_map("message",_err)_}}{{_m.message_}}{{_end_}} (0.00s)
+    --- PASS: TestRestrictedCatchDiagnostic/{{_try_}}{{_map("x")_}}{{_catch_err_}}{{_err_}}{{_end_}} (0.00s)
+=== RUN   TestBuiltinMapLegacyKeyOnce
+--- PASS: TestBuiltinMapLegacyKeyOnce (0.00s)
+=== RUN   TestBuiltinInaccessibleArguments
+=== RUN   TestBuiltinInaccessibleArguments/legacy{{_map(hidden,_"value")_}}
+=== RUN   TestBuiltinInaccessibleArguments/legacy{{_map("key",_hidden)_}}
+=== RUN   TestBuiltinInaccessibleArguments/legacy{{_slice(hidden)_}}
+=== RUN   TestBuiltinInaccessibleArguments/legacy{{_array(hidden)_}}
+=== RUN   TestBuiltinInaccessibleArguments/metered{{_map(hidden,_"value")_}}
+=== RUN   TestBuiltinInaccessibleArguments/metered{{_map("key",_hidden)_}}
+=== RUN   TestBuiltinInaccessibleArguments/metered{{_slice(hidden)_}}
+=== RUN   TestBuiltinInaccessibleArguments/metered{{_array(hidden)_}}
+--- PASS: TestBuiltinInaccessibleArguments (0.00s)
+    --- PASS: TestBuiltinInaccessibleArguments/legacy{{_map(hidden,_"value")_}} (0.00s)
+    --- PASS: TestBuiltinInaccessibleArguments/legacy{{_map("key",_hidden)_}} (0.00s)
+    --- PASS: TestBuiltinInaccessibleArguments/legacy{{_slice(hidden)_}} (0.00s)
+    --- PASS: TestBuiltinInaccessibleArguments/legacy{{_array(hidden)_}} (0.00s)
+    --- PASS: TestBuiltinInaccessibleArguments/metered{{_map(hidden,_"value")_}} (0.00s)
+    --- PASS: TestBuiltinInaccessibleArguments/metered{{_map("key",_hidden)_}} (0.00s)
+    --- PASS: TestBuiltinInaccessibleArguments/metered{{_slice(hidden)_}} (0.00s)
+    --- PASS: TestBuiltinInaccessibleArguments/metered{{_array(hidden)_}} (0.00s)
+=== RUN   TestRestrictedCatchHTMLAndJSON
+--- PASS: TestRestrictedCatchHTMLAndJSON (0.00s)
+=== RUN   TestBuiltinCollectionFuncs
+=== RUN   	JetTest(/map_builtin)
+--- PASS: 	JetTest(/map_builtin) (0.00s)
+=== RUN   	JetTest(/slice_builtin)
+--- PASS: 	JetTest(/slice_builtin) (0.00s)
+=== RUN   	JetTest(/slice_builtin_subslice)
+--- PASS: 	JetTest(/slice_builtin_subslice) (0.00s)
+=== RUN   	JetTest(/array_builtin)
+--- PASS: 	JetTest(/array_builtin) (0.00s)
+--- PASS: TestBuiltinCollectionFuncs (0.00s)
+=== RUN   TestExecutionCompilationCancellationCause
+--- PASS: TestExecutionCompilationCancellationCause (0.00s)
+=== RUN   TestExecutionCompilationInitialCachePolicy
+--- PASS: TestExecutionCompilationInitialCachePolicy (0.00s)
+=== RUN   TestExecutionCompilationSharedGraph
+--- PASS: TestExecutionCompilationSharedGraph (0.00s)
+=== RUN   TestExecutionCompilationLimitsAreTerminal
+--- PASS: TestExecutionCompilationLimitsAreTerminal (0.00s)
+=== RUN   TestExecutionCompilationTemplateReuse
+--- PASS: TestExecutionCompilationTemplateReuse (0.00s)
+=== RUN   TestExecutionCompilationCancelReaderCleanup
+--- PASS: TestExecutionCompilationCancelReaderCleanup (0.00s)
+=== RUN   TestExecutionCompilationCloseCannotMaskLimit
+--- PASS: TestExecutionCompilationCloseCannotMaskLimit (0.00s)
+=== RUN   TestExecutionCancellationCause
+--- PASS: TestExecutionCancellationCause (0.00s)
+=== RUN   TestExecutionNumericScanBudget
+--- PASS: TestExecutionNumericScanBudget (0.00s)
+=== RUN   TestExecutionErrorFormattingBounded
+=== RUN   TestExecutionErrorFormattingBounded/{{_x_:=_"a"_}}{{_range_ints(0,_16)_}}{{_x_=_slice(x,_x)_}}{{_end_}}{{_missing_}}
+    execution_diagnostics_test.go:23: diagnostic_bytes=125
+=== RUN   TestExecutionErrorFormattingBounded/{{_x_:=_"a"_}}{{_range_ints(0,_16)_}}{{_x_=_slice(x,_x)_}}{{_end_}}{{_missing_=_x_}}
+    execution_diagnostics_test.go:23: diagnostic_bytes=121
+=== RUN   TestExecutionErrorFormattingBounded/{{_x_:=_"a"_}}{{_range_ints(0,_16)_}}{{_x_=_slice(x,_x)_}}{{_end_}}{{_map(x,_"v")_}}
+    execution_diagnostics_test.go:23: diagnostic_bytes=90
+=== RUN   TestExecutionErrorFormattingBounded/{{_x_:=_"a"_}}{{_range_ints(0,_16)_}}{{_x_=_slice(x,_x)_}}{{_end_}}{{_ints(x,_3)_}}
+    execution_diagnostics_test.go:23: diagnostic_bytes=55
+=== RUN   TestExecutionErrorFormattingBounded/{{_range_repeat("x",_16384)_}}{{_end_}}
+    execution_diagnostics_test.go:23: diagnostic_bytes=77
+--- PASS: TestExecutionErrorFormattingBounded (0.00s)
+    --- PASS: TestExecutionErrorFormattingBounded/{{_x_:=_"a"_}}{{_range_ints(0,_16)_}}{{_x_=_slice(x,_x)_}}{{_end_}}{{_missing_}} (0.00s)
+    --- PASS: TestExecutionErrorFormattingBounded/{{_x_:=_"a"_}}{{_range_ints(0,_16)_}}{{_x_=_slice(x,_x)_}}{{_end_}}{{_missing_=_x_}} (0.00s)
+    --- PASS: TestExecutionErrorFormattingBounded/{{_x_:=_"a"_}}{{_range_ints(0,_16)_}}{{_x_=_slice(x,_x)_}}{{_end_}}{{_map(x,_"v")_}} (0.00s)
+    --- PASS: TestExecutionErrorFormattingBounded/{{_x_:=_"a"_}}{{_range_ints(0,_16)_}}{{_x_=_slice(x,_x)_}}{{_end_}}{{_ints(x,_3)_}} (0.00s)
+    --- PASS: TestExecutionErrorFormattingBounded/{{_range_repeat("x",_16384)_}}{{_end_}} (0.00s)
+=== RUN   TestExecutionDiagnosticsAvoidNativeHooks
+--- PASS: TestExecutionDiagnosticsAvoidNativeHooks (0.00s)
+=== RUN   TestExecutionMissingIdentifierWithSharedInput
+--- PASS: TestExecutionMissingIdentifierWithSharedInput (0.00s)
+=== RUN   TestOutputReentrantEscaperTerminal
+--- PASS: TestOutputReentrantEscaperTerminal (0.00s)
+=== RUN   TestExecutionOutputFailurePaths
+=== RUN   TestExecutionOutputFailurePaths/abcd
+=== RUN   TestExecutionOutputFailurePaths/{{_"abc<&"_}}
+=== RUN   TestExecutionOutputFailurePaths/{{_raw("abcd")_}}
+=== RUN   TestExecutionOutputFailurePaths/{{_safeHtml("abcd<")_}}
+=== RUN   TestExecutionOutputFailurePaths/{{_safeJs("abcd<")_}}
+=== RUN   TestExecutionOutputFailurePaths/{{_json("abcd")_}}
+=== RUN   TestExecutionOutputFailurePaths/{{_writeJson("abcd")_}}
+=== RUN   TestExecutionOutputFailurePaths/{{_try_}}abcd{{_catch_}}caught{{_end_}}
+=== RUN   TestExecutionOutputFailurePaths/{{_ignored("abcd")_}}later
+=== RUN   TestExecutionOutputFailurePaths/{{_renderer_}}later
+--- PASS: TestExecutionOutputFailurePaths (0.00s)
+    --- PASS: TestExecutionOutputFailurePaths/abcd (0.00s)
+    --- PASS: TestExecutionOutputFailurePaths/{{_"abc<&"_}} (0.00s)
+    --- PASS: TestExecutionOutputFailurePaths/{{_raw("abcd")_}} (0.00s)
+    --- PASS: TestExecutionOutputFailurePaths/{{_safeHtml("abcd<")_}} (0.00s)
+    --- PASS: TestExecutionOutputFailurePaths/{{_safeJs("abcd<")_}} (0.00s)
+    --- PASS: TestExecutionOutputFailurePaths/{{_json("abcd")_}} (0.00s)
+    --- PASS: TestExecutionOutputFailurePaths/{{_writeJson("abcd")_}} (0.00s)
+    --- PASS: TestExecutionOutputFailurePaths/{{_try_}}abcd{{_catch_}}caught{{_end_}} (0.00s)
+    --- PASS: TestExecutionOutputFailurePaths/{{_ignored("abcd")_}}later (0.00s)
+    --- PASS: TestExecutionOutputFailurePaths/{{_renderer_}}later (0.00s)
+=== RUN   TestExecutionTerminalLimitsInRecovery
+=== RUN   TestExecutionTerminalLimitsInRecovery/steps
+=== RUN   TestExecutionTerminalLimitsInRecovery/depth
+=== RUN   TestExecutionTerminalLimitsInRecovery/isset_depth
+=== RUN   TestExecutionTerminalLimitsInRecovery/content_fuel
+--- PASS: TestExecutionTerminalLimitsInRecovery (0.00s)
+    --- PASS: TestExecutionTerminalLimitsInRecovery/steps (0.00s)
+    --- PASS: TestExecutionTerminalLimitsInRecovery/depth (0.00s)
+    --- PASS: TestExecutionTerminalLimitsInRecovery/isset_depth (0.00s)
+    --- PASS: TestExecutionTerminalLimitsInRecovery/content_fuel (0.00s)
+=== RUN   TestExecutionLimits
+=== RUN   TestExecutionLimits/empty
+=== RUN   TestExecutionLimits/literal
+=== RUN   TestExecutionLimits/exact_steps
+=== RUN   TestExecutionLimits/expression_depth
+=== RUN   TestExecutionLimits/silent
+=== RUN   TestExecutionLimits/expression
+=== RUN   TestExecutionLimits/equality
+=== RUN   TestExecutionLimits/string_equality
+=== RUN   TestExecutionLimits/array_truth
+=== RUN   TestExecutionLimits/max_integers
+=== RUN   TestExecutionLimits/unlimited
+--- PASS: TestExecutionLimits (0.00s)
+    --- PASS: TestExecutionLimits/empty (0.00s)
+    --- PASS: TestExecutionLimits/literal (0.00s)
+    --- PASS: TestExecutionLimits/exact_steps (0.00s)
+    --- PASS: TestExecutionLimits/expression_depth (0.00s)
+    --- PASS: TestExecutionLimits/silent (0.00s)
+    --- PASS: TestExecutionLimits/expression (0.00s)
+    --- PASS: TestExecutionLimits/equality (0.00s)
+    --- PASS: TestExecutionLimits/string_equality (0.00s)
+    --- PASS: TestExecutionLimits/array_truth (0.00s)
+    --- PASS: TestExecutionLimits/max_integers (0.00s)
+    --- PASS: TestExecutionLimits/unlimited (0.00s)
+=== RUN   TestExecutionCyclicValues
+=== RUN   TestExecutionCyclicValues/{{_a_==_b_}}
+=== RUN   TestExecutionCyclicValues/{{_a_==_b_}}#01
+=== RUN   TestExecutionCyclicValues/{{_p.Field_}}
+=== RUN   TestExecutionCyclicValues/{{_range_p_}}{{_end_}}
+--- PASS: TestExecutionCyclicValues (0.00s)
+    --- PASS: TestExecutionCyclicValues/{{_a_==_b_}} (0.00s)
+    --- PASS: TestExecutionCyclicValues/{{_a_==_b_}}#01 (0.00s)
+    --- PASS: TestExecutionCyclicValues/{{_p.Field_}} (0.00s)
+    --- PASS: TestExecutionCyclicValues/{{_range_p_}}{{_end_}} (0.00s)
+=== RUN   TestExecutionIssetCancellation
+--- PASS: TestExecutionIssetCancellation (0.00s)
+=== RUN   TestExecutionClearsCancelledState
+--- PASS: TestExecutionClearsCancelledState (0.00s)
+=== RUN   TestExecutionReservation
+--- PASS: TestExecutionReservation (0.00s)
+=== RUN   TestExecutionProgrammingPanic
+=== RUN   TestExecutionProgrammingPanic/{{_fault()_}}
+=== RUN   TestExecutionProgrammingPanic/{{_try_}}{{_fault()_}}{{_catch_}}caught{{_end_}}
+--- PASS: TestExecutionProgrammingPanic (0.00s)
+    --- PASS: TestExecutionProgrammingPanic/{{_fault()_}} (0.00s)
+    --- PASS: TestExecutionProgrammingPanic/{{_try_}}{{_fault()_}}{{_catch_}}caught{{_end_}} (0.00s)
+=== RUN   TestExecutionCompilationContextBridge
+--- PASS: TestExecutionCompilationContextBridge (0.00s)
+=== RUN   TestExecutionInvalidOptions
+--- PASS: TestExecutionInvalidOptions (0.00s)
+=== RUN   TestExecutionCancelledEntryAndCompletion
+--- PASS: TestExecutionCancelledEntryAndCompletion (0.00s)
+=== RUN   TestExecutionOwnsActiveCallback
+--- PASS: TestExecutionOwnsActiveCallback (0.00s)
+=== RUN   TestExecutionCancelsSilentNativeWork
+--- PASS: TestExecutionCancelsSilentNativeWork (0.00s)
+=== RUN   TestExecutionTerminalTryAndIsset
+=== RUN   TestExecutionTerminalTryAndIsset/{{_try_}}{{_range_ints(0,_100000)_}}{{_end_}}{{_catch_}}caught{{_end_}}
+=== RUN   TestExecutionTerminalTryAndIsset/{{_try_}}{{_try_}}{{_block_b(n=0)_}}{{_if_n_<_100_}}{{_yield_b(n=n+1)_}}{{_end_}}{{_end_}}{{_catch_}}caught{{_end_}}{{_catch_}}caught{{_end_}}
+=== RUN   TestExecutionTerminalTryAndIsset/{{_try_}}{{_isset(.A.B.C.D)_}}{{_catch_}}caught{{_end_}}
+--- PASS: TestExecutionTerminalTryAndIsset (0.00s)
+    --- PASS: TestExecutionTerminalTryAndIsset/{{_try_}}{{_range_ints(0,_100000)_}}{{_end_}}{{_catch_}}caught{{_end_}} (0.00s)
+    --- PASS: TestExecutionTerminalTryAndIsset/{{_try_}}{{_try_}}{{_block_b(n=0)_}}{{_if_n_<_100_}}{{_yield_b(n=n+1)_}}{{_end_}}{{_end_}}{{_catch_}}caught{{_end_}}{{_catch_}}caught{{_end_}} (0.00s)
+    --- PASS: TestExecutionTerminalTryAndIsset/{{_try_}}{{_isset(.A.B.C.D)_}}{{_catch_}}caught{{_end_}} (0.00s)
+=== RUN   TestExecutionStickyRecoveredTermination
+--- PASS: TestExecutionStickyRecoveredTermination (0.00s)
+=== RUN   TestExecutionCompositionSharesBudget
+=== RUN   TestExecutionCompositionSharesBudget/{{_include_"entry"_}}
+=== RUN   TestExecutionCompositionSharesBudget/{{_exec("entry")_}}
+=== RUN   TestExecutionCompositionSharesBudget/{{_includeIfExists("entry")_}}
+=== RUN   TestExecutionCompositionSharesBudget/{{_block_b()_}}{{_yield_b()_}}{{_end_}}
+=== RUN   TestExecutionCompositionSharesBudget/{{_block_a(n=0)_}}{{_if_n_<_1_}}{{_yield_b()_}}{{_end_}}{{_end_}}{{_block_b()_}}{{_yield_a()_}}{{_end_}}
+=== RUN   TestExecutionCompositionSharesBudget/{{_block_b()_}}{{_reenter()_}}{{_end_}}
+=== RUN   TestExecutionCompositionSharesBudget/{{_block_b()_}}{{_yield_content_}}{{_end_}}{{_yield_b()_content_}}{{_yield_b()_content_}}{{_yield_content_}}{{_end_}}{{_end_}}
+--- PASS: TestExecutionCompositionSharesBudget (0.03s)
+    --- PASS: TestExecutionCompositionSharesBudget/{{_include_"entry"_}} (0.00s)
+    --- PASS: TestExecutionCompositionSharesBudget/{{_exec("entry")_}} (0.00s)
+    --- PASS: TestExecutionCompositionSharesBudget/{{_includeIfExists("entry")_}} (0.00s)
+    --- PASS: TestExecutionCompositionSharesBudget/{{_block_b()_}}{{_yield_b()_}}{{_end_}} (0.00s)
+    --- PASS: TestExecutionCompositionSharesBudget/{{_block_a(n=0)_}}{{_if_n_<_1_}}{{_yield_b()_}}{{_end_}}{{_end_}}{{_block_b()_}}{{_yield_a()_}}{{_end_}} (0.00s)
+    --- PASS: TestExecutionCompositionSharesBudget/{{_block_b()_}}{{_reenter()_}}{{_end_}} (0.00s)
+    --- PASS: TestExecutionCompositionSharesBudget/{{_block_b()_}}{{_yield_content_}}{{_end_}}{{_yield_b()_content_}}{{_yield_b()_content_}}{{_yield_content_}}{{_end_}}{{_end_}} (0.00s)
+=== RUN   TestExecutionConcurrentBudgets
+--- PASS: TestExecutionConcurrentBudgets (0.00s)
+=== RUN   TestExecutionValueGrowth
+=== RUN   TestExecutionValueGrowth/doubling
+=== RUN   TestExecutionValueGrowth/byteConcat
+=== RUN   TestExecutionValueGrowth/rollback
+=== RUN   TestExecutionValueGrowth/isset
+--- PASS: TestExecutionValueGrowth (0.00s)
+    --- PASS: TestExecutionValueGrowth/doubling (0.00s)
+    --- PASS: TestExecutionValueGrowth/byteConcat (0.00s)
+    --- PASS: TestExecutionValueGrowth/rollback (0.00s)
+    --- PASS: TestExecutionValueGrowth/isset (0.00s)
+=== RUN   TestExecutionBudgetProfile
+=== RUN   TestExecutionBudgetProfile/doubling
+    execution_values_test.go:58: output="" accepted=0 attempted=0 writes=0 error=jet: value limit exceeded (32768) allocated_bytes=17112 allocations=31
+=== RUN   TestExecutionBudgetProfile/repeat
+    execution_values_test.go:58: output="" accepted=0 attempted=0 writes=0 error=jet: value limit exceeded (32768) allocated_bytes=152 allocations=5
+=== RUN   TestExecutionBudgetProfile/replace
+    execution_values_test.go:58: output="" accepted=0 attempted=0 writes=0 error=jet: value limit exceeded (32768) allocated_bytes=8360 allocations=8
+=== RUN   TestExecutionBudgetProfile/split
+    execution_values_test.go:58: output="" accepted=0 attempted=0 writes=0 error=jet: value limit exceeded (32768) allocated_bytes=4264 allocations=7
+=== RUN   TestExecutionBudgetProfile/nestedTry
+    execution_values_test.go:58: output="" accepted=0 attempted=0 writes=0 error=jet: output limit exceeded (1024) allocated_bytes=16736 allocations=9
+=== RUN   TestExecutionBudgetProfile/rollback
+    execution_values_test.go:58: output="" accepted=0 attempted=0 writes=0 error=jet: output limit exceeded (1024) allocated_bytes=16656 allocations=9
+=== RUN   TestExecutionBudgetProfile/discard
+    execution_values_test.go:58: output="" accepted=0 attempted=0 writes=0 error=jet: output limit exceeded (1024) allocated_bytes=27024 allocations=48
+--- PASS: TestExecutionBudgetProfile (0.00s)
+    --- PASS: TestExecutionBudgetProfile/doubling (0.00s)
+    --- PASS: TestExecutionBudgetProfile/repeat (0.00s)
+    --- PASS: TestExecutionBudgetProfile/replace (0.00s)
+    --- PASS: TestExecutionBudgetProfile/split (0.00s)
+    --- PASS: TestExecutionBudgetProfile/nestedTry (0.00s)
+    --- PASS: TestExecutionBudgetProfile/rollback (0.00s)
+    --- PASS: TestExecutionBudgetProfile/discard (0.00s)
+=== RUN   TestExecutionGeneratedOutput
+=== RUN   TestExecutionGeneratedOutput/literalBoundary
+=== RUN   TestExecutionGeneratedOutput/literalFailure
+=== RUN   TestExecutionGeneratedOutput/escapedBoundary
+=== RUN   TestExecutionGeneratedOutput/escapedFailure
+=== RUN   TestExecutionGeneratedOutput/nestedCommit
+=== RUN   TestExecutionGeneratedOutput/nestedValue
+=== RUN   TestExecutionGeneratedOutput/rollback
+=== RUN   TestExecutionGeneratedOutput/terminalTry
+--- PASS: TestExecutionGeneratedOutput (0.00s)
+    --- PASS: TestExecutionGeneratedOutput/literalBoundary (0.00s)
+    --- PASS: TestExecutionGeneratedOutput/literalFailure (0.00s)
+    --- PASS: TestExecutionGeneratedOutput/escapedBoundary (0.00s)
+    --- PASS: TestExecutionGeneratedOutput/escapedFailure (0.00s)
+    --- PASS: TestExecutionGeneratedOutput/nestedCommit (0.00s)
+    --- PASS: TestExecutionGeneratedOutput/nestedValue (0.00s)
+    --- PASS: TestExecutionGeneratedOutput/rollback (0.00s)
+    --- PASS: TestExecutionGeneratedOutput/terminalTry (0.00s)
+=== RUN   TestExecutionDiscardedOutput
+=== RUN   TestExecutionDiscardedOutput/{{_exec("child")_}}ok
+=== RUN   TestExecutionDiscardedOutput/{{_try_}}{{_exec("child")_}}{{_catch_}}caught{{_end_}}
+=== RUN   TestExecutionDiscardedOutput/{{_a_:=_map()_}}{{_try_}}{{_isset(a[exec("child")])_}}{{_catch_}}caught{{_end_}}
+--- PASS: TestExecutionDiscardedOutput (0.00s)
+    --- PASS: TestExecutionDiscardedOutput/{{_exec("child")_}}ok (0.00s)
+    --- PASS: TestExecutionDiscardedOutput/{{_try_}}{{_exec("child")_}}{{_catch_}}caught{{_end_}} (0.00s)
+    --- PASS: TestExecutionDiscardedOutput/{{_a_:=_map()_}}{{_try_}}{{_isset(a[exec("child")])_}}{{_catch_}}caught{{_end_}} (0.00s)
+=== RUN   TestExecutionOutputLoop
+=== RUN   TestExecutionOutputLoop/output
+=== RUN   TestExecutionOutputLoop/work
+--- PASS: TestExecutionOutputLoop (0.00s)
+    --- PASS: TestExecutionOutputLoop/output (0.00s)
+    --- PASS: TestExecutionOutputLoop/work (0.00s)
+=== RUN   TestExecutionFormatting
+=== RUN   TestExecutionFormatting/{{_v_}}
+=== RUN   TestExecutionFormatting/{{_"a"_+_v_}}
+=== RUN   TestExecutionFormatting/{{_raw(v)_}}
+=== RUN   TestExecutionFormatting/{{_v_}}#01
+=== RUN   TestExecutionFormatting/{{_"a"_+_v_}}#01
+=== RUN   TestExecutionFormatting/{{_raw(v)_}}#01
+=== RUN   TestExecutionFormatting/{{_v_}}#02
+=== RUN   TestExecutionFormatting/{{_"a"_+_v_}}#02
+=== RUN   TestExecutionFormatting/{{_raw(v)_}}#02
+=== RUN   TestExecutionFormatting/{{_v_}}#03
+=== RUN   TestExecutionFormatting/{{_"a"_+_v_}}#03
+=== RUN   TestExecutionFormatting/{{_raw(v)_}}#03
+--- PASS: TestExecutionFormatting (0.00s)
+    --- PASS: TestExecutionFormatting/{{_v_}} (0.00s)
+    --- PASS: TestExecutionFormatting/{{_"a"_+_v_}} (0.00s)
+    --- PASS: TestExecutionFormatting/{{_raw(v)_}} (0.00s)
+    --- PASS: TestExecutionFormatting/{{_v_}}#01 (0.00s)
+    --- PASS: TestExecutionFormatting/{{_"a"_+_v_}}#01 (0.00s)
+    --- PASS: TestExecutionFormatting/{{_raw(v)_}}#01 (0.00s)
+    --- PASS: TestExecutionFormatting/{{_v_}}#02 (0.00s)
+    --- PASS: TestExecutionFormatting/{{_"a"_+_v_}}#02 (0.00s)
+    --- PASS: TestExecutionFormatting/{{_raw(v)_}}#02 (0.00s)
+    --- PASS: TestExecutionFormatting/{{_v_}}#03 (0.00s)
+    --- PASS: TestExecutionFormatting/{{_"a"_+_v_}}#03 (0.00s)
+    --- PASS: TestExecutionFormatting/{{_raw(v)_}}#03 (0.00s)
+=== RUN   TestExecutionNumericErrorReservation
+--- PASS: TestExecutionNumericErrorReservation (0.00s)
+=== RUN   TestExecutionNumericErrorIdentity
+--- PASS: TestExecutionNumericErrorIdentity (0.00s)
+=== RUN   TestExecutionByteOptions
+=== RUN   TestExecutionByteOptions/zero
+=== RUN   TestExecutionByteOptions/negativeValue
+=== RUN   TestExecutionByteOptions/negativeOutput
+=== RUN   TestExecutionByteOptions/oneValue
+=== RUN   TestExecutionByteOptions/oneOutput
+=== RUN   TestExecutionByteOptions/exact
+=== RUN   TestExecutionByteOptions/largest
+--- PASS: TestExecutionByteOptions (0.00s)
+    --- PASS: TestExecutionByteOptions/zero (0.00s)
+    --- PASS: TestExecutionByteOptions/negativeValue (0.00s)
+    --- PASS: TestExecutionByteOptions/negativeOutput (0.00s)
+    --- PASS: TestExecutionByteOptions/oneValue (0.00s)
+    --- PASS: TestExecutionByteOptions/oneOutput (0.00s)
+    --- PASS: TestExecutionByteOptions/exact (0.00s)
+    --- PASS: TestExecutionByteOptions/largest (0.00s)
+=== RUN   TestOutputFailureLocation
+=== RUN   TestOutputFailureLocation/body/legacy
+=== RUN   TestOutputFailureLocation/body/metered
+=== RUN   TestOutputFailureLocation/{{_"<&"_}}/legacy
+=== RUN   TestOutputFailureLocation/{{_"<&"_}}/metered
+=== RUN   TestOutputFailureLocation/{{_raw("<&")_}}/legacy
+=== RUN   TestOutputFailureLocation/{{_raw("<&")_}}/metered
+=== RUN   TestOutputFailureLocation/{{_safeHtml("<&")_}}/legacy
+=== RUN   TestOutputFailureLocation/{{_safeHtml("<&")_}}/metered
+=== RUN   TestOutputFailureLocation/{{_safeJs("<&")_}}/legacy
+=== RUN   TestOutputFailureLocation/{{_safeJs("<&")_}}/metered
+=== RUN   TestOutputFailureLocation/{{_json("<&")_}}/legacy
+=== RUN   TestOutputFailureLocation/{{_json("<&")_}}/metered
+=== RUN   TestOutputFailureLocation/{{_writeJson("<&")_}}/legacy
+=== RUN   TestOutputFailureLocation/{{_writeJson("<&")_}}/metered
+=== RUN   TestOutputFailureLocation/{{_ignored("body")_}}later/legacy
+=== RUN   TestOutputFailureLocation/{{_ignored("body")_}}later/metered
+=== RUN   TestOutputFailureLocation/{{_renderer_}}later/legacy
+=== RUN   TestOutputFailureLocation/{{_renderer_}}later/metered
+=== RUN   TestOutputFailureLocation/{{_try_}}{{_try_}}body{{_end_}}{{_catch_}}caught{{_end_}}/legacy
+=== RUN   TestOutputFailureLocation/{{_try_}}{{_try_}}body{{_end_}}{{_catch_}}caught{{_end_}}/metered
+--- PASS: TestOutputFailureLocation (0.00s)
+    --- PASS: TestOutputFailureLocation/body/legacy (0.00s)
+    --- PASS: TestOutputFailureLocation/body/metered (0.00s)
+    --- PASS: TestOutputFailureLocation/{{_"<&"_}}/legacy (0.00s)
+    --- PASS: TestOutputFailureLocation/{{_"<&"_}}/metered (0.00s)
+    --- PASS: TestOutputFailureLocation/{{_raw("<&")_}}/legacy (0.00s)
+    --- PASS: TestOutputFailureLocation/{{_raw("<&")_}}/metered (0.00s)
+    --- PASS: TestOutputFailureLocation/{{_safeHtml("<&")_}}/legacy (0.00s)
+    --- PASS: TestOutputFailureLocation/{{_safeHtml("<&")_}}/metered (0.00s)
+    --- PASS: TestOutputFailureLocation/{{_safeJs("<&")_}}/legacy (0.00s)
+    --- PASS: TestOutputFailureLocation/{{_safeJs("<&")_}}/metered (0.00s)
+    --- PASS: TestOutputFailureLocation/{{_json("<&")_}}/legacy (0.00s)
+    --- PASS: TestOutputFailureLocation/{{_json("<&")_}}/metered (0.00s)
+    --- PASS: TestOutputFailureLocation/{{_writeJson("<&")_}}/legacy (0.00s)
+    --- PASS: TestOutputFailureLocation/{{_writeJson("<&")_}}/metered (0.00s)
+    --- PASS: TestOutputFailureLocation/{{_ignored("body")_}}later/legacy (0.00s)
+    --- PASS: TestOutputFailureLocation/{{_ignored("body")_}}later/metered (0.00s)
+    --- PASS: TestOutputFailureLocation/{{_renderer_}}later/legacy (0.00s)
+    --- PASS: TestOutputFailureLocation/{{_renderer_}}later/metered (0.00s)
+    --- PASS: TestOutputFailureLocation/{{_try_}}{{_try_}}body{{_end_}}{{_catch_}}caught{{_end_}}/legacy (0.00s)
+    --- PASS: TestOutputFailureLocation/{{_try_}}{{_try_}}body{{_end_}}{{_catch_}}caught{{_end_}}/metered (0.00s)
+=== RUN   TestOutputFailureNestedLocation
+--- PASS: TestOutputFailureNestedLocation (0.00s)
+=== RUN   TestOutputFailurePrecedesLaterLimit
+--- PASS: TestOutputFailurePrecedesLaterLimit (0.00s)
+=== RUN   TestOutputReentrantEscaper
+--- PASS: TestOutputReentrantEscaper (0.00s)
+=== RUN   TestOutputReentrantCommitCountsGeneration
+--- PASS: TestOutputReentrantCommitCountsGeneration (0.00s)
+=== RUN   TestOutputShortWriteLocation
+--- PASS: TestOutputShortWriteLocation (0.00s)
+=== RUN   TestOutputBoundedLocation
+--- PASS: TestOutputBoundedLocation (0.00s)
+=== RUN   TestOutputOwnedLargeThenSmall
+--- PASS: TestOutputOwnedLargeThenSmall (0.00s)
+=== RUN   TestOutputRedirectedWriterFailure
+--- PASS: TestOutputRedirectedWriterFailure (0.00s)
+=== RUN   TestRestrictedInputCancellationCause
+--- PASS: TestRestrictedInputCancellationCause (0.00s)
+=== RUN   TestRestrictedSupportedWorkflow
+--- PASS: TestRestrictedSupportedWorkflow (0.00s)
+=== RUN   TestRestrictedDenialWorkflow
+=== RUN   TestRestrictedDenialWorkflow/function
+=== RUN   TestRestrictedDenialWorkflow/shadow
+=== RUN   TestRestrictedDenialWorkflow/reentry
+=== RUN   TestRestrictedDenialWorkflow/nested-map
+=== RUN   TestRestrictedDenialWorkflow/nested-slice
+=== RUN   TestRestrictedDenialWorkflow/stringer
+=== RUN   TestRestrictedDenialWorkflow/formatter
+=== RUN   TestRestrictedDenialWorkflow/error
+=== RUN   TestRestrictedDenialWorkflow/json
+=== RUN   TestRestrictedDenialWorkflow/text-json
+=== RUN   TestRestrictedDenialWorkflow/renderer
+=== RUN   TestRestrictedDenialWorkflow/ranger
+=== RUN   TestRestrictedDenialWorkflow/writer
+=== RUN   TestRestrictedDenialWorkflow/pointer-method
+=== RUN   TestRestrictedDenialWorkflow/channel
+=== RUN   TestRestrictedDenialWorkflow/unused
+--- PASS: TestRestrictedDenialWorkflow (0.00s)
+    --- PASS: TestRestrictedDenialWorkflow/function (0.00s)
+    --- PASS: TestRestrictedDenialWorkflow/shadow (0.00s)
+    --- PASS: TestRestrictedDenialWorkflow/reentry (0.00s)
+    --- PASS: TestRestrictedDenialWorkflow/nested-map (0.00s)
+    --- PASS: TestRestrictedDenialWorkflow/nested-slice (0.00s)
+    --- PASS: TestRestrictedDenialWorkflow/stringer (0.00s)
+    --- PASS: TestRestrictedDenialWorkflow/formatter (0.00s)
+    --- PASS: TestRestrictedDenialWorkflow/error (0.00s)
+    --- PASS: TestRestrictedDenialWorkflow/json (0.00s)
+    --- PASS: TestRestrictedDenialWorkflow/text-json (0.00s)
+    --- PASS: TestRestrictedDenialWorkflow/renderer (0.00s)
+    --- PASS: TestRestrictedDenialWorkflow/ranger (0.00s)
+    --- PASS: TestRestrictedDenialWorkflow/writer (0.00s)
+    --- PASS: TestRestrictedDenialWorkflow/pointer-method (0.00s)
+    --- PASS: TestRestrictedDenialWorkflow/channel (0.00s)
+    --- PASS: TestRestrictedDenialWorkflow/unused (0.00s)
+=== RUN   TestRestrictedTerminalAndCeilings
+=== RUN   TestRestrictedTerminalAndCeilings/steps
+=== RUN   TestRestrictedTerminalAndCeilings/depth
+=== RUN   TestRestrictedTerminalAndCeilings/value
+=== RUN   TestRestrictedTerminalAndCeilings/output
+=== RUN   TestRestrictedTerminalAndCeilings/parse
+--- PASS: TestRestrictedTerminalAndCeilings (0.00s)
+    --- PASS: TestRestrictedTerminalAndCeilings/steps (0.00s)
+    --- PASS: TestRestrictedTerminalAndCeilings/depth (0.00s)
+    --- PASS: TestRestrictedTerminalAndCeilings/value (0.00s)
+    --- PASS: TestRestrictedTerminalAndCeilings/output (0.00s)
+    --- PASS: TestRestrictedTerminalAndCeilings/parse (0.00s)
+=== RUN   TestRestrictedSnapshotsAndNamespace
+--- PASS: TestRestrictedSnapshotsAndNamespace (0.00s)
+=== RUN   TestRestrictedInputLimitsAndSemantics
+--- PASS: TestRestrictedInputLimitsAndSemantics (0.00s)
+=== RUN   TestRestrictedMixedConcurrency
+--- PASS: TestRestrictedMixedConcurrency (0.00s)
+=== RUN   TestRestrictedRejectsExternalWriter
+--- PASS: TestRestrictedRejectsExternalWriter (0.00s)
+=== RUN   TestRestrictedDepthChild
+--- PASS: TestRestrictedDepthChild (0.00s)
+=== RUN   TestRestrictedConfiguration
+--- PASS: TestRestrictedConfiguration (0.00s)
+=== RUN   TestRestrictedForeignCacheAndConfiguration
+--- PASS: TestRestrictedForeignCacheAndConfiguration (0.00s)
+=== RUN   TestRestrictedUnknownKindsAndNativeDefenses
+=== RUN   TestRestrictedUnknownKindsAndNativeDefenses/native-call
+=== RUN   TestRestrictedUnknownKindsAndNativeDefenses/forged-binding
+=== RUN   TestRestrictedUnknownKindsAndNativeDefenses/native-renderer
+=== RUN   TestRestrictedUnknownKindsAndNativeDefenses/format-fallback
+=== RUN   TestRestrictedUnknownKindsAndNativeDefenses/pointer-index
+=== RUN   TestRestrictedUnknownKindsAndNativeDefenses/function-conversion
+=== RUN   TestRestrictedUnknownKindsAndNativeDefenses/new-AST-kind
+--- PASS: TestRestrictedUnknownKindsAndNativeDefenses (0.00s)
+    --- PASS: TestRestrictedUnknownKindsAndNativeDefenses/native-call (0.00s)
+    --- PASS: TestRestrictedUnknownKindsAndNativeDefenses/forged-binding (0.00s)
+    --- PASS: TestRestrictedUnknownKindsAndNativeDefenses/native-renderer (0.00s)
+    --- PASS: TestRestrictedUnknownKindsAndNativeDefenses/format-fallback (0.00s)
+    --- PASS: TestRestrictedUnknownKindsAndNativeDefenses/pointer-index (0.00s)
+    --- PASS: TestRestrictedUnknownKindsAndNativeDefenses/function-conversion (0.00s)
+    --- PASS: TestRestrictedUnknownKindsAndNativeDefenses/new-AST-kind (0.00s)
+=== RUN   TestExecutionOwnsBlockingWriter
+--- PASS: TestExecutionOwnsBlockingWriter (0.00s)
+=== RUN   TestRestrictedGeneratedCyclesAndMutableSnapshots
+--- PASS: TestRestrictedGeneratedCyclesAndMutableSnapshots (0.00s)
+=== RUN   TestRuntimeWriterFailures
+=== RUN   TestRuntimeWriterFailures/text
+=== RUN   TestRuntimeWriterFailures/{{_"<&"_}}
+=== RUN   TestRuntimeWriterFailures/{{_raw("<&")_}}
+=== RUN   TestRuntimeWriterFailures/{{_safeHtml("<&")_}}
+=== RUN   TestRuntimeWriterFailures/{{_json(.)_}}
+=== RUN   TestRuntimeWriterFailures/{{_try_}}text{{_catch_}}caught{{_end_}}
+--- PASS: TestRuntimeWriterFailures (0.00s)
+    --- PASS: TestRuntimeWriterFailures/text (0.00s)
+    --- PASS: TestRuntimeWriterFailures/{{_"<&"_}} (0.00s)
+    --- PASS: TestRuntimeWriterFailures/{{_raw("<&")_}} (0.00s)
+    --- PASS: TestRuntimeWriterFailures/{{_safeHtml("<&")_}} (0.00s)
+    --- PASS: TestRuntimeWriterFailures/{{_json(.)_}} (0.00s)
+    --- PASS: TestRuntimeWriterFailures/{{_try_}}text{{_catch_}}caught{{_end_}} (0.00s)
+=== RUN   TestRuntimeReleasesReferences
+=== RUN   TestRuntimeReleasesReferences/{{_capture()_}}
+=== RUN   TestRuntimeReleasesReferences/{{_capture()_}}{{_missing_}}
+=== RUN   TestRuntimeReleasesReferences/{{_capture()_}}{{_crash()_}}
+--- PASS: TestRuntimeReleasesReferences (0.00s)
+    --- PASS: TestRuntimeReleasesReferences/{{_capture()_}} (0.00s)
+    --- PASS: TestRuntimeReleasesReferences/{{_capture()_}}{{_missing_}} (0.00s)
+    --- PASS: TestRuntimeReleasesReferences/{{_capture()_}}{{_crash()_}} (0.00s)
+=== RUN   TestRuntimeTryRestoresContext
+--- PASS: TestRuntimeTryRestoresContext (0.00s)
+=== RUN   TestRuntimeRangerReleasesReferences
+--- PASS: TestRuntimeRangerReleasesReferences (0.00s)
+=== RUN   TestRuntimeNestedTryRollback
+--- PASS: TestRuntimeNestedTryRollback (0.00s)
+=== RUN   TestRuntimeEscaperReentry
+--- PASS: TestRuntimeEscaperReentry (0.00s)
+=== RUN   TestRuntimeYieldBlockContext
+--- PASS: TestRuntimeYieldBlockContext (0.00s)
+=== RUN   TestRuntimeYieldBlockRestoresAfterPanic
+--- PASS: TestRuntimeYieldBlockRestoresAfterPanic (0.00s)
+=== RUN   TestExecutionCancellationControl
+=== RUN   TestExecutionCancellationControl/interpreter_loop
+=== RUN   TestExecutionCancellationControl/prepaid_builtin_operation
+=== RUN   TestExecutionCancellationControl/compile_admission
+=== RUN   TestExecutionCancellationControl/input_admission
+--- PASS: TestExecutionCancellationControl (0.00s)
+    --- PASS: TestExecutionCancellationControl/interpreter_loop (0.00s)
+    --- PASS: TestExecutionCancellationControl/prepaid_builtin_operation (0.00s)
+    --- PASS: TestExecutionCancellationControl/compile_admission (0.00s)
+    --- PASS: TestExecutionCancellationControl/input_admission (0.00s)
+=== RUN   TestExecutionCancellationMeasurements
+    execution_cancellation_measurements_test.go:115: set JET_CANCELLATION_SAMPLES for bounded diagnostic sampling
+--- SKIP: TestExecutionCancellationMeasurements (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=3250
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1709
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionMeasurementBounds
+=== RUN   TestExecutionMeasurementBounds/restricted_false/exact_text
+=== RUN   TestExecutionMeasurementBounds/restricted_false/over_text
+=== RUN   TestExecutionMeasurementBounds/restricted_false/near_escaped
+=== RUN   TestExecutionMeasurementBounds/restricted_false/over_escaped
+=== RUN   TestExecutionMeasurementBounds/restricted_true/exact_text
+=== RUN   TestExecutionMeasurementBounds/restricted_true/over_text
+=== RUN   TestExecutionMeasurementBounds/restricted_true/near_escaped
+=== RUN   TestExecutionMeasurementBounds/restricted_true/over_escaped
+--- PASS: TestExecutionMeasurementBounds (0.00s)
+    --- PASS: TestExecutionMeasurementBounds/restricted_false/exact_text (0.00s)
+    --- PASS: TestExecutionMeasurementBounds/restricted_false/over_text (0.00s)
+    --- PASS: TestExecutionMeasurementBounds/restricted_false/near_escaped (0.00s)
+    --- PASS: TestExecutionMeasurementBounds/restricted_false/over_escaped (0.00s)
+    --- PASS: TestExecutionMeasurementBounds/restricted_true/exact_text (0.00s)
+    --- PASS: TestExecutionMeasurementBounds/restricted_true/over_text (0.00s)
+    --- PASS: TestExecutionMeasurementBounds/restricted_true/near_escaped (0.00s)
+    --- PASS: TestExecutionMeasurementBounds/restricted_true/over_escaped (0.00s)
+=== RUN   TestExecutionModeConformance
+=== RUN   TestExecutionModeConformance/legacy_stream/header_literal/html_false
+=== RUN   TestExecutionModeConformance/legacy_stream/header_literal/html_true
+=== RUN   TestExecutionModeConformance/legacy_stream/header_interpolation/html_false
+=== RUN   TestExecutionModeConformance/legacy_stream/header_interpolation/html_true
+=== RUN   TestExecutionModeConformance/legacy_stream/body_8192/html_false
+=== RUN   TestExecutionModeConformance/legacy_stream/body_8192/html_true
+=== RUN   TestExecutionModeConformance/legacy_stream/body_65536/html_false
+=== RUN   TestExecutionModeConformance/legacy_stream/body_65536/html_true
+=== RUN   TestExecutionModeConformance/legacy_stream/nested_writing/html_false
+=== RUN   TestExecutionModeConformance/legacy_stream/nested_writing/html_true
+=== RUN   TestExecutionModeConformance/legacy_stream/nested_silent/html_false
+=== RUN   TestExecutionModeConformance/legacy_stream/nested_silent/html_true
+=== RUN   TestExecutionModeConformance/legacy_stream/escape_safe/html_false
+=== RUN   TestExecutionModeConformance/legacy_stream/escape_safe/html_true
+=== RUN   TestExecutionModeConformance/legacy_stream/escape_expansion/html_false
+=== RUN   TestExecutionModeConformance/legacy_stream/escape_expansion/html_true
+=== RUN   TestExecutionModeConformance/legacy_stream/string_replace/html_false
+=== RUN   TestExecutionModeConformance/legacy_stream/string_replace/html_true
+=== RUN   TestExecutionModeConformance/legacy_stream/string_concat/html_false
+=== RUN   TestExecutionModeConformance/legacy_stream/string_concat/html_true
+=== RUN   TestExecutionModeConformance/legacy_stream/include/html_false
+=== RUN   TestExecutionModeConformance/legacy_stream/include/html_true
+=== RUN   TestExecutionModeConformance/legacy_stream/inheritance/html_false
+=== RUN   TestExecutionModeConformance/legacy_stream/inheritance/html_true
+=== RUN   TestExecutionModeConformance/legacy_stream/block_content/html_false
+=== RUN   TestExecutionModeConformance/legacy_stream/block_content/html_true
+=== RUN   TestExecutionModeConformance/legacy_stream/try_success/html_false
+=== RUN   TestExecutionModeConformance/legacy_stream/try_success/html_true
+=== RUN   TestExecutionModeConformance/legacy_stream/try_rollback/html_false
+=== RUN   TestExecutionModeConformance/legacy_stream/try_rollback/html_true
+=== RUN   TestExecutionModeConformance/legacy_stream/data_json_256/html_false
+=== RUN   TestExecutionModeConformance/legacy_stream/data_json_256/html_true
+=== RUN   TestExecutionModeConformance/legacy_stream/data_unused_256/html_false
+=== RUN   TestExecutionModeConformance/legacy_stream/data_unused_256/html_true
+=== RUN   TestExecutionModeConformance/legacy_stream/named_map/html_false
+=== RUN   TestExecutionModeConformance/legacy_stream/named_map/html_true
+=== RUN   TestExecutionModeConformance/legacy_stream/named_slice/html_false
+=== RUN   TestExecutionModeConformance/legacy_stream/named_slice/html_true
+=== RUN   TestExecutionModeConformance/legacy_stream/array/html_false
+=== RUN   TestExecutionModeConformance/legacy_stream/array/html_true
+=== RUN   TestExecutionModeConformance/legacy_stream/typed_nil/html_false
+=== RUN   TestExecutionModeConformance/legacy_stream/typed_nil/html_true
+=== RUN   TestExecutionModeConformance/legacy_stream/builtin_alias/html_false
+=== RUN   TestExecutionModeConformance/legacy_stream/builtin_alias/html_true
+=== RUN   TestExecutionModeConformance/legacy_stream/catch_diagnostic/html_false
+=== RUN   TestExecutionModeConformance/legacy_stream/catch_diagnostic/html_true
+=== RUN   TestExecutionModeConformance/legacy_owned/header_literal/html_false
+=== RUN   TestExecutionModeConformance/legacy_owned/header_literal/html_true
+=== RUN   TestExecutionModeConformance/legacy_owned/header_interpolation/html_false
+=== RUN   TestExecutionModeConformance/legacy_owned/header_interpolation/html_true
+=== RUN   TestExecutionModeConformance/legacy_owned/body_8192/html_false
+=== RUN   TestExecutionModeConformance/legacy_owned/body_8192/html_true
+=== RUN   TestExecutionModeConformance/legacy_owned/body_65536/html_false
+=== RUN   TestExecutionModeConformance/legacy_owned/body_65536/html_true
+=== RUN   TestExecutionModeConformance/legacy_owned/nested_writing/html_false
+=== RUN   TestExecutionModeConformance/legacy_owned/nested_writing/html_true
+=== RUN   TestExecutionModeConformance/legacy_owned/nested_silent/html_false
+=== RUN   TestExecutionModeConformance/legacy_owned/nested_silent/html_true
+=== RUN   TestExecutionModeConformance/legacy_owned/escape_safe/html_false
+=== RUN   TestExecutionModeConformance/legacy_owned/escape_safe/html_true
+=== RUN   TestExecutionModeConformance/legacy_owned/escape_expansion/html_false
+=== RUN   TestExecutionModeConformance/legacy_owned/escape_expansion/html_true
+=== RUN   TestExecutionModeConformance/legacy_owned/string_replace/html_false
+=== RUN   TestExecutionModeConformance/legacy_owned/string_replace/html_true
+=== RUN   TestExecutionModeConformance/legacy_owned/string_concat/html_false
+=== RUN   TestExecutionModeConformance/legacy_owned/string_concat/html_true
+=== RUN   TestExecutionModeConformance/legacy_owned/include/html_false
+=== RUN   TestExecutionModeConformance/legacy_owned/include/html_true
+=== RUN   TestExecutionModeConformance/legacy_owned/inheritance/html_false
+=== RUN   TestExecutionModeConformance/legacy_owned/inheritance/html_true
+=== RUN   TestExecutionModeConformance/legacy_owned/block_content/html_false
+=== RUN   TestExecutionModeConformance/legacy_owned/block_content/html_true
+=== RUN   TestExecutionModeConformance/legacy_owned/try_success/html_false
+=== RUN   TestExecutionModeConformance/legacy_owned/try_success/html_true
+=== RUN   TestExecutionModeConformance/legacy_owned/try_rollback/html_false
+=== RUN   TestExecutionModeConformance/legacy_owned/try_rollback/html_true
+=== RUN   TestExecutionModeConformance/legacy_owned/data_json_256/html_false
+=== RUN   TestExecutionModeConformance/legacy_owned/data_json_256/html_true
+=== RUN   TestExecutionModeConformance/legacy_owned/data_unused_256/html_false
+=== RUN   TestExecutionModeConformance/legacy_owned/data_unused_256/html_true
+=== RUN   TestExecutionModeConformance/legacy_owned/named_map/html_false
+=== RUN   TestExecutionModeConformance/legacy_owned/named_map/html_true
+=== RUN   TestExecutionModeConformance/legacy_owned/named_slice/html_false
+=== RUN   TestExecutionModeConformance/legacy_owned/named_slice/html_true
+=== RUN   TestExecutionModeConformance/legacy_owned/array/html_false
+=== RUN   TestExecutionModeConformance/legacy_owned/array/html_true
+=== RUN   TestExecutionModeConformance/legacy_owned/typed_nil/html_false
+=== RUN   TestExecutionModeConformance/legacy_owned/typed_nil/html_true
+=== RUN   TestExecutionModeConformance/legacy_owned/builtin_alias/html_false
+=== RUN   TestExecutionModeConformance/legacy_owned/builtin_alias/html_true
+=== RUN   TestExecutionModeConformance/legacy_owned/catch_diagnostic/html_false
+=== RUN   TestExecutionModeConformance/legacy_owned/catch_diagnostic/html_true
+=== RUN   TestExecutionModeConformance/metered_background_stream/header_literal/html_false
+=== RUN   TestExecutionModeConformance/metered_background_stream/header_literal/html_true
+=== RUN   TestExecutionModeConformance/metered_background_stream/header_interpolation/html_false
+=== RUN   TestExecutionModeConformance/metered_background_stream/header_interpolation/html_true
+=== RUN   TestExecutionModeConformance/metered_background_stream/body_8192/html_false
+=== RUN   TestExecutionModeConformance/metered_background_stream/body_8192/html_true
+=== RUN   TestExecutionModeConformance/metered_background_stream/body_65536/html_false
+=== RUN   TestExecutionModeConformance/metered_background_stream/body_65536/html_true
+=== RUN   TestExecutionModeConformance/metered_background_stream/nested_writing/html_false
+=== RUN   TestExecutionModeConformance/metered_background_stream/nested_writing/html_true
+=== RUN   TestExecutionModeConformance/metered_background_stream/nested_silent/html_false
+=== RUN   TestExecutionModeConformance/metered_background_stream/nested_silent/html_true
+=== RUN   TestExecutionModeConformance/metered_background_stream/escape_safe/html_false
+=== RUN   TestExecutionModeConformance/metered_background_stream/escape_safe/html_true
+=== RUN   TestExecutionModeConformance/metered_background_stream/escape_expansion/html_false
+=== RUN   TestExecutionModeConformance/metered_background_stream/escape_expansion/html_true
+=== RUN   TestExecutionModeConformance/metered_background_stream/string_replace/html_false
+=== RUN   TestExecutionModeConformance/metered_background_stream/string_replace/html_true
+=== RUN   TestExecutionModeConformance/metered_background_stream/string_concat/html_false
+=== RUN   TestExecutionModeConformance/metered_background_stream/string_concat/html_true
+=== RUN   TestExecutionModeConformance/metered_background_stream/include/html_false
+=== RUN   TestExecutionModeConformance/metered_background_stream/include/html_true
+=== RUN   TestExecutionModeConformance/metered_background_stream/inheritance/html_false
+=== RUN   TestExecutionModeConformance/metered_background_stream/inheritance/html_true
+=== RUN   TestExecutionModeConformance/metered_background_stream/block_content/html_false
+=== RUN   TestExecutionModeConformance/metered_background_stream/block_content/html_true
+=== RUN   TestExecutionModeConformance/metered_background_stream/try_success/html_false
+=== RUN   TestExecutionModeConformance/metered_background_stream/try_success/html_true
+=== RUN   TestExecutionModeConformance/metered_background_stream/try_rollback/html_false
+=== RUN   TestExecutionModeConformance/metered_background_stream/try_rollback/html_true
+=== RUN   TestExecutionModeConformance/metered_background_stream/data_json_256/html_false
+=== RUN   TestExecutionModeConformance/metered_background_stream/data_json_256/html_true
+=== RUN   TestExecutionModeConformance/metered_background_stream/data_unused_256/html_false
+=== RUN   TestExecutionModeConformance/metered_background_stream/data_unused_256/html_true
+=== RUN   TestExecutionModeConformance/metered_background_stream/named_map/html_false
+=== RUN   TestExecutionModeConformance/metered_background_stream/named_map/html_true
+=== RUN   TestExecutionModeConformance/metered_background_stream/named_slice/html_false
+=== RUN   TestExecutionModeConformance/metered_background_stream/named_slice/html_true
+=== RUN   TestExecutionModeConformance/metered_background_stream/array/html_false
+=== RUN   TestExecutionModeConformance/metered_background_stream/array/html_true
+=== RUN   TestExecutionModeConformance/metered_background_stream/typed_nil/html_false
+=== RUN   TestExecutionModeConformance/metered_background_stream/typed_nil/html_true
+=== RUN   TestExecutionModeConformance/metered_background_stream/builtin_alias/html_false
+=== RUN   TestExecutionModeConformance/metered_background_stream/builtin_alias/html_true
+=== RUN   TestExecutionModeConformance/metered_background_stream/catch_diagnostic/html_false
+=== RUN   TestExecutionModeConformance/metered_background_stream/catch_diagnostic/html_true
+=== RUN   TestExecutionModeConformance/metered_live_stream/header_literal/html_false
+=== RUN   TestExecutionModeConformance/metered_live_stream/header_literal/html_true
+=== RUN   TestExecutionModeConformance/metered_live_stream/header_interpolation/html_false
+=== RUN   TestExecutionModeConformance/metered_live_stream/header_interpolation/html_true
+=== RUN   TestExecutionModeConformance/metered_live_stream/body_8192/html_false
+=== RUN   TestExecutionModeConformance/metered_live_stream/body_8192/html_true
+=== RUN   TestExecutionModeConformance/metered_live_stream/body_65536/html_false
+=== RUN   TestExecutionModeConformance/metered_live_stream/body_65536/html_true
+=== RUN   TestExecutionModeConformance/metered_live_stream/nested_writing/html_false
+=== RUN   TestExecutionModeConformance/metered_live_stream/nested_writing/html_true
+=== RUN   TestExecutionModeConformance/metered_live_stream/nested_silent/html_false
+=== RUN   TestExecutionModeConformance/metered_live_stream/nested_silent/html_true
+=== RUN   TestExecutionModeConformance/metered_live_stream/escape_safe/html_false
+=== RUN   TestExecutionModeConformance/metered_live_stream/escape_safe/html_true
+=== RUN   TestExecutionModeConformance/metered_live_stream/escape_expansion/html_false
+=== RUN   TestExecutionModeConformance/metered_live_stream/escape_expansion/html_true
+=== RUN   TestExecutionModeConformance/metered_live_stream/string_replace/html_false
+=== RUN   TestExecutionModeConformance/metered_live_stream/string_replace/html_true
+=== RUN   TestExecutionModeConformance/metered_live_stream/string_concat/html_false
+=== RUN   TestExecutionModeConformance/metered_live_stream/string_concat/html_true
+=== RUN   TestExecutionModeConformance/metered_live_stream/include/html_false
+=== RUN   TestExecutionModeConformance/metered_live_stream/include/html_true
+=== RUN   TestExecutionModeConformance/metered_live_stream/inheritance/html_false
+=== RUN   TestExecutionModeConformance/metered_live_stream/inheritance/html_true
+=== RUN   TestExecutionModeConformance/metered_live_stream/block_content/html_false
+=== RUN   TestExecutionModeConformance/metered_live_stream/block_content/html_true
+=== RUN   TestExecutionModeConformance/metered_live_stream/try_success/html_false
+=== RUN   TestExecutionModeConformance/metered_live_stream/try_success/html_true
+=== RUN   TestExecutionModeConformance/metered_live_stream/try_rollback/html_false
+=== RUN   TestExecutionModeConformance/metered_live_stream/try_rollback/html_true
+=== RUN   TestExecutionModeConformance/metered_live_stream/data_json_256/html_false
+=== RUN   TestExecutionModeConformance/metered_live_stream/data_json_256/html_true
+=== RUN   TestExecutionModeConformance/metered_live_stream/data_unused_256/html_false
+=== RUN   TestExecutionModeConformance/metered_live_stream/data_unused_256/html_true
+=== RUN   TestExecutionModeConformance/metered_live_stream/named_map/html_false
+=== RUN   TestExecutionModeConformance/metered_live_stream/named_map/html_true
+=== RUN   TestExecutionModeConformance/metered_live_stream/named_slice/html_false
+=== RUN   TestExecutionModeConformance/metered_live_stream/named_slice/html_true
+=== RUN   TestExecutionModeConformance/metered_live_stream/array/html_false
+=== RUN   TestExecutionModeConformance/metered_live_stream/array/html_true
+=== RUN   TestExecutionModeConformance/metered_live_stream/typed_nil/html_false
+=== RUN   TestExecutionModeConformance/metered_live_stream/typed_nil/html_true
+=== RUN   TestExecutionModeConformance/metered_live_stream/builtin_alias/html_false
+=== RUN   TestExecutionModeConformance/metered_live_stream/builtin_alias/html_true
+=== RUN   TestExecutionModeConformance/metered_live_stream/catch_diagnostic/html_false
+=== RUN   TestExecutionModeConformance/metered_live_stream/catch_diagnostic/html_true
+=== RUN   TestExecutionModeConformance/restricted_owned/header_literal/html_false
+=== RUN   TestExecutionModeConformance/restricted_owned/header_literal/html_true
+=== RUN   TestExecutionModeConformance/restricted_owned/header_interpolation/html_false
+=== RUN   TestExecutionModeConformance/restricted_owned/header_interpolation/html_true
+=== RUN   TestExecutionModeConformance/restricted_owned/body_8192/html_false
+=== RUN   TestExecutionModeConformance/restricted_owned/body_8192/html_true
+=== RUN   TestExecutionModeConformance/restricted_owned/body_65536/html_false
+=== RUN   TestExecutionModeConformance/restricted_owned/body_65536/html_true
+=== RUN   TestExecutionModeConformance/restricted_owned/nested_writing/html_false
+=== RUN   TestExecutionModeConformance/restricted_owned/nested_writing/html_true
+=== RUN   TestExecutionModeConformance/restricted_owned/nested_silent/html_false
+=== RUN   TestExecutionModeConformance/restricted_owned/nested_silent/html_true
+=== RUN   TestExecutionModeConformance/restricted_owned/escape_safe/html_false
+=== RUN   TestExecutionModeConformance/restricted_owned/escape_safe/html_true
+=== RUN   TestExecutionModeConformance/restricted_owned/escape_expansion/html_false
+=== RUN   TestExecutionModeConformance/restricted_owned/escape_expansion/html_true
+=== RUN   TestExecutionModeConformance/restricted_owned/string_replace/html_false
+=== RUN   TestExecutionModeConformance/restricted_owned/string_replace/html_true
+=== RUN   TestExecutionModeConformance/restricted_owned/string_concat/html_false
+=== RUN   TestExecutionModeConformance/restricted_owned/string_concat/html_true
+=== RUN   TestExecutionModeConformance/restricted_owned/include/html_false
+=== RUN   TestExecutionModeConformance/restricted_owned/include/html_true
+=== RUN   TestExecutionModeConformance/restricted_owned/inheritance/html_false
+=== RUN   TestExecutionModeConformance/restricted_owned/inheritance/html_true
+=== RUN   TestExecutionModeConformance/restricted_owned/block_content/html_false
+=== RUN   TestExecutionModeConformance/restricted_owned/block_content/html_true
+=== RUN   TestExecutionModeConformance/restricted_owned/try_success/html_false
+=== RUN   TestExecutionModeConformance/restricted_owned/try_success/html_true
+=== RUN   TestExecutionModeConformance/restricted_owned/try_rollback/html_false
+=== RUN   TestExecutionModeConformance/restricted_owned/try_rollback/html_true
+=== RUN   TestExecutionModeConformance/restricted_owned/data_json_256/html_false
+=== RUN   TestExecutionModeConformance/restricted_owned/data_json_256/html_true
+=== RUN   TestExecutionModeConformance/restricted_owned/data_unused_256/html_false
+=== RUN   TestExecutionModeConformance/restricted_owned/data_unused_256/html_true
+=== RUN   TestExecutionModeConformance/restricted_owned/named_map/html_false
+=== RUN   TestExecutionModeConformance/restricted_owned/named_map/html_true
+=== RUN   TestExecutionModeConformance/restricted_owned/named_slice/html_false
+=== RUN   TestExecutionModeConformance/restricted_owned/named_slice/html_true
+=== RUN   TestExecutionModeConformance/restricted_owned/array/html_false
+=== RUN   TestExecutionModeConformance/restricted_owned/array/html_true
+=== RUN   TestExecutionModeConformance/restricted_owned/typed_nil/html_false
+=== RUN   TestExecutionModeConformance/restricted_owned/typed_nil/html_true
+=== RUN   TestExecutionModeConformance/restricted_owned/builtin_alias/html_false
+=== RUN   TestExecutionModeConformance/restricted_owned/builtin_alias/html_true
+=== RUN   TestExecutionModeConformance/restricted_owned/catch_diagnostic/html_false
+=== RUN   TestExecutionModeConformance/restricted_owned/catch_diagnostic/html_true
+--- PASS: TestExecutionModeConformance (0.01s)
+    --- PASS: TestExecutionModeConformance/legacy_stream/header_literal/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_stream/header_literal/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_stream/header_interpolation/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_stream/header_interpolation/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_stream/body_8192/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_stream/body_8192/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_stream/body_65536/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_stream/body_65536/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_stream/nested_writing/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_stream/nested_writing/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_stream/nested_silent/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_stream/nested_silent/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_stream/escape_safe/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_stream/escape_safe/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_stream/escape_expansion/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_stream/escape_expansion/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_stream/string_replace/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_stream/string_replace/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_stream/string_concat/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_stream/string_concat/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_stream/include/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_stream/include/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_stream/inheritance/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_stream/inheritance/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_stream/block_content/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_stream/block_content/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_stream/try_success/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_stream/try_success/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_stream/try_rollback/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_stream/try_rollback/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_stream/data_json_256/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_stream/data_json_256/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_stream/data_unused_256/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_stream/data_unused_256/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_stream/named_map/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_stream/named_map/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_stream/named_slice/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_stream/named_slice/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_stream/array/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_stream/array/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_stream/typed_nil/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_stream/typed_nil/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_stream/builtin_alias/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_stream/builtin_alias/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_stream/catch_diagnostic/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_stream/catch_diagnostic/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_owned/header_literal/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_owned/header_literal/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_owned/header_interpolation/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_owned/header_interpolation/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_owned/body_8192/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_owned/body_8192/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_owned/body_65536/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_owned/body_65536/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_owned/nested_writing/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_owned/nested_writing/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_owned/nested_silent/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_owned/nested_silent/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_owned/escape_safe/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_owned/escape_safe/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_owned/escape_expansion/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_owned/escape_expansion/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_owned/string_replace/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_owned/string_replace/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_owned/string_concat/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_owned/string_concat/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_owned/include/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_owned/include/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_owned/inheritance/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_owned/inheritance/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_owned/block_content/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_owned/block_content/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_owned/try_success/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_owned/try_success/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_owned/try_rollback/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_owned/try_rollback/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_owned/data_json_256/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_owned/data_json_256/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_owned/data_unused_256/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_owned/data_unused_256/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_owned/named_map/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_owned/named_map/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_owned/named_slice/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_owned/named_slice/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_owned/array/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_owned/array/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_owned/typed_nil/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_owned/typed_nil/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_owned/builtin_alias/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_owned/builtin_alias/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_owned/catch_diagnostic/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/legacy_owned/catch_diagnostic/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_background_stream/header_literal/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_background_stream/header_literal/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_background_stream/header_interpolation/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_background_stream/header_interpolation/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_background_stream/body_8192/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_background_stream/body_8192/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_background_stream/body_65536/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_background_stream/body_65536/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_background_stream/nested_writing/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_background_stream/nested_writing/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_background_stream/nested_silent/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_background_stream/nested_silent/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_background_stream/escape_safe/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_background_stream/escape_safe/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_background_stream/escape_expansion/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_background_stream/escape_expansion/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_background_stream/string_replace/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_background_stream/string_replace/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_background_stream/string_concat/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_background_stream/string_concat/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_background_stream/include/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_background_stream/include/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_background_stream/inheritance/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_background_stream/inheritance/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_background_stream/block_content/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_background_stream/block_content/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_background_stream/try_success/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_background_stream/try_success/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_background_stream/try_rollback/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_background_stream/try_rollback/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_background_stream/data_json_256/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_background_stream/data_json_256/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_background_stream/data_unused_256/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_background_stream/data_unused_256/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_background_stream/named_map/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_background_stream/named_map/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_background_stream/named_slice/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_background_stream/named_slice/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_background_stream/array/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_background_stream/array/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_background_stream/typed_nil/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_background_stream/typed_nil/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_background_stream/builtin_alias/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_background_stream/builtin_alias/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_background_stream/catch_diagnostic/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_background_stream/catch_diagnostic/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_live_stream/header_literal/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_live_stream/header_literal/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_live_stream/header_interpolation/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_live_stream/header_interpolation/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_live_stream/body_8192/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_live_stream/body_8192/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_live_stream/body_65536/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_live_stream/body_65536/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_live_stream/nested_writing/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_live_stream/nested_writing/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_live_stream/nested_silent/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_live_stream/nested_silent/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_live_stream/escape_safe/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_live_stream/escape_safe/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_live_stream/escape_expansion/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_live_stream/escape_expansion/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_live_stream/string_replace/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_live_stream/string_replace/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_live_stream/string_concat/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_live_stream/string_concat/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_live_stream/include/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_live_stream/include/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_live_stream/inheritance/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_live_stream/inheritance/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_live_stream/block_content/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_live_stream/block_content/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_live_stream/try_success/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_live_stream/try_success/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_live_stream/try_rollback/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_live_stream/try_rollback/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_live_stream/data_json_256/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_live_stream/data_json_256/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_live_stream/data_unused_256/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_live_stream/data_unused_256/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_live_stream/named_map/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_live_stream/named_map/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_live_stream/named_slice/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_live_stream/named_slice/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_live_stream/array/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_live_stream/array/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_live_stream/typed_nil/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_live_stream/typed_nil/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_live_stream/builtin_alias/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_live_stream/builtin_alias/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_live_stream/catch_diagnostic/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/metered_live_stream/catch_diagnostic/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/restricted_owned/header_literal/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/restricted_owned/header_literal/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/restricted_owned/header_interpolation/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/restricted_owned/header_interpolation/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/restricted_owned/body_8192/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/restricted_owned/body_8192/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/restricted_owned/body_65536/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/restricted_owned/body_65536/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/restricted_owned/nested_writing/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/restricted_owned/nested_writing/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/restricted_owned/nested_silent/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/restricted_owned/nested_silent/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/restricted_owned/escape_safe/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/restricted_owned/escape_safe/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/restricted_owned/escape_expansion/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/restricted_owned/escape_expansion/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/restricted_owned/string_replace/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/restricted_owned/string_replace/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/restricted_owned/string_concat/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/restricted_owned/string_concat/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/restricted_owned/include/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/restricted_owned/include/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/restricted_owned/inheritance/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/restricted_owned/inheritance/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/restricted_owned/block_content/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/restricted_owned/block_content/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/restricted_owned/try_success/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/restricted_owned/try_success/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/restricted_owned/try_rollback/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/restricted_owned/try_rollback/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/restricted_owned/data_json_256/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/restricted_owned/data_json_256/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/restricted_owned/data_unused_256/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/restricted_owned/data_unused_256/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/restricted_owned/named_map/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/restricted_owned/named_map/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/restricted_owned/named_slice/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/restricted_owned/named_slice/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/restricted_owned/array/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/restricted_owned/array/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/restricted_owned/typed_nil/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/restricted_owned/typed_nil/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/restricted_owned/builtin_alias/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/restricted_owned/builtin_alias/html_true (0.00s)
+    --- PASS: TestExecutionModeConformance/restricted_owned/catch_diagnostic/html_false (0.00s)
+    --- PASS: TestExecutionModeConformance/restricted_owned/catch_diagnostic/html_true (0.00s)
+=== RUN   TestExecutionRetentionMeasurements
+    execution_measurements_test.go:360: set JET_RETENTION_MEASUREMENTS=1 for cold/large-then-small diagnostics
+--- SKIP: TestExecutionRetentionMeasurements (0.00s)
+=== RUN   TestExecutionPrinterWorkspaceBorrow
+=== RUN   TestExecutionPrinterWorkspaceBorrow/int/background
+=== RUN   TestExecutionPrinterWorkspaceBorrow/int/live
+=== RUN   TestExecutionPrinterWorkspaceBorrow/uint/background
+=== RUN   TestExecutionPrinterWorkspaceBorrow/uint/live
+=== RUN   TestExecutionPrinterWorkspaceBorrow/bool/background
+=== RUN   TestExecutionPrinterWorkspaceBorrow/bool/live
+=== RUN   TestExecutionPrinterWorkspaceBorrow/float/background
+=== RUN   TestExecutionPrinterWorkspaceBorrow/float/live
+=== RUN   TestExecutionPrinterWorkspaceBorrow/string/background
+=== RUN   TestExecutionPrinterWorkspaceBorrow/string/live
+=== RUN   TestExecutionPrinterWorkspaceBorrow/named/background
+=== RUN   TestExecutionPrinterWorkspaceBorrow/named/live
+=== RUN   TestExecutionPrinterWorkspaceBorrow/collection/background
+=== RUN   TestExecutionPrinterWorkspaceBorrow/collection/live
+--- PASS: TestExecutionPrinterWorkspaceBorrow (0.00s)
+    --- PASS: TestExecutionPrinterWorkspaceBorrow/int/background (0.00s)
+    --- PASS: TestExecutionPrinterWorkspaceBorrow/int/live (0.00s)
+    --- PASS: TestExecutionPrinterWorkspaceBorrow/uint/background (0.00s)
+    --- PASS: TestExecutionPrinterWorkspaceBorrow/uint/live (0.00s)
+    --- PASS: TestExecutionPrinterWorkspaceBorrow/bool/background (0.00s)
+    --- PASS: TestExecutionPrinterWorkspaceBorrow/bool/live (0.00s)
+    --- PASS: TestExecutionPrinterWorkspaceBorrow/float/background (0.00s)
+    --- PASS: TestExecutionPrinterWorkspaceBorrow/float/live (0.00s)
+    --- PASS: TestExecutionPrinterWorkspaceBorrow/string/background (0.00s)
+    --- PASS: TestExecutionPrinterWorkspaceBorrow/string/live (0.00s)
+    --- PASS: TestExecutionPrinterWorkspaceBorrow/named/background (0.00s)
+    --- PASS: TestExecutionPrinterWorkspaceBorrow/named/live (0.00s)
+    --- PASS: TestExecutionPrinterWorkspaceBorrow/collection/background (0.00s)
+    --- PASS: TestExecutionPrinterWorkspaceBorrow/collection/live (0.00s)
+=== RUN   TestExecutionWriterBorrowDuringReentry
+=== RUN   TestExecutionWriterBorrowDuringReentry/background
+=== RUN   TestExecutionWriterBorrowDuringReentry/live
+--- PASS: TestExecutionWriterBorrowDuringReentry (0.00s)
+    --- PASS: TestExecutionWriterBorrowDuringReentry/background (0.00s)
+    --- PASS: TestExecutionWriterBorrowDuringReentry/live (0.00s)
+=== RUN   TestExecutionWorkloads
+=== RUN   TestExecutionWorkloads/header_literal
+=== RUN   TestExecutionWorkloads/header_interpolation
+=== RUN   TestExecutionWorkloads/body_8192
+=== RUN   TestExecutionWorkloads/body_65536
+=== RUN   TestExecutionWorkloads/nested_writing
+=== RUN   TestExecutionWorkloads/nested_silent
+=== RUN   TestExecutionWorkloads/escape_safe
+=== RUN   TestExecutionWorkloads/escape_expansion
+=== RUN   TestExecutionWorkloads/string_replace
+=== RUN   TestExecutionWorkloads/string_concat
+=== RUN   TestExecutionWorkloads/include
+=== RUN   TestExecutionWorkloads/inheritance
+=== RUN   TestExecutionWorkloads/block_content
+=== RUN   TestExecutionWorkloads/try_success
+=== RUN   TestExecutionWorkloads/try_rollback
+--- PASS: TestExecutionWorkloads (0.00s)
+    --- PASS: TestExecutionWorkloads/header_literal (0.00s)
+    --- PASS: TestExecutionWorkloads/header_interpolation (0.00s)
+    --- PASS: TestExecutionWorkloads/body_8192 (0.00s)
+    --- PASS: TestExecutionWorkloads/body_65536 (0.00s)
+    --- PASS: TestExecutionWorkloads/nested_writing (0.00s)
+    --- PASS: TestExecutionWorkloads/nested_silent (0.00s)
+    --- PASS: TestExecutionWorkloads/escape_safe (0.00s)
+    --- PASS: TestExecutionWorkloads/escape_expansion (0.00s)
+    --- PASS: TestExecutionWorkloads/string_replace (0.00s)
+    --- PASS: TestExecutionWorkloads/string_concat (0.00s)
+    --- PASS: TestExecutionWorkloads/include (0.00s)
+    --- PASS: TestExecutionWorkloads/inheritance (0.00s)
+    --- PASS: TestExecutionWorkloads/block_content (0.00s)
+    --- PASS: TestExecutionWorkloads/try_success (0.00s)
+    --- PASS: TestExecutionWorkloads/try_rollback (0.00s)
+=== RUN   TestFollowupCancellationOpportunities
+    zz_finalization_followup_counts_test.go:67: {"Mode":"legacy_stream","Fixture":"header_literal","HTML":false,"Checks":0}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"legacy_stream","Fixture":"header_literal","HTML":true,"Checks":0}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"legacy_stream","Fixture":"header_interpolation","HTML":false,"Checks":0}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"legacy_stream","Fixture":"header_interpolation","HTML":true,"Checks":0}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"legacy_stream","Fixture":"body_8192","HTML":false,"Checks":0}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"legacy_stream","Fixture":"body_8192","HTML":true,"Checks":0}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"legacy_stream","Fixture":"body_65536","HTML":false,"Checks":0}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"legacy_stream","Fixture":"body_65536","HTML":true,"Checks":0}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"legacy_stream","Fixture":"nested_writing","HTML":false,"Checks":0}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"legacy_stream","Fixture":"nested_writing","HTML":true,"Checks":0}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"legacy_stream","Fixture":"nested_silent","HTML":false,"Checks":0}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"legacy_stream","Fixture":"nested_silent","HTML":true,"Checks":0}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"legacy_stream","Fixture":"escape_safe","HTML":false,"Checks":0}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"legacy_stream","Fixture":"escape_safe","HTML":true,"Checks":0}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"legacy_stream","Fixture":"escape_expansion","HTML":false,"Checks":0}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"legacy_stream","Fixture":"escape_expansion","HTML":true,"Checks":0}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"legacy_stream","Fixture":"string_replace","HTML":false,"Checks":0}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"legacy_stream","Fixture":"string_replace","HTML":true,"Checks":0}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"legacy_stream","Fixture":"string_concat","HTML":false,"Checks":0}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"legacy_stream","Fixture":"string_concat","HTML":true,"Checks":0}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"legacy_stream","Fixture":"include","HTML":false,"Checks":0}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"legacy_stream","Fixture":"include","HTML":true,"Checks":0}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"legacy_stream","Fixture":"inheritance","HTML":false,"Checks":0}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"legacy_stream","Fixture":"inheritance","HTML":true,"Checks":0}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"legacy_stream","Fixture":"block_content","HTML":false,"Checks":0}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"legacy_stream","Fixture":"block_content","HTML":true,"Checks":0}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"legacy_stream","Fixture":"try_success","HTML":false,"Checks":0}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"legacy_stream","Fixture":"try_success","HTML":true,"Checks":0}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"legacy_stream","Fixture":"try_rollback","HTML":false,"Checks":0}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"legacy_stream","Fixture":"try_rollback","HTML":true,"Checks":0}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"metered_background_stream","Fixture":"header_literal","HTML":false,"Checks":9}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"metered_background_stream","Fixture":"header_literal","HTML":true,"Checks":9}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"metered_background_stream","Fixture":"header_interpolation","HTML":false,"Checks":19}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"metered_background_stream","Fixture":"header_interpolation","HTML":true,"Checks":19}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"metered_background_stream","Fixture":"body_8192","HTML":false,"Checks":19}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"metered_background_stream","Fixture":"body_8192","HTML":true,"Checks":19}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"metered_background_stream","Fixture":"body_65536","HTML":false,"Checks":47}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"metered_background_stream","Fixture":"body_65536","HTML":true,"Checks":47}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"metered_background_stream","Fixture":"nested_writing","HTML":false,"Checks":3224}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"metered_background_stream","Fixture":"nested_writing","HTML":true,"Checks":3224}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"metered_background_stream","Fixture":"nested_silent","HTML":false,"Checks":9496}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"metered_background_stream","Fixture":"nested_silent","HTML":true,"Checks":9496}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"metered_background_stream","Fixture":"escape_safe","HTML":false,"Checks":17}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"metered_background_stream","Fixture":"escape_safe","HTML":true,"Checks":17}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"metered_background_stream","Fixture":"escape_expansion","HTML":false,"Checks":17}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"metered_background_stream","Fixture":"escape_expansion","HTML":true,"Checks":1297}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"metered_background_stream","Fixture":"string_replace","HTML":false,"Checks":35}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"metered_background_stream","Fixture":"string_replace","HTML":true,"Checks":35}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"metered_background_stream","Fixture":"string_concat","HTML":false,"Checks":24}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"metered_background_stream","Fixture":"string_concat","HTML":true,"Checks":24}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"metered_background_stream","Fixture":"include","HTML":false,"Checks":33}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"metered_background_stream","Fixture":"include","HTML":true,"Checks":33}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"metered_background_stream","Fixture":"inheritance","HTML":false,"Checks":21}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"metered_background_stream","Fixture":"inheritance","HTML":true,"Checks":21}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"metered_background_stream","Fixture":"block_content","HTML":false,"Checks":28}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"metered_background_stream","Fixture":"block_content","HTML":true,"Checks":28}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"metered_background_stream","Fixture":"try_success","HTML":false,"Checks":23}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"metered_background_stream","Fixture":"try_success","HTML":true,"Checks":23}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"metered_background_stream","Fixture":"try_rollback","HTML":false,"Checks":20}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"metered_background_stream","Fixture":"try_rollback","HTML":true,"Checks":20}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"metered_live_stream","Fixture":"header_literal","HTML":false,"Checks":9}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"metered_live_stream","Fixture":"header_literal","HTML":true,"Checks":9}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"metered_live_stream","Fixture":"header_interpolation","HTML":false,"Checks":19}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"metered_live_stream","Fixture":"header_interpolation","HTML":true,"Checks":19}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"metered_live_stream","Fixture":"body_8192","HTML":false,"Checks":19}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"metered_live_stream","Fixture":"body_8192","HTML":true,"Checks":19}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"metered_live_stream","Fixture":"body_65536","HTML":false,"Checks":47}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"metered_live_stream","Fixture":"body_65536","HTML":true,"Checks":47}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"metered_live_stream","Fixture":"nested_writing","HTML":false,"Checks":3224}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"metered_live_stream","Fixture":"nested_writing","HTML":true,"Checks":3224}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"metered_live_stream","Fixture":"nested_silent","HTML":false,"Checks":9496}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"metered_live_stream","Fixture":"nested_silent","HTML":true,"Checks":9496}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"metered_live_stream","Fixture":"escape_safe","HTML":false,"Checks":17}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"metered_live_stream","Fixture":"escape_safe","HTML":true,"Checks":17}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"metered_live_stream","Fixture":"escape_expansion","HTML":false,"Checks":17}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"metered_live_stream","Fixture":"escape_expansion","HTML":true,"Checks":1297}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"metered_live_stream","Fixture":"string_replace","HTML":false,"Checks":35}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"metered_live_stream","Fixture":"string_replace","HTML":true,"Checks":35}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"metered_live_stream","Fixture":"string_concat","HTML":false,"Checks":24}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"metered_live_stream","Fixture":"string_concat","HTML":true,"Checks":24}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"metered_live_stream","Fixture":"include","HTML":false,"Checks":33}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"metered_live_stream","Fixture":"include","HTML":true,"Checks":33}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"metered_live_stream","Fixture":"inheritance","HTML":false,"Checks":21}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"metered_live_stream","Fixture":"inheritance","HTML":true,"Checks":21}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"metered_live_stream","Fixture":"block_content","HTML":false,"Checks":28}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"metered_live_stream","Fixture":"block_content","HTML":true,"Checks":28}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"metered_live_stream","Fixture":"try_success","HTML":false,"Checks":23}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"metered_live_stream","Fixture":"try_success","HTML":true,"Checks":23}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"metered_live_stream","Fixture":"try_rollback","HTML":false,"Checks":20}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"metered_live_stream","Fixture":"try_rollback","HTML":true,"Checks":20}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"restricted_owned","Fixture":"header_literal","HTML":false,"Checks":17}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"restricted_owned","Fixture":"header_literal","HTML":true,"Checks":17}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"restricted_owned","Fixture":"header_interpolation","HTML":false,"Checks":30}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"restricted_owned","Fixture":"header_interpolation","HTML":true,"Checks":30}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"restricted_owned","Fixture":"body_8192","HTML":false,"Checks":30}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"restricted_owned","Fixture":"body_8192","HTML":true,"Checks":30}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"restricted_owned","Fixture":"body_65536","HTML":false,"Checks":58}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"restricted_owned","Fixture":"body_65536","HTML":true,"Checks":58}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"restricted_owned","Fixture":"nested_writing","HTML":false,"Checks":3232}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"restricted_owned","Fixture":"nested_writing","HTML":true,"Checks":3232}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"restricted_owned","Fixture":"nested_silent","HTML":false,"Checks":9504}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"restricted_owned","Fixture":"nested_silent","HTML":true,"Checks":9504}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"restricted_owned","Fixture":"escape_safe","HTML":false,"Checks":28}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"restricted_owned","Fixture":"escape_safe","HTML":true,"Checks":28}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"restricted_owned","Fixture":"escape_expansion","HTML":false,"Checks":28}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"restricted_owned","Fixture":"escape_expansion","HTML":true,"Checks":1308}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"restricted_owned","Fixture":"string_replace","HTML":false,"Checks":46}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"restricted_owned","Fixture":"string_replace","HTML":true,"Checks":46}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"restricted_owned","Fixture":"string_concat","HTML":false,"Checks":38}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"restricted_owned","Fixture":"string_concat","HTML":true,"Checks":38}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"restricted_owned","Fixture":"include","HTML":false,"Checks":44}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"restricted_owned","Fixture":"include","HTML":true,"Checks":44}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"restricted_owned","Fixture":"inheritance","HTML":false,"Checks":29}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"restricted_owned","Fixture":"inheritance","HTML":true,"Checks":29}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"restricted_owned","Fixture":"block_content","HTML":false,"Checks":36}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"restricted_owned","Fixture":"block_content","HTML":true,"Checks":36}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"restricted_owned","Fixture":"try_success","HTML":false,"Checks":34}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"restricted_owned","Fixture":"try_success","HTML":true,"Checks":34}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"restricted_owned","Fixture":"try_rollback","HTML":false,"Checks":28}
+    zz_finalization_followup_counts_test.go:67: {"Mode":"restricted_owned","Fixture":"try_rollback","HTML":true,"Checks":28}
+--- PASS: TestFollowupCancellationOpportunities (0.02s)
+PASS
+ok  	github.com/CloudyKit/jet/v6	0.474s
+
+receipt: <artifacts>/followup-terminal-normal/result.json

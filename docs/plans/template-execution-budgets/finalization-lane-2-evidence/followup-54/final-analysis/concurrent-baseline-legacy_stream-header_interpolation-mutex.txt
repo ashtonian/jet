@@ -1,0 +1,36 @@
+File: render.test
+Type: delay
+Time: 2026-11-08 04:46:37 CST
+Showing nodes accounting for 32167ns, 100% of 32167ns total
+Showing top 30 nodes out of 42
+      flat  flat%   sum%        cum   cum%
+   32167ns   100%   100%    32167ns   100%  runtime.unlock (partial-inline)
+         0     0%   100%      375ns  1.17%  encoding/json.Marshal (inline)
+         0     0%   100%      375ns  1.17%  encoding/json/internal/jsonwire.AppendQuote
+         0     0%   100%      375ns  1.17%  encoding/json/jsontext.(*Encoder).WriteToken (inline)
+         0     0%   100%      375ns  1.17%  encoding/json/jsontext.(*encoderState).WriteToken
+         0     0%   100%      375ns  1.17%  encoding/json/jsontext.Token.appendString
+         0     0%   100%      375ns  1.17%  encoding/json/v2.Marshal
+         0     0%   100%      375ns  1.17%  encoding/json/v2.makeInterfaceArshaler.func1
+         0     0%   100%      375ns  1.17%  encoding/json/v2.makeMapArshaler.func2
+         0     0%   100%      375ns  1.17%  encoding/json/v2.makeSliceArshaler.func2
+         0     0%   100%      375ns  1.17%  encoding/json/v2.marshalEncode
+         0     0%   100%      375ns  1.17%  encoding/json/v2.marshalValueAny
+         0     0%   100%      375ns  1.17%  github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes
+         0     0%   100%      375ns  1.17%  github.com/CloudyKit/jet/v6_test.additionalExecutionWorkloads
+         0     0%   100%      375ns  1.17%  github.com/CloudyKit/jet/v6_test.measurementWorkloads
+         0     0%   100%      375ns  1.17%  runtime.(*mcache).nextFree
+         0     0%   100%      375ns  1.17%  runtime.(*mcache).refill
+         0     0%   100%      375ns  1.17%  runtime.(*mcentral).cacheSpan
+         0     0%   100%      375ns  1.17%  runtime.(*mcentral).grow
+         0     0%   100%      375ns  1.17%  runtime.(*mheap).alloc
+         0     0%   100%      375ns  1.17%  runtime.(*mheap).alloc.func1
+         0     0%   100%     2917ns  9.07%  runtime.(*mheap).freeSpan (inline)
+         0     0%   100%     2917ns  9.07%  runtime.(*mheap).freeSpan.func1
+         0     0%   100%      375ns  1.17%  runtime.(*mheap).reclaim
+         0     0%   100%      375ns  1.17%  runtime.(*mheap).reclaimChunk
+         0     0%   100%     2917ns  9.07%  runtime.(*sweepLocked).sweep
+         0     0%   100%     2542ns  7.90%  runtime.bgsweep
+         0     0%   100%    12583ns 39.12%  runtime.findRunnable
+         0     0%   100%    29250ns 90.93%  runtime.gopreempt_m
+         0     0%   100%    29250ns 90.93%  runtime.goschedImpl

@@ -1,0 +1,27 @@
+File: render.test
+Type: cpu
+Time: 2026-11-08 05:27:48 CST
+Duration: 2.56s, Total samples = 4.25s (166.28%)
+Showing nodes accounting for 4.19s, 98.59% of 4.25s total
+Dropped 32 nodes (cum <= 0.02s)
+      flat  flat%   sum%        cum   cum%
+         0     0%     0%      4.22s 99.29%  github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes.func1.1
+     0.02s  0.47%  0.47%      4.22s 99.29%  github.com/CloudyKit/jet/v6_test.init.0.func2
+         0     0%  0.47%      4.20s 98.82%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0%  0.47%      4.20s 98.82%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0%  0.47%      4.18s 98.35%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0%  0.47%      4.17s 98.12%  github.com/CloudyKit/jet/v6.(*Runtime).printValue
+     0.01s  0.24%  0.71%      4.17s 98.12%  github.com/CloudyKit/jet/v6.(*dataPrinter).value
+         0     0%  0.71%      4.16s 97.88%  github.com/CloudyKit/fastprinter.PrintString
+         0     0%  0.71%      4.16s 97.88%  github.com/CloudyKit/jet/v6.(*dataPrinter).Write
+         0     0%  0.71%      4.16s 97.88%  github.com/CloudyKit/jet/v6.(*dataPrinter).text
+     0.01s  0.24%  0.94%      4.16s 97.88%  github.com/CloudyKit/jet/v6.(*escapeeWriter).Write
+     0.68s 16.00% 16.94%      4.15s 97.65%  text/template.HTMLEscape
+     0.75s 17.65% 34.59%      3.47s 81.65%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+     0.96s 22.59% 57.18%      1.69s 39.76%  bytes.(*Buffer).Write
+     0.47s 11.06% 68.24%      0.92s 21.65%  github.com/CloudyKit/jet/v6.(*Runtime).reserveWork
+     0.43s 10.12% 78.35%      0.43s 10.12%  runtime.memmove
+     0.30s  7.06% 85.41%      0.30s  7.06%  bytes.(*Buffer).tryGrowByReslice (inline)
+     0.16s  3.76% 89.18%      0.30s  7.06%  context.(*cancelCtx).Err
+     0.26s  6.12% 95.29%      0.26s  6.12%  github.com/CloudyKit/jet/v6.(*Runtime).reserveUnchecked (inline)
+     0.14s  3.29% 98.59%      0.14s  3.29%  sync/atomic.(*Value).Load (inline)

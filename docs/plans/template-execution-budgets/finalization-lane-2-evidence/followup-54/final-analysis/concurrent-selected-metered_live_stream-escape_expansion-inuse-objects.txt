@@ -1,0 +1,12 @@
+File: render.test
+Type: inuse_objects
+Time: 2026-11-08 04:47:36 CST
+Showing nodes accounting for 4974, 100% of 4974 total
+      flat  flat%   sum%        cum   cum%
+      4681 94.11% 94.11%       4681 94.11%  runtime.mallocgc
+       293  5.89%   100%        293  5.89%  unicode.map.init.1
+         0     0%   100%        293  5.89%  runtime.doInit (inline)
+         0     0%   100%        293  5.89%  runtime.doInit1
+         0     0%   100%       4974   100%  runtime.main
+         0     0%   100%       4681 94.11%  runtime.makechan
+         0     0%   100%        293  5.89%  unicode.init

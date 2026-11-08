@@ -1,0 +1,36 @@
+File: candidate.test
+Type: cpu
+Time: 2026-11-08 03:57:42 CST
+Duration: 1.41s, Total samples = 1.15s (81.39%)
+Showing nodes accounting for 1.15s, 100% of 1.15s total
+      flat  flat%   sum%        cum   cum%
+     0.23s 20.00% 20.00%      0.27s 23.48%  context.(*cancelCtx).Err
+     0.22s 19.13% 39.13%      0.37s 32.17%  bytes.(*Buffer).Write
+     0.18s 15.65% 54.78%      1.12s 97.39%  text/template.HTMLEscape
+     0.14s 12.17% 66.96%      0.94s 81.74%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+     0.11s  9.57% 76.52%      0.11s  9.57%  runtime.memmove
+     0.10s  8.70% 85.22%      0.43s 37.39%  github.com/CloudyKit/jet/v6.(*Runtime).reserveWork
+     0.06s  5.22% 90.43%      0.06s  5.22%  github.com/CloudyKit/jet/v6.(*Runtime).reserveUnchecked (inline)
+     0.04s  3.48% 93.91%      0.04s  3.48%  bytes.(*Buffer).tryGrowByReslice (inline)
+     0.04s  3.48% 97.39%      0.04s  3.48%  sync/atomic.(*Value).Load (inline)
+     0.01s  0.87% 98.26%      1.13s 98.26%  github.com/CloudyKit/jet/v6.(*Template).execute
+     0.01s  0.87% 99.13%      0.01s  0.87%  runtime.madvise
+     0.01s  0.87%   100%      0.01s  0.87%  runtime.save_g
+         0     0%   100%      1.12s 97.39%  github.com/CloudyKit/fastprinter.PrintString
+         0     0%   100%      1.12s 97.39%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0%   100%      1.12s 97.39%  github.com/CloudyKit/jet/v6.(*Runtime).printValue
+         0     0%   100%      1.13s 98.26%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0%   100%      1.12s 97.39%  github.com/CloudyKit/jet/v6.(*dataPrinter).Write
+         0     0%   100%      1.12s 97.39%  github.com/CloudyKit/jet/v6.(*dataPrinter).text
+         0     0%   100%      1.12s 97.39%  github.com/CloudyKit/jet/v6.(*dataPrinter).value
+         0     0%   100%      1.12s 97.39%  github.com/CloudyKit/jet/v6.(*escapeeWriter).Write
+         0     0%   100%      1.13s 98.26%  github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes.func1
+         0     0%   100%      1.13s 98.26%  github.com/CloudyKit/jet/v6_test.init.0.func2
+         0     0%   100%      0.01s  0.87%  runtime.(*mheap).alloc.func1
+         0     0%   100%      0.01s  0.87%  runtime.(*mheap).allocSpan
+         0     0%   100%      0.01s  0.87%  runtime.morestack
+         0     0%   100%      0.01s  0.87%  runtime.sysUsed (inline)
+         0     0%   100%      0.01s  0.87%  runtime.sysUsedOS (inline)
+         0     0%   100%      0.01s  0.87%  runtime.systemstack
+         0     0%   100%      1.13s 98.26%  testing.(*B).launch
+         0     0%   100%      1.13s 98.26%  testing.(*B).runN

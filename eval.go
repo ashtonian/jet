@@ -67,8 +67,14 @@ func (w *escapeeWriter) Write(b []byte) (int, error) {
 	if w.set.escapee == nil {
 		return w.Writer.Write(b)
 	}
-	if sink, ok := w.Writer.(*checkedWriter); !ok || sink.runtime != w.rootSink.runtime {
+	sink, ok := w.Writer.(*checkedWriter)
+	if !ok || sink.runtime != w.rootSink.runtime {
 		return w.writeRedirected(b)
+	}
+	if sink.runtime.execution.ctx == nil && w.set.defaultHTML && sink.buffer != nil && sink.runtime.execution.terminal == nil {
+		// The built-in escaper and bytes.Buffer cannot reenter or fail.
+		w.set.escapee(sink.buffer, b)
+		return len(b), nil
 	}
 	// Capture the current checked destination; a trusted escaper may reenter
 	// execution and temporarily replace Runtime.Writer.
@@ -511,8 +517,14 @@ func (st *Runtime) executeYieldBlock(block *BlockNode, blockParam, yieldParam *B
 func (st *Runtime) executeList(list *ListNode) (returnValue reflect.Value) {
 	st.enter()
 	origin := st.outputOrigin
-	defer func() { st.outputOrigin = origin; st.leave() }()
 	inNewScope := false // to use just one scope for multiple actions with variable declarations
+	defer func() {
+		if inNewScope {
+			st.releaseScope()
+		}
+		st.outputOrigin = origin
+		st.leave()
+	}()
 
 	for i := 0; i < len(list.Nodes); i++ {
 		st.checkpoint(1)
@@ -535,7 +547,6 @@ func (st *Runtime) executeList(list *ListNode) (returnValue reflect.Value) {
 					if !inNewScope {
 						st.newScope()
 						inNewScope = true
-						defer st.releaseScope()
 					}
 					st.executeLetList(node.Set)
 				} else {

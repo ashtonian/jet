@@ -1,0 +1,19 @@
+File: render.test
+Type: inuse_objects
+Time: 2026-11-08 04:46:41 CST
+Showing nodes accounting for 1489, 100% of 1489 total
+      flat  flat%   sum%        cum   cum%
+      1489   100%   100%       1489   100%  encoding/json/v2.makeStructFields
+         0     0%   100%       1489   100%  encoding/json.Unmarshal (inline)
+         0     0%   100%       1489   100%  encoding/json/v2.Unmarshal
+         0     0%   100%       1489   100%  encoding/json/v2.makeSliceArshaler.func3
+         0     0%   100%       1489   100%  encoding/json/v2.makeStructArshaler.func1
+         0     0%   100%       1489   100%  encoding/json/v2.makeStructArshaler.func3
+         0     0%   100%       1489   100%  encoding/json/v2.unmarshalDecode
+         0     0%   100%       1489   100%  github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes
+         0     0%   100%       1489   100%  github.com/CloudyKit/jet/v6_test.executionWorkloads
+         0     0%   100%       1489   100%  github.com/CloudyKit/jet/v6_test.measurementWorkloads
+         0     0%   100%       1489   100%  sync.(*Once).Do
+         0     0%   100%       1489   100%  sync.(*Once).doSlow
+         0     0%   100%       1489   100%  testing.(*B).run1.func1
+         0     0%   100%       1489   100%  testing.(*B).runN

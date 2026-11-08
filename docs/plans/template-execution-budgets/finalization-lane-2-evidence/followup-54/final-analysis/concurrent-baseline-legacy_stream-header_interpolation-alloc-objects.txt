@@ -1,0 +1,31 @@
+File: render.test
+Type: alloc_objects
+Time: 2026-11-08 04:46:37 CST
+Showing nodes accounting for 54166, 99.31% of 54542 total
+Dropped 40 nodes (cum <= 272)
+      flat  flat%   sum%        cum   cum%
+     32768 60.08% 60.08%      32768 60.08%  regexp.makeOnePass.func1
+      6554 12.02% 72.09%       6554 12.02%  regexp.newQueue (inline)
+      4681  8.58% 80.68%       4681  8.58%  regexp/syntax.(*parser).newRegexp (inline)
+      4096  7.51% 88.19%       8777 16.09%  regexp/syntax.parse
+      3277  6.01% 94.20%       3277  6.01%  compress/gzip.NewWriterLevel
+      2205  4.04% 98.24%       2205  4.04%  regexp/syntax.(*compiler).inst (inline)
+       585  1.07% 99.31%      39907 73.17%  regexp.makeOnePass
+         0     0% 99.31%      51262 93.99%  github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes
+         0     0% 99.31%      51084 93.66%  regexp.Compile (inline)
+         0     0% 99.31%      51084 93.66%  regexp.compile
+         0     0% 99.31%      40102 73.52%  regexp.compileOnePass
+         0     0% 99.31%       2205  4.04%  regexp/syntax.(*compiler).compile
+         0     0% 99.31%        342  0.63%  regexp/syntax.(*compiler).empty (inline)
+         0     0% 99.31%       1863  3.42%  regexp/syntax.(*compiler).rune
+         0     0% 99.31%       4681  8.58%  regexp/syntax.(*parser).op
+         0     0% 99.31%       2205  4.04%  regexp/syntax.Compile
+         0     0% 99.31%       8777 16.09%  regexp/syntax.Parse (inline)
+         0     0% 99.31%       3277  6.01%  runtime/pprof.newProfileBuilder
+         0     0% 99.31%       3279  6.01%  runtime/pprof.profileWriter
+         0     0% 99.31%      51084 93.66%  testing.(*B).Run
+         0     0% 99.31%      51262 93.99%  testing.(*B).run1.func1
+         0     0% 99.31%      51262 93.99%  testing.(*B).runN
+         0     0% 99.31%      51084 93.66%  testing.(*matcher).fullName
+         0     0% 99.31%      51084 93.66%  testing.simpleMatch.matches
+         0     0% 99.31%      51084 93.66%  testing/internal/testdeps.TestDeps.MatchString

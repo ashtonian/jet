@@ -1,0 +1,37 @@
+File: render.test
+Type: alloc_objects
+Time: 2026-11-08 05:27:36 CST
+Showing nodes accounting for 64737, 99.80% of 64868 total
+Dropped 31 nodes (cum <= 324)
+Showing top 30 nodes out of 31
+      flat  flat%   sum%        cum   cum%
+     32768 50.51% 50.51%      32768 50.51%  reflect.unsafe_New
+     16384 25.26% 75.77%      20480 31.57%  regexp/syntax.(*parser).push
+      4096  6.31% 82.09%       4096  6.31%  regexp/syntax.(*parser).maybeConcat
+      4096  6.31% 88.40%      24576 37.89%  regexp/syntax.parse
+      3277  5.05% 93.45%       3277  5.05%  compress/gzip.NewWriterLevel
+      1820  2.81% 96.26%      34620 53.37%  github.com/CloudyKit/jet/v6_test.additionalExecutionWorkloads
+      1490  2.30% 98.56%       1490  2.30%  regexp.makeOnePass
+       806  1.24% 99.80%        806  1.24%  regexp.onePassCopy
+         0     0% 99.80%      32800 50.56%  encoding/json.Marshal (inline)
+         0     0% 99.80%      32800 50.56%  encoding/json/v2.Marshal
+         0     0% 99.80%      32800 50.56%  encoding/json/v2.makeInterfaceArshaler.func1
+         0     0% 99.80%      32800 50.56%  encoding/json/v2.makeMapArshaler.func2
+         0     0% 99.80%      32800 50.56%  encoding/json/v2.makeSliceArshaler.func2
+         0     0% 99.80%      32800 50.56%  encoding/json/v2.marshalEncode
+         0     0% 99.80%      32768 50.51%  encoding/json/v2.newAddressableValue
+         0     0% 99.80%      61522 94.84%  github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes
+         0     0% 99.80%      34650 53.42%  github.com/CloudyKit/jet/v6_test.measurementWorkloads
+         0     0% 99.80%      32768 50.51%  reflect.New
+         0     0% 99.80%      26872 41.43%  regexp.Compile (inline)
+         0     0% 99.80%      26872 41.43%  regexp.compile
+         0     0% 99.80%       2296  3.54%  regexp.compileOnePass
+         0     0% 99.80%      20480 31.57%  regexp/syntax.(*parser).literal
+         0     0% 99.80%      24576 37.89%  regexp/syntax.Parse (inline)
+         0     0% 99.80%       3277  5.05%  runtime/pprof.newProfileBuilder
+         0     0% 99.80%       3345  5.16%  runtime/pprof.profileWriter
+         0     0% 99.80%      26872 41.43%  testing.(*B).Run
+         0     0% 99.80%      61522 94.84%  testing.(*B).run1.func1
+         0     0% 99.80%      61522 94.84%  testing.(*B).runN
+         0     0% 99.80%      26872 41.43%  testing.(*matcher).fullName
+         0     0% 99.80%      26872 41.43%  testing.simpleMatch.matches

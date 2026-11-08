@@ -1,0 +1,38 @@
+File: render.test
+Type: cpu
+Time: 2026-11-08 04:47:36 CST
+Duration: 1.85s, Total samples = 2.87s (154.97%)
+Showing nodes accounting for 0.97s, 33.80% of 2.87s total
+Dropped 54 nodes (cum <= 0.01s)
+Showing top 30 nodes out of 154
+      flat  flat%   sum%        cum   cum%
+         0     0%     0%      1.77s 61.67%  github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes.func1.1
+         0     0%     0%      1.76s 61.32%  github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext
+         0     0%     0%      1.76s 61.32%  github.com/CloudyKit/jet/v6_test.init.0.func5
+         0     0%     0%      1.67s 58.19%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+     0.05s  1.74%  1.74%      1.66s 57.84%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0%  1.74%      0.92s 32.06%  runtime.systemstack
+     0.02s   0.7%  2.44%      0.73s 25.44%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0%  2.44%      0.42s 14.63%  runtime.preemptM
+     0.42s 14.63% 17.07%      0.42s 14.63%  runtime.pthread_kill
+         0     0% 17.07%      0.42s 14.63%  runtime.signalM (inline)
+     0.06s  2.09% 19.16%      0.38s 13.24%  github.com/CloudyKit/jet/v6.admitInputScopesInto
+         0     0% 19.16%      0.37s 12.89%  runtime.preemptall
+         0     0% 19.16%      0.37s 12.89%  runtime.preemptone
+         0     0% 19.16%      0.34s 11.85%  runtime.gcStart.func2
+         0     0% 19.16%      0.34s 11.85%  runtime.stopTheWorldWithSema
+         0     0% 19.16%      0.29s 10.10%  runtime.lock (partial-inline)
+         0     0% 19.16%      0.29s 10.10%  runtime.lock2
+         0     0% 19.16%      0.29s 10.10%  runtime.lockWithRank (inline)
+         0     0% 19.16%      0.29s 10.10%  runtime.osyield (inline)
+     0.29s 10.10% 29.27%      0.29s 10.10%  runtime.usleep
+         0     0% 29.27%      0.28s  9.76%  runtime.morestack
+         0     0% 29.27%      0.28s  9.76%  runtime.newstack
+         0     0% 29.27%      0.25s  8.71%  runtime.gopreempt_m (inline)
+         0     0% 29.27%      0.25s  8.71%  runtime.goschedImpl
+     0.01s  0.35% 29.62%      0.23s  8.01%  github.com/CloudyKit/jet/v6.(*Runtime).printValue
+     0.10s  3.48% 33.10%      0.23s  8.01%  github.com/CloudyKit/jet/v6.(*Runtime).reserveWork
+         0     0% 33.10%      0.23s  8.01%  runtime.(*mheap).alloc.func1
+         0     0% 33.10%      0.23s  8.01%  runtime.(*mheap).allocSpan
+     0.02s   0.7% 33.80%      0.21s  7.32%  github.com/CloudyKit/jet/v6.(*Runtime).evalCommandExpression
+         0     0% 33.80%      0.21s  7.32%  github.com/CloudyKit/jet/v6.(*Runtime).evalPipelineExpression

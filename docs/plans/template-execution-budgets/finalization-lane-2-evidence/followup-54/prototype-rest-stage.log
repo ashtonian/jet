@@ -1,0 +1,17 @@
+gate-lock: held by pid <pid> on <host>, "jet-lane2-followup-factor-controls-rest 54b5614 in <checkout>", since 2026-11-08T10:03:44Z
+gate-lock: held by pid <pid> on <host>, "jet-lane2-followup-factor-controls-rest 54b5614 in <checkout>", since 2026-11-08T10:03:49Z
+0 baseline 0
+0 setup 0
+0 scope 0
+0 dispatch 0
+0 combined 0
+1 combined 0
+1 dispatch 0
+1 scope 0
+1 setup 0
+1 baseline 0
+2 baseline 0
+2 setup 0
+2 scope 0
+2 dispatch 0
+2 combined 0

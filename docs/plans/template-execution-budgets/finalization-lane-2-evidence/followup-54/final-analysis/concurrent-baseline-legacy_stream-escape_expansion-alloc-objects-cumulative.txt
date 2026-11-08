@@ -1,0 +1,37 @@
+File: render.test
+Type: alloc_objects
+Time: 2026-11-08 04:46:41 CST
+Showing nodes accounting for 13831, 92.49% of 14954 total
+Dropped 22 nodes (cum <= 74)
+Showing top 30 nodes out of 37
+      flat  flat%   sum%        cum   cum%
+         0     0%     0%      11672 78.05%  github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes
+         0     0%     0%      11672 78.05%  testing.(*B).run1.func1
+         0     0%     0%      11672 78.05%  testing.(*B).runN
+         0     0%     0%      10152 67.89%  regexp.Compile (inline)
+         0     0%     0%      10152 67.89%  regexp.compile
+         0     0%     0%      10152 67.89%  testing.(*B).Run
+         0     0%     0%      10152 67.89%  testing.(*matcher).fullName
+         0     0%     0%      10152 67.89%  testing.simpleMatch.matches
+         0     0%     0%      10152 67.89%  testing/internal/testdeps.TestDeps.MatchString
+         0     0%     0%       7017 46.92%  regexp.compileOnePass
+      1677 11.21% 11.21%       4954 33.13%  regexp.makeOnePass
+         0     0% 11.21%       3281 21.94%  runtime/pprof.profileWriter
+      3277 21.91% 33.13%       3277 21.91%  compress/gzip.NewWriterLevel
+      3277 21.91% 55.04%       3277 21.91%  regexp.newQueue (inline)
+         0     0% 55.04%       3277 21.91%  runtime/pprof.newProfileBuilder
+      2063 13.80% 68.84%       2063 13.80%  regexp.onePassCopy
+      2048 13.70% 82.53%       2048 13.70%  regexp/syntax.(*parser).maybeConcat
+         0     0% 82.53%       2048 13.70%  regexp/syntax.(*parser).op
+         0     0% 82.53%       2048 13.70%  regexp/syntax.(*parser).push
+         0     0% 82.53%       2048 13.70%  regexp/syntax.Parse (inline)
+         0     0% 82.53%       2048 13.70%  regexp/syntax.parse
+         0     0% 82.53%       1520 10.16%  github.com/CloudyKit/jet/v6_test.measurementWorkloads
+         0     0% 82.53%       1499 10.02%  github.com/CloudyKit/jet/v6_test.executionWorkloads
+         0     0% 82.53%       1497 10.01%  encoding/json.Unmarshal (inline)
+         0     0% 82.53%       1497 10.01%  encoding/json/v2.Unmarshal
+         0     0% 82.53%       1497 10.01%  encoding/json/v2.makeSliceArshaler.func3
+         0     0% 82.53%       1497 10.01%  encoding/json/v2.makeStructArshaler.func3
+         0     0% 82.53%       1497 10.01%  encoding/json/v2.unmarshalDecode
+         0     0% 82.53%       1489  9.96%  encoding/json/v2.makeStructArshaler.func1
+      1489  9.96% 92.49%       1489  9.96%  encoding/json/v2.makeStructFields

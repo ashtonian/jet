@@ -1,0 +1,27 @@
+File: render.test
+Type: alloc_objects
+Time: 2026-11-08 04:47:20 CST
+Showing nodes accounting for 3862669, 99.29% of 3890451 total
+Dropped 49 nodes (cum <= 19452)
+      flat  flat%   sum%        cum   cum%
+   1867804 48.01% 48.01%    3637329 93.49%  github.com/CloudyKit/jet/v6.init.0.func5
+   1769525 45.48% 93.49%    1769525 45.48%  github.com/CloudyKit/jet/v6.newIntsRanger (inline)
+    110624  2.84% 96.34%     110624  2.84%  bytes.growSlice
+     49176  1.26% 97.60%      49176  1.26%  bytes.(*Buffer).String (inline)
+     32770  0.84% 98.44%     143394  3.69%  bytes.(*Buffer).grow
+     32770  0.84% 99.29%    3862669 99.29%  github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext
+         0     0% 99.29%     143394  3.69%  bytes.(*Buffer).Write
+         0     0% 99.29%    3637329 93.49%  github.com/CloudyKit/jet/v6.(*Runtime).evalCallExpression (inline)
+         0     0% 99.29%    3637329 93.49%  github.com/CloudyKit/jet/v6.(*Runtime).evalPipeCallExpression
+         0     0% 99.29%    3637329 93.49%  github.com/CloudyKit/jet/v6.(*Runtime).evalPrimaryExpressionGroup
+         0     0% 99.29%    3780723 97.18%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 99.29%    3780723 97.18%  github.com/CloudyKit/jet/v6.(*Runtime).executeRange
+         0     0% 99.29%    3829899 98.44%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0% 99.29%    3829899 98.44%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0% 99.29%     143394  3.69%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+         0     0% 99.29%      24498  0.63%  github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes
+         0     0% 99.29%    3862669 99.29%  github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes.func1
+         0     0% 99.29%    3862669 99.29%  github.com/CloudyKit/jet/v6_test.init.0.func5
+         0     0% 99.29%    3862669 99.29%  testing.(*B).launch
+         0     0% 99.29%      24498  0.63%  testing.(*B).run1.func1
+         0     0% 99.29%    3887167 99.92%  testing.(*B).runN

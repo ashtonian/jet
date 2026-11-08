@@ -1,0 +1,10 @@
+--- a/execution_output.go
++++ b/execution_output.go
+@@ -20,0 +21,7 @@
++	if w.runtime.execution.ctx == nil && w.runtime.execution.terminal == nil && w.buffer != nil {
++		return w.buffer.Write(b)
++	}
++	return w.writeChecked(b)
++}
++
++func (w *checkedWriter) writeChecked(b []byte) (int, error) {

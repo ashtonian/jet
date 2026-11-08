@@ -1,0 +1,36 @@
+File: render.test
+Type: alloc_space
+Time: 2026-11-08 04:46:58 CST
+Showing nodes accounting for 9484.43kB, 100% of 9484.43kB total
+Showing top 30 nodes out of 65
+      flat  flat%   sum%        cum   cum%
+ 1762.94kB 18.59% 18.59%  1762.94kB 18.59%  runtime/pprof.StartCPUProfile
+ 1537.38kB 16.21% 34.80%  1537.38kB 16.21%  regexp/syntax.(*compiler).inst
+ 1025.44kB 10.81% 45.61%  1025.44kB 10.81%  regexp.onePassCopy
+ 1024.02kB 10.80% 56.41%  1024.02kB 10.80%  regexp.makeOnePass.func1
+  544.67kB  5.74% 62.15%   544.67kB  5.74%  encoding/json/v2.makeString
+  515.38kB  5.43% 67.58%   515.38kB  5.43%  slices.Grow[go.shape.[]uint8,go.shape.uint8] (inline)
+     514kB  5.42% 73.00%      514kB  5.42%  github.com/CloudyKit/fastprinter.newByteSliceBufferPool.func1
+  512.34kB  5.40% 78.40%  1536.36kB 16.20%  regexp.makeOnePass
+  512.12kB  5.40% 83.80%   512.12kB  5.40%  runtime/pprof.allFrames
+  512.08kB  5.40% 89.20%   512.08kB  5.40%  compress/gzip.NewWriterLevel
+  512.05kB  5.40% 94.60%   512.05kB  5.40%  regexp/syntax.(*parser).newRegexp
+  512.02kB  5.40%   100%  1027.41kB 10.83%  github.com/CloudyKit/jet/v6_test.additionalExecutionWorkloads
+         0     0%   100%   515.38kB  5.43%  encoding/json.Marshal (inline)
+         0     0%   100%   544.67kB  5.74%  encoding/json.Unmarshal
+         0     0%   100%   515.38kB  5.43%  encoding/json/internal/jsonwire.AppendQuote
+         0     0%   100%   515.38kB  5.43%  encoding/json/jsontext.(*Encoder).WriteToken (inline)
+         0     0%   100%   515.38kB  5.43%  encoding/json/jsontext.(*encoderState).WriteToken
+         0     0%   100%   515.38kB  5.43%  encoding/json/jsontext.Token.appendString
+         0     0%   100%   515.38kB  5.43%  encoding/json/v2.Marshal
+         0     0%   100%   544.67kB  5.74%  encoding/json/v2.Unmarshal
+         0     0%   100%   515.38kB  5.43%  encoding/json/v2.makeInterfaceArshaler.func1
+         0     0%   100%   515.38kB  5.43%  encoding/json/v2.makeMapArshaler.func2
+         0     0%   100%   515.38kB  5.43%  encoding/json/v2.makeSliceArshaler.func2
+         0     0%   100%   544.67kB  5.74%  encoding/json/v2.makeSliceArshaler.func3
+         0     0%   100%   544.67kB  5.74%  encoding/json/v2.makeStringArshaler.func2
+         0     0%   100%   544.67kB  5.74%  encoding/json/v2.makeStructArshaler.func3
+         0     0%   100%   515.38kB  5.43%  encoding/json/v2.marshalEncode
+         0     0%   100%   515.38kB  5.43%  encoding/json/v2.marshalValueAny
+         0     0%   100%   544.67kB  5.74%  encoding/json/v2.unmarshalDecode
+         0     0%   100%      514kB  5.42%  github.com/CloudyKit/fastprinter.PrintString

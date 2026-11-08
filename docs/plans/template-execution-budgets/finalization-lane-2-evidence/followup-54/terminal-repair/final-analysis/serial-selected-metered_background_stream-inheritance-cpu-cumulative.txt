@@ -1,0 +1,37 @@
+File: render.test
+Type: cpu
+Time: 2026-11-08 05:27:30 CST
+Duration: 1.51s, Total samples = 1.25s (82.68%)
+Showing nodes accounting for 1.06s, 84.80% of 1.25s total
+Showing top 30 nodes out of 50
+      flat  flat%   sum%        cum   cum%
+         0     0%     0%      1.24s 99.20%  github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes.func1
+     0.01s   0.8%   0.8%      1.24s 99.20%  github.com/CloudyKit/jet/v6_test.init.0.func2
+         0     0%   0.8%      1.24s 99.20%  testing.(*B).launch
+         0     0%   0.8%      1.24s 99.20%  testing.(*B).runN
+     0.02s  1.60%  2.40%      1.22s 97.60%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+     0.04s  3.20%  5.60%      1.18s 94.40%  github.com/CloudyKit/jet/v6.(*Template).execute
+     0.11s  8.80% 14.40%      0.45s 36.00%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+     0.01s   0.8% 15.20%      0.44s 35.20%  github.com/CloudyKit/jet/v6.(*Runtime).startCompilation
+     0.01s   0.8% 16.00%      0.42s 33.60%  github.com/CloudyKit/jet/v6.(*Runtime).startCompilation.func1
+     0.04s  3.20% 19.20%      0.41s 32.80%  github.com/CloudyKit/jet/v6.(*parseAdmission).admitCached
+     0.04s  3.20% 22.40%      0.21s 16.80%  github.com/CloudyKit/jet/v6.(*parseAdmission).source
+     0.01s   0.8% 23.20%      0.17s 13.60%  github.com/CloudyKit/jet/v6.(*Runtime).executeYieldBlock
+     0.09s  7.20% 30.40%      0.17s 13.60%  github.com/CloudyKit/jet/v6.(*parseAdmission).prepareSource
+     0.13s 10.40% 40.80%      0.15s 12.00%  github.com/CloudyKit/jet/v6.(*Runtime).reserveWork
+     0.05s  4.00% 44.80%      0.15s 12.00%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+     0.04s  3.20% 48.00%      0.12s  9.60%  github.com/CloudyKit/jet/v6.(*Runtime).recover
+         0     0% 48.00%      0.11s  8.80%  github.com/CloudyKit/jet/v6.(*Runtime).checkpoint (inline)
+     0.07s  5.60% 53.60%      0.10s  8.00%  github.com/CloudyKit/jet/v6.(*parseAdmission).step
+     0.09s  7.20% 60.80%      0.09s  7.20%  sync.(*Pool).pin
+     0.02s  1.60% 62.40%      0.08s  6.40%  sync.(*Pool).Put
+     0.03s  2.40% 64.80%      0.07s  5.60%  github.com/CloudyKit/jet/v6.(*parseAdmission).addNodes
+     0.03s  2.40% 67.20%      0.06s  4.80%  sync.(*Pool).Get
+     0.02s  1.60% 68.80%      0.05s  4.00%  bytes.(*Buffer).Write
+     0.01s   0.8% 69.60%      0.05s  4.00%  github.com/CloudyKit/jet/v6.(*Runtime).enter (inline)
+     0.02s  1.60% 71.20%      0.05s  4.00%  github.com/CloudyKit/jet/v6.(*Runtime).getBlock
+     0.03s  2.40% 73.60%      0.04s  3.20%  github.com/CloudyKit/jet/v6.(*Runtime).enterActive
+     0.04s  3.20% 76.80%      0.04s  3.20%  github.com/CloudyKit/jet/v6.(*parseAdmission).findSource (inline)
+     0.04s  3.20% 80.00%      0.04s  3.20%  runtime.memequal
+     0.03s  2.40% 82.40%      0.03s  2.40%  github.com/CloudyKit/jet/v6.(*Runtime).reserveUnchecked (inline)
+     0.03s  2.40% 84.80%      0.03s  2.40%  github.com/CloudyKit/jet/v6.(*parseAdmission).check

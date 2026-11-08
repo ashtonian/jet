@@ -1,0 +1,34 @@
+File: candidate.test
+Type: alloc_objects
+Time: 2026-11-08 03:57:23 CST
+Showing nodes accounting for 24169, 99.63% of 24258 total
+Dropped 28 nodes (cum <= 121)
+      flat  flat%   sum%        cum   cum%
+     10923 45.03% 45.03%      10923 45.03%  internal/bytealg.MakeNoZero
+      4681 19.30% 64.33%       4681 19.30%  regexp/syntax.(*parser).newRegexp (inline)
+      3277 13.51% 77.83%       3277 13.51%  compress/gzip.NewWriterLevel
+      3277 13.51% 91.34%       9741 40.16%  regexp.compile
+      1490  6.14% 97.49%       1490  6.14%  regexp/syntax.(*compiler).inst (inline)
+       293  1.21% 98.69%        293  1.21%  regexp.onePassCopy
+       228  0.94% 99.63%      11215 46.23%  github.com/CloudyKit/jet/v6_test.additionalExecutionWorkloads
+         0     0% 99.63%      20978 86.48%  github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes
+         0     0% 99.63%      11237 46.32%  github.com/CloudyKit/jet/v6_test.measurementWorkloads
+         0     0% 99.63%       9741 40.16%  regexp.Compile (inline)
+         0     0% 99.63%        293  1.21%  regexp.compileOnePass
+         0     0% 99.63%       1490  6.14%  regexp/syntax.(*compiler).compile
+         0     0% 99.63%       1490  6.14%  regexp/syntax.(*compiler).rune
+         0     0% 99.63%       4681 19.30%  regexp/syntax.(*parser).literal
+         0     0% 99.63%       1490  6.14%  regexp/syntax.Compile
+         0     0% 99.63%       4681 19.30%  regexp/syntax.Parse (inline)
+         0     0% 99.63%       4681 19.30%  regexp/syntax.parse
+         0     0% 99.63%       3277 13.51%  runtime/pprof.newProfileBuilder
+         0     0% 99.63%       3279 13.52%  runtime/pprof.profileWriter
+         0     0% 99.63%      10923 45.03%  strings.(*Builder).Grow
+         0     0% 99.63%      10923 45.03%  strings.(*Builder).grow
+         0     0% 99.63%      10923 45.03%  strings.Repeat
+         0     0% 99.63%       9741 40.16%  testing.(*B).Run
+         0     0% 99.63%      20978 86.48%  testing.(*B).run1.func1
+         0     0% 99.63%      20978 86.48%  testing.(*B).runN
+         0     0% 99.63%       9741 40.16%  testing.(*matcher).fullName
+         0     0% 99.63%       9741 40.16%  testing.simpleMatch.matches
+         0     0% 99.63%       9741 40.16%  testing/internal/testdeps.TestDeps.MatchString

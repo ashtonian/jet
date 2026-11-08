@@ -1,0 +1,136 @@
+Total: 7.08s
+ROUTINE ======================== github.com/CloudyKit/jet/v6.(*Runtime).checkpoint in execution.go
+      10ms       10ms (flat, cum)  0.14% of Total
+      10ms       10ms    106:func (st *Runtime) checkpoint(steps uint64) {
+         .          .    107:	if st.execution.ctx == nil && st.execution.terminal == nil {
+         .          .    108:		return
+         .          .    109:	}
+         .          .    110:	st.checkpointActive(steps)
+         .          .    111:}
+ROUTINE ======================== github.com/CloudyKit/jet/v6.(*Runtime).recover in eval.go
+      10ms       30ms (flat, cum)  0.42% of Total
+      10ms       10ms    276:func (st *Runtime) recover(err *error) {
+         .          .    277:	recovered := recover()
+         .          .    278:	failure := st.execution.terminal
+         .          .    279:	if failure == nil {
+         .          .    280:		failure = st.writeErr
+         .          .    281:	}
+         .          .    282:	st.rootScope = scope{}
+         .          .    283:	st.scope = &st.rootScope
+         .          .    284:	st.printer = dataPrinter{}
+         .          .    285:	st.outputOrigin = nil
+         .          .    286:	*st.escapeeWriter = escapeeWriter{}
+         .          .    287:	st.content = nil
+         .          .    288:	st.context = reflect.Value{}
+         .          .    289:	st.includeDepth = 0
+         .          .    290:	st.execution = executionState{}
+         .       20ms    291:	pool_State.Put(st)
+         .          .    292:	if recovered != nil {
+         .          .    293:		if _, ok := recovered.(runtime.Error); ok {
+         .          .    294:			panic(recovered)
+         .          .    295:		}
+         .          .    296:		if aborted, ok := recovered.(executionAbort); ok {
+ROUTINE ======================== github.com/CloudyKit/jet/v6.(*Template).execute in exec.go
+      20ms      7.05s (flat, cum) 99.58% of Total
+         .          .     75:func (t *Template) execute(ctx context.Context, w io.Writer, variables VarMap, data interface{}, opts ExecutionOptions) (err error) {
+         .          .     76:	var owned *restrictedSink
+         .          .     77:	if policy := t.set.restricted; policy != nil {
+         .          .     78:		var ok bool
+         .          .     79:		owned, ok = w.(*restrictedSink)
+         .          .     80:		if !ok || owned.owner != t {
+         .          .     81:			return fmt.Errorf("%w: use RenderRestrictedContext with an owned result", ErrCapabilityDenied)
+         .          .     82:		}
+         .          .     83:		if ctx == nil {
+         .          .     84:			return ErrInvalidOptions
+         .          .     85:		}
+         .          .     86:		opts = constrainExecution(opts, policy.execution)
+         .          .     87:		inputVars := borrowInputVars(policy.globals, variables)
+         .          .     88:		defer releaseInputVars(inputVars)
+         .          .     89:		variables, data, err = admitInputScopesInto(ctx, []VarMap{policy.globals, variables}, data, policy.input, inputVars)
+         .          .     90:		if err != nil {
+         .          .     91:			return inputContextError(ctx, err)
+         .          .     92:		}
+         .          .     93:	}
+         .          .     94:	st := pool_State.Get().(*Runtime)
+         .          .     95:	defer st.recover(&err)
+         .          .     96:
+      20ms       20ms     97:	st.execution = executionState{ctx: ctx, checkContext: ctx != nil && ctx != context.Background() && ctx != context.TODO(), options: opts, remaining: opts.MaxSteps, values: uint64(opts.MaxValueBytes), output: uint64(opts.MaxOutputBytes)}
+         .          .     98:	st.checkpoint(0)
+         .          .     99:	st.blocks = t.processedBlocks
+         .          .    100:	st.variables = variables
+         .          .    101:	st.set = t.set
+         .          .    102:	st.writeErr = nil
+         .          .    103:	st.rootSink = st.checkedOutput(w)
+         .          .    104:	if owned != nil {
+         .          .    105:		st.rootSink.writer = &owned.buffer
+         .          .    106:		st.rootSink.buffer = &owned.buffer
+         .          .    107:		st.rootSink.retained = &owned.buffer
+         .          .    108:	}
+         .          .    109:	st.Writer = &st.rootSink
+         .          .    110:
+         .          .    111:	st.startCompilation(t)
+         .          .    112:	root := st.templateRoot(t)
+         .          .    113:
+         .          .    114:	if data != nil {
+         .          .    115:		st.context = reflect.ValueOf(data)
+         .          .    116:	}
+         .          .    117:
+         .         7s    118:	st.executeList(root)
+         .          .    119:	st.checkpoint(0)
+         .          .    120:	if owned != nil {
+         .          .    121:		st.reserveValue(int64(owned.buffer.Len()))
+         .          .    122:		owned.result = owned.buffer.String()
+         .          .    123:		st.checkpoint(0)
+         .          .    124:	}
+         .       30ms    125:	return
+         .          .    126:}
+ROUTINE ======================== github.com/CloudyKit/jet/v6.(*checkedWriter).Write in execution_output.go
+     1.46s      5.47s (flat, cum) 77.26% of Total
+     230ms      230ms     20:func (w *checkedWriter) Write(b []byte) (int, error) {
+      70ms       70ms     21:	st := w.runtime
+     350ms      350ms     22:	if st.execution.terminal != nil {
+         .          .     23:		if st.writeErr != nil {
+         .          .     24:			return 0, st.writeErr
+         .          .     25:		}
+         .          .     26:		st.rethrowTerminal()
+         .          .     27:	}
+      70ms       70ms     28:	if st.execution.ctx != nil {
+         .          .     29:		st.reserveWork(uint64(len(b)))
+         .          .     30:		budget := &st.execution
+         .          .     31:		if !w.committed {
+         .          .     32:			st.reserveUnchecked(&budget.output, uint64(budget.options.MaxOutputBytes), uint64(len(b)), "output", ErrOutputLimit)
+         .          .     33:		}
+         .          .     34:		if w.retained != nil {
+         .          .     35:			size, ok := addValueSizes(int64(w.retained.Len()), int64(len(b)))
+         .          .     36:			if !ok || uint64(size) > uint64(^uint(0)>>1) {
+         .          .     37:				st.failValueSize()
+         .          .     38:			}
+         .          .     39:			st.reserveUnchecked(&budget.values, uint64(budget.options.MaxValueBytes), uint64(len(b)), "value", ErrValueLimit)
+         .          .     40:		}
+         .          .     41:	}
+         .          .     42:	// bytes.Buffer.Write always accepts the complete chunk or panics.
+         .          .     43:	// Keep arbitrary writer error/short-write handling on the native path.
+     170ms      170ms     44:	if w.buffer != nil {
+     570ms      4.58s     45:		return w.buffer.Write(b)
+         .          .     46:	}
+         .          .     47:	n, err := w.writer.Write(b)
+         .          .     48:	if err == nil && n != len(b) {
+         .          .     49:		err = io.ErrShortWrite
+         .          .     50:	}
+ROUTINE ======================== github.com/CloudyKit/jet/v6.(*escapeeWriter).Write in eval.go
+         0      6.90s (flat, cum) 97.46% of Total
+         .          .     66:func (w *escapeeWriter) Write(b []byte) (int, error) {
+         .          .     67:	if w.set.escapee == nil {
+         .          .     68:		return w.Writer.Write(b)
+         .          .     69:	}
+         .          .     70:	if sink, ok := w.Writer.(*checkedWriter); !ok || sink.runtime != w.rootSink.runtime {
+         .          .     71:		return w.writeRedirected(b)
+         .          .     72:	}
+         .          .     73:	// Capture the current checked destination; a trusted escaper may reenter
+         .          .     74:	// execution and temporarily replace Runtime.Writer.
+         .      6.90s     75:	w.set.escapee(w.Writer, b)
+         .          .     76:	if w.writeErr != nil {
+         .          .     77:		return 0, w.writeErr
+         .          .     78:	}
+         .          .     79:	return len(b), nil
+         .          .     80:}

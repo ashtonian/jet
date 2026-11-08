@@ -1,0 +1,17 @@
+--- a/eval.go
++++ b/eval.go
+@@ -70 +70 @@
+-	if sink, ok := w.Writer.(*checkedWriter); !ok || sink.runtime != w.rootSink.runtime {
++	if w.rootSink.runtime.checkedDestination(w.Writer) == nil {
+@@ -514 +513,0 @@
+-	defer func() { st.outputOrigin = origin; st.leave() }()
+@@ -515,0 +515,7 @@
++	defer func() {
++		if inNewScope {
++			st.releaseScope()
++		}
++		st.outputOrigin = origin
++		st.leave()
++	}()
+@@ -538 +543,0 @@
+-						defer st.releaseScope()

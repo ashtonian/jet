@@ -1,0 +1,33 @@
+File: render.test
+Type: alloc_objects
+Time: 2026-11-08 04:47:31 CST
+Showing nodes accounting for 77751, 99.61% of 78056 total
+Dropped 31 nodes (cum <= 390)
+      flat  flat%   sum%        cum   cum%
+         0     0%     0%      70234 89.98%  github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes
+         0     0%     0%      70234 89.98%  testing.(*B).run1.func1
+         0     0%     0%      70234 89.98%  testing.(*B).runN
+         0     0%     0%      59345 76.03%  regexp.Compile (inline)
+     19661 25.19% 25.19%      59345 76.03%  regexp.compile
+         0     0% 25.19%      59345 76.03%  testing/internal/testdeps.TestDeps.MatchString
+         0     0% 25.19%      59174 75.81%  testing.(*B).Run
+         0     0% 25.19%      59174 75.81%  testing.(*matcher).fullName
+         0     0% 25.19%      59174 75.81%  testing.simpleMatch.matches
+         0     0% 25.19%      37332 47.83%  regexp.compileOnePass
+      1092  1.40% 26.59%      37137 47.58%  regexp.makeOnePass
+     32768 41.98% 68.57%      32768 41.98%  regexp.makeOnePass.func1
+         0     0% 68.57%      11060 14.17%  github.com/CloudyKit/jet/v6_test.measurementWorkloads
+     10955 14.03% 82.60%      10955 14.03%  github.com/CloudyKit/jet/v6_test.additionalExecutionWorkloads
+         0     0% 82.60%       5461  7.00%  runtime.(*scavengerState).init
+         0     0% 82.60%       5461  7.00%  runtime.bgscavenge
+      5461  7.00% 89.60%       5461  7.00%  runtime.mallocgc
+         0     0% 89.60%       5461  7.00%  runtime.newobject
+      3277  4.20% 93.80%       3277  4.20%  regexp.newQueue (inline)
+         0     0% 93.80%       2352  3.01%  regexp/syntax.(*compiler).compile
+      2352  3.01% 96.81%       2352  3.01%  regexp/syntax.(*compiler).inst (inline)
+         0     0% 96.81%       2352  3.01%  regexp/syntax.Compile
+         0     0% 96.81%       2189  2.80%  runtime/pprof.(*profileBuilder).build
+         0     0% 96.81%       2189  2.80%  runtime/pprof.profileWriter
+         0     0% 96.81%       2185  2.80%  runtime/pprof.(*profileBuilder).appendLocsForStack
+      2185  2.80% 99.61%       2185  2.80%  runtime/pprof.allFrames
+         0     0% 99.61%       2010  2.58%  regexp/syntax.(*compiler).rune

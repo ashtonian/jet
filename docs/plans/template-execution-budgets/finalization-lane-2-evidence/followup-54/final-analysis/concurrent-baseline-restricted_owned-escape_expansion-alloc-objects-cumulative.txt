@@ -1,0 +1,37 @@
+File: render.test
+Type: alloc_objects
+Time: 2026-11-08 04:46:52 CST
+Showing nodes accounting for 1300100, 95.49% of 1361499 total
+Dropped 41 nodes (cum <= 6807)
+Showing top 30 nodes out of 41
+      flat  flat%   sum%        cum   cum%
+    155657 11.43% 11.43%    1287485 94.56%  github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext
+         0     0% 11.43%    1287485 94.56%  github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes.func1.1
+         0     0% 11.43%    1287485 94.56%  github.com/CloudyKit/jet/v6_test.init.0.func5
+         0     0% 11.43%    1131828 83.13%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0% 11.43%    1131828 83.13%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0% 11.43%     997633 73.27%  github.com/CloudyKit/fastprinter.PrintString
+         0     0% 11.43%     997633 73.27%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 11.43%     997633 73.27%  github.com/CloudyKit/jet/v6.(*Runtime).printValue
+         0     0% 11.43%     997633 73.27%  github.com/CloudyKit/jet/v6.(*dataPrinter).text
+         0     0% 11.43%     997633 73.27%  github.com/CloudyKit/jet/v6.(*dataPrinter).value
+         0     0% 11.43%     997505 73.27%  bytes.(*Buffer).Write
+    122887  9.03% 20.46%     997505 73.27%  bytes.(*Buffer).grow
+         0     0% 20.46%     997505 73.27%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+         0     0% 20.46%     997505 73.27%  github.com/CloudyKit/jet/v6.(*dataPrinter).Write
+         0     0% 20.46%     997505 73.27%  github.com/CloudyKit/jet/v6.(*escapeeWriter).Write
+         0     0% 20.46%     997505 73.27%  text/template.HTMLEscape
+    874618 64.24% 84.70%     874618 64.24%  bytes.growSlice
+    134195  9.86% 94.55%     134195  9.86%  bytes.(*Buffer).String (inline)
+     10923   0.8% 95.36%      68550  5.03%  github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes
+         0     0% 95.36%      68550  5.03%  testing.(*B).run1.func1
+         0     0% 95.36%      68550  5.03%  testing.(*B).runN
+         0     0% 95.36%      35215  2.59%  github.com/CloudyKit/jet/v6_test.measurementWorkloads
+      1820  0.13% 95.49%      34588  2.54%  github.com/CloudyKit/jet/v6_test.additionalExecutionWorkloads
+         0     0% 95.49%      32768  2.41%  encoding/json.Marshal (inline)
+         0     0% 95.49%      32768  2.41%  encoding/json/v2.Marshal
+         0     0% 95.49%      32768  2.41%  encoding/json/v2.makeMapArshaler.func2
+         0     0% 95.49%      32768  2.41%  encoding/json/v2.makeSliceArshaler.func2
+         0     0% 95.49%      32768  2.41%  encoding/json/v2.marshalEncode
+         0     0% 95.49%      32768  2.41%  encoding/json/v2.newAddressableValue
+         0     0% 95.49%      32768  2.41%  reflect.New

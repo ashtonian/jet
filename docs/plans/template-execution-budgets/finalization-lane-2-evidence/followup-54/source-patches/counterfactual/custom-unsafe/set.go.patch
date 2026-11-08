@@ -1,0 +1,16 @@
+--- a/set.go
++++ b/set.go
+@@ -29,0 +30 @@
++	defaultHTML     bool
+@@ -42,5 +43,6 @@
+-		loader:  loader,
+-		cache:   &cache{},
+-		escapee: template.HTMLEscape,
+-		globals: VarMap{},
+-		gmx:     &sync.RWMutex{},
++		loader:      loader,
++		cache:       &cache{},
++		escapee:     template.HTMLEscape,
++		defaultHTML: true,
++		globals:     VarMap{},
++		gmx:         &sync.RWMutex{},

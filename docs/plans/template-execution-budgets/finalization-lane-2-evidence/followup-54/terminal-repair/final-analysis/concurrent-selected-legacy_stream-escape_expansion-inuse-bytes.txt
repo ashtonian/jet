@@ -1,0 +1,14 @@
+File: render.test
+Type: inuse_space
+Time: 2026-11-08 05:27:28 CST
+Showing nodes accounting for 1025.17kB, 100% of 1025.17kB total
+      flat  flat%   sum%        cum   cum%
+  513.12kB 50.05% 50.05%   513.12kB 50.05%  unicode.map.init.0
+  512.05kB 49.95%   100%   512.05kB 49.95%  runtime.mallocgc
+         0     0%   100%   512.05kB 49.95%  runtime.(*scavengerState).init
+         0     0%   100%   512.05kB 49.95%  runtime.bgscavenge
+         0     0%   100%   513.12kB 50.05%  runtime.doInit (inline)
+         0     0%   100%   513.12kB 50.05%  runtime.doInit1
+         0     0%   100%   513.12kB 50.05%  runtime.main
+         0     0%   100%   512.05kB 49.95%  runtime.newobject
+         0     0%   100%   513.12kB 50.05%  unicode.init

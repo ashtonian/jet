@@ -1,0 +1,36 @@
+File: render.test
+Type: alloc_space
+Time: 2026-11-08 04:46:46 CST
+Showing nodes accounting for 11955.08kB, 100% of 11955.08kB total
+Showing top 30 nodes out of 45
+      flat  flat%   sum%        cum   cum%
+ 2563.38kB 21.44% 21.44%  2563.38kB 21.44%  regexp/syntax.(*compiler).inst (inline)
+ 1924.02kB 16.09% 37.54%  1924.02kB 16.09%  os.readFileContents
+ 1762.94kB 14.75% 52.28%  1762.94kB 14.75%  runtime/pprof.StartCPUProfile
+ 1605.34kB 13.43% 65.71%  1605.34kB 13.43%  encoding/json/v2.makeString
+    1539kB 12.87% 78.58%     1539kB 12.87%  regexp.onePassCopy
+  512.14kB  4.28% 82.87%   512.14kB  4.28%  github.com/CloudyKit/jet/v6_test.additionalExecutionWorkloads
+  512.08kB  4.28% 87.15%   512.08kB  4.28%  compress/gzip.NewWriterLevel
+  512.06kB  4.28% 91.43%   512.06kB  4.28%  regexp.newQueue (inline)
+  512.06kB  4.28% 95.72%  1024.12kB  8.57%  regexp/syntax.parse
+  512.05kB  4.28%   100%   512.05kB  4.28%  regexp/syntax.(*parser).newRegexp (inline)
+         0     0%   100%  1605.34kB 13.43%  encoding/json.Unmarshal (inline)
+         0     0%   100%  1605.34kB 13.43%  encoding/json/v2.Unmarshal
+         0     0%   100%  1089.33kB  9.11%  encoding/json/v2.makeInterfaceArshaler.func2
+         0     0%   100%  1089.33kB  9.11%  encoding/json/v2.makeMapArshaler.func3
+         0     0%   100%  1605.34kB 13.43%  encoding/json/v2.makeSliceArshaler.func3
+         0     0%   100%  1605.34kB 13.43%  encoding/json/v2.makeStringArshaler.func2
+         0     0%   100%  1605.34kB 13.43%  encoding/json/v2.makeStructArshaler.func3
+         0     0%   100%  1605.34kB 13.43%  encoding/json/v2.unmarshalDecode
+         0     0%   100%  9680.06kB 80.97%  github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes
+         0     0%   100%  3529.36kB 29.52%  github.com/CloudyKit/jet/v6_test.executionWorkloads
+         0     0%   100%  4041.50kB 33.81%  github.com/CloudyKit/jet/v6_test.measurementWorkloads
+         0     0%   100%  1762.94kB 14.75%  main.main
+         0     0%   100%  1924.02kB 16.09%  os.ReadFile
+         0     0%   100%  5638.56kB 47.16%  regexp.Compile (inline)
+         0     0%   100%  5638.56kB 47.16%  regexp.compile
+         0     0%   100%  2051.06kB 17.16%  regexp.compileOnePass
+         0     0%   100%   512.06kB  4.28%  regexp.makeOnePass
+         0     0%   100%  2563.38kB 21.44%  regexp/syntax.(*compiler).compile
+         0     0%   100%   513.50kB  4.30%  regexp/syntax.(*compiler).empty (inline)
+         0     0%   100%  2049.88kB 17.15%  regexp/syntax.(*compiler).rune

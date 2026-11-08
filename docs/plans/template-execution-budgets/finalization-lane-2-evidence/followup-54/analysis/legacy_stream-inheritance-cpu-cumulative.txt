@@ -1,0 +1,37 @@
+File: candidate.test
+Type: cpu
+Time: 2026-11-08 03:57:22 CST
+Duration: 1.41s, Total samples = 1.15s (81.55%)
+Showing nodes accounting for 1.11s, 96.52% of 1.15s total
+Showing top 30 nodes out of 42
+      flat  flat%   sum%        cum   cum%
+     0.03s  2.61%  2.61%      1.14s 99.13%  github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes.func1
+         0     0%  2.61%      1.14s 99.13%  testing.(*B).launch
+         0     0%  2.61%      1.14s 99.13%  testing.(*B).runN
+         0     0%  2.61%      1.10s 95.65%  github.com/CloudyKit/jet/v6.(*Template).Execute (inline)
+     0.15s 13.04% 15.65%      1.10s 95.65%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0% 15.65%      1.10s 95.65%  github.com/CloudyKit/jet/v6_test.init.func1
+     0.28s 24.35% 40.00%      0.73s 63.48%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+     0.04s  3.48% 43.48%      0.29s 25.22%  github.com/CloudyKit/jet/v6.(*Runtime).executeYieldBlock
+     0.08s  6.96% 50.43%      0.14s 12.17%  github.com/CloudyKit/jet/v6.(*Runtime).recover
+     0.03s  2.61% 53.04%      0.09s  7.83%  github.com/CloudyKit/jet/v6.(*Runtime).getBlock
+     0.06s  5.22% 58.26%      0.08s  6.96%  runtime.(*_panic).nextDefer
+     0.02s  1.74% 60.00%      0.07s  6.09%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+     0.05s  4.35% 64.35%      0.06s  5.22%  internal/runtime/maps.(*Map).getWithoutKeySmallFastStr
+     0.06s  5.22% 69.57%      0.06s  5.22%  runtime.(*_panic).start
+         0     0% 69.57%      0.06s  5.22%  runtime.mapaccess2_faststr
+     0.02s  1.74% 71.30%      0.06s  5.22%  sync.(*Pool).Put
+     0.03s  2.61% 73.91%      0.05s  4.35%  bytes.(*Buffer).Write
+     0.04s  3.48% 77.39%      0.04s  3.48%  github.com/CloudyKit/jet/v6.(*Runtime).checkpoint
+     0.02s  1.74% 79.13%      0.04s  3.48%  github.com/CloudyKit/jet/v6.(*Runtime).enter
+     0.04s  3.48% 82.61%      0.04s  3.48%  sync.(*Pool).pin
+     0.02s  1.74% 84.35%      0.03s  2.61%  github.com/CloudyKit/jet/v6.(*Runtime).checkNode
+     0.03s  2.61% 86.96%      0.03s  2.61%  github.com/CloudyKit/jet/v6.(*Runtime).templateRoot
+     0.01s  0.87% 87.83%      0.02s  1.74%  github.com/CloudyKit/jet/v6.(*Runtime).startCompilation
+     0.02s  1.74% 89.57%      0.02s  1.74%  runtime.deferprocStack
+     0.02s  1.74% 91.30%      0.02s  1.74%  runtime.memmove
+     0.02s  1.74% 93.04%      0.02s  1.74%  sync.(*Pool).Get
+     0.01s  0.87% 93.91%      0.01s  0.87%  bytes.(*Buffer).Reset (inline)
+     0.01s  0.87% 94.78%      0.01s  0.87%  github.com/CloudyKit/jet/v6.(*Runtime).executeList.func1
+     0.01s  0.87% 95.65%      0.01s  0.87%  github.com/CloudyKit/jet/v6.(*Runtime).isRestricted (inline)
+     0.01s  0.87% 96.52%      0.01s  0.87%  internal/runtime/maps.memHashAES
