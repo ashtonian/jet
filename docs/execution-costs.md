@@ -14,9 +14,11 @@ Widths below use the current architecture's Go storage widths. Container childre
 | --- | --- |
 | String/byte concatenation | Destination payload before construction; primitive formatting uses bounded scratch. Composite data-only formatting reserves incrementally. |
 | Byte/rune/string conversion | Exact byte-copy length or a proven rune-encoding bound before reflection. Invalid conversions return ordinary template errors. |
+| Slicing an unaddressable array | Reserve the full array payload and copy work before constructing addressable backing storage; addressable arrays and slices retain aliasing without a payload copy. |
+| Restricted catch diagnostic | Copy at most 512 bytes after work/value reservation; unknown native errors use a fixed message without invoking hooks. |
 | Reflection argument list | Newly constructed `reflect.Value` slots. |
 | Scope insertion | New string-key and `reflect.Value` slots; key payload can alias source. |
-| `map` | Requested string-key/interface-value slots, plus allocating key conversions. Metered keys are evaluated once and the validated/converted value is inserted. |
+| `map` | Requested string-key/interface-value slots, plus allocating key conversions. Keys are evaluated once and the validated/converted value is inserted. Invalid/inaccessible key/value arguments are ordinary errors. |
 | `slice`, `array`, `split` | New interface/string-header slots. Split segments alias source bytes. |
 | `repeat`, `replace` | Checked destination size before the native operation. Replace counts actual matches, including UTF-8 boundaries for empty patterns. |
 | `lower`, `upper`, `html`, `url` | Size/bound before construction; unchanged aliases avoid a payload reservation. |
@@ -64,3 +66,5 @@ r.ReserveValueBytes(bytes) // int64, before construction
 Both use the active execution and sticky termination path. Checked size arithmetic, width/precision validation and every separately allocated destination are the adapter's responsibility. Reserving after a native function returns cannot prevent its allocation. These hooks do not approve a callback for restricted execution or preempt it. Runtime/Arguments values belong to the current synchronous invocation and must not be retained for later work.
 
 Normal and race compatibility checks remain separate. Allocation/control regressions use fixed finite inputs; neither logical quotas nor a Go heap target provide process isolation.
+
+Map lookup uses the validated converted key, including method-free named string keys. Field/map assignment validates target accessibility, key/value assignability and nil maps before reflection; untyped nil is not deletion syntax. Map/slice/array constructors reject invalid untyped-nil arguments, while assignable typed nil collections remain supported. Numeric indices preserve truncation toward zero for finite fractional values and reject invalid, negative, nonfinite or out-of-range results before reflection.

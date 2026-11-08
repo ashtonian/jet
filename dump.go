@@ -8,10 +8,10 @@ import (
 )
 
 // dumpAll returns
-//  - everything in Runtime.context
-//  - everything in Runtime.variables
-//  - everything in Runtime.set.globals
-//  - everything in Runtime.blocks
+//   - everything in Runtime.context
+//   - everything in Runtime.variables
+//   - everything in Runtime.set.globals
+//   - everything in Runtime.blocks
 func dumpAll(a Arguments, depth int) reflect.Value {
 	var b bytes.Buffer
 	var vars VarMap
@@ -40,7 +40,7 @@ func dumpAll(a Arguments, depth int) reflect.Value {
 			fmt.Fprintln(&b, "Globals:")
 		}
 		val := vars[name]
-		fmt.Fprintf(&b, "\t%s:=%#v // %s\n", name, val, val.Type())
+		fmt.Fprintf(&b, "\t%s:=%#v // %s\n", name, val, getTypeString(val))
 	}
 
 	blockKeys := a.runtime.scope.sortedBlocks()
@@ -115,5 +115,5 @@ func dumpFindVar(w io.Writer, rnt *Runtime, name string) {
 	if err != nil {
 		return
 	}
-	fmt.Fprintf(w, "\t%s:=%#v // %s\n", name, val, val.Type())
+	fmt.Fprintf(w, "\t%s:=%#v // %s\n", name, val, getTypeString(val))
 }

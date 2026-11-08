@@ -309,6 +309,9 @@ func (st *Runtime) recover(err *error) {
 
 func (st *Runtime) executeSet(left Expression, right reflect.Value) {
 	typ := left.Type()
+	if typ == NodeUnderscore {
+		return
+	}
 	if typ == NodeIdentifier {
 		err := st.setValue(left.(*IdentifierNode).Ident, right)
 		if err != nil {
@@ -326,6 +329,9 @@ func (st *Runtime) executeSet(left Expression, right reflect.Value) {
 		fields = left.(*FieldNode).Ident
 		value = st.context
 	}
+	if len(fields) == 0 {
+		left.errorf("assignment target has no field")
+	}
 	lef := len(fields) - 1
 	for i := 0; i < lef; i++ {
 		st.checkpoint(1)
@@ -336,25 +342,47 @@ func (st *Runtime) executeSet(left Expression, right reflect.Value) {
 		}
 	}
 
-RESTART:
+	value, isNil := st.indirect(value)
+	if !value.IsValid() || isNil {
+		left.errorf("cannot assign a field on an invalid or nil value")
+	}
+	if !right.IsValid() {
+		left.errorf("cannot assign an invalid value to a field or map entry")
+	}
 	switch value.Kind() {
-	case reflect.Ptr:
-		st.checkpoint(1)
-		value = value.Elem()
-		goto RESTART
 	case reflect.Struct:
-		value = value.FieldByName(fields[lef])
-		if !value.IsValid() {
+		field, ok := value.Type().FieldByName(fields[lef])
+		if !ok {
 			left.errorf("identifier %q is not available in the current scope", fields[lef])
 		}
-		value.Set(right)
+		target, err := st.fieldByIndex(value, field.Index)
+		if err != nil {
+			left.error(err)
+		}
+		if !target.CanSet() {
+			left.errorf("cannot assign to an inaccessible or unaddressable field")
+		}
+		if !right.Type().AssignableTo(target.Type()) {
+			left.errorf("cannot assign %s to field of type %s", right.Type(), target.Type())
+		}
+		target.Set(right)
 	case reflect.Map:
-		key := reflect.ValueOf(&fields[lef]).Elem()
-		st.checkpoint(uint64(key.Len()))
-		if right.IsValid() && !value.MapIndex(key).IsValid() {
+		if value.IsNil() {
+			left.errorf("cannot assign an entry in a nil map")
+		}
+		if !right.Type().AssignableTo(value.Type().Elem()) {
+			left.errorf("cannot assign %s to map value of type %s", right.Type(), value.Type().Elem())
+		}
+		key, err := st.mapKey(value, reflect.ValueOf(&fields[lef]).Elem())
+		if err != nil {
+			left.error(err)
+		}
+		if !value.MapIndex(key).IsValid() {
 			st.reserveValue(int64(value.Type().Key().Size() + value.Type().Elem().Size()))
 		}
 		value.SetMapIndex(key, right)
+	default:
+		left.errorf("cannot assign a field on %s", value.Type())
 	}
 }
 
@@ -684,7 +712,11 @@ func (st *Runtime) executeTry(try *TryNode) (returnValue reflect.Value) {
 				if try.Catch.Err != nil {
 					st.newScope()
 					defer st.releaseScope()
-					st.declareValue(st.scope, try.Catch.Err.Ident, reflect.ValueOf(r))
+					caught := reflect.ValueOf(r)
+					if st.isRestricted() {
+						caught = reflect.ValueOf(st.catchDiagnostic(r))
+					}
+					st.declareValue(st.scope, try.Catch.Err.Ident, caught)
 				}
 				if try.Catch.List != nil {
 					returnValue = st.executeList(try.Catch.List)
@@ -793,35 +825,12 @@ func (st *Runtime) evalPrimaryExpressionGroup(node Expression) reflect.Value {
 		return resolved
 	case NodeSliceExpr:
 		node := node.(*SliceExprNode)
-		baseExpression := st.evalPrimaryExpressionGroup(node.Base)
-
-		var index, length int
-		if node.Index != nil {
-			indexExpression := st.evalPrimaryExpressionGroup(node.Index)
-			if canNumber(indexExpression.Kind()) {
-				index = int(castInt64(indexExpression))
-			} else {
-				node.Index.errorf("non numeric value in index expression kind %s", indexExpression.Kind().String())
-			}
+		base := st.evalPrimaryExpressionGroup(node.Base)
+		result, err := st.sliceValue(base, node.Index, node.EndIndex)
+		if err != nil {
+			node.error(err)
 		}
-
-		if node.EndIndex != nil {
-			indexExpression := st.evalPrimaryExpressionGroup(node.EndIndex)
-			if canNumber(indexExpression.Kind()) {
-				length = int(castInt64(indexExpression))
-			} else {
-				node.EndIndex.errorf("non numeric value in index expression kind %s", indexExpression.Kind().String())
-			}
-		} else {
-			length = baseExpression.Len()
-		}
-
-		// validate bounds so an out-of-range slice yields a template error instead of a runtime panic
-		if index < 0 || length < index || length > baseExpression.Len() {
-			node.errorf("slice bounds out of range [%d:%d] with length %d", index, length, baseExpression.Len())
-		}
-
-		return baseExpression.Slice(index, length)
+		return result
 	}
 	return st.evalBaseExpressionGroup(node)
 }
@@ -1817,6 +1826,10 @@ func (st *Runtime) resolveIndex(v, index reflect.Value, indexAsStr string) (refl
 		}
 	}
 
+	if !indexIsStr && !index.IsValid() {
+		return reflect.Value{}, fmt.Errorf("index must be a valid value")
+	}
+
 	// Unless it's an interface, need to get to a value of type *T to guarantee
 	// we see all methods of T and *T.
 	if indexIsStr {
@@ -1866,14 +1879,20 @@ func (st *Runtime) resolveIndex(v, index reflect.Value, indexAsStr string) (refl
 		}
 
 		if id, ok := cache[key]; ok {
-			field := v.FieldByIndex(id)
+			field, err := st.fieldByIndex(v, id)
+			if err != nil {
+				return reflect.Value{}, err
+			}
 			return indirectEface(field), nil
 		}
 
 		// Slow path: use reflect directly
 		tField, ok := typ.FieldByName(key)
 		if ok {
-			field := v.FieldByIndex(tField.Index)
+			field, err := st.fieldByIndex(v, tField.Index)
+			if err != nil {
+				return reflect.Value{}, err
+			}
 			if tField.PkgPath != "" { // field is unexported
 				return reflect.Value{}, fmt.Errorf("%s is an unexported field of struct type %s", st.diagnosticText(indexAsStr), v.Type())
 			}
@@ -1881,13 +1900,11 @@ func (st *Runtime) resolveIndex(v, index reflect.Value, indexAsStr string) (refl
 		}
 		return reflect.Value{}, fmt.Errorf("can't use %s as field name in struct type %s", st.diagnosticText(indexAsStr), v.Type())
 	case reflect.Map:
-		// If it's a map, attempt to use the field name as a key.
-		indexVal := indexAsValue()
-		if !indexVal.Type().ConvertibleTo(v.Type().Key()) {
-			return reflect.Value{}, fmt.Errorf("can't use %s (%s) as key for map of type %s", st.diagnosticText(indexAsStr), indexVal.Type(), v.Type())
+		key, err := st.mapKey(v, indexAsValue())
+		if err != nil {
+			return reflect.Value{}, err
 		}
-		index = st.convertValue(indexVal, v.Type().Key()) // noop in most cases, but not expensive
-		return indirectEface(v.MapIndex(indexVal)), nil
+		return indirectEface(v.MapIndex(key)), nil
 	case reflect.Ptr:
 		etyp := v.Type().Elem()
 		if etyp.Kind() == reflect.Struct && indexIsStr {
@@ -1908,23 +1925,7 @@ func (st *Runtime) resolveIndex(v, index reflect.Value, indexAsStr string) (refl
 //
 // indexArg checks if a reflect.Value can be used as an index, and converts it to int if possible.
 func indexArg(index reflect.Value, cap int) (int, error) {
-	var x int64
-	switch index.Kind() {
-	case reflect.Int, reflect.Int8, reflect.Int16, reflect.Int32, reflect.Int64:
-		x = index.Int()
-	case reflect.Uint, reflect.Uint8, reflect.Uint16, reflect.Uint32, reflect.Uint64, reflect.Uintptr:
-		x = int64(index.Uint())
-	case reflect.Float32, reflect.Float64:
-		x = int64(index.Float())
-	case reflect.Invalid:
-		return 0, fmt.Errorf("cannot index slice/array/string with nil")
-	default:
-		return 0, fmt.Errorf("cannot index slice/array/string with type %s", getTypeString(index))
-	}
-	if int(x) < 0 || int(x) >= cap {
-		return 0, fmt.Errorf("index out of range: %d", x)
-	}
-	return int(x), nil
+	return boundedIndex(index, cap, false)
 }
 
 func (st *Runtime) buildCache(typ reflect.Type, cache map[string][]int, parent []int) {
