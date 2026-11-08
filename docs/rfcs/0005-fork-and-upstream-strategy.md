@@ -22,7 +22,9 @@ Karsto's Renderer exposes no Jet types, reducing the public blast radius. Confir
 
 ## Upstream contribution shape
 
-[The PR register](../plans/template-execution-budgets/upstream-prs.md) defines small behavior-oriented changes. Each upstream branch is based on the then-current upstream master or clearly identified prerequisite PR. It contains only the applicable generic implementation, tests, API docs and benchmarks. Exclude fork module renaming, these work-assignment documents, Karsto defaults/E-codes, local host paths and application policy.
+The [current publication policy](../plans/template-execution-budgets/plan.md#current-publication-policy) holds all new upstream submissions and keeps internal plans/RFCs in the fork. The following describes a possible future contribution shape, not permission to submit. [The work register](../plans/template-execution-budgets/upstream-prs.md) tracks behavior and dependencies without requiring a separate PR for each item.
+
+If upstream submission is explicitly authorized later, each branch is based on the then-current upstream master or clearly identified prerequisite PR. It contains only the applicable generic implementation, tests, public API docs and benchmarks. Exclude fork module renaming, internal plans/RFCs and work assignments, Karsto defaults/E-codes, local host paths and application policy.
 
 Temporary upstream submission branches derive from canonical commits; they are not a second maintained runtime. Record canonical commit → submission commit → upstream PR/merge mapping. Retire the corresponding fork patch after upstream acceptance and rerun the matrix. Do not maintain cherry-picked divergent fixes indefinitely.
 

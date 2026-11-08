@@ -1,6 +1,6 @@
 # Acceptance and performance matrix
 
-All rows below are **planned, not run**. Owners must record the exact tested SHA, dirty/untracked input manifest, dependency/toolchain configuration, command, execution deadline, log/receipt and result. Missing or skipped coverage is not a pass. Tests should exercise actual supported templates, not implementation-shaped counter assertions.
+The rows below define required acceptance; they are not a pass ledger. Current evidence, reproduced failures and unexecuted final coverage are recorded in the [2026-11-08 final review](final-review.md). Owners must record the exact tested SHA, dirty/untracked input manifest, dependency/toolchain configuration, command, execution deadline, log/receipt and result. Missing or skipped coverage is not a pass. Tests should exercise actual supported templates, not implementation-shaped counter assertions.
 
 ## Runtime (Lane 1)
 

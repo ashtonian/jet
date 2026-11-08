@@ -1,8 +1,20 @@
 # Template execution budgets: four-lane execution plan
 
-Prepared 2026-11-07. **Planning only. All implementation items remain open. Do not start any agent until the owner explicitly starts execution.** One implementer per lane handles diagnosis, implementation, self-review and verification; no coordinator/reviewer subagents.
+Prepared 2026-11-07. Implementation has since produced a combined Jet candidate. The [2026-11-08 final review](final-review.md) records current defects, benchmark results and the remaining release gates; the original assignments and acceptance requirements below remain the scope reference. Karsto adoption is outside the current finalization review. Use one implementer by default; do not start or resume agents without explicit owner direction.
 
 Canonical decisions: [RFC index](../../rfcs/index.md). Baseline/source findings: [audit](source-audit.md). Every lane reads the global/repository guides that apply at execution time, current Git status/history, this plan, its assignment and the validation matrix. Do not copy Karsto's Go 1.27 conventions into upstream Jet, whose module declares Go 1.16; preserve the dependency's compatibility unless deliberately agreed otherwise.
+
+## Active finalization batch
+
+The owner authorized repairs and parallel agent execution on 2026-11-08. [Finalization assignments](finalization.md) define the active four lanes, common candidate, shared-file ownership, integration order and performance/release gates. That packet supersedes the historical lane scopes below for this batch. Karsto adoption remains excluded.
+
+## Current publication policy
+
+Owner direction, 2026-11-07: continue development in `ashtonian/jet`. Do not open PRs, issues or other submissions in `CloudyKit/jet`. Any future upstream submission requires a new explicit instruction from the owner.
+
+Internal plans, RFCs, lane assignments and execution evidence stay in the fork. Exclude `docs/plans/` and `docs/rfcs/` from any future upstream submission; only relevant public API/user documentation accompanies generic code and tests.
+
+The work IDs below describe scope and dependencies, not a required PR count. Reuse existing fork PRs and consolidate related implementation, fixes, tests and validation. Packaging can remain a separate commit within a consolidated fork PR. Do not create a PR per work ID, fix or validation stage. Preserve current branches and review history while planning consolidation; this direction does not authorize closing existing PRs or rewriting their history.
 
 ## Assignments
 
@@ -32,7 +44,7 @@ flowchart TD
     K02 --> K03[K03 acceptance and release]
 ```
 
-Entry: independently reproducible defects. Exit: reviewed Jet changes plus Karsto acceptance. Failure: failed prerequisite blocks dependents; independent inventory, implementation and tests continue. Dependencies: PR identifiers in the [register](upstream-prs.md); no PR numbers assigned yet. J01 is several independent small correctness PRs if their fixes are separable.
+Entry: independently reproducible defects. Exit: reviewed Jet changes plus Karsto acceptance. Failure: failed prerequisite blocks dependents; independent inventory, implementation and tests continue. Dependencies: work IDs remain in the [register](upstream-prs.md); actual existing PR heads and consolidated finalization packets are in the [final review](final-review.md). Reuse the existing fork PRs.
 
 ## Shared-file rules
 
