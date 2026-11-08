@@ -1,0 +1,38 @@
+File: follow-active8.test
+Type: cpu
+Time: 2026-11-08 02:24:52 CST
+Duration: 2.31s, Total samples = 2.15s (93.01%)
+Showing nodes accounting for 1.59s, 73.95% of 2.15s total
+Dropped 63 nodes (cum <= 0.01s)
+Showing top 30 nodes out of 132
+      flat  flat%   sum%        cum   cum%
+     0.32s 14.88% 14.88%      0.32s 14.88%  runtime.kevent
+     0.14s  6.51% 21.40%      1.52s 70.70%  github.com/CloudyKit/jet/v6.(*inputAdmission).clone
+     0.09s  4.19% 25.58%      0.09s  4.19%  runtime.pthread_kill
+     0.07s  3.26% 28.84%      0.08s  3.72%  github.com/CloudyKit/jet/v6.(*inputAdmission).step
+     0.07s  3.26% 32.09%      0.10s  4.65%  runtime.mallocgcSmallScanNoHeaderSC2
+     0.06s  2.79% 34.88%      0.07s  3.26%  internal/runtime/maps.(*Iter).Next
+     0.06s  2.79% 37.67%      0.06s  2.79%  runtime.madvise
+     0.06s  2.79% 40.47%      0.06s  2.79%  runtime.usleep
+     0.05s  2.33% 42.79%      0.08s  3.72%  runtime.(*_panic).nextDefer
+     0.04s  1.86% 44.65%      0.04s  1.86%  internal/runtime/maps.memHashAES
+     0.04s  1.86% 46.51%      0.04s  1.86%  reflect.(*rtype).Kind (inline)
+     0.04s  1.86% 48.37%      0.04s  1.86%  reflect.(*rtype).exportedMethods
+     0.04s  1.86% 50.23%      0.14s  6.51%  reflect.Value.assignTo
+     0.04s  1.86% 52.09%      0.04s  1.86%  runtime.(*_panic).start
+     0.04s  1.86% 53.95%      0.28s 13.02%  runtime.mallocgc
+     0.04s  1.86% 55.81%      0.04s  1.86%  runtime.memmove
+     0.03s  1.40% 57.21%      0.09s  4.19%  github.com/CloudyKit/jet/v6.(*inputAdmission).enterContainer
+     0.03s  1.40% 58.60%      0.03s  1.40%  internal/runtime/atomic.(*UnsafePointer).Load (inline)
+     0.03s  1.40% 60.00%      0.10s  4.65%  reflect.(*rtype).NumMethod
+     0.03s  1.40% 61.40%      0.12s  5.58%  reflect.PtrTo (inline)
+     0.03s  1.40% 62.79%      0.09s  4.19%  reflect.Value.Set
+     0.03s  1.40% 64.19%      0.04s  1.86%  reflect.valueInterface
+     0.03s  1.40% 65.58%      0.03s  1.40%  runtime.mallocgcSmallScanNoHeaderSC3
+     0.03s  1.40% 66.98%      0.03s  1.40%  runtime.mapaccess2_fast64
+     0.03s  1.40% 68.37%      0.03s  1.40%  runtime.pthread_cond_signal
+     0.03s  1.40% 69.77%      0.07s  3.26%  runtime.resolveTypeOff
+     0.03s  1.40% 71.16%      0.03s  1.40%  type:.eq.M8IM16
+     0.02s  0.93% 72.09%      0.02s  0.93%  github.com/CloudyKit/jet/v6.(*inputAdmission).leaveContainer
+     0.02s  0.93% 73.02%      0.02s  0.93%  reflect.Value.NumMethod
+     0.02s  0.93% 73.95%      0.02s  0.93%  reflect.flag.ro (inline)

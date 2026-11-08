@@ -1,0 +1,218 @@
+[
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-source_path=$CHECKOUT",
+      "-trim_path=github.com/CloudyKit/jet/v6/",
+      "-list=admitInputScopes",
+      "-sample_index=alloc_space",
+      ".git/finalization/baseline.test",
+      ".git/finalization/baseline-heap.pprof"
+    ],
+    "start": 1794125531.762316,
+    "end": 1794125532.330231,
+    "exit": 0,
+    "no_sampled_match": false,
+    "resolved": true
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-source_path=$CHECKOUT",
+      "-trim_path=github.com/CloudyKit/jet/v6/",
+      "-list=admitCached",
+      "-sample_index=alloc_space",
+      ".git/finalization/baseline.test",
+      ".git/finalization/baseline-heap.pprof"
+    ],
+    "start": 1794125532.330293,
+    "end": 1794125532.464654,
+    "exit": 0,
+    "no_sampled_match": false,
+    "resolved": true
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-source_path=$CHECKOUT",
+      "-trim_path=github.com/CloudyKit/jet/v6/",
+      "-list=startCompilation",
+      "-sample_index=alloc_space",
+      ".git/finalization/baseline.test",
+      ".git/finalization/baseline-heap.pprof"
+    ],
+    "start": 1794125532.464704,
+    "end": 1794125532.5936089,
+    "exit": 0,
+    "no_sampled_match": false,
+    "resolved": true
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-source_path=$CHECKOUT",
+      "-trim_path=github.com/CloudyKit/jet/v6/",
+      "-list=prepareSource",
+      "-sample_index=alloc_space",
+      ".git/finalization/baseline.test",
+      ".git/finalization/baseline-heap.pprof"
+    ],
+    "start": 1794125532.593662,
+    "end": 1794125532.714237,
+    "exit": 0,
+    "no_sampled_match": false,
+    "resolved": true
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-source_path=$CHECKOUT",
+      "-trim_path=github.com/CloudyKit/jet/v6/",
+      "-list=admitInputScopes",
+      "-sample_index=alloc_space",
+      ".git/finalization/graph4.test",
+      ".git/finalization/graph4-heap.pprof"
+    ],
+    "start": 1794125532.714278,
+    "end": 1794125532.8417,
+    "exit": 0,
+    "no_sampled_match": false,
+    "resolved": true
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-source_path=$CHECKOUT",
+      "-trim_path=github.com/CloudyKit/jet/v6/",
+      "-list=admitCached",
+      "-sample_index=alloc_space",
+      ".git/finalization/graph4.test",
+      ".git/finalization/graph4-heap.pprof"
+    ],
+    "start": 1794125532.8417459,
+    "end": 1794125533.012568,
+    "exit": 2,
+    "no_sampled_match": true,
+    "resolved": true
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-source_path=$CHECKOUT",
+      "-trim_path=github.com/CloudyKit/jet/v6/",
+      "-list=startCompilation",
+      "-sample_index=alloc_space",
+      ".git/finalization/graph4.test",
+      ".git/finalization/graph4-heap.pprof"
+    ],
+    "start": 1794125533.012612,
+    "end": 1794125533.150917,
+    "exit": 2,
+    "no_sampled_match": true,
+    "resolved": true
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-source_path=$CHECKOUT",
+      "-trim_path=github.com/CloudyKit/jet/v6/",
+      "-list=prepareSource",
+      "-sample_index=alloc_space",
+      ".git/finalization/graph4.test",
+      ".git/finalization/graph4-heap.pprof"
+    ],
+    "start": 1794125533.150965,
+    "end": 1794125533.282181,
+    "exit": 2,
+    "no_sampled_match": true,
+    "resolved": true
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-source_path=$CHECKOUT",
+      "-trim_path=github.com/CloudyKit/jet/v6/",
+      "-list=admitInputScopes",
+      "-sample_index=alloc_space",
+      ".git/finalization/input4.test",
+      ".git/finalization/input4-heap.pprof"
+    ],
+    "start": 1794125533.282227,
+    "end": 1794125533.4989839,
+    "exit": 0,
+    "no_sampled_match": false,
+    "resolved": true
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-source_path=$CHECKOUT",
+      "-trim_path=github.com/CloudyKit/jet/v6/",
+      "-list=admitCached",
+      "-sample_index=alloc_space",
+      ".git/finalization/input4.test",
+      ".git/finalization/input4-heap.pprof"
+    ],
+    "start": 1794125533.499052,
+    "end": 1794125533.670641,
+    "exit": 2,
+    "no_sampled_match": true,
+    "resolved": true
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-source_path=$CHECKOUT",
+      "-trim_path=github.com/CloudyKit/jet/v6/",
+      "-list=startCompilation",
+      "-sample_index=alloc_space",
+      ".git/finalization/input4.test",
+      ".git/finalization/input4-heap.pprof"
+    ],
+    "start": 1794125533.6706822,
+    "end": 1794125533.786756,
+    "exit": 2,
+    "no_sampled_match": true,
+    "resolved": true
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-source_path=$CHECKOUT",
+      "-trim_path=github.com/CloudyKit/jet/v6/",
+      "-list=prepareSource",
+      "-sample_index=alloc_space",
+      ".git/finalization/input4.test",
+      ".git/finalization/input4-heap.pprof"
+    ],
+    "start": 1794125533.7868018,
+    "end": 1794125533.913735,
+    "exit": 2,
+    "no_sampled_match": true,
+    "resolved": true
+  }
+]

@@ -1,0 +1,66 @@
+{
+  "pooled4": {
+    "BenchmarkAdmissionInput/empty-2": {
+      "n": 3,
+      "ns": 308.1,
+      "bytes": 202.0,
+      "allocs": 5
+    },
+    "BenchmarkAdmissionInput/scalar-2": {
+      "n": 3,
+      "ns": 315.9,
+      "bytes": 202.0,
+      "allocs": 5
+    },
+    "BenchmarkAdmissionInput/nested-2": {
+      "n": 3,
+      "ns": 3866.0,
+      "bytes": 4810.0,
+      "allocs": 65
+    },
+    "BenchmarkAdmissionInput/shared-2": {
+      "n": 3,
+      "ns": 1650.0,
+      "bytes": 1170.0,
+      "allocs": 21
+    },
+    "BenchmarkAdmissionInput/large-2": {
+      "n": 3,
+      "ns": 40525.0,
+      "bytes": 23078.0,
+      "allocs": 649
+    }
+  },
+  "active8": {
+    "BenchmarkAdmissionInput/empty-2": {
+      "n": 3,
+      "ns": 274.1,
+      "bytes": 202.0,
+      "allocs": 5
+    },
+    "BenchmarkAdmissionInput/scalar-2": {
+      "n": 3,
+      "ns": 287.2,
+      "bytes": 202.0,
+      "allocs": 5
+    },
+    "BenchmarkAdmissionInput/nested-2": {
+      "n": 3,
+      "ns": 4308.0,
+      "bytes": 5098.0,
+      "allocs": 68
+    },
+    "BenchmarkAdmissionInput/shared-2": {
+      "n": 3,
+      "ns": 1593.0,
+      "bytes": 1170.0,
+      "allocs": 21
+    },
+    "BenchmarkAdmissionInput/large-2": {
+      "n": 3,
+      "ns": 38122.0,
+      "bytes": 23078.0,
+      "allocs": 649
+    }
+  }
+}

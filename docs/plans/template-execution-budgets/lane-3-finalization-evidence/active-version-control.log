@@ -1,0 +1,6 @@
+gate-lock: held by pid 45560 on $HOST, "jet-lane3-active-version-control 0e277b3 in $CHECKOUT", since 2026-11-08T07:29:39Z, 2 of 6 focused cores
+--- FAIL: TestCompilationCachedSubgraphAgainstActiveVersion (0.00s)
+    admission_graph_test.go:123: context=false: <nil>
+FAIL
+FAIL	github.com/CloudyKit/jet/v6	0.254s
+FAIL

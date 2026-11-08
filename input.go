@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"reflect"
 	"strconv"
+	"sync"
 )
 
 var (
@@ -26,7 +27,9 @@ type inputAdmission struct {
 	opts         InputOptions
 	bytes        int64
 	items, steps uint64
-	active       map[inputIdentity]bool
+	active       [8]inputIdentity
+	overflow     []inputIdentity
+	activeCount  int
 }
 type inputIdentity struct {
 	kind    reflect.Kind
@@ -39,11 +42,16 @@ func admitInputs(ctx context.Context, vars VarMap, data interface{}, opts InputO
 	return admitInputScopes(ctx, []VarMap{vars}, data, opts)
 }
 
-func admitInputScopes(ctx context.Context, scopes []VarMap, data interface{}, opts InputOptions) (out VarMap, snapshot interface{}, err error) {
+func admitInputScopes(ctx context.Context, scopes []VarMap, data interface{}, opts InputOptions) (VarMap, interface{}, error) {
+	return admitInputScopesInto(ctx, scopes, data, opts, nil)
+}
+
+func admitInputScopesInto(ctx context.Context, scopes []VarMap, data interface{}, opts InputOptions, seed VarMap) (out VarMap, snapshot interface{}, err error) {
 	if ctx == nil || opts.MaxBytes <= 0 || opts.MaxItems == 0 || opts.MaxSteps == 0 || opts.MaxDepth <= 0 || opts.MaxDepth > 64 {
 		return nil, nil, fmt.Errorf("%w: positive input budgets and depth <=64 required", ErrInputLimit)
 	}
-	a := &inputAdmission{ctx: ctx, opts: opts, active: make(map[inputIdentity]bool)}
+	a := &inputAdmission{ctx: ctx, opts: opts}
+	out = seed
 	defer func() {
 		if p := recover(); p != nil {
 			if failure, ok := p.(inputAbort); ok {
@@ -55,10 +63,12 @@ func admitInputScopes(ctx context.Context, scopes []VarMap, data interface{}, op
 			}
 		}
 	}()
-	out = make(VarMap)
 	for _, scope := range scopes {
 		a.reserveItems(uint64(len(scope)))
 		a.reserveBytes(uint64(len(scope)), uint64(5*(strconv.IntSize/8)))
+		if len(scope) > 0 && out == nil {
+			out = make(VarMap, len(scope))
+		}
 		for name, value := range scope {
 			a.reserveBytes(uint64(len(name)), 1)
 			out[name] = a.clone(value, 1)
@@ -105,6 +115,39 @@ func (a *inputAdmission) reserveBytes(n, width uint64) {
 	a.bytes += int64(n * width)
 }
 
+func (a *inputAdmission) enterContainer(key inputIdentity) {
+	// The depth cap bounds overflow; ordinary inputs need no active-path map.
+	for i := 0; i < a.activeCount; i++ {
+		a.step(1)
+		var parent inputIdentity
+		if i < len(a.active) {
+			parent = a.active[i]
+		} else {
+			parent = a.overflow[i-len(a.active)]
+		}
+		if parent == key {
+			a.deny("cyclic input")
+		}
+	}
+	if a.activeCount < len(a.active) {
+		a.active[a.activeCount] = key
+	} else {
+		a.overflow = append(a.overflow, key)
+	}
+	a.activeCount++
+}
+
+func (a *inputAdmission) leaveContainer() {
+	a.activeCount--
+	if a.activeCount < len(a.active) {
+		a.active[a.activeCount] = inputIdentity{}
+	} else {
+		i := len(a.overflow) - 1
+		a.overflow[i] = inputIdentity{}
+		a.overflow = a.overflow[:i]
+	}
+}
+
 func (a *inputAdmission) clone(v reflect.Value, depth int) reflect.Value {
 	a.step(1)
 	if depth > a.opts.MaxDepth {
@@ -128,21 +171,24 @@ func (a *inputAdmission) clone(v reflect.Value, depth int) reflect.Value {
 	switch v.Kind() {
 	case reflect.Bool, reflect.Int, reflect.Int8, reflect.Int16, reflect.Int32, reflect.Int64, reflect.Uint, reflect.Uint8, reflect.Uint16, reflect.Uint32, reflect.Uint64, reflect.Float32, reflect.Float64:
 		a.reserveBytes(uint64(v.Type().Size()), 1)
-		return reflect.ValueOf(v.Interface())
+		if v.CanAddr() {
+			return reflect.ValueOf(v.Interface())
+		}
+		return v
 	case reflect.String:
 		a.reserveBytes(uint64(v.Len()), 1)
-		return reflect.ValueOf(v.Interface())
+		if v.CanAddr() {
+			return reflect.ValueOf(v.Interface())
+		}
+		return v
 	case reflect.Array, reflect.Slice:
 		if v.Kind() == reflect.Slice && v.IsNil() {
 			return reflect.Zero(v.Type())
 		}
 		if v.Kind() == reflect.Slice {
 			key := inputIdentity{kind: v.Kind(), typ: v.Type(), pointer: v.Pointer(), length: v.Len()}
-			if a.active[key] {
-				a.deny("cyclic input")
-			}
-			a.active[key] = true
-			defer delete(a.active, key)
+			a.enterContainer(key)
+			defer a.leaveContainer()
 		}
 		a.reserveItems(uint64(v.Len()))
 		a.reserveBytes(uint64(v.Len()), uint64(v.Type().Elem().Size()))
@@ -167,11 +213,8 @@ func (a *inputAdmission) clone(v reflect.Value, depth int) reflect.Value {
 			return reflect.Zero(v.Type())
 		}
 		key := inputIdentity{kind: v.Kind(), typ: v.Type(), pointer: v.Pointer()}
-		if a.active[key] {
-			a.deny("cyclic input")
-		}
-		a.active[key] = true
-		defer delete(a.active, key)
+		a.enterContainer(key)
+		defer a.leaveContainer()
 		a.reserveItems(uint64(v.Len()))
 		a.reserveBytes(uint64(v.Len()), uint64(v.Type().Key().Size()+v.Type().Elem().Size()))
 		out := reflect.MakeMapWithSize(v.Type(), v.Len())
@@ -190,4 +233,26 @@ func (a *inputAdmission) clone(v reflect.Value, depth int) reflect.Value {
 		a.deny("unsupported " + v.Kind().String())
 	}
 	return reflect.Value{}
+}
+
+// Only closed restricted renders loan these maps; published snapshots use fresh maps.
+const retainedInputVars = 16
+
+var inputVarMaps = sync.Pool{New: func() interface{} { return make(VarMap) }}
+
+func borrowInputVars(globals, vars VarMap) VarMap {
+	if len(globals) > retainedInputVars || len(vars) > retainedInputVars-len(globals) || len(globals)+len(vars) == 0 {
+		return nil
+	}
+	return inputVarMaps.Get().(VarMap)
+}
+
+func releaseInputVars(vars VarMap) {
+	if vars == nil || len(vars) > retainedInputVars {
+		return
+	}
+	for name := range vars {
+		delete(vars, name)
+	}
+	inputVarMaps.Put(vars)
 }

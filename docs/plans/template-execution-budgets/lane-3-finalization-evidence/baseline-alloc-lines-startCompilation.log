@@ -1,0 +1,7 @@
+Total: 3.08GB
+ROUTINE ======================== github.com/CloudyKit/jet/v6.(*Runtime).startCompilation in github.com/CloudyKit/jet/v6/.git/finalization/baseline-source/execution.go
+         0        2GB (flat, cum) 65.13% of Total
+ Error: could not find file github.com/CloudyKit/jet/v6/.git/finalization/baseline-source/execution.go on path $CHECKOUT
+ROUTINE ======================== github.com/CloudyKit/jet/v6.(*Runtime).startCompilation.func1 in github.com/CloudyKit/jet/v6/.git/finalization/baseline-source/execution.go
+         0     1.32GB (flat, cum) 42.92% of Total
+ Error: could not find file github.com/CloudyKit/jet/v6/.git/finalization/baseline-source/execution.go on path $CHECKOUT

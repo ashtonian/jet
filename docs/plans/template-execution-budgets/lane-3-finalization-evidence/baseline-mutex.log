@@ -1,0 +1,33 @@
+File: baseline.test
+Type: delay
+Time: 2026-11-08 01:49:02 CST
+Showing nodes accounting for 34.58us, 100% of 34.58us total
+      flat  flat%   sum%        cum   cum%
+   34.58us   100%   100%    34.58us   100%  runtime.unlock (inline)
+         0     0%   100%     8.46us 24.46%  runtime.allocm
+         0     0%   100%     1.54us  4.46%  runtime.findRunnable
+         0     0%   100%    12.38us 35.78%  runtime.forEachP (inline)
+         0     0%   100%    12.38us 35.78%  runtime.forEachP.func1
+         0     0%   100%    12.38us 35.78%  runtime.forEachPInternal
+         0     0%   100%    33.04us 95.54%  runtime.gcBgMarkWorker
+         0     0%   100%     8.46us 24.46%  runtime.gcBgMarkWorker.func2
+         0     0%   100%     8.46us 24.46%  runtime.gcDrain
+         0     0%   100%     8.46us 24.46%  runtime.gcDrainMarkWorkerIdle (inline)
+         0     0%   100%    24.58us 71.09%  runtime.gcMarkDone
+         0     0%   100%    12.21us 35.30%  runtime.gcMarkDone.func2
+         0     0%   100%     1.54us  4.46%  runtime.gcstopm
+         0     0%   100%     1.54us  4.46%  runtime.gopreempt_m (inline)
+         0     0%   100%     1.54us  4.46%  runtime.goschedImpl
+         0     0%   100%     8.46us 24.46%  runtime.markroot
+         0     0%   100%     8.46us 24.46%  runtime.markroot.func1
+         0     0%   100%     8.46us 24.46%  runtime.mcommoninit
+         0     0%   100%     1.54us  4.46%  runtime.morestack
+         0     0%   100%     8.46us 24.46%  runtime.newm
+         0     0%   100%     1.54us  4.46%  runtime.newstack
+         0     0%   100%     8.46us 24.46%  runtime.ready
+         0     0%   100%     8.46us 24.46%  runtime.resumeG
+         0     0%   100%     1.54us  4.46%  runtime.schedule
+         0     0%   100%     8.46us 24.46%  runtime.startm
+         0     0%   100%    12.21us 35.30%  runtime.stopTheWorldWithSema
+         0     0%   100%    33.04us 95.54%  runtime.systemstack
+         0     0%   100%     8.46us 24.46%  runtime.wakep

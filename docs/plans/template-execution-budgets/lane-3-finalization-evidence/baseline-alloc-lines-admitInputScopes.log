@@ -1,0 +1,4 @@
+Total: 3.08GB
+ROUTINE ======================== github.com/CloudyKit/jet/v6.admitInputScopes in github.com/CloudyKit/jet/v6/.git/finalization/baseline-source/input.go
+  432.12MB   432.12MB (flat, cum) 13.71% of Total
+ Error: could not find file github.com/CloudyKit/jet/v6/.git/finalization/baseline-source/input.go on path $CHECKOUT

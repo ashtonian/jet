@@ -1,0 +1,568 @@
+[
+  {
+    "name": "baseline-cpu-flat",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-top",
+      "-nodecount=30",
+      ".git/finalization/baseline.test",
+      ".git/finalization/baseline-cpu.pprof"
+    ],
+    "exit_code": 0,
+    "start": 1794124360.863193,
+    "end": 1794124372.026654,
+    "deadline": 30
+  },
+  {
+    "name": "baseline-cpu-cumulative",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-top",
+      "-cum",
+      "-nodecount=30",
+      ".git/finalization/baseline.test",
+      ".git/finalization/baseline-cpu.pprof"
+    ],
+    "exit_code": 0,
+    "start": 1794124372.027211,
+    "end": 1794124372.2969038,
+    "deadline": 30
+  },
+  {
+    "name": "baseline-alloc",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-top",
+      "-sample_index=alloc_space",
+      "-nodecount=30",
+      ".git/finalization/baseline.test",
+      ".git/finalization/baseline-heap.pprof"
+    ],
+    "exit_code": 0,
+    "start": 1794124372.302894,
+    "end": 1794124372.48611,
+    "deadline": 30
+  },
+  {
+    "name": "baseline-heap",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-top",
+      "-sample_index=inuse_space",
+      "-nodecount=30",
+      ".git/finalization/baseline.test",
+      ".git/finalization/baseline-heap.pprof"
+    ],
+    "exit_code": 0,
+    "start": 1794124372.492099,
+    "end": 1794124372.640613,
+    "deadline": 30
+  },
+  {
+    "name": "baseline-mutex",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-top",
+      "-nodecount=30",
+      ".git/finalization/baseline.test",
+      ".git/finalization/baseline-mutex.pprof"
+    ],
+    "exit_code": 0,
+    "start": 1794124372.657595,
+    "end": 1794124372.828541,
+    "deadline": 30
+  },
+  {
+    "name": "baseline-block",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-top",
+      "-nodecount=30",
+      ".git/finalization/baseline.test",
+      ".git/finalization/baseline-block.pprof"
+    ],
+    "exit_code": 0,
+    "start": 1794124372.8452532,
+    "end": 1794124373.0080252,
+    "deadline": 30
+  },
+  {
+    "name": "baseline-alloc-lines-admitInputScopes",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-list=admitInputScopes",
+      "-sample_index=alloc_space",
+      ".git/finalization/baseline.test",
+      ".git/finalization/baseline-heap.pprof"
+    ],
+    "exit_code": 0,
+    "start": 1794124373.02498,
+    "end": 1794124373.153636,
+    "deadline": 30
+  },
+  {
+    "name": "baseline-alloc-lines-clone",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-list=clone",
+      "-sample_index=alloc_space",
+      ".git/finalization/baseline.test",
+      ".git/finalization/baseline-heap.pprof"
+    ],
+    "exit_code": 2,
+    "start": 1794124373.154006,
+    "end": 1794124373.292602,
+    "deadline": 30
+  },
+  {
+    "name": "baseline-alloc-lines-clone",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-list=clone",
+      "-sample_index=alloc_space",
+      ".git/finalization/baseline.test",
+      ".git/finalization/baseline-heap.pprof"
+    ],
+    "exit_code": 2,
+    "start": 1794124528.416332,
+    "end": 1794124528.783092,
+    "deadline": 30
+  },
+  {
+    "name": "baseline-alloc-lines-admitCached",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-list=admitCached",
+      "-sample_index=alloc_space",
+      ".git/finalization/baseline.test",
+      ".git/finalization/baseline-heap.pprof"
+    ],
+    "exit_code": 0,
+    "start": 1794124528.783473,
+    "end": 1794124528.894219,
+    "deadline": 30
+  },
+  {
+    "name": "baseline-alloc-lines-startCompilation",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-list=startCompilation",
+      "-sample_index=alloc_space",
+      ".git/finalization/baseline.test",
+      ".git/finalization/baseline-heap.pprof"
+    ],
+    "exit_code": 0,
+    "start": 1794124528.8945558,
+    "end": 1794124529.000536,
+    "deadline": 30
+  },
+  {
+    "name": "baseline-alloc-lines-prepareSource",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-list=prepareSource",
+      "-sample_index=alloc_space",
+      ".git/finalization/baseline.test",
+      ".git/finalization/baseline-heap.pprof"
+    ],
+    "exit_code": 0,
+    "start": 1794124529.0008588,
+    "end": 1794124529.11452,
+    "deadline": 30
+  },
+  {
+    "name": "graph4-cpu-flat",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-top",
+      "-nodecount=30",
+      ".git/finalization/graph4.test",
+      ".git/finalization/graph4-cpu.pprof"
+    ],
+    "exit_code": 0,
+    "start": 1794124529.114881,
+    "end": 1794124529.230004,
+    "deadline": 30
+  },
+  {
+    "name": "graph4-cpu-cumulative",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-top",
+      "-cum",
+      "-nodecount=30",
+      ".git/finalization/graph4.test",
+      ".git/finalization/graph4-cpu.pprof"
+    ],
+    "exit_code": 0,
+    "start": 1794124529.23038,
+    "end": 1794124529.341717,
+    "deadline": 30
+  },
+  {
+    "name": "graph4-alloc",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-top",
+      "-sample_index=alloc_space",
+      "-nodecount=30",
+      ".git/finalization/graph4.test",
+      ".git/finalization/graph4-heap.pprof"
+    ],
+    "exit_code": 0,
+    "start": 1794124529.342114,
+    "end": 1794124529.4556549,
+    "deadline": 30
+  },
+  {
+    "name": "graph4-heap",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-top",
+      "-sample_index=inuse_space",
+      "-nodecount=30",
+      ".git/finalization/graph4.test",
+      ".git/finalization/graph4-heap.pprof"
+    ],
+    "exit_code": 0,
+    "start": 1794124529.4560168,
+    "end": 1794124529.565724,
+    "deadline": 30
+  },
+  {
+    "name": "graph4-mutex",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-top",
+      "-nodecount=30",
+      ".git/finalization/graph4.test",
+      ".git/finalization/graph4-mutex.pprof"
+    ],
+    "exit_code": 0,
+    "start": 1794124529.566068,
+    "end": 1794124529.6798148,
+    "deadline": 30
+  },
+  {
+    "name": "graph4-block",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-top",
+      "-nodecount=30",
+      ".git/finalization/graph4.test",
+      ".git/finalization/graph4-block.pprof"
+    ],
+    "exit_code": 0,
+    "start": 1794124529.6801732,
+    "end": 1794124529.788567,
+    "deadline": 30
+  },
+  {
+    "name": "graph4-alloc-lines-admitInputScopes",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-list=admitInputScopes",
+      "-sample_index=alloc_space",
+      ".git/finalization/graph4.test",
+      ".git/finalization/graph4-heap.pprof"
+    ],
+    "exit_code": 0,
+    "start": 1794124529.788924,
+    "end": 1794124529.905875,
+    "deadline": 30
+  },
+  {
+    "name": "graph4-alloc-lines-clone",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-list=clone",
+      "-sample_index=alloc_space",
+      ".git/finalization/graph4.test",
+      ".git/finalization/graph4-heap.pprof"
+    ],
+    "exit_code": 2,
+    "start": 1794124529.906253,
+    "end": 1794124530.0139542,
+    "deadline": 30
+  },
+  {
+    "name": "graph4-alloc-lines-admitCached",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-list=admitCached",
+      "-sample_index=alloc_space",
+      ".git/finalization/graph4.test",
+      ".git/finalization/graph4-heap.pprof"
+    ],
+    "exit_code": 2,
+    "start": 1794124530.014413,
+    "end": 1794124530.1313012,
+    "deadline": 30
+  },
+  {
+    "name": "graph4-alloc-lines-startCompilation",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-list=startCompilation",
+      "-sample_index=alloc_space",
+      ".git/finalization/graph4.test",
+      ".git/finalization/graph4-heap.pprof"
+    ],
+    "exit_code": 2,
+    "start": 1794124530.131714,
+    "end": 1794124530.244001,
+    "deadline": 30
+  },
+  {
+    "name": "graph4-alloc-lines-prepareSource",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-list=prepareSource",
+      "-sample_index=alloc_space",
+      ".git/finalization/graph4.test",
+      ".git/finalization/graph4-heap.pprof"
+    ],
+    "exit_code": 2,
+    "start": 1794124530.244388,
+    "end": 1794124530.369326,
+    "deadline": 30
+  },
+  {
+    "name": "input4-cpu-flat",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-top",
+      "-nodecount=30",
+      ".git/finalization/input4.test",
+      ".git/finalization/input4-cpu.pprof"
+    ],
+    "exit_code": 0,
+    "start": 1794124530.3697212,
+    "end": 1794124530.4913862,
+    "deadline": 30
+  },
+  {
+    "name": "input4-cpu-cumulative",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-top",
+      "-cum",
+      "-nodecount=30",
+      ".git/finalization/input4.test",
+      ".git/finalization/input4-cpu.pprof"
+    ],
+    "exit_code": 0,
+    "start": 1794124530.491849,
+    "end": 1794124530.683542,
+    "deadline": 30
+  },
+  {
+    "name": "input4-alloc",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-top",
+      "-sample_index=alloc_space",
+      "-nodecount=30",
+      ".git/finalization/input4.test",
+      ".git/finalization/input4-heap.pprof"
+    ],
+    "exit_code": 0,
+    "start": 1794124530.683987,
+    "end": 1794124530.794142,
+    "deadline": 30
+  },
+  {
+    "name": "input4-heap",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-top",
+      "-sample_index=inuse_space",
+      "-nodecount=30",
+      ".git/finalization/input4.test",
+      ".git/finalization/input4-heap.pprof"
+    ],
+    "exit_code": 0,
+    "start": 1794124530.7945511,
+    "end": 1794124530.905262,
+    "deadline": 30
+  },
+  {
+    "name": "input4-mutex",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-top",
+      "-nodecount=30",
+      ".git/finalization/input4.test",
+      ".git/finalization/input4-mutex.pprof"
+    ],
+    "exit_code": 0,
+    "start": 1794124530.9057002,
+    "end": 1794124531.0137632,
+    "deadline": 30
+  },
+  {
+    "name": "input4-block",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-top",
+      "-nodecount=30",
+      ".git/finalization/input4.test",
+      ".git/finalization/input4-block.pprof"
+    ],
+    "exit_code": 0,
+    "start": 1794124531.0142012,
+    "end": 1794124531.124802,
+    "deadline": 30
+  },
+  {
+    "name": "input4-alloc-lines-admitInputScopes",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-list=admitInputScopes",
+      "-sample_index=alloc_space",
+      ".git/finalization/input4.test",
+      ".git/finalization/input4-heap.pprof"
+    ],
+    "exit_code": 0,
+    "start": 1794124531.125272,
+    "end": 1794124531.2512472,
+    "deadline": 30
+  },
+  {
+    "name": "input4-alloc-lines-clone",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-list=clone",
+      "-sample_index=alloc_space",
+      ".git/finalization/input4.test",
+      ".git/finalization/input4-heap.pprof"
+    ],
+    "exit_code": 2,
+    "start": 1794124531.251743,
+    "end": 1794124531.450241,
+    "deadline": 30
+  },
+  {
+    "name": "input4-alloc-lines-admitCached",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-list=admitCached",
+      "-sample_index=alloc_space",
+      ".git/finalization/input4.test",
+      ".git/finalization/input4-heap.pprof"
+    ],
+    "exit_code": 2,
+    "start": 1794124531.45076,
+    "end": 1794124531.565803,
+    "deadline": 30
+  },
+  {
+    "name": "input4-alloc-lines-startCompilation",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-list=startCompilation",
+      "-sample_index=alloc_space",
+      ".git/finalization/input4.test",
+      ".git/finalization/input4-heap.pprof"
+    ],
+    "exit_code": 2,
+    "start": 1794124531.566675,
+    "end": 1794124531.6741009,
+    "deadline": 30
+  },
+  {
+    "name": "input4-alloc-lines-prepareSource",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-list=prepareSource",
+      "-sample_index=alloc_space",
+      ".git/finalization/input4.test",
+      ".git/finalization/input4-heap.pprof"
+    ],
+    "exit_code": 2,
+    "start": 1794124531.6745868,
+    "end": 1794124531.786135,
+    "deadline": 30
+  },
+  {
+    "name": "matched-benchstat",
+    "command": [
+      "benchstat",
+      ".git/finalization/matched-baseline.txt",
+      ".git/finalization/matched-graph4.txt",
+      ".git/finalization/matched-input4.txt"
+    ],
+    "exit_code": 0,
+    "start": 1794124531.798869,
+    "end": 1794124531.818579,
+    "deadline": 30
+  }
+]

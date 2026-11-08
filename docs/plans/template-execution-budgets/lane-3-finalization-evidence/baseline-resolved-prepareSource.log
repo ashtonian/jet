@@ -1,0 +1,18 @@
+Total: 3.08GB
+ROUTINE ======================== github.com/CloudyKit/jet/v6.(*parseAdmission).prepareSource in .git/finalization/baseline-source/compile.go
+  511.10MB   511.10MB (flat, cum) 16.21% of Total
+         .          .    226:func (a *parseAdmission) prepareSource(name string) {
+         .          .    227:	a.step(1)
+         .          .    228:	if a.active[name] {
+         .          .    229:		panic(compilationAbort{fmt.Errorf("%w: %s", ErrTemplateCycle, parseDiagnostic(name))})
+         .          .    230:	}
+         .          .    231:	if _, ok := a.sources[name]; !ok {
+         .          .    232:		if a.opts.MaxTemplates > 0 && uint64(len(a.sources)) >= a.opts.MaxTemplates {
+         .          .    233:			a.limit("templates", a.opts.MaxTemplates)
+         .          .    234:		}
+  511.10MB   511.10MB    235:		a.sources[name] = 0
+         .          .    236:	}
+         .          .    237:}
+         .          .    238:
+         .          .    239:func (a *parseAdmission) source(name string, size int64) {
+         .          .    240:	a.prepareSource(name)

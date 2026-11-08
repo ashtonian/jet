@@ -1,0 +1,1118 @@
+{
+  "matched": {
+    "baseline": {
+      "BenchmarkFinalReview/legacy_stream/header_interpolation/text-2": {
+        "n": 6,
+        "ns": 137.0,
+        "bytes": 24.0,
+        "allocs": 1.0
+      },
+      "BenchmarkFinalReview/legacy_stream/header_interpolation/html-2": {
+        "n": 6,
+        "ns": 153.14999999999998,
+        "bytes": 24.0,
+        "allocs": 1.0
+      },
+      "BenchmarkFinalReview/legacy_stream/include/text-2": {
+        "n": 6,
+        "ns": 672.0999999999999,
+        "bytes": 968.0,
+        "allocs": 13.0
+      },
+      "BenchmarkFinalReview/legacy_stream/include/html-2": {
+        "n": 6,
+        "ns": 655.35,
+        "bytes": 968.0,
+        "allocs": 13.0
+      },
+      "BenchmarkFinalReview/legacy_owned/header_interpolation/text-2": {
+        "n": 6,
+        "ns": 169.5,
+        "bytes": 160.0,
+        "allocs": 4.0
+      },
+      "BenchmarkFinalReview/legacy_owned/header_interpolation/html-2": {
+        "n": 6,
+        "ns": 186.35000000000002,
+        "bytes": 160.0,
+        "allocs": 4.0
+      },
+      "BenchmarkFinalReview/legacy_owned/include/text-2": {
+        "n": 6,
+        "ns": 685.2,
+        "bytes": 1104.0,
+        "allocs": 16.0
+      },
+      "BenchmarkFinalReview/legacy_owned/include/html-2": {
+        "n": 6,
+        "ns": 746.1500000000001,
+        "bytes": 1104.0,
+        "allocs": 16.0
+      },
+      "BenchmarkFinalReview/metered_background_stream/header_interpolation/text-2": {
+        "n": 6,
+        "ns": 519.2,
+        "bytes": 1000.0,
+        "allocs": 11.0
+      },
+      "BenchmarkFinalReview/metered_background_stream/header_interpolation/html-2": {
+        "n": 6,
+        "ns": 552.5,
+        "bytes": 1000.0,
+        "allocs": 11.0
+      },
+      "BenchmarkFinalReview/metered_background_stream/include/text-2": {
+        "n": 6,
+        "ns": 871.0,
+        "bytes": 1096.0,
+        "allocs": 16.0
+      },
+      "BenchmarkFinalReview/metered_background_stream/include/html-2": {
+        "n": 6,
+        "ns": 900.9,
+        "bytes": 1096.0,
+        "allocs": 16.0
+      },
+      "BenchmarkFinalReview/metered_live_stream/header_interpolation/text-2": {
+        "n": 6,
+        "ns": 546.8499999999999,
+        "bytes": 1000.0,
+        "allocs": 11.0
+      },
+      "BenchmarkFinalReview/metered_live_stream/header_interpolation/html-2": {
+        "n": 6,
+        "ns": 573.8,
+        "bytes": 1000.0,
+        "allocs": 11.0
+      },
+      "BenchmarkFinalReview/metered_live_stream/include/text-2": {
+        "n": 6,
+        "ns": 891.85,
+        "bytes": 1096.0,
+        "allocs": 16.0
+      },
+      "BenchmarkFinalReview/metered_live_stream/include/html-2": {
+        "n": 6,
+        "ns": 874.7,
+        "bytes": 1096.0,
+        "allocs": 16.0
+      },
+      "BenchmarkFinalReview/restricted_owned/header_interpolation/text-2": {
+        "n": 6,
+        "ns": 923.4000000000001,
+        "bytes": 1616.0,
+        "allocs": 17.0
+      },
+      "BenchmarkFinalReview/restricted_owned/header_interpolation/html-2": {
+        "n": 6,
+        "ns": 950.6,
+        "bytes": 1616.0,
+        "allocs": 17.0
+      },
+      "BenchmarkFinalReview/restricted_owned/include/text-2": {
+        "n": 6,
+        "ns": 1309.0,
+        "bytes": 1712.0,
+        "allocs": 22.0
+      },
+      "BenchmarkFinalReview/restricted_owned/include/html-2": {
+        "n": 6,
+        "ns": 1343.0,
+        "bytes": 1712.0,
+        "allocs": 22.0
+      }
+    },
+    "graph4": {
+      "BenchmarkFinalReview/legacy_stream/header_interpolation/text-2": {
+        "n": 6,
+        "ns": 154.05,
+        "bytes": 24.0,
+        "allocs": 1.0
+      },
+      "BenchmarkFinalReview/legacy_stream/header_interpolation/html-2": {
+        "n": 6,
+        "ns": 164.89999999999998,
+        "bytes": 24.0,
+        "allocs": 1.0
+      },
+      "BenchmarkFinalReview/legacy_stream/include/text-2": {
+        "n": 6,
+        "ns": 357.75,
+        "bytes": 120.0,
+        "allocs": 6.0
+      },
+      "BenchmarkFinalReview/legacy_stream/include/html-2": {
+        "n": 6,
+        "ns": 357.0,
+        "bytes": 120.0,
+        "allocs": 6.0
+      },
+      "BenchmarkFinalReview/legacy_owned/header_interpolation/text-2": {
+        "n": 6,
+        "ns": 190.75,
+        "bytes": 160.0,
+        "allocs": 4.0
+      },
+      "BenchmarkFinalReview/legacy_owned/header_interpolation/html-2": {
+        "n": 6,
+        "ns": 210.35,
+        "bytes": 160.0,
+        "allocs": 4.0
+      },
+      "BenchmarkFinalReview/legacy_owned/include/text-2": {
+        "n": 6,
+        "ns": 383.35,
+        "bytes": 256.0,
+        "allocs": 9.0
+      },
+      "BenchmarkFinalReview/legacy_owned/include/html-2": {
+        "n": 6,
+        "ns": 397.8,
+        "bytes": 256.0,
+        "allocs": 9.0
+      },
+      "BenchmarkFinalReview/metered_background_stream/header_interpolation/text-2": {
+        "n": 6,
+        "ns": 274.4,
+        "bytes": 152.0,
+        "allocs": 4.0
+      },
+      "BenchmarkFinalReview/metered_background_stream/header_interpolation/html-2": {
+        "n": 6,
+        "ns": 285.04999999999995,
+        "bytes": 152.0,
+        "allocs": 4.0
+      },
+      "BenchmarkFinalReview/metered_background_stream/include/text-2": {
+        "n": 6,
+        "ns": 529.25,
+        "bytes": 248.0,
+        "allocs": 9.0
+      },
+      "BenchmarkFinalReview/metered_background_stream/include/html-2": {
+        "n": 6,
+        "ns": 522.4,
+        "bytes": 248.0,
+        "allocs": 9.0
+      },
+      "BenchmarkFinalReview/metered_live_stream/header_interpolation/text-2": {
+        "n": 6,
+        "ns": 281.20000000000005,
+        "bytes": 152.0,
+        "allocs": 4.0
+      },
+      "BenchmarkFinalReview/metered_live_stream/header_interpolation/html-2": {
+        "n": 6,
+        "ns": 301.2,
+        "bytes": 152.0,
+        "allocs": 4.0
+      },
+      "BenchmarkFinalReview/metered_live_stream/include/text-2": {
+        "n": 6,
+        "ns": 527.95,
+        "bytes": 248.0,
+        "allocs": 9.0
+      },
+      "BenchmarkFinalReview/metered_live_stream/include/html-2": {
+        "n": 6,
+        "ns": 539.4000000000001,
+        "bytes": 248.0,
+        "allocs": 9.0
+      },
+      "BenchmarkFinalReview/restricted_owned/header_interpolation/text-2": {
+        "n": 6,
+        "ns": 621.4,
+        "bytes": 768.0,
+        "allocs": 10.0
+      },
+      "BenchmarkFinalReview/restricted_owned/header_interpolation/html-2": {
+        "n": 6,
+        "ns": 632.3,
+        "bytes": 768.0,
+        "allocs": 10.0
+      },
+      "BenchmarkFinalReview/restricted_owned/include/text-2": {
+        "n": 6,
+        "ns": 958.9,
+        "bytes": 864.0,
+        "allocs": 15.0
+      },
+      "BenchmarkFinalReview/restricted_owned/include/html-2": {
+        "n": 6,
+        "ns": 915.05,
+        "bytes": 864.0,
+        "allocs": 15.0
+      }
+    },
+    "input4": {
+      "BenchmarkFinalReview/legacy_stream/header_interpolation/text-2": {
+        "n": 6,
+        "ns": 151.7,
+        "bytes": 24.0,
+        "allocs": 1.0
+      },
+      "BenchmarkFinalReview/legacy_stream/header_interpolation/html-2": {
+        "n": 6,
+        "ns": 161.55,
+        "bytes": 24.0,
+        "allocs": 1.0
+      },
+      "BenchmarkFinalReview/legacy_stream/include/text-2": {
+        "n": 6,
+        "ns": 341.1,
+        "bytes": 120.0,
+        "allocs": 6.0
+      },
+      "BenchmarkFinalReview/legacy_stream/include/html-2": {
+        "n": 6,
+        "ns": 354.0,
+        "bytes": 120.0,
+        "allocs": 6.0
+      },
+      "BenchmarkFinalReview/legacy_owned/header_interpolation/text-2": {
+        "n": 6,
+        "ns": 185.64999999999998,
+        "bytes": 160.0,
+        "allocs": 4.0
+      },
+      "BenchmarkFinalReview/legacy_owned/header_interpolation/html-2": {
+        "n": 6,
+        "ns": 209.45,
+        "bytes": 160.0,
+        "allocs": 4.0
+      },
+      "BenchmarkFinalReview/legacy_owned/include/text-2": {
+        "n": 6,
+        "ns": 402.4,
+        "bytes": 256.0,
+        "allocs": 9.0
+      },
+      "BenchmarkFinalReview/legacy_owned/include/html-2": {
+        "n": 6,
+        "ns": 408.1,
+        "bytes": 256.0,
+        "allocs": 9.0
+      },
+      "BenchmarkFinalReview/metered_background_stream/header_interpolation/text-2": {
+        "n": 6,
+        "ns": 273.8,
+        "bytes": 152.0,
+        "allocs": 4.0
+      },
+      "BenchmarkFinalReview/metered_background_stream/header_interpolation/html-2": {
+        "n": 6,
+        "ns": 294.7,
+        "bytes": 152.0,
+        "allocs": 4.0
+      },
+      "BenchmarkFinalReview/metered_background_stream/include/text-2": {
+        "n": 6,
+        "ns": 535.45,
+        "bytes": 248.0,
+        "allocs": 9.0
+      },
+      "BenchmarkFinalReview/metered_background_stream/include/html-2": {
+        "n": 6,
+        "ns": 541.7,
+        "bytes": 248.0,
+        "allocs": 9.0
+      },
+      "BenchmarkFinalReview/metered_live_stream/header_interpolation/text-2": {
+        "n": 6,
+        "ns": 297.04999999999995,
+        "bytes": 152.0,
+        "allocs": 4.0
+      },
+      "BenchmarkFinalReview/metered_live_stream/header_interpolation/html-2": {
+        "n": 6,
+        "ns": 307.0,
+        "bytes": 152.0,
+        "allocs": 4.0
+      },
+      "BenchmarkFinalReview/metered_live_stream/include/text-2": {
+        "n": 6,
+        "ns": 552.85,
+        "bytes": 248.0,
+        "allocs": 9.0
+      },
+      "BenchmarkFinalReview/metered_live_stream/include/html-2": {
+        "n": 6,
+        "ns": 561.1500000000001,
+        "bytes": 248.0,
+        "allocs": 9.0
+      },
+      "BenchmarkFinalReview/restricted_owned/header_interpolation/text-2": {
+        "n": 6,
+        "ns": 683.25,
+        "bytes": 720.0,
+        "allocs": 9.0
+      },
+      "BenchmarkFinalReview/restricted_owned/header_interpolation/html-2": {
+        "n": 6,
+        "ns": 673.95,
+        "bytes": 720.0,
+        "allocs": 9.0
+      },
+      "BenchmarkFinalReview/restricted_owned/include/text-2": {
+        "n": 6,
+        "ns": 976.85,
+        "bytes": 816.0,
+        "allocs": 14.0
+      },
+      "BenchmarkFinalReview/restricted_owned/include/html-2": {
+        "n": 6,
+        "ns": 1036.5,
+        "bytes": 816.0,
+        "allocs": 14.0
+      }
+    }
+  },
+  "screen": {
+    "baseline": {
+      "BenchmarkAdmissionLookup/1-2": {
+        "n": 3,
+        "ns": 435.8,
+        "bytes": 896.0,
+        "allocs": 10
+      },
+      "BenchmarkAdmissionLookup/3-2": {
+        "n": 3,
+        "ns": 659.3,
+        "bytes": 896.0,
+        "allocs": 10
+      },
+      "BenchmarkAdmissionLookup/4-2": {
+        "n": 3,
+        "ns": 726.9,
+        "bytes": 896.0,
+        "allocs": 10
+      },
+      "BenchmarkAdmissionLookup/5-2": {
+        "n": 3,
+        "ns": 903.5,
+        "bytes": 896.0,
+        "allocs": 10
+      },
+      "BenchmarkAdmissionLookup/7-2": {
+        "n": 3,
+        "ns": 1162.0,
+        "bytes": 896.0,
+        "allocs": 10
+      },
+      "BenchmarkAdmissionLookup/8-2": {
+        "n": 3,
+        "ns": 1283.0,
+        "bytes": 896.0,
+        "allocs": 10
+      },
+      "BenchmarkAdmissionLookup/9-2": {
+        "n": 3,
+        "ns": 1799.0,
+        "bytes": 1680.0,
+        "allocs": 16
+      },
+      "BenchmarkAdmissionLookup/15-2": {
+        "n": 3,
+        "ns": 3238.0,
+        "bytes": 3216.0,
+        "allocs": 20
+      },
+      "BenchmarkAdmissionLookup/16-2": {
+        "n": 3,
+        "ns": 3391.0,
+        "bytes": 3216.0,
+        "allocs": 20
+      },
+      "BenchmarkAdmissionLookup/17-2": {
+        "n": 3,
+        "ns": 3475.0,
+        "bytes": 3216.0,
+        "allocs": 20
+      },
+      "BenchmarkAdmissionLookup/64-2": {
+        "n": 3,
+        "ns": 13258.0,
+        "bytes": 12048.0,
+        "allocs": 28
+      },
+      "BenchmarkAdmissionInput/empty-2": {
+        "n": 3,
+        "ns": 630.8,
+        "bytes": 1146.0,
+        "allocs": 14
+      },
+      "BenchmarkAdmissionInput/scalar-2": {
+        "n": 3,
+        "ns": 612.0,
+        "bytes": 1146.0,
+        "allocs": 14
+      },
+      "BenchmarkAdmissionInput/nested-2": {
+        "n": 3,
+        "ns": 5481.0,
+        "bytes": 7106.0,
+        "allocs": 78
+      },
+      "BenchmarkAdmissionInput/shared-2": {
+        "n": 3,
+        "ns": 2328.0,
+        "bytes": 2530.0,
+        "allocs": 31
+      },
+      "BenchmarkAdmissionInput/large-2": {
+        "n": 3,
+        "ns": 47764.0,
+        "bytes": 24437.0,
+        "allocs": 659
+      },
+      "BenchmarkAdmissionCold/1-2": {
+        "n": 3,
+        "ns": 1636.0,
+        "bytes": 7032.0,
+        "allocs": 43
+      },
+      "BenchmarkAdmissionCold/4-2": {
+        "n": 3,
+        "ns": 9381.0,
+        "bytes": 23797.0,
+        "allocs": 154
+      },
+      "BenchmarkAdmissionCold/16-2": {
+        "n": 3,
+        "ns": 38856.0,
+        "bytes": 95676.0,
+        "allocs": 585
+      },
+      "BenchmarkAdmissionCold/64-2": {
+        "n": 3,
+        "ns": 153950.0,
+        "bytes": 384023.0,
+        "allocs": 2252
+      }
+    },
+    "lazy0": {
+      "BenchmarkAdmissionLookup/1-2": {
+        "n": 3,
+        "ns": 320.5,
+        "bytes": 536.0,
+        "allocs": 9
+      },
+      "BenchmarkAdmissionLookup/3-2": {
+        "n": 3,
+        "ns": 467.9,
+        "bytes": 776.0,
+        "allocs": 13
+      },
+      "BenchmarkAdmissionLookup/4-2": {
+        "n": 3,
+        "ns": 558.5,
+        "bytes": 776.0,
+        "allocs": 13
+      },
+      "BenchmarkAdmissionLookup/5-2": {
+        "n": 3,
+        "ns": 652.6,
+        "bytes": 1096.0,
+        "allocs": 15
+      },
+      "BenchmarkAdmissionLookup/7-2": {
+        "n": 3,
+        "ns": 728.0,
+        "bytes": 1096.0,
+        "allocs": 15
+      },
+      "BenchmarkAdmissionLookup/8-2": {
+        "n": 3,
+        "ns": 767.6,
+        "bytes": 1096.0,
+        "allocs": 15
+      },
+      "BenchmarkAdmissionLookup/9-2": {
+        "n": 3,
+        "ns": 1265.0,
+        "bytes": 2520.0,
+        "allocs": 23
+      },
+      "BenchmarkAdmissionLookup/15-2": {
+        "n": 3,
+        "ns": 2295.0,
+        "bytes": 4056.0,
+        "allocs": 27
+      },
+      "BenchmarkAdmissionLookup/16-2": {
+        "n": 3,
+        "ns": 2268.0,
+        "bytes": 4056.0,
+        "allocs": 27
+      },
+      "BenchmarkAdmissionLookup/17-2": {
+        "n": 3,
+        "ns": 2467.0,
+        "bytes": 5464.0,
+        "allocs": 29
+      },
+      "BenchmarkAdmissionLookup/64-2": {
+        "n": 3,
+        "ns": 8852.0,
+        "bytes": 17113.0,
+        "allocs": 39
+      },
+      "BenchmarkAdmissionInput/empty-2": {
+        "n": 3,
+        "ns": 491.3,
+        "bytes": 690.0,
+        "allocs": 11
+      },
+      "BenchmarkAdmissionInput/scalar-2": {
+        "n": 3,
+        "ns": 506.5,
+        "bytes": 690.0,
+        "allocs": 11
+      },
+      "BenchmarkAdmissionInput/nested-2": {
+        "n": 3,
+        "ns": 4353.0,
+        "bytes": 5298.0,
+        "allocs": 71
+      },
+      "BenchmarkAdmissionInput/shared-2": {
+        "n": 3,
+        "ns": 1891.0,
+        "bytes": 1658.0,
+        "allocs": 27
+      },
+      "BenchmarkAdmissionInput/large-2": {
+        "n": 3,
+        "ns": 40572.0,
+        "bytes": 23566.0,
+        "allocs": 655
+      },
+      "BenchmarkAdmissionCold/1-2": {
+        "n": 3,
+        "ns": 1626.0,
+        "bytes": 6736.0,
+        "allocs": 45
+      },
+      "BenchmarkAdmissionCold/4-2": {
+        "n": 3,
+        "ns": 8415.0,
+        "bytes": 23744.0,
+        "allocs": 160
+      },
+      "BenchmarkAdmissionCold/16-2": {
+        "n": 3,
+        "ns": 39140.0,
+        "bytes": 96587.0,
+        "allocs": 595
+      },
+      "BenchmarkAdmissionCold/64-2": {
+        "n": 3,
+        "ns": 152200.0,
+        "bytes": 389185.0,
+        "allocs": 2266
+      }
+    },
+    "input4": {
+      "BenchmarkAdmissionLookup/1-2": {
+        "n": 3,
+        "ns": 158.2,
+        "bytes": 48.0,
+        "allocs": 3
+      },
+      "BenchmarkAdmissionLookup/3-2": {
+        "n": 3,
+        "ns": 209.8,
+        "bytes": 48.0,
+        "allocs": 3
+      },
+      "BenchmarkAdmissionLookup/4-2": {
+        "n": 3,
+        "ns": 239.6,
+        "bytes": 48.0,
+        "allocs": 3
+      },
+      "BenchmarkAdmissionLookup/5-2": {
+        "n": 3,
+        "ns": 552.9,
+        "bytes": 816.0,
+        "allocs": 9
+      },
+      "BenchmarkAdmissionLookup/7-2": {
+        "n": 3,
+        "ns": 593.7,
+        "bytes": 816.0,
+        "allocs": 9
+      },
+      "BenchmarkAdmissionLookup/8-2": {
+        "n": 3,
+        "ns": 683.9,
+        "bytes": 816.0,
+        "allocs": 9
+      },
+      "BenchmarkAdmissionLookup/9-2": {
+        "n": 3,
+        "ns": 1237.0,
+        "bytes": 2240.0,
+        "allocs": 17
+      },
+      "BenchmarkAdmissionLookup/15-2": {
+        "n": 3,
+        "ns": 2105.0,
+        "bytes": 3776.0,
+        "allocs": 21
+      },
+      "BenchmarkAdmissionLookup/16-2": {
+        "n": 3,
+        "ns": 2083.0,
+        "bytes": 3776.0,
+        "allocs": 21
+      },
+      "BenchmarkAdmissionLookup/17-2": {
+        "n": 3,
+        "ns": 2246.0,
+        "bytes": 5184.0,
+        "allocs": 23
+      },
+      "BenchmarkAdmissionLookup/64-2": {
+        "n": 3,
+        "ns": 8352.0,
+        "bytes": 16833.0,
+        "allocs": 33
+      },
+      "BenchmarkAdmissionInput/empty-2": {
+        "n": 3,
+        "ns": 302.8,
+        "bytes": 202.0,
+        "allocs": 5
+      },
+      "BenchmarkAdmissionInput/scalar-2": {
+        "n": 3,
+        "ns": 321.2,
+        "bytes": 202.0,
+        "allocs": 5
+      },
+      "BenchmarkAdmissionInput/nested-2": {
+        "n": 3,
+        "ns": 4011.0,
+        "bytes": 4810.0,
+        "allocs": 65
+      },
+      "BenchmarkAdmissionInput/shared-2": {
+        "n": 3,
+        "ns": 1689.0,
+        "bytes": 1170.0,
+        "allocs": 21
+      },
+      "BenchmarkAdmissionInput/large-2": {
+        "n": 3,
+        "ns": 37739.0,
+        "bytes": 23079.0,
+        "allocs": 649
+      },
+      "BenchmarkAdmissionCold/1-2": {
+        "n": 3,
+        "ns": 1373.0,
+        "bytes": 6248.0,
+        "allocs": 39
+      },
+      "BenchmarkAdmissionCold/4-2": {
+        "n": 3,
+        "ns": 7755.0,
+        "bytes": 23016.0,
+        "allocs": 150
+      },
+      "BenchmarkAdmissionCold/16-2": {
+        "n": 3,
+        "ns": 36743.0,
+        "bytes": 96312.0,
+        "allocs": 589
+      },
+      "BenchmarkAdmissionCold/64-2": {
+        "n": 3,
+        "ns": 147643.0,
+        "bytes": 388907.0,
+        "allocs": 2260
+      }
+    },
+    "inline8": {
+      "BenchmarkAdmissionLookup/1-2": {
+        "n": 3,
+        "ns": 178.5,
+        "bytes": 48.0,
+        "allocs": 3
+      },
+      "BenchmarkAdmissionLookup/3-2": {
+        "n": 3,
+        "ns": 214.7,
+        "bytes": 48.0,
+        "allocs": 3
+      },
+      "BenchmarkAdmissionLookup/4-2": {
+        "n": 3,
+        "ns": 243.8,
+        "bytes": 48.0,
+        "allocs": 3
+      },
+      "BenchmarkAdmissionLookup/5-2": {
+        "n": 3,
+        "ns": 266.2,
+        "bytes": 48.0,
+        "allocs": 3
+      },
+      "BenchmarkAdmissionLookup/7-2": {
+        "n": 3,
+        "ns": 323.8,
+        "bytes": 48.0,
+        "allocs": 3
+      },
+      "BenchmarkAdmissionLookup/8-2": {
+        "n": 3,
+        "ns": 372.1,
+        "bytes": 48.0,
+        "allocs": 3
+      },
+      "BenchmarkAdmissionLookup/9-2": {
+        "n": 3,
+        "ns": 829.7,
+        "bytes": 1568.0,
+        "allocs": 13
+      },
+      "BenchmarkAdmissionLookup/15-2": {
+        "n": 3,
+        "ns": 1697.0,
+        "bytes": 3104.0,
+        "allocs": 17
+      },
+      "BenchmarkAdmissionLookup/16-2": {
+        "n": 3,
+        "ns": 1829.0,
+        "bytes": 3104.0,
+        "allocs": 17
+      },
+      "BenchmarkAdmissionLookup/17-2": {
+        "n": 3,
+        "ns": 2061.0,
+        "bytes": 4512.0,
+        "allocs": 19
+      },
+      "BenchmarkAdmissionLookup/64-2": {
+        "n": 3,
+        "ns": 7803.0,
+        "bytes": 16161.0,
+        "allocs": 29
+      },
+      "BenchmarkAdmissionInput/empty-2": {
+        "n": 3,
+        "ns": 301.3,
+        "bytes": 202.0,
+        "allocs": 5
+      },
+      "BenchmarkAdmissionInput/scalar-2": {
+        "n": 3,
+        "ns": 330.6,
+        "bytes": 202.0,
+        "allocs": 5
+      },
+      "BenchmarkAdmissionInput/nested-2": {
+        "n": 3,
+        "ns": 3981.0,
+        "bytes": 4810.0,
+        "allocs": 65
+      },
+      "BenchmarkAdmissionInput/shared-2": {
+        "n": 3,
+        "ns": 1704.0,
+        "bytes": 1170.0,
+        "allocs": 21
+      },
+      "BenchmarkAdmissionInput/large-2": {
+        "n": 3,
+        "ns": 40866.0,
+        "bytes": 23079.0,
+        "allocs": 649
+      },
+      "BenchmarkAdmissionCold/1-2": {
+        "n": 3,
+        "ns": 1456.0,
+        "bytes": 6248.0,
+        "allocs": 39
+      },
+      "BenchmarkAdmissionCold/4-2": {
+        "n": 3,
+        "ns": 7513.0,
+        "bytes": 23016.0,
+        "allocs": 150
+      },
+      "BenchmarkAdmissionCold/16-2": {
+        "n": 3,
+        "ns": 39055.0,
+        "bytes": 95640.0,
+        "allocs": 585
+      },
+      "BenchmarkAdmissionCold/64-2": {
+        "n": 3,
+        "ns": 146462.0,
+        "bytes": 388246.0,
+        "allocs": 2256
+      }
+    },
+    "inline16": {
+      "BenchmarkAdmissionLookup/1-2": {
+        "n": 3,
+        "ns": 161.4,
+        "bytes": 48.0,
+        "allocs": 3
+      },
+      "BenchmarkAdmissionLookup/3-2": {
+        "n": 3,
+        "ns": 221.1,
+        "bytes": 48.0,
+        "allocs": 3
+      },
+      "BenchmarkAdmissionLookup/4-2": {
+        "n": 3,
+        "ns": 252.4,
+        "bytes": 48.0,
+        "allocs": 3
+      },
+      "BenchmarkAdmissionLookup/5-2": {
+        "n": 3,
+        "ns": 282.0,
+        "bytes": 48.0,
+        "allocs": 3
+      },
+      "BenchmarkAdmissionLookup/7-2": {
+        "n": 3,
+        "ns": 339.2,
+        "bytes": 48.0,
+        "allocs": 3
+      },
+      "BenchmarkAdmissionLookup/8-2": {
+        "n": 3,
+        "ns": 375.1,
+        "bytes": 48.0,
+        "allocs": 3
+      },
+      "BenchmarkAdmissionLookup/9-2": {
+        "n": 3,
+        "ns": 408.5,
+        "bytes": 48.0,
+        "allocs": 3
+      },
+      "BenchmarkAdmissionLookup/15-2": {
+        "n": 3,
+        "ns": 609.9,
+        "bytes": 48.0,
+        "allocs": 3
+      },
+      "BenchmarkAdmissionLookup/16-2": {
+        "n": 3,
+        "ns": 647.3,
+        "bytes": 48.0,
+        "allocs": 3
+      },
+      "BenchmarkAdmissionLookup/17-2": {
+        "n": 3,
+        "ns": 1554.0,
+        "bytes": 3104.0,
+        "allocs": 13
+      },
+      "BenchmarkAdmissionLookup/64-2": {
+        "n": 3,
+        "ns": 7731.0,
+        "bytes": 14753.0,
+        "allocs": 23
+      },
+      "BenchmarkAdmissionInput/empty-2": {
+        "n": 3,
+        "ns": 324.1,
+        "bytes": 202.0,
+        "allocs": 5
+      },
+      "BenchmarkAdmissionInput/scalar-2": {
+        "n": 3,
+        "ns": 339.9,
+        "bytes": 202.0,
+        "allocs": 5
+      },
+      "BenchmarkAdmissionInput/nested-2": {
+        "n": 3,
+        "ns": 4162.0,
+        "bytes": 4810.0,
+        "allocs": 65
+      },
+      "BenchmarkAdmissionInput/shared-2": {
+        "n": 3,
+        "ns": 1754.0,
+        "bytes": 1170.0,
+        "allocs": 21
+      },
+      "BenchmarkAdmissionInput/large-2": {
+        "n": 3,
+        "ns": 41358.0,
+        "bytes": 23080.0,
+        "allocs": 649
+      },
+      "BenchmarkAdmissionCold/1-2": {
+        "n": 3,
+        "ns": 1433.0,
+        "bytes": 6248.0,
+        "allocs": 39
+      },
+      "BenchmarkAdmissionCold/4-2": {
+        "n": 3,
+        "ns": 8255.0,
+        "bytes": 23016.0,
+        "allocs": 150
+      },
+      "BenchmarkAdmissionCold/16-2": {
+        "n": 3,
+        "ns": 35539.0,
+        "bytes": 92588.0,
+        "allocs": 571
+      },
+      "BenchmarkAdmissionCold/64-2": {
+        "n": 3,
+        "ns": 147901.0,
+        "bytes": 386847.0,
+        "allocs": 2250
+      }
+    },
+    "nopool": {
+      "BenchmarkAdmissionLookup/1-2": {
+        "n": 3,
+        "ns": 194.7,
+        "bytes": 400.0,
+        "allocs": 4
+      },
+      "BenchmarkAdmissionLookup/3-2": {
+        "n": 3,
+        "ns": 241.2,
+        "bytes": 400.0,
+        "allocs": 4
+      },
+      "BenchmarkAdmissionLookup/4-2": {
+        "n": 3,
+        "ns": 275.0,
+        "bytes": 400.0,
+        "allocs": 4
+      },
+      "BenchmarkAdmissionLookup/5-2": {
+        "n": 3,
+        "ns": 570.4,
+        "bytes": 1168.0,
+        "allocs": 10
+      },
+      "BenchmarkAdmissionLookup/7-2": {
+        "n": 3,
+        "ns": 672.4,
+        "bytes": 1168.0,
+        "allocs": 10
+      },
+      "BenchmarkAdmissionLookup/8-2": {
+        "n": 3,
+        "ns": 688.7,
+        "bytes": 1168.0,
+        "allocs": 10
+      },
+      "BenchmarkAdmissionLookup/9-2": {
+        "n": 3,
+        "ns": 1207.0,
+        "bytes": 2592.0,
+        "allocs": 18
+      },
+      "BenchmarkAdmissionLookup/15-2": {
+        "n": 3,
+        "ns": 2062.0,
+        "bytes": 4128.0,
+        "allocs": 22
+      },
+      "BenchmarkAdmissionLookup/16-2": {
+        "n": 3,
+        "ns": 2066.0,
+        "bytes": 4128.0,
+        "allocs": 22
+      },
+      "BenchmarkAdmissionLookup/17-2": {
+        "n": 3,
+        "ns": 2397.0,
+        "bytes": 5536.0,
+        "allocs": 24
+      },
+      "BenchmarkAdmissionLookup/64-2": {
+        "n": 3,
+        "ns": 8120.0,
+        "bytes": 17184.0,
+        "allocs": 34
+      },
+      "BenchmarkAdmissionInput/empty-2": {
+        "n": 3,
+        "ns": 313.2,
+        "bytes": 202.0,
+        "allocs": 5
+      },
+      "BenchmarkAdmissionInput/scalar-2": {
+        "n": 3,
+        "ns": 333.4,
+        "bytes": 202.0,
+        "allocs": 5
+      },
+      "BenchmarkAdmissionInput/nested-2": {
+        "n": 3,
+        "ns": 4214.0,
+        "bytes": 4810.0,
+        "allocs": 65
+      },
+      "BenchmarkAdmissionInput/shared-2": {
+        "n": 3,
+        "ns": 1740.0,
+        "bytes": 1170.0,
+        "allocs": 21
+      },
+      "BenchmarkAdmissionInput/large-2": {
+        "n": 3,
+        "ns": 41152.0,
+        "bytes": 23078.0,
+        "allocs": 649
+      },
+      "BenchmarkAdmissionCold/1-2": {
+        "n": 3,
+        "ns": 1458.0,
+        "bytes": 6600.0,
+        "allocs": 40
+      },
+      "BenchmarkAdmissionCold/4-2": {
+        "n": 3,
+        "ns": 8881.0,
+        "bytes": 23364.0,
+        "allocs": 151
+      },
+      "BenchmarkAdmissionCold/16-2": {
+        "n": 3,
+        "ns": 37377.0,
+        "bytes": 96654.0,
+        "allocs": 590
+      },
+      "BenchmarkAdmissionCold/64-2": {
+        "n": 3,
+        "ns": 153632.0,
+        "bytes": 389226.0,
+        "allocs": 2261
+      }
+    }
+  },
+  "diamond": {
+    "graph4": {
+      "ns": 1639.0,
+      "bytes": 2240.0,
+      "allocs": 17.0,
+      "n": 6
+    },
+    "walk": {
+      "ns": 4708.5,
+      "bytes": 2240.0,
+      "allocs": 17.0,
+      "n": 6
+    }
+  }
+}

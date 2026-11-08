@@ -1,0 +1,38 @@
+File: baseline.test
+Type: cpu
+Time: 2026-11-08 01:49:00 CST
+Duration: 2.51s, Total samples = 2450ms (97.54%)
+Showing nodes accounting for 1880ms, 76.73% of 2450ms total
+Dropped 46 nodes (cum <= 12.25ms)
+Showing top 30 nodes out of 99
+      flat  flat%   sum%        cum   cum%
+         0     0%     0%     1980ms 80.82%  runtime.systemstack
+         0     0%     0%     1440ms 58.78%  runtime.gcStart.func4
+    1440ms 58.78% 58.78%     1440ms 58.78%  runtime.kevent
+         0     0% 58.78%     1440ms 58.78%  runtime.netpoll
+         0     0% 58.78%     1440ms 58.78%  runtime.startTheWorldWithSema
+         0     0% 58.78%      310ms 12.65%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0% 58.78%      310ms 12.65%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0% 58.78%      310ms 12.65%  github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview.func1
+         0     0% 58.78%      310ms 12.65%  testing.(*B).launch
+         0     0% 58.78%      310ms 12.65%  testing.(*B).runN
+         0     0% 58.78%      280ms 11.43%  runtime.preemptM
+     280ms 11.43% 70.20%      280ms 11.43%  runtime.pthread_kill
+         0     0% 70.20%      280ms 11.43%  runtime.signalM (inline)
+         0     0% 70.20%      240ms  9.80%  runtime.forEachP.func1
+         0     0% 70.20%      240ms  9.80%  runtime.forEachPInternal
+         0     0% 70.20%      240ms  9.80%  runtime.preemptall
+         0     0% 70.20%      240ms  9.80%  runtime.preemptone
+         0     0% 70.20%      160ms  6.53%  github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext
+         0     0% 70.20%      160ms  6.53%  github.com/CloudyKit/jet/v6_test.init.0.func2
+         0     0% 70.20%      160ms  6.53%  runtime.(*mheap).alloc.func1
+         0     0% 70.20%      160ms  6.53%  runtime.(*mheap).allocSpan
+     160ms  6.53% 76.73%      160ms  6.53%  runtime.madvise
+         0     0% 76.73%      160ms  6.53%  runtime.sysUsed (inline)
+         0     0% 76.73%      160ms  6.53%  runtime.sysUsedOS (inline)
+         0     0% 76.73%      150ms  6.12%  github.com/CloudyKit/jet/v6_test.init.0.func1
+         0     0% 76.73%      110ms  4.49%  github.com/CloudyKit/jet/v6.(*Runtime).startCompilation
+         0     0% 76.73%      110ms  4.49%  runtime.gopreempt_m
+         0     0% 76.73%      110ms  4.49%  runtime.goschedImpl
+         0     0% 76.73%      110ms  4.49%  runtime.lock (inline)
+         0     0% 76.73%      110ms  4.49%  runtime.lock2

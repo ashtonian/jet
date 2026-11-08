@@ -1,0 +1,20 @@
+{
+  "head": "7f7f38a6ac54a34775dfc7cd108491e8e3e41e4e",
+  "command": [
+    "gate-lock",
+    "run-check",
+    "jet-lane3-selected-vet",
+    "--",
+    "go",
+    "vet",
+    "-p=2",
+    "./..."
+  ],
+  "exit_code": 0,
+  "execution_deadline_seconds": 180,
+  "term_cleanup_seconds": 5,
+  "log": "selected-vet.log",
+  "manifest": "selected-final-inputs.json",
+  "completion_observed_at": 1794126875.222976,
+  "time_note": "Execution completed with exit 0 in the supervised tool session; held admission time is in the durable log."
+}

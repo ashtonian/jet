@@ -1,0 +1,54 @@
+goos: darwin
+goarch: arm64
+pkg: github.com/CloudyKit/jet/v6
+cpu: Apple M2 Max
+BenchmarkFinalReview/restricted_owned/header_interpolation/text-2         	 2228828	       549.9 ns/op	     320 B/op	       7 allocs/op
+BenchmarkFinalReview/restricted_owned/header_interpolation/html-2         	 2138265	       571.0 ns/op	     320 B/op	       7 allocs/op
+BenchmarkFinalReview/restricted_owned/include/text-2                      	 1411999	       926.0 ns/op	     416 B/op	      12 allocs/op
+BenchmarkFinalReview/restricted_owned/include/html-2                      	 1408824	       852.7 ns/op	     416 B/op	      12 allocs/op
+PASS
+goos: darwin
+goarch: arm64
+pkg: github.com/CloudyKit/jet/v6
+cpu: Apple M2 Max
+BenchmarkFinalReview/restricted_owned/header_interpolation/text-2         	 2070531	       610.0 ns/op	     320 B/op	       7 allocs/op
+BenchmarkFinalReview/restricted_owned/header_interpolation/html-2         	 2035062	       596.8 ns/op	     320 B/op	       7 allocs/op
+BenchmarkFinalReview/restricted_owned/include/text-2                      	 1351150	       894.1 ns/op	     416 B/op	      12 allocs/op
+BenchmarkFinalReview/restricted_owned/include/html-2                      	 1345311	       842.3 ns/op	     416 B/op	      12 allocs/op
+PASS
+goos: darwin
+goarch: arm64
+pkg: github.com/CloudyKit/jet/v6
+cpu: Apple M2 Max
+BenchmarkFinalReview/restricted_owned/header_interpolation/text-2         	 2245441	       538.3 ns/op	     320 B/op	       7 allocs/op
+BenchmarkFinalReview/restricted_owned/header_interpolation/html-2         	 2087108	       605.5 ns/op	     320 B/op	       7 allocs/op
+BenchmarkFinalReview/restricted_owned/include/text-2                      	 1416562	       872.7 ns/op	     416 B/op	      12 allocs/op
+BenchmarkFinalReview/restricted_owned/include/html-2                      	 1418616	       843.3 ns/op	     416 B/op	      12 allocs/op
+PASS
+goos: darwin
+goarch: arm64
+pkg: github.com/CloudyKit/jet/v6
+cpu: Apple M2 Max
+BenchmarkFinalReview/restricted_owned/header_interpolation/text-2         	 1861039	       542.0 ns/op	     320 B/op	       7 allocs/op
+BenchmarkFinalReview/restricted_owned/header_interpolation/html-2         	 2128450	       610.0 ns/op	     320 B/op	       7 allocs/op
+BenchmarkFinalReview/restricted_owned/include/text-2                      	 1319940	       886.4 ns/op	     416 B/op	      12 allocs/op
+BenchmarkFinalReview/restricted_owned/include/html-2                      	 1338014	       928.8 ns/op	     416 B/op	      12 allocs/op
+PASS
+goos: darwin
+goarch: arm64
+pkg: github.com/CloudyKit/jet/v6
+cpu: Apple M2 Max
+BenchmarkFinalReview/restricted_owned/header_interpolation/text-2         	 2072550	       533.8 ns/op	     320 B/op	       7 allocs/op
+BenchmarkFinalReview/restricted_owned/header_interpolation/html-2         	 2011365	       576.4 ns/op	     320 B/op	       7 allocs/op
+BenchmarkFinalReview/restricted_owned/include/text-2                      	 1414125	       878.3 ns/op	     416 B/op	      12 allocs/op
+BenchmarkFinalReview/restricted_owned/include/html-2                      	 1357576	       848.7 ns/op	     416 B/op	      12 allocs/op
+PASS
+goos: darwin
+goarch: arm64
+pkg: github.com/CloudyKit/jet/v6
+cpu: Apple M2 Max
+BenchmarkFinalReview/restricted_owned/header_interpolation/text-2         	 2136246	       557.4 ns/op	     320 B/op	       7 allocs/op
+BenchmarkFinalReview/restricted_owned/header_interpolation/html-2         	 2137971	       576.0 ns/op	     320 B/op	       7 allocs/op
+BenchmarkFinalReview/restricted_owned/include/text-2                      	 1452001	       837.7 ns/op	     416 B/op	      12 allocs/op
+BenchmarkFinalReview/restricted_owned/include/html-2                      	 1398936	       862.9 ns/op	     416 B/op	      12 allocs/op
+PASS

@@ -1,0 +1,36 @@
+File: follow-active8.test
+Type: alloc_space
+Time: 2026-11-08 02:16:22 CST
+Showing nodes accounting for 503.53MB, 98.40% of 511.73MB total
+Dropped 33 nodes (cum <= 2.56MB)
+      flat  flat%   sum%        cum   cum%
+  102.01MB 19.93% 19.93%   503.53MB 98.40%  github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext
+   89.01MB 17.39% 37.33%    89.01MB 17.39%  bytes.(*Buffer).grow
+   88.01MB 17.20% 54.53%    88.01MB 17.20%  github.com/CloudyKit/jet/v6.(*dataPrinter).value
+      52MB 10.16% 64.69%   140.01MB 27.36%  github.com/CloudyKit/jet/v6.(*Runtime).printValue
+   49.50MB  9.67% 74.36%    49.50MB  9.67%  github.com/CloudyKit/jet/v6.(*Runtime).newScope (inline)
+   48.50MB  9.48% 83.84%    48.50MB  9.48%  github.com/CloudyKit/jet/v6.(*Runtime).outputWriter (inline)
+      30MB  5.86% 89.70%       30MB  5.86%  bytes.(*Buffer).String (inline)
+   29.50MB  5.76% 95.47%    29.50MB  5.76%  github.com/CloudyKit/jet/v6.(*Runtime).recover
+       6MB  1.17% 96.64%        6MB  1.17%  path.(*lazybuf).string (inline)
+    5.50MB  1.07% 97.71%       15MB  2.93%  path.Join
+    3.50MB  0.68% 98.40%     3.50MB  0.68%  path.(*lazybuf).append (inline)
+         0     0% 98.40%    89.01MB 17.39%  bytes.(*Buffer).Write
+         0     0% 98.40%   118.50MB 23.16%  github.com/CloudyKit/jet/v6.(*Runtime).executeInclude
+         0     0% 98.40%   293.51MB 57.36%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 98.40%       15MB  2.93%  github.com/CloudyKit/jet/v6.(*Runtime).loadTemplate
+         0     0% 98.40%       15MB  2.93%  github.com/CloudyKit/jet/v6.(*Set).getSiblingTemplate
+         0     0% 98.40%   401.52MB 78.46%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0% 98.40%   401.52MB 78.46%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0% 98.40%    89.01MB 17.39%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+         0     0% 98.40%    89.01MB 17.39%  github.com/CloudyKit/jet/v6.(*executionWriter).Write
+         0     0% 98.40%    89.01MB 17.39%  github.com/CloudyKit/jet/v6.(*executionWriter).write
+         0     0% 98.40%    89.01MB 17.39%  github.com/CloudyKit/jet/v6.(*restrictedSink).Write
+         0     0% 98.40%     6.54MB  1.28%  github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview
+         0     0% 98.40%   503.53MB 98.40%  github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview.func1
+         0     0% 98.40%     4.04MB  0.79%  github.com/CloudyKit/jet/v6_test.executionWorkloads
+         0     0% 98.40%   503.53MB 98.40%  github.com/CloudyKit/jet/v6_test.init.0.func2
+         0     0% 98.40%     9.50MB  1.86%  path.Clean
+         0     0% 98.40%   503.53MB 98.40%  testing.(*B).launch
+         0     0% 98.40%     6.54MB  1.28%  testing.(*B).run1.func1
+         0     0% 98.40%   510.07MB 99.68%  testing.(*B).runN

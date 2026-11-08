@@ -1,0 +1,38 @@
+File: graph4.test
+Type: cpu
+Time: 2026-11-08 01:49:02 CST
+Duration: 3.32s, Total samples = 3.14s (94.56%)
+Showing nodes accounting for 2.50s, 79.62% of 3.14s total
+Dropped 68 nodes (cum <= 0.02s)
+Showing top 30 nodes out of 131
+      flat  flat%   sum%        cum   cum%
+     0.95s 30.25% 30.25%      0.95s 30.25%  runtime.kevent
+     0.19s  6.05% 36.31%      0.19s  6.05%  runtime.pthread_kill
+     0.17s  5.41% 41.72%      0.17s  5.41%  runtime.madvise
+     0.11s  3.50% 45.22%      1.27s 40.45%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+     0.11s  3.50% 48.73%      0.11s  3.50%  runtime.usleep
+     0.09s  2.87% 51.59%      0.09s  2.87%  github.com/CloudyKit/jet/v6.(*Runtime).rethrowTerminal (inline)
+     0.08s  2.55% 54.14%      0.28s  8.92%  github.com/CloudyKit/jet/v6.(*Runtime).checkpoint
+     0.07s  2.23% 56.37%      0.10s  3.18%  context.(*cancelCtx).Err
+     0.06s  1.91% 58.28%      1.59s 50.64%  github.com/CloudyKit/jet/v6.(*Template).execute
+     0.05s  1.59% 59.87%      0.09s  2.87%  runtime.(*_panic).nextDefer
+     0.05s  1.59% 61.46%      0.05s  1.59%  sync.(*Pool).Put
+     0.04s  1.27% 62.74%      0.19s  6.05%  github.com/CloudyKit/jet/v6.(*Runtime).evalPrimaryExpressionGroup
+     0.04s  1.27% 64.01%      0.04s  1.27%  reflect.implements
+     0.04s  1.27% 65.29%      0.04s  1.27%  runtime.(*_panic).start
+     0.04s  1.27% 66.56%      0.04s  1.27%  runtime.pthread_cond_wait
+     0.03s  0.96% 67.52%      0.04s  1.27%  bytes.(*Buffer).Write
+     0.03s  0.96% 68.47%      1.64s 52.23%  github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview.func1
+     0.03s  0.96% 69.43%      0.05s  1.59%  path.(*lazybuf).append (inline)
+     0.03s  0.96% 70.38%      0.10s  3.18%  path.Clean
+     0.03s  0.96% 71.34%      0.11s  3.50%  path.Join
+     0.03s  0.96% 72.29%      0.03s  0.96%  reflect.(*rtype).Kind
+     0.03s  0.96% 73.25%      0.03s  0.96%  runtime.deferprocStack
+     0.03s  0.96% 74.20%      0.07s  2.23%  runtime.mallocgcSmallNoScanSC6
+     0.03s  0.96% 75.16%      0.03s  0.96%  runtime.mallocgcSmallScanNoHeaderSC3
+     0.03s  0.96% 76.11%      0.03s  0.96%  sync/atomic.(*Value).Load (inline)
+     0.03s  0.96% 77.07%      0.07s  2.23%  text/template.HTMLEscape
+     0.02s  0.64% 77.71%      0.11s  3.50%  github.com/CloudyKit/jet/v6.(*Runtime).enter
+     0.02s  0.64% 78.34%      0.12s  3.82%  github.com/CloudyKit/jet/v6.(*Runtime).evalBaseExpressionGroup
+     0.02s  0.64% 78.98%      0.62s 19.75%  github.com/CloudyKit/jet/v6.(*Runtime).executeInclude
+     0.02s  0.64% 79.62%      0.02s  0.64%  github.com/CloudyKit/jet/v6.(*Runtime).isRestricted (inline)

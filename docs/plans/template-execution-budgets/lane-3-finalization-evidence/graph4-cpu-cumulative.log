@@ -1,0 +1,38 @@
+File: graph4.test
+Type: cpu
+Time: 2026-11-08 01:49:02 CST
+Duration: 3.32s, Total samples = 3.14s (94.56%)
+Showing nodes accounting for 1.69s, 53.82% of 3.14s total
+Dropped 68 nodes (cum <= 0.02s)
+Showing top 30 nodes out of 131
+      flat  flat%   sum%        cum   cum%
+     0.03s  0.96%  0.96%      1.64s 52.23%  github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview.func1
+         0     0%  0.96%      1.64s 52.23%  testing.(*B).launch
+         0     0%  0.96%      1.64s 52.23%  testing.(*B).runN
+     0.01s  0.32%  1.27%      1.60s 50.96%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+     0.06s  1.91%  3.18%      1.59s 50.64%  github.com/CloudyKit/jet/v6.(*Template).execute
+     0.01s  0.32%  3.50%      1.39s 44.27%  github.com/CloudyKit/jet/v6_test.init.0.func1
+         0     0%  3.50%      1.36s 43.31%  runtime.systemstack
+     0.11s  3.50%  7.01%      1.27s 40.45%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0%  7.01%      0.95s 30.25%  runtime.gcStart.func4
+     0.95s 30.25% 37.26%      0.95s 30.25%  runtime.kevent
+         0     0% 37.26%      0.95s 30.25%  runtime.netpoll
+         0     0% 37.26%      0.95s 30.25%  runtime.startTheWorldWithSema
+     0.02s  0.64% 37.90%      0.62s 19.75%  github.com/CloudyKit/jet/v6.(*Runtime).executeInclude
+     0.01s  0.32% 38.22%      0.38s 12.10%  github.com/CloudyKit/jet/v6.(*Runtime).printValue
+     0.01s  0.32% 38.54%      0.34s 10.83%  github.com/CloudyKit/jet/v6.(*dataPrinter).value
+     0.08s  2.55% 41.08%      0.28s  8.92%  github.com/CloudyKit/jet/v6.(*Runtime).checkpoint
+         0     0% 41.08%      0.22s  7.01%  github.com/CloudyKit/jet/v6.(*Runtime).loadTemplate
+         0     0% 41.08%      0.22s  7.01%  github.com/CloudyKit/jet/v6.(*Set).getSiblingTemplate
+         0     0% 41.08%      0.22s  7.01%  github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext
+         0     0% 41.08%      0.22s  7.01%  github.com/CloudyKit/jet/v6_test.init.0.func2
+     0.04s  1.27% 42.36%      0.19s  6.05%  github.com/CloudyKit/jet/v6.(*Runtime).evalPrimaryExpressionGroup
+         0     0% 42.36%      0.19s  6.05%  runtime.preemptM
+     0.19s  6.05% 48.41%      0.19s  6.05%  runtime.pthread_kill
+         0     0% 48.41%      0.19s  6.05%  runtime.signalM (inline)
+         0     0% 48.41%      0.17s  5.41%  runtime.(*mheap).alloc.func1
+         0     0% 48.41%      0.17s  5.41%  runtime.(*mheap).allocSpan
+     0.17s  5.41% 53.82%      0.17s  5.41%  runtime.madvise
+         0     0% 53.82%      0.17s  5.41%  runtime.sysUsed (inline)
+         0     0% 53.82%      0.17s  5.41%  runtime.sysUsedOS (inline)
+         0     0% 53.82%      0.16s  5.10%  github.com/CloudyKit/jet/v6.(*Runtime).evalCommandExpression

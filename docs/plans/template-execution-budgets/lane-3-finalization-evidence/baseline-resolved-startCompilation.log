@@ -1,0 +1,32 @@
+Total: 3.08GB
+ROUTINE ======================== github.com/CloudyKit/jet/v6.(*Runtime).startCompilation in .git/finalization/baseline-source/execution.go
+         0        2GB (flat, cum) 65.13% of Total
+         .          .    197:func (st *Runtime) startCompilation(t *Template) {
+         .          .    198:	if st.execution.ctx == nil && st.execution.options.ParseOptions == (ParseOptions{}) {
+         .          .    199:		return
+         .          .    200:	}
+         .   700.07MB    201:	a, err := newParseAdmission(st.executionContext(), st.execution.options.ParseOptions)
+         .          .    202:	if err != nil {
+         .          .    203:		st.checkCompilationError(err)
+         .          .    204:		st.terminate(err)
+         .          .    205:	}
+         .          .    206:	st.execution.compilation = a
+         .          .    207:	func() {
+         .          .    208:		defer recoverCompilation(&err)
+         .          .    209:		a.admitCached(t)
+         .     1.32GB    210:	}()
+         .          .    211:	if err != nil {
+         .          .    212:		st.checkCompilationError(err)
+         .          .    213:		st.terminate(err)
+         .          .    214:	}
+         .          .    215:}
+ROUTINE ======================== github.com/CloudyKit/jet/v6.(*Runtime).startCompilation.func1 in .git/finalization/baseline-source/execution.go
+         0     1.32GB (flat, cum) 42.92% of Total
+         .          .    207:	func() {
+         .          .    208:		defer recoverCompilation(&err)
+         .     1.32GB    209:		a.admitCached(t)
+         .          .    210:	}()
+         .          .    211:	if err != nil {
+         .          .    212:		st.checkCompilationError(err)
+         .          .    213:		st.terminate(err)
+         .          .    214:	}

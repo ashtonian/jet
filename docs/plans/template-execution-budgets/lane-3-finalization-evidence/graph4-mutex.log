@@ -1,0 +1,21 @@
+File: graph4.test
+Type: delay
+Time: 2026-11-08 01:49:06 CST
+Showing nodes accounting for 26.50us, 100% of 26.50us total
+      flat  flat%   sum%        cum   cum%
+   26.50us   100%   100%    26.50us   100%  runtime.unlock (inline)
+         0     0%   100%     1.42us  5.35%  runtime.findRunnable
+         0     0%   100%     8.92us 33.65%  runtime.forEachP (inline)
+         0     0%   100%     8.92us 33.65%  runtime.forEachP.func1
+         0     0%   100%     8.92us 33.65%  runtime.forEachPInternal
+         0     0%   100%    25.08us 94.65%  runtime.gcBgMarkWorker
+         0     0%   100%    25.08us 94.65%  runtime.gcMarkDone
+         0     0%   100%    16.17us 61.01%  runtime.gcMarkDone.func2
+         0     0%   100%     1.42us  5.35%  runtime.gcstopm
+         0     0%   100%     1.42us  5.35%  runtime.gopreempt_m (inline)
+         0     0%   100%     1.42us  5.35%  runtime.goschedImpl
+         0     0%   100%     1.42us  5.35%  runtime.morestack
+         0     0%   100%     1.42us  5.35%  runtime.newstack
+         0     0%   100%     1.42us  5.35%  runtime.schedule
+         0     0%   100%    16.17us 61.01%  runtime.stopTheWorldWithSema
+         0     0%   100%    25.08us 94.65%  runtime.systemstack

@@ -1,0 +1,37 @@
+File: follow-pooled4.test
+Type: cpu
+Time: 2026-11-08 02:24:49 CST
+Duration: 1.81s, Total samples = 1.70s (93.73%)
+Showing nodes accounting for 0.63s, 37.06% of 1.70s total
+Showing top 30 nodes out of 195
+      flat  flat%   sum%        cum   cum%
+         0     0%     0%      1.09s 64.12%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0%     0%      1.09s 64.12%  github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext
+         0     0%     0%      1.09s 64.12%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0%     0%      1.09s 64.12%  github.com/CloudyKit/jet/v6.BenchmarkAdmissionInput.func1
+         0     0%     0%      1.09s 64.12%  testing.(*B).launch
+         0     0%     0%      1.09s 64.12%  testing.(*B).runN
+     0.01s  0.59%  0.59%      1.07s 62.94%  github.com/CloudyKit/jet/v6.admitInputScopesInto
+     0.05s  2.94%  3.53%      1.05s 61.76%  github.com/CloudyKit/jet/v6.(*inputAdmission).clone
+         0     0%  3.53%      0.58s 34.12%  runtime.systemstack
+     0.38s 22.35% 25.88%      0.38s 22.35%  runtime.kevent
+         0     0% 25.88%      0.38s 22.35%  runtime.netpoll
+         0     0% 25.88%      0.38s 22.35%  runtime.startTheWorldWithSema
+         0     0% 25.88%      0.36s 21.18%  runtime.gcStart.func4
+     0.01s  0.59% 26.47%      0.23s 13.53%  runtime.mallocgc
+     0.01s  0.59% 27.06%      0.22s 12.94%  reflect.Value.SetMapIndex
+         0     0% 27.06%      0.17s 10.00%  reflect.mapassign_faststr
+     0.02s  1.18% 28.24%      0.17s 10.00%  reflect.mapassign_faststr0
+         0     0% 28.24%      0.13s  7.65%  runtime.mapassign_faststr
+         0     0% 28.24%      0.13s  7.65%  runtime.newarray
+     0.07s  4.12% 32.35%      0.12s  7.06%  github.com/CloudyKit/jet/v6.(*inputAdmission).step
+         0     0% 32.35%      0.12s  7.06%  internal/runtime/maps.newGroups (inline)
+         0     0% 32.35%      0.12s  7.06%  internal/runtime/maps.newarray
+         0     0% 32.35%      0.10s  5.88%  internal/runtime/maps.(*Map).growToSmall
+     0.02s  1.18% 33.53%      0.10s  5.88%  runtime.mallocgcSmallScanNoHeader
+     0.01s  0.59% 34.12%      0.09s  5.29%  reflect.copyVal
+         0     0% 34.12%      0.09s  5.29%  reflect.unsafe_New
+     0.01s  0.59% 34.71%      0.08s  4.71%  reflect.PtrTo (inline)
+         0     0% 34.71%      0.08s  4.71%  runtime.(*mheap).alloc.func1
+         0     0% 34.71%      0.08s  4.71%  runtime.(*mheap).allocSpan
+     0.04s  2.35% 37.06%      0.08s  4.71%  runtime.mallocgcSmallScanNoHeaderSC2

@@ -1,0 +1,32 @@
+File: follow-active8.test
+Type: delay
+Time: 2026-11-08 02:24:54 CST
+Showing nodes accounting for 57.42us, 100% of 57.42us total
+      flat  flat%   sum%        cum   cum%
+   57.42us   100%   100%    57.42us   100%  runtime.unlock (inline)
+         0     0%   100%       19us 33.09%  runtime.(*gcControllerState).enlistWorker
+         0     0%   100%     4.62us  8.06%  runtime.(*spanSet).push
+         0     0%   100%     4.62us  8.06%  runtime.(*sweepLocked).sweep
+         0     0%   100%       19us 33.09%  runtime.allocm
+         0     0%   100%     4.62us  8.06%  runtime.bgsweep
+         0     0%   100%     1.08us  1.89%  runtime.findRunnable
+         0     0%   100%    32.71us 56.97%  runtime.forEachP (inline)
+         0     0%   100%    32.71us 56.97%  runtime.forEachP.func1
+         0     0%   100%    32.71us 56.97%  runtime.forEachPInternal
+         0     0%   100%    51.71us 90.06%  runtime.gcBgMarkWorker
+         0     0%   100%       19us 33.09%  runtime.gcBgMarkWorker.func2
+         0     0%   100%       19us 33.09%  runtime.gcDrain
+         0     0%   100%       19us 33.09%  runtime.gcDrainMarkWorkerIdle (inline)
+         0     0%   100%    32.71us 56.97%  runtime.gcMarkDone
+         0     0%   100%     1.08us  1.89%  runtime.gopreempt_m (inline)
+         0     0%   100%     1.08us  1.89%  runtime.goschedImpl
+         0     0%   100%       19us 33.09%  runtime.mcommoninit
+         0     0%   100%     1.08us  1.89%  runtime.morestack
+         0     0%   100%       19us 33.09%  runtime.newm
+         0     0%   100%     1.08us  1.89%  runtime.newstack
+         0     0%   100%     1.08us  1.89%  runtime.runSafePointFn
+         0     0%   100%     1.08us  1.89%  runtime.schedule
+         0     0%   100%       19us 33.09%  runtime.startm
+         0     0%   100%     4.62us  8.06%  runtime.sweepone
+         0     0%   100%    51.71us 90.06%  runtime.systemstack
+         0     0%   100%       19us 33.09%  runtime.wakep

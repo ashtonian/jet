@@ -1,0 +1,22 @@
+Total: 3.08GB
+ROUTINE ======================== github.com/CloudyKit/jet/v6.(*parseAdmission).admitCached in .git/finalization/baseline-source/compile.go
+  841.65MB     1.32GB (flat, cum) 42.92% of Total
+         .          .    297:func (a *parseAdmission) admitCached(t *Template) {
+         .   511.10MB    298:	a.prepareSource(t.Name)
+         .          .    299:	// Check depth on every path through a diamond, even if size was charged before.
+         .          .    300:	if a.opts.MaxDepth > 0 && t.metadata.depth > a.opts.MaxDepth-a.depth {
+         .          .    301:		a.limit("depth", uint64(a.opts.MaxDepth))
+         .          .    302:	}
+         .          .    303:	a.enter()
+         .          .    304:	defer func() { a.depth-- }()
+         .          .    305:	a.source(t.Name, t.metadata.sourceBytes)
+         .          .    306:	if !a.cached[t] {
+         .          .    307:		a.addNodes(t.metadata.nodes)
+  348.05MB   348.05MB    308:		a.cached[t] = true
+         .          .    309:	}
+  493.60MB   493.60MB    310:	a.active[t.Name] = true
+         .          .    311:	defer delete(a.active, t.Name)
+         .          .    312:	if t.extends != nil {
+         .          .    313:		a.admitCached(t.extends)
+         .          .    314:	}
+         .          .    315:	for _, dependency := range t.imports {

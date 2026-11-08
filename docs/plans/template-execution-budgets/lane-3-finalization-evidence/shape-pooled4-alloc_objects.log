@@ -1,0 +1,34 @@
+File: follow-pooled4.test
+Type: alloc_objects
+Time: 2026-11-08 02:24:51 CST
+Showing nodes accounting for 27077994, 99.48% of 27218210 total
+Dropped 20 nodes (cum <= 136091)
+      flat  flat%   sum%        cum   cum%
+  16154856 59.35% 59.35%   16154856 59.35%  reflect.unsafe_New
+   3276875 12.04% 71.39%    6439083 23.66%  reflect.MakeSlice
+   3162208 11.62% 83.01%    3162208 11.62%  reflect.unsafe_NewArray
+   1972078  7.25% 90.26%    1972078  7.25%  reflect.mapassign_faststr0
+   1940691  7.13% 97.39%    1940691  7.13%  reflect.makemap
+    216285  0.79% 98.18%   27209070   100%  github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext
+    180235  0.66% 98.84%     180235  0.66%  bytes.(*Buffer).grow
+    174766  0.64% 99.48%     174766  0.64%  github.com/CloudyKit/jet/v6.(*Runtime).recover
+         0     0% 99.48%     180235  0.66%  bytes.(*Buffer).Write
+         0     0% 99.48%     180235  0.66%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 99.48%   26992785 99.17%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0% 99.48%   26992785 99.17%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0% 99.48%     180235  0.66%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+         0     0% 99.48%     180235  0.66%  github.com/CloudyKit/jet/v6.(*executionWriter).Write
+         0     0% 99.48%     180235  0.66%  github.com/CloudyKit/jet/v6.(*executionWriter).write
+         0     0% 99.48%   26506708 97.39%  github.com/CloudyKit/jet/v6.(*inputAdmission).clone
+         0     0% 99.48%     180235  0.66%  github.com/CloudyKit/jet/v6.(*restrictedSink).Write
+         0     0% 99.48%   27209442   100%  github.com/CloudyKit/jet/v6.BenchmarkAdmissionInput.func1
+         0     0% 99.48%   26506708 97.39%  github.com/CloudyKit/jet/v6.admitInputScopesInto
+         0     0% 99.48%    5341260 19.62%  reflect.(*MapIter).Key
+         0     0% 99.48%    5111880 18.78%  reflect.(*MapIter).Value
+         0     0% 99.48%    1940691  7.13%  reflect.MakeMapWithSize
+         0     0% 99.48%    7673794 28.19%  reflect.Value.SetMapIndex
+         0     0% 99.48%    5701716 20.95%  reflect.Value.assignTo
+         0     0% 99.48%   10453140 38.40%  reflect.copyVal
+         0     0% 99.48%    1972078  7.25%  reflect.mapassign_faststr
+         0     0% 99.48%   27209442   100%  testing.(*B).launch
+         0     0% 99.48%   27209442   100%  testing.(*B).runN

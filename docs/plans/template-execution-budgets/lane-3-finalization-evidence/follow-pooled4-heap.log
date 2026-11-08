@@ -1,0 +1,9 @@
+File: follow-pooled4.test
+Type: inuse_space
+Time: 2026-11-08 02:16:20 CST
+Showing nodes accounting for 512.05kB, 100% of 512.05kB total
+      flat  flat%   sum%        cum   cum%
+  512.05kB   100%   100%   512.05kB   100%  runtime.mallocgc
+         0     0%   100%   512.05kB   100%  runtime.(*scavengerState).init
+         0     0%   100%   512.05kB   100%  runtime.bgscavenge
+         0     0%   100%   512.05kB   100%  runtime.newobject

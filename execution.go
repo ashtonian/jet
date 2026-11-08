@@ -58,14 +58,15 @@ func (e *LimitError) Unwrap() error {
 // executionState adapts the existing Runtime/Arguments callback APIs to one
 // synchronous render. It is never cached and is cleared before pooling Runtime.
 type executionState struct {
-	ctx         context.Context
-	options     ExecutionOptions
-	remaining   uint64
-	values      uint64
-	output      uint64
-	depth       int
-	terminal    error
-	compilation *parseAdmission
+	ctx              context.Context
+	options          ExecutionOptions
+	remaining        uint64
+	values           uint64
+	output           uint64
+	depth            int
+	terminal         error
+	compilation      *parseAdmission
+	compilationState parseAdmission
 }
 
 type executionAbort struct{ error }
@@ -198,7 +199,8 @@ func (st *Runtime) startCompilation(t *Template) {
 	if st.execution.ctx == nil && st.execution.options.ParseOptions == (ParseOptions{}) {
 		return
 	}
-	a, err := newParseAdmission(st.executionContext(), st.execution.options.ParseOptions)
+	a := &st.execution.compilationState
+	err := a.init(st.executionContext(), st.execution.options.ParseOptions)
 	if err != nil {
 		st.checkCompilationError(err)
 		st.terminate(err)
