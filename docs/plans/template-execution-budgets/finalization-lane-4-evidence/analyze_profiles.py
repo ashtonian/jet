@@ -22,6 +22,7 @@ def main(work):
     destination = output / 'profile-analysis'
     destination.mkdir(exist_ok=True)
     stages = json.loads((output / 'stages.json').read_text())
+    proof = json.loads((work / 'sources.json').read_text())
     reports_path = destination / 'stages.json'
     reports = json.loads(reports_path.read_text()) if reports_path.exists() else {}
     failures = []
@@ -43,11 +44,11 @@ def main(work):
             continue
         specification = receipt['specification']
         tree = specification['tree']
-        binary = output / (tree + '.test')
+        binary = matrix.binary_file(work, proof, tree)
         if digest(binary) != specification['binary_sha256']:
             failures.append(label + ': binary identity changed')
             continue
-        source = work / tree
+        source = matrix.source_directory(work, proof, tree)
         if matrix.manifest(source) != specification['inputs']:
             failures.append(label + ': frozen source changed')
             continue

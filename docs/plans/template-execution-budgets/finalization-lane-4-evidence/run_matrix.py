@@ -115,13 +115,46 @@ def manifest(directory):
             (p.suffix in ('.go', '.json') or p.name in ('go.mod', 'go.sum'))}
 
 
-def prepare(work, candidate):
+def source_directory(work, proof, tree):
+    return Path(proof[tree].get('directory', work / tree))
+
+
+def binary_file(work, proof, tree):
+    return Path(proof[tree].get('binary', work / 'results' / (tree + '.test')))
+
+
+def prepare(work, candidate, previous=None):
     work.mkdir(parents=True, exist_ok=True)
     if any(work.iterdir()):
         raise RuntimeError('prepare requires an empty artifact directory')
     sources = {'upstream': UPSTREAM, 'correctness': CORRECTNESS, 'candidate': candidate}
     proof = {}
+    harness = {filename: hashlib.sha256((REPO / filename).read_bytes()).hexdigest() for filename in COMMON}
+    version = subprocess.check_output(['go', 'version'], text=True, timeout=15).strip()
+    imported = {}
+    if previous is not None:
+        prior = json.loads((previous / 'sources.json').read_text())
+        prior_stages = json.loads((previous / 'results/stages.json').read_text())
+        if prior['harness'] != harness or prior['toolchain'] != version:
+            raise RuntimeError('retained baseline harness/toolchain does not match')
     for name, revision in sources.items():
+        if previous is not None and name != 'candidate':
+            source = source_directory(previous, prior, name)
+            binary = binary_file(previous, prior, name)
+            expected = {'inputs': prior[name]['inputs'], 'toolchain': version,
+                        'environment': effective_environment(source)}
+            if (prior[name]['revision'] != revision or manifest(source) != expected['inputs']
+                    or not prerequisites_valid(prior_stages['build-' + name],
+                                               prior_stages['conformance-' + name], expected, binary)):
+                raise RuntimeError('retained baseline build/conformance is invalid: ' + name)
+            proof[name] = dict(prior[name], directory=str(source), binary=str(binary),
+                               reused_from=str(previous),
+                               original_sources_sha256=hashlib.sha256((previous / 'sources.json').read_bytes()).hexdigest())
+            for prefix in ('build-', 'conformance-'):
+                label = prefix + name
+                imported[label] = copy.deepcopy(prior_stages[label])
+                imported[label]['reused_from'] = str(previous / 'results/stages.json')
+            continue
         destination = work / name
         destination.mkdir()
         archive = work / (name + '.tar')
@@ -136,12 +169,14 @@ def prepare(work, candidate):
         proof[name] = {'revision': revision, 'inputs': manifest(destination)}
     if not (work / 'candidate/execution_measurement_modes_test.go').exists():
         raise RuntimeError('candidate revision must contain the candidate measurement modes')
-    proof['harness'] = {filename: hashlib.sha256((REPO / filename).read_bytes()).hexdigest()
-                        for filename in COMMON}
-    proof['toolchain'] = subprocess.check_output(['go', 'version'], text=True).strip()
+    proof['harness'] = harness
+    proof['toolchain'] = version
     proof['environment'] = effective_environment(REPO)
     proof['driver_sha256'] = hashlib.sha256(Path(__file__).read_bytes()).hexdigest()
     (work / 'sources.json').write_text(json.dumps(proof, indent=2))
+    if imported:
+        (work / 'results').mkdir()
+        (work / 'results/stages.json').write_text(json.dumps(imported, indent=2))
 
 
 def run(work, group):
@@ -152,7 +187,7 @@ def run(work, group):
     if version != proof['toolchain']:
         raise RuntimeError('toolchain changed since source preparation')
     for tree in ('upstream', 'correctness', 'candidate'):
-        if manifest(work / tree) != proof[tree]['inputs']:
+        if manifest(source_directory(work, proof, tree)) != proof[tree]['inputs']:
             raise RuntimeError('frozen source inputs changed: ' + tree)
     fixtures = json.loads((work / 'candidate/testData/execution_workloads.json').read_text())
     core = '(' + '|'.join(f['name'] for f in fixtures) + ')'
@@ -161,7 +196,8 @@ def run(work, group):
     receipts = json.loads(stages.read_text()) if stages.exists() else {}
     failures = []
     host_fit_cores = int(os.environ.get('GOMAXPROCS') or os.cpu_count() or 1)
-    environments = {tree: effective_environment(work / tree) for tree in ('upstream', 'correctness', 'candidate')}
+    environments = {tree: effective_environment(source_directory(work, proof, tree))
+                    for tree in ('upstream', 'correctness', 'candidate')}
 
     def stage(label, tree, arguments, seconds=600, cores=2):
         env = dict(os.environ, GOMAXPROCS=str(cores))
@@ -181,7 +217,8 @@ def run(work, group):
             if argument.startswith('JET_RETENTION_PROFILE_DIR='):
                 directory = Path(argument.split('=', 1)[1])
                 artifacts.extend(directory / (phase + '.pprof') for phase in RETENTION_PHASES)
-        passed = execute_stage(label, output, work / tree, command, env, specification, receipts, seconds, artifacts)
+        passed = execute_stage(label, output, source_directory(work, proof, tree), command,
+                               env, specification, receipts, seconds, artifacts)
         if not passed:
             failures.append(label)
         return passed
@@ -204,7 +241,7 @@ def run(work, group):
         return False
 
     def binary(tree):
-        return str(output / (tree + '.test'))
+        return str(binary_file(work, proof, tree))
 
     def benchmark(tree, pattern, duration='1s', cores=2):
         command = [binary(tree), '-test.run=^$', '-test.bench=' + pattern,
@@ -216,6 +253,10 @@ def run(work, group):
 
     if group == 'build':
         for tree in ('upstream', 'correctness', 'candidate'):
+            if proof[tree].get('reused_from'):
+                if ready(tree, 'reused-build-preflight-' + tree):
+                    print('REUSE frozen build/conformance ' + tree, flush=True)
+                continue
             if not stage('build-' + tree, tree, ['go', 'test', '-p=1', '-c', '-o', binary(tree), '.'], 180):
                 receipts['conformance-' + tree] = {'skipped': 'build failed', 'tree': tree}
                 stages.write_text(json.dumps(receipts, indent=2))
@@ -361,7 +402,8 @@ if __name__ == '__main__':
     signal.signal(signal.SIGINT, interrupted)
     work = Path(sys.argv[1]).resolve()
     if sys.argv[2] == 'prepare':
-        prepare(work, sys.argv[3])
+        previous = Path(sys.argv[4]).resolve() if len(sys.argv) > 4 else None
+        prepare(work, sys.argv[3], previous)
     else:
         for group in sys.argv[2].split(','):
             run(work, group)
