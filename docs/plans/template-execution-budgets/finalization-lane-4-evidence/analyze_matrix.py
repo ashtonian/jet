@@ -12,7 +12,7 @@ def expected_cells(group, plan):
     benchmark = 'BenchmarkExecutionModeLatency' if group == 'latency' else 'BenchmarkConcurrentExecutionModes'
     cells = set()
     for tree, mode in plan['streams']:
-        fixtures = plan['fixtures'] if group == 'latency' else plan['concurrent_fixtures']
+        fixtures = plan.get('fixtures_by_tree', {}).get(tree, plan['fixtures']) if group == 'latency' else plan['concurrent_fixtures']
         for fixture in fixtures:
             for format in plan['formats']:
                 name = tree + '/' + benchmark + '/' + mode + '/' + fixture + '/' + format

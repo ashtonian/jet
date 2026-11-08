@@ -139,6 +139,10 @@ time.sleep(120)
         del results[first]
         assert not analysis.coverage_report(results, cells, 6)['complete']
         assert not analysis.coverage_report({}, cells, 6)['complete']
+    plan['fixtures_by_tree'] = {
+        tree: plan['fixtures'] + [name for name in matrix.EXTENDED if tree == 'candidate' or name != 'named_map']
+        for tree in ('upstream', 'correctness', 'candidate')}
+    assert len(analysis.expected_cells('latency', plan)) == 406
     (directory / 'result.json').write_text(json.dumps({'scope': 'driver lifecycle controls only',
         'reuse': True, 'source_environment_binary_identity': True, 'profile_artifacts': True,
         'term_int_cleanup_and_no_later_stage': True, 'incomplete_coverage_denied': True}, indent=2))

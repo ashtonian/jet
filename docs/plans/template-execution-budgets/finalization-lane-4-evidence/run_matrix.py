@@ -18,9 +18,12 @@ CORRECTNESS = '822cf702300c6226fa56a3fcf2f8466dc6b9b712'
 COMMON = ['execution_workloads_test.go', 'execution_measurements_test.go',
           'testData/execution_workloads.json']
 RUNTIME_ENV = ('GOGC', 'GOMEMLIMIT', 'GODEBUG', 'GOFLAGS', 'GOTOOLCHAIN', 'CGO_ENABLED')
-GO_ENV = ('GOOS', 'GOARCH', 'GOROOT', 'GOVERSION', 'GOFLAGS', 'CGO_ENABLED', 'GOEXPERIMENT',
+GO_ENV = ('GOOS', 'GOARCH', 'GOROOT', 'GOVERSION', 'GOFLAGS', 'GO111MODULE', 'GOMOD', 'GOWORK',
+          'GOENV', 'GOTOOLDIR', 'CGO_ENABLED', 'GOEXPERIMENT',
           'GOAMD64', 'GOARM64', 'GOTOOLCHAIN', 'CC', 'CXX', 'CGO_CFLAGS', 'CGO_CPPFLAGS',
           'CGO_CXXFLAGS', 'CGO_LDFLAGS')
+EXTENDED = ['data_json_256', 'data_unused_256', 'named_map', 'named_slice', 'array',
+            'typed_nil', 'builtin_alias', 'catch_diagnostic']
 
 
 def interrupted(signum, _frame):
@@ -152,7 +155,7 @@ def run(work, group):
             raise RuntimeError('frozen source inputs changed: ' + tree)
     fixtures = json.loads((work / 'candidate/testData/execution_workloads.json').read_text())
     core = '(' + '|'.join(f['name'] for f in fixtures) + ')'
-    extended = '(data_json_256|data_unused_256|named_map|named_slice|array|typed_nil|builtin_alias|catch_diagnostic)'
+    extended = '(' + '|'.join(EXTENDED) + ')'
     stages = output / 'stages.json'
     receipts = json.loads(stages.read_text()) if stages.exists() else {}
     failures = []
@@ -231,6 +234,10 @@ def run(work, group):
                        'workers': sorted({1, 2, 8, int(os.environ['GOMAXPROCS'])}),
                        'shared': [True, False], 'concurrent_fixtures': [
                            'header_interpolation', 'body_8192', 'nested_silent', 'escape_expansion', 'data_json_256']}
+        if group == 'latency':
+            plan[group]['fixtures_by_tree'] = {
+                tree: [f['name'] for f in fixtures] + [name for name in EXTENDED if tree == 'candidate' or name != 'named_map']
+                for tree in ('upstream', 'correctness', 'candidate')}
         plan_path.write_text(json.dumps(plan, indent=2))
         for sample in range(6):
             order = streams[sample % len(streams):] + streams[:sample % len(streams)]
@@ -247,7 +254,10 @@ def run(work, group):
                 if group == 'phases':
                     pattern = '^BenchmarkExecutionPhases$/^' + mode + '$/'
                 elif group == 'latency':
-                    pattern = '^BenchmarkExecutionModeLatency$/^' + mode + '$/^' + core + '$/'
+                    pattern = '^BenchmarkExecutionModeLatency$/^' + mode + '$/'
+                    if tree != 'candidate':
+                        names = plan[group]['fixtures_by_tree'][tree]
+                        pattern += '^(' + '|'.join(names) + ')$/'
                 elif group == 'concurrent':
                     pattern = '^BenchmarkConcurrentExecutionModes$/^' + mode + '$/'
                 cores = int(os.environ['GOMAXPROCS']) if group == 'concurrent' else 2
