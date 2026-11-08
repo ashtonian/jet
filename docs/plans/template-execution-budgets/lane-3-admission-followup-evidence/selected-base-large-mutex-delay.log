@@ -1,0 +1,35 @@
+File: base.test
+Type: delay
+Time: 2026-11-08 04:13:52 CST
+Showing nodes accounting for 99.12us, 100% of 99.12us total
+      flat  flat%   sum%        cum   cum%
+   99.12us   100%   100%    99.12us   100%  runtime.unlock (inline)
+         0     0%   100%    10.17us 10.26%  runtime.allocm
+         0     0%   100%     3.29us  3.32%  runtime.findRunnable
+         0     0%   100%    47.46us 47.88%  runtime.forEachP (inline)
+         0     0%   100%    47.46us 47.88%  runtime.forEachP.func1
+         0     0%   100%    47.46us 47.88%  runtime.forEachPInternal
+         0     0%   100%    95.83us 96.68%  runtime.gcBgMarkWorker
+         0     0%   100%    10.17us 10.26%  runtime.gcBgMarkWorker.func2
+         0     0%   100%    10.17us 10.26%  runtime.gcDrain
+         0     0%   100%    10.17us 10.26%  runtime.gcDrainMarkWorkerIdle (inline)
+         0     0%   100%    85.67us 86.42%  runtime.gcMarkDone
+         0     0%   100%    38.21us 38.55%  runtime.gcMarkDone.func2
+         0     0%   100%     0.96us  0.97%  runtime.gcstopm
+         0     0%   100%     3.29us  3.32%  runtime.gopreempt_m (inline)
+         0     0%   100%     3.29us  3.32%  runtime.goschedImpl
+         0     0%   100%    10.17us 10.26%  runtime.markroot
+         0     0%   100%    10.17us 10.26%  runtime.markroot.func1
+         0     0%   100%    10.17us 10.26%  runtime.mcommoninit
+         0     0%   100%     3.29us  3.32%  runtime.morestack
+         0     0%   100%    10.17us 10.26%  runtime.newm
+         0     0%   100%     3.29us  3.32%  runtime.newstack
+         0     0%   100%    10.17us 10.26%  runtime.ready
+         0     0%   100%    10.17us 10.26%  runtime.resumeG
+         0     0%   100%     2.33us  2.35%  runtime.runSafePointFn
+         0     0%   100%     3.29us  3.32%  runtime.schedule
+         0     0%   100%    10.17us 10.26%  runtime.startm
+         0     0%   100%    38.21us 38.55%  runtime.stopTheWorldWithSema
+         0     0%   100%     0.96us  0.97%  runtime.stopm
+         0     0%   100%    95.83us 96.68%  runtime.systemstack
+         0     0%   100%    10.17us 10.26%  runtime.wakep

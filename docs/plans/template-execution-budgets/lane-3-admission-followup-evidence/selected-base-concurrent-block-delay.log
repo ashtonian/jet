@@ -1,0 +1,42 @@
+File: base.test
+Type: delay
+Time: 2026-11-08 04:13:55 CST
+Showing nodes accounting for 8.27s, 100% of 8.27s total
+Dropped 13 nodes (cum <= 0.04s)
+      flat  flat%   sum%        cum   cum%
+     5.51s 66.57% 66.57%      5.51s 66.57%  runtime.chanrecv1
+     2.68s 32.33% 98.90%      2.68s 32.33%  sync.(*WaitGroup).Wait
+     0.09s  1.10%   100%      0.09s  1.10%  sync.(*Mutex).Lock (inline)
+         0     0%   100%      0.09s  1.10%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0%   100%      0.09s  1.10%  github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext
+         0     0%   100%      0.09s  1.10%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0%   100%      2.68s 32.39%  github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes
+         0     0%   100%      2.68s 32.33%  github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes.func1
+         0     0%   100%      0.09s  1.15%  github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes.func1.1
+         0     0%   100%      0.09s  1.15%  github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes.func1.gowrap1
+         0     0%   100%      0.09s  1.10%  github.com/CloudyKit/jet/v6_test.init.0.func5
+         0     0%   100%      2.82s 34.13%  main.main
+         0     0%   100%      2.82s 34.13%  runtime.main
+         0     0%   100%      0.13s  1.59%  runtime/pprof.StopCPUProfile
+         0     0%   100%      0.13s  1.59%  sync.(*Once).Do (inline)
+         0     0%   100%      0.13s  1.59%  sync.(*Once).doSlow
+         0     0%   100%      0.06s  0.73%  sync.(*Pool).Get
+         0     0%   100%      0.09s  1.10%  sync.(*Pool).pin
+         0     0%   100%      0.09s  1.10%  sync.(*Pool).pinSlow
+         0     0%   100%      5.37s 64.93%  testing.(*B).Run
+         0     0%   100%      2.68s 32.38%  testing.(*B).doBench
+         0     0%   100%      2.68s 32.33%  testing.(*B).doBench.gowrap1
+         0     0%   100%      2.68s 32.33%  testing.(*B).launch
+         0     0%   100%      2.68s 32.38%  testing.(*B).run
+         0     0%   100%      2.69s 32.55%  testing.(*B).run1
+         0     0%   100%      2.68s 32.40%  testing.(*B).run1.func1
+         0     0%   100%      8.05s 97.26%  testing.(*B).runN
+         0     0%   100%      2.82s 34.13%  testing.(*M).Run
+         0     0%   100%      0.13s  1.59%  testing.(*M).Run.deferwrap1
+         0     0%   100%      0.13s  1.59%  testing.(*M).after
+         0     0%   100%      0.13s  1.59%  testing.(*M).after.func1
+         0     0%   100%      0.13s  1.59%  testing.(*M).writeProfiles
+         0     0%   100%      2.68s 32.38%  testing.(*benchState).processBench
+         0     0%   100%      2.69s 32.54%  testing.runBenchmarks
+         0     0%   100%      2.69s 32.54%  testing.runBenchmarks.func1
+         0     0%   100%      0.13s  1.59%  testing/internal/testdeps.TestDeps.StopCPUProfile

@@ -1,0 +1,30 @@
+File: candidate.test
+Type: delay
+Time: 2026-11-08 03:58:54 CST
+Showing nodes accounting for 29.04us, 100% of 29.04us total
+      flat  flat%   sum%        cum   cum%
+   29.04us   100%   100%    29.04us   100%  runtime.unlock (inline)
+         0     0%   100%    11.88us 40.89%  runtime.allocm
+         0     0%   100%     6.17us 21.24%  runtime.forEachP (inline)
+         0     0%   100%     6.17us 21.24%  runtime.forEachP.func1
+         0     0%   100%     6.17us 21.24%  runtime.forEachPInternal
+         0     0%   100%    22.12us 76.18%  runtime.gcBgMarkWorker
+         0     0%   100%    11.88us 40.89%  runtime.gcBgMarkWorker.func2
+         0     0%   100%    11.88us 40.89%  runtime.gcDrain
+         0     0%   100%    11.88us 40.89%  runtime.gcDrainMarkWorkerIdle (inline)
+         0     0%   100%    10.25us 35.29%  runtime.gcMarkDone
+         0     0%   100%     4.08us 14.06%  runtime.gcMarkDone.func2
+         0     0%   100%    11.88us 40.89%  runtime.markroot
+         0     0%   100%    11.88us 40.89%  runtime.markroot.func1
+         0     0%   100%    11.88us 40.89%  runtime.mcommoninit
+         0     0%   100%     6.92us 23.82%  runtime.mstart
+         0     0%   100%     6.92us 23.82%  runtime.mstart0
+         0     0%   100%     6.92us 23.82%  runtime.mstart1
+         0     0%   100%    11.88us 40.89%  runtime.newm
+         0     0%   100%    11.88us 40.89%  runtime.ready
+         0     0%   100%    11.88us 40.89%  runtime.resumeG
+         0     0%   100%    11.88us 40.89%  runtime.startm
+         0     0%   100%     4.08us 14.06%  runtime.stopTheWorldWithSema
+         0     0%   100%     6.92us 23.82%  runtime.sysmon
+         0     0%   100%    22.12us 76.18%  runtime.systemstack
+         0     0%   100%    11.88us 40.89%  runtime.wakep

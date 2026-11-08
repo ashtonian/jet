@@ -1,0 +1,46 @@
+gate-lock: waiting for pid 22676 on <HOST>, "jobcrm-c-interview-repaired-native 3118ff2 in /Volumes/E2TB/workgroups/jobcrm/agent-3", since 2026-11-08T10:04:18Z
+gate-lock: held by pid 28558 on <HOST>, "jet-lane3-admission-matched 54b5614 in <CHECKOUT>", since 2026-11-08T10:09:48Z
+gate-lock: held by pid 28558 on <HOST>, "jet-lane3-admission-matched 54b5614 in <CHECKOUT>", since 2026-11-08T10:09:49Z
+build-defaults
+conformance-defaults
+default-screen-direct-0
+default-screen-defaults-0
+default-screen-defaults-1
+default-screen-direct-1
+default-screen-direct-2
+default-screen-defaults-2
+paired-core-base-0
+paired-shape-base-0
+paired-core-defaults-0
+paired-shape-defaults-0
+paired-core-defaults-1
+paired-shape-defaults-1
+paired-core-base-1
+paired-shape-base-1
+paired-core-base-2
+paired-shape-base-2
+paired-core-defaults-2
+paired-shape-defaults-2
+paired-core-defaults-3
+paired-shape-defaults-3
+paired-core-base-3
+paired-shape-base-3
+paired-core-base-4
+paired-shape-base-4
+paired-core-defaults-4
+paired-shape-defaults-4
+paired-core-defaults-5
+paired-shape-defaults-5
+paired-core-base-5
+paired-shape-base-5
+selected-base-nil
+selected-base-scalar
+selected-base-map
+selected-base-large
+selected-base-concurrent
+selected-defaults-nil
+selected-defaults-scalar
+selected-defaults-map
+selected-defaults-large
+selected-defaults-concurrent
+PAIRED AND PROFILES COMPLETE

@@ -1,0 +1,31 @@
+File: candidate.test
+Type: delay
+Time: 2026-11-08 04:00:04 CST
+Showing nodes accounting for 24374ns, 100% of 24374ns total
+      flat  flat%   sum%        cum   cum%
+   24374ns   100%   100%    24374ns   100%  runtime.unlock (inline)
+         0     0%   100%    10166ns 41.71%  runtime.allocm
+         0     0%   100%      666ns  2.73%  runtime.findRunnable
+         0     0%   100%    13542ns 55.56%  runtime.forEachP (inline)
+         0     0%   100%    13542ns 55.56%  runtime.forEachP.func1
+         0     0%   100%    13542ns 55.56%  runtime.forEachPInternal
+         0     0%   100%    23708ns 97.27%  runtime.gcBgMarkWorker
+         0     0%   100%    10166ns 41.71%  runtime.gcBgMarkWorker.func2
+         0     0%   100%    10166ns 41.71%  runtime.gcDrain
+         0     0%   100%    10166ns 41.71%  runtime.gcDrainMarkWorkerIdle (inline)
+         0     0%   100%    13542ns 55.56%  runtime.gcMarkDone
+         0     0%   100%      666ns  2.73%  runtime.gopreempt_m (inline)
+         0     0%   100%      666ns  2.73%  runtime.goschedImpl
+         0     0%   100%    10166ns 41.71%  runtime.markroot
+         0     0%   100%    10166ns 41.71%  runtime.markroot.func1
+         0     0%   100%    10166ns 41.71%  runtime.mcommoninit
+         0     0%   100%      666ns  2.73%  runtime.morestack
+         0     0%   100%    10166ns 41.71%  runtime.newm
+         0     0%   100%      666ns  2.73%  runtime.newstack
+         0     0%   100%    10166ns 41.71%  runtime.ready
+         0     0%   100%    10166ns 41.71%  runtime.resumeG
+         0     0%   100%      666ns  2.73%  runtime.runSafePointFn
+         0     0%   100%      666ns  2.73%  runtime.schedule
+         0     0%   100%    10166ns 41.71%  runtime.startm
+         0     0%   100%    23708ns 97.27%  runtime.systemstack
+         0     0%   100%    10166ns 41.71%  runtime.wakep

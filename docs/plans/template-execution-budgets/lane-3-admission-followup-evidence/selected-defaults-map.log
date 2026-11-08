@@ -1,0 +1,24 @@
+goos: darwin
+goarch: arm64
+pkg: github.com/CloudyKit/jet/v6
+cpu: Apple M2 Max
+BenchmarkAdmissionInput/small_map-2         	 7878482	       450.1 ns/op	     466 B/op	       5 allocs/op
+PASS
+        4.13 real         4.16 user         0.14 sys
+            14827520  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                1125  page reclaims
+                   4  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                8557  signals received
+                  93  voluntary context switches
+               19668  involuntary context switches
+         62361040070  instructions retired
+         14368959052  cycles elapsed
+             9617936  peak memory footprint

@@ -1,0 +1,24 @@
+goos: darwin
+goarch: arm64
+pkg: github.com/CloudyKit/jet/v6
+cpu: Apple M2 Max
+BenchmarkExecutionModes/restricted_owned/header_literal/html-2         	12837571	       279.7 ns/op	     144 B/op	       3 allocs/op
+PASS
+        4.23 real         4.01 user         0.09 sys
+            15581184  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                1149  page reclaims
+                  20  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                4958  signals received
+                  77  voluntary context switches
+               13242  involuntary context switches
+         58950587639  instructions retired
+         13606370718  cycles elapsed
+            10371648  peak memory footprint

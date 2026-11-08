@@ -1,0 +1,164 @@
+Total: 3.96s
+ROUTINE ======================== github.com/CloudyKit/jet/v6.(*Template).execute in .git/admission-followup/defaults-exec.go.txt
+     200ms      2.42s (flat, cum) 61.11% of Total
+      10ms       10ms     75:func (t *Template) execute(ctx context.Context, w io.Writer, variables VarMap, data interface{}, opts ExecutionOptions) (err error) {
+         .          .     76:	var owned *restrictedSink
+      10ms       10ms     77:	if policy := t.set.restricted; policy != nil {
+         .          .     78:		var ok bool
+         .          .     79:		owned, ok = w.(*restrictedSink)
+         .          .     80:		if !ok || owned.owner != t {
+         .          .     81:			return fmt.Errorf("%w: use RenderRestrictedContext with an owned result", ErrCapabilityDenied)
+         .          .     82:		}
+         .          .     83:		if ctx == nil {
+         .          .     84:			return ErrInvalidOptions
+         .          .     85:		}
+         .       10ms     86:		if opts == (ExecutionOptions{}) {
+         .          .     87:			opts = policy.execution
+         .          .     88:		} else {
+         .          .     89:			opts = constrainExecution(opts, policy.execution)
+         .          .     90:		}
+         .       10ms     91:		inputVars := borrowInputVars(policy.globals, variables)
+         .          .     92:		defer releaseInputVars(inputVars)
+         .      500ms     93:		variables, data, err = admitInputScopesInto(ctx, []VarMap{policy.globals, variables}, data, policy.input, inputVars)
+         .          .     94:		if err != nil {
+         .          .     95:			return inputContextError(ctx, err)
+         .          .     96:		}
+         .          .     97:	}
+      10ms       60ms     98:	st := pool_State.Get().(*Runtime)
+      10ms       10ms     99:	defer st.recover(&err)
+         .          .    100:
+     140ms      150ms    101:	st.execution = executionState{ctx: ctx, checkContext: ctx != nil && ctx != context.Background() && ctx != context.TODO(), options: opts, remaining: opts.MaxSteps, values: uint64(opts.MaxValueBytes), output: uint64(opts.MaxOutputBytes)}
+         .      110ms    102:	st.checkpoint(0)
+         .          .    103:	st.blocks = t.processedBlocks
+         .          .    104:	st.variables = variables
+         .          .    105:	st.set = t.set
+         .          .    106:	st.writeErr = nil
+         .       20ms    107:	st.rootSink = st.checkedOutput(w)
+      10ms       10ms    108:	if owned != nil {
+         .          .    109:		st.rootSink.writer = &owned.buffer
+         .          .    110:		st.rootSink.buffer = &owned.buffer
+         .          .    111:		st.rootSink.retained = &owned.buffer
+         .          .    112:	}
+         .          .    113:	st.Writer = &st.rootSink
+         .          .    114:
+         .      370ms    115:	st.startCompilation(t)
+         .       80ms    116:	root := st.templateRoot(t)
+         .          .    117:
+         .          .    118:	if data != nil {
+         .          .    119:		st.context = reflect.ValueOf(data)
+         .          .    120:	}
+         .          .    121:
+         .      460ms    122:	st.executeList(root)
+         .       70ms    123:	st.checkpoint(0)
+         .          .    124:	if owned != nil {
+         .       70ms    125:		st.reserveValue(int64(owned.buffer.Len()))
+         .      110ms    126:		owned.result = owned.buffer.String()
+         .       60ms    127:		st.checkpoint(0)
+         .          .    128:	}
+      10ms      300ms    129:	return
+         .          .    130:}
+ROUTINE ======================== github.com/CloudyKit/jet/v6.(*inputAdmission).clone in .git/admission-followup/direct-frozen/input.go.txt
+      10ms       50ms (flat, cum)  1.26% of Total
+      10ms       10ms    151:func (a *inputAdmission) clone(v reflect.Value, depth int) reflect.Value {
+         .       40ms    152:	a.step(1)
+         .          .    153:	if depth > a.opts.MaxDepth {
+         .          .    154:		a.limit("depth")
+         .          .    155:	}
+         .          .    156:	if !v.IsValid() {
+         .          .    157:		return reflect.Value{}
+ROUTINE ======================== github.com/CloudyKit/jet/v6.(*inputAdmission).reserveBytes in .git/admission-followup/direct-frozen/input.go.txt
+      30ms       90ms (flat, cum)  2.27% of Total
+      20ms       20ms    109:func (a *inputAdmission) reserveBytes(n, width uint64) {
+         .       60ms    110:	a.step(1)
+         .          .    111:	remaining := uint64(a.opts.MaxBytes - a.bytes)
+         .          .    112:	if width != 0 && n > remaining/width {
+         .          .    113:		a.limit("bytes")
+         .          .    114:	}
+         .          .    115:	a.bytes += int64(n * width)
+      10ms       10ms    116:}
+         .          .    117:
+         .          .    118:func (a *inputAdmission) enterContainer(key inputIdentity) {
+         .          .    119:	// The depth cap bounds overflow; ordinary inputs need no active-path map.
+         .          .    120:	for i := 0; i < a.activeCount; i++ {
+         .          .    121:		a.step(1)
+ROUTINE ======================== github.com/CloudyKit/jet/v6.(*inputAdmission).reserveItems in .git/admission-followup/direct-frozen/input.go.txt
+      50ms      180ms (flat, cum)  4.55% of Total
+      10ms       10ms    102:func (a *inputAdmission) reserveItems(n uint64) {
+         .      130ms    103:	a.step(1)
+      20ms       20ms    104:	if n > a.opts.MaxItems-a.items {
+         .          .    105:		a.limit("items")
+         .          .    106:	}
+         .          .    107:	a.items += n
+      20ms       20ms    108:}
+         .          .    109:func (a *inputAdmission) reserveBytes(n, width uint64) {
+         .          .    110:	a.step(1)
+         .          .    111:	remaining := uint64(a.opts.MaxBytes - a.bytes)
+         .          .    112:	if width != 0 && n > remaining/width {
+         .          .    113:		a.limit("bytes")
+ROUTINE ======================== github.com/CloudyKit/jet/v6.(*inputAdmission).step in .git/admission-followup/direct-frozen/input.go.txt
+     120ms      280ms (flat, cum)  7.07% of Total
+      40ms       40ms     93:func (a *inputAdmission) step(n uint64) {
+      20ms      180ms     94:	if err := a.ctx.Err(); err != nil {
+         .          .     95:		panic(inputAbort{err})
+         .          .     96:	}
+      10ms       10ms     97:	if n > a.opts.MaxSteps-a.steps {
+         .          .     98:		a.limit("steps")
+         .          .     99:	}
+      10ms       10ms    100:	a.steps += n
+      40ms       40ms    101:}
+         .          .    102:func (a *inputAdmission) reserveItems(n uint64) {
+         .          .    103:	a.step(1)
+         .          .    104:	if n > a.opts.MaxItems-a.items {
+         .          .    105:		a.limit("items")
+         .          .    106:	}
+ROUTINE ======================== github.com/CloudyKit/jet/v6.admitInputScopesInto in .git/admission-followup/direct-frozen/input.go.txt
+      70ms      500ms (flat, cum) 12.63% of Total
+      10ms       10ms     49:func admitInputScopesInto(ctx context.Context, scopes []VarMap, data interface{}, opts InputOptions, seed VarMap) (out VarMap, snapshot interface{}, err error) {
+      10ms       10ms     50:	if ctx == nil || opts.MaxBytes <= 0 || opts.MaxItems == 0 || opts.MaxSteps == 0 || opts.MaxDepth <= 0 || opts.MaxDepth > 64 {
+         .          .     51:		return nil, nil, fmt.Errorf("%w: positive input budgets and depth <=64 required", ErrInputLimit)
+         .          .     52:	}
+      30ms       30ms     53:	a := &inputAdmission{ctx: ctx, opts: opts}
+         .          .     54:	out = seed
+         .          .     55:	defer func() {
+         .          .     56:		if p := recover(); p != nil {
+         .          .     57:			if failure, ok := p.(inputAbort); ok {
+         .          .     58:				err = failure.error
+         .          .     59:				out = nil
+         .          .     60:				snapshot = nil
+         .          .     61:			} else {
+         .          .     62:				panic(p)
+         .          .     63:			}
+         .          .     64:		}
+         .          .     65:	}()
+         .          .     66:	for _, scope := range scopes {
+         .      180ms     67:		a.reserveItems(uint64(len(scope)))
+         .       90ms     68:		a.reserveBytes(uint64(len(scope)), uint64(5*(strconv.IntSize/8)))
+         .          .     69:		if len(scope) > 0 && out == nil {
+         .          .     70:			out = make(VarMap, len(scope))
+         .          .     71:		}
+         .       60ms     72:		for name, value := range scope {
+         .          .     73:			a.reserveBytes(uint64(len(name)), 1)
+         .          .     74:			out[name] = a.clone(value, 1)
+         .          .     75:		}
+         .          .     76:	}
+         .       50ms     77:	value := a.clone(reflect.ValueOf(data), 1)
+         .          .     78:	if value.IsValid() {
+         .          .     79:		snapshot = value.Interface()
+         .          .     80:	}
+         .       50ms     81:	a.step(0)
+      20ms       20ms     82:	return out, snapshot, nil
+         .          .     83:}
+         .          .     84:
+         .          .     85:type inputAbort struct{ error }
+         .          .     86:
+         .          .     87:func (a *inputAdmission) deny(reason string) {
+ROUTINE ======================== github.com/CloudyKit/jet/v6.borrowInputVars in .git/admission-followup/direct-frozen/input.go.txt
+      10ms       10ms (flat, cum)  0.25% of Total
+         .          .    275:func borrowInputVars(globals, vars VarMap) VarMap {
+         .          .    276:	if len(globals) > retainedInputVars || len(vars) > retainedInputVars-len(globals) || len(globals)+len(vars) == 0 {
+      10ms       10ms    277:		return nil
+         .          .    278:	}
+         .          .    279:	return inputVarMaps.Get().(VarMap)
+         .          .    280:}
+         .          .    281:
+         .          .    282:func releaseInputVars(vars VarMap) {

@@ -1,0 +1,20 @@
+File: defaults.test
+Type: delay
+Time: 2026-11-08 04:13:59 CST
+Showing nodes accounting for 8.13s, 100% of 8.13s total
+Dropped 11 nodes (cum <= 0.04s)
+      flat  flat%   sum%        cum   cum%
+     8.13s   100%   100%      8.13s   100%  runtime.chanrecv1
+         0     0%   100%         4s 49.22%  github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes
+         0     0%   100%      4.13s 50.78%  main.main
+         0     0%   100%      4.13s 50.78%  runtime.main
+         0     0%   100%      8.11s 99.74%  testing.(*B).Run
+         0     0%   100%         4s 49.21%  testing.(*B).doBench
+         0     0%   100%         4s 49.21%  testing.(*B).run
+         0     0%   100%      4.11s 50.53%  testing.(*B).run1
+         0     0%   100%         4s 49.22%  testing.(*B).run1.func1
+         0     0%   100%      8.11s 99.74%  testing.(*B).runN
+         0     0%   100%      4.13s 50.78%  testing.(*M).Run
+         0     0%   100%         4s 49.21%  testing.(*benchState).processBench
+         0     0%   100%      4.11s 50.52%  testing.runBenchmarks
+         0     0%   100%      4.11s 50.52%  testing.runBenchmarks.func1

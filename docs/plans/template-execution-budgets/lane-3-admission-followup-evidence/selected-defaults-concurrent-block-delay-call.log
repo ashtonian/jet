@@ -1,0 +1,46 @@
+File: defaults.test
+Type: delay
+Time: 2026-11-08 04:14:14 CST
+Showing nodes accounting for 8314657.47us, 100% of 8314657.47us total
+----------------------------------------------------------+-------------
+      flat  flat%   sum%        cum   cum%   calls calls% + context 	 	 
+----------------------------------------------------------+-------------
+                                      2685262.58us   100% |   github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes.func1
+2685262.58us 32.30% 32.30% 2685262.58us 32.30%                | sync.(*WaitGroup).Wait
+----------------------------------------------------------+-------------
+                                       111875.14us   100% |   sync.(*Pool).pinSlow (inline)
+111875.14us  1.35% 33.64% 111875.14us  1.35%                | sync.(*Mutex).Lock
+----------------------------------------------------------+-------------
+                                       111875.14us   100% |   github.com/CloudyKit/jet/v6_test.init.0.func5
+         0     0% 33.64% 111875.14us  1.35%                | github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext
+                                       111875.14us   100% |   github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+----------------------------------------------------------+-------------
+                                       119751.08us   100% |   testing.(*M).after (inline)
+         0     0% 33.64% 119751.08us  1.44%                | sync.(*Once).Do
+                                       119751.08us   100% |   sync.(*Once).doSlow
+----------------------------------------------------------+-------------
+                                       119751.08us   100% |   sync.(*Once).Do
+         0     0% 33.64% 119751.08us  1.44%                | sync.(*Once).doSlow
+                                       119751.08us   100% |   testing.(*M).after.func1
+----------------------------------------------------------+-------------
+                                        40629.15us 51.21% |   github.com/CloudyKit/fastprinter.PrintString
+                                        24478.51us 30.85% |   github.com/CloudyKit/jet/v6.borrowInputVars
+                                        14228.42us 17.93% |   github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0% 33.64% 79336.07us  0.95%                | sync.(*Pool).Get
+                                        79336.07us   100% |   sync.(*Pool).pin
+----------------------------------------------------------+-------------
+                                        21234.20us 65.26% |   github.com/CloudyKit/jet/v6.(*Runtime).recover
+                                        10172.24us 31.26% |   github.com/CloudyKit/jet/v6.releaseInputVars
+                                         1132.62us  3.48% |   github.com/CloudyKit/fastprinter.PrintString
+         0     0% 33.64% 32539.06us  0.39%                | sync.(*Pool).Put
+                                        32539.06us   100% |   sync.(*Pool).pin
+----------------------------------------------------------+-------------
+                                        79336.07us 70.91% |   sync.(*Pool).Get
+                                        32539.06us 29.09% |   sync.(*Pool).Put
+         0     0% 33.64% 111875.14us  1.35%                | sync.(*Pool).pin
+                                       111875.14us   100% |   sync.(*Pool).pinSlow
+----------------------------------------------------------+-------------
+                                       111875.14us   100% |   sync.(*Pool).pin
+         0     0% 33.64% 111875.14us  1.35%                | sync.(*Pool).pinSlow
+                                       111875.14us   100% |   sync.(*Mutex).Lock (inline)
+----------------------------------------------------------+-------------

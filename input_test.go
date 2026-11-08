@@ -5,6 +5,7 @@ import (
 	"errors"
 	"io"
 	"reflect"
+	"strconv"
 	"testing"
 )
 
@@ -118,5 +119,96 @@ func TestInputAdmissionByteSnapshot(t *testing.T) {
 	source[0] = 'X'
 	if string(snapshot.([]byte)) != "original" {
 		t.Fatal("retained mutable bytes")
+	}
+}
+
+type inputNamedData map[string]interface{}
+type inputPointerString string
+
+func (*inputPointerString) String() string { panic("input method invoked") }
+
+type inputPointerMap map[string]interface{}
+
+func (*inputPointerMap) String() string { panic("input method invoked") }
+
+type inputPointerSlice []string
+
+func (*inputPointerSlice) String() string { panic("input method invoked") }
+
+func TestInputAdmissionPointerMethods(t *testing.T) {
+	for _, data := range []interface{}{
+		inputPointerString("value"), inputPointerMap{}, inputPointerSlice{},
+		map[inputPointerString]string{"key": "value"},
+		map[string]interface{}{"nested": inputPointerString("value")},
+	} {
+		if _, _, err := admitInputs(context.Background(), nil, data, inputTestOptions()); !errors.Is(err, ErrCapabilityDenied) {
+			t.Fatalf("%T: %v", data, err)
+		}
+	}
+}
+
+func TestInputAdmissionMapBoundaries(t *testing.T) {
+	entryBytes := int64(4 * (strconv.IntSize / 8))
+	for _, tc := range []struct {
+		name  string
+		data  map[string]interface{}
+		bytes int64
+		steps uint64
+		depth int
+	}{
+		{"string", map[string]interface{}{"x": "y"}, entryBytes + 2, 9, 3},
+		{"nil", map[string]interface{}{"x": nil}, entryBytes + 1, 7, 2},
+	} {
+		for _, data := range []interface{}{tc.data, inputNamedData(tc.data)} {
+			t.Run(tc.name+"/"+reflect.TypeOf(data).String(), func(t *testing.T) {
+				opts := inputTestOptions()
+				opts.MaxBytes, opts.MaxItems, opts.MaxSteps, opts.MaxDepth = tc.bytes, 1, tc.steps, tc.depth
+				if _, _, err := admitInputs(context.Background(), nil, data, opts); err != nil {
+					t.Fatal(err)
+				}
+				for _, kind := range []string{"bytes", "steps", "depth"} {
+					limited := opts
+					switch kind {
+					case "bytes":
+						limited.MaxBytes--
+					case "steps":
+						limited.MaxSteps--
+					case "depth":
+						limited.MaxDepth--
+					}
+					if vars, snapshot, err := admitInputs(context.Background(), nil, data, limited); !errors.Is(err, ErrInputLimit) || vars != nil || snapshot != nil {
+						t.Fatalf("%s: vars=%v snapshot=%v err=%v", kind, vars, snapshot, err)
+					}
+				}
+			})
+		}
+	}
+}
+
+type inputCancellationContext struct {
+	context.Context
+	calls, cancelAt int
+}
+
+func (c *inputCancellationContext) Err() error {
+	c.calls++
+	if c.calls >= c.cancelAt {
+		return context.Canceled
+	}
+	return nil
+}
+
+func TestInputAdmissionCancellationBoundaries(t *testing.T) {
+	for _, data := range []interface{}{
+		map[string]interface{}{"x": "y"}, inputNamedData{"x": "y"},
+	} {
+		// Scope admission, map/key/interface/string charges and the return boundary.
+		for point := 1; point <= 10; point++ {
+			ctx := &inputCancellationContext{Context: context.Background(), cancelAt: point}
+			vars, snapshot, err := admitInputs(ctx, nil, data, inputTestOptions())
+			if !errors.Is(err, context.Canceled) || vars != nil || snapshot != nil || ctx.calls != point {
+				t.Fatalf("%T at %d: vars=%v snapshot=%v calls=%d err=%v", data, point, vars, snapshot, ctx.calls, err)
+			}
+		}
 	}
 }

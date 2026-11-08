@@ -1,0 +1,15 @@
+{
+  "base": "54b561484e1465edea963ed04579bcd24a7dbf76",
+  "binary": "<FROZEN54>/results/candidate.test",
+  "binary_sha256": "71815b341745c75cfe9e2d7bfe8c59292eb416e4b271045893be3817bf293011",
+  "script_sha256": "683a9b6696075a52289b0b7ab846696ad755c52704f3eee9f23b31538ae62083",
+  "build_receipt": "<FROZEN54>/results/stages.json",
+  "source": "<FROZEN54>/candidate",
+  "toolchain": "go version go1.27.3 darwin/arm64",
+  "env": {
+    "GOFLAGS": null,
+    "GOGC": null,
+    "GOMEMLIMIT": null,
+    "GODEBUG": null
+  }
+}

@@ -83,7 +83,11 @@ func (t *Template) execute(ctx context.Context, w io.Writer, variables VarMap, d
 		if ctx == nil {
 			return ErrInvalidOptions
 		}
-		opts = constrainExecution(opts, policy.execution)
+		if opts == (ExecutionOptions{}) {
+			opts = policy.execution
+		} else {
+			opts = constrainExecution(opts, policy.execution)
+		}
 		inputVars := borrowInputVars(policy.globals, variables)
 		defer releaseInputVars(inputVars)
 		variables, data, err = admitInputScopesInto(ctx, []VarMap{policy.globals, variables}, data, policy.input, inputVars)

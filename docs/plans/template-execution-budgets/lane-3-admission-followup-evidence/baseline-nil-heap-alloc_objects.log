@@ -1,0 +1,18 @@
+File: candidate.test
+Type: alloc_objects
+Time: 2026-11-08 03:58:54 CST
+Showing nodes accounting for 41232232, 99.80% of 41313360 total
+Dropped 58 nodes (cum <= 206566)
+      flat  flat%   sum%        cum   cum%
+  13951827 33.77% 33.77%   13951827 33.77%  bytes.(*Buffer).grow
+  13747015 33.27% 67.05%   41237819 99.82%  github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext
+  13533390 32.76% 99.80%   13533390 32.76%  bytes.(*Buffer).String (inline)
+         0     0% 99.80%   13951827 33.77%  bytes.(*Buffer).Write
+         0     0% 99.80%   13951827 33.77%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 99.80%   27490804 66.54%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0% 99.80%   27490804 66.54%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0% 99.80%   13951827 33.77%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+         0     0% 99.80%   41237819 99.82%  github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes.func1
+         0     0% 99.80%   41237819 99.82%  github.com/CloudyKit/jet/v6_test.init.0.func5
+         0     0% 99.80%   41237819 99.82%  testing.(*B).launch
+         0     0% 99.80%   41280523 99.92%  testing.(*B).runN

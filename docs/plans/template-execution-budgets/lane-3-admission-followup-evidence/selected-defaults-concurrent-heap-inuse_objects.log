@@ -1,0 +1,22 @@
+File: defaults.test
+Type: inuse_objects
+Time: 2026-11-08 04:14:14 CST
+Showing nodes accounting for 1318, 100% of 1318 total
+      flat  flat%   sum%        cum   cum%
+      1318   100%   100%       1318   100%  runtime.mallocgc
+         0     0%   100%       1281 97.19%  runtime.allocm
+         0     0%   100%        769 58.35%  runtime.mcall
+         0     0%   100%        512 38.85%  runtime.mstart
+         0     0%   100%        512 38.85%  runtime.mstart0
+         0     0%   100%        512 38.85%  runtime.mstart1
+         0     0%   100%       1281 97.19%  runtime.newm
+         0     0%   100%       1318   100%  runtime.newobject
+         0     0%   100%        769 58.35%  runtime.park_m
+         0     0%   100%         37  2.81%  runtime.procresize
+         0     0%   100%       1025 77.77%  runtime.resetspinning
+         0     0%   100%       1281 97.19%  runtime.schedule
+         0     0%   100%         37  2.81%  runtime.startTheWorld.func1
+         0     0%   100%         37  2.81%  runtime.startTheWorldWithSema
+         0     0%   100%       1281 97.19%  runtime.startm
+         0     0%   100%         37  2.81%  runtime.systemstack
+         0     0%   100%       1281 97.19%  runtime.wakep

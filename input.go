@@ -159,7 +159,7 @@ func (a *inputAdmission) clone(v reflect.Value, depth int) reflect.Value {
 	if !v.CanInterface() {
 		a.deny("inaccessible value")
 	}
-	if v.Type().NumMethod() != 0 || reflect.PtrTo(v.Type()).NumMethod() != 0 {
+	if inputHasMethods(v.Type()) {
 		a.deny("values with methods")
 	}
 	if v.Kind() == reflect.Interface {
@@ -181,6 +181,21 @@ func (a *inputAdmission) clone(v reflect.Value, depth int) reflect.Value {
 			return reflect.ValueOf(v.Interface())
 		}
 		return v
+	case reflect.Array, reflect.Slice, reflect.Map:
+		return a.cloneContainer(v, depth)
+	default:
+		a.deny("unsupported " + v.Kind().String())
+	}
+	return reflect.Value{}
+}
+
+func inputHasMethods(t reflect.Type) bool {
+	// Supported unnamed types cannot add pointer methods; structs are denied below.
+	return t.NumMethod() != 0 || (t.PkgPath() != "" && reflect.PtrTo(t).NumMethod() != 0)
+}
+
+func (a *inputAdmission) cloneContainer(v reflect.Value, depth int) reflect.Value {
+	switch v.Kind() {
 	case reflect.Array, reflect.Slice:
 		if v.Kind() == reflect.Slice && v.IsNil() {
 			return reflect.Zero(v.Type())
@@ -206,7 +221,7 @@ func (a *inputAdmission) clone(v reflect.Value, depth int) reflect.Value {
 		}
 		return out
 	case reflect.Map:
-		if v.Type().Key().Kind() != reflect.String || v.Type().Key().NumMethod() != 0 || reflect.PtrTo(v.Type().Key()).NumMethod() != 0 {
+		if v.Type().Key().Kind() != reflect.String || inputHasMethods(v.Type().Key()) {
 			a.deny("map keys must be method-free strings")
 		}
 		if v.IsNil() {
@@ -217,6 +232,23 @@ func (a *inputAdmission) clone(v reflect.Value, depth int) reflect.Value {
 		defer a.leaveContainer()
 		a.reserveItems(uint64(v.Len()))
 		a.reserveBytes(uint64(v.Len()), uint64(v.Type().Key().Size()+v.Type().Elem().Size()))
+		if data, ok := v.Interface().(map[string]interface{}); ok {
+			out := make(map[string]interface{}, len(data))
+			for name, value := range data {
+				a.reserveBytes(uint64(len(name)), 1)
+				// Map values have an interface layer even when their dynamic value is nil.
+				a.step(1)
+				if depth+1 > a.opts.MaxDepth {
+					a.limit("depth")
+				}
+				var child interface{}
+				if value != nil {
+					child = a.clone(reflect.ValueOf(value), depth+2).Interface()
+				}
+				out[name] = child
+			}
+			return reflect.ValueOf(out)
+		}
 		out := reflect.MakeMapWithSize(v.Type(), v.Len())
 		iterator := v.MapRange()
 		for iterator.Next() {

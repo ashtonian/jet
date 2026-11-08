@@ -1,0 +1,13 @@
+gate-lock: waiting for pid 56242 on <HOST>, "jet-lane2-followup-output-factor 54b5614 in /Volumes/E2TB/projects_local/jet-lane-2", since 2026-11-08T10:14:37Z
+gate-lock: held by pid 93683 on <HOST>, "jet-lane3-admission-profile-analysis-resume 7001b1e in <CHECKOUT>", since 2026-11-08T10:16:06Z, 2 of 6 focused cores
+selected-base-nil
+selected-base-scalar
+selected-base-map
+selected-base-large
+selected-base-concurrent
+selected-defaults-nil
+selected-defaults-scalar
+selected-defaults-map
+selected-defaults-large
+selected-defaults-concurrent
+ANALYSIS COMPLETE

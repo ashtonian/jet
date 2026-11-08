@@ -1,0 +1,44 @@
+File: candidate.test
+Type: cpu
+Time: 2026-11-08 03:58:50 CST
+Duration: 3.93s, Total samples = 3.71s (94.51%)
+Showing nodes accounting for 3.71s, 100% of 3.71s total
+----------------------------------------------------------+-------------
+      flat  flat%   sum%        cum   cum%   calls calls% + context 	 	 
+----------------------------------------------------------+-------------
+                                             0.07s 38.89% |   github.com/CloudyKit/jet/v6.(*inputAdmission).reserveBytes
+                                             0.06s 33.33% |   github.com/CloudyKit/jet/v6.(*inputAdmission).reserveItems
+                                             0.04s 22.22% |   github.com/CloudyKit/jet/v6.admitInputScopesInto
+                                             0.01s  5.56% |   github.com/CloudyKit/jet/v6.(*inputAdmission).clone
+     0.06s  1.62%  1.62%      0.18s  4.85%                | github.com/CloudyKit/jet/v6.(*inputAdmission).step
+                                             0.12s 66.67% |   context.(*cancelCtx).Err
+----------------------------------------------------------+-------------
+                                             0.41s   100% |   github.com/CloudyKit/jet/v6.(*Template).execute
+     0.06s  1.62%  3.23%      0.41s 11.05%                | github.com/CloudyKit/jet/v6.admitInputScopesInto
+                                             0.08s 19.51% |   github.com/CloudyKit/jet/v6.(*inputAdmission).reserveBytes
+                                             0.08s 19.51% |   github.com/CloudyKit/jet/v6.(*inputAdmission).reserveItems
+                                             0.08s 19.51% |   runtime.mapIterStart
+                                             0.04s  9.76% |   github.com/CloudyKit/jet/v6.(*inputAdmission).step
+                                             0.03s  7.32% |   github.com/CloudyKit/jet/v6.(*inputAdmission).clone
+                                             0.02s  4.88% |   github.com/CloudyKit/jet/v6.admitInputScopesInto.func1
+                                             0.02s  4.88% |   reflect.ValueOf (inline)
+----------------------------------------------------------+-------------
+                                             0.08s   100% |   github.com/CloudyKit/jet/v6.admitInputScopesInto
+     0.02s  0.54%  3.77%      0.08s  2.16%                | github.com/CloudyKit/jet/v6.(*inputAdmission).reserveItems
+                                             0.06s 75.00% |   github.com/CloudyKit/jet/v6.(*inputAdmission).step
+----------------------------------------------------------+-------------
+                                             0.02s   100% |   github.com/CloudyKit/jet/v6.admitInputScopesInto
+     0.02s  0.54%  4.31%      0.02s  0.54%                | github.com/CloudyKit/jet/v6.admitInputScopesInto.func1
+----------------------------------------------------------+-------------
+                                             0.02s   100% |   github.com/CloudyKit/jet/v6.(*Template).execute
+     0.02s  0.54%  4.85%      0.02s  0.54%                | github.com/CloudyKit/jet/v6.borrowInputVars
+----------------------------------------------------------+-------------
+                                             0.03s   100% |   github.com/CloudyKit/jet/v6.admitInputScopesInto
+     0.01s  0.27%  5.12%      0.03s  0.81%                | github.com/CloudyKit/jet/v6.(*inputAdmission).clone
+                                             0.01s 33.33% |   github.com/CloudyKit/jet/v6.(*inputAdmission).step
+                                             0.01s 33.33% |   runtime.(*_panic).nextDefer
+----------------------------------------------------------+-------------
+                                             0.08s   100% |   github.com/CloudyKit/jet/v6.admitInputScopesInto
+     0.01s  0.27%  5.39%      0.08s  2.16%                | github.com/CloudyKit/jet/v6.(*inputAdmission).reserveBytes
+                                             0.07s 87.50% |   github.com/CloudyKit/jet/v6.(*inputAdmission).step
+----------------------------------------------------------+-------------

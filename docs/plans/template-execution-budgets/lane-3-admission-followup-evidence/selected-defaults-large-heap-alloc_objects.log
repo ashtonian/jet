@@ -1,0 +1,22 @@
+File: defaults.test
+Type: alloc_objects
+Time: 2026-11-08 04:14:12 CST
+Showing nodes accounting for 37040745, 99.61% of 37187430 total
+Dropped 27 nodes (cum <= 185937)
+      flat  flat%   sum%        cum   cum%
+  12797050 34.41% 34.41%   34058677 91.59%  github.com/CloudyKit/jet/v6.(*inputAdmission).cloneContainer
+  10546182 28.36% 62.77%   10546182 28.36%  reflect.unsafe_NewArray
+   9677701 26.02% 88.80%   20223883 54.38%  reflect.MakeSlice
+   1523804  4.10% 92.89%    1523804  4.10%  bytes.(*Buffer).grow
+   1458264  3.92% 96.81%   37182742   100%  github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext
+   1037744  2.79% 99.61%    1037744  2.79%  github.com/CloudyKit/jet/v6.(*inputAdmission).enterContainer
+         0     0% 99.61%    1523804  4.10%  bytes.(*Buffer).Write
+         0     0% 99.61%    1523804  4.10%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 99.61%   35724478 96.07%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0% 99.61%   35724478 96.07%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0% 99.61%    1523804  4.10%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+         0     0% 99.61%   34058677 91.59%  github.com/CloudyKit/jet/v6.(*inputAdmission).clone
+         0     0% 99.61%   37182742   100%  github.com/CloudyKit/jet/v6.BenchmarkAdmissionInput.func1
+         0     0% 99.61%   34058677 91.59%  github.com/CloudyKit/jet/v6.admitInputScopesInto
+         0     0% 99.61%   37182742   100%  testing.(*B).launch
+         0     0% 99.61%   37182742   100%  testing.(*B).runN

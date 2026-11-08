@@ -1,0 +1,18 @@
+gate-lock: held by pid 91637 on <HOST>, "jet-lane3-core-admission-profiles 54b5614 in <CHECKOUT>", since 2026-11-08T09:58:44Z
+gate-lock: waiting for 2 of 6 focused cores held: pid 91848 on <HOST>, "jet-finalization-lane-2-followup-inline-baseline 54b5614 in /Volumes/E2TB/projects_local/jet-lane-2", since 2026-11-08T09:58:45Z (2)
+gate-lock: held by pid 91637 on <HOST>, "jet-lane3-core-admission-profiles 54b5614 in <CHECKOUT>", since 2026-11-08T09:58:50Z
+baseline-nil
+baseline-nil-cpu-cpu
+baseline-nil-cpu-cpu-cum
+baseline-nil-cpu-cpu-source
+baseline-nil-cpu-cpu-call
+baseline-nil-heap-alloc_space
+baseline-nil-heap-alloc_space-source
+Traceback (most recent call last):
+  File "<CHECKOUT>/.git/admission-followup/profile_baseline.py", line 30, in <module>
+    stage(prefix+'-source',base+['-list=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|borrowInputVars',str(binary),str(out/(stem+'-'+profile+'.pprof'))])
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<CHECKOUT>/.git/admission-followup/profile_baseline.py", line 17, in stage
+    if code:raise RuntimeError(name)
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: baseline-nil-heap-alloc_space-source

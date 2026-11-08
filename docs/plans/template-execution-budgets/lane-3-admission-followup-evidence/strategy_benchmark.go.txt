@@ -1,0 +1,60 @@
+package jet
+
+import (
+ "context"
+ "fmt"
+ "io/ioutil"
+ "reflect"
+ "runtime"
+ "strings"
+ "testing"
+)
+
+func admissionBenchSet(n int)*Set {
+ loader:=NewInMemLoader();var source strings.Builder
+ for i:=1;i<n;i++{name:=fmt.Sprintf("part%d.jet",i);loader.Set(name,"part");fmt.Fprintf(&source,`{{ import %q }}`,name)}
+ loader.Set("root.jet",source.String());return NewSet(loader)
+}
+func BenchmarkAdmissionLookup(b *testing.B){
+ for _,n:=range []int{1,3,4,5,7,8,9,15,16,17,64}{
+  b.Run(fmt.Sprint(n),func(b *testing.B){
+   set:=admissionBenchSet(n);if _,err:=set.GetTemplate("root.jet");err!=nil{b.Fatal(err)}
+   ctx,cancel:=context.WithCancel(context.Background());defer cancel()
+   opts:=ParseOptions{MaxSourceBytes:128<<10,MaxTotalSourceBytes:1<<20,MaxNodes:20000,MaxSteps:1000000,MaxDepth:64,MaxTemplates:256}
+   b.ReportAllocs();b.ResetTimer()
+   for i:=0;i<b.N;i++{if _,err:=set.GetTemplateContext(ctx,"root.jet",opts);err!=nil{b.Fatal(err)}}
+  })
+ }
+}
+func BenchmarkAdmissionDiamond(b *testing.B){
+ loader:=NewInMemLoader();loader.Set("left0.jet","left");loader.Set("right0.jet","right")
+ for i:=1;i<=6;i++{source:=fmt.Sprintf(`{{ import "left%d.jet" }}{{ import "right%d.jet" }}`,i-1,i-1);loader.Set(fmt.Sprintf("left%d.jet",i),source);loader.Set(fmt.Sprintf("right%d.jet",i),source)}
+ set:=NewSet(loader);if _,err:=set.GetTemplate("left6.jet");err!=nil{b.Fatal(err)}
+ ctx,cancel:=context.WithCancel(context.Background());defer cancel();opts:=ParseOptions{MaxSourceBytes:128<<10,MaxTotalSourceBytes:1<<20,MaxNodes:20000,MaxSteps:1000000,MaxDepth:64,MaxTemplates:64}
+ b.ReportAllocs();b.ResetTimer();for i:=0;i<b.N;i++{if _,err:=set.GetTemplateContext(ctx,"left6.jet",opts);err!=nil{b.Fatal(err)}}
+}
+func BenchmarkAdmissionInput(b *testing.B){
+ shared:=map[string]interface{}{"value":[]interface{}{"one","two",3}}
+ var nested interface{}="value";for i:=0;i<12;i++{nested=map[string]interface{}{"child":nested}}
+ large:=make(map[string]interface{},128);for i:=0;i<128;i++{large[fmt.Sprint(i)]=[]interface{}{"value",i}}
+ for _,tc:=range []struct{name string;data interface{}}{{"empty",nil},{"scalar","value"},{"small_map",map[string]interface{}{"value":"content"}},{"nested",nested},{"shared",[]interface{}{shared,shared}},{"large",large}}{
+  b.Run(tc.name,func(b *testing.B){
+   opts:=restrictedTestOptions();opts.Input=InputOptions{MaxBytes:1<<20,MaxItems:20000,MaxSteps:1000000,MaxDepth:64}
+   set,err:=NewRestrictedSet(context.Background(),map[string]string{"root.jet":"ok"},opts);if err!=nil{b.Fatal(err)}
+   tpl,err:=set.GetTemplate("root.jet");if err!=nil{b.Fatal(err)}
+   ctx,cancel:=context.WithCancel(context.Background());defer cancel()
+   b.ReportAllocs();b.ResetTimer();for i:=0;i<b.N;i++{result,err:=tpl.RenderRestrictedContext(ctx,nil,tc.data);if err!=nil||result!="ok"{b.Fatalf("%q %v",result,err)}}
+  })
+ }
+}
+func BenchmarkAdmissionCold(b *testing.B){for _,n:=range []int{1,4,16,64}{b.Run(fmt.Sprint(n),func(b *testing.B){b.ReportAllocs();for i:=0;i<b.N;i++{if _,err:=admissionBenchSet(n).GetTemplate("root.jet");err!=nil{b.Fatal(err)}}})}}
+var retainedAdmissionSet *Set
+func TestAdmissionLayoutAndRetained(t *testing.T){
+ t.Logf("sizes Runtime=%d execution=%d admission=%d Template=%d input=%d",reflect.TypeOf(Runtime{}).Size(),reflect.TypeOf(executionState{}).Size(),reflect.TypeOf(parseAdmission{}).Size(),reflect.TypeOf(Template{}).Size(),reflect.TypeOf(inputAdmission{}).Size())
+ runtime.GC();var before,after runtime.MemStats;runtime.ReadMemStats(&before)
+ retainedAdmissionSet=admissionBenchSet(64);tpl,err:=retainedAdmissionSet.GetTemplate("root.jet");if err!=nil{t.Fatal(err)}
+ ctx,cancel:=context.WithCancel(context.Background());defer cancel()
+ opts:=restrictedTestOptions().Execution;opts.ParseOptions.MaxTemplates=256
+ for i:=0;i<10;i++{if err:=tpl.ExecuteContext(ctx,ioutil.Discard,nil,nil,opts);err!=nil{t.Fatal(err)}}
+ runtime.GC();runtime.ReadMemStats(&after);t.Logf("live heap before=%d retained=%d delta=%d HeapObjects before=%d retained=%d",before.HeapAlloc,after.HeapAlloc,int64(after.HeapAlloc)-int64(before.HeapAlloc),before.HeapObjects,after.HeapObjects)
+}

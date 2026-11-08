@@ -1,0 +1,27 @@
+gate-lock: held by pid 17846 on <HOST>, "jet-lane3-admission-structural-screen 54b5614 in <CHECKOUT>", since 2026-11-08T10:03:06Z
+gate-lock: held by pid 17846 on <HOST>, "jet-lane3-admission-structural-screen 54b5614 in <CHECKOUT>", since 2026-11-08T10:03:07Z
+build-base
+conformance-base
+build-split
+conformance-split
+build-direct
+conformance-direct
+screen-core-base-0
+screen-shape-base-0
+screen-core-split-0
+screen-shape-split-0
+screen-core-direct-0
+screen-shape-direct-0
+screen-core-split-1
+screen-shape-split-1
+screen-core-direct-1
+screen-shape-direct-1
+screen-core-base-1
+screen-shape-base-1
+screen-core-direct-2
+screen-shape-direct-2
+screen-core-base-2
+screen-shape-base-2
+screen-core-split-2
+screen-shape-split-2
+SCREEN COMPLETE

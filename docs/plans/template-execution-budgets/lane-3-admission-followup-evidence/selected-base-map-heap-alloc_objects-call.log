@@ -1,0 +1,25 @@
+File: base.test
+Type: alloc_objects
+Time: 2026-11-08 04:13:48 CST
+Showing nodes accounting for 50781947, 100% of 50781947 total
+----------------------------------------------------------+-------------
+      flat  flat%   sum%        cum   cum%   calls calls% + context 	 	 
+----------------------------------------------------------+-------------
+                                          43416849   100% |   github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0%     0%   43416849 85.50%                | github.com/CloudyKit/jet/v6.(*Template).execute
+                                          35494003 81.75% |   github.com/CloudyKit/jet/v6.admitInputScopesInto
+                                           6939047 15.98% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+                                            983054  2.26% |   bytes.(*Buffer).String (inline)
+                                               745 0.0017% |   sync.(*Pool).Get
+----------------------------------------------------------+-------------
+                                          35494003   100% |   github.com/CloudyKit/jet/v6.admitInputScopesInto
+         0     0%     0%   35494003 69.89%                | github.com/CloudyKit/jet/v6.(*inputAdmission).clone
+                                          14139652 39.84% |   reflect.Value.SetMapIndex
+                                           7307375 20.59% |   reflect.(*MapIter).Key
+                                           7045227 19.85% |   reflect.(*MapIter).Value
+                                           7001749 19.73% |   reflect.MakeMapWithSize
+----------------------------------------------------------+-------------
+                                          35494003   100% |   github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0%     0%   35494003 69.89%                | github.com/CloudyKit/jet/v6.admitInputScopesInto
+                                          35494003   100% |   github.com/CloudyKit/jet/v6.(*inputAdmission).clone
+----------------------------------------------------------+-------------

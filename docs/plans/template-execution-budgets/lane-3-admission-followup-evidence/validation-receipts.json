@@ -1,0 +1,74 @@
+[
+  {
+    "name": "normal",
+    "command": [
+      "gate-lock",
+      "run-focused",
+      "jet-lane3-admission-followup-normal",
+      "--",
+      "go",
+      "test",
+      "-p=1",
+      "-parallel=2",
+      "-count=1",
+      "-timeout=90s",
+      "-run=^(TestInputAdmission|TestRestricted|TestCompilation|TestExecutionCompilation|TestTemplateBundle|TestExecutionModeConformance|TestExecutionMeasurementBounds)",
+      "."
+    ],
+    "execution_deadline": 180,
+    "test_deadline": 90,
+    "term_cleanup": 5,
+    "queue_wait_separate": true,
+    "elapsed_includes_queue": true,
+    "start": 1794132454.6329799,
+    "end": 1794132460.6811252,
+    "exit_code": 0
+  },
+  {
+    "name": "race",
+    "command": [
+      "gate-lock",
+      "run-focused",
+      "jet-lane3-admission-followup-race",
+      "--",
+      "go",
+      "test",
+      "-race",
+      "-p=1",
+      "-parallel=2",
+      "-count=1",
+      "-timeout=90s",
+      "-run=^(TestInputAdmission|TestRestricted|TestCompilation|TestExecutionCompilation|TestTemplateBundle|TestExecutionModeConformance|TestExecutionMeasurementBounds)",
+      "."
+    ],
+    "execution_deadline": 180,
+    "test_deadline": 90,
+    "term_cleanup": 5,
+    "queue_wait_separate": true,
+    "elapsed_includes_queue": true,
+    "start": 1794132460.682307,
+    "end": 1794132470.332298,
+    "exit_code": 0
+  },
+  {
+    "name": "vet",
+    "command": [
+      "gate-lock",
+      "run-check",
+      "jet-lane3-admission-followup-vet",
+      "--",
+      "go",
+      "vet",
+      "-p=1",
+      "."
+    ],
+    "execution_deadline": 180,
+    "test_deadline": null,
+    "term_cleanup": 5,
+    "queue_wait_separate": true,
+    "elapsed_includes_queue": true,
+    "start": 1794132470.34361,
+    "end": 1794132473.390404,
+    "exit_code": 0
+  }
+]

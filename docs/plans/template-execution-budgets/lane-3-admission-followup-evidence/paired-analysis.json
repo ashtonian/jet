@@ -1,0 +1,171 @@
+{
+  "core": {
+    "BenchmarkExecutionModes/restricted_owned/header_literal/html": {
+      "base": {
+        "samples": 6,
+        "ns": 261.45,
+        "B": 144.0,
+        "allocs": 3.0
+      },
+      "defaults": {
+        "samples": 6,
+        "ns": 245.3,
+        "B": 144.0,
+        "allocs": 3.0
+      },
+      "ratio": 0.9382291069038058
+    },
+    "BenchmarkExecutionModes/restricted_owned/header_interpolation/html": {
+      "base": {
+        "samples": 6,
+        "ns": 565.85,
+        "B": 152.0,
+        "allocs": 3.0
+      },
+      "defaults": {
+        "samples": 6,
+        "ns": 519.3,
+        "B": 152.0,
+        "allocs": 3.0
+      },
+      "ratio": 0.9177343819033311
+    },
+    "BenchmarkExecutionModes/restricted_owned/include/html": {
+      "base": {
+        "samples": 6,
+        "ns": 838.85,
+        "B": 248.0,
+        "allocs": 8.0
+      },
+      "defaults": {
+        "samples": 6,
+        "ns": 784.0999999999999,
+        "B": 248.0,
+        "allocs": 8.0
+      },
+      "ratio": 0.9347320736722893
+    },
+    "BenchmarkExecutionModes/restricted_owned/inheritance/html": {
+      "base": {
+        "samples": 6,
+        "ns": 387.6,
+        "B": 152.0,
+        "allocs": 3.0
+      },
+      "defaults": {
+        "samples": 6,
+        "ns": 368.54999999999995,
+        "B": 152.0,
+        "allocs": 3.0
+      },
+      "ratio": 0.9508513931888544
+    },
+    "BenchmarkExecutionModes/restricted_owned/named_map/html": {
+      "base": {
+        "samples": 6,
+        "ns": 825.65,
+        "B": 533.0,
+        "allocs": 9.0
+      },
+      "defaults": {
+        "samples": 6,
+        "ns": 843.9000000000001,
+        "B": 533.0,
+        "allocs": 9.0
+      },
+      "ratio": 1.0221037970084177
+    }
+  },
+  "shape": {
+    "BenchmarkAdmissionInput/empty": {
+      "defaults": {
+        "samples": 6,
+        "ns": 237.35,
+        "B": 130.0,
+        "allocs": 3.0
+      },
+      "base": {
+        "samples": 6,
+        "ns": 262.05,
+        "B": 130.0,
+        "allocs": 3.0
+      },
+      "ratio": 0.905743178782675
+    },
+    "BenchmarkAdmissionInput/scalar": {
+      "defaults": {
+        "samples": 6,
+        "ns": 260.29999999999995,
+        "B": 130.0,
+        "allocs": 3.0
+      },
+      "base": {
+        "samples": 6,
+        "ns": 284.0,
+        "B": 130.0,
+        "allocs": 3.0
+      },
+      "ratio": 0.9165492957746477
+    },
+    "BenchmarkAdmissionInput/small_map": {
+      "defaults": {
+        "samples": 6,
+        "ns": 422.8,
+        "B": 466.0,
+        "allocs": 5.0
+      },
+      "base": {
+        "samples": 6,
+        "ns": 566.85,
+        "B": 514.0,
+        "allocs": 8.0
+      },
+      "ratio": 0.7458763341271941
+    },
+    "BenchmarkAdmissionInput/nested": {
+      "defaults": {
+        "samples": 6,
+        "ns": 2881.0,
+        "B": 4450.0,
+        "allocs": 30.0
+      },
+      "base": {
+        "samples": 6,
+        "ns": 4340.0,
+        "B": 5026.0,
+        "allocs": 66.0
+      },
+      "ratio": 0.6638248847926267
+    },
+    "BenchmarkAdmissionInput/shared": {
+      "defaults": {
+        "samples": 6,
+        "ns": 1246.5,
+        "B": 1002.0,
+        "allocs": 13.0
+      },
+      "base": {
+        "samples": 6,
+        "ns": 1689.0,
+        "B": 1098.0,
+        "allocs": 19.0
+      },
+      "ratio": 0.7380106571936057
+    },
+    "BenchmarkAdmissionInput/large": {
+      "defaults": {
+        "samples": 6,
+        "ns": 23244.0,
+        "B": 16861.0,
+        "allocs": 263.0
+      },
+      "base": {
+        "samples": 6,
+        "ns": 40778.5,
+        "B": 23007.0,
+        "allocs": 647.0
+      },
+      "ratio": 0.5700062532952413
+    }
+  }
+}

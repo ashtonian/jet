@@ -1,0 +1,43 @@
+gate-lock: waiting for pid 92857 on <HOST>, "jobcrm-c-interview-field-denial 3118ff2 in /Volumes/E2TB/workgroups/jobcrm/agent-3", since 2026-11-08T09:58:57Z
+gate-lock: held by pid 94559 on <HOST>, "jet-lane3-core-admission-profiles-resume 54b5614 in <CHECKOUT>", since 2026-11-08T09:59:51Z
+gate-lock: held by pid 94559 on <HOST>, "jet-lane3-core-admission-profiles-resume 54b5614 in <CHECKOUT>", since 2026-11-08T09:59:52Z
+baseline-nil-heap-alloc_space-source
+baseline-nil-heap-alloc_space-call
+baseline-nil-heap-alloc_objects
+baseline-nil-heap-alloc_objects-source
+baseline-nil-heap-alloc_objects-call
+baseline-nil-heap-inuse_space
+baseline-nil-heap-inuse_objects
+baseline-nil-mutex-delay
+baseline-nil-block-delay
+baseline-scalar
+baseline-scalar-cpu-cpu
+baseline-scalar-cpu-cpu-cum
+baseline-scalar-cpu-cpu-source
+baseline-scalar-cpu-cpu-call
+baseline-scalar-heap-alloc_space
+baseline-scalar-heap-alloc_space-source
+baseline-scalar-heap-alloc_space-call
+baseline-scalar-heap-alloc_objects
+baseline-scalar-heap-alloc_objects-source
+baseline-scalar-heap-alloc_objects-call
+baseline-scalar-heap-inuse_space
+baseline-scalar-heap-inuse_objects
+baseline-scalar-mutex-delay
+baseline-scalar-block-delay
+baseline-map
+baseline-map-cpu-cpu
+baseline-map-cpu-cpu-cum
+baseline-map-cpu-cpu-source
+baseline-map-cpu-cpu-call
+baseline-map-heap-alloc_space
+baseline-map-heap-alloc_space-source
+baseline-map-heap-alloc_space-call
+baseline-map-heap-alloc_objects
+baseline-map-heap-alloc_objects-source
+baseline-map-heap-alloc_objects-call
+baseline-map-heap-inuse_space
+baseline-map-heap-inuse_objects
+baseline-map-mutex-delay
+baseline-map-block-delay
+BASELINE PROFILES COMPLETE
