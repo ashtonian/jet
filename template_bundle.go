@@ -19,6 +19,7 @@ func admitTemplateBundle(ctx context.Context, sources map[string]string, opts Pa
 	if err != nil {
 		return nil, err
 	}
+	defer a.release()
 	defer func() {
 		if err != nil {
 			bundle = nil

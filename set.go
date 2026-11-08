@@ -163,7 +163,13 @@ func (s *Set) getSiblingTemplate(templatePath, siblingPath string, cacheAfterPar
 // same as GetTemplate, but doesn't cache a template when found through the loader.
 func (s *Set) getTemplate(templatePath string, cacheAfterParsing bool, parsing *parseAdmission) (t *Template, err error) {
 	if parsing == nil {
+		if s.restricted == nil && !s.developmentMode {
+			if t, ok := s.getTemplateFromCache(templatePath); ok && t.metadata.graphDepth > 0 {
+				return t, nil
+			}
+		}
 		parsing, _ = s.parseAdmission(context.Background(), ParseOptions{})
+		defer parsing.release()
 	}
 	defer parsing.recover(&err)
 	parsing.step(1)
