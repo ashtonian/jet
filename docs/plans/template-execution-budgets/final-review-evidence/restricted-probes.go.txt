@@ -1,0 +1,30 @@
+package jet_test
+import (
+ "context"
+ "testing"
+ "github.com/CloudyKit/jet/v6"
+)
+type reviewStringKey string
+func reviewOptions() jet.RestrictedOptions { return jet.RestrictedOptions{
+ Text:true,
+ Execution:jet.ExecutionOptions{MaxSteps:1000000,MaxDepth:64,MaxValueBytes:8<<20,MaxOutputBytes:1<<20,ParseOptions:jet.ParseOptions{MaxSourceBytes:64<<10,MaxTotalSourceBytes:256<<10,MaxNodes:20000,MaxSteps:1000000,MaxDepth:64,MaxTemplates:32}},
+ Input:jet.InputOptions{MaxBytes:256<<10,MaxItems:10000,MaxSteps:1000000,MaxDepth:64},
+}}
+func TestReviewRestrictedPanicBoundary(t *testing.T) {
+ for _,tc:=range []struct{name,source string; data interface{}; want string; wantError bool}{
+  {"named_key_lookup",`{{ .x }}`,map[reviewStringKey]string{"x":"ok"},"ok",false},
+  {"typed_assignment",`{{ .x = 1 }}`,map[string]string{"x":"ok"},"",true},
+  {"nil_assignment",`{{ .x = 1 }}`,map[string]interface{}(nil),"",true},
+  {"unaddressable_array_slice",`{{ .[:] }}`,[2]int{1,2},"[1 2]",false},
+  {"odd_map_arguments",`{{ map("x") }}`,nil,"",true},
+ }{
+  t.Run(tc.name,func(t *testing.T){
+   defer func(){ if p:=recover();p!=nil{t.Errorf("RenderRestrictedContext escaped panic (%T): %v",p,p)} }()
+   s,err:=jet.NewRestrictedSet(context.Background(),map[string]string{"main":tc.source},reviewOptions());if err!=nil{t.Fatal(err)}
+   tpl,err:=s.GetTemplate("main");if err!=nil{t.Fatal(err)}
+   out,err:=tpl.RenderRestrictedContext(context.Background(),nil,tc.data)
+   t.Logf("out=%q err=%v",out,err)
+   if (err!=nil)!=tc.wantError || out!=tc.want {t.Errorf("want out=%q ordinaryError=%t",tc.want,tc.wantError)}
+  })
+ }
+}

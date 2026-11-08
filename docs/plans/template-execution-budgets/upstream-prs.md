@@ -1,6 +1,6 @@
-# Upstream-oriented PR register
+# Implementation work register
 
-Planning register, not opened implementation PRs. Preserve upstream conventions and a small review surface. Each row may split only when both resulting patches compile, have meaningful tests and explain their own behavior. Do not create a test-only red PR or expose unsupported budget fields.
+Work breakdown, not a one-PR-per-row submission schedule. Follow the [current publication policy](plan.md#current-publication-policy): fork-only development, no new upstream submissions, internal plans/RFCs excluded, and related work consolidated into existing fork PRs. Preserve upstream conventions and meaningful tests; do not expose unsupported budget fields.
 
 | ID | Suggested title | Owner | Base / predecessor | Scope and evidence | Exclude |
 | --- | --- | --- | --- | --- | --- |
@@ -28,7 +28,7 @@ J02/J03 may combine if separating them weakens the public contract. J04/J05 may 
 4. Exact baseline/fix commands, versions and results; normal versus race separated.
 5. Benchmarks and profile explanation when relevant; links to direct prerequisites.
 
-No internal assignment history, generated-by text or assistant credits. Do not substitute a large checklist for explaining the change. Keep a concise coverage table where the security boundary benefits from it. Open upstream submissions only after their code and evidence exist; this planning session creates no upstream issue/PR or maintainer notification.
+No internal assignment history, generated-by text or assistant credits. Do not substitute a large checklist for explaining the change. Keep a concise coverage table where the security boundary benefits from it. Passing implementation and validation gates does not authorize upstream submission; the publication hold remains in effect.
 
 ## Historical runtime submissions (before fork-only direction) (2026-11-07)
 

@@ -1,6 +1,6 @@
 # Acceptance and performance matrix
 
-The rows below define acceptance. Executed results are recorded in the owning lane handoffs and receipts; [Lane 3](lane-3-admission.md) records P01–P07 and C01–C07. Owners must record the exact tested SHA, dirty/untracked input manifest, dependency/toolchain configuration, command, execution deadline, log/receipt and result. Missing or skipped coverage is not a pass. Tests should exercise actual supported templates, not implementation-shaped counter assertions.
+The rows below define required acceptance; they are not a pass ledger. Current evidence, reproduced failures and unexecuted final coverage are recorded in the [2026-11-08 final review](final-review.md). Owners must record the exact tested SHA, dirty/untracked input manifest, dependency/toolchain configuration, command, execution deadline, log/receipt and result. Missing or skipped coverage is not a pass. Tests should exercise actual supported templates, not implementation-shaped counter assertions.
 
 ## Runtime (Lane 1)
 
