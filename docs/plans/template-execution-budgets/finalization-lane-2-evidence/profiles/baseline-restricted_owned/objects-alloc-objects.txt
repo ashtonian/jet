@@ -1,0 +1,32 @@
+File: baseline.test
+Type: alloc_objects
+Time: 2026-11-08 01:29:25 CST
+Showing nodes accounting for 654014, 97.62% of 669925 total
+Dropped 320 nodes (cum <= 3349)
+Showing top 25 nodes out of 43
+      flat  flat%   sum%        cum   cum%
+    170202 25.41% 25.41%     170202 25.41%  bytes.growSlice
+    113500 16.94% 42.35%     113500 16.94%  github.com/CloudyKit/jet/v6.newParseAdmission
+     85109 12.70% 55.05%      85109 12.70%  github.com/CloudyKit/jet/v6.admitInputScopes
+     56734  8.47% 63.52%      85101 12.70%  github.com/CloudyKit/jet/v6.(*parseAdmission).admitCached
+     28375  4.24% 67.76%      28375  4.24%  github.com/CloudyKit/jet/v6.(*parseAdmission).prepareSource
+     28371  4.23% 71.99%      28371  4.23%  bytes.(*Buffer).String (inline)
+     28371  4.23% 76.23%     198573 29.64%  bytes.(*Buffer).grow
+     28367  4.23% 80.46%      28367  4.23%  github.com/CloudyKit/jet/v6.(*Runtime).outputWriter (inline)
+     28367  4.23% 84.70%     255789 38.18%  github.com/CloudyKit/jet/v6.(*Runtime).printValue
+     28367  4.23% 88.93%      28687  4.28%  github.com/CloudyKit/jet/v6.(*Runtime).recover
+     28367  4.23% 93.16%     653371 97.53%  github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext
+     28367  4.23% 97.40%     227422 33.95%  github.com/CloudyKit/jet/v6.(*dataPrinter).value
+       671   0.1% 97.50%      12285  1.83%  regexp.compile
+       344 0.051% 97.55%      14421  2.15%  github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview
+       337  0.05% 97.60%       3965  0.59%  regexp/syntax.parse
+       152 0.023% 97.62%       4006   0.6%  regexp.makeOnePass
+         6 0.0009% 97.62%      13102  1.96%  testing.(*B).Run
+         4 0.0006% 97.62%     653659 97.57%  github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview.func1
+         3 0.00045% 97.62%     668115 99.73%  testing.(*B).runN
+         0     0% 97.62%     198573 29.64%  bytes.(*Buffer).Write
+         0     0% 97.62%     199055 29.71%  github.com/CloudyKit/fastprinter.PrintString
+         0     0% 97.62%     255791 38.18%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 97.62%     198569 29.64%  github.com/CloudyKit/jet/v6.(*Runtime).startCompilation
+         0     0% 97.62%      85101 12.70%  github.com/CloudyKit/jet/v6.(*Runtime).startCompilation.func1
+         0     0% 97.62%     625004 93.29%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext

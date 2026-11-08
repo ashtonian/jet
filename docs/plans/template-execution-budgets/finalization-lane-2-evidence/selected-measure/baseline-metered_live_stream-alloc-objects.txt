@@ -1,0 +1,30 @@
+File: baseline.test
+Type: alloc_objects
+Time: 2026-11-08 02:10:56 CST
+Showing nodes accounting for 1631401, 99.28% of 1643174 total
+Dropped 26 nodes (cum <= 8215)
+      flat  flat%   sum%        cum   cum%
+    633555 38.56% 38.56%     633555 38.56%  github.com/CloudyKit/jet/v6.newParseAdmission
+    318489 19.38% 57.94%     489924 29.82%  github.com/CloudyKit/jet/v6.(*parseAdmission).admitCached
+    171435 10.43% 68.37%     171435 10.43%  github.com/CloudyKit/jet/v6.(*parseAdmission).prepareSource
+    147460  8.97% 77.35%     147460  8.97%  github.com/CloudyKit/jet/v6.(*Runtime).outputWriter (inline)
+    131080  7.98% 85.32%     131080  7.98%  github.com/CloudyKit/jet/v6.(*dataPrinter).value
+    131075  7.98% 93.30%     131075  7.98%  github.com/CloudyKit/jet/v6.(*Runtime).recover
+     98307  5.98% 99.28%     229387 13.96%  github.com/CloudyKit/jet/v6.(*Runtime).printValue
+         0     0% 99.28%     229387 13.96%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 99.28%    1123479 68.37%  github.com/CloudyKit/jet/v6.(*Runtime).startCompilation
+         0     0% 99.28%     489924 29.82%  github.com/CloudyKit/jet/v6.(*Runtime).startCompilation.func1
+         0     0% 99.28%    1631401 99.28%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0% 99.28%    1631401 99.28%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0% 99.28%       8495  0.52%  github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview
+         0     0% 99.28%    1631401 99.28%  github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview.func1
+         0     0% 99.28%    1631401 99.28%  github.com/CloudyKit/jet/v6_test.init.0.func1
+         0     0% 99.28%       8485  0.52%  regexp.Compile (inline)
+         0     0% 99.28%       8485  0.52%  regexp.compile
+         0     0% 99.28%       8485  0.52%  testing.(*B).Run
+         0     0% 99.28%    1631401 99.28%  testing.(*B).launch
+         0     0% 99.28%       8495  0.52%  testing.(*B).run1.func1
+         0     0% 99.28%    1639896 99.80%  testing.(*B).runN
+         0     0% 99.28%       8485  0.52%  testing.(*matcher).fullName
+         0     0% 99.28%       8485  0.52%  testing.simpleMatch.matches
+         0     0% 99.28%       8485  0.52%  testing/internal/testdeps.TestDeps.MatchString

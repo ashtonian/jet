@@ -1,0 +1,4948 @@
+[
+  {
+    "output": ".git/finalization/selected-measure/baseline-legacy_stream-alloc-objects.txt",
+    "kind": "alloc_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "218458",
+        "flat_percent": 91.7,
+        "cumulative": "218458",
+        "cumulative_percent": 91.7,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Runtime).recover"
+      },
+      {
+        "flat": "16384",
+        "flat_percent": 6.88,
+        "cumulative": "16386",
+        "cumulative_percent": 6.88,
+        "symbol": "runtime/pprof.(*profileBuilder).emitLocation"
+      },
+      {
+        "flat": "3277",
+        "flat_percent": 1.38,
+        "cumulative": "3277",
+        "cumulative_percent": 1.38,
+        "symbol": "compress/gzip.NewWriterLevel"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "218458",
+        "cumulative_percent": 91.7,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Template).Execute (inline)"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "218458",
+        "cumulative_percent": 91.7,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Template).execute"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "218458",
+        "cumulative_percent": 91.7,
+        "symbol": "github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview.func1"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "218458",
+        "cumulative_percent": 91.7,
+        "symbol": "github.com/CloudyKit/jet/v6_test.init.func1"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "16386",
+        "cumulative_percent": 6.88,
+        "symbol": "runtime/pprof.(*profileBuilder).appendLocsForStack"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/selected-measure/baseline-legacy_stream-alloc-objects-cumulative.txt",
+    "kind": "alloc_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "218557",
+        "cumulative_percent": 91.75,
+        "symbol": "testing.(*B).runN"
+      },
+      {
+        "flat": "218458",
+        "flat_percent": 91.7,
+        "cumulative": "218458",
+        "cumulative_percent": 91.7,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Runtime).recover"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "218458",
+        "cumulative_percent": 91.7,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Template).Execute (inline)"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "218458",
+        "cumulative_percent": 91.7,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Template).execute"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "218458",
+        "cumulative_percent": 91.7,
+        "symbol": "github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview.func1"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "218458",
+        "cumulative_percent": 91.7,
+        "symbol": "github.com/CloudyKit/jet/v6_test.init.func1"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "218458",
+        "cumulative_percent": 91.7,
+        "symbol": "testing.(*B).launch"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "19663",
+        "cumulative_percent": 8.25,
+        "symbol": "runtime/pprof.profileWriter"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/selected-measure/baseline-legacy_stream-inuse-objects.txt",
+    "kind": "inuse_objects",
+    "zero_total": true,
+    "top": []
+  },
+  {
+    "output": ".git/finalization/selected-measure/baseline-legacy_stream-inuse-objects-cumulative.txt",
+    "kind": "inuse_objects",
+    "zero_total": true,
+    "top": []
+  },
+  {
+    "output": ".git/finalization/selected-measure/baseline-metered_live_stream-alloc-objects.txt",
+    "kind": "alloc_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "633555",
+        "flat_percent": 38.56,
+        "cumulative": "633555",
+        "cumulative_percent": 38.56,
+        "symbol": "github.com/CloudyKit/jet/v6.newParseAdmission"
+      },
+      {
+        "flat": "318489",
+        "flat_percent": 19.38,
+        "cumulative": "489924",
+        "cumulative_percent": 29.82,
+        "symbol": "github.com/CloudyKit/jet/v6.(*parseAdmission).admitCached"
+      },
+      {
+        "flat": "171435",
+        "flat_percent": 10.43,
+        "cumulative": "171435",
+        "cumulative_percent": 10.43,
+        "symbol": "github.com/CloudyKit/jet/v6.(*parseAdmission).prepareSource"
+      },
+      {
+        "flat": "147460",
+        "flat_percent": 8.97,
+        "cumulative": "147460",
+        "cumulative_percent": 8.97,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Runtime).outputWriter (inline)"
+      },
+      {
+        "flat": "131080",
+        "flat_percent": 7.98,
+        "cumulative": "131080",
+        "cumulative_percent": 7.98,
+        "symbol": "github.com/CloudyKit/jet/v6.(*dataPrinter).value"
+      },
+      {
+        "flat": "131075",
+        "flat_percent": 7.98,
+        "cumulative": "131075",
+        "cumulative_percent": 7.98,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Runtime).recover"
+      },
+      {
+        "flat": "98307",
+        "flat_percent": 5.98,
+        "cumulative": "229387",
+        "cumulative_percent": 13.96,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Runtime).printValue"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "229387",
+        "cumulative_percent": 13.96,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Runtime).executeList"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/selected-measure/baseline-metered_live_stream-alloc-objects-cumulative.txt",
+    "kind": "alloc_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "1639896",
+        "cumulative_percent": 99.8,
+        "symbol": "testing.(*B).runN"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "1631401",
+        "cumulative_percent": 99.28,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Template).ExecuteContext"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "1631401",
+        "cumulative_percent": 99.28,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Template).execute"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "1631401",
+        "cumulative_percent": 99.28,
+        "symbol": "github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview.func1"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "1631401",
+        "cumulative_percent": 99.28,
+        "symbol": "github.com/CloudyKit/jet/v6_test.init.0.func1"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "1631401",
+        "cumulative_percent": 99.28,
+        "symbol": "testing.(*B).launch"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "1123479",
+        "cumulative_percent": 68.37,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Runtime).startCompilation"
+      },
+      {
+        "flat": "633555",
+        "flat_percent": 38.56,
+        "cumulative": "633555",
+        "cumulative_percent": 38.56,
+        "symbol": "github.com/CloudyKit/jet/v6.newParseAdmission"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/selected-measure/baseline-metered_live_stream-inuse-objects.txt",
+    "kind": "inuse_objects",
+    "zero_total": true,
+    "top": []
+  },
+  {
+    "output": ".git/finalization/selected-measure/baseline-metered_live_stream-inuse-objects-cumulative.txt",
+    "kind": "inuse_objects",
+    "zero_total": true,
+    "top": []
+  },
+  {
+    "output": ".git/finalization/selected-measure/baseline-restricted_owned-alloc-objects.txt",
+    "kind": "alloc_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "610947",
+        "flat_percent": 22.57,
+        "cumulative": "610947",
+        "cumulative_percent": 22.57,
+        "symbol": "bytes.growSlice"
+      },
+      {
+        "flat": "513398",
+        "flat_percent": 18.97,
+        "cumulative": "513398",
+        "cumulative_percent": 18.97,
+        "symbol": "github.com/CloudyKit/jet/v6.newParseAdmission"
+      },
+      {
+        "flat": "312329",
+        "flat_percent": 11.54,
+        "cumulative": "312329",
+        "cumulative_percent": 11.54,
+        "symbol": "github.com/CloudyKit/jet/v6.admitInputScopes"
+      },
+      {
+        "flat": "221012",
+        "flat_percent": 8.16,
+        "cumulative": "342025",
+        "cumulative_percent": 12.63,
+        "symbol": "github.com/CloudyKit/jet/v6.(*parseAdmission).admitCached"
+      },
+      {
+        "flat": "180229",
+        "flat_percent": 6.66,
+        "cumulative": "1053333",
+        "cumulative_percent": 38.91,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Runtime).printValue"
+      },
+      {
+        "flat": "147460",
+        "flat_percent": 5.45,
+        "cumulative": "147460",
+        "cumulative_percent": 5.45,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Runtime).outputWriter (inline)"
+      },
+      {
+        "flat": "139272",
+        "flat_percent": 5.14,
+        "cumulative": "750219",
+        "cumulative_percent": 27.71,
+        "symbol": "bytes.(*Buffer).grow"
+      },
+      {
+        "flat": "121013",
+        "flat_percent": 4.47,
+        "cumulative": "121013",
+        "cumulative_percent": 4.47,
+        "symbol": "github.com/CloudyKit/jet/v6.(*parseAdmission).prepareSource"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/selected-measure/baseline-restricted_owned-alloc-objects-cumulative.txt",
+    "kind": "alloc_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "2703748",
+        "cumulative_percent": 99.88,
+        "symbol": "testing.(*B).runN"
+      },
+      {
+        "flat": "104865",
+        "flat_percent": 3.87,
+        "cumulative": "2687050",
+        "cumulative_percent": 99.26,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "2687050",
+        "cumulative_percent": 99.26,
+        "symbol": "github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview.func1"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "2687050",
+        "cumulative_percent": 99.26,
+        "symbol": "github.com/CloudyKit/jet/v6_test.init.0.func2"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "2687050",
+        "cumulative_percent": 99.26,
+        "symbol": "testing.(*B).launch"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "2582185",
+        "cumulative_percent": 95.39,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Template).ExecuteContext"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "2582185",
+        "cumulative_percent": 95.39,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Template).execute"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "1053333",
+        "cumulative_percent": 38.91,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Runtime).executeList"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/selected-measure/baseline-restricted_owned-inuse-objects.txt",
+    "kind": "inuse_objects",
+    "zero_total": true,
+    "top": []
+  },
+  {
+    "output": ".git/finalization/selected-measure/baseline-restricted_owned-inuse-objects-cumulative.txt",
+    "kind": "inuse_objects",
+    "zero_total": true,
+    "top": []
+  },
+  {
+    "output": ".git/finalization/selected-measure/selected-legacy_stream-alloc-objects.txt",
+    "kind": "alloc_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "2755",
+        "flat_percent": 70.1,
+        "cumulative": "2755",
+        "cumulative_percent": 70.1,
+        "symbol": "regexp/syntax.(*compiler).inst (inline)"
+      },
+      {
+        "flat": "1092",
+        "flat_percent": 27.79,
+        "cumulative": "1092",
+        "cumulative_percent": 27.79,
+        "symbol": "runtime.mallocgc"
+      },
+      {
+        "flat": "80",
+        "flat_percent": 2.04,
+        "cumulative": "80",
+        "cumulative_percent": 2.04,
+        "symbol": "encoding/json/v2.makeString"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "80",
+        "cumulative_percent": 2.04,
+        "symbol": "encoding/json.Unmarshal (inline)"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "80",
+        "cumulative_percent": 2.04,
+        "symbol": "encoding/json/v2.Unmarshal"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "80",
+        "cumulative_percent": 2.04,
+        "symbol": "encoding/json/v2.makeSliceArshaler.func3"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "80",
+        "cumulative_percent": 2.04,
+        "symbol": "encoding/json/v2.makeStringArshaler.func2"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "80",
+        "cumulative_percent": 2.04,
+        "symbol": "encoding/json/v2.makeStructArshaler.func3"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/selected-measure/selected-legacy_stream-alloc-objects-cumulative.txt",
+    "kind": "alloc_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "2837",
+        "cumulative_percent": 72.19,
+        "symbol": "github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "2837",
+        "cumulative_percent": 72.19,
+        "symbol": "testing.(*B).run1.func1"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "2837",
+        "cumulative_percent": 72.19,
+        "symbol": "testing.(*B).runN"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "2755",
+        "cumulative_percent": 70.1,
+        "symbol": "regexp.Compile (inline)"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "2755",
+        "cumulative_percent": 70.1,
+        "symbol": "regexp.compile"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "2755",
+        "cumulative_percent": 70.1,
+        "symbol": "regexp/syntax.(*compiler).compile"
+      },
+      {
+        "flat": "2755",
+        "flat_percent": 70.1,
+        "cumulative": "2755",
+        "cumulative_percent": 70.1,
+        "symbol": "regexp/syntax.(*compiler).inst (inline)"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "2755",
+        "cumulative_percent": 70.1,
+        "symbol": "regexp/syntax.(*compiler).rune"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/selected-measure/selected-legacy_stream-inuse-objects.txt",
+    "kind": "inuse_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "1092",
+        "flat_percent": 100.0,
+        "cumulative": "1092",
+        "cumulative_percent": 100.0,
+        "symbol": "runtime.mallocgc"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "1092",
+        "cumulative_percent": 100.0,
+        "symbol": "runtime.malg"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "1092",
+        "cumulative_percent": 100.0,
+        "symbol": "runtime.newobject"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "1092",
+        "cumulative_percent": 100.0,
+        "symbol": "runtime.newproc.func1"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "1092",
+        "cumulative_percent": 100.0,
+        "symbol": "runtime.newproc1"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "1092",
+        "cumulative_percent": 100.0,
+        "symbol": "runtime.systemstack"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/selected-measure/selected-legacy_stream-inuse-objects-cumulative.txt",
+    "kind": "inuse_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "1092",
+        "cumulative_percent": 100.0,
+        "symbol": "runtime.malg"
+      },
+      {
+        "flat": "1092",
+        "flat_percent": 100.0,
+        "cumulative": "1092",
+        "cumulative_percent": 100.0,
+        "symbol": "runtime.mallocgc"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "1092",
+        "cumulative_percent": 100.0,
+        "symbol": "runtime.newobject"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "1092",
+        "cumulative_percent": 100.0,
+        "symbol": "runtime.newproc.func1"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "1092",
+        "cumulative_percent": 100.0,
+        "symbol": "runtime.newproc1"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "1092",
+        "cumulative_percent": 100.0,
+        "symbol": "runtime.systemstack"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/selected-measure/selected-metered_live_stream-alloc-objects.txt",
+    "kind": "alloc_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "975819",
+        "flat_percent": 60.07,
+        "cumulative": "975819",
+        "cumulative_percent": 60.07,
+        "symbol": "github.com/CloudyKit/jet/v6.newParseAdmission"
+      },
+      {
+        "flat": "399445",
+        "flat_percent": 24.59,
+        "cumulative": "633908",
+        "cumulative_percent": 39.03,
+        "symbol": "github.com/CloudyKit/jet/v6.(*parseAdmission).admitCached"
+      },
+      {
+        "flat": "234463",
+        "flat_percent": 14.43,
+        "cumulative": "234463",
+        "cumulative_percent": 14.43,
+        "symbol": "github.com/CloudyKit/jet/v6.(*parseAdmission).prepareSource"
+      },
+      {
+        "flat": "8192",
+        "flat_percent": 0.5,
+        "cumulative": "8192",
+        "cumulative_percent": 0.5,
+        "symbol": "testing.rewrite"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "1609727",
+        "cumulative_percent": 99.1,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Runtime).startCompilation"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "633908",
+        "cumulative_percent": 39.03,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Runtime).startCompilation.func1"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "1609727",
+        "cumulative_percent": 99.1,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Template).ExecuteContext"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "1609727",
+        "cumulative_percent": 99.1,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Template).execute"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/selected-measure/selected-metered_live_stream-alloc-objects-cumulative.txt",
+    "kind": "alloc_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "1621060",
+        "cumulative_percent": 99.8,
+        "symbol": "testing.(*B).runN"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "1609727",
+        "cumulative_percent": 99.1,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Runtime).startCompilation"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "1609727",
+        "cumulative_percent": 99.1,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Template).ExecuteContext"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "1609727",
+        "cumulative_percent": 99.1,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Template).execute"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "1609727",
+        "cumulative_percent": 99.1,
+        "symbol": "github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview.func1"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "1609727",
+        "cumulative_percent": 99.1,
+        "symbol": "github.com/CloudyKit/jet/v6_test.init.0.func1"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "1609727",
+        "cumulative_percent": 99.1,
+        "symbol": "testing.(*B).launch"
+      },
+      {
+        "flat": "975819",
+        "flat_percent": 60.07,
+        "cumulative": "975819",
+        "cumulative_percent": 60.07,
+        "symbol": "github.com/CloudyKit/jet/v6.newParseAdmission"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/selected-measure/selected-metered_live_stream-inuse-objects.txt",
+    "kind": "inuse_objects",
+    "zero_total": true,
+    "top": []
+  },
+  {
+    "output": ".git/finalization/selected-measure/selected-metered_live_stream-inuse-objects-cumulative.txt",
+    "kind": "inuse_objects",
+    "zero_total": true,
+    "top": []
+  },
+  {
+    "output": ".git/finalization/selected-measure/selected-restricted_owned-alloc-objects.txt",
+    "kind": "alloc_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "1096090",
+        "flat_percent": 30.44,
+        "cumulative": "1096090",
+        "cumulative_percent": 30.44,
+        "symbol": "bytes.growSlice"
+      },
+      {
+        "flat": "746429",
+        "flat_percent": 20.73,
+        "cumulative": "746429",
+        "cumulative_percent": 20.73,
+        "symbol": "github.com/CloudyKit/jet/v6.newParseAdmission"
+      },
+      {
+        "flat": "652466",
+        "flat_percent": 18.12,
+        "cumulative": "652466",
+        "cumulative_percent": 18.12,
+        "symbol": "github.com/CloudyKit/jet/v6.admitInputScopes"
+      },
+      {
+        "flat": "348742",
+        "flat_percent": 9.69,
+        "cumulative": "532783",
+        "cumulative_percent": 14.8,
+        "symbol": "github.com/CloudyKit/jet/v6.(*parseAdmission).admitCached"
+      },
+      {
+        "flat": "213005",
+        "flat_percent": 5.92,
+        "cumulative": "1309095",
+        "cumulative_percent": 36.36,
+        "symbol": "bytes.(*Buffer).grow"
+      },
+      {
+        "flat": "184041",
+        "flat_percent": 5.11,
+        "cumulative": "184041",
+        "cumulative_percent": 5.11,
+        "symbol": "github.com/CloudyKit/jet/v6.(*parseAdmission).prepareSource"
+      },
+      {
+        "flat": "179040",
+        "flat_percent": 4.97,
+        "cumulative": "179040",
+        "cumulative_percent": 4.97,
+        "symbol": "bytes.(*Buffer).String (inline)"
+      },
+      {
+        "flat": "172042",
+        "flat_percent": 4.78,
+        "cumulative": "3595951",
+        "cumulative_percent": 99.88,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/selected-measure/selected-restricted_owned-alloc-objects-cumulative.txt",
+    "kind": "alloc_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "3597087",
+        "cumulative_percent": 99.91,
+        "symbol": "testing.(*B).runN"
+      },
+      {
+        "flat": "172042",
+        "flat_percent": 4.78,
+        "cumulative": "3595951",
+        "cumulative_percent": 99.88,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "3595951",
+        "cumulative_percent": 99.88,
+        "symbol": "github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview.func1"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "3595951",
+        "cumulative_percent": 99.88,
+        "symbol": "github.com/CloudyKit/jet/v6_test.init.0.func2"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "3595951",
+        "cumulative_percent": 99.88,
+        "symbol": "testing.(*B).launch"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "3423909",
+        "cumulative_percent": 95.1,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Template).ExecuteContext"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "3423909",
+        "cumulative_percent": 95.1,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Template).execute"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "1313191",
+        "cumulative_percent": 36.47,
+        "symbol": "github.com/CloudyKit/fastprinter.PrintString"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/selected-measure/selected-restricted_owned-inuse-objects.txt",
+    "kind": "inuse_objects",
+    "zero_total": true,
+    "top": []
+  },
+  {
+    "output": ".git/finalization/selected-measure/selected-restricted_owned-inuse-objects-cumulative.txt",
+    "kind": "inuse_objects",
+    "zero_total": true,
+    "top": []
+  },
+  {
+    "output": ".git/finalization/reserve-0/objects-alloc-objects.txt",
+    "kind": "alloc_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "207834",
+        "flat_percent": 31.38,
+        "cumulative": "207834",
+        "cumulative_percent": 31.38,
+        "symbol": "bytes.growSlice"
+      },
+      {
+        "flat": "138564",
+        "flat_percent": 20.92,
+        "cumulative": "138564",
+        "cumulative_percent": 20.92,
+        "symbol": "github.com/CloudyKit/jet/v6.newParseAdmission"
+      },
+      {
+        "flat": "103919",
+        "flat_percent": 15.69,
+        "cumulative": "103919",
+        "cumulative_percent": 15.69,
+        "symbol": "github.com/CloudyKit/jet/v6.admitInputScopes"
+      },
+      {
+        "flat": "69278",
+        "flat_percent": 10.46,
+        "cumulative": "103917",
+        "cumulative_percent": 15.69,
+        "symbol": "github.com/CloudyKit/jet/v6.(*parseAdmission).admitCached"
+      },
+      {
+        "flat": "34641",
+        "flat_percent": 5.23,
+        "cumulative": "34641",
+        "cumulative_percent": 5.23,
+        "symbol": "github.com/CloudyKit/jet/v6.(*parseAdmission).prepareSource"
+      },
+      {
+        "flat": "34640",
+        "flat_percent": 5.23,
+        "cumulative": "34640",
+        "cumulative_percent": 5.23,
+        "symbol": "bytes.(*Buffer).String (inline)"
+      },
+      {
+        "flat": "34640",
+        "flat_percent": 5.23,
+        "cumulative": "242474",
+        "cumulative_percent": 36.61,
+        "symbol": "bytes.(*Buffer).grow"
+      },
+      {
+        "flat": "34639",
+        "flat_percent": 5.23,
+        "cumulative": "659143",
+        "cumulative_percent": 99.52,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/reserve-0/objects-alloc-objects-cumulative.txt",
+    "kind": "alloc_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "3",
+        "flat_percent": 0.00045,
+        "cumulative": "660619",
+        "cumulative_percent": 99.74,
+        "symbol": "testing.(*B).runN"
+      },
+      {
+        "flat": "34639",
+        "flat_percent": 5.23,
+        "cumulative": "659143",
+        "cumulative_percent": 99.52,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "659143",
+        "cumulative_percent": 99.52,
+        "symbol": "github.com/CloudyKit/jet/v6_test.BenchmarkOutputReserve.func1.1"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "659143",
+        "cumulative_percent": 99.52,
+        "symbol": "github.com/CloudyKit/jet/v6_test.BenchmarkOutputReserve.func1.2"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "659122",
+        "cumulative_percent": 99.52,
+        "symbol": "testing.(*B).launch"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "624504",
+        "cumulative_percent": 94.29,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Template).ExecuteContext"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "624504",
+        "cumulative_percent": 94.29,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Template).execute"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "243019",
+        "cumulative_percent": 36.69,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Runtime).executeList"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/reserve-0/objects-inuse-objects.txt",
+    "kind": "inuse_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "14",
+        "flat_percent": 13.21,
+        "cumulative": "14",
+        "cumulative_percent": 13.21,
+        "symbol": "encoding/json/v2.makeMapArshaler"
+      },
+      {
+        "flat": "14",
+        "flat_percent": 13.21,
+        "cumulative": "15",
+        "cumulative_percent": 14.15,
+        "symbol": "runtime.mallocgc"
+      },
+      {
+        "flat": "13",
+        "flat_percent": 12.26,
+        "cumulative": "51",
+        "cumulative_percent": 48.11,
+        "symbol": "encoding/json/v2.makeStructFields"
+      },
+      {
+        "flat": "7",
+        "flat_percent": 6.6,
+        "cumulative": "7",
+        "cumulative_percent": 6.6,
+        "symbol": "encoding/json/v2.makeStructArshaler"
+      },
+      {
+        "flat": "7",
+        "flat_percent": 6.6,
+        "cumulative": "7",
+        "cumulative_percent": 6.6,
+        "symbol": "internal/sync.newEntryNode[go.shape.interface {},go.shape.interface {}] (inline)"
+      },
+      {
+        "flat": "6",
+        "flat_percent": 5.66,
+        "cumulative": "7",
+        "cumulative_percent": 6.6,
+        "symbol": "encoding/json/v2.makeSliceArshaler"
+      },
+      {
+        "flat": "4",
+        "flat_percent": 3.77,
+        "cumulative": "6",
+        "cumulative_percent": 5.66,
+        "symbol": "encoding/json/v2.parseFieldOptions"
+      },
+      {
+        "flat": "4",
+        "flat_percent": 3.77,
+        "cumulative": "4",
+        "cumulative_percent": 3.77,
+        "symbol": "reflect.addReflectOff"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/reserve-0/objects-inuse-objects-cumulative.txt",
+    "kind": "inuse_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "84",
+        "cumulative_percent": 79.25,
+        "symbol": "testing.(*B).runN"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "82",
+        "cumulative_percent": 77.36,
+        "symbol": "testing.(*B).run1.func1"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "80",
+        "cumulative_percent": 75.47,
+        "symbol": "github.com/CloudyKit/jet/v6_test.BenchmarkOutputReserve"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "72",
+        "cumulative_percent": 67.92,
+        "symbol": "encoding/json.Unmarshal (inline)"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "72",
+        "cumulative_percent": 67.92,
+        "symbol": "encoding/json/v2.Unmarshal"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "72",
+        "cumulative_percent": 67.92,
+        "symbol": "encoding/json/v2.unmarshalDecode"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "72",
+        "cumulative_percent": 67.92,
+        "symbol": "github.com/CloudyKit/jet/v6_test.executionWorkloads"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "66",
+        "cumulative_percent": 62.26,
+        "symbol": "sync.(*Once).Do (partial-inline)"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/reserve-0/large-small-objects-alloc-objects.txt",
+    "kind": "alloc_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "4831",
+        "flat_percent": 45.95,
+        "cumulative": "4831",
+        "cumulative_percent": 45.95,
+        "symbol": "strings.genSplit"
+      },
+      {
+        "flat": "840",
+        "flat_percent": 7.99,
+        "cumulative": "840",
+        "cumulative_percent": 7.99,
+        "symbol": "github.com/CloudyKit/jet/v6.newParseAdmission"
+      },
+      {
+        "flat": "510",
+        "flat_percent": 4.85,
+        "cumulative": "510",
+        "cumulative_percent": 4.85,
+        "symbol": "github.com/CloudyKit/jet/v6.admitInputScopes"
+      },
+      {
+        "flat": "450",
+        "flat_percent": 4.28,
+        "cumulative": "1080",
+        "cumulative_percent": 10.27,
+        "symbol": "github.com/CloudyKit/jet/v6.NewRestrictedSet"
+      },
+      {
+        "flat": "300",
+        "flat_percent": 2.85,
+        "cumulative": "450",
+        "cumulative_percent": 4.28,
+        "symbol": "github.com/CloudyKit/jet/v6.(*parseAdmission).admitCached"
+      },
+      {
+        "flat": "244",
+        "flat_percent": 2.32,
+        "cumulative": "4588",
+        "cumulative_percent": 43.64,
+        "symbol": "github.com/CloudyKit/jet/v6.TestOutputOwnedLargeThenSmall"
+      },
+      {
+        "flat": "216",
+        "flat_percent": 2.05,
+        "cumulative": "216",
+        "cumulative_percent": 2.05,
+        "symbol": "sync.(*Pool).pinSlow"
+      },
+      {
+        "flat": "210",
+        "flat_percent": 2.0,
+        "cumulative": "210",
+        "cumulative_percent": 2.0,
+        "symbol": "github.com/CloudyKit/jet/v6.(*parseAdmission).prepareSource"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/reserve-0/large-small-objects-alloc-objects-cumulative.txt",
+    "kind": "alloc_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "9971",
+        "cumulative_percent": 94.84,
+        "symbol": "testing.tRunner"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "5788",
+        "cumulative_percent": 55.05,
+        "symbol": "main.main"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "5788",
+        "cumulative_percent": 55.05,
+        "symbol": "runtime.main"
+      },
+      {
+        "flat": "3",
+        "flat_percent": 0.029,
+        "cumulative": "5788",
+        "cumulative_percent": 55.05,
+        "symbol": "testing.(*M).Run"
+      },
+      {
+        "flat": "90",
+        "flat_percent": 0.86,
+        "cumulative": "5773",
+        "cumulative_percent": 54.91,
+        "symbol": "testing.runTests"
+      },
+      {
+        "flat": "210",
+        "flat_percent": 2.0,
+        "cumulative": "5198",
+        "cumulative_percent": 49.44,
+        "symbol": "testing.(*T).Run"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "5198",
+        "cumulative_percent": 49.44,
+        "symbol": "testing.runTests.func1"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "4868",
+        "cumulative_percent": 46.3,
+        "symbol": "testing.(*matcher).fullName"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/reserve-0/large-small-objects-inuse-objects.txt",
+    "kind": "inuse_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "7",
+        "flat_percent": 19.44,
+        "cumulative": "8",
+        "cumulative_percent": 22.22,
+        "symbol": "runtime.mallocgc"
+      },
+      {
+        "flat": "5",
+        "flat_percent": 13.89,
+        "cumulative": "5",
+        "cumulative_percent": 13.89,
+        "symbol": "sync.(*Pool).pinSlow"
+      },
+      {
+        "flat": "2",
+        "flat_percent": 5.56,
+        "cumulative": "2",
+        "cumulative_percent": 5.56,
+        "symbol": "github.com/CloudyKit/fastprinter.newByteSliceBufferPool.func1"
+      },
+      {
+        "flat": "2",
+        "flat_percent": 5.56,
+        "cumulative": "2",
+        "cumulative_percent": 5.56,
+        "symbol": "github.com/CloudyKit/jet/v6.init.func1"
+      },
+      {
+        "flat": "2",
+        "flat_percent": 5.56,
+        "cumulative": "2",
+        "cumulative_percent": 5.56,
+        "symbol": "os.newFile"
+      },
+      {
+        "flat": "2",
+        "flat_percent": 5.56,
+        "cumulative": "10",
+        "cumulative_percent": 27.78,
+        "symbol": "regexp.compile"
+      },
+      {
+        "flat": "2",
+        "flat_percent": 5.56,
+        "cumulative": "2",
+        "cumulative_percent": 5.56,
+        "symbol": "regexp.onePassCopy"
+      },
+      {
+        "flat": "1",
+        "flat_percent": 2.78,
+        "cumulative": "1",
+        "cumulative_percent": 2.78,
+        "symbol": "fmt.(*buffer).write (inline)"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/reserve-0/large-small-objects-inuse-objects-cumulative.txt",
+    "kind": "inuse_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "16",
+        "cumulative_percent": 44.44,
+        "symbol": "main.main"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "16",
+        "cumulative_percent": 44.44,
+        "symbol": "runtime.main"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "16",
+        "cumulative_percent": 44.44,
+        "symbol": "testing.(*M).Run"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "15",
+        "cumulative_percent": 41.67,
+        "symbol": "testing.tRunner"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "14",
+        "cumulative_percent": 38.89,
+        "symbol": "testing.runTests"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "12",
+        "cumulative_percent": 33.33,
+        "symbol": "testing/internal/testdeps.TestDeps.MatchString"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "11",
+        "cumulative_percent": 30.56,
+        "symbol": "testing.newMatcher"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "11",
+        "cumulative_percent": 30.56,
+        "symbol": "testing.simpleMatch.verify"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/reserve-256/objects-alloc-objects.txt",
+    "kind": "alloc_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "187925",
+        "flat_percent": 29.23,
+        "cumulative": "187925",
+        "cumulative_percent": 29.23,
+        "symbol": "bytes.growSlice"
+      },
+      {
+        "flat": "150348",
+        "flat_percent": 23.39,
+        "cumulative": "150348",
+        "cumulative_percent": 23.39,
+        "symbol": "github.com/CloudyKit/jet/v6.newParseAdmission"
+      },
+      {
+        "flat": "112757",
+        "flat_percent": 17.54,
+        "cumulative": "112757",
+        "cumulative_percent": 17.54,
+        "symbol": "github.com/CloudyKit/jet/v6.admitInputScopes"
+      },
+      {
+        "flat": "75170",
+        "flat_percent": 11.69,
+        "cumulative": "112755",
+        "cumulative_percent": 17.54,
+        "symbol": "github.com/CloudyKit/jet/v6.(*parseAdmission).admitCached"
+      },
+      {
+        "flat": "37587",
+        "flat_percent": 5.85,
+        "cumulative": "37587",
+        "cumulative_percent": 5.85,
+        "symbol": "github.com/CloudyKit/jet/v6.(*parseAdmission).prepareSource"
+      },
+      {
+        "flat": "37586",
+        "flat_percent": 5.85,
+        "cumulative": "37586",
+        "cumulative_percent": 5.85,
+        "symbol": "bytes.(*Buffer).String (inline)"
+      },
+      {
+        "flat": "37585",
+        "flat_percent": 5.85,
+        "cumulative": "640019",
+        "cumulative_percent": 99.55,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext"
+      },
+      {
+        "flat": "3",
+        "flat_percent": 0.00047,
+        "cumulative": "641496",
+        "cumulative_percent": 99.78,
+        "symbol": "testing.(*B).runN"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/reserve-256/objects-alloc-objects-cumulative.txt",
+    "kind": "alloc_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "3",
+        "flat_percent": 0.00047,
+        "cumulative": "641496",
+        "cumulative_percent": 99.78,
+        "symbol": "testing.(*B).runN"
+      },
+      {
+        "flat": "37585",
+        "flat_percent": 5.85,
+        "cumulative": "640019",
+        "cumulative_percent": 99.55,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "640019",
+        "cumulative_percent": 99.55,
+        "symbol": "github.com/CloudyKit/jet/v6_test.BenchmarkOutputReserve.func1.1"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "640019",
+        "cumulative_percent": 99.55,
+        "symbol": "github.com/CloudyKit/jet/v6_test.BenchmarkOutputReserve.func1.2"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "640000",
+        "cumulative_percent": 99.55,
+        "symbol": "testing.(*B).launch"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "602434",
+        "cumulative_percent": 93.71,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Template).ExecuteContext"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "602434",
+        "cumulative_percent": 93.71,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Template).execute"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "263095",
+        "cumulative_percent": 40.92,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Runtime).startCompilation"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/reserve-256/objects-inuse-objects.txt",
+    "kind": "inuse_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "15",
+        "flat_percent": 14.02,
+        "cumulative": "16",
+        "cumulative_percent": 14.95,
+        "symbol": "runtime.mallocgc"
+      },
+      {
+        "flat": "14",
+        "flat_percent": 13.08,
+        "cumulative": "14",
+        "cumulative_percent": 13.08,
+        "symbol": "encoding/json/v2.makeMapArshaler"
+      },
+      {
+        "flat": "13",
+        "flat_percent": 12.15,
+        "cumulative": "52",
+        "cumulative_percent": 48.6,
+        "symbol": "encoding/json/v2.makeStructFields"
+      },
+      {
+        "flat": "7",
+        "flat_percent": 6.54,
+        "cumulative": "7",
+        "cumulative_percent": 6.54,
+        "symbol": "encoding/json/v2.makeStructArshaler"
+      },
+      {
+        "flat": "7",
+        "flat_percent": 6.54,
+        "cumulative": "7",
+        "cumulative_percent": 6.54,
+        "symbol": "internal/sync.newEntryNode[go.shape.interface {},go.shape.interface {}] (inline)"
+      },
+      {
+        "flat": "6",
+        "flat_percent": 5.61,
+        "cumulative": "7",
+        "cumulative_percent": 6.54,
+        "symbol": "encoding/json/v2.makeSliceArshaler"
+      },
+      {
+        "flat": "4",
+        "flat_percent": 3.74,
+        "cumulative": "6",
+        "cumulative_percent": 5.61,
+        "symbol": "encoding/json/v2.parseFieldOptions"
+      },
+      {
+        "flat": "4",
+        "flat_percent": 3.74,
+        "cumulative": "4",
+        "cumulative_percent": 3.74,
+        "symbol": "internal/sync.newIndirectNode[go.shape.interface {},go.shape.interface {}] (inline)"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/reserve-256/objects-inuse-objects-cumulative.txt",
+    "kind": "inuse_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "85",
+        "cumulative_percent": 79.44,
+        "symbol": "testing.(*B).runN"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "83",
+        "cumulative_percent": 77.57,
+        "symbol": "testing.(*B).run1.func1"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "81",
+        "cumulative_percent": 75.7,
+        "symbol": "github.com/CloudyKit/jet/v6_test.BenchmarkOutputReserve"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "73",
+        "cumulative_percent": 68.22,
+        "symbol": "encoding/json.Unmarshal (inline)"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "73",
+        "cumulative_percent": 68.22,
+        "symbol": "encoding/json/v2.Unmarshal"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "73",
+        "cumulative_percent": 68.22,
+        "symbol": "encoding/json/v2.unmarshalDecode"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "73",
+        "cumulative_percent": 68.22,
+        "symbol": "github.com/CloudyKit/jet/v6_test.executionWorkloads"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "67",
+        "cumulative_percent": 62.62,
+        "symbol": "sync.(*Once).Do (partial-inline)"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/reserve-256/large-small-objects-alloc-objects.txt",
+    "kind": "alloc_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "4831",
+        "flat_percent": 45.88,
+        "cumulative": "4831",
+        "cumulative_percent": 45.88,
+        "symbol": "strings.genSplit"
+      },
+      {
+        "flat": "840",
+        "flat_percent": 7.98,
+        "cumulative": "840",
+        "cumulative_percent": 7.98,
+        "symbol": "github.com/CloudyKit/jet/v6.newParseAdmission"
+      },
+      {
+        "flat": "510",
+        "flat_percent": 4.84,
+        "cumulative": "510",
+        "cumulative_percent": 4.84,
+        "symbol": "github.com/CloudyKit/jet/v6.admitInputScopes"
+      },
+      {
+        "flat": "450",
+        "flat_percent": 4.27,
+        "cumulative": "1080",
+        "cumulative_percent": 10.26,
+        "symbol": "github.com/CloudyKit/jet/v6.NewRestrictedSet"
+      },
+      {
+        "flat": "300",
+        "flat_percent": 2.85,
+        "cumulative": "450",
+        "cumulative_percent": 4.27,
+        "symbol": "github.com/CloudyKit/jet/v6.(*parseAdmission).admitCached"
+      },
+      {
+        "flat": "244",
+        "flat_percent": 2.32,
+        "cumulative": "4596",
+        "cumulative_percent": 43.65,
+        "symbol": "github.com/CloudyKit/jet/v6.TestOutputOwnedLargeThenSmall"
+      },
+      {
+        "flat": "216",
+        "flat_percent": 2.05,
+        "cumulative": "216",
+        "cumulative_percent": 2.05,
+        "symbol": "sync.(*Pool).pinSlow"
+      },
+      {
+        "flat": "210",
+        "flat_percent": 1.99,
+        "cumulative": "210",
+        "cumulative_percent": 1.99,
+        "symbol": "bytes.growSlice"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/reserve-256/large-small-objects-alloc-objects-cumulative.txt",
+    "kind": "alloc_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "9983",
+        "cumulative_percent": 94.81,
+        "symbol": "testing.tRunner"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "5790",
+        "cumulative_percent": 54.99,
+        "symbol": "main.main"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "5790",
+        "cumulative_percent": 54.99,
+        "symbol": "runtime.main"
+      },
+      {
+        "flat": "3",
+        "flat_percent": 0.028,
+        "cumulative": "5790",
+        "cumulative_percent": 54.99,
+        "symbol": "testing.(*M).Run"
+      },
+      {
+        "flat": "90",
+        "flat_percent": 0.85,
+        "cumulative": "5775",
+        "cumulative_percent": 54.85,
+        "symbol": "testing.runTests"
+      },
+      {
+        "flat": "210",
+        "flat_percent": 1.99,
+        "cumulative": "5200",
+        "cumulative_percent": 49.39,
+        "symbol": "testing.(*T).Run"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "5200",
+        "cumulative_percent": 49.39,
+        "symbol": "testing.runTests.func1"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "4870",
+        "cumulative_percent": 46.25,
+        "symbol": "testing.(*matcher).fullName"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/reserve-256/large-small-objects-inuse-objects.txt",
+    "kind": "inuse_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "9",
+        "flat_percent": 24.32,
+        "cumulative": "9",
+        "cumulative_percent": 24.32,
+        "symbol": "runtime.mallocgc"
+      },
+      {
+        "flat": "5",
+        "flat_percent": 13.51,
+        "cumulative": "5",
+        "cumulative_percent": 13.51,
+        "symbol": "sync.(*Pool).pinSlow"
+      },
+      {
+        "flat": "2",
+        "flat_percent": 5.41,
+        "cumulative": "2",
+        "cumulative_percent": 5.41,
+        "symbol": "github.com/CloudyKit/fastprinter.newByteSliceBufferPool.func1"
+      },
+      {
+        "flat": "2",
+        "flat_percent": 5.41,
+        "cumulative": "2",
+        "cumulative_percent": 5.41,
+        "symbol": "github.com/CloudyKit/jet/v6.init.func1"
+      },
+      {
+        "flat": "2",
+        "flat_percent": 5.41,
+        "cumulative": "2",
+        "cumulative_percent": 5.41,
+        "symbol": "os.newFile"
+      },
+      {
+        "flat": "2",
+        "flat_percent": 5.41,
+        "cumulative": "10",
+        "cumulative_percent": 27.03,
+        "symbol": "regexp.compile"
+      },
+      {
+        "flat": "2",
+        "flat_percent": 5.41,
+        "cumulative": "2",
+        "cumulative_percent": 5.41,
+        "symbol": "regexp.onePassCopy"
+      },
+      {
+        "flat": "1",
+        "flat_percent": 2.7,
+        "cumulative": "1",
+        "cumulative_percent": 2.7,
+        "symbol": "fmt.(*buffer).write (inline)"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/reserve-256/large-small-objects-inuse-objects-cumulative.txt",
+    "kind": "inuse_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "16",
+        "cumulative_percent": 43.24,
+        "symbol": "main.main"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "16",
+        "cumulative_percent": 43.24,
+        "symbol": "runtime.main"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "16",
+        "cumulative_percent": 43.24,
+        "symbol": "testing.(*M).Run"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "15",
+        "cumulative_percent": 40.54,
+        "symbol": "testing.tRunner"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "14",
+        "cumulative_percent": 37.84,
+        "symbol": "testing.runTests"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "12",
+        "cumulative_percent": 32.43,
+        "symbol": "testing/internal/testdeps.TestDeps.MatchString"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "11",
+        "cumulative_percent": 29.73,
+        "symbol": "testing.newMatcher"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "11",
+        "cumulative_percent": 29.73,
+        "symbol": "testing.simpleMatch.verify"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/reserve-1024/objects-alloc-objects.txt",
+    "kind": "alloc_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "157364",
+        "flat_percent": 26.48,
+        "cumulative": "157364",
+        "cumulative_percent": 26.48,
+        "symbol": "github.com/CloudyKit/jet/v6.newParseAdmission"
+      },
+      {
+        "flat": "118019",
+        "flat_percent": 19.86,
+        "cumulative": "118019",
+        "cumulative_percent": 19.86,
+        "symbol": "github.com/CloudyKit/jet/v6.admitInputScopes"
+      },
+      {
+        "flat": "118017",
+        "flat_percent": 19.86,
+        "cumulative": "118017",
+        "cumulative_percent": 19.86,
+        "symbol": "bytes.growSlice"
+      },
+      {
+        "flat": "78678",
+        "flat_percent": 13.24,
+        "cumulative": "118017",
+        "cumulative_percent": 19.86,
+        "symbol": "github.com/CloudyKit/jet/v6.(*parseAdmission).admitCached"
+      },
+      {
+        "flat": "39341",
+        "flat_percent": 6.62,
+        "cumulative": "39341",
+        "cumulative_percent": 6.62,
+        "symbol": "github.com/CloudyKit/jet/v6.(*parseAdmission).prepareSource"
+      },
+      {
+        "flat": "39340",
+        "flat_percent": 6.62,
+        "cumulative": "39340",
+        "cumulative_percent": 6.62,
+        "symbol": "bytes.(*Buffer).String (inline)"
+      },
+      {
+        "flat": "39339",
+        "flat_percent": 6.62,
+        "cumulative": "591109",
+        "cumulative_percent": 99.48,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext"
+      },
+      {
+        "flat": "3",
+        "flat_percent": 0.0005,
+        "cumulative": "592591",
+        "cumulative_percent": 99.73,
+        "symbol": "testing.(*B).runN"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/reserve-1024/objects-alloc-objects-cumulative.txt",
+    "kind": "alloc_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "3",
+        "flat_percent": 0.0005,
+        "cumulative": "592591",
+        "cumulative_percent": 99.73,
+        "symbol": "testing.(*B).runN"
+      },
+      {
+        "flat": "39339",
+        "flat_percent": 6.62,
+        "cumulative": "591109",
+        "cumulative_percent": 99.48,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "591109",
+        "cumulative_percent": 99.48,
+        "symbol": "github.com/CloudyKit/jet/v6_test.BenchmarkOutputReserve.func1.1"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "591109",
+        "cumulative_percent": 99.48,
+        "symbol": "github.com/CloudyKit/jet/v6_test.BenchmarkOutputReserve.func1.2"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "591092",
+        "cumulative_percent": 99.48,
+        "symbol": "testing.(*B).launch"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "551770",
+        "cumulative_percent": 92.86,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Template).ExecuteContext"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "551770",
+        "cumulative_percent": 92.86,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Template).execute"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "275373",
+        "cumulative_percent": 46.34,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Runtime).startCompilation"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/reserve-1024/objects-inuse-objects.txt",
+    "kind": "inuse_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "14",
+        "flat_percent": 13.21,
+        "cumulative": "14",
+        "cumulative_percent": 13.21,
+        "symbol": "encoding/json/v2.makeMapArshaler"
+      },
+      {
+        "flat": "13",
+        "flat_percent": 12.26,
+        "cumulative": "51",
+        "cumulative_percent": 48.11,
+        "symbol": "encoding/json/v2.makeStructFields"
+      },
+      {
+        "flat": "12",
+        "flat_percent": 11.32,
+        "cumulative": "14",
+        "cumulative_percent": 13.21,
+        "symbol": "runtime.mallocgc"
+      },
+      {
+        "flat": "7",
+        "flat_percent": 6.6,
+        "cumulative": "7",
+        "cumulative_percent": 6.6,
+        "symbol": "encoding/json/v2.makeStructArshaler"
+      },
+      {
+        "flat": "7",
+        "flat_percent": 6.6,
+        "cumulative": "7",
+        "cumulative_percent": 6.6,
+        "symbol": "internal/sync.newEntryNode[go.shape.interface {},go.shape.interface {}] (inline)"
+      },
+      {
+        "flat": "6",
+        "flat_percent": 5.66,
+        "cumulative": "7",
+        "cumulative_percent": 6.6,
+        "symbol": "encoding/json/v2.makeSliceArshaler"
+      },
+      {
+        "flat": "4",
+        "flat_percent": 3.77,
+        "cumulative": "6",
+        "cumulative_percent": 5.66,
+        "symbol": "encoding/json/v2.parseFieldOptions"
+      },
+      {
+        "flat": "4",
+        "flat_percent": 3.77,
+        "cumulative": "4",
+        "cumulative_percent": 3.77,
+        "symbol": "internal/sync.newIndirectNode[go.shape.interface {},go.shape.interface {}] (inline)"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/reserve-1024/objects-inuse-objects-cumulative.txt",
+    "kind": "inuse_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "85",
+        "cumulative_percent": 80.19,
+        "symbol": "testing.(*B).runN"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "82",
+        "cumulative_percent": 77.36,
+        "symbol": "testing.(*B).run1.func1"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "81",
+        "cumulative_percent": 76.42,
+        "symbol": "github.com/CloudyKit/jet/v6_test.BenchmarkOutputReserve"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "73",
+        "cumulative_percent": 68.87,
+        "symbol": "encoding/json.Unmarshal (inline)"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "73",
+        "cumulative_percent": 68.87,
+        "symbol": "encoding/json/v2.Unmarshal"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "73",
+        "cumulative_percent": 68.87,
+        "symbol": "encoding/json/v2.unmarshalDecode"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "73",
+        "cumulative_percent": 68.87,
+        "symbol": "github.com/CloudyKit/jet/v6_test.executionWorkloads"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "67",
+        "cumulative_percent": 63.21,
+        "symbol": "sync.(*Once).Do (partial-inline)"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/reserve-1024/large-small-objects-alloc-objects.txt",
+    "kind": "alloc_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "4831",
+        "flat_percent": 45.78,
+        "cumulative": "4831",
+        "cumulative_percent": 45.78,
+        "symbol": "strings.genSplit"
+      },
+      {
+        "flat": "840",
+        "flat_percent": 7.96,
+        "cumulative": "840",
+        "cumulative_percent": 7.96,
+        "symbol": "github.com/CloudyKit/jet/v6.newParseAdmission"
+      },
+      {
+        "flat": "510",
+        "flat_percent": 4.83,
+        "cumulative": "510",
+        "cumulative_percent": 4.83,
+        "symbol": "github.com/CloudyKit/jet/v6.admitInputScopes"
+      },
+      {
+        "flat": "450",
+        "flat_percent": 4.26,
+        "cumulative": "1080",
+        "cumulative_percent": 10.23,
+        "symbol": "github.com/CloudyKit/jet/v6.NewRestrictedSet"
+      },
+      {
+        "flat": "300",
+        "flat_percent": 2.84,
+        "cumulative": "450",
+        "cumulative_percent": 4.26,
+        "symbol": "github.com/CloudyKit/jet/v6.(*parseAdmission).admitCached"
+      },
+      {
+        "flat": "244",
+        "flat_percent": 2.31,
+        "cumulative": "4613",
+        "cumulative_percent": 43.71,
+        "symbol": "github.com/CloudyKit/jet/v6.TestOutputOwnedLargeThenSmall"
+      },
+      {
+        "flat": "216",
+        "flat_percent": 2.05,
+        "cumulative": "216",
+        "cumulative_percent": 2.05,
+        "symbol": "sync.(*Pool).pinSlow"
+      },
+      {
+        "flat": "210",
+        "flat_percent": 1.99,
+        "cumulative": "210",
+        "cumulative_percent": 1.99,
+        "symbol": "bytes.growSlice"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/reserve-1024/large-small-objects-alloc-objects-cumulative.txt",
+    "kind": "alloc_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "10007",
+        "cumulative_percent": 94.83,
+        "symbol": "testing.tRunner"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "5794",
+        "cumulative_percent": 54.9,
+        "symbol": "main.main"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "5794",
+        "cumulative_percent": 54.9,
+        "symbol": "runtime.main"
+      },
+      {
+        "flat": "3",
+        "flat_percent": 0.028,
+        "cumulative": "5794",
+        "cumulative_percent": 54.9,
+        "symbol": "testing.(*M).Run"
+      },
+      {
+        "flat": "90",
+        "flat_percent": 0.85,
+        "cumulative": "5779",
+        "cumulative_percent": 54.76,
+        "symbol": "testing.runTests"
+      },
+      {
+        "flat": "210",
+        "flat_percent": 1.99,
+        "cumulative": "5204",
+        "cumulative_percent": 49.31,
+        "symbol": "testing.(*T).Run"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "5204",
+        "cumulative_percent": 49.31,
+        "symbol": "testing.runTests.func1"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "4874",
+        "cumulative_percent": 46.19,
+        "symbol": "testing.(*matcher).fullName"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/reserve-1024/large-small-objects-inuse-objects.txt",
+    "kind": "inuse_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "6",
+        "flat_percent": 17.14,
+        "cumulative": "6",
+        "cumulative_percent": 17.14,
+        "symbol": "runtime.mallocgc"
+      },
+      {
+        "flat": "5",
+        "flat_percent": 14.29,
+        "cumulative": "5",
+        "cumulative_percent": 14.29,
+        "symbol": "sync.(*Pool).pinSlow"
+      },
+      {
+        "flat": "2",
+        "flat_percent": 5.71,
+        "cumulative": "2",
+        "cumulative_percent": 5.71,
+        "symbol": "github.com/CloudyKit/fastprinter.newByteSliceBufferPool.func1"
+      },
+      {
+        "flat": "2",
+        "flat_percent": 5.71,
+        "cumulative": "2",
+        "cumulative_percent": 5.71,
+        "symbol": "github.com/CloudyKit/jet/v6.init.func1"
+      },
+      {
+        "flat": "2",
+        "flat_percent": 5.71,
+        "cumulative": "2",
+        "cumulative_percent": 5.71,
+        "symbol": "os.newFile"
+      },
+      {
+        "flat": "2",
+        "flat_percent": 5.71,
+        "cumulative": "10",
+        "cumulative_percent": 28.57,
+        "symbol": "regexp.compile"
+      },
+      {
+        "flat": "2",
+        "flat_percent": 5.71,
+        "cumulative": "2",
+        "cumulative_percent": 5.71,
+        "symbol": "regexp.onePassCopy"
+      },
+      {
+        "flat": "1",
+        "flat_percent": 2.86,
+        "cumulative": "1",
+        "cumulative_percent": 2.86,
+        "symbol": "fmt.(*buffer).write (inline)"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/reserve-1024/large-small-objects-inuse-objects-cumulative.txt",
+    "kind": "inuse_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "16",
+        "cumulative_percent": 45.71,
+        "symbol": "main.main"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "16",
+        "cumulative_percent": 45.71,
+        "symbol": "runtime.main"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "16",
+        "cumulative_percent": 45.71,
+        "symbol": "testing.(*M).Run"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "16",
+        "cumulative_percent": 45.71,
+        "symbol": "testing.tRunner"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "14",
+        "cumulative_percent": 40.0,
+        "symbol": "testing.runTests"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "12",
+        "cumulative_percent": 34.29,
+        "symbol": "testing/internal/testdeps.TestDeps.MatchString"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "11",
+        "cumulative_percent": 31.43,
+        "symbol": "testing.newMatcher"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "11",
+        "cumulative_percent": 31.43,
+        "symbol": "testing.simpleMatch.verify"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/reserve-4096/objects-alloc-objects.txt",
+    "kind": "alloc_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "175548",
+        "flat_percent": 30.56,
+        "cumulative": "175548",
+        "cumulative_percent": 30.56,
+        "symbol": "github.com/CloudyKit/jet/v6.newParseAdmission"
+      },
+      {
+        "flat": "131657",
+        "flat_percent": 22.92,
+        "cumulative": "131657",
+        "cumulative_percent": 22.92,
+        "symbol": "github.com/CloudyKit/jet/v6.admitInputScopes"
+      },
+      {
+        "flat": "87770",
+        "flat_percent": 15.28,
+        "cumulative": "131655",
+        "cumulative_percent": 22.92,
+        "symbol": "github.com/CloudyKit/jet/v6.(*parseAdmission).admitCached"
+      },
+      {
+        "flat": "43887",
+        "flat_percent": 7.64,
+        "cumulative": "43887",
+        "cumulative_percent": 7.64,
+        "symbol": "github.com/CloudyKit/jet/v6.(*parseAdmission).prepareSource"
+      },
+      {
+        "flat": "43886",
+        "flat_percent": 7.64,
+        "cumulative": "43886",
+        "cumulative_percent": 7.64,
+        "symbol": "bytes.(*Buffer).String (inline)"
+      },
+      {
+        "flat": "43885",
+        "flat_percent": 7.64,
+        "cumulative": "43885",
+        "cumulative_percent": 7.64,
+        "symbol": "bytes.growSlice"
+      },
+      {
+        "flat": "43885",
+        "flat_percent": 7.64,
+        "cumulative": "571347",
+        "cumulative_percent": 99.45,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext"
+      },
+      {
+        "flat": "3",
+        "flat_percent": 0.00052,
+        "cumulative": "572825",
+        "cumulative_percent": 99.71,
+        "symbol": "testing.(*B).runN"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/reserve-4096/objects-alloc-objects-cumulative.txt",
+    "kind": "alloc_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "3",
+        "flat_percent": 0.00052,
+        "cumulative": "572825",
+        "cumulative_percent": 99.71,
+        "symbol": "testing.(*B).runN"
+      },
+      {
+        "flat": "43885",
+        "flat_percent": 7.64,
+        "cumulative": "571347",
+        "cumulative_percent": 99.45,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "571347",
+        "cumulative_percent": 99.45,
+        "symbol": "github.com/CloudyKit/jet/v6_test.BenchmarkOutputReserve.func1.1"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "571347",
+        "cumulative_percent": 99.45,
+        "symbol": "github.com/CloudyKit/jet/v6_test.BenchmarkOutputReserve.func1.2"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "571332",
+        "cumulative_percent": 99.45,
+        "symbol": "testing.(*B).launch"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "527462",
+        "cumulative_percent": 91.81,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Template).ExecuteContext"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "527462",
+        "cumulative_percent": 91.81,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Template).execute"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "307195",
+        "cumulative_percent": 53.47,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Runtime).startCompilation"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/reserve-4096/objects-inuse-objects.txt",
+    "kind": "inuse_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "19",
+        "flat_percent": 16.96,
+        "cumulative": "20",
+        "cumulative_percent": 17.86,
+        "symbol": "runtime.mallocgc"
+      },
+      {
+        "flat": "14",
+        "flat_percent": 12.5,
+        "cumulative": "14",
+        "cumulative_percent": 12.5,
+        "symbol": "encoding/json/v2.makeMapArshaler"
+      },
+      {
+        "flat": "13",
+        "flat_percent": 11.61,
+        "cumulative": "52",
+        "cumulative_percent": 46.43,
+        "symbol": "encoding/json/v2.makeStructFields"
+      },
+      {
+        "flat": "7",
+        "flat_percent": 6.25,
+        "cumulative": "7",
+        "cumulative_percent": 6.25,
+        "symbol": "encoding/json/v2.makeStructArshaler"
+      },
+      {
+        "flat": "7",
+        "flat_percent": 6.25,
+        "cumulative": "7",
+        "cumulative_percent": 6.25,
+        "symbol": "internal/sync.newEntryNode[go.shape.interface {},go.shape.interface {}] (inline)"
+      },
+      {
+        "flat": "6",
+        "flat_percent": 5.36,
+        "cumulative": "7",
+        "cumulative_percent": 6.25,
+        "symbol": "encoding/json/v2.makeSliceArshaler"
+      },
+      {
+        "flat": "4",
+        "flat_percent": 3.57,
+        "cumulative": "6",
+        "cumulative_percent": 5.36,
+        "symbol": "encoding/json/v2.parseFieldOptions"
+      },
+      {
+        "flat": "4",
+        "flat_percent": 3.57,
+        "cumulative": "4",
+        "cumulative_percent": 3.57,
+        "symbol": "internal/sync.newIndirectNode[go.shape.interface {},go.shape.interface {}] (inline)"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/reserve-4096/objects-inuse-objects-cumulative.txt",
+    "kind": "inuse_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "85",
+        "cumulative_percent": 75.89,
+        "symbol": "testing.(*B).runN"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "83",
+        "cumulative_percent": 74.11,
+        "symbol": "testing.(*B).run1.func1"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "81",
+        "cumulative_percent": 72.32,
+        "symbol": "github.com/CloudyKit/jet/v6_test.BenchmarkOutputReserve"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "73",
+        "cumulative_percent": 65.18,
+        "symbol": "encoding/json.Unmarshal (inline)"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "73",
+        "cumulative_percent": 65.18,
+        "symbol": "encoding/json/v2.Unmarshal"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "73",
+        "cumulative_percent": 65.18,
+        "symbol": "encoding/json/v2.unmarshalDecode"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "73",
+        "cumulative_percent": 65.18,
+        "symbol": "github.com/CloudyKit/jet/v6_test.executionWorkloads"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "67",
+        "cumulative_percent": 59.82,
+        "symbol": "sync.(*Once).Do (partial-inline)"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/reserve-4096/large-small-objects-alloc-objects.txt",
+    "kind": "alloc_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "4831",
+        "flat_percent": 45.85,
+        "cumulative": "4831",
+        "cumulative_percent": 45.85,
+        "symbol": "strings.genSplit"
+      },
+      {
+        "flat": "840",
+        "flat_percent": 7.97,
+        "cumulative": "840",
+        "cumulative_percent": 7.97,
+        "symbol": "github.com/CloudyKit/jet/v6.newParseAdmission"
+      },
+      {
+        "flat": "510",
+        "flat_percent": 4.84,
+        "cumulative": "510",
+        "cumulative_percent": 4.84,
+        "symbol": "github.com/CloudyKit/jet/v6.admitInputScopes"
+      },
+      {
+        "flat": "450",
+        "flat_percent": 4.27,
+        "cumulative": "1080",
+        "cumulative_percent": 10.25,
+        "symbol": "github.com/CloudyKit/jet/v6.NewRestrictedSet"
+      },
+      {
+        "flat": "300",
+        "flat_percent": 2.85,
+        "cumulative": "450",
+        "cumulative_percent": 4.27,
+        "symbol": "github.com/CloudyKit/jet/v6.(*parseAdmission).admitCached"
+      },
+      {
+        "flat": "244",
+        "flat_percent": 2.32,
+        "cumulative": "4600",
+        "cumulative_percent": 43.66,
+        "symbol": "github.com/CloudyKit/jet/v6.TestOutputOwnedLargeThenSmall"
+      },
+      {
+        "flat": "216",
+        "flat_percent": 2.05,
+        "cumulative": "216",
+        "cumulative_percent": 2.05,
+        "symbol": "sync.(*Pool).pinSlow"
+      },
+      {
+        "flat": "210",
+        "flat_percent": 1.99,
+        "cumulative": "210",
+        "cumulative_percent": 1.99,
+        "symbol": "bytes.growSlice"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/reserve-4096/large-small-objects-alloc-objects-cumulative.txt",
+    "kind": "alloc_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "9989",
+        "cumulative_percent": 94.81,
+        "symbol": "testing.tRunner"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "5792",
+        "cumulative_percent": 54.97,
+        "symbol": "runtime.main"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "5791",
+        "cumulative_percent": 54.96,
+        "symbol": "main.main"
+      },
+      {
+        "flat": "3",
+        "flat_percent": 0.028,
+        "cumulative": "5791",
+        "cumulative_percent": 54.96,
+        "symbol": "testing.(*M).Run"
+      },
+      {
+        "flat": "90",
+        "flat_percent": 0.85,
+        "cumulative": "5776",
+        "cumulative_percent": 54.82,
+        "symbol": "testing.runTests"
+      },
+      {
+        "flat": "210",
+        "flat_percent": 1.99,
+        "cumulative": "5201",
+        "cumulative_percent": 49.36,
+        "symbol": "testing.(*T).Run"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "5201",
+        "cumulative_percent": 49.36,
+        "symbol": "testing.runTests.func1"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "4871",
+        "cumulative_percent": 46.23,
+        "symbol": "testing.(*matcher).fullName"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/reserve-4096/large-small-objects-inuse-objects.txt",
+    "kind": "inuse_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "8",
+        "flat_percent": 21.62,
+        "cumulative": "8",
+        "cumulative_percent": 21.62,
+        "symbol": "runtime.mallocgc"
+      },
+      {
+        "flat": "5",
+        "flat_percent": 13.51,
+        "cumulative": "5",
+        "cumulative_percent": 13.51,
+        "symbol": "sync.(*Pool).pinSlow"
+      },
+      {
+        "flat": "2",
+        "flat_percent": 5.41,
+        "cumulative": "2",
+        "cumulative_percent": 5.41,
+        "symbol": "github.com/CloudyKit/fastprinter.newByteSliceBufferPool.func1"
+      },
+      {
+        "flat": "2",
+        "flat_percent": 5.41,
+        "cumulative": "2",
+        "cumulative_percent": 5.41,
+        "symbol": "github.com/CloudyKit/jet/v6.init.func1"
+      },
+      {
+        "flat": "2",
+        "flat_percent": 5.41,
+        "cumulative": "2",
+        "cumulative_percent": 5.41,
+        "symbol": "os.newFile"
+      },
+      {
+        "flat": "2",
+        "flat_percent": 5.41,
+        "cumulative": "10",
+        "cumulative_percent": 27.03,
+        "symbol": "regexp.compile"
+      },
+      {
+        "flat": "2",
+        "flat_percent": 5.41,
+        "cumulative": "2",
+        "cumulative_percent": 5.41,
+        "symbol": "regexp.onePassCopy"
+      },
+      {
+        "flat": "1",
+        "flat_percent": 2.7,
+        "cumulative": "1",
+        "cumulative_percent": 2.7,
+        "symbol": "fmt.(*buffer).write (inline)"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/reserve-4096/large-small-objects-inuse-objects-cumulative.txt",
+    "kind": "inuse_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "17",
+        "cumulative_percent": 45.95,
+        "symbol": "runtime.main"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "16",
+        "cumulative_percent": 43.24,
+        "symbol": "main.main"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "16",
+        "cumulative_percent": 43.24,
+        "symbol": "testing.(*M).Run"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "15",
+        "cumulative_percent": 40.54,
+        "symbol": "testing.tRunner"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "14",
+        "cumulative_percent": 37.84,
+        "symbol": "testing.runTests"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "12",
+        "cumulative_percent": 32.43,
+        "symbol": "testing/internal/testdeps.TestDeps.MatchString"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "11",
+        "cumulative_percent": 29.73,
+        "symbol": "testing.newMatcher"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "11",
+        "cumulative_percent": 29.73,
+        "symbol": "testing.simpleMatch.verify"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/reserve-reuse4096/objects-alloc-objects.txt",
+    "kind": "alloc_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "190376",
+        "flat_percent": 33.13,
+        "cumulative": "190376",
+        "cumulative_percent": 33.13,
+        "symbol": "github.com/CloudyKit/jet/v6.newParseAdmission"
+      },
+      {
+        "flat": "142778",
+        "flat_percent": 24.85,
+        "cumulative": "142778",
+        "cumulative_percent": 24.85,
+        "symbol": "github.com/CloudyKit/jet/v6.admitInputScopes"
+      },
+      {
+        "flat": "95184",
+        "flat_percent": 16.56,
+        "cumulative": "142776",
+        "cumulative_percent": 24.85,
+        "symbol": "github.com/CloudyKit/jet/v6.(*parseAdmission).admitCached"
+      },
+      {
+        "flat": "47594",
+        "flat_percent": 8.28,
+        "cumulative": "47594",
+        "cumulative_percent": 8.28,
+        "symbol": "github.com/CloudyKit/jet/v6.(*parseAdmission).prepareSource"
+      },
+      {
+        "flat": "47593",
+        "flat_percent": 8.28,
+        "cumulative": "47593",
+        "cumulative_percent": 8.28,
+        "symbol": "bytes.(*Buffer).String (inline)"
+      },
+      {
+        "flat": "47592",
+        "flat_percent": 8.28,
+        "cumulative": "571623",
+        "cumulative_percent": 99.47,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext"
+      },
+      {
+        "flat": "3",
+        "flat_percent": 0.00052,
+        "cumulative": "573100",
+        "cumulative_percent": 99.73,
+        "symbol": "testing.(*B).runN"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "333144",
+        "cumulative_percent": 57.97,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Runtime).startCompilation"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/reserve-reuse4096/objects-alloc-objects-cumulative.txt",
+    "kind": "alloc_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "3",
+        "flat_percent": 0.00052,
+        "cumulative": "573100",
+        "cumulative_percent": 99.73,
+        "symbol": "testing.(*B).runN"
+      },
+      {
+        "flat": "47592",
+        "flat_percent": 8.28,
+        "cumulative": "571623",
+        "cumulative_percent": 99.47,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "571623",
+        "cumulative_percent": 99.47,
+        "symbol": "github.com/CloudyKit/jet/v6_test.BenchmarkOutputReserve.func1.1"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "571623",
+        "cumulative_percent": 99.47,
+        "symbol": "github.com/CloudyKit/jet/v6_test.BenchmarkOutputReserve.func1.2"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "571608",
+        "cumulative_percent": 99.47,
+        "symbol": "testing.(*B).launch"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "524031",
+        "cumulative_percent": 91.19,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Template).ExecuteContext"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "524031",
+        "cumulative_percent": 91.19,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Template).execute"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "333144",
+        "cumulative_percent": 57.97,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Runtime).startCompilation"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/reserve-reuse4096/objects-inuse-objects.txt",
+    "kind": "inuse_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "14",
+        "flat_percent": 13.33,
+        "cumulative": "14",
+        "cumulative_percent": 13.33,
+        "symbol": "encoding/json/v2.makeMapArshaler"
+      },
+      {
+        "flat": "13",
+        "flat_percent": 12.38,
+        "cumulative": "52",
+        "cumulative_percent": 49.52,
+        "symbol": "encoding/json/v2.makeStructFields"
+      },
+      {
+        "flat": "12",
+        "flat_percent": 11.43,
+        "cumulative": "13",
+        "cumulative_percent": 12.38,
+        "symbol": "runtime.mallocgc"
+      },
+      {
+        "flat": "7",
+        "flat_percent": 6.67,
+        "cumulative": "7",
+        "cumulative_percent": 6.67,
+        "symbol": "encoding/json/v2.makeStructArshaler"
+      },
+      {
+        "flat": "7",
+        "flat_percent": 6.67,
+        "cumulative": "7",
+        "cumulative_percent": 6.67,
+        "symbol": "internal/sync.newEntryNode[go.shape.interface {},go.shape.interface {}] (inline)"
+      },
+      {
+        "flat": "6",
+        "flat_percent": 5.71,
+        "cumulative": "7",
+        "cumulative_percent": 6.67,
+        "symbol": "encoding/json/v2.makeSliceArshaler"
+      },
+      {
+        "flat": "4",
+        "flat_percent": 3.81,
+        "cumulative": "6",
+        "cumulative_percent": 5.71,
+        "symbol": "encoding/json/v2.parseFieldOptions"
+      },
+      {
+        "flat": "4",
+        "flat_percent": 3.81,
+        "cumulative": "4",
+        "cumulative_percent": 3.81,
+        "symbol": "internal/sync.newIndirectNode[go.shape.interface {},go.shape.interface {}] (inline)"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/reserve-reuse4096/objects-inuse-objects-cumulative.txt",
+    "kind": "inuse_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "85",
+        "cumulative_percent": 80.95,
+        "symbol": "testing.(*B).runN"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "83",
+        "cumulative_percent": 79.05,
+        "symbol": "testing.(*B).run1.func1"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "81",
+        "cumulative_percent": 77.14,
+        "symbol": "github.com/CloudyKit/jet/v6_test.BenchmarkOutputReserve"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "73",
+        "cumulative_percent": 69.52,
+        "symbol": "encoding/json.Unmarshal (inline)"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "73",
+        "cumulative_percent": 69.52,
+        "symbol": "encoding/json/v2.Unmarshal"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "73",
+        "cumulative_percent": 69.52,
+        "symbol": "encoding/json/v2.unmarshalDecode"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "73",
+        "cumulative_percent": 69.52,
+        "symbol": "github.com/CloudyKit/jet/v6_test.executionWorkloads"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "67",
+        "cumulative_percent": 63.81,
+        "symbol": "sync.(*Once).Do (partial-inline)"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/reserve-reuse4096/large-small-objects-alloc-objects.txt",
+    "kind": "alloc_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "4831",
+        "flat_percent": 46.05,
+        "cumulative": "4831",
+        "cumulative_percent": 46.05,
+        "symbol": "strings.genSplit"
+      },
+      {
+        "flat": "840",
+        "flat_percent": 8.01,
+        "cumulative": "840",
+        "cumulative_percent": 8.01,
+        "symbol": "github.com/CloudyKit/jet/v6.newParseAdmission"
+      },
+      {
+        "flat": "510",
+        "flat_percent": 4.86,
+        "cumulative": "510",
+        "cumulative_percent": 4.86,
+        "symbol": "github.com/CloudyKit/jet/v6.admitInputScopes"
+      },
+      {
+        "flat": "450",
+        "flat_percent": 4.29,
+        "cumulative": "1080",
+        "cumulative_percent": 10.29,
+        "symbol": "github.com/CloudyKit/jet/v6.NewRestrictedSet"
+      },
+      {
+        "flat": "300",
+        "flat_percent": 2.86,
+        "cumulative": "450",
+        "cumulative_percent": 4.29,
+        "symbol": "github.com/CloudyKit/jet/v6.(*parseAdmission).admitCached"
+      },
+      {
+        "flat": "244",
+        "flat_percent": 2.33,
+        "cumulative": "4553",
+        "cumulative_percent": 43.4,
+        "symbol": "github.com/CloudyKit/jet/v6.TestOutputOwnedLargeThenSmall"
+      },
+      {
+        "flat": "216",
+        "flat_percent": 2.06,
+        "cumulative": "216",
+        "cumulative_percent": 2.06,
+        "symbol": "sync.(*Pool).pinSlow"
+      },
+      {
+        "flat": "210",
+        "flat_percent": 2.0,
+        "cumulative": "210",
+        "cumulative_percent": 2.0,
+        "symbol": "github.com/CloudyKit/jet/v6.(*parseAdmission).prepareSource"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/reserve-reuse4096/large-small-objects-alloc-objects-cumulative.txt",
+    "kind": "alloc_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "9944",
+        "cumulative_percent": 94.79,
+        "symbol": "testing.tRunner"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "5792",
+        "cumulative_percent": 55.21,
+        "symbol": "main.main"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "5792",
+        "cumulative_percent": 55.21,
+        "symbol": "runtime.main"
+      },
+      {
+        "flat": "3",
+        "flat_percent": 0.029,
+        "cumulative": "5792",
+        "cumulative_percent": 55.21,
+        "symbol": "testing.(*M).Run"
+      },
+      {
+        "flat": "90",
+        "flat_percent": 0.86,
+        "cumulative": "5777",
+        "cumulative_percent": 55.07,
+        "symbol": "testing.runTests"
+      },
+      {
+        "flat": "210",
+        "flat_percent": 2.0,
+        "cumulative": "5202",
+        "cumulative_percent": 49.59,
+        "symbol": "testing.(*T).Run"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "5202",
+        "cumulative_percent": 49.59,
+        "symbol": "testing.runTests.func1"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "4872",
+        "cumulative_percent": 46.44,
+        "symbol": "testing.(*matcher).fullName"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/reserve-reuse4096/large-small-objects-inuse-objects.txt",
+    "kind": "inuse_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "8",
+        "flat_percent": 21.62,
+        "cumulative": "8",
+        "cumulative_percent": 21.62,
+        "symbol": "runtime.mallocgc"
+      },
+      {
+        "flat": "5",
+        "flat_percent": 13.51,
+        "cumulative": "5",
+        "cumulative_percent": 13.51,
+        "symbol": "sync.(*Pool).pinSlow"
+      },
+      {
+        "flat": "2",
+        "flat_percent": 5.41,
+        "cumulative": "2",
+        "cumulative_percent": 5.41,
+        "symbol": "github.com/CloudyKit/fastprinter.newByteSliceBufferPool.func1"
+      },
+      {
+        "flat": "2",
+        "flat_percent": 5.41,
+        "cumulative": "2",
+        "cumulative_percent": 5.41,
+        "symbol": "github.com/CloudyKit/jet/v6.init.func1"
+      },
+      {
+        "flat": "2",
+        "flat_percent": 5.41,
+        "cumulative": "2",
+        "cumulative_percent": 5.41,
+        "symbol": "os.newFile"
+      },
+      {
+        "flat": "2",
+        "flat_percent": 5.41,
+        "cumulative": "10",
+        "cumulative_percent": 27.03,
+        "symbol": "regexp.compile"
+      },
+      {
+        "flat": "2",
+        "flat_percent": 5.41,
+        "cumulative": "2",
+        "cumulative_percent": 5.41,
+        "symbol": "regexp.onePassCopy"
+      },
+      {
+        "flat": "1",
+        "flat_percent": 2.7,
+        "cumulative": "1",
+        "cumulative_percent": 2.7,
+        "symbol": "fmt.(*buffer).write (inline)"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/reserve-reuse4096/large-small-objects-inuse-objects-cumulative.txt",
+    "kind": "inuse_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "16",
+        "cumulative_percent": 43.24,
+        "symbol": "main.main"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "16",
+        "cumulative_percent": 43.24,
+        "symbol": "runtime.main"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "16",
+        "cumulative_percent": 43.24,
+        "symbol": "testing.(*M).Run"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "16",
+        "cumulative_percent": 43.24,
+        "symbol": "testing.tRunner"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "14",
+        "cumulative_percent": 37.84,
+        "symbol": "testing.runTests"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "12",
+        "cumulative_percent": 32.43,
+        "symbol": "testing/internal/testdeps.TestDeps.MatchString"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "11",
+        "cumulative_percent": 29.73,
+        "symbol": "testing.newMatcher"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "11",
+        "cumulative_percent": 29.73,
+        "symbol": "testing.simpleMatch.verify"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/profiles/baseline-legacy_stream/objects-alloc-objects.txt",
+    "kind": "alloc_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "128644",
+        "flat_percent": 89.14,
+        "cumulative": "128646",
+        "cumulative_percent": 89.14,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Runtime).recover"
+      },
+      {
+        "flat": "3247",
+        "flat_percent": 2.25,
+        "cumulative": "3247",
+        "cumulative_percent": 2.25,
+        "symbol": "regexp.makeOnePass.func1"
+      },
+      {
+        "flat": "1862",
+        "flat_percent": 1.29,
+        "cumulative": "1862",
+        "cumulative_percent": 1.29,
+        "symbol": "regexp/syntax.(*compiler).inst (inline)"
+      },
+      {
+        "flat": "1162",
+        "flat_percent": 0.81,
+        "cumulative": "1162",
+        "cumulative_percent": 0.81,
+        "symbol": "regexp/syntax.(*parser).newRegexp (inline)"
+      },
+      {
+        "flat": "1153",
+        "flat_percent": 0.8,
+        "cumulative": "1153",
+        "cumulative_percent": 0.8,
+        "symbol": "regexp/syntax.(*parser).maybeConcat"
+      },
+      {
+        "flat": "825",
+        "flat_percent": 0.57,
+        "cumulative": "1978",
+        "cumulative_percent": 1.37,
+        "symbol": "regexp/syntax.(*parser).push"
+      },
+      {
+        "flat": "671",
+        "flat_percent": 0.46,
+        "cumulative": "12131",
+        "cumulative_percent": 8.41,
+        "symbol": "regexp.compile"
+      },
+      {
+        "flat": "343",
+        "flat_percent": 0.24,
+        "cumulative": "14300",
+        "cumulative_percent": 9.91,
+        "symbol": "github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/profiles/baseline-legacy_stream/objects-alloc-objects-cumulative.txt",
+    "kind": "alloc_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "3",
+        "flat_percent": 0.0021,
+        "cumulative": "143167",
+        "cumulative_percent": 99.2,
+        "symbol": "testing.(*B).runN"
+      },
+      {
+        "flat": "4",
+        "flat_percent": 0.0028,
+        "cumulative": "128832",
+        "cumulative_percent": 89.27,
+        "symbol": "github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview.func1"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "128779",
+        "cumulative_percent": 89.23,
+        "symbol": "testing.(*B).launch"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "128704",
+        "cumulative_percent": 89.18,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Template).Execute (inline)"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "128704",
+        "cumulative_percent": 89.18,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Template).execute"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "128704",
+        "cumulative_percent": 89.18,
+        "symbol": "github.com/CloudyKit/jet/v6_test.init.func1"
+      },
+      {
+        "flat": "128644",
+        "flat_percent": 89.14,
+        "cumulative": "128646",
+        "cumulative_percent": 89.14,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Runtime).recover"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "14371",
+        "cumulative_percent": 9.96,
+        "symbol": "testing.(*B).run1.func1"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/profiles/baseline-legacy_stream/objects-inuse-objects.txt",
+    "kind": "inuse_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "14",
+        "flat_percent": 13.86,
+        "cumulative": "14",
+        "cumulative_percent": 13.86,
+        "symbol": "encoding/json/v2.makeMapArshaler"
+      },
+      {
+        "flat": "13",
+        "flat_percent": 12.87,
+        "cumulative": "51",
+        "cumulative_percent": 50.5,
+        "symbol": "encoding/json/v2.makeStructFields"
+      },
+      {
+        "flat": "11",
+        "flat_percent": 10.89,
+        "cumulative": "11",
+        "cumulative_percent": 10.89,
+        "symbol": "runtime.mallocgc"
+      },
+      {
+        "flat": "7",
+        "flat_percent": 6.93,
+        "cumulative": "7",
+        "cumulative_percent": 6.93,
+        "symbol": "encoding/json/v2.makeStructArshaler"
+      },
+      {
+        "flat": "7",
+        "flat_percent": 6.93,
+        "cumulative": "7",
+        "cumulative_percent": 6.93,
+        "symbol": "internal/sync.newEntryNode[go.shape.interface {},go.shape.interface {}] (inline)"
+      },
+      {
+        "flat": "6",
+        "flat_percent": 5.94,
+        "cumulative": "7",
+        "cumulative_percent": 6.93,
+        "symbol": "encoding/json/v2.makeSliceArshaler"
+      },
+      {
+        "flat": "4",
+        "flat_percent": 3.96,
+        "cumulative": "6",
+        "cumulative_percent": 5.94,
+        "symbol": "encoding/json/v2.parseFieldOptions"
+      },
+      {
+        "flat": "4",
+        "flat_percent": 3.96,
+        "cumulative": "4",
+        "cumulative_percent": 3.96,
+        "symbol": "reflect.addReflectOff"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/profiles/baseline-legacy_stream/objects-inuse-objects-cumulative.txt",
+    "kind": "inuse_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "83",
+        "cumulative_percent": 82.18,
+        "symbol": "testing.(*B).runN"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "81",
+        "cumulative_percent": 80.2,
+        "symbol": "github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "81",
+        "cumulative_percent": 80.2,
+        "symbol": "testing.(*B).run1.func1"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "72",
+        "cumulative_percent": 71.29,
+        "symbol": "encoding/json.Unmarshal (inline)"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "72",
+        "cumulative_percent": 71.29,
+        "symbol": "encoding/json/v2.Unmarshal"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "72",
+        "cumulative_percent": 71.29,
+        "symbol": "encoding/json/v2.unmarshalDecode"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "72",
+        "cumulative_percent": 71.29,
+        "symbol": "github.com/CloudyKit/jet/v6_test.executionWorkloads"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "66",
+        "cumulative_percent": 65.35,
+        "symbol": "sync.(*Once).Do (partial-inline)"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/profiles/baseline-metered_live_stream/objects-alloc-objects.txt",
+    "kind": "alloc_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "181388",
+        "flat_percent": 35.19,
+        "cumulative": "181388",
+        "cumulative_percent": 35.19,
+        "symbol": "github.com/CloudyKit/jet/v6.newParseAdmission"
+      },
+      {
+        "flat": "90686",
+        "flat_percent": 17.59,
+        "cumulative": "136029",
+        "cumulative_percent": 26.39,
+        "symbol": "github.com/CloudyKit/jet/v6.(*parseAdmission).admitCached"
+      },
+      {
+        "flat": "45347",
+        "flat_percent": 8.8,
+        "cumulative": "45347",
+        "cumulative_percent": 8.8,
+        "symbol": "github.com/CloudyKit/jet/v6.(*parseAdmission).prepareSource"
+      },
+      {
+        "flat": "45343",
+        "flat_percent": 8.8,
+        "cumulative": "45343",
+        "cumulative_percent": 8.8,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Runtime).outputWriter (inline)"
+      },
+      {
+        "flat": "45343",
+        "flat_percent": 8.8,
+        "cumulative": "90768",
+        "cumulative_percent": 17.61,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Runtime).printValue"
+      },
+      {
+        "flat": "45343",
+        "flat_percent": 8.8,
+        "cumulative": "45381",
+        "cumulative_percent": 8.8,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Runtime).recover"
+      },
+      {
+        "flat": "45343",
+        "flat_percent": 8.8,
+        "cumulative": "45425",
+        "cumulative_percent": 8.81,
+        "symbol": "github.com/CloudyKit/jet/v6.(*dataPrinter).value"
+      },
+      {
+        "flat": "3247",
+        "flat_percent": 0.63,
+        "cumulative": "3247",
+        "cumulative_percent": 0.63,
+        "symbol": "regexp.makeOnePass.func1"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/profiles/baseline-metered_live_stream/objects-alloc-objects-cumulative.txt",
+    "kind": "alloc_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "3",
+        "flat_percent": 0.00058,
+        "cumulative": "513837",
+        "cumulative_percent": 99.68,
+        "symbol": "testing.(*B).runN"
+      },
+      {
+        "flat": "4",
+        "flat_percent": 0.00078,
+        "cumulative": "499045",
+        "cumulative_percent": 96.81,
+        "symbol": "github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview.func1"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "498909",
+        "cumulative_percent": 96.78,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Template).ExecuteContext"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "498909",
+        "cumulative_percent": 96.78,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Template).execute"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "498909",
+        "cumulative_percent": 96.78,
+        "symbol": "github.com/CloudyKit/jet/v6_test.init.0.func1"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "498880",
+        "cumulative_percent": 96.77,
+        "symbol": "testing.(*B).launch"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "317401",
+        "cumulative_percent": 61.57,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Runtime).startCompilation"
+      },
+      {
+        "flat": "181388",
+        "flat_percent": 35.19,
+        "cumulative": "181388",
+        "cumulative_percent": 35.19,
+        "symbol": "github.com/CloudyKit/jet/v6.newParseAdmission"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/profiles/baseline-metered_live_stream/objects-inuse-objects.txt",
+    "kind": "inuse_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "14",
+        "flat_percent": 13.73,
+        "cumulative": "14",
+        "cumulative_percent": 13.73,
+        "symbol": "encoding/json/v2.makeMapArshaler"
+      },
+      {
+        "flat": "13",
+        "flat_percent": 12.75,
+        "cumulative": "52",
+        "cumulative_percent": 50.98,
+        "symbol": "encoding/json/v2.makeStructFields"
+      },
+      {
+        "flat": "9",
+        "flat_percent": 8.82,
+        "cumulative": "10",
+        "cumulative_percent": 9.8,
+        "symbol": "runtime.mallocgc"
+      },
+      {
+        "flat": "7",
+        "flat_percent": 6.86,
+        "cumulative": "7",
+        "cumulative_percent": 6.86,
+        "symbol": "encoding/json/v2.makeStructArshaler"
+      },
+      {
+        "flat": "7",
+        "flat_percent": 6.86,
+        "cumulative": "7",
+        "cumulative_percent": 6.86,
+        "symbol": "internal/sync.newEntryNode[go.shape.interface {},go.shape.interface {}] (inline)"
+      },
+      {
+        "flat": "6",
+        "flat_percent": 5.88,
+        "cumulative": "7",
+        "cumulative_percent": 6.86,
+        "symbol": "encoding/json/v2.makeSliceArshaler"
+      },
+      {
+        "flat": "4",
+        "flat_percent": 3.92,
+        "cumulative": "6",
+        "cumulative_percent": 5.88,
+        "symbol": "encoding/json/v2.parseFieldOptions"
+      },
+      {
+        "flat": "4",
+        "flat_percent": 3.92,
+        "cumulative": "4",
+        "cumulative_percent": 3.92,
+        "symbol": "internal/sync.newIndirectNode[go.shape.interface {},go.shape.interface {}] (inline)"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/profiles/baseline-metered_live_stream/objects-inuse-objects-cumulative.txt",
+    "kind": "inuse_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "85",
+        "cumulative_percent": 83.33,
+        "symbol": "testing.(*B).runN"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "82",
+        "cumulative_percent": 80.39,
+        "symbol": "github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "82",
+        "cumulative_percent": 80.39,
+        "symbol": "testing.(*B).run1.func1"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "73",
+        "cumulative_percent": 71.57,
+        "symbol": "encoding/json.Unmarshal (inline)"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "73",
+        "cumulative_percent": 71.57,
+        "symbol": "encoding/json/v2.Unmarshal"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "73",
+        "cumulative_percent": 71.57,
+        "symbol": "encoding/json/v2.unmarshalDecode"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "73",
+        "cumulative_percent": 71.57,
+        "symbol": "github.com/CloudyKit/jet/v6_test.executionWorkloads"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "67",
+        "cumulative_percent": 65.69,
+        "symbol": "sync.(*Once).Do (partial-inline)"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/profiles/baseline-restricted_owned/objects-alloc-objects.txt",
+    "kind": "alloc_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "170202",
+        "flat_percent": 25.41,
+        "cumulative": "170202",
+        "cumulative_percent": 25.41,
+        "symbol": "bytes.growSlice"
+      },
+      {
+        "flat": "113500",
+        "flat_percent": 16.94,
+        "cumulative": "113500",
+        "cumulative_percent": 16.94,
+        "symbol": "github.com/CloudyKit/jet/v6.newParseAdmission"
+      },
+      {
+        "flat": "85109",
+        "flat_percent": 12.7,
+        "cumulative": "85109",
+        "cumulative_percent": 12.7,
+        "symbol": "github.com/CloudyKit/jet/v6.admitInputScopes"
+      },
+      {
+        "flat": "56734",
+        "flat_percent": 8.47,
+        "cumulative": "85101",
+        "cumulative_percent": 12.7,
+        "symbol": "github.com/CloudyKit/jet/v6.(*parseAdmission).admitCached"
+      },
+      {
+        "flat": "28375",
+        "flat_percent": 4.24,
+        "cumulative": "28375",
+        "cumulative_percent": 4.24,
+        "symbol": "github.com/CloudyKit/jet/v6.(*parseAdmission).prepareSource"
+      },
+      {
+        "flat": "28371",
+        "flat_percent": 4.23,
+        "cumulative": "28371",
+        "cumulative_percent": 4.23,
+        "symbol": "bytes.(*Buffer).String (inline)"
+      },
+      {
+        "flat": "28371",
+        "flat_percent": 4.23,
+        "cumulative": "198573",
+        "cumulative_percent": 29.64,
+        "symbol": "bytes.(*Buffer).grow"
+      },
+      {
+        "flat": "28367",
+        "flat_percent": 4.23,
+        "cumulative": "28367",
+        "cumulative_percent": 4.23,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Runtime).outputWriter (inline)"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/profiles/baseline-restricted_owned/objects-alloc-objects-cumulative.txt",
+    "kind": "alloc_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "3",
+        "flat_percent": 0.00045,
+        "cumulative": "668115",
+        "cumulative_percent": 99.73,
+        "symbol": "testing.(*B).runN"
+      },
+      {
+        "flat": "4",
+        "flat_percent": 0.0006,
+        "cumulative": "653659",
+        "cumulative_percent": 97.57,
+        "symbol": "github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview.func1"
+      },
+      {
+        "flat": "28367",
+        "flat_percent": 4.23,
+        "cumulative": "653371",
+        "cumulative_percent": 97.53,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "653371",
+        "cumulative_percent": 97.53,
+        "symbol": "github.com/CloudyKit/jet/v6_test.init.0.func2"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "653331",
+        "cumulative_percent": 97.52,
+        "symbol": "testing.(*B).launch"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "625004",
+        "cumulative_percent": 93.29,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Template).ExecuteContext"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "625004",
+        "cumulative_percent": 93.29,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Template).execute"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "255791",
+        "cumulative_percent": 38.18,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Runtime).executeList"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/profiles/baseline-restricted_owned/objects-inuse-objects.txt",
+    "kind": "inuse_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "14",
+        "flat_percent": 12.28,
+        "cumulative": "14",
+        "cumulative_percent": 12.28,
+        "symbol": "encoding/json/v2.makeMapArshaler"
+      },
+      {
+        "flat": "13",
+        "flat_percent": 11.4,
+        "cumulative": "51",
+        "cumulative_percent": 44.74,
+        "symbol": "encoding/json/v2.makeStructFields"
+      },
+      {
+        "flat": "11",
+        "flat_percent": 9.65,
+        "cumulative": "12",
+        "cumulative_percent": 10.53,
+        "symbol": "runtime.mallocgc"
+      },
+      {
+        "flat": "7",
+        "flat_percent": 6.14,
+        "cumulative": "7",
+        "cumulative_percent": 6.14,
+        "symbol": "encoding/json/v2.makeStructArshaler"
+      },
+      {
+        "flat": "7",
+        "flat_percent": 6.14,
+        "cumulative": "7",
+        "cumulative_percent": 6.14,
+        "symbol": "internal/sync.newEntryNode[go.shape.interface {},go.shape.interface {}] (inline)"
+      },
+      {
+        "flat": "6",
+        "flat_percent": 5.26,
+        "cumulative": "7",
+        "cumulative_percent": 6.14,
+        "symbol": "encoding/json/v2.makeSliceArshaler"
+      },
+      {
+        "flat": "4",
+        "flat_percent": 3.51,
+        "cumulative": "6",
+        "cumulative_percent": 5.26,
+        "symbol": "encoding/json/v2.parseFieldOptions"
+      },
+      {
+        "flat": "4",
+        "flat_percent": 3.51,
+        "cumulative": "4",
+        "cumulative_percent": 3.51,
+        "symbol": "reflect.addReflectOff"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/profiles/baseline-restricted_owned/objects-inuse-objects-cumulative.txt",
+    "kind": "inuse_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "93",
+        "cumulative_percent": 81.58,
+        "symbol": "testing.(*B).runN"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "90",
+        "cumulative_percent": 78.95,
+        "symbol": "github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "90",
+        "cumulative_percent": 78.95,
+        "symbol": "testing.(*B).run1.func1"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "72",
+        "cumulative_percent": 63.16,
+        "symbol": "encoding/json.Unmarshal (inline)"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "72",
+        "cumulative_percent": 63.16,
+        "symbol": "encoding/json/v2.Unmarshal"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "72",
+        "cumulative_percent": 63.16,
+        "symbol": "encoding/json/v2.unmarshalDecode"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "72",
+        "cumulative_percent": 63.16,
+        "symbol": "github.com/CloudyKit/jet/v6_test.executionWorkloads"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "66",
+        "cumulative_percent": 57.89,
+        "symbol": "sync.(*Once).Do (partial-inline)"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/profiles/fixed-legacy_stream/objects-alloc-objects.txt",
+    "kind": "alloc_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "3245",
+        "flat_percent": 20.92,
+        "cumulative": "3245",
+        "cumulative_percent": 20.92,
+        "symbol": "regexp.makeOnePass.func1"
+      },
+      {
+        "flat": "1862",
+        "flat_percent": 12.01,
+        "cumulative": "1862",
+        "cumulative_percent": 12.01,
+        "symbol": "regexp/syntax.(*compiler).inst (inline)"
+      },
+      {
+        "flat": "1162",
+        "flat_percent": 7.49,
+        "cumulative": "1162",
+        "cumulative_percent": 7.49,
+        "symbol": "regexp/syntax.(*parser).newRegexp (inline)"
+      },
+      {
+        "flat": "1153",
+        "flat_percent": 7.43,
+        "cumulative": "1153",
+        "cumulative_percent": 7.43,
+        "symbol": "regexp/syntax.(*parser).maybeConcat"
+      },
+      {
+        "flat": "825",
+        "flat_percent": 5.32,
+        "cumulative": "1978",
+        "cumulative_percent": 12.75,
+        "symbol": "regexp/syntax.(*parser).push"
+      },
+      {
+        "flat": "671",
+        "flat_percent": 4.33,
+        "cumulative": "12129",
+        "cumulative_percent": 78.2,
+        "symbol": "regexp.compile"
+      },
+      {
+        "flat": "652",
+        "flat_percent": 4.2,
+        "cumulative": "652",
+        "cumulative_percent": 4.2,
+        "symbol": "unicode/utf8.AppendRune (inline)"
+      },
+      {
+        "flat": "635",
+        "flat_percent": 4.09,
+        "cumulative": "635",
+        "cumulative_percent": 4.09,
+        "symbol": "testing.rewrite"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/profiles/fixed-legacy_stream/objects-alloc-objects-cumulative.txt",
+    "kind": "alloc_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "3",
+        "flat_percent": 0.019,
+        "cumulative": "14483",
+        "cumulative_percent": 93.38,
+        "symbol": "testing.(*B).runN"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "14329",
+        "cumulative_percent": 92.39,
+        "symbol": "testing.(*B).run1.func1"
+      },
+      {
+        "flat": "342",
+        "flat_percent": 2.21,
+        "cumulative": "14270",
+        "cumulative_percent": 92.01,
+        "symbol": "github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "13139",
+        "cumulative_percent": 84.71,
+        "symbol": "testing.(*matcher).fullName"
+      },
+      {
+        "flat": "6",
+        "flat_percent": 0.039,
+        "cumulative": "12949",
+        "cumulative_percent": 83.49,
+        "symbol": "testing.(*B).Run"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "12161",
+        "cumulative_percent": 78.41,
+        "symbol": "testing/internal/testdeps.TestDeps.MatchString"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "12129",
+        "cumulative_percent": 78.2,
+        "symbol": "regexp.Compile (inline)"
+      },
+      {
+        "flat": "671",
+        "flat_percent": 4.33,
+        "cumulative": "12129",
+        "cumulative_percent": 78.2,
+        "symbol": "regexp.compile"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/profiles/fixed-legacy_stream/objects-inuse-objects.txt",
+    "kind": "inuse_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "14",
+        "flat_percent": 13.86,
+        "cumulative": "14",
+        "cumulative_percent": 13.86,
+        "symbol": "encoding/json/v2.makeMapArshaler"
+      },
+      {
+        "flat": "13",
+        "flat_percent": 12.87,
+        "cumulative": "53",
+        "cumulative_percent": 52.48,
+        "symbol": "encoding/json/v2.makeStructFields"
+      },
+      {
+        "flat": "9",
+        "flat_percent": 8.91,
+        "cumulative": "10",
+        "cumulative_percent": 9.9,
+        "symbol": "runtime.mallocgc"
+      },
+      {
+        "flat": "7",
+        "flat_percent": 6.93,
+        "cumulative": "7",
+        "cumulative_percent": 6.93,
+        "symbol": "encoding/json/v2.makeStructArshaler"
+      },
+      {
+        "flat": "7",
+        "flat_percent": 6.93,
+        "cumulative": "7",
+        "cumulative_percent": 6.93,
+        "symbol": "internal/sync.newEntryNode[go.shape.interface {},go.shape.interface {}] (inline)"
+      },
+      {
+        "flat": "6",
+        "flat_percent": 5.94,
+        "cumulative": "7",
+        "cumulative_percent": 6.93,
+        "symbol": "encoding/json/v2.makeSliceArshaler"
+      },
+      {
+        "flat": "5",
+        "flat_percent": 4.95,
+        "cumulative": "5",
+        "cumulative_percent": 4.95,
+        "symbol": "internal/sync.newIndirectNode[go.shape.interface {},go.shape.interface {}] (inline)"
+      },
+      {
+        "flat": "4",
+        "flat_percent": 3.96,
+        "cumulative": "6",
+        "cumulative_percent": 5.94,
+        "symbol": "encoding/json/v2.parseFieldOptions"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/profiles/fixed-legacy_stream/objects-inuse-objects-cumulative.txt",
+    "kind": "inuse_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "85",
+        "cumulative_percent": 84.16,
+        "symbol": "testing.(*B).runN"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "83",
+        "cumulative_percent": 82.18,
+        "symbol": "github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "83",
+        "cumulative_percent": 82.18,
+        "symbol": "testing.(*B).run1.func1"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "74",
+        "cumulative_percent": 73.27,
+        "symbol": "encoding/json.Unmarshal (inline)"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "74",
+        "cumulative_percent": 73.27,
+        "symbol": "encoding/json/v2.Unmarshal"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "74",
+        "cumulative_percent": 73.27,
+        "symbol": "encoding/json/v2.unmarshalDecode"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "74",
+        "cumulative_percent": 73.27,
+        "symbol": "github.com/CloudyKit/jet/v6_test.executionWorkloads"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "68",
+        "cumulative_percent": 67.33,
+        "symbol": "sync.(*Once).Do (partial-inline)"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/profiles/fixed-metered_live_stream/objects-alloc-objects.txt",
+    "kind": "alloc_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "261932",
+        "flat_percent": 55.13,
+        "cumulative": "261932",
+        "cumulative_percent": 55.13,
+        "symbol": "github.com/CloudyKit/jet/v6.newParseAdmission"
+      },
+      {
+        "flat": "130958",
+        "flat_percent": 27.56,
+        "cumulative": "196437",
+        "cumulative_percent": 41.34,
+        "symbol": "github.com/CloudyKit/jet/v6.(*parseAdmission).admitCached"
+      },
+      {
+        "flat": "65483",
+        "flat_percent": 13.78,
+        "cumulative": "65483",
+        "cumulative_percent": 13.78,
+        "symbol": "github.com/CloudyKit/jet/v6.(*parseAdmission).prepareSource"
+      },
+      {
+        "flat": "3248",
+        "flat_percent": 0.68,
+        "cumulative": "3248",
+        "cumulative_percent": 0.68,
+        "symbol": "regexp.makeOnePass.func1"
+      },
+      {
+        "flat": "671",
+        "flat_percent": 0.14,
+        "cumulative": "12585",
+        "cumulative_percent": 2.65,
+        "symbol": "regexp.compile"
+      },
+      {
+        "flat": "345",
+        "flat_percent": 0.073,
+        "cumulative": "14719",
+        "cumulative_percent": 3.1,
+        "symbol": "github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview"
+      },
+      {
+        "flat": "337",
+        "flat_percent": 0.071,
+        "cumulative": "4116",
+        "cumulative_percent": 0.87,
+        "symbol": "regexp/syntax.parse"
+      },
+      {
+        "flat": "152",
+        "flat_percent": 0.032,
+        "cumulative": "4004",
+        "cumulative_percent": 0.84,
+        "symbol": "regexp.makeOnePass"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/profiles/fixed-metered_live_stream/objects-alloc-objects-cumulative.txt",
+    "kind": "alloc_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "3",
+        "flat_percent": 0.00063,
+        "cumulative": "473401",
+        "cumulative_percent": 99.64,
+        "symbol": "testing.(*B).runN"
+      },
+      {
+        "flat": "4",
+        "flat_percent": 0.00084,
+        "cumulative": "458647",
+        "cumulative_percent": 96.53,
+        "symbol": "github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview.func1"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "458527",
+        "cumulative_percent": 96.51,
+        "symbol": "testing.(*B).launch"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "458511",
+        "cumulative_percent": 96.5,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Template).ExecuteContext"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "458511",
+        "cumulative_percent": 96.5,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Template).execute"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "458511",
+        "cumulative_percent": 96.5,
+        "symbol": "github.com/CloudyKit/jet/v6_test.init.0.func1"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "458353",
+        "cumulative_percent": 96.47,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Runtime).startCompilation"
+      },
+      {
+        "flat": "261932",
+        "flat_percent": 55.13,
+        "cumulative": "261932",
+        "cumulative_percent": 55.13,
+        "symbol": "github.com/CloudyKit/jet/v6.newParseAdmission"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/profiles/fixed-metered_live_stream/objects-inuse-objects.txt",
+    "kind": "inuse_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "14",
+        "flat_percent": 13.59,
+        "cumulative": "14",
+        "cumulative_percent": 13.59,
+        "symbol": "encoding/json/v2.makeMapArshaler"
+      },
+      {
+        "flat": "13",
+        "flat_percent": 12.62,
+        "cumulative": "51",
+        "cumulative_percent": 49.51,
+        "symbol": "encoding/json/v2.makeStructFields"
+      },
+      {
+        "flat": "11",
+        "flat_percent": 10.68,
+        "cumulative": "12",
+        "cumulative_percent": 11.65,
+        "symbol": "runtime.mallocgc"
+      },
+      {
+        "flat": "7",
+        "flat_percent": 6.8,
+        "cumulative": "7",
+        "cumulative_percent": 6.8,
+        "symbol": "encoding/json/v2.makeStructArshaler"
+      },
+      {
+        "flat": "7",
+        "flat_percent": 6.8,
+        "cumulative": "7",
+        "cumulative_percent": 6.8,
+        "symbol": "internal/sync.newEntryNode[go.shape.interface {},go.shape.interface {}] (inline)"
+      },
+      {
+        "flat": "6",
+        "flat_percent": 5.83,
+        "cumulative": "7",
+        "cumulative_percent": 6.8,
+        "symbol": "encoding/json/v2.makeSliceArshaler"
+      },
+      {
+        "flat": "4",
+        "flat_percent": 3.88,
+        "cumulative": "6",
+        "cumulative_percent": 5.83,
+        "symbol": "encoding/json/v2.parseFieldOptions"
+      },
+      {
+        "flat": "4",
+        "flat_percent": 3.88,
+        "cumulative": "4",
+        "cumulative_percent": 3.88,
+        "symbol": "internal/sync.newIndirectNode[go.shape.interface {},go.shape.interface {}] (inline)"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/profiles/fixed-metered_live_stream/objects-inuse-objects-cumulative.txt",
+    "kind": "inuse_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "84",
+        "cumulative_percent": 81.55,
+        "symbol": "testing.(*B).runN"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "82",
+        "cumulative_percent": 79.61,
+        "symbol": "github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "82",
+        "cumulative_percent": 79.61,
+        "symbol": "testing.(*B).run1.func1"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "73",
+        "cumulative_percent": 70.87,
+        "symbol": "encoding/json.Unmarshal (inline)"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "73",
+        "cumulative_percent": 70.87,
+        "symbol": "encoding/json/v2.Unmarshal"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "73",
+        "cumulative_percent": 70.87,
+        "symbol": "encoding/json/v2.unmarshalDecode"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "73",
+        "cumulative_percent": 70.87,
+        "symbol": "github.com/CloudyKit/jet/v6_test.executionWorkloads"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "67",
+        "cumulative_percent": 65.05,
+        "symbol": "sync.(*Once).Do (partial-inline)"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/profiles/fixed-restricted_owned/objects-alloc-objects.txt",
+    "kind": "alloc_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "205248",
+        "flat_percent": 30.76,
+        "cumulative": "205248",
+        "cumulative_percent": 30.76,
+        "symbol": "bytes.growSlice"
+      },
+      {
+        "flat": "136864",
+        "flat_percent": 20.51,
+        "cumulative": "136864",
+        "cumulative_percent": 20.51,
+        "symbol": "github.com/CloudyKit/jet/v6.newParseAdmission"
+      },
+      {
+        "flat": "102632",
+        "flat_percent": 15.38,
+        "cumulative": "102632",
+        "cumulative_percent": 15.38,
+        "symbol": "github.com/CloudyKit/jet/v6.admitInputScopes"
+      },
+      {
+        "flat": "68416",
+        "flat_percent": 10.25,
+        "cumulative": "102624",
+        "cumulative_percent": 15.38,
+        "symbol": "github.com/CloudyKit/jet/v6.(*parseAdmission).admitCached"
+      },
+      {
+        "flat": "34216",
+        "flat_percent": 5.13,
+        "cumulative": "34216",
+        "cumulative_percent": 5.13,
+        "symbol": "github.com/CloudyKit/jet/v6.(*parseAdmission).prepareSource"
+      },
+      {
+        "flat": "34212",
+        "flat_percent": 5.13,
+        "cumulative": "34212",
+        "cumulative_percent": 5.13,
+        "symbol": "bytes.(*Buffer).String (inline)"
+      },
+      {
+        "flat": "34212",
+        "flat_percent": 5.13,
+        "cumulative": "239460",
+        "cumulative_percent": 35.89,
+        "symbol": "bytes.(*Buffer).grow"
+      },
+      {
+        "flat": "34208",
+        "flat_percent": 5.13,
+        "cumulative": "650916",
+        "cumulative_percent": 97.55,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/profiles/fixed-restricted_owned/objects-alloc-objects-cumulative.txt",
+    "kind": "alloc_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "3",
+        "flat_percent": 0.00045,
+        "cumulative": "665623",
+        "cumulative_percent": 99.75,
+        "symbol": "testing.(*B).runN"
+      },
+      {
+        "flat": "4",
+        "flat_percent": 0.0006,
+        "cumulative": "651204",
+        "cumulative_percent": 97.59,
+        "symbol": "github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview.func1"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "650921",
+        "cumulative_percent": 97.55,
+        "symbol": "testing.(*B).launch"
+      },
+      {
+        "flat": "34208",
+        "flat_percent": 5.13,
+        "cumulative": "650916",
+        "cumulative_percent": 97.55,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "650916",
+        "cumulative_percent": 97.55,
+        "symbol": "github.com/CloudyKit/jet/v6_test.init.0.func2"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "616708",
+        "cumulative_percent": 92.42,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Template).ExecuteContext"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "616708",
+        "cumulative_percent": 92.42,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Template).execute"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "239992",
+        "cumulative_percent": 35.97,
+        "symbol": "github.com/CloudyKit/jet/v6.(*Runtime).executeList"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/profiles/fixed-restricted_owned/objects-inuse-objects.txt",
+    "kind": "inuse_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "17",
+        "flat_percent": 15.45,
+        "cumulative": "19",
+        "cumulative_percent": 17.27,
+        "symbol": "runtime.mallocgc"
+      },
+      {
+        "flat": "14",
+        "flat_percent": 12.73,
+        "cumulative": "14",
+        "cumulative_percent": 12.73,
+        "symbol": "encoding/json/v2.makeMapArshaler"
+      },
+      {
+        "flat": "13",
+        "flat_percent": 11.82,
+        "cumulative": "51",
+        "cumulative_percent": 46.36,
+        "symbol": "encoding/json/v2.makeStructFields"
+      },
+      {
+        "flat": "7",
+        "flat_percent": 6.36,
+        "cumulative": "7",
+        "cumulative_percent": 6.36,
+        "symbol": "encoding/json/v2.makeStructArshaler"
+      },
+      {
+        "flat": "7",
+        "flat_percent": 6.36,
+        "cumulative": "7",
+        "cumulative_percent": 6.36,
+        "symbol": "internal/sync.newEntryNode[go.shape.interface {},go.shape.interface {}] (inline)"
+      },
+      {
+        "flat": "6",
+        "flat_percent": 5.45,
+        "cumulative": "7",
+        "cumulative_percent": 6.36,
+        "symbol": "encoding/json/v2.makeSliceArshaler"
+      },
+      {
+        "flat": "4",
+        "flat_percent": 3.64,
+        "cumulative": "6",
+        "cumulative_percent": 5.45,
+        "symbol": "encoding/json/v2.parseFieldOptions"
+      },
+      {
+        "flat": "4",
+        "flat_percent": 3.64,
+        "cumulative": "4",
+        "cumulative_percent": 3.64,
+        "symbol": "reflect.addReflectOff"
+      }
+    ]
+  },
+  {
+    "output": ".git/finalization/profiles/fixed-restricted_owned/objects-inuse-objects-cumulative.txt",
+    "kind": "inuse_objects",
+    "zero_total": false,
+    "top": [
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "84",
+        "cumulative_percent": 76.36,
+        "symbol": "testing.(*B).runN"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "80",
+        "cumulative_percent": 72.73,
+        "symbol": "github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "80",
+        "cumulative_percent": 72.73,
+        "symbol": "testing.(*B).run1.func1"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "72",
+        "cumulative_percent": 65.45,
+        "symbol": "encoding/json.Unmarshal (inline)"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "72",
+        "cumulative_percent": 65.45,
+        "symbol": "encoding/json/v2.Unmarshal"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "72",
+        "cumulative_percent": 65.45,
+        "symbol": "encoding/json/v2.unmarshalDecode"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "72",
+        "cumulative_percent": 65.45,
+        "symbol": "github.com/CloudyKit/jet/v6_test.executionWorkloads"
+      },
+      {
+        "flat": "0",
+        "flat_percent": 0.0,
+        "cumulative": "66",
+        "cumulative_percent": 60.0,
+        "symbol": "sync.(*Once).Do (partial-inline)"
+      }
+    ]
+  }
+]

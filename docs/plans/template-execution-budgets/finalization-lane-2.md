@@ -46,6 +46,27 @@ Matched CPU profiles use default memory sampling, separately from normal timing.
 
 Raw CPU, allocation/live heap, mutex and block reports are linked under [selected-measure](finalization-lane-2-evidence/selected-measure/profile-inspection.json). Contention is chiefly runtime/harness activity in this serial profile, not a concurrent-scaling proof. Peak RSS (base→selected): legacy 14,532,608→14,270,464 B; live metered 14,925,824→15,187,968 B; restricted 15,253,504→15,384,576 B. Zero sampled live heap in a report does not mean zero retained memory. No heap/RSS cap follows from logical quotas.
 
+## Object-count completion
+
+All existing heaps were reused to add **88 flat/cumulative alloc_objects and inuse_objects views across 22 captures**: six selected/control, five strategy plus five large-then-small, and six historical first-consolidation captures. [Inspection commands](finalization-lane-2-evidence/object-profile-inspection.json), [unchanged capture/binary hashes](finalization-lane-2-evidence/object-profile-source-proof.json) and [view summary](finalization-lane-2-evidence/object-profile-summary.json) preserve provenance. No benchmark or capture was replayed; production source and the signed output handoff are unchanged. Object views use each original binary/profile pair; the prior CPU/source views retain their frozen-source mapping.
+
+The allocated-object views confirm removal of frequent small output allocations, independently of byte totals. Base legacy attributes 91.70% of sampled allocated objects to Runtime.recover's fresh scope; that site disappears from the selected hot path. Base live metered shows outputWriter, dataPrinter.value/printValue and recover allocations; those sites disappear after reuse/consolidation. In the selected live capture, the disjoint admission sites account for **99.10% of allocated objects versus 95.81% of allocated bytes**. These profiles contain the pre-integration compiler/input implementation; lane 4 must use fresh integrated profiles to assess lane 3's improvements.
+
+Restricted selected capture, disjoint flat sites or their equivalent cumulative owner:
+
+| Allocation owner | Allocated objects | Allocated bytes | Implication |
+| --- | ---: | ---: | --- |
+| Compilation admission | 35.53% | 6.49% | Frequent small accounting objects remain in this source. |
+| Input admission | 18.12% | 3.87% | Byte attribution alone understates object/GC pressure. |
+| Buffer growth | 36.36% | 65.27% | Growth dominates bytes more than object frequency. |
+| Owned string copy | 4.97% | 23.57% | A small number of larger copies preserves result ownership. |
+
+Percentages are within-profile attribution, not additive CPU costs or per-render counts. Profiling calibrates different iteration totals in each process, includes setup/harness allocations, and default memory sampling statistically weights objects. Do not compare absolute process object totals as if the render counts matched. The normal benchmark's B/op/allocs/op and confidence intervals remain the per-operation evidence.
+
+Sparse live-object samples need particular care: five of six matched default-sampling inuse_objects views report zero; the selected legacy view contains an estimated 1,092 objects at a runtime.mallocgc→malg site. This is a sample-weighted runtime estimate, not a census of goroutines or evidence of a Jet retention regression. The rate-1 large-then-small screen provides a more specific observation: the reuse variant retains **one 4 KiB scratch object** at checkedWriter.Write, corroborating its live-byte view, while natural growth has no such site. Ten of 44 generated live views have zero sampled totals. None proves zero live memory, absence of leaks, or an RSS bound.
+
+The object screen also confirms that reuse removes sampled growth objects but leaves input/admission objects and the owned string copy. This does not change the strategy verdict: normal timing showed no supported warm serial CPU win, and the cold/shared-context screen caveats below remain in force. Screen CPU uses memprofilerate=1 and includes profiling pcvalue/step overhead; the selected CPU profile/default-sampling and normal timings remain separate. A summary-parser relative-path error was repaired and only the summary step resumed; all generated object views were reused.
+
 ## Buffer strategy screen
 
 A separate short screen changes one factor at a time: natural growth, capped 256/1024/4096-byte first-write reserves, and cleared 4096-byte Runtime reuse. Each variant has frozen source/binary hashes and identical positive limits. The hints occur after actual logical reservation, skip empty/large first chunks and never preallocate a quota. Reuse never retains a grown output array and copies returned strings before recycling scratch. No rejected variant is production code.

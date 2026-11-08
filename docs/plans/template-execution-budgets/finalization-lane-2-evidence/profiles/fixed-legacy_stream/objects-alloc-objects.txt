@@ -1,0 +1,32 @@
+File: fixed.test
+Type: alloc_objects
+Time: 2026-11-08 01:29:26 CST
+Showing nodes accounting for 14864, 95.83% of 15510 total
+Dropped 258 nodes (cum <= 77)
+Showing top 25 nodes out of 75
+      flat  flat%   sum%        cum   cum%
+      3245 20.92% 20.92%       3245 20.92%  regexp.makeOnePass.func1
+      1862 12.01% 32.93%       1862 12.01%  regexp/syntax.(*compiler).inst (inline)
+      1162  7.49% 40.42%       1162  7.49%  regexp/syntax.(*parser).newRegexp (inline)
+      1153  7.43% 47.85%       1153  7.43%  regexp/syntax.(*parser).maybeConcat
+       825  5.32% 53.17%       1978 12.75%  regexp/syntax.(*parser).push
+       671  4.33% 57.50%      12129 78.20%  regexp.compile
+       652  4.20% 61.70%        652  4.20%  unicode/utf8.AppendRune (inline)
+       635  4.09% 65.80%        635  4.09%  testing.rewrite
+       604  3.89% 69.69%        604  3.89%  regexp.newQueue (inline)
+       488  3.15% 72.84%        489  3.15%  regexp/syntax.(*parser).collapse
+       400  2.58% 75.42%        400  2.58%  reflect.unsafe_New
+       342  2.21% 77.62%      14270 92.01%  github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview
+       339  2.19% 79.81%        339  2.19%  runtime/pprof.allFrames
+       337  2.17% 81.98%        337  2.17%  regexp/syntax.(*Regexp).CapNames
+       337  2.17% 84.15%        674  4.35%  regexp/syntax.(*compiler).init (inline)
+       337  2.17% 86.32%       3965 25.56%  regexp/syntax.parse
+       330  2.13% 88.45%        330  2.13%  strings.genSplit
+       304  1.96% 90.41%        304  1.96%  regexp.onePassCopy
+       201  1.30% 91.71%        201  1.30%  encoding/json/v2.makeString
+       162  1.04% 92.75%        162  1.04%  testing.(*matcher).unique
+       161  1.04% 93.79%        180  1.16%  runtime/pprof.(*profileBuilder).emitLocation
+       152  0.98% 94.77%       4001 25.80%  regexp.makeOnePass
+       150  0.97% 95.74%        150  0.97%  reflect.makemap
+         9 0.058% 95.80%        165  1.06%  testing.newMatcher
+         6 0.039% 95.83%      12949 83.49%  testing.(*B).Run

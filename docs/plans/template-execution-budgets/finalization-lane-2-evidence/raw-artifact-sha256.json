@@ -31,6 +31,10 @@
     "bytes": 230,
     "sha256": "5201fea5bc419ae914dae32accfb029d9bb93328759d68f5ca7a7cb6e5ce9789"
   },
+  "inspect_objects.py": {
+    "bytes": 2431,
+    "sha256": "fc8cbc8fd29093c6385b76db1ed0169f4688b0cce0644a87b0377801e2cd0c40"
+  },
   "inspect_selected.py": {
     "bytes": 1281,
     "sha256": "3bfaa5e880b6d10b66fd643974b0fba8ae871cd8c629bfde9d1178bcec95f0ad"
@@ -38,6 +42,30 @@
   "invalid-baseline-configuration.json": {
     "bytes": 220,
     "sha256": "eef4ad3c2ccdabc5643fe26bf81ba321be9d01bcd751c8b68a8b26ef314b1110"
+  },
+  "object-profile-inspection.json": {
+    "bytes": 55332,
+    "sha256": "ad11713cdedf489accdcb9c42b3c293e4b7ea5fe1f2c18b8f7025db610c98546"
+  },
+  "object-profile-source-proof.json": {
+    "bytes": 3928,
+    "sha256": "5a3c7e2405e53080fffde1122e268782593eb4b34a48f6ce900c8c593ed6766a"
+  },
+  "object-profile-summary-fixed/result.json": {
+    "bytes": 17067,
+    "sha256": "47a06085ed741f6ff128126d66fe090159da60bd9fc3879e139cf14566d4ffd7"
+  },
+  "object-profile-summary-fixed/run.log": {
+    "bytes": 8155,
+    "sha256": "d589379b5268e816c59981a8e99720da1548d6ed19b046751b03c7fccf9b4d0c"
+  },
+  "object-profile-summary/result.json": {
+    "bytes": 17061,
+    "sha256": "2bba298125ea64a8f7a9e662bf1df3dcabf56d89f545d0399108f99ed02ab400"
+  },
+  "object-profile-summary/run.log": {
+    "bytes": 926,
+    "sha256": "aadff98f1fec3dbcae46b03b8a19dab6a2b81495e9ae5cd2dc8405ec46ffac05"
   },
   "output-final-regressions/result.json": {
     "bytes": 17245,
@@ -47,9 +75,113 @@
     "bytes": 232,
     "sha256": "0a226792b1a7c75cd4dc0b140d3a4b05d62b3671e505d99aecf7ac49990fd064"
   },
+  "profile-object-completion/result.json": {
+    "bytes": 17063,
+    "sha256": "c19b7d8045bdba4c5bde4f8480c6f95045df0eed39ef92213397041e83bb833c"
+  },
+  "profile-object-completion/run.log": {
+    "bytes": 321,
+    "sha256": "06fddb15373e4527f3fcb72e19e9910e2382176c96930913ef9813f982ea2383"
+  },
   "profile_run.py": {
     "bytes": 1762,
     "sha256": "6eaa3614a36a692cbdb1deeaaf57b6a3d97f0f146613429b76ea55a19b06a250"
+  },
+  "profiles/baseline-legacy_stream/objects-alloc-objects-cumulative.txt": {
+    "bytes": 2147,
+    "sha256": "a074eaa3c38fb91a0e38c5f21af8cded5d0d143e213633644ab5039074ad484c"
+  },
+  "profiles/baseline-legacy_stream/objects-alloc-objects.txt": {
+    "bytes": 2219,
+    "sha256": "e7ad5c987832a56f80930b15ab2adcaf41fae0babbb06b526a3d6732a28b168b"
+  },
+  "profiles/baseline-legacy_stream/objects-inuse-objects-cumulative.txt": {
+    "bytes": 2116,
+    "sha256": "1095197b9106e1f5330a8b988ef6023d1c76f466d791dad7706e298cb4fad411"
+  },
+  "profiles/baseline-legacy_stream/objects-inuse-objects.txt": {
+    "bytes": 2227,
+    "sha256": "98575c33dfb0472fdd1666835a7547d95db34b66b6f809e6732141d244f8a554"
+  },
+  "profiles/baseline-metered_live_stream/objects-alloc-objects-cumulative.txt": {
+    "bytes": 2395,
+    "sha256": "5549e4387e7840e4783943ab410ab43bc320df423fc9d132b8f1a4a8c5d14713"
+  },
+  "profiles/baseline-metered_live_stream/objects-alloc-objects.txt": {
+    "bytes": 2365,
+    "sha256": "d9f7c2d6bfffda6584fed0680b5e55d074c8831c7e39738fcee3549bd6fcdb31"
+  },
+  "profiles/baseline-metered_live_stream/objects-inuse-objects-cumulative.txt": {
+    "bytes": 2172,
+    "sha256": "d98ffd15656fd1392b6025a908759d53e1179487c404b0d4849f0ecfe9add0ba"
+  },
+  "profiles/baseline-metered_live_stream/objects-inuse-objects.txt": {
+    "bytes": 2200,
+    "sha256": "a940aadd6de891d9896b8c59aee77ea2df645641b3097609a51823e05664b801"
+  },
+  "profiles/baseline-restricted_owned/objects-alloc-objects-cumulative.txt": {
+    "bytes": 2435,
+    "sha256": "70188a6bfa51f7a60304327a39b7715ed4e7ff505b2d396f421f02aaf496f9f4"
+  },
+  "profiles/baseline-restricted_owned/objects-alloc-objects.txt": {
+    "bytes": 2383,
+    "sha256": "588cff1b934167f310ff698677a3e3279290d4084a46335fd38d12b4e27cb215"
+  },
+  "profiles/baseline-restricted_owned/objects-inuse-objects-cumulative.txt": {
+    "bytes": 2098,
+    "sha256": "cfbab2ce9e54684b0c0a218a677cc5c401a9d738ad3f2b3ec6d8b4388e307a2b"
+  },
+  "profiles/baseline-restricted_owned/objects-inuse-objects.txt": {
+    "bytes": 2151,
+    "sha256": "f30c9a6ca43e3ea149c89d20a412ca1268a59d0f7f24e810189da48df2a1dcea"
+  },
+  "profiles/fixed-legacy_stream/objects-alloc-objects-cumulative.txt": {
+    "bytes": 2077,
+    "sha256": "cb4191a29244da1be245175f8b1c9e5fd33418d2f52ee97b59c2b376148d1976"
+  },
+  "profiles/fixed-legacy_stream/objects-alloc-objects.txt": {
+    "bytes": 2020,
+    "sha256": "08e5e8b1003ca7a6af45e05acf0eb535bbd4be0e7d22db9f9bdd7111dbabc506"
+  },
+  "profiles/fixed-legacy_stream/objects-inuse-objects-cumulative.txt": {
+    "bytes": 2152,
+    "sha256": "566766ca9884c108470157bef7ab48487091477b357fbe0c3567a289adc69b9b"
+  },
+  "profiles/fixed-legacy_stream/objects-inuse-objects.txt": {
+    "bytes": 2216,
+    "sha256": "9e1114a7cbe3915b8ce7480acb4788f9ad6de86679144f846a1b4ea3e4588857"
+  },
+  "profiles/fixed-metered_live_stream/objects-alloc-objects-cumulative.txt": {
+    "bytes": 2228,
+    "sha256": "5601582a26fefc2c9361ade0022769cc33e15dafd4a24b4c21fcc926779727f5"
+  },
+  "profiles/fixed-metered_live_stream/objects-alloc-objects.txt": {
+    "bytes": 2220,
+    "sha256": "36c1f041f4ec4ddf7df8e58f42aaaa0676d04c645e4aa8457ef840b840ce73e7"
+  },
+  "profiles/fixed-metered_live_stream/objects-inuse-objects-cumulative.txt": {
+    "bytes": 2152,
+    "sha256": "5e4e4d2e79b84ad9e7ed43d8d19f0c1fe9cf9a019a32266e1805a627125ed580"
+  },
+  "profiles/fixed-metered_live_stream/objects-inuse-objects.txt": {
+    "bytes": 2216,
+    "sha256": "d3524599110f55e351e2f900ffb06c87e03d21fca02b8214bb89e46527d18b17"
+  },
+  "profiles/fixed-restricted_owned/objects-alloc-objects-cumulative.txt": {
+    "bytes": 2445,
+    "sha256": "793018b0e93d461e0a14babf5d319c4d87bb583d8db6f2c6f5be41058826a8bc"
+  },
+  "profiles/fixed-restricted_owned/objects-alloc-objects.txt": {
+    "bytes": 2373,
+    "sha256": "20d9d63f8971b9270b9d4e049705add5b6a6370ddae79d70e2ae0b347ddb5b89"
+  },
+  "profiles/fixed-restricted_owned/objects-inuse-objects-cumulative.txt": {
+    "bytes": 2088,
+    "sha256": "c9f7f1624960a4baf156cc863bf32737eeadb3d59cda80e2fee771fb533ec5c5"
+  },
+  "profiles/fixed-restricted_owned/objects-inuse-objects.txt": {
+    "bytes": 2203,
+    "sha256": "6f79af03e4930f294745a9cae9a9cfe423719431dbb44ab9c13181daeceaccf4"
   },
   "redirected-transaction-fix/result.json": {
     "bytes": 17171,
@@ -107,6 +239,22 @@
     "bytes": 1299,
     "sha256": "0866f2106756d02b559866402783846b4cf80866a4f7654c575b5edf67f527c8"
   },
+  "reserve-0/large-small-objects-alloc-objects-cumulative.txt": {
+    "bytes": 2299,
+    "sha256": "b5bccec4e15c4abb3966ce27adcb4d70166ab9418080e58a8283e3f4f5e6cac3"
+  },
+  "reserve-0/large-small-objects-alloc-objects.txt": {
+    "bytes": 2196,
+    "sha256": "ff45c1b087379f14f4640201c2a48966f94dfeba906bb3ec617669dd5a96bb9c"
+  },
+  "reserve-0/large-small-objects-inuse-objects-cumulative.txt": {
+    "bytes": 1930,
+    "sha256": "7c2800035d00444094cd180c198b9c33fa534633040bd472f944793ba2e3b45a"
+  },
+  "reserve-0/large-small-objects-inuse-objects.txt": {
+    "bytes": 2026,
+    "sha256": "3a4ffde3d94a2c5e27c40a995d6c7a9c5af70253699c681850b1c4625941a9d7"
+  },
   "reserve-0/large-small.json": {
     "bytes": 657,
     "sha256": "c6691bcf57efb43407b968fd4bbd7502fccd3978a8ab6d58d60d1d6a6acb8c45"
@@ -118,6 +266,22 @@
   "reserve-0/mutex.txt": {
     "bytes": 1394,
     "sha256": "94a43da491f603f7882a7277882727f040d88152c896d694eb97a613c7b3797f"
+  },
+  "reserve-0/objects-alloc-objects-cumulative.txt": {
+    "bytes": 2479,
+    "sha256": "bc27871490fce27361d4aae02eb23b5c45dcf197650343339507727257af161f"
+  },
+  "reserve-0/objects-alloc-objects.txt": {
+    "bytes": 2484,
+    "sha256": "c400efabcc15719e8449fc815b4a7ec3a5d499c59a7212c8a2990b24bf2af842"
+  },
+  "reserve-0/objects-inuse-objects-cumulative.txt": {
+    "bytes": 2119,
+    "sha256": "5276bbfe08f0b8aa9ad81e3a3eb3b9766199be45ea3f4eac9e04da96da408f2d"
+  },
+  "reserve-0/objects-inuse-objects.txt": {
+    "bytes": 2202,
+    "sha256": "8eefac5d7f82e11e75e90ec8528005ebd358ee53e88d72414c01032d81ba7a6b"
   },
   "reserve-0/profile.json": {
     "bytes": 1024,
@@ -167,6 +331,22 @@
     "bytes": 1302,
     "sha256": "91f1a5e22e01bc2ae67c3f909be26614a671db7e415f0ca0417e0faa11ba47f0"
   },
+  "reserve-1024/large-small-objects-alloc-objects-cumulative.txt": {
+    "bytes": 2302,
+    "sha256": "78e7742965c4c51b106f455c7d5ea096287e5335ca40755fa0ddc25a5bc3b98d"
+  },
+  "reserve-1024/large-small-objects-alloc-objects.txt": {
+    "bytes": 2219,
+    "sha256": "d06b76f2be76a7031b8d5199822b666ed12c36d8a0e06ed3437c08e4dd3019bb"
+  },
+  "reserve-1024/large-small-objects-inuse-objects-cumulative.txt": {
+    "bytes": 1967,
+    "sha256": "ca12812b5c6f8d7834521cac4356f025cb13f643be1ea5d1101d51cdb44a2dba"
+  },
+  "reserve-1024/large-small-objects-inuse-objects.txt": {
+    "bytes": 2058,
+    "sha256": "21a9788d3f45b42f2214d1f095f8063903d14e35be6dc3c3ada8f6a116854cd1"
+  },
   "reserve-1024/large-small.json": {
     "bytes": 664,
     "sha256": "628d611543b6144a30c5549fef40f079c560c176c66c18206730f8c7b30883fb"
@@ -178,6 +358,22 @@
   "reserve-1024/mutex.txt": {
     "bytes": 859,
     "sha256": "f54ac721123499bf4c389187cef8a3f9c00045d186c64f0094992a4fadbe97ec"
+  },
+  "reserve-1024/objects-alloc-objects-cumulative.txt": {
+    "bytes": 2482,
+    "sha256": "6a2b5d91e638c79c14ea633e76929b1c9ca5b62c72c675494ad34e13b693b438"
+  },
+  "reserve-1024/objects-alloc-objects.txt": {
+    "bytes": 2498,
+    "sha256": "77f3c5da77126559f3d09e392a5c4f6dff396b34d5dc14824551c6a12ddccd43"
+  },
+  "reserve-1024/objects-inuse-objects-cumulative.txt": {
+    "bytes": 2161,
+    "sha256": "8a1758e805380f63590b18153bd82f14d57e8fc12a37d1063ab4d8ea7f188407"
+  },
+  "reserve-1024/objects-inuse-objects.txt": {
+    "bytes": 2206,
+    "sha256": "3f207d507778870fef172dc9e37817d47dbe124dbc51b46f7f897d8d4d483bd1"
   },
   "reserve-1024/profile.json": {
     "bytes": 1041,
@@ -227,6 +423,22 @@
     "bytes": 1301,
     "sha256": "90f3a7d5a4142ef4b100362439349e5ee04963715207986011b4a31de2ed9c7c"
   },
+  "reserve-256/large-small-objects-alloc-objects-cumulative.txt": {
+    "bytes": 2301,
+    "sha256": "b8e56165c97932b75d36f9a30654e677709e983f797179bd86ef2df325a839c1"
+  },
+  "reserve-256/large-small-objects-alloc-objects.txt": {
+    "bytes": 2218,
+    "sha256": "1c3ed69a90500c6c3b9c84cf0b89cf1790363521ba0c0c3b4a7de524d9e25b45"
+  },
+  "reserve-256/large-small-objects-inuse-objects-cumulative.txt": {
+    "bytes": 1932,
+    "sha256": "125977dc121ff34c9e53389e731190e96b8d40f5a145d6bd15083fd0e1e571a5"
+  },
+  "reserve-256/large-small-objects-inuse-objects.txt": {
+    "bytes": 2010,
+    "sha256": "4131bff606b27925022b4999f9f67d9797286609df34ddb18ac69cdf2ec3341a"
+  },
   "reserve-256/large-small.json": {
     "bytes": 660,
     "sha256": "a11e7a3466eefb9eb4831cfd66d2d12ee5b21ea7ac8f55549e211de1eeb4c4b1"
@@ -238,6 +450,22 @@
   "reserve-256/mutex.txt": {
     "bytes": 650,
     "sha256": "fc07dc738b1d271d36b55a9e5f08cd6bd4a4bbd3baf4576837e1ab84d09f6179"
+  },
+  "reserve-256/objects-alloc-objects-cumulative.txt": {
+    "bytes": 2483,
+    "sha256": "ecaa80a05fcddeef453a056077eaead864f28b043012329641a8c79dfbae079e"
+  },
+  "reserve-256/objects-alloc-objects.txt": {
+    "bytes": 2498,
+    "sha256": "bff1f7149715e317059bffdc9a43211a95b4be0c98bfe921c1f4c8b3f4d38549"
+  },
+  "reserve-256/objects-inuse-objects-cumulative.txt": {
+    "bytes": 2160,
+    "sha256": "d01d7d0112cede199a10206743cf098989e30ca71bd65dd41144cc42cad02c59"
+  },
+  "reserve-256/objects-inuse-objects.txt": {
+    "bytes": 2204,
+    "sha256": "30776b3c06b1075702fa5e79acab02b13d9f46c9d262a7a9e62771cc0fdd65bd"
   },
   "reserve-256/profile.json": {
     "bytes": 1034,
@@ -287,6 +515,22 @@
     "bytes": 1311,
     "sha256": "60c03500b12ef1839871e378f62162abb4526450e4615565da314dd3bd5e68c2"
   },
+  "reserve-4096/large-small-objects-alloc-objects-cumulative.txt": {
+    "bytes": 2302,
+    "sha256": "1bb84fe5772bb041a6dd81fcb5ea1962849d07e6165870ef89578248c1c46395"
+  },
+  "reserve-4096/large-small-objects-alloc-objects.txt": {
+    "bytes": 2219,
+    "sha256": "56966ad4792b364647c289d7d38ce38d53307541d3eb2add432e454491c06609"
+  },
+  "reserve-4096/large-small-objects-inuse-objects-cumulative.txt": {
+    "bytes": 1933,
+    "sha256": "2f22904185752d1e3a8722fa91c6b2be7db2e96d6c3b815175125b8b48faacd7"
+  },
+  "reserve-4096/large-small-objects-inuse-objects.txt": {
+    "bytes": 2013,
+    "sha256": "4bdb5f4e4a92981a2b9cc8838f06de4d69453183ffc98fd502f6223ddcaecc5f"
+  },
   "reserve-4096/large-small.json": {
     "bytes": 664,
     "sha256": "07668664623887e03f3825308ce8ee3bb64008c97dffa82321e2b7260b6870b0"
@@ -298,6 +542,22 @@
   "reserve-4096/mutex.txt": {
     "bytes": 1342,
     "sha256": "aa664f9dd6f70f0658d8ac524e9401d76b8aaf30df521c7343801bc8913a1d82"
+  },
+  "reserve-4096/objects-alloc-objects-cumulative.txt": {
+    "bytes": 2499,
+    "sha256": "9986010ab74ac5597b1a4abb32c7140431442f69eb8240f25200d16c79587531"
+  },
+  "reserve-4096/objects-alloc-objects.txt": {
+    "bytes": 2497,
+    "sha256": "9882da40d16e8a211be5a933d23b537708942fdb9c5f114a80e9ded208d11902"
+  },
+  "reserve-4096/objects-inuse-objects-cumulative.txt": {
+    "bytes": 2148,
+    "sha256": "af466b86d8b21cd2f4ef712a83bf54d990fdc94eaea72e1e9c1868e58e5d6e29"
+  },
+  "reserve-4096/objects-inuse-objects.txt": {
+    "bytes": 2205,
+    "sha256": "165cb9b4a5e4c6ad25a4b6715ff10139073e82b0f5321c0de3883f005118adca"
   },
   "reserve-4096/profile.json": {
     "bytes": 1041,
@@ -359,6 +619,22 @@
     "bytes": 1346,
     "sha256": "ece0e2debc84496dcaa5b87b5605ceadc38abe70c8d938db20a403203f929038"
   },
+  "reserve-reuse4096/large-small-objects-alloc-objects-cumulative.txt": {
+    "bytes": 2307,
+    "sha256": "7a994d4c806348187ce5f7756e126961406eee9d2eade39768c19e928a8b8550"
+  },
+  "reserve-reuse4096/large-small-objects-alloc-objects.txt": {
+    "bytes": 2224,
+    "sha256": "11dde8f86a45ab6cb344bda6842c1262c739457389fc26ef7abbef7c28ea7445"
+  },
+  "reserve-reuse4096/large-small-objects-inuse-objects-cumulative.txt": {
+    "bytes": 1995,
+    "sha256": "a359e0c71ae6131fda86ebeb46ccb4a16ee019faf8f1fdae9029ce2a7e5e8f00"
+  },
+  "reserve-reuse4096/large-small-objects-inuse-objects.txt": {
+    "bytes": 2048,
+    "sha256": "74b5b21c8686f9ed5ba63e74b7ef2113a346a6e547200541db83aaf6e0ea8e20"
+  },
   "reserve-reuse4096/large-small.json": {
     "bytes": 679,
     "sha256": "b90b7b15cc72489462cb04c3c010a75053ae5483d79ffefc90cc9f5da2eb0fb1"
@@ -370,6 +646,22 @@
   "reserve-reuse4096/mutex.txt": {
     "bytes": 160,
     "sha256": "a5c503a07c31e7d8e02161914e8e332e44bd1178b3d83ddd5bcb22dc104aa348"
+  },
+  "reserve-reuse4096/objects-alloc-objects-cumulative.txt": {
+    "bytes": 1526,
+    "sha256": "3beff9a0cb107acf2dfcb8899198f9227e2701524c8ebf9c27328b566514ac82"
+  },
+  "reserve-reuse4096/objects-alloc-objects.txt": {
+    "bytes": 1524,
+    "sha256": "1c9956fd53173c93208d7dda0557529347b1df52358fa8659ed7928e43555b81"
+  },
+  "reserve-reuse4096/objects-inuse-objects-cumulative.txt": {
+    "bytes": 2166,
+    "sha256": "b7c4fe59617035b0cb5eba1ab7f4e3c3c48e1649986551c438b0252c9279df09"
+  },
+  "reserve-reuse4096/objects-inuse-objects.txt": {
+    "bytes": 2209,
+    "sha256": "9c2a10ea01dc62df036539f450b9ee44fdcd6c7be96c224e4f7421e460850ba4"
   },
   "reserve-reuse4096/profile.json": {
     "bytes": 1071,
@@ -411,6 +703,14 @@
     "bytes": 3122,
     "sha256": "1be32e3d69f4366b12adc31ab79cecc29d38c0e431c89b0c4416064ce12be7cd"
   },
+  "selected-measure/baseline-legacy_stream-alloc-objects-cumulative.txt": {
+    "bytes": 1291,
+    "sha256": "c570b609bcd62ee88bf36e66c7b9fccb64f61e7958076368379561ee0a9d0a68"
+  },
+  "selected-measure/baseline-legacy_stream-alloc-objects.txt": {
+    "bytes": 1291,
+    "sha256": "8b92206c43378cf7f39e62f5375a6f3f5e696d850254c3846f227905708569f9"
+  },
   "selected-measure/baseline-legacy_stream-alloc.txt": {
     "bytes": 2056,
     "sha256": "f447b66930af866c330fe073ed8c91092f91a73e72f6bf7c9603ac1d4c488cdc"
@@ -443,6 +743,14 @@
     "bytes": 157,
     "sha256": "50af6e1c3ebd5c31926182e2d49cc410583d0280b7fb0d950599f13541d78e07"
   },
+  "selected-measure/baseline-legacy_stream-inuse-objects-cumulative.txt": {
+    "bytes": 159,
+    "sha256": "03780bb44bb7a1a226941cfafaae31e347523fa1149f513c80d20e3fdf740d17"
+  },
+  "selected-measure/baseline-legacy_stream-inuse-objects.txt": {
+    "bytes": 159,
+    "sha256": "03780bb44bb7a1a226941cfafaae31e347523fa1149f513c80d20e3fdf740d17"
+  },
   "selected-measure/baseline-legacy_stream-mutex.pprof": {
     "bytes": 555,
     "sha256": "5faa5627ab5fe49f0ac15e042d00e31021c04878c3a65988758ee59426f24016"
@@ -458,6 +766,14 @@
   "selected-measure/baseline-legacy_stream-source.txt": {
     "bytes": 1507,
     "sha256": "00ee5d2f9860751c9ba36800a4b80775884279ac55ff583959abb159645a4aed"
+  },
+  "selected-measure/baseline-metered_live_stream-alloc-objects-cumulative.txt": {
+    "bytes": 2286,
+    "sha256": "ad8889436c6672cf942c1e105e81a3af169d81a6b94e534e9f2e681b3d851b41"
+  },
+  "selected-measure/baseline-metered_live_stream-alloc-objects.txt": {
+    "bytes": 2286,
+    "sha256": "c77f4ba5432ac451119e722fe5160ee7dcf294f06788f0c78a6a5c034521b6f6"
   },
   "selected-measure/baseline-metered_live_stream-alloc.txt": {
     "bytes": 2171,
@@ -491,6 +807,14 @@
     "bytes": 157,
     "sha256": "d0574a4a7846ff27d6066b37064f79291321cecce91c63f2b308e27edbf031b9"
   },
+  "selected-measure/baseline-metered_live_stream-inuse-objects-cumulative.txt": {
+    "bytes": 159,
+    "sha256": "757595a6179e90b5ec7f3ff93451453fa1dc2c5690a450f35000fddade408514"
+  },
+  "selected-measure/baseline-metered_live_stream-inuse-objects.txt": {
+    "bytes": 159,
+    "sha256": "757595a6179e90b5ec7f3ff93451453fa1dc2c5690a450f35000fddade408514"
+  },
   "selected-measure/baseline-metered_live_stream-mutex.pprof": {
     "bytes": 984,
     "sha256": "a7cf2f10dc9fa15145202a05b27484c109d7192ab6021f84797abd570f5b1b1c"
@@ -506,6 +830,14 @@
   "selected-measure/baseline-metered_live_stream-source.txt": {
     "bytes": 4811,
     "sha256": "15d2f879ba5de4de46f3e0e492398a145179c870946899873246058ad382718f"
+  },
+  "selected-measure/baseline-restricted_owned-alloc-objects-cumulative.txt": {
+    "bytes": 2449,
+    "sha256": "a309202674cbef3684d4ef412a8372e989d9f79eff5ee1c64cc930c552f53e35"
+  },
+  "selected-measure/baseline-restricted_owned-alloc-objects.txt": {
+    "bytes": 2470,
+    "sha256": "9d54126236df869da5ec3bd1f968aaa50e2dfd346a541088edcb309cd29156bb"
   },
   "selected-measure/baseline-restricted_owned-alloc.txt": {
     "bytes": 2241,
@@ -538,6 +870,14 @@
   "selected-measure/baseline-restricted_owned-heap.txt": {
     "bytes": 157,
     "sha256": "5e1ea9cc3c36fcd8b79af8e43e23f533105a5b8b737b78ac08d0a70e40682315"
+  },
+  "selected-measure/baseline-restricted_owned-inuse-objects-cumulative.txt": {
+    "bytes": 159,
+    "sha256": "e85bbe01cec375db327ae8998d49b052c775ff9547c84906598071d2bf21b545"
+  },
+  "selected-measure/baseline-restricted_owned-inuse-objects.txt": {
+    "bytes": 159,
+    "sha256": "e85bbe01cec375db327ae8998d49b052c775ff9547c84906598071d2bf21b545"
   },
   "selected-measure/baseline-restricted_owned-mutex.pprof": {
     "bytes": 666,
@@ -599,6 +939,14 @@
     "bytes": 3120,
     "sha256": "624f07e61ae6d7fa9ace8cea36eb89d447f431159cf58f3d83f86a09173f010b"
   },
+  "selected-measure/selected-legacy_stream-alloc-objects-cumulative.txt": {
+    "bytes": 2041,
+    "sha256": "9d36c71b6b03cca756c3e6c2de6a1036d71ff44b9373017fafe9a89d1447f5b2"
+  },
+  "selected-measure/selected-legacy_stream-alloc-objects.txt": {
+    "bytes": 2041,
+    "sha256": "c8c0d6cc1a023f5becc3ba1f40a4f95b414ae6c7dc5f01c4192d12c765dda1fc"
+  },
   "selected-measure/selected-legacy_stream-alloc.txt": {
     "bytes": 1865,
     "sha256": "bb9e54ed2d3f307909d989d35a5d664b78790ee6669ffa9a1d7d01cdb9287892"
@@ -631,6 +979,14 @@
     "bytes": 544,
     "sha256": "ffcf648a0ca83f3e81842450f964c1fffd946b4d6a7735e27bf093a48f94da45"
   },
+  "selected-measure/selected-legacy_stream-inuse-objects-cumulative.txt": {
+    "bytes": 538,
+    "sha256": "380957849f9c5951fa2e4edc4dcb427eb61bd5b449cfc8e4454d630b76ca6bb4"
+  },
+  "selected-measure/selected-legacy_stream-inuse-objects.txt": {
+    "bytes": 538,
+    "sha256": "048a634d47288ff18bb9bbad8ba609403ed629e0006a6a7e4c9468b87b63ff81"
+  },
   "selected-measure/selected-legacy_stream-mutex.pprof": {
     "bytes": 188,
     "sha256": "360fb839a98a49c14a70c62005990c439eccd5e4ef881ba60703b75a4e532e46"
@@ -646,6 +1002,14 @@
   "selected-measure/selected-legacy_stream-source.txt": {
     "bytes": 2068,
     "sha256": "28b9fea2f10036919cc7165a445e585f3910edf582c5043c3c183abba81b166b"
+  },
+  "selected-measure/selected-metered_live_stream-alloc-objects-cumulative.txt": {
+    "bytes": 1578,
+    "sha256": "e818a1a1d97b3697e44cc6621bdca35c95401b42fabf7a7cd20de704d2a81ad4"
+  },
+  "selected-measure/selected-metered_live_stream-alloc-objects.txt": {
+    "bytes": 1578,
+    "sha256": "e93d4f3ae3b9d42e173bc682c535e0c6936a0c6f82114bbcffc202969b408454"
   },
   "selected-measure/selected-metered_live_stream-alloc.txt": {
     "bytes": 2055,
@@ -679,6 +1043,14 @@
     "bytes": 157,
     "sha256": "ee1732edb3ce19d9089e295e8ed577c758bdc3131dea2b316a2943561c68787f"
   },
+  "selected-measure/selected-metered_live_stream-inuse-objects-cumulative.txt": {
+    "bytes": 159,
+    "sha256": "f657fe0681b18aa0e3869c664fed70aac824800ef5679b82c1630098020b974f"
+  },
+  "selected-measure/selected-metered_live_stream-inuse-objects.txt": {
+    "bytes": 159,
+    "sha256": "f657fe0681b18aa0e3869c664fed70aac824800ef5679b82c1630098020b974f"
+  },
   "selected-measure/selected-metered_live_stream-mutex.pprof": {
     "bytes": 188,
     "sha256": "8c419b87c3b6898ad0b8106e13610b7d63770dac6d9545e888aa3cc9431de0c4"
@@ -694,6 +1066,14 @@
   "selected-measure/selected-metered_live_stream-source.txt": {
     "bytes": 2653,
     "sha256": "9d9cf858ffc4544ac5b9cd785d24ec91c3c88307ff722369f142b85e60fe17ac"
+  },
+  "selected-measure/selected-restricted_owned-alloc-objects-cumulative.txt": {
+    "bytes": 2454,
+    "sha256": "49d9bb43fc1dad1b6b00a5320eb431a8731b612313d9544281c3012c13e70297"
+  },
+  "selected-measure/selected-restricted_owned-alloc-objects.txt": {
+    "bytes": 2461,
+    "sha256": "f7398b75f8c92e66cfedc8fc088790e7ba2212ecf21ec2286b9015bc36060599"
   },
   "selected-measure/selected-restricted_owned-alloc.txt": {
     "bytes": 2242,
@@ -726,6 +1106,14 @@
   "selected-measure/selected-restricted_owned-heap.txt": {
     "bytes": 157,
     "sha256": "fc443ab09e1ce961dffa5b70a254119c71be32469e3be28e7106b539b3143bec"
+  },
+  "selected-measure/selected-restricted_owned-inuse-objects-cumulative.txt": {
+    "bytes": 159,
+    "sha256": "40934425e0ed5d2808def9666b1707e2fc1e0f111afc9f9fc0a715c274f25628"
+  },
+  "selected-measure/selected-restricted_owned-inuse-objects.txt": {
+    "bytes": 159,
+    "sha256": "40934425e0ed5d2808def9666b1707e2fc1e0f111afc9f9fc0a715c274f25628"
   },
   "selected-measure/selected-restricted_owned-mutex.pprof": {
     "bytes": 1394,
@@ -798,6 +1186,10 @@
   "sink-baseline/run.log": {
     "bytes": 5508,
     "sha256": "c2be0f083fc100fdc3c9c499880d6754ac73bd004457e6e27f9ac57203dd227c"
+  },
+  "summarize_objects.py": {
+    "bytes": 1058,
+    "sha256": "645768b2ee95ded34b98e399c21994d4343885360eb3f00a6b9380b9a24fe7df"
   },
   "toolchain.json": {
     "bytes": 409,

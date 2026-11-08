@@ -1,0 +1,31 @@
+File: fixed.test
+Type: alloc_objects
+Time: 2026-11-08 01:29:28 CST
+Showing nodes accounting for 463139, 97.48% of 475118 total
+Dropped 314 nodes (cum <= 2375)
+      flat  flat%   sum%        cum   cum%
+         3 0.00063% 0.00063%     473401 99.64%  testing.(*B).runN
+         4 0.00084% 0.0015%     458647 96.53%  github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview.func1
+         0     0% 0.0015%     458527 96.51%  testing.(*B).launch
+         0     0% 0.0015%     458511 96.50%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0% 0.0015%     458511 96.50%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0% 0.0015%     458511 96.50%  github.com/CloudyKit/jet/v6_test.init.0.func1
+         0     0% 0.0015%     458353 96.47%  github.com/CloudyKit/jet/v6.(*Runtime).startCompilation
+    261932 55.13% 55.13%     261932 55.13%  github.com/CloudyKit/jet/v6.newParseAdmission
+         0     0% 55.13%     196437 41.34%  github.com/CloudyKit/jet/v6.(*Runtime).startCompilation.func1
+    130958 27.56% 82.69%     196437 41.34%  github.com/CloudyKit/jet/v6.(*parseAdmission).admitCached
+     65483 13.78% 96.48%      65483 13.78%  github.com/CloudyKit/jet/v6.(*parseAdmission).prepareSource
+         0     0% 96.48%      14857  3.13%  testing.(*B).run1.func1
+       345 0.073% 96.55%      14719  3.10%  github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview
+         0     0% 96.55%      13587  2.86%  testing.(*matcher).fullName
+         6 0.0013% 96.55%      13397  2.82%  testing.(*B).Run
+         0     0% 96.55%      12615  2.66%  testing/internal/testdeps.TestDeps.MatchString
+         0     0% 96.55%      12585  2.65%  regexp.Compile (inline)
+       671  0.14% 96.69%      12585  2.65%  regexp.compile
+         0     0% 96.69%      12475  2.63%  testing.simpleMatch.matches
+         0     0% 96.69%       4308  0.91%  regexp.compileOnePass
+         0     0% 96.69%       4116  0.87%  regexp/syntax.Parse (inline)
+       337 0.071% 96.76%       4116  0.87%  regexp/syntax.parse
+       152 0.032% 96.80%       4004  0.84%  regexp.makeOnePass
+      3248  0.68% 97.48%       3248  0.68%  regexp.makeOnePass.func1
+         0     0% 97.48%       2984  0.63%  regexp/syntax.(*parser).literal

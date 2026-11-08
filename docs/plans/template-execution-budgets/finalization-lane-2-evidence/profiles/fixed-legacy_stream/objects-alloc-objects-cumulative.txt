@@ -1,0 +1,32 @@
+File: fixed.test
+Type: alloc_objects
+Time: 2026-11-08 01:29:26 CST
+Showing nodes accounting for 9763, 62.95% of 15510 total
+Dropped 258 nodes (cum <= 77)
+Showing top 25 nodes out of 75
+      flat  flat%   sum%        cum   cum%
+         3 0.019% 0.019%      14483 93.38%  testing.(*B).runN
+         0     0% 0.019%      14329 92.39%  testing.(*B).run1.func1
+       342  2.21%  2.22%      14270 92.01%  github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview
+         0     0%  2.22%      13139 84.71%  testing.(*matcher).fullName
+         6 0.039%  2.26%      12949 83.49%  testing.(*B).Run
+         0     0%  2.26%      12161 78.41%  testing/internal/testdeps.TestDeps.MatchString
+         0     0%  2.26%      12129 78.20%  regexp.Compile (inline)
+       671  4.33%  6.59%      12129 78.20%  regexp.compile
+         0     0%  6.59%      12024 77.52%  testing.simpleMatch.matches
+         0     0%  6.59%       4305 27.76%  regexp.compileOnePass
+       152  0.98%  7.57%       4001 25.80%  regexp.makeOnePass
+         0     0%  7.57%       3965 25.56%  regexp/syntax.Parse (inline)
+       337  2.17%  9.74%       3965 25.56%  regexp/syntax.parse
+      3245 20.92% 30.66%       3245 20.92%  regexp.makeOnePass.func1
+         0     0% 30.66%       2833 18.27%  regexp/syntax.(*parser).literal
+         0     0% 30.66%       2199 14.18%  regexp/syntax.Compile
+       825  5.32% 35.98%       1978 12.75%  regexp/syntax.(*parser).push
+      1862 12.01% 47.99%       1862 12.01%  regexp/syntax.(*compiler).inst (inline)
+         0     0% 47.99%       1525  9.83%  regexp/syntax.(*compiler).compile
+         0     0% 47.99%       1341  8.65%  regexp/syntax.(*compiler).rune
+      1162  7.49% 55.48%       1162  7.49%  regexp/syntax.(*parser).newRegexp (inline)
+      1153  7.43% 62.91%       1153  7.43%  regexp/syntax.(*parser).maybeConcat
+         5 0.032% 62.95%        987  6.36%  github.com/CloudyKit/jet/v6_test.executionWorkloads
+         0     0% 62.95%        955  6.16%  encoding/json.Unmarshal (inline)
+         0     0% 62.95%        955  6.16%  encoding/json/v2.Unmarshal

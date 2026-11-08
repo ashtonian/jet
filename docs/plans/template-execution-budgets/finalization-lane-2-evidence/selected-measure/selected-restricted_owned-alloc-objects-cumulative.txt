@@ -1,0 +1,32 @@
+File: selected.test
+Type: alloc_objects
+Time: 2026-11-08 02:11:06 CST
+Showing nodes accounting for 3412815, 94.79% of 3600371 total
+Dropped 38 nodes (cum <= 18001)
+Showing top 25 nodes out of 26
+      flat  flat%   sum%        cum   cum%
+         0     0%     0%    3597087 99.91%  testing.(*B).runN
+    172042  4.78%  4.78%    3595951 99.88%  github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext
+         0     0%  4.78%    3595951 99.88%  github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview.func1
+         0     0%  4.78%    3595951 99.88%  github.com/CloudyKit/jet/v6_test.init.0.func2
+         0     0%  4.78%    3595951 99.88%  testing.(*B).launch
+         0     0%  4.78%    3423909 95.10%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0%  4.78%    3423909 95.10%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0%  4.78%    1313191 36.47%  github.com/CloudyKit/fastprinter.PrintString
+         0     0%  4.78%    1313191 36.47%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0%  4.78%    1313191 36.47%  github.com/CloudyKit/jet/v6.(*Runtime).printValue
+         0     0%  4.78%    1313191 36.47%  github.com/CloudyKit/jet/v6.(*dataPrinter).text
+         0     0%  4.78%    1313191 36.47%  github.com/CloudyKit/jet/v6.(*dataPrinter).value
+         0     0%  4.78%    1309095 36.36%  bytes.(*Buffer).Write
+    213005  5.92% 10.69%    1309095 36.36%  bytes.(*Buffer).grow
+         0     0% 10.69%    1309095 36.36%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+         0     0% 10.69%    1309095 36.36%  github.com/CloudyKit/jet/v6.(*dataPrinter).Write
+         0     0% 10.69%    1309095 36.36%  github.com/CloudyKit/jet/v6.(*escapeeWriter).Write
+         0     0% 10.69%    1309095 36.36%  text/template.HTMLEscape
+         0     0% 10.69%    1279212 35.53%  github.com/CloudyKit/jet/v6.(*Runtime).startCompilation
+   1096090 30.44% 41.14%    1096090 30.44%  bytes.growSlice
+    746429 20.73% 61.87%     746429 20.73%  github.com/CloudyKit/jet/v6.newParseAdmission
+    652466 18.12% 79.99%     652466 18.12%  github.com/CloudyKit/jet/v6.admitInputScopes
+         0     0% 79.99%     532783 14.80%  github.com/CloudyKit/jet/v6.(*Runtime).startCompilation.func1
+    348742  9.69% 89.68%     532783 14.80%  github.com/CloudyKit/jet/v6.(*parseAdmission).admitCached
+    184041  5.11% 94.79%     184041  5.11%  github.com/CloudyKit/jet/v6.(*parseAdmission).prepareSource

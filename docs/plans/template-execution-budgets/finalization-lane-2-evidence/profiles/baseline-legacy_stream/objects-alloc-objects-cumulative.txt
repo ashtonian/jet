@@ -1,0 +1,32 @@
+File: baseline.test
+Type: alloc_objects
+Time: 2026-11-08 01:29:21 CST
+Showing nodes accounting for 136094, 94.30% of 144322 total
+Dropped 295 nodes (cum <= 721)
+Showing top 25 nodes out of 34
+      flat  flat%   sum%        cum   cum%
+         3 0.0021% 0.0021%     143167 99.20%  testing.(*B).runN
+         4 0.0028% 0.0049%     128832 89.27%  github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview.func1
+         0     0% 0.0049%     128779 89.23%  testing.(*B).launch
+         0     0% 0.0049%     128704 89.18%  github.com/CloudyKit/jet/v6.(*Template).Execute (inline)
+         0     0% 0.0049%     128704 89.18%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0% 0.0049%     128704 89.18%  github.com/CloudyKit/jet/v6_test.init.func1
+    128644 89.14% 89.14%     128646 89.14%  github.com/CloudyKit/jet/v6.(*Runtime).recover
+         0     0% 89.14%      14371  9.96%  testing.(*B).run1.func1
+       343  0.24% 89.38%      14300  9.91%  github.com/CloudyKit/jet/v6_test.BenchmarkFinalReview
+         0     0% 89.38%      13139  9.10%  testing.(*matcher).fullName
+         6 0.0042% 89.38%      12949  8.97%  testing.(*B).Run
+         0     0% 89.38%      12163  8.43%  testing/internal/testdeps.TestDeps.MatchString
+         0     0% 89.38%      12131  8.41%  regexp.Compile (inline)
+       671  0.46% 89.85%      12131  8.41%  regexp.compile
+         0     0% 89.85%      12026  8.33%  testing.simpleMatch.matches
+         0     0% 89.85%       4307  2.98%  regexp.compileOnePass
+       152  0.11% 89.95%       4003  2.77%  regexp.makeOnePass
+         0     0% 89.95%       3965  2.75%  regexp/syntax.Parse (inline)
+       337  0.23% 90.19%       3965  2.75%  regexp/syntax.parse
+      3247  2.25% 92.44%       3247  2.25%  regexp.makeOnePass.func1
+         0     0% 92.44%       2833  1.96%  regexp/syntax.(*parser).literal
+         0     0% 92.44%       2199  1.52%  regexp/syntax.Compile
+       825  0.57% 93.01%       1978  1.37%  regexp/syntax.(*parser).push
+      1862  1.29% 94.30%       1862  1.29%  regexp/syntax.(*compiler).inst (inline)
+         0     0% 94.30%       1525  1.06%  regexp/syntax.(*compiler).compile
