@@ -1,0 +1,168 @@
+File: upstream.test
+Type: delay
+Time: 2026-11-08 02:58:54 CST
+Showing nodes accounting for 6873ns, 100% of 6873ns total
+Showing top 40 nodes out of 57
+----------------------------------------------------------+-------------
+      flat  flat%   sum%        cum   cum%   calls calls% + context
+----------------------------------------------------------+-------------
+                                            3041ns 44.25% |   runtime.forEachPInternal (inline)
+                                            1416ns 20.60% |   runtime.findRunnable (inline)
+                                            1250ns 18.19% |   runtime.(*mheap).freeSpan.func1
+    6873ns   100%   100%     6873ns   100%                | runtime.unlock
+----------------------------------------------------------+-------------
+                                             625ns   100% |   reflect.Value.call
+         0     0%   100%      625ns  9.09%                | encoding/json.Marshal
+                                             625ns   100% |   encoding/json/v2.Marshal
+----------------------------------------------------------+-------------
+                                             625ns   100% |   encoding/json/jsontext.Token.appendString
+         0     0%   100%      625ns  9.09%                | encoding/json/internal/jsonwire.AppendQuote
+                                             625ns   100% |   runtime.(*mcache).nextFree
+----------------------------------------------------------+-------------
+                                             334ns 53.44% |   encoding/json/v2.marshalValueAny (inline)
+                                             291ns 46.56% |   encoding/json/v2.makeMapArshaler.func2 (inline)
+         0     0%   100%      625ns  9.09%                | encoding/json/jsontext.(*Encoder).WriteToken
+                                             625ns   100% |   encoding/json/jsontext.(*encoderState).WriteToken
+----------------------------------------------------------+-------------
+                                             625ns   100% |   encoding/json/jsontext.(*Encoder).WriteToken
+         0     0%   100%      625ns  9.09%                | encoding/json/jsontext.(*encoderState).WriteToken
+                                             625ns   100% |   encoding/json/jsontext.Token.appendString
+----------------------------------------------------------+-------------
+                                             625ns   100% |   encoding/json/jsontext.(*encoderState).WriteToken
+         0     0%   100%      625ns  9.09%                | encoding/json/jsontext.Token.appendString
+                                             625ns   100% |   encoding/json/internal/jsonwire.AppendQuote
+----------------------------------------------------------+-------------
+                                             625ns   100% |   encoding/json.Marshal
+         0     0%   100%      625ns  9.09%                | encoding/json/v2.Marshal
+                                             625ns   100% |   encoding/json/v2.marshalEncode
+----------------------------------------------------------+-------------
+                                             334ns   100% |   encoding/json/v2.makeMapArshaler.func2
+         0     0%   100%      334ns  4.86%                | encoding/json/v2.makeInterfaceArshaler.func1
+                                             334ns   100% |   encoding/json/v2.marshalValueAny
+----------------------------------------------------------+-------------
+                                             625ns   100% |   encoding/json/v2.makeSliceArshaler.func2
+         0     0%   100%      625ns  9.09%                | encoding/json/v2.makeMapArshaler.func2
+                                             334ns 53.44% |   encoding/json/v2.makeInterfaceArshaler.func1
+                                             291ns 46.56% |   encoding/json/jsontext.(*Encoder).WriteToken (inline)
+----------------------------------------------------------+-------------
+                                             625ns   100% |   encoding/json/v2.marshalEncode
+         0     0%   100%      625ns  9.09%                | encoding/json/v2.makeSliceArshaler.func2
+                                             625ns   100% |   encoding/json/v2.makeMapArshaler.func2
+----------------------------------------------------------+-------------
+                                             625ns   100% |   encoding/json/v2.Marshal
+         0     0%   100%      625ns  9.09%                | encoding/json/v2.marshalEncode
+                                             625ns   100% |   encoding/json/v2.makeSliceArshaler.func2
+----------------------------------------------------------+-------------
+                                             334ns   100% |   encoding/json/v2.makeInterfaceArshaler.func1
+         0     0%   100%      334ns  4.86%                | encoding/json/v2.marshalValueAny
+                                             334ns   100% |   encoding/json/jsontext.(*Encoder).WriteToken (inline)
+----------------------------------------------------------+-------------
+                                             625ns   100% |   github.com/CloudyKit/jet/v6.(*Runtime).evalCommandExpression (inline)
+         0     0%   100%      625ns  9.09%                | github.com/CloudyKit/jet/v6.(*Runtime).evalCallExpression
+                                             625ns   100% |   github.com/CloudyKit/jet/v6.(*Runtime).evalPipeCallExpression
+----------------------------------------------------------+-------------
+                                             625ns   100% |   github.com/CloudyKit/jet/v6.(*Runtime).evalPipelineExpression
+         0     0%   100%      625ns  9.09%                | github.com/CloudyKit/jet/v6.(*Runtime).evalCommandExpression
+                                             625ns   100% |   github.com/CloudyKit/jet/v6.(*Runtime).evalCallExpression (inline)
+----------------------------------------------------------+-------------
+                                             625ns   100% |   github.com/CloudyKit/jet/v6.(*Runtime).evalCallExpression
+         0     0%   100%      625ns  9.09%                | github.com/CloudyKit/jet/v6.(*Runtime).evalPipeCallExpression
+                                             625ns   100% |   reflect.Value.Call
+----------------------------------------------------------+-------------
+                                             625ns   100% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0%   100%      625ns  9.09%                | github.com/CloudyKit/jet/v6.(*Runtime).evalPipelineExpression
+                                             625ns   100% |   github.com/CloudyKit/jet/v6.(*Runtime).evalCommandExpression
+----------------------------------------------------------+-------------
+                                             625ns   100% |   github.com/CloudyKit/jet/v6.(*Template).Execute
+         0     0%   100%      625ns  9.09%                | github.com/CloudyKit/jet/v6.(*Runtime).executeList
+                                             625ns   100% |   github.com/CloudyKit/jet/v6.(*Runtime).evalPipelineExpression
+----------------------------------------------------------+-------------
+                                             625ns   100% |   github.com/CloudyKit/jet/v6_test.init.func1
+         0     0%   100%      625ns  9.09%                | github.com/CloudyKit/jet/v6.(*Template).Execute
+                                             625ns   100% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+----------------------------------------------------------+-------------
+         0     0%   100%      625ns  9.09%                | github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes.func1
+                                             625ns   100% |   github.com/CloudyKit/jet/v6_test.init.func1
+----------------------------------------------------------+-------------
+                                             625ns   100% |   github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes.func1
+         0     0%   100%      625ns  9.09%                | github.com/CloudyKit/jet/v6_test.init.func1
+                                             625ns   100% |   github.com/CloudyKit/jet/v6.(*Template).Execute
+----------------------------------------------------------+-------------
+                                             625ns   100% |   github.com/CloudyKit/jet/v6.(*Runtime).evalPipeCallExpression
+         0     0%   100%      625ns  9.09%                | reflect.Value.Call
+                                             625ns   100% |   reflect.Value.call
+----------------------------------------------------------+-------------
+                                             625ns   100% |   reflect.Value.Call
+         0     0%   100%      625ns  9.09%                | reflect.Value.call
+                                             625ns   100% |   encoding/json.Marshal
+----------------------------------------------------------+-------------
+                                             625ns   100% |   encoding/json/internal/jsonwire.AppendQuote
+         0     0%   100%      625ns  9.09%                | runtime.(*mcache).nextFree
+                                             625ns   100% |   runtime.(*mcache).refill
+----------------------------------------------------------+-------------
+                                             625ns   100% |   runtime.(*mcache).nextFree
+         0     0%   100%      625ns  9.09%                | runtime.(*mcache).refill
+                                             625ns   100% |   runtime.(*mcentral).cacheSpan
+----------------------------------------------------------+-------------
+                                             625ns   100% |   runtime.(*mcache).refill
+         0     0%   100%      625ns  9.09%                | runtime.(*mcentral).cacheSpan
+                                             625ns   100% |   runtime.(*mcentral).grow
+----------------------------------------------------------+-------------
+                                             625ns   100% |   runtime.(*mcentral).cacheSpan
+         0     0%   100%      625ns  9.09%                | runtime.(*mcentral).grow
+                                             625ns   100% |   runtime.(*mheap).alloc
+----------------------------------------------------------+-------------
+                                             625ns   100% |   runtime.(*mcentral).grow
+         0     0%   100%      625ns  9.09%                | runtime.(*mheap).alloc
+                                             625ns   100% |   runtime.(*mheap).alloc.func1
+----------------------------------------------------------+-------------
+                                             625ns   100% |   runtime.(*mheap).alloc
+         0     0%   100%      625ns  9.09%                | runtime.(*mheap).alloc.func1
+                                             625ns   100% |   runtime.(*mheap).reclaim
+----------------------------------------------------------+-------------
+                                            1250ns   100% |   runtime.(*sweepLocked).sweep (inline)
+         0     0%   100%     1250ns 18.19%                | runtime.(*mheap).freeSpan
+                                            1250ns   100% |   runtime.(*mheap).freeSpan.func1
+----------------------------------------------------------+-------------
+                                            1250ns   100% |   runtime.(*mheap).freeSpan
+         0     0%   100%     1250ns 18.19%                | runtime.(*mheap).freeSpan.func1
+                                            1250ns   100% |   runtime.unlock
+----------------------------------------------------------+-------------
+                                             625ns   100% |   runtime.(*mheap).alloc.func1
+         0     0%   100%      625ns  9.09%                | runtime.(*mheap).reclaim
+                                             625ns   100% |   runtime.(*mheap).reclaimChunk
+----------------------------------------------------------+-------------
+                                             625ns   100% |   runtime.(*mheap).reclaim
+         0     0%   100%      625ns  9.09%                | runtime.(*mheap).reclaimChunk
+                                             625ns   100% |   runtime.(*sweepLocked).sweep
+----------------------------------------------------------+-------------
+                                             625ns 50.00% |   runtime.(*mheap).reclaimChunk
+                                             625ns 50.00% |   runtime.bgsweep
+         0     0%   100%     1250ns 18.19%                | runtime.(*sweepLocked).sweep
+                                            1250ns   100% |   runtime.(*mheap).freeSpan (inline)
+----------------------------------------------------------+-------------
+         0     0%   100%      625ns  9.09%                | runtime.bgsweep
+                                             625ns   100% |   runtime.(*sweepLocked).sweep
+----------------------------------------------------------+-------------
+         0     0%   100%     1416ns 20.60%                | runtime.findRunnable
+                                            1416ns   100% |   runtime.unlock (inline)
+----------------------------------------------------------+-------------
+                                            3041ns   100% |   runtime.gcMarkDone (inline)
+         0     0%   100%     3041ns 44.25%                | runtime.forEachP
+                                            3041ns   100% |   runtime.forEachP.func1
+----------------------------------------------------------+-------------
+                                            3041ns   100% |   runtime.forEachP
+         0     0%   100%     3041ns 44.25%                | runtime.forEachP.func1
+                                            3041ns   100% |   runtime.forEachPInternal
+----------------------------------------------------------+-------------
+                                            3041ns   100% |   runtime.forEachP.func1
+         0     0%   100%     3041ns 44.25%                | runtime.forEachPInternal
+                                            3041ns   100% |   runtime.unlock (inline)
+----------------------------------------------------------+-------------
+         0     0%   100%     3041ns 44.25%                | runtime.gcBgMarkWorker
+                                            3041ns   100% |   runtime.gcMarkDone
+----------------------------------------------------------+-------------
+                                            3041ns   100% |   runtime.gcBgMarkWorker
+         0     0%   100%     3041ns 44.25%                | runtime.gcMarkDone
+                                            3041ns   100% |   runtime.forEachP (inline)
+----------------------------------------------------------+-------------

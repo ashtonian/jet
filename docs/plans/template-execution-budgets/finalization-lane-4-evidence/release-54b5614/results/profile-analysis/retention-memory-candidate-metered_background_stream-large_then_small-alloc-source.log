@@ -1,0 +1,10 @@
+Total: 356.02kB
+ROUTINE ======================== github.com/CloudyKit/jet/v6.newParseAdmission in compile.go
+         0       640B (flat, cum)  0.18% of Total
+         .          .    185:func newParseAdmission(ctx context.Context, opts ParseOptions) (*parseAdmission, error) {
+         .       640B    186:	a := parseAdmissions.Get().(*parseAdmission)
+         .          .    187:	if err := a.init(ctx, opts); err != nil {
+         .          .    188:		a.release()
+         .          .    189:		return nil, err
+         .          .    190:	}
+         .          .    191:	return a, nil

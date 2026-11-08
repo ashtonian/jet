@@ -1,0 +1,61 @@
+File: candidate.test
+Type: delay
+Time: 2026-11-08 02:59:55 CST
+Showing nodes accounting for 9083ns, 100% of 9083ns total
+----------------------------------------------------------+-------------
+      flat  flat%   sum%        cum   cum%   calls calls% + context
+----------------------------------------------------------+-------------
+                                            5375ns 59.18% |   runtime.startTheWorldWithSema (inline)
+                                            3166ns 34.86% |   runtime.forEachPInternal (inline)
+                                             542ns  5.97% |   runtime.stopTheWorldWithSema (inline)
+    9083ns   100%   100%     9083ns   100%                | runtime.unlock
+----------------------------------------------------------+-------------
+                                            3166ns   100% |   runtime.gcMarkDone (inline)
+         0     0%   100%     3166ns 34.86%                | runtime.forEachP
+                                            3166ns   100% |   runtime.systemstack
+----------------------------------------------------------+-------------
+                                            3166ns   100% |   runtime.systemstack
+         0     0%   100%     3166ns 34.86%                | runtime.forEachP.func1
+                                            3166ns   100% |   runtime.forEachPInternal
+----------------------------------------------------------+-------------
+                                            3166ns   100% |   runtime.forEachP.func1
+         0     0%   100%     3166ns 34.86%                | runtime.forEachPInternal
+                                            3166ns   100% |   runtime.unlock (inline)
+----------------------------------------------------------+-------------
+         0     0%   100%     9083ns   100%                | runtime.gcBgMarkWorker
+                                            9083ns   100% |   runtime.gcMarkDone
+----------------------------------------------------------+-------------
+                                            9083ns   100% |   runtime.gcBgMarkWorker
+         0     0%   100%     9083ns   100%                | runtime.gcMarkDone
+                                            5375ns 59.18% |   runtime.gcMarkTermination
+                                            3166ns 34.86% |   runtime.forEachP (inline)
+                                             542ns  5.97% |   runtime.systemstack
+----------------------------------------------------------+-------------
+                                             542ns   100% |   runtime.systemstack
+         0     0%   100%      542ns  5.97%                | runtime.gcMarkDone.func2
+                                             542ns   100% |   runtime.stopTheWorldWithSema
+----------------------------------------------------------+-------------
+                                            5375ns   100% |   runtime.gcMarkDone
+         0     0%   100%     5375ns 59.18%                | runtime.gcMarkTermination
+                                            5375ns   100% |   runtime.systemstack
+----------------------------------------------------------+-------------
+                                            5375ns   100% |   runtime.systemstack
+         0     0%   100%     5375ns 59.18%                | runtime.gcMarkTermination.func3
+                                            5375ns   100% |   runtime.startTheWorldWithSema
+----------------------------------------------------------+-------------
+                                            5375ns   100% |   runtime.gcMarkTermination.func3
+         0     0%   100%     5375ns 59.18%                | runtime.startTheWorldWithSema
+                                            5375ns   100% |   runtime.unlock (inline)
+----------------------------------------------------------+-------------
+                                             542ns   100% |   runtime.gcMarkDone.func2
+         0     0%   100%      542ns  5.97%                | runtime.stopTheWorldWithSema
+                                             542ns   100% |   runtime.unlock (inline)
+----------------------------------------------------------+-------------
+                                            5375ns 59.18% |   runtime.gcMarkTermination
+                                            3166ns 34.86% |   runtime.forEachP
+                                             542ns  5.97% |   runtime.gcMarkDone
+         0     0%   100%     9083ns   100%                | runtime.systemstack
+                                            5375ns 59.18% |   runtime.gcMarkTermination.func3
+                                            3166ns 34.86% |   runtime.forEachP.func1
+                                             542ns  5.97% |   runtime.gcMarkDone.func2
+----------------------------------------------------------+-------------

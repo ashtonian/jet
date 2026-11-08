@@ -1,0 +1,34 @@
+Total: 22.27GB
+ROUTINE ======================== github.com/CloudyKit/jet/v6.(*Runtime).printValue in execution_print.go
+         0    11.39GB (flat, cum) 51.16% of Total
+         .          .     19:func (st *Runtime) printValue(w io.Writer, v reflect.Value) (int, error) {
+         .          .     20:	if st.execution.ctx == nil {
+         .    11.39GB     21:		return fastprinter.PrintValue(w, v)
+         .          .     22:	}
+         .          .     23:	p := &st.printer
+         .          .     24:	// Write borrows formatted bytes until it returns. Reentrant printing must
+         .          .     25:	// leave the active workspace intact, including its scalar backing array.
+         .          .     26:	if p.runtime != nil {
+ROUTINE ======================== github.com/CloudyKit/jet/v6.(*Runtime).recover in eval.go
+         0     4.01MB (flat, cum) 0.018% of Total
+         .          .    276:func (st *Runtime) recover(err *error) {
+         .          .    277:	recovered := recover()
+         .          .    278:	failure := st.execution.terminal
+         .          .    279:	if failure == nil {
+         .          .    280:		failure = st.writeErr
+         .          .    281:	}
+         .          .    282:	st.rootScope = scope{}
+         .          .    283:	st.scope = &st.rootScope
+         .          .    284:	st.printer = dataPrinter{}
+         .          .    285:	st.outputOrigin = nil
+         .          .    286:	*st.escapeeWriter = escapeeWriter{}
+         .          .    287:	st.content = nil
+         .          .    288:	st.context = reflect.Value{}
+         .          .    289:	st.includeDepth = 0
+         .          .    290:	st.execution = executionState{}
+         .     4.01MB    291:	pool_State.Put(st)
+         .          .    292:	if recovered != nil {
+         .          .    293:		if _, ok := recovered.(runtime.Error); ok {
+         .          .    294:			panic(recovered)
+         .          .    295:		}
+         .          .    296:		if aborted, ok := recovered.(executionAbort); ok {

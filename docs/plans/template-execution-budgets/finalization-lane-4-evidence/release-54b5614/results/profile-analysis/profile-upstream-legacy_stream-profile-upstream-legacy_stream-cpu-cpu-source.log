@@ -1,0 +1,174 @@
+Total: 9.07s
+ROUTINE ======================== github.com/CloudyKit/jet/v6.(*Runtime).executeList in eval.go
+     950ms      7.77s (flat, cum) 85.67% of Total
+      70ms       70ms    404:func (st *Runtime) executeList(list *ListNode) (returnValue reflect.Value) {
+         .          .    405:	inNewScope := false // to use just one scope for multiple actions with variable declarations
+         .          .    406:
+     140ms      140ms    407:	for i := 0; i < len(list.Nodes); i++ {
+      50ms       50ms    408:		node := list.Nodes[i]
+      90ms       90ms    409:		switch node.Type() {
+         .          .    410:
+         .          .    411:		case NodeText:
+      40ms       40ms    412:			node := node.(*TextNode)
+      40ms      200ms    413:			_, err := st.Writer.Write(node.Text)
+      30ms       30ms    414:			if err != nil {
+         .          .    415:				node.error(err)
+         .          .    416:			}
+         .          .    417:		case NodeAction:
+      30ms       30ms    418:			node := node.(*ActionNode)
+      10ms       10ms    419:			if node.Set != nil {
+         .          .    420:				if node.Set.Let {
+         .          .    421:					if !inNewScope {
+         .          .    422:						st.newScope()
+         .          .    423:						inNewScope = true
+         .          .    424:						defer st.releaseScope()
+         .          .    425:					}
+         .          .    426:					st.executeLetList(node.Set)
+         .          .    427:				} else {
+         .          .    428:					st.executeSetList(node.Set)
+         .          .    429:				}
+         .          .    430:			}
+         .          .    431:			if node.Pipe != nil {
+      20ms      900ms    432:				v, safeWriter := st.evalPipelineExpression(node.Pipe)
+         .          .    433:				if !safeWriter && v.IsValid() {
+      10ms       30ms    434:					if v.Type().Implements(rendererType) {
+         .          .    435:						v.Interface().(Renderer).Render(st)
+         .          .    436:					} else {
+         .      1.63s    437:						_, err := fastprinter.PrintValue(st.escapeeWriter, v)
+         .          .    438:						if err != nil {
+         .          .    439:							node.error(err)
+         .          .    440:						}
+         .          .    441:					}
+         .          .    442:				}
+         .          .    443:			}
+         .          .    444:		case NodeIf:
+         .          .    445:			node := node.(*IfNode)
+         .          .    446:			var isLet bool
+         .          .    447:			if node.Set != nil {
+         .          .    448:				if node.Set.Let {
+         .          .    449:					isLet = true
+         .          .    450:					st.newScope()
+         .          .    451:					st.executeLetList(node.Set)
+         .          .    452:				} else {
+         .          .    453:					st.executeSetList(node.Set)
+         .          .    454:				}
+         .          .    455:			}
+         .          .    456:
+         .          .    457:			if isTrue(st.evalPrimaryExpressionGroup(node.Expression)) {
+         .          .    458:				returnValue = st.executeList(node.List)
+         .          .    459:			} else if node.ElseList != nil {
+         .          .    460:				returnValue = st.executeList(node.ElseList)
+         .          .    461:			}
+         .          .    462:			if isLet {
+         .          .    463:				st.releaseScope()
+         .          .    464:			}
+         .          .    465:		case NodeRange:
+         .          .    466:			node := node.(*RangeNode)
+         .          .    467:			var expression reflect.Value
+         .          .    468:
+         .          .    469:			isSet := node.Set != nil
+         .          .    470:			isLet := false
+         .          .    471:			keyVarSlot := 0
+         .          .    472:			valVarSlot := -1
+         .          .    473:
+         .          .    474:			context := st.context
+         .          .    475:
+         .          .    476:			if isSet {
+         .          .    477:				if len(node.Set.Left) > 1 {
+         .          .    478:					valVarSlot = 1
+         .          .    479:				}
+         .          .    480:				expression = st.evalPrimaryExpressionGroup(node.Set.Right[0])
+         .          .    481:				if node.Set.Let {
+         .          .    482:					isLet = true
+         .          .    483:					st.newScope()
+         .          .    484:				}
+         .          .    485:			} else {
+         .      120ms    486:				expression = st.evalPrimaryExpressionGroup(node.Expression)
+         .          .    487:			}
+         .          .    488:
+         .       90ms    489:			ranger, cleanup, err := getRanger(expression)
+         .          .    490:			if err != nil {
+         .          .    491:				node.error(err)
+         .          .    492:			}
+         .          .    493:			if !ranger.ProvidesIndex() {
+         .          .    494:				if isSet && len(node.Set.Left) > 1 {
+         .          .    495:					// two-vars assignment with ranger that doesn't provide an index
+         .          .    496:					node.error(errors.New("two-var range over ranger that does not provide an index"))
+         .          .    497:				} else if isSet {
+         .          .    498:					keyVarSlot, valVarSlot = -1, 0
+         .          .    499:				}
+         .          .    500:			}
+         .          .    501:
+         .          .    502:			indexValue, rangeValue, end := ranger.Range()
+         .          .    503:			if !end {
+      50ms       50ms    504:				for !end && !returnValue.IsValid() {
+         .          .    505:					if isSet {
+         .          .    506:						if isLet {
+      20ms       20ms    507:							if keyVarSlot >= 0 {
+         .          .    508:								st.variables[node.Set.Left[keyVarSlot].String()] = indexValue
+         .          .    509:							}
+         .          .    510:							if valVarSlot >= 0 {
+         .          .    511:								st.variables[node.Set.Left[valVarSlot].String()] = rangeValue
+         .          .    512:							}
+         .          .    513:						} else {
+         .          .    514:							if keyVarSlot >= 0 {
+         .          .    515:								st.executeSet(node.Set.Left[keyVarSlot], indexValue)
+         .          .    516:							}
+         .          .    517:							if valVarSlot >= 0 {
+         .          .    518:								st.executeSet(node.Set.Left[valVarSlot], rangeValue)
+         .          .    519:							}
+         .          .    520:						}
+         .          .    521:					}
+      20ms       20ms    522:					if valVarSlot < 0 {
+      80ms       80ms    523:						st.context = rangeValue
+         .          .    524:					}
+      10ms      1.46s    525:					returnValue = st.executeList(node.List)
+      70ms      530ms    526:					indexValue, rangeValue, end = ranger.Range()
+         .          .    527:				}
+         .          .    528:			} else if node.ElseList != nil {
+         .          .    529:				returnValue = st.executeList(node.ElseList)
+         .          .    530:			}
+         .          .    531:			cleanup()
+         .          .    532:			st.context = context
+      10ms       10ms    533:			if isLet {
+         .          .    534:				st.releaseScope()
+         .          .    535:			}
+         .          .    536:		case NodeTry:
+         .          .    537:			node := node.(*TryNode)
+         .          .    538:			returnValue = st.executeTry(node)
+         .          .    539:		case NodeYield:
+      10ms       10ms    540:			node := node.(*YieldNode)
+         .          .    541:			if node.IsContent {
+      10ms       10ms    542:				if st.content != nil {
+         .      100ms    543:					st.content(st, node.Expression)
+         .          .    544:				}
+         .          .    545:			} else {
+         .       90ms    546:				block, found := st.getBlock(node.Name)
+         .          .    547:				if !found || block == nil {
+         .          .    548:					node.errorf("unresolved block %q!", node.Name)
+         .          .    549:				}
+         .      310ms    550:				st.executeYieldBlock(block, block.Parameters, node.Parameters, node.Expression, node.Content)
+         .          .    551:			}
+         .          .    552:		case NodeBlock:
+      20ms       20ms    553:			node := node.(*BlockNode)
+         .       90ms    554:			block, found := st.getBlock(node.Name)
+         .          .    555:			if !found {
+         .          .    556:				block = node
+         .          .    557:			}
+         .      130ms    558:			st.executeYieldBlock(block, block.Parameters, block.Parameters, block.Expression, block.Content)
+         .          .    559:		case NodeInclude:
+         .          .    560:			node := node.(*IncludeNode)
+         .      700ms    561:			returnValue = st.executeInclude(node)
+         .          .    562:		case NodeReturn:
+         .          .    563:			node := node.(*ReturnNode)
+         .          .    564:			returnValue = st.evalPrimaryExpressionGroup(node.Value)
+         .          .    565:		}
+         .          .    566:	}
+         .          .    567:
+         .          .    568:	return returnValue
+     120ms      710ms    569:}
+         .          .    570:
+         .          .    571:func (st *Runtime) executeTry(try *TryNode) (returnValue reflect.Value) {
+         .          .    572:	writer := st.Writer
+         .          .    573:	buf := new(bytes.Buffer)
+         .          .    574:

@@ -1,0 +1,47 @@
+File: upstream.test
+Type: delay
+Time: 2026-11-08 03:02:50 CST
+Showing nodes accounting for 7.72s, 100% of 7.72s total
+Dropped 125 nodes (cum <= 0.04s)
+Showing top 40 nodes out of 78
+      flat  flat%   sum%        cum   cum%
+     7.50s 97.19% 97.19%      7.50s 97.19%  runtime.unlock (partial-inline)
+     0.12s  1.58% 98.76%      0.12s  1.58%  runtime._LostContendedRuntimeLock
+     0.10s  1.24%   100%      0.10s  1.24%  sync.(*Mutex).Unlock
+         0     0%   100%      0.16s  2.14%  bytes.Clone (inline)
+         0     0%   100%      0.55s  7.16%  encoding/json.Marshal
+         0     0%   100%      0.55s  7.16%  encoding/json/v2.Marshal
+         0     0%   100%      0.13s  1.68%  encoding/json/v2.makeInterfaceArshaler.func1
+         0     0%   100%      0.38s  4.89%  encoding/json/v2.makeMapArshaler.func2
+         0     0%   100%      0.38s  4.89%  encoding/json/v2.makeSliceArshaler.func2
+         0     0%   100%      0.38s  4.89%  encoding/json/v2.marshalEncode
+         0     0%   100%      0.23s  3.01%  encoding/json/v2.newAddressableValue
+         0     0%   100%      0.60s  7.71%  github.com/CloudyKit/jet/v6.(*Runtime).evalCallExpression (inline)
+         0     0%   100%      0.60s  7.71%  github.com/CloudyKit/jet/v6.(*Runtime).evalCommandExpression
+         0     0%   100%      0.60s  7.71%  github.com/CloudyKit/jet/v6.(*Runtime).evalPipeCallExpression
+         0     0%   100%      0.60s  7.71%  github.com/CloudyKit/jet/v6.(*Runtime).evalPipelineExpression
+         0     0%   100%      0.63s  8.12%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0%   100%      0.28s  3.64%  github.com/CloudyKit/jet/v6.(*Runtime).recover
+         0     0%   100%      0.92s 11.90%  github.com/CloudyKit/jet/v6.(*Template).Execute
+         0     0%   100%      0.92s 11.90%  github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes.func1.1
+         0     0%   100%      0.10s  1.24%  github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes.func1.gowrap1
+         0     0%   100%      0.92s 11.90%  github.com/CloudyKit/jet/v6_test.init.func1
+         0     0%   100%      0.23s  3.01%  reflect.New
+         0     0%   100%      0.60s  7.71%  reflect.Value.Call
+         0     0%   100%      0.12s  1.58%  reflect.Value.MapIndex
+         0     0%   100%      0.60s  7.71%  reflect.Value.call
+         0     0%   100%      0.12s  1.58%  reflect.copyVal
+         0     0%   100%      0.37s  4.79%  reflect.unsafe_New
+         0     0%   100%      0.47s  6.05%  runtime.(*mcache).nextFree
+         0     0%   100%      0.47s  6.05%  runtime.(*mcache).refill
+         0     0%   100%      0.47s  6.05%  runtime.(*mcentral).cacheSpan
+         0     0%   100%      0.47s  6.14%  runtime.(*mheap).freeSpan (inline)
+         0     0%   100%      0.47s  6.14%  runtime.(*mheap).freeSpan.func1
+         0     0%   100%      0.48s  6.25%  runtime.(*sweepLocked).sweep
+         0     0%   100%      0.07s  0.91%  runtime.asyncPreempt2.func1
+         0     0%   100%      0.05s  0.61%  runtime.bgsweep
+         0     0%   100%      0.43s  5.52%  runtime.deductSweepCredit
+         0     0%   100%      2.91s 37.75%  runtime.findRunnable
+         0     0%   100%      1.50s 19.42%  runtime.forEachP (inline)
+         0     0%   100%      1.50s 19.42%  runtime.forEachP.func1
+         0     0%   100%      1.50s 19.42%  runtime.forEachPInternal

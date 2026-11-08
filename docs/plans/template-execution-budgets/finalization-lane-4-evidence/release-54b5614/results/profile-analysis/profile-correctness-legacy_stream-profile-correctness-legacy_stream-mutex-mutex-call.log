@@ -1,0 +1,167 @@
+File: correctness.test
+Type: delay
+Time: 2026-11-08 02:59:14 CST
+Showing nodes accounting for 65.62us, 100% of 65.62us total
+Dropped 2 nodes (cum <= 0.33us)
+Showing top 40 nodes out of 62
+----------------------------------------------------------+-------------
+      flat  flat%   sum%        cum   cum%   calls calls% + context
+----------------------------------------------------------+-------------
+                                           25.08us 44.72% |   runtime.forEachPInternal (inline)
+                                           23.08us 41.16% |   runtime.gcMarkDone (inline)
+                                            1.21us  2.16% |   runtime.findRunnable (inline)
+                                            0.75us  1.34% |   runtime.(*mheap).freeSpan.func1
+                                            0.33us  0.59% |   runtime.(*mheap).reclaimChunk (inline)
+   56.08us 85.46% 85.46%    56.08us 85.46%                | runtime.unlock
+----------------------------------------------------------+-------------
+    9.54us 14.54%   100%     9.54us 14.54%                | runtime._LostContendedRuntimeLock
+----------------------------------------------------------+-------------
+                                            0.33us   100% |   reflect.Value.call
+         0     0%   100%     0.33us  0.51%                | encoding/json.Marshal
+                                            0.33us   100% |   encoding/json/v2.Marshal
+----------------------------------------------------------+-------------
+                                            0.33us   100% |   encoding/json/jsontext.Token.appendString
+         0     0%   100%     0.33us  0.51%                | encoding/json/internal/jsonwire.AppendQuote
+                                            0.33us   100% |   runtime.(*mcache).nextFree
+----------------------------------------------------------+-------------
+                                            0.33us   100% |   encoding/json/v2.makeMapArshaler.func2 (inline)
+         0     0%   100%     0.33us  0.51%                | encoding/json/jsontext.(*Encoder).WriteToken
+                                            0.33us   100% |   encoding/json/jsontext.(*encoderState).WriteToken
+----------------------------------------------------------+-------------
+                                            0.33us   100% |   encoding/json/jsontext.(*Encoder).WriteToken
+         0     0%   100%     0.33us  0.51%                | encoding/json/jsontext.(*encoderState).WriteToken
+                                            0.33us   100% |   encoding/json/jsontext.Token.appendString
+----------------------------------------------------------+-------------
+                                            0.33us   100% |   encoding/json/jsontext.(*encoderState).WriteToken
+         0     0%   100%     0.33us  0.51%                | encoding/json/jsontext.Token.appendString
+                                            0.33us   100% |   encoding/json/internal/jsonwire.AppendQuote
+----------------------------------------------------------+-------------
+                                            0.33us   100% |   encoding/json.Marshal
+         0     0%   100%     0.33us  0.51%                | encoding/json/v2.Marshal
+                                            0.33us   100% |   encoding/json/v2.marshalEncode
+----------------------------------------------------------+-------------
+                                            0.33us   100% |   encoding/json/v2.makeSliceArshaler.func2
+         0     0%   100%     0.33us  0.51%                | encoding/json/v2.makeMapArshaler.func2
+                                            0.33us   100% |   encoding/json/jsontext.(*Encoder).WriteToken (inline)
+----------------------------------------------------------+-------------
+                                            0.33us   100% |   encoding/json/v2.marshalEncode
+         0     0%   100%     0.33us  0.51%                | encoding/json/v2.makeSliceArshaler.func2
+                                            0.33us   100% |   encoding/json/v2.makeMapArshaler.func2
+----------------------------------------------------------+-------------
+                                            0.33us   100% |   encoding/json/v2.Marshal
+         0     0%   100%     0.33us  0.51%                | encoding/json/v2.marshalEncode
+                                            0.33us   100% |   encoding/json/v2.makeSliceArshaler.func2
+----------------------------------------------------------+-------------
+                                            0.33us   100% |   github.com/CloudyKit/jet/v6.(*Runtime).evalCommandExpression (inline)
+         0     0%   100%     0.33us  0.51%                | github.com/CloudyKit/jet/v6.(*Runtime).evalCallExpression
+                                            0.33us   100% |   github.com/CloudyKit/jet/v6.(*Runtime).evalPipeCallExpression
+----------------------------------------------------------+-------------
+                                            0.33us   100% |   github.com/CloudyKit/jet/v6.(*Runtime).evalPipelineExpression
+         0     0%   100%     0.33us  0.51%                | github.com/CloudyKit/jet/v6.(*Runtime).evalCommandExpression
+                                            0.33us   100% |   github.com/CloudyKit/jet/v6.(*Runtime).evalCallExpression (inline)
+----------------------------------------------------------+-------------
+                                            0.33us   100% |   github.com/CloudyKit/jet/v6.(*Runtime).evalCallExpression
+         0     0%   100%     0.33us  0.51%                | github.com/CloudyKit/jet/v6.(*Runtime).evalPipeCallExpression
+                                            0.33us   100% |   reflect.Value.Call
+----------------------------------------------------------+-------------
+                                            0.33us   100% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0%   100%     0.33us  0.51%                | github.com/CloudyKit/jet/v6.(*Runtime).evalPipelineExpression
+                                            0.33us   100% |   github.com/CloudyKit/jet/v6.(*Runtime).evalCommandExpression
+----------------------------------------------------------+-------------
+                                            0.33us   100% |   github.com/CloudyKit/jet/v6.(*Template).Execute
+         0     0%   100%     0.33us  0.51%                | github.com/CloudyKit/jet/v6.(*Runtime).executeList
+                                            0.33us   100% |   github.com/CloudyKit/jet/v6.(*Runtime).evalPipelineExpression
+----------------------------------------------------------+-------------
+                                            0.33us   100% |   github.com/CloudyKit/jet/v6_test.init.func1
+         0     0%   100%     0.33us  0.51%                | github.com/CloudyKit/jet/v6.(*Template).Execute
+                                            0.33us   100% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+----------------------------------------------------------+-------------
+         0     0%   100%     0.33us  0.51%                | github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes.func1
+                                            0.33us   100% |   github.com/CloudyKit/jet/v6_test.init.func1
+----------------------------------------------------------+-------------
+                                            0.33us   100% |   github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes.func1
+         0     0%   100%     0.33us  0.51%                | github.com/CloudyKit/jet/v6_test.init.func1
+                                            0.33us   100% |   github.com/CloudyKit/jet/v6.(*Template).Execute
+----------------------------------------------------------+-------------
+                                            0.33us   100% |   github.com/CloudyKit/jet/v6.(*Runtime).evalPipeCallExpression
+         0     0%   100%     0.33us  0.51%                | reflect.Value.Call
+                                            0.33us   100% |   reflect.Value.call
+----------------------------------------------------------+-------------
+                                            0.33us   100% |   reflect.Value.Call
+         0     0%   100%     0.33us  0.51%                | reflect.Value.call
+                                            0.33us   100% |   encoding/json.Marshal
+----------------------------------------------------------+-------------
+                                            0.33us   100% |   encoding/json/internal/jsonwire.AppendQuote
+         0     0%   100%     0.33us  0.51%                | runtime.(*mcache).nextFree
+                                            0.33us   100% |   runtime.(*mcache).refill
+----------------------------------------------------------+-------------
+                                            0.33us   100% |   runtime.(*mcache).nextFree
+         0     0%   100%     0.33us  0.51%                | runtime.(*mcache).refill
+                                            0.33us   100% |   runtime.(*mcentral).cacheSpan
+----------------------------------------------------------+-------------
+                                            0.33us   100% |   runtime.(*mcache).refill
+         0     0%   100%     0.33us  0.51%                | runtime.(*mcentral).cacheSpan
+                                            0.33us   100% |   runtime.(*mcentral).grow
+----------------------------------------------------------+-------------
+                                            0.33us   100% |   runtime.(*mcentral).cacheSpan
+         0     0%   100%     0.33us  0.51%                | runtime.(*mcentral).grow
+                                            0.33us   100% |   runtime.(*mheap).alloc
+----------------------------------------------------------+-------------
+                                            0.33us   100% |   runtime.(*mcentral).grow
+         0     0%   100%     0.33us  0.51%                | runtime.(*mheap).alloc
+                                            0.33us   100% |   runtime.(*mheap).alloc.func1
+----------------------------------------------------------+-------------
+                                            0.33us   100% |   runtime.(*mheap).alloc
+         0     0%   100%     0.33us  0.51%                | runtime.(*mheap).alloc.func1
+                                            0.33us   100% |   runtime.(*mheap).reclaim
+----------------------------------------------------------+-------------
+                                            0.75us   100% |   runtime.(*sweepLocked).sweep (inline)
+         0     0%   100%     0.75us  1.14%                | runtime.(*mheap).freeSpan
+                                            0.75us   100% |   runtime.(*mheap).freeSpan.func1
+----------------------------------------------------------+-------------
+                                            0.75us   100% |   runtime.(*mheap).freeSpan
+         0     0%   100%     0.75us  1.14%                | runtime.(*mheap).freeSpan.func1
+                                            0.75us   100% |   runtime.unlock
+----------------------------------------------------------+-------------
+                                            0.33us   100% |   runtime.(*mheap).alloc.func1
+         0     0%   100%     0.33us  0.51%                | runtime.(*mheap).reclaim
+                                            0.33us   100% |   runtime.(*mheap).reclaimChunk
+----------------------------------------------------------+-------------
+                                            0.33us   100% |   runtime.(*mheap).reclaim
+         0     0%   100%     0.33us  0.51%                | runtime.(*mheap).reclaimChunk
+                                            0.33us   100% |   runtime.unlock (inline)
+----------------------------------------------------------+-------------
+                                            0.38us 50.00% |   runtime.GC
+                                            0.38us 50.00% |   runtime.bgsweep
+         0     0%   100%     0.75us  1.14%                | runtime.(*sweepLocked).sweep
+                                            0.75us   100% |   runtime.(*mheap).freeSpan (inline)
+----------------------------------------------------------+-------------
+         0     0%   100%     0.38us  0.57%                | runtime.GC
+                                            0.38us   100% |   runtime.(*sweepLocked).sweep
+----------------------------------------------------------+-------------
+         0     0%   100%     0.38us  0.57%                | runtime.bgsweep
+                                            0.38us   100% |   runtime.(*sweepLocked).sweep
+----------------------------------------------------------+-------------
+         0     0%   100%     1.21us  1.84%                | runtime.findRunnable
+                                            1.21us   100% |   runtime.unlock (inline)
+----------------------------------------------------------+-------------
+                                           25.08us   100% |   runtime.gcMarkDone (inline)
+         0     0%   100%    25.08us 38.22%                | runtime.forEachP
+                                           25.08us   100% |   runtime.forEachP.func1
+----------------------------------------------------------+-------------
+                                           25.08us   100% |   runtime.forEachP
+         0     0%   100%    25.08us 38.22%                | runtime.forEachP.func1
+                                           25.08us   100% |   runtime.forEachPInternal
+----------------------------------------------------------+-------------
+                                           25.08us   100% |   runtime.forEachP.func1
+         0     0%   100%    25.08us 38.22%                | runtime.forEachPInternal
+                                           25.08us   100% |   runtime.unlock (inline)
+----------------------------------------------------------+-------------
+         0     0%   100%    48.16us 73.40%                | runtime.gcBgMarkWorker
+                                           48.16us   100% |   runtime.gcMarkDone
+----------------------------------------------------------+-------------
+                                           48.16us   100% |   runtime.gcBgMarkWorker
+         0     0%   100%    48.16us 73.40%                | runtime.gcMarkDone
+                                           25.08us 52.08% |   runtime.forEachP (inline)
+                                           23.08us 47.92% |   runtime.unlock (inline)
+----------------------------------------------------------+-------------

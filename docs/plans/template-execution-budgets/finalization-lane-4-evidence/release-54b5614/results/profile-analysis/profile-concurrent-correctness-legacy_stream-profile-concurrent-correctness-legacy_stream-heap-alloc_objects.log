@@ -1,0 +1,32 @@
+File: correctness.test
+Type: alloc_objects
+Time: 2026-11-08 03:03:07 CST
+Showing nodes accounting for 256621958, 99.89% of 256897641 total
+Dropped 92 nodes (cum <= 1284488)
+      flat  flat%   sum%        cum   cum%
+ 135912810 52.91% 52.91%  135912810 52.91%  reflect.unsafe_New
+  41965845 16.34% 69.24%  256850361   100%  github.com/CloudyKit/jet/v6.(*Template).Execute
+  39803107 15.49% 84.73%   39804279 15.49%  github.com/CloudyKit/jet/v6.(*Runtime).recover
+  38907427 15.15% 99.88%   38907958 15.15%  github.com/CloudyKit/jet/v6.(*escapeeWriter).Write
+     21846 0.0085% 99.89%  136035053 52.95%  reflect.Value.call
+     10923 0.0043% 99.89%  256861284   100%  github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes.func1.1
+         0     0% 99.89%  135652787 52.80%  encoding/json.Marshal
+         0     0% 99.89%  135652787 52.80%  encoding/json/v2.Marshal
+         0     0% 99.89%   45653557 17.77%  encoding/json/v2.makeInterfaceArshaler.func1
+         0     0% 99.89%  135475925 52.74%  encoding/json/v2.makeMapArshaler.func2
+         0     0% 99.89%  135475925 52.74%  encoding/json/v2.makeSliceArshaler.func2
+         0     0% 99.89%  135563307 52.77%  encoding/json/v2.marshalEncode
+         0     0% 99.89%    2890665  1.13%  encoding/json/v2.marshalValueAny
+         0     0% 99.89%   89851225 34.98%  encoding/json/v2.newAddressableValue
+         0     0% 99.89%   38771582 15.09%  github.com/CloudyKit/fastprinter.PrintString
+         0     0% 99.89%   38925033 15.15%  github.com/CloudyKit/fastprinter.PrintValue
+         0     0% 99.89%  136122435 52.99%  github.com/CloudyKit/jet/v6.(*Runtime).evalCallExpression (inline)
+         0     0% 99.89%  136122435 52.99%  github.com/CloudyKit/jet/v6.(*Runtime).evalCommandExpression
+         0     0% 99.89%  136122435 52.99%  github.com/CloudyKit/jet/v6.(*Runtime).evalPipeCallExpression
+         0     0% 99.89%  136122435 52.99%  github.com/CloudyKit/jet/v6.(*Runtime).evalPipelineExpression
+         0     0% 99.89%  175047468 68.14%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 99.89%  256850361   100%  github.com/CloudyKit/jet/v6_test.init.func1
+         0     0% 99.89%   89938607 35.01%  reflect.New
+         0     0% 99.89%  136035053 52.95%  reflect.Value.Call
+         0     0% 99.89%   45613751 17.76%  reflect.Value.MapIndex
+         0     0% 99.89%   45613751 17.76%  reflect.copyVal

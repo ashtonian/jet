@@ -1,0 +1,218 @@
+File: correctness.test
+Type: cpu
+Time: 2026-11-08 02:59:04 CST
+Duration: 9.96s, Total samples = 9.45s (94.86%)
+Showing nodes accounting for 8.05s, 85.19% of 9.45s total
+Dropped 154 nodes (cum <= 0.05s)
+Showing top 40 nodes out of 142
+----------------------------------------------------------+-------------
+      flat  flat%   sum%        cum   cum%   calls calls% + context
+----------------------------------------------------------+-------------
+     1.70s 17.99% 17.99%      1.70s 17.99%                | runtime.kevent
+----------------------------------------------------------+-------------
+                                             1.07s 80.45% |   text/template.HTMLEscape
+                                             0.26s 19.55% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+     0.76s  8.04% 26.03%      1.33s 14.07%                | github.com/CloudyKit/jet/v6.checkedWriter.Write
+                                             0.57s 42.86% |   bytes.(*Buffer).Write
+----------------------------------------------------------+-------------
+                                             5.74s   100% |   github.com/CloudyKit/jet/v6.(*Template).Execute
+                                             1.47s 25.61% |   github.com/CloudyKit/jet/v6.(*Runtime).executeRange
+                                             0.41s  7.14% |   github.com/CloudyKit/jet/v6.(*Runtime).executeYieldBlock
+     0.57s  6.03% 32.06%      5.74s 60.74%                | github.com/CloudyKit/jet/v6.(*Runtime).executeList
+                                             1.49s 25.96% |   github.com/CloudyKit/fastprinter.PrintString
+                                             1.48s 25.78% |   github.com/CloudyKit/jet/v6.(*Runtime).executeRange
+                                             0.62s 10.80% |   encoding/json/v2.makeMapArshaler.func2
+                                             0.53s  9.23% |   github.com/CloudyKit/jet/v6.(*Runtime).executeYieldBlock
+                                             0.34s  5.92% |   text/template.HTMLEscape
+                                             0.31s  5.40% |   runtime.(*_panic).nextDefer
+                                             0.30s  5.23% |   runtime.(*_panic).start
+                                             0.26s  4.53% |   github.com/CloudyKit/jet/v6.checkedWriter.Write
+                                             0.19s  3.31% |   github.com/CloudyKit/jet/v6.(*Runtime).evalPrimaryExpressionGroup
+                                             0.12s  2.09% |   path.Clean
+                                             0.10s  1.74% |   runtime.mapaccess2_faststr
+                                             0.07s  1.22% |   reflect.implements
+                                             0.05s  0.87% |   runtime.mallocgc
+                                             0.04s   0.7% |   runtime.mallocgcSmallScanNoHeaderSC3
+                                             0.02s  0.35% |   internal/runtime/maps.memHashAES
+                                             0.02s  0.35% |   runtime.memmove
+----------------------------------------------------------+-------------
+                                             1.25s 78.62% |   github.com/CloudyKit/fastprinter.PrintString
+                                             0.34s 21.38% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+     0.52s  5.50% 37.57%      1.59s 16.83%                | text/template.HTMLEscape
+                                             1.07s 67.30% |   github.com/CloudyKit/jet/v6.checkedWriter.Write
+----------------------------------------------------------+-------------
+     0.45s  4.76% 42.33%      0.45s  4.76%                | runtime.madvise
+----------------------------------------------------------+-------------
+                                             0.34s 80.95% |   github.com/CloudyKit/jet/v6.(*intsRanger).Range
+                                             0.06s 14.29% |   encoding/json/v2.makeMapArshaler.func2
+                                             0.02s  4.76% |   github.com/CloudyKit/jet/v6.(*Runtime).evalBaseExpressionGroup
+     0.41s  4.34% 46.67%      0.42s  4.44%                | reflect.Value.Elem
+----------------------------------------------------------+-------------
+                                             0.21s 47.73% |   runtime.mallocgc
+                                             0.19s 43.18% |   github.com/CloudyKit/jet/v6.(*Runtime).recover
+                                             0.04s  9.09% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+     0.30s  3.17% 49.84%      0.44s  4.66%                | runtime.mallocgcSmallScanNoHeaderSC3
+                                             0.02s  4.55% |   runtime.releasem (inline)
+----------------------------------------------------------+-------------
+                                             0.57s   100% |   github.com/CloudyKit/jet/v6.checkedWriter.Write
+     0.29s  3.07% 52.91%      0.57s  6.03%                | bytes.(*Buffer).Write
+                                             0.20s 35.09% |   runtime.memmove
+                                             0.08s 14.04% |   bytes.(*Buffer).tryGrowByReslice (inline)
+----------------------------------------------------------+-------------
+                                             0.30s   100% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+     0.29s  3.07% 55.98%      0.30s  3.17%                | runtime.(*_panic).start
+----------------------------------------------------------+-------------
+     0.27s  2.86% 58.84%      0.27s  2.86%                | runtime.pthread_kill
+----------------------------------------------------------+-------------
+                                             0.20s 76.92% |   bytes.(*Buffer).Write
+                                             0.02s  7.69% |   encoding/json/v2.makeMapArshaler.func2
+                                             0.02s  7.69% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+                                             0.01s  3.85% |   github.com/CloudyKit/jet/v6.(*Template).Execute
+                                             0.01s  3.85% |   path.Clean
+     0.26s  2.75% 61.59%      0.26s  2.75%                | runtime.memmove
+----------------------------------------------------------+-------------
+                                             0.31s   100% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+     0.25s  2.65% 64.23%      0.31s  3.28%                | runtime.(*_panic).nextDefer
+                                             0.06s 19.35% |   runtime.(*_panic).nextFrame
+----------------------------------------------------------+-------------
+     0.16s  1.69% 65.93%      0.16s  1.69%                | runtime.pthread_cond_wait
+----------------------------------------------------------+-------------
+     0.15s  1.59% 67.51%      0.15s  1.59%                | runtime.usleep
+----------------------------------------------------------+-------------
+                                             0.49s   100% |   github.com/CloudyKit/jet/v6.(*Runtime).executeRange
+     0.14s  1.48% 68.99%      0.49s  5.19%                | github.com/CloudyKit/jet/v6.(*intsRanger).Range
+                                             0.34s 69.39% |   reflect.Value.Elem
+----------------------------------------------------------+-------------
+                                             6.51s   100% |   github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes.func1
+     0.11s  1.16% 70.16%      6.51s 68.89%                | github.com/CloudyKit/jet/v6.(*Template).Execute
+                                             5.74s 88.17% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+                                             0.32s  4.92% |   github.com/CloudyKit/jet/v6.(*Runtime).recover
+                                             0.18s  2.76% |   runtime.mallocgc
+                                             0.07s  1.08% |   sync.(*Pool).Get
+                                             0.01s  0.15% |   runtime.memmove
+----------------------------------------------------------+-------------
+                                             0.05s 35.71% |   sync.(*Pool).Get
+                                             0.04s 28.57% |   github.com/CloudyKit/jet/v6.(*Runtime).recover
+                                             0.03s 21.43% |   github.com/CloudyKit/fastprinter.PrintString
+                                             0.02s 14.29% |   encoding/json/v2.makeMapArshaler.func2
+     0.11s  1.16% 71.32%      0.14s  1.48%                | sync.(*Pool).pin
+----------------------------------------------------------+-------------
+                                             1.49s   100% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+     0.09s  0.95% 72.28%      1.49s 15.77%                | github.com/CloudyKit/fastprinter.PrintString
+                                             1.25s 83.89% |   text/template.HTMLEscape
+                                             0.07s  4.70% |   runtime.mallocgc
+                                             0.04s  2.68% |   sync.(*Pool).Get
+                                             0.03s  2.01% |   sync.(*Pool).pin
+----------------------------------------------------------+-------------
+                                             1.48s   100% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+     0.09s  0.95% 73.23%      1.48s 15.66%                | github.com/CloudyKit/jet/v6.(*Runtime).executeRange
+                                             1.47s 99.32% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+                                             0.49s 33.11% |   github.com/CloudyKit/jet/v6.(*intsRanger).Range
+                                             0.19s 12.84% |   github.com/CloudyKit/jet/v6.(*Runtime).evalPrimaryExpressionGroup
+                                             0.09s  6.08% |   reflect.implements
+----------------------------------------------------------+-------------
+                                             0.17s   100% |   runtime.mapaccess2_faststr
+     0.09s  0.95% 74.18%      0.17s  1.80%                | internal/runtime/maps.(*Map).getWithoutKeySmallFastStr
+                                             0.04s 23.53% |   internal/runtime/maps.memHashAES
+----------------------------------------------------------+-------------
+                                             0.08s   100% |   bytes.(*Buffer).Write (inline)
+     0.08s  0.85% 75.03%      0.08s  0.85%                | bytes.(*Buffer).tryGrowByReslice
+----------------------------------------------------------+-------------
+                                             0.18s 43.90% |   github.com/CloudyKit/jet/v6.(*Template).Execute
+                                             0.08s 19.51% |   encoding/json/v2.makeMapArshaler.func2
+                                             0.07s 17.07% |   github.com/CloudyKit/fastprinter.PrintString
+                                             0.05s 12.20% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+                                             0.03s  7.32% |   path.Clean
+     0.08s  0.85% 75.87%      0.41s  4.34%                | runtime.mallocgc
+                                             0.21s 51.22% |   runtime.mallocgcSmallScanNoHeaderSC3
+                                             0.05s 12.20% |   runtime.mallocgcSmallScanNoHeaderSC2
+                                             0.03s  7.32% |   runtime.releasem (inline)
+----------------------------------------------------------+-------------
+                                             0.19s 50.00% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+                                             0.19s 50.00% |   github.com/CloudyKit/jet/v6.(*Runtime).executeRange
+     0.07s  0.74% 76.61%      0.38s  4.02%                | github.com/CloudyKit/jet/v6.(*Runtime).evalPrimaryExpressionGroup
+                                             0.23s 60.53% |   github.com/CloudyKit/jet/v6.(*Runtime).evalBaseExpressionGroup
+                                             0.02s  5.26% |   runtime.releasem (inline)
+----------------------------------------------------------+-------------
+                                             0.03s 42.86% |   runtime.mallocgc (inline)
+                                             0.02s 28.57% |   github.com/CloudyKit/jet/v6.(*Runtime).evalPrimaryExpressionGroup (inline)
+                                             0.02s 28.57% |   runtime.mallocgcSmallScanNoHeaderSC3 (inline)
+     0.07s  0.74% 77.35%      0.07s  0.74%                | runtime.releasem
+----------------------------------------------------------+-------------
+                                             0.23s   100% |   github.com/CloudyKit/jet/v6.(*Runtime).evalPrimaryExpressionGroup
+     0.06s  0.63% 77.99%      0.23s  2.43%                | github.com/CloudyKit/jet/v6.(*Runtime).evalBaseExpressionGroup
+                                             0.13s 56.52% |   runtime.mapaccess2_faststr
+                                             0.02s  8.70% |   reflect.Value.Elem
+----------------------------------------------------------+-------------
+                                             0.08s   100% |   encoding/json/v2.makeMapArshaler.func2
+     0.06s  0.63% 78.62%      0.08s  0.85%                | internal/runtime/maps.(*Iter).Next
+----------------------------------------------------------+-------------
+                                             0.04s 66.67% |   internal/runtime/maps.(*Map).getWithoutKeySmallFastStr
+                                             0.02s 33.33% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+     0.06s  0.63% 79.26%      0.06s  0.63%                | internal/runtime/maps.memHashAES
+----------------------------------------------------------+-------------
+                                             0.12s   100% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+     0.06s  0.63% 79.89%      0.12s  1.27%                | path.Clean
+                                             0.03s 25.00% |   runtime.mallocgc
+                                             0.01s  8.33% |   runtime.memmove
+----------------------------------------------------------+-------------
+                                             0.06s   100% |   runtime.(*_panic).nextDefer
+     0.06s  0.63% 80.53%      0.06s  0.63%                | runtime.(*_panic).nextFrame
+----------------------------------------------------------+-------------
+                                             0.05s   100% |   reflect.implements (inline)
+     0.05s  0.53% 81.06%      0.05s  0.53%                | internal/abi.(*Type).Kind
+----------------------------------------------------------+-------------
+                                             0.05s   100% |   runtime.mallocgc
+     0.05s  0.53% 81.59%      0.05s  0.53%                | runtime.mallocgcSmallScanNoHeaderSC2
+----------------------------------------------------------+-------------
+                                             0.13s 56.52% |   github.com/CloudyKit/jet/v6.(*Runtime).evalBaseExpressionGroup
+                                             0.10s 43.48% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+     0.05s  0.53% 82.12%      0.23s  2.43%                | runtime.mapaccess2_faststr
+                                             0.17s 73.91% |   internal/runtime/maps.(*Map).getWithoutKeySmallFastStr
+----------------------------------------------------------+-------------
+                                             0.02s 40.00% |   github.com/CloudyKit/jet/v6.(*Runtime).recover (inline)
+                                             0.02s 40.00% |   sync.(*Pool).Get (inline)
+                                             0.01s 20.00% |   encoding/json/v2.makeMapArshaler.func2 (inline)
+     0.05s  0.53% 82.65%      0.05s  0.53%                | runtime.procUnpin
+----------------------------------------------------------+-------------
+     0.04s  0.42% 83.07%      6.57s 69.52%                | github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes.func1
+                                             6.51s 99.09% |   github.com/CloudyKit/jet/v6.(*Template).Execute
+----------------------------------------------------------+-------------
+                                             0.04s 66.67% |   reflect.implements
+                                             0.01s 16.67% |   encoding/json/v2.makeMapArshaler.func2
+     0.04s  0.42% 83.49%      0.06s  0.63%                | runtime.mapaccess1_fast64
+----------------------------------------------------------+-------------
+                                             0.07s 58.33% |   github.com/CloudyKit/jet/v6.(*Template).Execute
+                                             0.04s 33.33% |   github.com/CloudyKit/fastprinter.PrintString
+                                             0.01s  8.33% |   encoding/json/v2.makeMapArshaler.func2
+     0.04s  0.42% 83.92%      0.12s  1.27%                | sync.(*Pool).Get
+                                             0.05s 41.67% |   sync.(*Pool).pin
+                                             0.02s 16.67% |   runtime.procUnpin (inline)
+----------------------------------------------------------+-------------
+                                             0.62s   100% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+     0.03s  0.32% 84.23%      0.62s  6.56%                | encoding/json/v2.makeMapArshaler.func2
+                                             0.08s 12.90% |   internal/runtime/maps.(*Iter).Next
+                                             0.08s 12.90% |   runtime.mallocgc
+                                             0.06s  9.68% |   reflect.Value.Elem
+                                             0.02s  3.23% |   runtime.memmove
+                                             0.02s  3.23% |   sync.(*Pool).pin
+                                             0.01s  1.61% |   runtime.mapaccess1_fast64
+                                             0.01s  1.61% |   runtime.procUnpin (inline)
+                                             0.01s  1.61% |   sync.(*Pool).Get
+----------------------------------------------------------+-------------
+                                             0.53s   100% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+     0.03s  0.32% 84.55%      0.53s  5.61%                | github.com/CloudyKit/jet/v6.(*Runtime).executeYieldBlock
+                                             0.41s 77.36% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+----------------------------------------------------------+-------------
+                                             0.32s   100% |   github.com/CloudyKit/jet/v6.(*Template).Execute
+     0.03s  0.32% 84.87%      0.32s  3.39%                | github.com/CloudyKit/jet/v6.(*Runtime).recover
+                                             0.19s 59.38% |   runtime.mallocgcSmallScanNoHeaderSC3
+                                             0.04s 12.50% |   sync.(*Pool).pin
+                                             0.02s  6.25% |   runtime.procUnpin (inline)
+----------------------------------------------------------+-------------
+                                             0.09s 56.25% |   github.com/CloudyKit/jet/v6.(*Runtime).executeRange
+                                             0.07s 43.75% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+     0.03s  0.32% 85.19%      0.16s  1.69%                | reflect.implements
+                                             0.05s 31.25% |   internal/abi.(*Type).Kind (inline)
+                                             0.04s 25.00% |   runtime.mapaccess1_fast64
+----------------------------------------------------------+-------------

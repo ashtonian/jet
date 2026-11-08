@@ -1,0 +1,54 @@
+{
+  "upstream": {
+    "revision": "202464510d5b57f0afa9c5563f75babc1616682c",
+    "inputs_manifest": "23dde6e12a765a8e21f635d3ccb565b41705ee98ea00c9984700f8a4e079023e"
+  },
+  "correctness": {
+    "revision": "822cf702300c6226fa56a3fcf2f8466dc6b9b712",
+    "inputs_manifest": "0f3f0492ce1c4fe80a7e1f714d63b7d5a6cbf834a45a5ed5b4961266db810623"
+  },
+  "candidate": {
+    "revision": "54b561484e1465edea963ed04579bcd24a7dbf76",
+    "inputs_manifest": "36f76949096745a8f75c39594414505ff58fcef5e7f1363f5a3a52c11951335b"
+  },
+  "harness": {
+    "execution_workloads_test.go": "3bbeb072b923bfeb46a897d32bd6567e8565ad04b8ccfa83a2a9098c54844224",
+    "execution_measurements_test.go": "e132d75b84aa6b08ca788e470c7ee589040aa81016c2d26c32662230f1739c69",
+    "testData/execution_workloads.json": "5897f7b91a8b03f9cd2412ac22c2d80581ba12dee4ef396736f3f181c37afabe"
+  },
+  "toolchain": "go version go1.27.3 darwin/arm64",
+  "environment": {
+    "runtime": {
+      "GOGC": null,
+      "GOMEMLIMIT": null,
+      "GODEBUG": null,
+      "GOFLAGS": null,
+      "GOTOOLCHAIN": null,
+      "CGO_ENABLED": null
+    },
+    "go": {
+      "CC": "cc",
+      "CGO_CFLAGS": "-O2 -g",
+      "CGO_CPPFLAGS": "",
+      "CGO_CXXFLAGS": "-O2 -g",
+      "CGO_ENABLED": "1",
+      "CGO_LDFLAGS": "-O2 -g",
+      "CXX": "c++",
+      "GO111MODULE": "",
+      "GOAMD64": "",
+      "GOARCH": "arm64",
+      "GOARM64": "v8.0",
+      "GOENV": "$HOME/Library/Application Support/go/env",
+      "GOEXPERIMENT": "",
+      "GOFLAGS": "-trimpath",
+      "GOMOD": "$JET_CHECKOUT/go.mod",
+      "GOOS": "darwin",
+      "GOROOT": "$GOROOT",
+      "GOTOOLCHAIN": "auto",
+      "GOTOOLDIR": "$GOROOT/pkg/tool/darwin_arm64",
+      "GOVERSION": "go1.27.3",
+      "GOWORK": ""
+    }
+  },
+  "driver_sha256": "42b342657554b170b9f13158864bcd51ded2fe5bc0774e37f64b16dfbe5edf9d"
+}

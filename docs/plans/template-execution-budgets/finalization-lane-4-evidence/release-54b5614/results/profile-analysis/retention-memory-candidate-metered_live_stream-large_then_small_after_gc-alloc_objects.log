@@ -1,0 +1,41 @@
+File: candidate.test
+Type: alloc_objects
+Time: 2026-11-08 03:05:52 CST
+Showing nodes accounting for 12755, 94.95% of 13433 total
+Dropped 220 nodes (cum <= 67)
+      flat  flat%   sum%        cum   cum%
+      8274 61.59% 61.59%       8274 61.59%  runtime/pprof.allFrames
+      2655 19.76% 81.36%       2774 20.65%  runtime/pprof.(*profileBuilder).emitLocation
+      1110  8.26% 89.62%      12330 91.79%  runtime/pprof.writeHeapProto
+       279  2.08% 91.70%        279  2.08%  regexp.makeOnePass.func1
+       195  1.45% 93.15%        195  1.45%  strings.genSplit
+        87  0.65% 93.80%         87  0.65%  runtime/pprof.(*profileBuilder).stringIndex (inline)
+        30  0.22% 94.02%         75  0.56%  regexp/syntax.(*parser).push
+        21  0.16% 94.18%      11098 82.62%  runtime/pprof.(*profileBuilder).appendLocsForStack
+        20  0.15% 94.33%        635  4.73%  regexp.compile
+        18  0.13% 94.46%      12432 92.55%  github.com/CloudyKit/jet/v6_test.TestExecutionRetentionMeasurements.func1.2
+        17  0.13% 94.59%        755  5.62%  testing.(*T).Run
+        15  0.11% 94.70%        334  2.49%  regexp.makeOnePass
+        10 0.074% 94.77%        145  1.08%  regexp/syntax.parse
+         8  0.06% 94.83%      12508 93.11%  github.com/CloudyKit/jet/v6_test.TestExecutionRetentionMeasurements.func1
+         5 0.037% 94.87%        475  3.54%  github.com/CloudyKit/jet/v6_test.TestExecutionRetentionMeasurements
+         4  0.03% 94.90%      12334 91.82%  runtime/pprof.writeHeapInternal
+         3 0.022% 94.92%        141  1.05%  testing.newMatcher
+         3 0.022% 94.95%        435  3.24%  testing.runTests
+         1 0.0074% 94.95%        439  3.27%  testing.(*M).Run
+         0     0% 94.95%        439  3.27%  main.main
+         0     0% 94.95%        635  4.73%  regexp.Compile (inline)
+         0     0% 94.95%        354  2.64%  regexp.compileOnePass
+         0     0% 94.95%         95  0.71%  regexp/syntax.(*parser).literal
+         0     0% 94.95%         75  0.56%  regexp/syntax.Compile
+         0     0% 94.95%        145  1.08%  regexp/syntax.Parse (inline)
+         0     0% 94.95%        439  3.27%  runtime.main
+         0     0% 94.95%      12334 91.82%  runtime/pprof.WriteHeapProfile (inline)
+         0     0% 94.95%      12334 91.82%  runtime/pprof.writeHeap (inline)
+         0     0% 94.95%        195  1.45%  strings.Split (inline)
+         0     0% 94.95%        723  5.38%  testing.(*matcher).fullName
+         0     0% 94.95%        285  2.12%  testing.runTests.func1
+         0     0% 94.95%        511  3.80%  testing.simpleMatch.matches
+         0     0% 94.95%        135  1.00%  testing.simpleMatch.verify
+         0     0% 94.95%      13272 98.80%  testing.tRunner
+         0     0% 94.95%        638  4.75%  testing/internal/testdeps.TestDeps.MatchString

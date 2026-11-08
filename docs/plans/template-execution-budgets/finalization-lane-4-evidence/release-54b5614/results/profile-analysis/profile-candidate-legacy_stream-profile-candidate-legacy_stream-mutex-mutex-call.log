@@ -1,0 +1,115 @@
+File: candidate.test
+Type: delay
+Time: 2026-11-08 02:59:35 CST
+Showing nodes accounting for 5291ns, 100% of 5291ns total
+----------------------------------------------------------+-------------
+      flat  flat%   sum%        cum   cum%   calls calls% + context
+----------------------------------------------------------+-------------
+                                            4709ns 89.00% |   runtime.mcommoninit (inline)
+                                             416ns  7.86% |   runtime.stopTheWorldWithSema (inline)
+                                             166ns  3.14% |   runtime.(*mheap).freeSpan.func1
+    5291ns   100%   100%     5291ns   100%                | runtime.unlock
+----------------------------------------------------------+-------------
+                                             166ns   100% |   runtime.(*sweepLocked).sweep (inline)
+         0     0%   100%      166ns  3.14%                | runtime.(*mheap).freeSpan
+                                             166ns   100% |   runtime.systemstack
+----------------------------------------------------------+-------------
+                                             166ns   100% |   runtime.systemstack
+         0     0%   100%      166ns  3.14%                | runtime.(*mheap).freeSpan.func1
+                                             166ns   100% |   runtime.unlock
+----------------------------------------------------------+-------------
+                                             166ns   100% |   runtime.sweepone
+         0     0%   100%      166ns  3.14%                | runtime.(*sweepLocked).sweep
+                                             166ns   100% |   runtime.(*mheap).freeSpan (inline)
+----------------------------------------------------------+-------------
+                                              83ns   100% |   testing.(*B).runN
+         0     0%   100%       83ns  1.57%                | runtime.GC
+                                              83ns   100% |   runtime.sweepone
+----------------------------------------------------------+-------------
+                                            4709ns   100% |   runtime.newm
+         0     0%   100%     4709ns 89.00%                | runtime.allocm
+                                            4709ns   100% |   runtime.mcommoninit
+----------------------------------------------------------+-------------
+         0     0%   100%       83ns  1.57%                | runtime.bgsweep
+                                              83ns   100% |   runtime.sweepone
+----------------------------------------------------------+-------------
+         0     0%   100%     5125ns 96.86%                | runtime.gcBgMarkWorker
+                                            4709ns 91.88% |   runtime.systemstack
+                                             416ns  8.12% |   runtime.gcMarkDone
+----------------------------------------------------------+-------------
+                                            4709ns   100% |   runtime.systemstack
+         0     0%   100%     4709ns 89.00%                | runtime.gcBgMarkWorker.func2
+                                            4709ns   100% |   runtime.gcDrainMarkWorkerIdle (inline)
+----------------------------------------------------------+-------------
+                                            4709ns   100% |   runtime.gcDrainMarkWorkerIdle
+         0     0%   100%     4709ns 89.00%                | runtime.gcDrain
+                                            4709ns   100% |   runtime.markroot
+----------------------------------------------------------+-------------
+                                            4709ns   100% |   runtime.gcBgMarkWorker.func2 (inline)
+         0     0%   100%     4709ns 89.00%                | runtime.gcDrainMarkWorkerIdle
+                                            4709ns   100% |   runtime.gcDrain
+----------------------------------------------------------+-------------
+                                             416ns   100% |   runtime.gcBgMarkWorker
+         0     0%   100%      416ns  7.86%                | runtime.gcMarkDone
+                                             416ns   100% |   runtime.systemstack
+----------------------------------------------------------+-------------
+                                             416ns   100% |   runtime.systemstack
+         0     0%   100%      416ns  7.86%                | runtime.gcMarkDone.func2
+                                             416ns   100% |   runtime.stopTheWorldWithSema
+----------------------------------------------------------+-------------
+                                            4709ns   100% |   runtime.gcDrain
+         0     0%   100%     4709ns 89.00%                | runtime.markroot
+                                            4709ns   100% |   runtime.markroot.func1
+----------------------------------------------------------+-------------
+                                            4709ns   100% |   runtime.markroot
+         0     0%   100%     4709ns 89.00%                | runtime.markroot.func1
+                                            4709ns   100% |   runtime.resumeG
+----------------------------------------------------------+-------------
+                                            4709ns   100% |   runtime.allocm
+         0     0%   100%     4709ns 89.00%                | runtime.mcommoninit
+                                            4709ns   100% |   runtime.unlock (inline)
+----------------------------------------------------------+-------------
+                                            4709ns   100% |   runtime.startm
+         0     0%   100%     4709ns 89.00%                | runtime.newm
+                                            4709ns   100% |   runtime.allocm
+----------------------------------------------------------+-------------
+                                            4709ns   100% |   runtime.resumeG
+         0     0%   100%     4709ns 89.00%                | runtime.ready
+                                            4709ns   100% |   runtime.wakep
+----------------------------------------------------------+-------------
+                                            4709ns   100% |   runtime.markroot.func1
+         0     0%   100%     4709ns 89.00%                | runtime.resumeG
+                                            4709ns   100% |   runtime.ready
+----------------------------------------------------------+-------------
+                                            4709ns   100% |   runtime.wakep
+         0     0%   100%     4709ns 89.00%                | runtime.startm
+                                            4709ns   100% |   runtime.newm
+----------------------------------------------------------+-------------
+                                             416ns   100% |   runtime.gcMarkDone.func2
+         0     0%   100%      416ns  7.86%                | runtime.stopTheWorldWithSema
+                                             416ns   100% |   runtime.unlock (inline)
+----------------------------------------------------------+-------------
+                                              83ns 50.00% |   runtime.GC
+                                              83ns 50.00% |   runtime.bgsweep
+         0     0%   100%      166ns  3.14%                | runtime.sweepone
+                                             166ns   100% |   runtime.(*sweepLocked).sweep
+----------------------------------------------------------+-------------
+                                            4709ns 89.00% |   runtime.gcBgMarkWorker
+                                             416ns  7.86% |   runtime.gcMarkDone
+                                             166ns  3.14% |   runtime.(*mheap).freeSpan
+         0     0%   100%     5291ns   100%                | runtime.systemstack
+                                            4709ns 89.00% |   runtime.gcBgMarkWorker.func2
+                                             416ns  7.86% |   runtime.gcMarkDone.func2
+                                             166ns  3.14% |   runtime.(*mheap).freeSpan.func1
+----------------------------------------------------------+-------------
+                                            4709ns   100% |   runtime.ready
+         0     0%   100%     4709ns 89.00%                | runtime.wakep
+                                            4709ns   100% |   runtime.startm
+----------------------------------------------------------+-------------
+         0     0%   100%       83ns  1.57%                | testing.(*B).launch
+                                              83ns   100% |   testing.(*B).runN
+----------------------------------------------------------+-------------
+                                              83ns   100% |   testing.(*B).launch
+         0     0%   100%       83ns  1.57%                | testing.(*B).runN
+                                              83ns   100% |   runtime.GC
+----------------------------------------------------------+-------------

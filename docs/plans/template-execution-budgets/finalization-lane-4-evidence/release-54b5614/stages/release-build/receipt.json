@@ -1,0 +1,21 @@
+{
+  "command": [
+    "gate-lock",
+    "run-exclusive",
+    "jet-l4-release-build",
+    "--",
+    "/opt/homebrew/opt/python@3.15/bin/python3.15",
+    "$JET_CHECKOUT/docs/plans/template-execution-budgets/finalization-lane-4-evidence/run_stage.py",
+    "--admitted",
+    "$JET_CHECKOUT/.git/finalization-evidence/release-build",
+    "python3",
+    "docs/plans/template-execution-budgets/finalization-lane-4-evidence/run_matrix.py",
+    ".git/finalization-evidence/release-54b5614",
+    "build"
+  ],
+  "queued": 1794128158.951467,
+  "deadline_seconds": 900,
+  "cleanup_seconds": 10,
+  "exit": 0,
+  "finished": 1794128178.789237
+}

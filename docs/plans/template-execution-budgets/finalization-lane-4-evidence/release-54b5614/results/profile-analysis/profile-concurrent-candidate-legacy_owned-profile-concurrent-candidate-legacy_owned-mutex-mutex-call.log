@@ -1,0 +1,203 @@
+File: candidate.test
+Type: delay
+Time: 2026-11-08 03:03:34 CST
+Showing nodes accounting for 29.24s, 99.69% of 29.33s total
+Dropped 165 nodes (cum <= 0.15s)
+Showing top 40 nodes out of 87
+----------------------------------------------------------+-------------
+      flat  flat%   sum%        cum   cum%   calls calls% + context
+----------------------------------------------------------+-------------
+                                            14.75s 50.88% |   runtime.(*mheap).freeSpan
+                                             1.04s  3.57% |   runtime.(*mheap).allocSpan (inline)
+                                             0.21s  0.74% |   bytes.growSlice (inline)
+                                             0.13s  0.44% |   bytes.(*Buffer).String (inline)
+                                             0.13s  0.44% |   runtime.(*mheap).alloc.func1 (inline)
+                                             0.08s  0.27% |   reflect.unsafe_New (inline)
+                                             0.08s  0.26% |   bytes.(*Buffer).grow (inline)
+                                             0.05s  0.18% |   github.com/CloudyKit/jet/v6_test.init.func2 (inline)
+                                             0.04s  0.12% |   bytes.Clone (inline)
+    28.98s 98.82% 98.82%     28.98s 98.82%                | runtime.unlock
+----------------------------------------------------------+-------------
+     0.25s  0.87% 99.69%      0.25s  0.87%                | runtime._LostContendedRuntimeLock
+----------------------------------------------------------+-------------
+                                             2.66s   100% |   github.com/CloudyKit/jet/v6_test.init.func2 (inline)
+         0     0% 99.69%      2.66s  9.07%                | bytes.(*Buffer).String
+                                             2.53s 95.16% |   runtime.(*mcache).nextFree
+                                             0.13s  4.84% |   runtime.unlock (inline)
+----------------------------------------------------------+-------------
+                                             9.91s   100% |   github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+         0     0% 99.69%      9.91s 33.80%                | bytes.(*Buffer).Write
+                                             9.91s   100% |   bytes.(*Buffer).grow
+----------------------------------------------------------+-------------
+                                             9.91s   100% |   bytes.(*Buffer).Write
+         0     0% 99.69%      9.91s 33.80%                | bytes.(*Buffer).grow
+                                             8.40s 84.75% |   bytes.growSlice
+                                             1.44s 14.48% |   runtime.(*mcache).nextFree
+                                             0.08s  0.77% |   runtime.unlock (inline)
+----------------------------------------------------------+-------------
+                                             0.15s   100% |   encoding/json/v2.Marshal (inline)
+         0     0% 99.69%      0.15s   0.5%                | bytes.Clone
+                                             0.11s 75.42% |   runtime.(*mcache).nextFree
+                                             0.04s 24.58% |   runtime.unlock (inline)
+----------------------------------------------------------+-------------
+                                             8.40s   100% |   bytes.(*Buffer).grow
+         0     0% 99.69%      8.40s 28.64%                | bytes.growSlice
+                                             7.71s 91.83% |   runtime.(*mcache).nextFree
+                                             0.47s  5.61% |   runtime.(*mcache).allocLarge
+                                             0.21s  2.56% |   runtime.unlock (inline)
+----------------------------------------------------------+-------------
+                                             0.54s   100% |   reflect.Value.call
+         0     0% 99.69%      0.54s  1.84%                | encoding/json.Marshal
+                                             0.54s   100% |   encoding/json/v2.Marshal
+----------------------------------------------------------+-------------
+                                             0.54s   100% |   encoding/json.Marshal
+         0     0% 99.69%      0.54s  1.84%                | encoding/json/v2.Marshal
+                                             0.38s 71.32% |   encoding/json/v2.marshalEncode
+                                             0.15s 27.35% |   bytes.Clone (inline)
+----------------------------------------------------------+-------------
+                                             0.38s   100% |   encoding/json/v2.makeSliceArshaler.func2
+         0     0% 99.69%      0.38s  1.31%                | encoding/json/v2.makeMapArshaler.func2
+                                             0.23s 60.70% |   encoding/json/v2.newAddressableValue
+                                             0.11s 29.54% |   reflect.unsafe_New
+----------------------------------------------------------+-------------
+                                             0.38s   100% |   encoding/json/v2.marshalEncode
+         0     0% 99.69%      0.38s  1.31%                | encoding/json/v2.makeSliceArshaler.func2
+                                             0.38s   100% |   encoding/json/v2.makeMapArshaler.func2
+----------------------------------------------------------+-------------
+                                             0.38s   100% |   encoding/json/v2.Marshal
+         0     0% 99.69%      0.38s  1.31%                | encoding/json/v2.marshalEncode
+                                             0.38s   100% |   encoding/json/v2.makeSliceArshaler.func2
+----------------------------------------------------------+-------------
+                                             0.23s   100% |   encoding/json/v2.makeMapArshaler.func2
+         0     0% 99.69%      0.23s   0.8%                | encoding/json/v2.newAddressableValue
+                                             0.23s   100% |   reflect.New
+----------------------------------------------------------+-------------
+                                             7.56s   100% |   github.com/CloudyKit/fastprinter.PrintValue
+         0     0% 99.69%      7.56s 25.78%                | github.com/CloudyKit/fastprinter.PrintString
+                                             7.50s 99.24% |   github.com/CloudyKit/jet/v6.(*escapeeWriter).Write
+----------------------------------------------------------+-------------
+                                             8.56s   100% |   github.com/CloudyKit/jet/v6.(*Runtime).printValue
+         0     0% 99.69%      8.56s 29.20%                | github.com/CloudyKit/fastprinter.PrintValue
+                                             7.56s 88.30% |   github.com/CloudyKit/fastprinter.PrintString
+                                                1s 11.70% |   github.com/CloudyKit/jet/v6.(*escapeeWriter).Write
+----------------------------------------------------------+-------------
+                                             0.57s   100% |   github.com/CloudyKit/jet/v6.(*Runtime).evalCommandExpression (inline)
+         0     0% 99.69%      0.57s  1.96%                | github.com/CloudyKit/jet/v6.(*Runtime).evalCallExpression
+                                             0.57s   100% |   github.com/CloudyKit/jet/v6.(*Runtime).evalPipeCallExpression
+----------------------------------------------------------+-------------
+                                             0.57s   100% |   github.com/CloudyKit/jet/v6.(*Runtime).evalPipelineExpression
+         0     0% 99.69%      0.57s  1.96%                | github.com/CloudyKit/jet/v6.(*Runtime).evalCommandExpression
+                                             0.57s   100% |   github.com/CloudyKit/jet/v6.(*Runtime).evalCallExpression (inline)
+----------------------------------------------------------+-------------
+                                             0.57s   100% |   github.com/CloudyKit/jet/v6.(*Runtime).evalCallExpression
+         0     0% 99.69%      0.57s  1.96%                | github.com/CloudyKit/jet/v6.(*Runtime).evalPipeCallExpression
+                                             0.57s 98.84% |   reflect.Value.Call
+----------------------------------------------------------+-------------
+                                             0.57s   100% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 99.69%      0.57s  1.96%                | github.com/CloudyKit/jet/v6.(*Runtime).evalPipelineExpression
+                                             0.57s   100% |   github.com/CloudyKit/jet/v6.(*Runtime).evalCommandExpression
+----------------------------------------------------------+-------------
+                                            10.54s   100% |   github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0% 99.69%     10.54s 35.95%                | github.com/CloudyKit/jet/v6.(*Runtime).executeList
+                                             8.56s 81.21% |   github.com/CloudyKit/jet/v6.(*Runtime).printValue
+                                             1.41s 13.35% |   github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+                                             0.57s  5.44% |   github.com/CloudyKit/jet/v6.(*Runtime).evalPipelineExpression
+----------------------------------------------------------+-------------
+                                             8.56s   100% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 99.69%      8.56s 29.20%                | github.com/CloudyKit/jet/v6.(*Runtime).printValue
+                                             8.56s   100% |   github.com/CloudyKit/fastprinter.PrintValue
+----------------------------------------------------------+-------------
+                                            10.60s   100% |   github.com/CloudyKit/jet/v6_test.init.func2 (inline)
+         0     0% 99.69%     10.60s 36.14%                | github.com/CloudyKit/jet/v6.(*Template).Execute
+                                            10.60s   100% |   github.com/CloudyKit/jet/v6.(*Template).execute
+----------------------------------------------------------+-------------
+                                            10.60s   100% |   github.com/CloudyKit/jet/v6.(*Template).Execute
+         0     0% 99.69%     10.60s 36.14%                | github.com/CloudyKit/jet/v6.(*Template).execute
+                                            10.54s 99.47% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+----------------------------------------------------------+-------------
+                                             8.50s 85.80% |   github.com/CloudyKit/jet/v6.(*escapeeWriter).Write
+                                             1.41s 14.20% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 99.69%      9.91s 33.80%                | github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+                                             9.91s   100% |   bytes.(*Buffer).Write
+----------------------------------------------------------+-------------
+                                             7.50s 88.22% |   github.com/CloudyKit/fastprinter.PrintString
+                                                1s 11.78% |   github.com/CloudyKit/fastprinter.PrintValue
+         0     0% 99.69%      8.50s 29.00%                | github.com/CloudyKit/jet/v6.(*escapeeWriter).Write
+                                             8.50s   100% |   github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+----------------------------------------------------------+-------------
+         0     0% 99.69%     14.55s 49.63%                | github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes.func1.1
+                                            14.55s   100% |   github.com/CloudyKit/jet/v6_test.init.func2
+----------------------------------------------------------+-------------
+                                            14.55s   100% |   github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes.func1.1
+         0     0% 99.69%     14.55s 49.63%                | github.com/CloudyKit/jet/v6_test.init.func2
+                                            10.60s 72.83% |   github.com/CloudyKit/jet/v6.(*Template).Execute (inline)
+                                             2.66s 18.28% |   bytes.(*Buffer).String (inline)
+                                             1.24s  8.53% |   runtime.(*mcache).nextFree
+                                             0.05s  0.36% |   runtime.unlock (inline)
+----------------------------------------------------------+-------------
+                                             0.23s   100% |   encoding/json/v2.newAddressableValue
+         0     0% 99.69%      0.23s   0.8%                | reflect.New
+                                             0.23s   100% |   reflect.unsafe_New
+----------------------------------------------------------+-------------
+                                             0.57s   100% |   github.com/CloudyKit/jet/v6.(*Runtime).evalPipeCallExpression
+         0     0% 99.69%      0.57s  1.93%                | reflect.Value.Call
+                                             0.57s   100% |   reflect.Value.call
+----------------------------------------------------------+-------------
+                                             0.57s   100% |   reflect.Value.Call
+         0     0% 99.69%      0.57s  1.93%                | reflect.Value.call
+                                             0.54s 95.04% |   encoding/json.Marshal
+----------------------------------------------------------+-------------
+                                             0.23s 63.86% |   reflect.New
+                                             0.11s 31.08% |   encoding/json/v2.makeMapArshaler.func2
+         0     0% 99.69%      0.37s  1.25%                | reflect.unsafe_New
+                                             0.29s 78.80% |   runtime.(*mcache).nextFree
+                                             0.08s 21.08% |   runtime.unlock (inline)
+----------------------------------------------------------+-------------
+                                             0.47s   100% |   bytes.growSlice
+         0     0% 99.69%      0.47s  1.61%                | runtime.(*mcache).allocLarge
+                                             0.35s 74.25% |   runtime.(*mheap).alloc
+                                             0.12s 25.72% |   runtime.(*mheap).freeSpan (inline)
+----------------------------------------------------------+-------------
+                                             7.71s 57.57% |   bytes.growSlice
+                                             2.53s 18.89% |   bytes.(*Buffer).String
+                                             1.44s 10.71% |   bytes.(*Buffer).grow
+                                             1.24s  9.27% |   github.com/CloudyKit/jet/v6_test.init.func2
+                                             0.29s  2.15% |   reflect.unsafe_New
+                                             0.11s  0.83% |   bytes.Clone
+         0     0% 99.69%     13.40s 45.69%                | runtime.(*mcache).nextFree
+                                            13.40s   100% |   runtime.(*mcache).refill
+----------------------------------------------------------+-------------
+                                            13.40s   100% |   runtime.(*mcache).nextFree
+         0     0% 99.69%     13.40s 45.69%                | runtime.(*mcache).refill
+                                            13.40s   100% |   runtime.(*mcentral).cacheSpan
+----------------------------------------------------------+-------------
+                                            13.40s   100% |   runtime.(*mcache).refill
+         0     0% 99.69%     13.40s 45.69%                | runtime.(*mcentral).cacheSpan
+                                            12.43s 92.74% |   runtime.(*mheap).freeSpan (inline)
+                                             0.94s  7.05% |   runtime.(*mcentral).grow
+----------------------------------------------------------+-------------
+                                             0.94s   100% |   runtime.(*mcentral).cacheSpan
+         0     0% 99.69%      0.94s  3.22%                | runtime.(*mcentral).grow
+                                             0.94s   100% |   runtime.(*mheap).alloc
+----------------------------------------------------------+-------------
+                                             0.94s 72.96% |   runtime.(*mcentral).grow
+                                             0.35s 27.04% |   runtime.(*mcache).allocLarge
+         0     0% 99.69%      1.29s  4.41%                | runtime.(*mheap).alloc
+                                             1.29s   100% |   runtime.(*mheap).alloc.func1
+----------------------------------------------------------+-------------
+                                             1.29s   100% |   runtime.(*mheap).alloc
+         0     0% 99.69%      1.29s  4.41%                | runtime.(*mheap).alloc.func1
+                                             1.03s 79.38% |   runtime.(*mheap).allocSpan
+                                             0.14s 10.87% |   runtime.(*mheap).freeSpan (inline)
+                                             0.13s  9.75% |   runtime.unlock (inline)
+----------------------------------------------------------+-------------
+                                             1.03s 99.18% |   runtime.(*mheap).alloc.func1
+         0     0% 99.69%      1.04s  3.53%                | runtime.(*mheap).allocSpan
+                                             1.04s   100% |   runtime.unlock (inline)
+----------------------------------------------------------+-------------
+                                            12.43s 84.28% |   runtime.(*mcentral).cacheSpan (inline)
+                                             0.14s  0.95% |   runtime.(*mheap).alloc.func1 (inline)
+                                             0.12s  0.82% |   runtime.(*mcache).allocLarge (inline)
+         0     0% 99.69%     14.75s 50.28%                | runtime.(*mheap).freeSpan
+                                            14.75s   100% |   runtime.unlock
+----------------------------------------------------------+-------------

@@ -1,0 +1,21 @@
+{
+  "command": [
+    "gate-lock",
+    "run-check",
+    "jet-l4-cancellation-analysis-boundary",
+    "--",
+    "/opt/homebrew/opt/python@3.15/bin/python3.15",
+    "$JET_CHECKOUT/docs/plans/template-execution-budgets/finalization-lane-4-evidence/run_stage.py",
+    "--admitted",
+    "$JET_CHECKOUT/.git/finalization-evidence/cancellation-analysis-boundary",
+    "python3",
+    "docs/plans/template-execution-budgets/finalization-lane-4-evidence/analyze_cancellation.py",
+    ".git/finalization-evidence/release-54b5614",
+    ".git/finalization-evidence/callback-cancellation-samples/run.log"
+  ],
+  "queued": 1794131892.0220501,
+  "deadline_seconds": 90,
+  "cleanup_seconds": 10,
+  "exit": 0,
+  "finished": 1794131896.366532
+}

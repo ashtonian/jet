@@ -1,0 +1,27 @@
+REUSE profile-upstream-legacy_stream
+REUSE profile-upstream-legacy_owned
+REUSE profile-correctness-legacy_stream
+REUSE profile-correctness-legacy_owned
+REUSE profile-candidate-legacy_stream
+REUSE profile-candidate-legacy_owned
+REUSE profile-candidate-metered_background_stream
+REUSE profile-candidate-metered_live_stream
+REUSE profile-candidate-restricted_owned
+START profile-concurrent-upstream-legacy_stream
+END profile-concurrent-upstream-legacy_stream exit=0
+START profile-concurrent-upstream-legacy_owned
+END profile-concurrent-upstream-legacy_owned exit=0
+START profile-concurrent-correctness-legacy_stream
+END profile-concurrent-correctness-legacy_stream exit=0
+START profile-concurrent-correctness-legacy_owned
+END profile-concurrent-correctness-legacy_owned exit=0
+START profile-concurrent-candidate-legacy_stream
+END profile-concurrent-candidate-legacy_stream exit=0
+START profile-concurrent-candidate-legacy_owned
+END profile-concurrent-candidate-legacy_owned exit=0
+START profile-concurrent-candidate-metered_background_stream
+END profile-concurrent-candidate-metered_background_stream exit=0
+START profile-concurrent-candidate-metered_live_stream
+END profile-concurrent-candidate-metered_live_stream exit=0
+START profile-concurrent-candidate-restricted_owned
+END profile-concurrent-candidate-restricted_owned exit=0

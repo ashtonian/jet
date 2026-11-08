@@ -1,0 +1,124 @@
+Total: 10.27s
+ROUTINE ======================== github.com/CloudyKit/jet/v6.(*Runtime).executeList in eval.go
+     220ms      4.37s (flat, cum) 42.55% of Total
+      30ms       30ms    435:func (st *Runtime) executeList(list *ListNode) (returnValue reflect.Value) {
+         .          .    436:	inNewScope := false // to use just one scope for multiple actions with variable declarations
+         .          .    437:
+      60ms       60ms    438:	for i := 0; i < len(list.Nodes); i++ {
+         .          .    439:		node := list.Nodes[i]
+         .          .    440:		switch node.Type() {
+         .          .    441:
+         .          .    442:		case NodeText:
+         .          .    443:			node := node.(*TextNode)
+         .      330ms    444:			_, err := st.Writer.Write(node.Text)
+         .          .    445:			if err != nil {
+         .          .    446:				node.error(err)
+         .          .    447:			}
+         .          .    448:		case NodeAction:
+         .          .    449:			node := node.(*ActionNode)
+         .          .    450:			if node.Set != nil {
+         .          .    451:				if node.Set.Let {
+         .          .    452:					if !inNewScope {
+         .          .    453:						st.newScope()
+         .          .    454:						inNewScope = true
+         .          .    455:						defer st.releaseScope()
+         .          .    456:					}
+         .          .    457:					st.executeLetList(node.Set)
+         .          .    458:				} else {
+         .          .    459:					st.executeSetList(node.Set)
+         .          .    460:				}
+         .          .    461:			}
+         .          .    462:			if node.Pipe != nil {
+         .      410ms    463:				v, safeWriter := st.evalPipelineExpression(node.Pipe)
+         .          .    464:				if !safeWriter && v.IsValid() {
+      10ms       40ms    465:					if v.Type().Implements(rendererType) {
+         .          .    466:						v.Interface().(Renderer).Render(st)
+         .          .    467:					} else {
+         .      880ms    468:						_, err := fastprinter.PrintValue(st.escapeeWriter, v)
+         .          .    469:						if err != nil {
+         .          .    470:							node.error(err)
+         .          .    471:						}
+         .          .    472:					}
+         .          .    473:				}
+         .          .    474:			}
+         .          .    475:		case NodeIf:
+         .          .    476:			node := node.(*IfNode)
+         .          .    477:			var isLet bool
+         .          .    478:			if node.Set != nil {
+         .          .    479:				if node.Set.Let {
+         .          .    480:					isLet = true
+         .          .    481:					st.newScope()
+         .          .    482:					st.executeLetList(node.Set)
+         .          .    483:				} else {
+         .          .    484:					st.executeSetList(node.Set)
+         .          .    485:				}
+         .          .    486:			}
+         .          .    487:
+         .          .    488:			if isTrue(st.evalPrimaryExpressionGroup(node.Expression)) {
+         .          .    489:				returnValue = st.executeList(node.List)
+         .          .    490:			} else if node.ElseList != nil {
+         .          .    491:				returnValue = st.executeList(node.ElseList)
+         .          .    492:			}
+         .          .    493:			if isLet {
+         .          .    494:				st.releaseScope()
+         .          .    495:			}
+         .          .    496:		case NodeRange:
+         .      1.52s    497:			returnValue = st.executeRange(node.(*RangeNode))
+         .          .    498:		case NodeTry:
+         .          .    499:			node := node.(*TryNode)
+         .          .    500:			returnValue = st.executeTry(node)
+         .          .    501:		case NodeYield:
+         .          .    502:			node := node.(*YieldNode)
+         .          .    503:			if node.IsContent {
+         .          .    504:				if st.content != nil {
+         .       10ms    505:					st.content(st, node.Expression)
+         .          .    506:				}
+         .          .    507:			} else {
+         .       30ms    508:				block, found := st.getBlock(node.Name)
+         .          .    509:				if !found || block == nil {
+         .          .    510:					node.errorf("unresolved block %q!", node.Name)
+         .          .    511:				}
+         .       30ms    512:				st.executeYieldBlock(block, block.Parameters, node.Parameters, node.Expression, node.Content)
+         .          .    513:			}
+         .          .    514:		case NodeBlock:
+         .          .    515:			node := node.(*BlockNode)
+         .          .    516:			block, found := st.getBlock(node.Name)
+         .          .    517:			if !found {
+         .          .    518:				block = node
+         .          .    519:			}
+         .       20ms    520:			st.executeYieldBlock(block, block.Parameters, block.Parameters, block.Expression, block.Content)
+         .          .    521:		case NodeInclude:
+         .          .    522:			node := node.(*IncludeNode)
+         .      290ms    523:			returnValue = st.executeInclude(node)
+         .          .    524:		case NodeReturn:
+         .          .    525:			node := node.(*ReturnNode)
+         .          .    526:			returnValue = st.evalPrimaryExpressionGroup(node.Value)
+         .          .    527:		}
+         .          .    528:	}
+         .          .    529:
+         .          .    530:	return returnValue
+     120ms      720ms    531:}
+         .          .    532:
+         .          .    533:func (st *Runtime) executeRange(node *RangeNode) (returnValue reflect.Value) {
+         .          .    534:	previousScope, previousContext := st.scope, st.context
+         .          .    535:	defer func() { st.scope, st.context = previousScope, previousContext }()
+         .          .    536:
+ROUTINE ======================== github.com/CloudyKit/jet/v6.checkedWriter.Write in eval.go
+     330ms      950ms (flat, cum)  9.25% of Total
+      90ms       90ms     71:func (w checkedWriter) Write(b []byte) (int, error) {
+      60ms       60ms     72:	if *w.failure != nil {
+         .          .     73:		return 0, *w.failure
+         .          .     74:	}
+      60ms      680ms     75:	n, err := w.writer.Write(b)
+      20ms       20ms     76:	if err == nil && n != len(b) {
+         .          .     77:		err = io.ErrShortWrite
+         .          .     78:	}
+      50ms       50ms     79:	if err != nil {
+         .          .     80:		*w.failure = err
+         .          .     81:	}
+      50ms       50ms     82:	return n, err
+         .          .     83:}
+         .          .     84:
+         .          .     85:func (w *escapeeWriter) Write(b []byte) (int, error) {
+         .          .     86:	if w.set.escapee == nil {
+         .          .     87:		return w.Writer.Write(b)

@@ -1,0 +1,28 @@
+=== RUN   TestExecutionRetentionMeasurements
+=== RUN   TestExecutionRetentionMeasurements/legacy_stream
+    execution_measurements_test.go:385: {"phase":"post_two_gc","render_ns":112250,"heap_alloc":385560,"heap_inuse":819200,"heap_sys":3932160,"stream_capacity":64}
+    execution_measurements_test.go:385: {"phase":"warm_small","render_ns":666,"heap_alloc":441432,"heap_inuse":917504,"heap_sys":3932160,"stream_capacity":64}
+    execution_measurements_test.go:385: {"phase":"after_large","render_ns":583,"heap_alloc":963872,"heap_inuse":1433600,"heap_sys":3932160,"stream_capacity":262144}
+    execution_measurements_test.go:385: {"phase":"large_then_small","render_ns":458,"heap_alloc":1013384,"heap_inuse":1490944,"heap_sys":3932160,"stream_capacity":262144}
+    execution_measurements_test.go:385: {"phase":"large_then_small_after_gc","render_ns":7166,"heap_alloc":653528,"heap_inuse":1122304,"heap_sys":3932160,"stream_capacity":262144}
+--- PASS: TestExecutionRetentionMeasurements (0.00s)
+    --- PASS: TestExecutionRetentionMeasurements/legacy_stream (0.00s)
+PASS
+        0.01 real         0.00 user         0.00 sys
+             9093120  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                 910  page reclaims
+                   1  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   3  signals received
+                   0  voluntary context switches
+                 118  involuntary context switches
+            59369082  instructions retired
+            28200973  cycles elapsed
+             5390864  peak memory footprint

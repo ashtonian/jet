@@ -1,0 +1,90 @@
+Total: 6.23MB
+ROUTINE ======================== github.com/CloudyKit/jet/v6.(*Runtime).recover in eval.go
+   47.34kB    47.61kB (flat, cum)  0.75% of Total
+         .          .    252:func (st *Runtime) recover(err *error) {
+         .          .    253:	recovered := recover()
+         .          .    254:	failure := st.writeErr
+   47.34kB    47.34kB    255:	st.scope = &scope{}
+         .          .    256:	*st.escapeeWriter = escapeeWriter{}
+         .          .    257:	st.content = nil
+         .          .    258:	st.context = reflect.Value{}
+         .          .    259:	st.includeDepth = 0
+         .       272B    260:	pool_State.Put(st)
+         .          .    261:	if recovered != nil {
+         .          .    262:		if _, ok := recovered.(runtime.Error); ok {
+         .          .    263:			panic(recovered)
+         .          .    264:		}
+         .          .    265:		var ok bool
+ROUTINE ======================== testing.(*outputWriter).write in testing/testing.go
+         0       544B (flat, cum) 0.0083% of Total
+         .          .   1224:func (o *outputWriter) write(p []byte, isErr bool) (int, error) {
+         .          .   1225:	// o can be nil if this is called from a top-level *TB that is no longer active.
+         .          .   1226:	// Just ignore the message in that case.
+         .          .   1227:	if o == nil || o.c == nil {
+         .          .   1228:		return 0, nil
+         .          .   1229:	}
+         .          .   1230:	if o.c.destination() == nil {
+         .          .   1231:		panic("Write called after " + o.c.name + " has completed")
+         .          .   1232:	}
+         .          .   1233:
+         .          .   1234:	o.c.mu.Lock()
+         .          .   1235:	defer o.c.mu.Unlock()
+         .          .   1236:
+         .          .   1237:	// The last element is a partial line.
+         .       192B   1238:	lines := bytes.SplitAfter(p, []byte("\n"))
+         .          .   1239:	last := len(lines) - 1 // Inv: 0 <= last
+         .          .   1240:	for i, line := range lines[:last] {
+         .          .   1241:		// Emit partial line from previous call.
+         .          .   1242:		if i == 0 && len(o.partial) > 0 {
+         .          .   1243:			line = slices.Concat(o.partial, line)
+         .          .   1244:			o.partial = o.partial[:0]
+         .          .   1245:		}
+         .       352B   1246:		o.writeLine(line, isErr && i == 0, isErr && i == last-1)
+         .          .   1247:	}
+         .          .   1248:	// Save partial line for next call.
+         .          .   1249:	o.partial = append(o.partial, lines[last]...)
+         .          .   1250:
+         .          .   1251:	return len(p), nil
+ROUTINE ======================== testing.(*outputWriter).writeLine in testing/testing.go
+       96B       352B (flat, cum) 0.0054% of Total
+         .          .   1255:func (o *outputWriter) writeLine(b []byte, errBegin, errEnd bool) {
+         .          .   1256:	if o.c.done || (o.c.chatty == nil) {
+         .          .   1257:		o.c.output = append(o.c.output, indent...)
+         .          .   1258:		o.c.output = append(o.c.output, b...)
+         .          .   1259:		return
+         .          .   1260:	}
+         .          .   1261:
+         .          .   1262:	// Escape the framing marker.
+         .          .   1263:	if o.c.chatty.json {
+         .          .   1264:		b = escapeMarkers(b)
+         .          .   1265:	}
+         .          .   1266:
+         .          .   1267:	// If this is the start of an error, add ^O to the start of the output.
+         .          .   1268:	var strErrBegin, strErrEnd string
+         .          .   1269:	if errBegin && o.c.chatty.json {
+         .          .   1270:		strErrBegin = string(markErrBegin)
+         .          .   1271:	}
+         .          .   1272:
+         .          .   1273:	// If this is the end of an error, add ^N to the end of the output. If the
+         .          .   1274:	// last character of the output is \n, add ^N before the \n, otherwise
+         .          .   1275:	// test2json will not handle it correctly.
+         .          .   1276:	var c []byte
+         .          .   1277:	if errEnd && o.c.chatty.json {
+         .          .   1278:		i := len(b)
+         .          .   1279:		if len(b) > 0 && b[i-1] == '\n' {
+         .          .   1280:			b, c = b[:i-1], b[i-1:]
+         .          .   1281:		}
+         .          .   1282:		strErrEnd = string(markErrEnd)
+         .          .   1283:	}
+         .          .   1284:
+         .          .   1285:	if o.c.bench {
+         .          .   1286:		// Benchmarks don't print === CONT, so we should skip the test
+         .          .   1287:		// printer and just print straight to stdout.
+         .          .   1288:		fmt.Printf("%s%s%s%s%s", strErrBegin, indent, b, strErrEnd, c)
+         .          .   1289:	} else {
+       96B       352B   1290:		o.c.chatty.Printf(o.c.name, "%s%s%s%s%s", strErrBegin, indent, b, strErrEnd, c)
+         .          .   1291:	}
+         .          .   1292:}
+         .          .   1293:
+         .          .   1294:func escapeMarkers(b []byte) []byte {
+         .          .   1295:	j := nextMark(b)

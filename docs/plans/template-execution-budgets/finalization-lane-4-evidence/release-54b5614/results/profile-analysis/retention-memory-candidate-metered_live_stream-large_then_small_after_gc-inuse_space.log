@@ -1,0 +1,40 @@
+File: candidate.test
+Type: inuse_space
+Time: 2026-11-08 03:05:52 CST
+Showing nodes accounting for 518.94kB, 98.51% of 526.80kB total
+Dropped 109 nodes (cum <= 2.63kB)
+      flat  flat%   sum%        cum   cum%
+     256kB 48.59% 48.59%      256kB 48.59%  bytes.growSlice
+     256kB 48.59% 97.19%      256kB 48.59%  internal/bytealg.MakeNoZero
+    3.03kB  0.58% 97.77%     3.03kB  0.58%  runtime.mallocgc
+    2.59kB  0.49% 98.26%     6.85kB  1.30%  testing.(*T).Run
+    0.80kB  0.15% 98.41%     2.95kB  0.56%  testing.runTests
+    0.27kB  0.05% 98.46%   515.34kB 97.82%  github.com/CloudyKit/jet/v6_test.TestExecutionRetentionMeasurements.func1
+    0.18kB 0.034% 98.49%     3.34kB  0.63%  regexp.compile
+    0.05kB 0.0089% 98.50%     5.33kB  1.01%  github.com/CloudyKit/jet/v6_test.TestExecutionRetentionMeasurements
+    0.02kB 0.0044% 98.51%     3.10kB  0.59%  testing.(*M).Run
+         0     0% 98.51%      256kB 48.59%  bytes.(*Buffer).Write
+         0     0% 98.51%      256kB 48.59%  bytes.(*Buffer).grow
+         0     0% 98.51%      256kB 48.59%  github.com/CloudyKit/fastprinter.PrintString
+         0     0% 98.51%   256.09kB 48.61%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 98.51%      256kB 48.59%  github.com/CloudyKit/jet/v6.(*Runtime).printValue
+         0     0% 98.51%   256.09kB 48.61%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0% 98.51%   256.09kB 48.61%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0% 98.51%      256kB 48.59%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+         0     0% 98.51%      256kB 48.59%  github.com/CloudyKit/jet/v6.(*dataPrinter).Write
+         0     0% 98.51%      256kB 48.59%  github.com/CloudyKit/jet/v6.(*dataPrinter).text
+         0     0% 98.51%      256kB 48.59%  github.com/CloudyKit/jet/v6.(*dataPrinter).value
+         0     0% 98.51%      256kB 48.59%  github.com/CloudyKit/jet/v6.(*escapeeWriter).Write
+         0     0% 98.51%   256.09kB 48.61%  github.com/CloudyKit/jet/v6_test.TestExecutionRetentionMeasurements.func1.1 (inline)
+         0     0% 98.51%   256.09kB 48.61%  github.com/CloudyKit/jet/v6_test.init.0.func2
+         0     0% 98.51%     3.10kB  0.59%  main.main
+         0     0% 98.51%     3.34kB  0.63%  regexp.Compile (inline)
+         0     0% 98.51%     3.10kB  0.59%  runtime.main
+         0     0% 98.51%     2.88kB  0.55%  runtime.newobject
+         0     0% 98.51%      256kB 48.59%  strings.(*Builder).Grow
+         0     0% 98.51%      256kB 48.59%  strings.(*Builder).grow
+         0     0% 98.51%      256kB 48.59%  strings.Repeat
+         0     0% 98.51%     3.76kB  0.71%  testing.(*matcher).fullName
+         0     0% 98.51%     3.34kB  0.63%  testing.simpleMatch.matches
+         0     0% 98.51%   522.24kB 99.13%  testing.tRunner
+         0     0% 98.51%     3.34kB  0.63%  testing/internal/testdeps.TestDeps.MatchString

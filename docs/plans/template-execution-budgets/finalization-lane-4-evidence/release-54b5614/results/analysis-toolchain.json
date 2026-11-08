@@ -1,0 +1,6 @@
+{
+  "benchstat": "$HOME/go/bin/benchstat",
+  "sha256": "1cce2f67defd135e0ca5bb4b6b040ee3f83799a550cd7b0200aaaa410ef9d100",
+  "build": "$HOME/go/bin/benchstat: go1.26.3\n\tpath\tgolang.org/x/perf/cmd/benchstat\n\tmod\tgolang.org/x/perf\tv0.0.0-20260512194132-3cf34090a3db\th1:1EdY5INjhh724sLDk1O/nIzRZ8wmHbmiF8K2cK/mNLw=\n\tdep\tgithub.com/aclements/go-moremath\tv0.0.0-20210112150236-f10218a38794\th1:xlwdaKcTNVW4PtpQb8aKA4Pjy0CdJHEqvFbAnvR5m2g=\n\tbuild\t-buildmode=exe\n\tbuild\t-compiler=gc\n\tbuild\tDefaultGODEBUG=cryptocustomrand=1,tlssecpmlkem=0,urlstrictcolons=0\n\tbuild\tCGO_ENABLED=1\n\tbuild\tCGO_CFLAGS=\n\tbuild\tCGO_CPPFLAGS=\n\tbuild\tCGO_CXXFLAGS=\n\tbuild\tCGO_LDFLAGS=\n\tbuild\tGOARCH=arm64\n\tbuild\tGOOS=darwin\n\tbuild\tGOARM64=v8.0\n",
+  "analyzer_sha256": "53b649b92be0e5c63e1ffc94a74ecfcc3848a6e25b17926a1a7412a812404592"
+}

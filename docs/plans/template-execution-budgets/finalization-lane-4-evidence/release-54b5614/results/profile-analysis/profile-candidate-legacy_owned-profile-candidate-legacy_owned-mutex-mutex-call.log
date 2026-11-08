@@ -1,0 +1,181 @@
+File: candidate.test
+Type: delay
+Time: 2026-11-08 02:59:45 CST
+Showing nodes accounting for 75.21us, 100% of 75.21us total
+Dropped 27 nodes (cum <= 0.38us)
+Showing top 40 nodes out of 55
+----------------------------------------------------------+-------------
+      flat  flat%   sum%        cum   cum%   calls calls% + context
+----------------------------------------------------------+-------------
+                                           34.96us 46.48% |   runtime.gcMarkTermination.func3 (inline)
+                                              15us 19.94% |   runtime.forEachPInternal (inline)
+                                            9.08us 12.08% |   runtime.(*mheap).reclaimChunk (inline)
+                                            4.96us  6.59% |   runtime.mcommoninit (inline)
+                                            4.79us  6.37% |   runtime.gcMarkDone.func2 (inline)
+                                               3us  3.99% |   runtime.(*mheap).freeSpan.func1
+                                            1.88us  2.49% |   runtime.findRunnable (inline)
+                                            1.54us  2.05% |   runtime.gcstopm (inline)
+   75.21us   100%   100%    75.21us   100%                | runtime.unlock
+----------------------------------------------------------+-------------
+         0     0%   100%     9.42us 12.52%                | github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes
+                                            9.42us   100% |   github.com/CloudyKit/jet/v6_test.measurementWorkloads
+----------------------------------------------------------+-------------
+                                            9.42us   100% |   github.com/CloudyKit/jet/v6_test.measurementWorkloads
+         0     0%   100%     9.42us 12.52%                | github.com/CloudyKit/jet/v6_test.executionWorkloads
+                                            9.42us   100% |   os.ReadFile
+----------------------------------------------------------+-------------
+                                            9.42us   100% |   github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes
+         0     0%   100%     9.42us 12.52%                | github.com/CloudyKit/jet/v6_test.measurementWorkloads
+                                            9.42us   100% |   github.com/CloudyKit/jet/v6_test.executionWorkloads
+----------------------------------------------------------+-------------
+                                            9.42us   100% |   github.com/CloudyKit/jet/v6_test.executionWorkloads
+         0     0%   100%     9.42us 12.52%                | os.ReadFile
+                                            9.42us   100% |   os.readFileContents
+----------------------------------------------------------+-------------
+                                            9.42us   100% |   os.ReadFile
+         0     0%   100%     9.42us 12.52%                | os.readFileContents
+                                            9.42us   100% |   runtime.makeslice
+----------------------------------------------------------+-------------
+                                            9.42us   100% |   runtime.mallocgcLarge
+         0     0%   100%     9.42us 12.52%                | runtime.(*mcache).allocLarge
+                                            9.42us   100% |   runtime.(*mheap).alloc
+----------------------------------------------------------+-------------
+                                            9.42us 97.84% |   runtime.(*mcache).allocLarge
+                                            0.21us  2.16% |   runtime.mallocgc
+         0     0%   100%     9.63us 12.80%                | runtime.(*mheap).alloc
+                                            9.63us   100% |   runtime.(*mheap).alloc.func1
+----------------------------------------------------------+-------------
+                                            9.63us   100% |   runtime.(*mheap).alloc
+         0     0%   100%     9.63us 12.80%                | runtime.(*mheap).alloc.func1
+                                            9.63us   100% |   runtime.(*mheap).reclaim
+----------------------------------------------------------+-------------
+                                               3us   100% |   runtime.(*sweepLocked).sweep (inline)
+         0     0%   100%        3us  3.99%                | runtime.(*mheap).freeSpan
+                                               3us   100% |   runtime.(*mheap).freeSpan.func1
+----------------------------------------------------------+-------------
+                                               3us   100% |   runtime.(*mheap).freeSpan
+         0     0%   100%        3us  3.99%                | runtime.(*mheap).freeSpan.func1
+                                               3us   100% |   runtime.unlock
+----------------------------------------------------------+-------------
+                                            9.63us   100% |   runtime.(*mheap).alloc.func1
+         0     0%   100%     9.63us 12.80%                | runtime.(*mheap).reclaim
+                                            9.63us   100% |   runtime.(*mheap).reclaimChunk
+----------------------------------------------------------+-------------
+                                            9.63us   100% |   runtime.(*mheap).reclaim
+         0     0%   100%     9.63us 12.80%                | runtime.(*mheap).reclaimChunk
+                                            9.08us 94.37% |   runtime.unlock (inline)
+                                            0.54us  5.63% |   runtime.(*sweepLocked).sweep
+----------------------------------------------------------+-------------
+                                            1.33us 44.43% |   runtime.bgsweep
+                                            1.12us 37.50% |   runtime.GC
+                                            0.54us 18.07% |   runtime.(*mheap).reclaimChunk
+         0     0%   100%        3us  3.99%                | runtime.(*sweepLocked).sweep
+                                               3us   100% |   runtime.(*mheap).freeSpan (inline)
+----------------------------------------------------------+-------------
+         0     0%   100%     1.12us  1.50%                | runtime.GC
+                                            1.12us   100% |   runtime.(*sweepLocked).sweep
+----------------------------------------------------------+-------------
+                                            4.96us   100% |   runtime.newm
+         0     0%   100%     4.96us  6.59%                | runtime.allocm
+                                            4.96us   100% |   runtime.mcommoninit
+----------------------------------------------------------+-------------
+         0     0%   100%     1.33us  1.77%                | runtime.bgsweep
+                                            1.33us   100% |   runtime.(*sweepLocked).sweep
+----------------------------------------------------------+-------------
+                                            2.33us 68.30% |   runtime.goschedImpl
+                                            1.08us 31.70% |   runtime.morestack
+         0     0%   100%     3.42us  4.54%                | runtime.findRunnable
+                                            1.88us 54.89% |   runtime.unlock (inline)
+                                            1.54us 45.11% |   runtime.gcstopm
+----------------------------------------------------------+-------------
+                                              15us   100% |   runtime.gcMarkDone (inline)
+         0     0%   100%       15us 19.94%                | runtime.forEachP
+                                              15us   100% |   runtime.forEachP.func1
+----------------------------------------------------------+-------------
+                                              15us   100% |   runtime.forEachP
+         0     0%   100%       15us 19.94%                | runtime.forEachP.func1
+                                              15us   100% |   runtime.forEachPInternal
+----------------------------------------------------------+-------------
+                                              15us   100% |   runtime.forEachP.func1
+         0     0%   100%       15us 19.94%                | runtime.forEachPInternal
+                                              15us   100% |   runtime.unlock (inline)
+----------------------------------------------------------+-------------
+         0     0%   100%    59.71us 79.39%                | runtime.gcBgMarkWorker
+                                           54.75us 91.70% |   runtime.gcMarkDone
+                                            4.96us  8.30% |   runtime.gcBgMarkWorker.func2
+----------------------------------------------------------+-------------
+                                            4.96us   100% |   runtime.gcBgMarkWorker
+         0     0%   100%     4.96us  6.59%                | runtime.gcBgMarkWorker.func2
+                                            4.96us   100% |   runtime.gcDrainMarkWorkerIdle (inline)
+----------------------------------------------------------+-------------
+                                            4.96us   100% |   runtime.gcDrainMarkWorkerIdle
+         0     0%   100%     4.96us  6.59%                | runtime.gcDrain
+                                            4.96us   100% |   runtime.markroot
+----------------------------------------------------------+-------------
+                                            4.96us   100% |   runtime.gcBgMarkWorker.func2 (inline)
+         0     0%   100%     4.96us  6.59%                | runtime.gcDrainMarkWorkerIdle
+                                            4.96us   100% |   runtime.gcDrain
+----------------------------------------------------------+-------------
+                                           54.75us   100% |   runtime.gcBgMarkWorker
+         0     0%   100%    54.75us 72.80%                | runtime.gcMarkDone
+                                           34.96us 63.85% |   runtime.gcMarkTermination
+                                              15us 27.40% |   runtime.forEachP (inline)
+                                            4.79us  8.75% |   runtime.gcMarkDone.func2
+----------------------------------------------------------+-------------
+                                            4.79us   100% |   runtime.gcMarkDone
+         0     0%   100%     4.79us  6.37%                | runtime.gcMarkDone.func2
+                                            4.79us   100% |   runtime.unlock (inline)
+----------------------------------------------------------+-------------
+                                           34.96us   100% |   runtime.gcMarkDone
+         0     0%   100%    34.96us 46.48%                | runtime.gcMarkTermination
+                                           34.96us   100% |   runtime.gcMarkTermination.func3
+----------------------------------------------------------+-------------
+                                           34.96us   100% |   runtime.gcMarkTermination
+         0     0%   100%    34.96us 46.48%                | runtime.gcMarkTermination.func3
+                                           34.96us   100% |   runtime.unlock (inline)
+----------------------------------------------------------+-------------
+                                            1.54us   100% |   runtime.findRunnable
+         0     0%   100%     1.54us  2.05%                | runtime.gcstopm
+                                            1.54us   100% |   runtime.unlock (inline)
+----------------------------------------------------------+-------------
+                                            2.33us   100% |   runtime.morestack (inline)
+         0     0%   100%     2.33us  3.10%                | runtime.gopreempt_m
+                                            2.33us   100% |   runtime.goschedImpl
+----------------------------------------------------------+-------------
+                                            2.33us   100% |   runtime.gopreempt_m
+         0     0%   100%     2.33us  3.10%                | runtime.goschedImpl
+                                            2.33us   100% |   runtime.findRunnable
+----------------------------------------------------------+-------------
+                                            9.42us   100% |   os.readFileContents
+         0     0%   100%     9.42us 12.52%                | runtime.makeslice
+                                            9.42us   100% |   runtime.mallocgc
+----------------------------------------------------------+-------------
+                                            9.42us 97.84% |   runtime.makeslice
+         0     0%   100%     9.63us 12.80%                | runtime.mallocgc
+                                            9.42us 97.84% |   runtime.mallocgcLarge
+                                            0.21us  2.16% |   runtime.(*mheap).alloc
+----------------------------------------------------------+-------------
+                                            9.42us   100% |   runtime.mallocgc
+         0     0%   100%     9.42us 12.52%                | runtime.mallocgcLarge
+                                            9.42us   100% |   runtime.(*mcache).allocLarge
+----------------------------------------------------------+-------------
+                                            4.96us   100% |   runtime.gcDrain
+         0     0%   100%     4.96us  6.59%                | runtime.markroot
+                                            4.96us   100% |   runtime.markroot.func1
+----------------------------------------------------------+-------------
+                                            4.96us   100% |   runtime.markroot
+         0     0%   100%     4.96us  6.59%                | runtime.markroot.func1
+                                            4.96us   100% |   runtime.newm
+----------------------------------------------------------+-------------
+                                            4.96us   100% |   runtime.allocm
+         0     0%   100%     4.96us  6.59%                | runtime.mcommoninit
+                                            4.96us   100% |   runtime.unlock (inline)
+----------------------------------------------------------+-------------
+         0     0%   100%     3.42us  4.54%                | runtime.morestack
+                                            2.33us 68.30% |   runtime.gopreempt_m (inline)
+                                            1.08us 31.70% |   runtime.findRunnable
+----------------------------------------------------------+-------------
+                                            4.96us   100% |   runtime.markroot.func1
+         0     0%   100%     4.96us  6.59%                | runtime.newm
+                                            4.96us   100% |   runtime.allocm
+----------------------------------------------------------+-------------

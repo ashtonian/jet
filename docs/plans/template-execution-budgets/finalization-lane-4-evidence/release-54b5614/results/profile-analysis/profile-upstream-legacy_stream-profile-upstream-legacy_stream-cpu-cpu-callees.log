@@ -1,0 +1,163 @@
+File: upstream.test
+Type: cpu
+Time: 2026-11-08 02:58:44 CST
+Duration: 9.57s, Total samples = 9.07s (94.80%)
+Showing nodes accounting for 9.07s, 100% of 9.07s total
+----------------------------------------------------------+-------------
+      flat  flat%   sum%        cum   cum%   calls calls% + context
+----------------------------------------------------------+-------------
+                                             5.58s   100% |   github.com/CloudyKit/jet/v6.(*Template).Execute
+                                             0.35s  6.27% |   github.com/CloudyKit/jet/v6.(*Runtime).executeYieldBlock
+                                             0.31s  5.56% |   github.com/CloudyKit/jet/v6.(*Runtime).executeInclude
+                                             0.08s  1.43% |   github.com/CloudyKit/jet/v6.(*Runtime).executeYieldBlock.func1
+     0.95s 10.47% 10.47%      5.58s 61.52%                | github.com/CloudyKit/jet/v6.(*Runtime).executeList
+                                             1.63s 29.21% |   github.com/CloudyKit/fastprinter.PrintValue
+                                             0.88s 15.77% |   github.com/CloudyKit/jet/v6.(*Runtime).evalPipelineExpression
+                                             0.70s 12.54% |   github.com/CloudyKit/jet/v6.(*Runtime).executeInclude
+                                             0.46s  8.24% |   github.com/CloudyKit/jet/v6.(*intsRanger).Range
+                                             0.44s  7.89% |   github.com/CloudyKit/jet/v6.(*Runtime).executeYieldBlock
+                                             0.35s  6.27% |   runtime.(*_panic).nextDefer
+                                             0.24s  4.30% |   runtime.(*_panic).start
+                                             0.18s  3.23% |   github.com/CloudyKit/jet/v6.(*scope).getBlock (inline)
+                                             0.16s  2.87% |   bytes.(*Buffer).Write
+                                             0.12s  2.15% |   github.com/CloudyKit/jet/v6.(*Runtime).evalPrimaryExpressionGroup
+                                             0.10s  1.79% |   github.com/CloudyKit/jet/v6.(*Runtime).executeYieldBlock.func1
+                                             0.09s  1.61% |   github.com/CloudyKit/jet/v6.getRanger
+                                             0.01s  0.18% |   reflect.(*rtype).Implements
+                                             0.01s  0.18% |   reflect.Value.Type (inline)
+----------------------------------------------------------+-------------
+                                             6.79s   100% |   github.com/CloudyKit/jet/v6_test.init.func1
+     0.28s  3.09% 13.56%      6.79s 74.86%                | github.com/CloudyKit/jet/v6.(*Template).Execute
+                                             5.58s 82.18% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+                                             0.58s  8.54% |   github.com/CloudyKit/jet/v6.(*Runtime).recover
+                                             0.29s  4.27% |   sync.(*Pool).Get
+                                             0.03s  0.44% |   gcWriteBarrier
+                                             0.03s  0.44% |   reflect.ValueOf (inline)
+----------------------------------------------------------+-------------
+                                             0.46s   100% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+     0.13s  1.43% 14.99%      0.46s  5.07%                | github.com/CloudyKit/jet/v6.(*intsRanger).Range
+                                             0.31s 67.39% |   reflect.Value.Elem
+                                             0.02s  4.35% |   reflect.ValueOf (inline)
+----------------------------------------------------------+-------------
+                                             0.44s   100% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+     0.07s  0.77% 15.77%      0.44s  4.85%                | github.com/CloudyKit/jet/v6.(*Runtime).executeYieldBlock
+                                             0.35s 79.55% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+                                             0.02s  4.55% |   runtime.mallocgcSmallScanNoHeaderSC4
+----------------------------------------------------------+-------------
+                                             0.23s 62.16% |   github.com/CloudyKit/jet/v6.(*Runtime).evalCommandExpression
+                                             0.12s 32.43% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+                                             0.02s  5.41% |   github.com/CloudyKit/jet/v6.(*Runtime).executeInclude
+     0.06s  0.66% 16.43%      0.37s  4.08%                | github.com/CloudyKit/jet/v6.(*Runtime).evalPrimaryExpressionGroup
+                                             0.25s 67.57% |   github.com/CloudyKit/jet/v6.(*Runtime).evalBaseExpressionGroup
+                                             0.06s 16.22% |   github.com/CloudyKit/jet/v6.(*Runtime).evalCallExpression (inline)
+----------------------------------------------------------+-------------
+                                             0.03s 60.00% |   github.com/CloudyKit/jet/v6.(*Runtime).resolve
+                                             0.02s 40.00% |   github.com/CloudyKit/jet/v6.(*Arguments).ParseInto
+     0.05s  0.55% 16.98%      0.05s  0.55%                | github.com/CloudyKit/jet/v6.indirectEface
+----------------------------------------------------------+-------------
+                                             0.25s   100% |   github.com/CloudyKit/jet/v6.(*Runtime).evalPrimaryExpressionGroup
+     0.04s  0.44% 17.42%      0.25s  2.76%                | github.com/CloudyKit/jet/v6.(*Runtime).evalBaseExpressionGroup
+                                             0.21s 84.00% |   github.com/CloudyKit/jet/v6.(*Runtime).resolve
+----------------------------------------------------------+-------------
+                                             0.58s   100% |   github.com/CloudyKit/jet/v6.(*Template).Execute
+     0.03s  0.33% 17.75%      0.58s  6.39%                | github.com/CloudyKit/jet/v6.(*Runtime).recover
+                                             0.37s 63.79% |   runtime.mallocgcSmallScanNoHeaderSC3
+                                             0.14s 24.14% |   sync.(*Pool).Put
+                                             0.04s  6.90% |   runtime.gorecover
+----------------------------------------------------------+-------------
+                                             0.21s   100% |   github.com/CloudyKit/jet/v6.(*Runtime).evalBaseExpressionGroup
+     0.03s  0.33% 18.08%      0.21s  2.32%                | github.com/CloudyKit/jet/v6.(*Runtime).resolve
+                                             0.15s 71.43% |   runtime.mapaccess2_faststr
+                                             0.03s 14.29% |   github.com/CloudyKit/jet/v6.indirectEface
+----------------------------------------------------------+-------------
+                                             1.16s 89.23% |   github.com/CloudyKit/fastprinter.PrintString
+                                             0.14s 10.77% |   github.com/CloudyKit/fastprinter.PrintValue
+     0.03s  0.33% 18.41%      1.30s 14.33%                | github.com/CloudyKit/jet/v6.(*escapeeWriter).Write
+                                             1.27s 97.69% |   text/template.HTMLEscape
+----------------------------------------------------------+-------------
+                                             6.85s   100% |   testing.(*B).runN
+     0.03s  0.33% 18.74%      6.85s 75.52%                | github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes.func1
+                                             6.80s 99.27% |   github.com/CloudyKit/jet/v6_test.init.func1
+                                             0.02s  0.29% |   bytes.(*Buffer).Reset (inline)
+----------------------------------------------------------+-------------
+                                             0.02s   100% |   github.com/CloudyKit/jet/v6.(*Arguments).ParseInto
+     0.02s  0.22% 18.96%      0.02s  0.22%                | github.com/CloudyKit/jet/v6.(*Arguments).Get
+----------------------------------------------------------+-------------
+                                             0.10s   100% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+     0.01s  0.11% 19.07%      0.10s  1.10%                | github.com/CloudyKit/jet/v6.(*Runtime).executeYieldBlock.func1
+                                             0.08s 80.00% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+                                             0.01s 10.00% |   gcWriteBarrier
+----------------------------------------------------------+-------------
+                                             0.05s   100% |   github.com/CloudyKit/jet/v6.(*Set).getTemplateFromCache
+     0.01s  0.11% 19.18%      0.05s  0.55%                | github.com/CloudyKit/jet/v6.(*cache).Get
+                                             0.04s 80.00% |   sync.(*Map).Load (inline)
+----------------------------------------------------------+-------------
+                                             6.80s   100% |   github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes.func1
+     0.01s  0.11% 19.29%      6.80s 74.97%                | github.com/CloudyKit/jet/v6_test.init.func1
+                                             6.79s 99.85% |   github.com/CloudyKit/jet/v6.(*Template).Execute
+----------------------------------------------------------+-------------
+                                             0.04s   100% |   github.com/CloudyKit/jet/v6.init.0.func5
+         0     0% 19.29%      0.04s  0.44%                | github.com/CloudyKit/jet/v6.(*Arguments).ParseInto
+                                             0.02s 50.00% |   github.com/CloudyKit/jet/v6.(*Arguments).Get
+                                             0.02s 50.00% |   github.com/CloudyKit/jet/v6.indirectEface
+----------------------------------------------------------+-------------
+                                             0.65s 91.55% |   github.com/CloudyKit/jet/v6.(*Runtime).evalCommandExpression (inline)
+                                             0.06s  8.45% |   github.com/CloudyKit/jet/v6.(*Runtime).evalPrimaryExpressionGroup (inline)
+         0     0% 19.29%      0.71s  7.83%                | github.com/CloudyKit/jet/v6.(*Runtime).evalCallExpression
+                                             0.71s   100% |   github.com/CloudyKit/jet/v6.(*Runtime).evalPipeCallExpression
+----------------------------------------------------------+-------------
+                                             0.88s   100% |   github.com/CloudyKit/jet/v6.(*Runtime).evalPipelineExpression
+         0     0% 19.29%      0.88s  9.70%                | github.com/CloudyKit/jet/v6.(*Runtime).evalCommandExpression
+                                             0.65s 73.86% |   github.com/CloudyKit/jet/v6.(*Runtime).evalCallExpression (inline)
+                                             0.23s 26.14% |   github.com/CloudyKit/jet/v6.(*Runtime).evalPrimaryExpressionGroup
+----------------------------------------------------------+-------------
+                                             0.71s   100% |   github.com/CloudyKit/jet/v6.(*Runtime).evalCallExpression
+         0     0% 19.29%      0.71s  7.83%                | github.com/CloudyKit/jet/v6.(*Runtime).evalPipeCallExpression
+                                             0.65s 91.55% |   reflect.Value.Call
+                                             0.06s  8.45% |   github.com/CloudyKit/jet/v6.init.0.func5
+----------------------------------------------------------+-------------
+                                             0.88s   100% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 19.29%      0.88s  9.70%                | github.com/CloudyKit/jet/v6.(*Runtime).evalPipelineExpression
+                                             0.88s   100% |   github.com/CloudyKit/jet/v6.(*Runtime).evalCommandExpression
+----------------------------------------------------------+-------------
+                                             0.70s   100% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 19.29%      0.70s  7.72%                | github.com/CloudyKit/jet/v6.(*Runtime).executeInclude
+                                             0.31s 44.29% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+                                             0.30s 42.86% |   github.com/CloudyKit/jet/v6.(*Set).getSiblingTemplate
+                                             0.06s  8.57% |   github.com/CloudyKit/jet/v6.(*Runtime).newScope (inline)
+                                             0.02s  2.86% |   github.com/CloudyKit/jet/v6.(*Runtime).evalPrimaryExpressionGroup
+                                             0.01s  1.43% |   reflect.(*rtype).Implements
+----------------------------------------------------------+-------------
+                                             0.06s   100% |   github.com/CloudyKit/jet/v6.(*Runtime).executeInclude (inline)
+         0     0% 19.29%      0.06s  0.66%                | github.com/CloudyKit/jet/v6.(*Runtime).newScope
+                                             0.04s 66.67% |   runtime.mallocgcSmallScanNoHeaderSC3
+                                             0.02s 33.33% |   runtime.makemap_small
+----------------------------------------------------------+-------------
+                                             0.30s   100% |   github.com/CloudyKit/jet/v6.(*Runtime).executeInclude
+         0     0% 19.29%      0.30s  3.31%                | github.com/CloudyKit/jet/v6.(*Set).getSiblingTemplate
+                                             0.21s 70.00% |   path.Join
+                                             0.08s 26.67% |   github.com/CloudyKit/jet/v6.(*Set).getTemplate
+                                             0.01s  3.33% |   path.IsAbs (inline)
+----------------------------------------------------------+-------------
+                                             0.08s   100% |   github.com/CloudyKit/jet/v6.(*Set).getSiblingTemplate
+         0     0% 19.29%      0.08s  0.88%                | github.com/CloudyKit/jet/v6.(*Set).getTemplate
+                                             0.08s   100% |   github.com/CloudyKit/jet/v6.(*Set).getTemplateFromCache
+----------------------------------------------------------+-------------
+                                             0.08s   100% |   github.com/CloudyKit/jet/v6.(*Set).getTemplate
+         0     0% 19.29%      0.08s  0.88%                | github.com/CloudyKit/jet/v6.(*Set).getTemplateFromCache
+                                             0.05s 62.50% |   github.com/CloudyKit/jet/v6.(*cache).Get
+                                             0.03s 37.50% |   runtime.concatstring2
+----------------------------------------------------------+-------------
+                                             0.18s   100% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList (inline)
+         0     0% 19.29%      0.18s  1.98%                | github.com/CloudyKit/jet/v6.(*scope).getBlock
+                                             0.18s   100% |   runtime.mapaccess2_faststr
+----------------------------------------------------------+-------------
+                                             0.09s   100% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 19.29%      0.09s  0.99%                | github.com/CloudyKit/jet/v6.getRanger
+                                             0.09s   100% |   reflect.(*rtype).Implements
+----------------------------------------------------------+-------------
+                                             0.06s   100% |   github.com/CloudyKit/jet/v6.(*Runtime).evalPipeCallExpression
+         0     0% 19.29%      0.06s  0.66%                | github.com/CloudyKit/jet/v6.init.0.func5
+                                             0.04s 66.67% |   github.com/CloudyKit/jet/v6.(*Arguments).ParseInto
+                                             0.02s 33.33% |   runtime.mallocgcSmallNoScanSC2
+----------------------------------------------------------+-------------

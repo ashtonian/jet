@@ -1,0 +1,84 @@
+File: correctness.test
+Type: delay
+Time: 2026-11-08 03:03:07 CST
+Showing nodes accounting for 23.90s, 99.71% of 23.97s total
+Dropped 79 nodes (cum <= 0.12s)
+----------------------------------------------------------+-------------
+      flat  flat%   sum%        cum   cum%   calls calls% + context
+----------------------------------------------------------+-------------
+                                             7.94s 49.64% |   testing.(*B).run1
+                                             7.92s 49.54% |   testing.(*B).doBench
+                                             0.12s  0.74% |   testing.(*M).Run
+    15.99s 66.70% 66.70%     15.99s 66.70%                | runtime.chanrecv1
+----------------------------------------------------------+-------------
+                                             7.91s   100% |   github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes.func1
+     7.91s 33.01% 99.71%      7.91s 33.01%                | sync.(*WaitGroup).Wait
+----------------------------------------------------------+-------------
+                                             7.93s   100% |   testing.(*B).runN
+         0     0% 99.71%      7.93s 33.06%                | github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes
+                                             7.93s   100% |   testing.(*B).Run
+----------------------------------------------------------+-------------
+                                             7.91s   100% |   testing.(*B).runN
+         0     0% 99.71%      7.91s 33.01%                | github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes.func1
+                                             7.91s   100% |   sync.(*WaitGroup).Wait
+----------------------------------------------------------+-------------
+                                             8.05s   100% |   runtime.main
+         0     0% 99.71%      8.05s 33.59%                | main.main
+                                             8.05s   100% |   testing.(*M).Run
+----------------------------------------------------------+-------------
+         0     0% 99.71%      8.05s 33.59%                | runtime.main
+                                             8.05s   100% |   main.main
+----------------------------------------------------------+-------------
+                                             7.93s 50.02% |   testing.runBenchmarks.func1
+                                             7.93s 49.98% |   github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes
+         0     0% 99.71%     15.86s 66.15%                | testing.(*B).Run
+                                             7.94s 50.05% |   testing.(*B).run1
+                                             7.92s 49.95% |   testing.(*B).run
+----------------------------------------------------------+-------------
+                                             7.92s   100% |   testing.(*benchState).processBench
+         0     0% 99.71%      7.92s 33.05%                | testing.(*B).doBench
+                                             7.92s   100% |   runtime.chanrecv1
+----------------------------------------------------------+-------------
+         0     0% 99.71%      7.91s 33.00%                | testing.(*B).doBench.gowrap1
+                                             7.91s   100% |   testing.(*B).launch
+----------------------------------------------------------+-------------
+                                             7.91s   100% |   testing.(*B).doBench.gowrap1
+         0     0% 99.71%      7.91s 33.00%                | testing.(*B).launch
+                                             7.91s   100% |   testing.(*B).runN
+----------------------------------------------------------+-------------
+                                             7.92s   100% |   testing.(*B).Run
+         0     0% 99.71%      7.92s 33.05%                | testing.(*B).run
+                                             7.92s   100% |   testing.(*benchState).processBench
+----------------------------------------------------------+-------------
+                                             7.94s   100% |   testing.(*B).Run
+         0     0% 99.71%      7.94s 33.11%                | testing.(*B).run1
+                                             7.94s   100% |   runtime.chanrecv1
+----------------------------------------------------------+-------------
+         0     0% 99.71%      7.93s 33.07%                | testing.(*B).run1.func1
+                                             7.93s   100% |   testing.(*B).runN
+----------------------------------------------------------+-------------
+                                             7.93s 33.37% |   testing.runBenchmarks
+                                             7.93s 33.35% |   testing.(*B).run1.func1
+                                             7.91s 33.28% |   testing.(*B).launch
+         0     0% 99.71%     23.77s 99.16%                | testing.(*B).runN
+                                             7.93s 33.37% |   testing.runBenchmarks.func1
+                                             7.93s 33.34% |   github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes
+                                             7.91s 33.29% |   github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes.func1
+----------------------------------------------------------+-------------
+                                             8.05s   100% |   main.main
+         0     0% 99.71%      8.05s 33.59%                | testing.(*M).Run
+                                             7.93s 98.52% |   testing.runBenchmarks
+                                             0.12s  1.48% |   runtime.chanrecv1
+----------------------------------------------------------+-------------
+                                             7.92s   100% |   testing.(*B).run
+         0     0% 99.71%      7.92s 33.05%                | testing.(*benchState).processBench
+                                             7.92s   100% |   testing.(*B).doBench
+----------------------------------------------------------+-------------
+                                             7.93s   100% |   testing.(*M).Run
+         0     0% 99.71%      7.93s 33.09%                | testing.runBenchmarks
+                                             7.93s   100% |   testing.(*B).runN
+----------------------------------------------------------+-------------
+                                             7.93s   100% |   testing.(*B).runN
+         0     0% 99.71%      7.93s 33.09%                | testing.runBenchmarks.func1
+                                             7.93s   100% |   testing.(*B).Run
+----------------------------------------------------------+-------------

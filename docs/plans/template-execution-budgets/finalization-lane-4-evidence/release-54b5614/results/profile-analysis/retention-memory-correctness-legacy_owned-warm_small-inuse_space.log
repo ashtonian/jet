@@ -1,0 +1,31 @@
+File: correctness.test
+Type: inuse_space
+Time: 2026-11-08 03:05:52 CST
+Showing nodes accounting for 263.26kB, 97.65% of 269.59kB total
+Dropped 91 nodes (cum <= 1.35kB)
+      flat  flat%   sum%        cum   cum%
+     256kB 94.96% 94.96%      256kB 94.96%  internal/bytealg.MakeNoZero
+    3.47kB  1.29% 96.25%     3.47kB  1.29%  runtime.mallocgc
+    2.59kB  0.96% 97.21%     5.58kB  2.07%  testing.(*T).Run
+    0.80kB   0.3% 97.50%     2.95kB  1.09%  testing.runTests
+    0.17kB 0.064% 97.57%     2.19kB  0.81%  regexp.compile
+    0.16kB 0.058% 97.63%   258.84kB 96.02%  github.com/CloudyKit/jet/v6_test.TestExecutionRetentionMeasurements.func1
+    0.05kB 0.017% 97.64%     4.05kB  1.50%  github.com/CloudyKit/jet/v6_test.TestExecutionRetentionMeasurements
+    0.02kB 0.0087% 97.65%     3.11kB  1.15%  testing.(*M).Run
+         0     0% 97.65%        2kB  0.74%  github.com/CloudyKit/jet/v6_test.prepareMeasurement
+         0     0% 97.65%     3.11kB  1.15%  main.main
+         0     0% 97.65%     2.19kB  0.81%  regexp.Compile (inline)
+         0     0% 97.65%     3.11kB  1.15%  runtime.main
+         0     0% 97.65%     2.34kB  0.87%  runtime.malg
+         0     0% 97.65%     3.34kB  1.24%  runtime.newobject
+         0     0% 97.65%     2.47kB  0.92%  runtime.newproc.func1
+         0     0% 97.65%     2.47kB  0.92%  runtime.newproc1
+         0     0% 97.65%     2.47kB  0.92%  runtime.systemstack
+         0     0% 97.65%      256kB 94.96%  strings.(*Builder).Grow
+         0     0% 97.65%      256kB 94.96%  strings.(*Builder).grow
+         0     0% 97.65%      256kB 94.96%  strings.Repeat
+         0     0% 97.65%     2.48kB  0.92%  testing.(*matcher).fullName
+         0     0% 97.65%     1.57kB  0.58%  testing.runTests.func1
+         0     0% 97.65%     2.19kB  0.81%  testing.simpleMatch.matches
+         0     0% 97.65%   264.47kB 98.10%  testing.tRunner
+         0     0% 97.65%     2.19kB  0.81%  testing/internal/testdeps.TestDeps.MatchString

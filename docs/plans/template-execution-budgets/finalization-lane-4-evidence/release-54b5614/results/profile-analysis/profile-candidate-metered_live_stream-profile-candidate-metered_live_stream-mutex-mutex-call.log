@@ -1,0 +1,73 @@
+File: candidate.test
+Type: delay
+Time: 2026-11-08 03:00:06 CST
+Showing nodes accounting for 2247ns, 100% of 2247ns total
+----------------------------------------------------------+-------------
+      flat  flat%   sum%        cum   cum%   calls calls% + context
+----------------------------------------------------------+-------------
+                                            1832ns 81.53% |   runtime.gcstopm (inline)
+                                             415ns 18.47% |   runtime.(*mheap).freeSpan.func1
+    2247ns   100%   100%     2247ns   100%                | runtime.unlock
+----------------------------------------------------------+-------------
+                                             415ns   100% |   runtime.(*sweepLocked).sweep (inline)
+         0     0%   100%      415ns 18.47%                | runtime.(*mheap).freeSpan
+                                             415ns   100% |   runtime.systemstack
+----------------------------------------------------------+-------------
+                                             415ns   100% |   runtime.systemstack
+         0     0%   100%      415ns 18.47%                | runtime.(*mheap).freeSpan.func1
+                                             415ns   100% |   runtime.unlock
+----------------------------------------------------------+-------------
+                                             415ns   100% |   runtime.sweepone
+         0     0%   100%      415ns 18.47%                | runtime.(*sweepLocked).sweep
+                                             415ns   100% |   runtime.(*mheap).freeSpan (inline)
+----------------------------------------------------------+-------------
+                                             124ns   100% |   testing.(*B).runN
+         0     0%   100%      124ns  5.52%                | runtime.GC
+                                             124ns   100% |   runtime.sweepone
+----------------------------------------------------------+-------------
+         0     0%   100%      291ns 12.95%                | runtime.bgsweep
+                                             291ns   100% |   runtime.sweepone
+----------------------------------------------------------+-------------
+                                            1832ns   100% |   runtime.schedule
+         0     0%   100%     1832ns 81.53%                | runtime.findRunnable
+                                            1832ns   100% |   runtime.gcstopm
+----------------------------------------------------------+-------------
+                                            1832ns   100% |   runtime.findRunnable
+         0     0%   100%     1832ns 81.53%                | runtime.gcstopm
+                                            1832ns   100% |   runtime.unlock (inline)
+----------------------------------------------------------+-------------
+                                            1832ns   100% |   runtime.newstack (inline)
+         0     0%   100%     1832ns 81.53%                | runtime.gopreempt_m
+                                            1832ns   100% |   runtime.goschedImpl
+----------------------------------------------------------+-------------
+                                            1832ns   100% |   runtime.gopreempt_m
+         0     0%   100%     1832ns 81.53%                | runtime.goschedImpl
+                                            1832ns   100% |   runtime.schedule
+----------------------------------------------------------+-------------
+         0     0%   100%     1832ns 81.53%                | runtime.morestack
+                                            1832ns   100% |   runtime.newstack
+----------------------------------------------------------+-------------
+                                            1832ns   100% |   runtime.morestack
+         0     0%   100%     1832ns 81.53%                | runtime.newstack
+                                            1832ns   100% |   runtime.gopreempt_m (inline)
+----------------------------------------------------------+-------------
+                                            1832ns   100% |   runtime.goschedImpl
+         0     0%   100%     1832ns 81.53%                | runtime.schedule
+                                            1832ns   100% |   runtime.findRunnable
+----------------------------------------------------------+-------------
+                                             291ns 70.12% |   runtime.bgsweep
+                                             124ns 29.88% |   runtime.GC
+         0     0%   100%      415ns 18.47%                | runtime.sweepone
+                                             415ns   100% |   runtime.(*sweepLocked).sweep
+----------------------------------------------------------+-------------
+                                             415ns   100% |   runtime.(*mheap).freeSpan
+         0     0%   100%      415ns 18.47%                | runtime.systemstack
+                                             415ns   100% |   runtime.(*mheap).freeSpan.func1
+----------------------------------------------------------+-------------
+         0     0%   100%      124ns  5.52%                | testing.(*B).launch
+                                             124ns   100% |   testing.(*B).runN
+----------------------------------------------------------+-------------
+                                             124ns   100% |   testing.(*B).launch
+         0     0%   100%      124ns  5.52%                | testing.(*B).runN
+                                             124ns   100% |   runtime.GC
+----------------------------------------------------------+-------------

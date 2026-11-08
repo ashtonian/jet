@@ -1,0 +1,26 @@
+{
+  "legacy-vs-upstream": {
+    "median_ratio": 1.566161764785436,
+    "at_most_20_percent": false
+  },
+  "legacy-vs-correctness": {
+    "median_ratio": 1.3953003263050359,
+    "at_most_20_percent": false
+  },
+  "background-vs-upstream": {
+    "median_ratio": 2.1236868144380865,
+    "at_most_20_percent": false
+  },
+  "live-vs-upstream": {
+    "median_ratio": 2.3719379893815726,
+    "at_most_20_percent": false
+  },
+  "restricted-vs-owned-upstream": {
+    "median_ratio": 2.3597866350304093,
+    "at_most_20_percent": false
+  },
+  "restricted-vs-owned-candidate": {
+    "median_ratio": 1.7414116593745164,
+    "at_most_20_percent": false
+  }
+}

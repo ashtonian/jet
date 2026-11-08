@@ -1,0 +1,188 @@
+Total: 61.15s
+ROUTINE ======================== github.com/CloudyKit/jet/v6.(*Runtime).checkpoint in execution.go
+     810ms      810ms (flat, cum)  1.32% of Total
+     270ms      270ms    106:func (st *Runtime) checkpoint(steps uint64) {
+     280ms      280ms    107:	if st.execution.ctx == nil && st.execution.terminal == nil {
+     260ms      260ms    108:		return
+         .          .    109:	}
+         .          .    110:	st.checkpointActive(steps)
+         .          .    111:}
+         .          .    112:
+         .          .    113:func (st *Runtime) checkpointActive(steps uint64) {
+ROUTINE ======================== github.com/CloudyKit/jet/v6.(*Runtime).executeList in eval.go
+     970ms     40.39s (flat, cum) 66.05% of Total
+      30ms       30ms    511:func (st *Runtime) executeList(list *ListNode) (returnValue reflect.Value) {
+         .      110ms    512:	st.enter()
+         .          .    513:	origin := st.outputOrigin
+         .       70ms    514:	defer func() { st.outputOrigin = origin; st.leave() }()
+         .          .    515:	inNewScope := false // to use just one scope for multiple actions with variable declarations
+         .          .    516:
+     110ms      110ms    517:	for i := 0; i < len(list.Nodes); i++ {
+      10ms      140ms    518:		st.checkpoint(1)
+      60ms       60ms    519:		node := list.Nodes[i]
+         .      530ms    520:		st.checkNode(node)
+     250ms      250ms    521:		switch node.Type() {
+         .          .    522:
+         .          .    523:		case NodeText:
+      10ms       10ms    524:			node := node.(*TextNode)
+      40ms       40ms    525:			st.outputOrigin = &node.NodeBase
+      60ms      770ms    526:			_, err := st.Writer.Write(node.Text)
+         .          .    527:			if err != nil {
+         .          .    528:				node.error(err)
+         .          .    529:			}
+         .          .    530:		case NodeAction:
+      40ms       40ms    531:			node := node.(*ActionNode)
+      20ms       20ms    532:			st.outputOrigin = &node.NodeBase
+      20ms       20ms    533:			if node.Set != nil {
+         .          .    534:				if node.Set.Let {
+         .          .    535:					if !inNewScope {
+         .          .    536:						st.newScope()
+         .          .    537:						inNewScope = true
+         .          .    538:						defer st.releaseScope()
+         .          .    539:					}
+         .          .    540:					st.executeLetList(node.Set)
+         .          .    541:				} else {
+         .          .    542:					st.executeSetList(node.Set)
+         .          .    543:				}
+         .          .    544:			}
+      10ms       10ms    545:			if node.Pipe != nil {
+      10ms        13s    546:				v, safeWriter := st.evalPipelineExpression(node.Pipe)
+      30ms       30ms    547:				if !safeWriter && v.IsValid() {
+      10ms      340ms    548:					if v.Type().Implements(rendererType) {
+         .          .    549:						st.beforeCall(v)
+         .          .    550:						v.Interface().(Renderer).Render(st)
+         .          .    551:						st.checkpoint(0)
+         .          .    552:					} else {
+      10ms      220ms    553:						st.beforeData(v)
+      10ms     23.43s    554:						_, err := st.printValue(st.escapeeWriter, v)
+         .       30ms    555:						st.checkpoint(0)
+      20ms       20ms    556:						if err != nil {
+         .          .    557:							node.error(err)
+         .          .    558:						}
+         .          .    559:					}
+         .          .    560:				}
+         .          .    561:			}
+         .          .    562:		case NodeIf:
+         .          .    563:			node := node.(*IfNode)
+         .          .    564:			var isLet bool
+         .          .    565:			if node.Set != nil {
+         .          .    566:				if node.Set.Let {
+         .          .    567:					isLet = true
+         .          .    568:					st.newScope()
+         .          .    569:					st.executeLetList(node.Set)
+         .          .    570:				} else {
+         .          .    571:					st.executeSetList(node.Set)
+         .          .    572:				}
+         .          .    573:			}
+         .          .    574:
+         .          .    575:			if st.isTrue(st.evalPrimaryExpressionGroup(node.Expression)) {
+         .          .    576:				returnValue = st.executeList(node.List)
+         .          .    577:			} else if node.ElseList != nil {
+         .          .    578:				returnValue = st.executeList(node.ElseList)
+         .          .    579:			}
+         .          .    580:			if isLet {
+         .          .    581:				st.releaseScope()
+         .          .    582:			}
+         .          .    583:		case NodeRange:
+         .          .    584:			returnValue = st.executeRange(node.(*RangeNode))
+         .          .    585:		case NodeTry:
+         .          .    586:			st.outputOrigin = &node.(*TryNode).NodeBase
+         .          .    587:			node := node.(*TryNode)
+         .          .    588:			returnValue = st.executeTry(node)
+         .          .    589:		case NodeYield:
+         .          .    590:			node := node.(*YieldNode)
+         .          .    591:			if node.IsContent {
+         .          .    592:				if st.content != nil {
+         .          .    593:					st.content(st, node.Expression)
+         .          .    594:				}
+         .          .    595:			} else {
+         .          .    596:				block, found := st.getBlock(node.Name)
+         .          .    597:				if !found || block == nil {
+         .          .    598:					node.errorf("unresolved block %q!", node.Name)
+         .          .    599:				}
+         .          .    600:				st.executeYieldBlock(block, block.Parameters, node.Parameters, node.Expression, node.Content)
+         .          .    601:			}
+         .          .    602:		case NodeBlock:
+         .          .    603:			node := node.(*BlockNode)
+         .          .    604:			block, found := st.getBlock(node.Name)
+         .          .    605:			if !found {
+         .          .    606:				block = node
+         .          .    607:			}
+         .          .    608:			st.executeYieldBlock(block, block.Parameters, block.Parameters, block.Expression, block.Content)
+         .          .    609:		case NodeInclude:
+         .          .    610:			node := node.(*IncludeNode)
+         .          .    611:			returnValue = st.executeInclude(node)
+         .          .    612:		case NodeReturn:
+         .          .    613:			node := node.(*ReturnNode)
+         .          .    614:			returnValue = st.evalPrimaryExpressionGroup(node.Value)
+         .          .    615:		}
+         .          .    616:	}
+         .          .    617:
+      10ms       10ms    618:	return returnValue
+     210ms      1.10s    619:}
+         .          .    620:
+         .          .    621:func (st *Runtime) executeRange(node *RangeNode) (returnValue reflect.Value) {
+         .          .    622:	previousScope, previousContext := st.scope, st.context
+         .          .    623:	defer func() { st.scope, st.context = previousScope, previousContext }()
+         .          .    624:
+ROUTINE ======================== github.com/CloudyKit/jet/v6.(*Runtime).executeList.func1 in eval.go
+     120ms      120ms (flat, cum)   0.2% of Total
+     120ms      120ms    514:	defer func() { st.outputOrigin = origin; st.leave() }()
+         .          .    515:	inNewScope := false // to use just one scope for multiple actions with variable declarations
+         .          .    516:
+         .          .    517:	for i := 0; i < len(list.Nodes); i++ {
+         .          .    518:		st.checkpoint(1)
+         .          .    519:		node := list.Nodes[i]
+ROUTINE ======================== github.com/CloudyKit/jet/v6.(*Runtime).printValue in execution_print.go
+      80ms     23.42s (flat, cum) 38.30% of Total
+      30ms       30ms     19:func (st *Runtime) printValue(w io.Writer, v reflect.Value) (int, error) {
+         .          .     20:	if st.execution.ctx == nil {
+      50ms     23.39s     21:		return fastprinter.PrintValue(w, v)
+         .          .     22:	}
+         .          .     23:	p := &st.printer
+         .          .     24:	// Write borrows formatted bytes until it returns. Reentrant printing must
+         .          .     25:	// leave the active workspace intact, including its scalar backing array.
+         .          .     26:	if p.runtime != nil {
+ROUTINE ======================== github.com/CloudyKit/jet/v6.(*Runtime).startCompilation in execution.go
+     150ms      280ms (flat, cum)  0.46% of Total
+         .          .    208:func (st *Runtime) startCompilation(t *Template) {
+      30ms      160ms    209:	if st.execution.ctx == nil && st.execution.options.ParseOptions == (ParseOptions{}) {
+     120ms      120ms    210:		return
+         .          .    211:	}
+         .          .    212:	a := &st.execution.compilationState
+         .          .    213:	err := a.init(st.executionContext(), st.execution.options.ParseOptions)
+         .          .    214:	if err != nil {
+         .          .    215:		st.checkCompilationError(err)
+ROUTINE ======================== github.com/CloudyKit/jet/v6.(*checkedWriter).Write in execution_output.go
+     3.72s     17.11s (flat, cum) 27.98% of Total
+     770ms      830ms     20:func (w *checkedWriter) Write(b []byte) (int, error) {
+     170ms      170ms     21:	st := w.runtime
+     800ms      800ms     22:	if st.execution.terminal != nil {
+         .          .     23:		if st.writeErr != nil {
+         .          .     24:			return 0, st.writeErr
+         .          .     25:		}
+         .          .     26:		st.rethrowTerminal()
+         .          .     27:	}
+     200ms      200ms     28:	if st.execution.ctx != nil {
+         .          .     29:		st.reserveWork(uint64(len(b)))
+         .          .     30:		budget := &st.execution
+         .          .     31:		if !w.committed {
+         .          .     32:			st.reserveUnchecked(&budget.output, uint64(budget.options.MaxOutputBytes), uint64(len(b)), "output", ErrOutputLimit)
+         .          .     33:		}
+         .          .     34:		if w.retained != nil {
+         .          .     35:			size, ok := addValueSizes(int64(w.retained.Len()), int64(len(b)))
+         .          .     36:			if !ok || uint64(size) > uint64(^uint(0)>>1) {
+         .          .     37:				st.failValueSize()
+         .          .     38:			}
+         .          .     39:			st.reserveUnchecked(&budget.values, uint64(budget.options.MaxValueBytes), uint64(len(b)), "value", ErrValueLimit)
+         .          .     40:		}
+         .          .     41:	}
+         .          .     42:	// bytes.Buffer.Write always accepts the complete chunk or panics.
+         .          .     43:	// Keep arbitrary writer error/short-write handling on the native path.
+     410ms      410ms     44:	if w.buffer != nil {
+     1.37s     14.70s     45:		return w.buffer.Write(b)
+         .          .     46:	}
+         .          .     47:	n, err := w.writer.Write(b)
+         .          .     48:	if err == nil && n != len(b) {
+         .          .     49:		err = io.ErrShortWrite
+         .          .     50:	}

@@ -244,6 +244,13 @@ def run(work, group):
             plan[group]['fixtures_by_tree'] = {
                 tree: [f['name'] for f in fixtures] + [name for name in EXTENDED if tree == 'candidate' or name != 'named_map']
                 for tree in ('upstream', 'correctness', 'candidate')}
+        elif group == 'extended':
+            plan[group]['fixtures_by_tree'] = {
+                tree: [name for name in EXTENDED if tree == 'candidate' or name != 'named_map']
+                for tree in ('upstream', 'correctness', 'candidate')}
+        elif group == 'phases':
+            plan[group]['phase_fixtures'] = ['header_interpolation', 'include', 'inheritance']
+            plan[group]['phases'] = ['constructor', 'cold_compile', 'warm_lookup', 'parse_render']
         plan_path.write_text(json.dumps(plan, indent=2))
         for sample in range(6):
             order = streams[sample % len(streams):] + streams[:sample % len(streams)]
@@ -356,4 +363,5 @@ if __name__ == '__main__':
     if sys.argv[2] == 'prepare':
         prepare(work, sys.argv[3])
     else:
-        run(work, sys.argv[2])
+        for group in sys.argv[2].split(','):
+            run(work, group)

@@ -1,0 +1,257 @@
+{
+  "conclusion": "success",
+  "headSha": "54b561484e1465edea963ed04579bcd24a7dbf76",
+  "jobs": [
+    {
+      "completedAt": "2026-11-08T08:55:46Z",
+      "conclusion": "success",
+      "databaseId": 128682193880,
+      "name": "Go stable normal",
+      "startedAt": "2026-11-08T08:55:21Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-11-08T08:55:23Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-11-08T08:55:22Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-08T08:55:24Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "number": 2,
+          "startedAt": "2026-11-08T08:55:23Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-08T08:55:41Z",
+          "conclusion": "success",
+          "name": "Run actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e",
+          "number": 3,
+          "startedAt": "2026-11-08T08:55:24Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-08T08:55:42Z",
+          "conclusion": "success",
+          "name": "Record toolchain and dependencies",
+          "number": 4,
+          "startedAt": "2026-11-08T08:55:41Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-08T08:55:44Z",
+          "conclusion": "success",
+          "name": "Test",
+          "number": 5,
+          "startedAt": "2026-11-08T08:55:42Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-08T08:55:44Z",
+          "conclusion": "skipped",
+          "name": "Concurrent execution ownership",
+          "number": 6,
+          "startedAt": "2026-11-08T08:55:44Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-08T08:55:44Z",
+          "conclusion": "success",
+          "name": "Post Run actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e",
+          "number": 11,
+          "startedAt": "2026-11-08T08:55:44Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-08T08:55:44Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "number": 12,
+          "startedAt": "2026-11-08T08:55:44Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-08T08:55:44Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 13,
+          "startedAt": "2026-11-08T08:55:44Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/ashtonian/jet/actions/runs/42464957158/job/128682193880"
+    },
+    {
+      "completedAt": "2026-11-08T08:56:45Z",
+      "conclusion": "success",
+      "databaseId": 128682194130,
+      "name": "Go 1.16.15 normal",
+      "startedAt": "2026-11-08T08:55:22Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-11-08T08:55:24Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-11-08T08:55:23Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-08T08:55:26Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "number": 2,
+          "startedAt": "2026-11-08T08:55:24Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-08T08:56:39Z",
+          "conclusion": "success",
+          "name": "Run actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e",
+          "number": 3,
+          "startedAt": "2026-11-08T08:55:26Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-08T08:56:39Z",
+          "conclusion": "success",
+          "name": "Record toolchain and dependencies",
+          "number": 4,
+          "startedAt": "2026-11-08T08:56:39Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-08T08:56:43Z",
+          "conclusion": "success",
+          "name": "Test",
+          "number": 5,
+          "startedAt": "2026-11-08T08:56:39Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-08T08:56:43Z",
+          "conclusion": "skipped",
+          "name": "Concurrent execution ownership",
+          "number": 6,
+          "startedAt": "2026-11-08T08:56:43Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-08T08:56:43Z",
+          "conclusion": "success",
+          "name": "Post Run actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e",
+          "number": 11,
+          "startedAt": "2026-11-08T08:56:43Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-08T08:56:43Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "number": 12,
+          "startedAt": "2026-11-08T08:56:43Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-08T08:56:43Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 13,
+          "startedAt": "2026-11-08T08:56:43Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/ashtonian/jet/actions/runs/42464957158/job/128682194130"
+    },
+    {
+      "completedAt": "2026-11-08T08:56:31Z",
+      "conclusion": "success",
+      "databaseId": 128682194176,
+      "name": "Go stable race",
+      "startedAt": "2026-11-08T08:55:22Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-11-08T08:55:24Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-11-08T08:55:23Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-08T08:55:26Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "number": 2,
+          "startedAt": "2026-11-08T08:55:24Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-08T08:55:46Z",
+          "conclusion": "success",
+          "name": "Run actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e",
+          "number": 3,
+          "startedAt": "2026-11-08T08:55:26Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-08T08:55:46Z",
+          "conclusion": "success",
+          "name": "Record toolchain and dependencies",
+          "number": 4,
+          "startedAt": "2026-11-08T08:55:46Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-08T08:56:16Z",
+          "conclusion": "success",
+          "name": "Test",
+          "number": 5,
+          "startedAt": "2026-11-08T08:55:46Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-08T08:56:27Z",
+          "conclusion": "success",
+          "name": "Concurrent execution ownership",
+          "number": 6,
+          "startedAt": "2026-11-08T08:56:16Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-08T08:56:27Z",
+          "conclusion": "success",
+          "name": "Post Run actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e",
+          "number": 11,
+          "startedAt": "2026-11-08T08:56:27Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-08T08:56:27Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "number": 12,
+          "startedAt": "2026-11-08T08:56:27Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-08T08:56:27Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 13,
+          "startedAt": "2026-11-08T08:56:27Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/ashtonian/jet/actions/runs/42464957158/job/128682194176"
+    }
+  ],
+  "status": "completed",
+  "url": "https://github.com/ashtonian/jet/actions/runs/42464957158"
+}

@@ -1,0 +1,81 @@
+{
+  "core": {
+    "streams": [
+      [
+        "upstream",
+        "legacy_stream"
+      ],
+      [
+        "candidate",
+        "legacy_stream"
+      ],
+      [
+        "correctness",
+        "legacy_stream"
+      ],
+      [
+        "candidate",
+        "metered_background_stream"
+      ],
+      [
+        "upstream",
+        "legacy_owned"
+      ],
+      [
+        "candidate",
+        "restricted_owned"
+      ],
+      [
+        "correctness",
+        "legacy_owned"
+      ],
+      [
+        "candidate",
+        "metered_live_stream"
+      ],
+      [
+        "candidate",
+        "legacy_owned"
+      ]
+    ],
+    "samples": 6,
+    "formats": [
+      "text",
+      "html"
+    ],
+    "fixtures": [
+      "header_literal",
+      "header_interpolation",
+      "body_8192",
+      "body_65536",
+      "nested_writing",
+      "nested_silent",
+      "escape_safe",
+      "escape_expansion",
+      "string_replace",
+      "string_concat",
+      "include",
+      "inheritance",
+      "block_content",
+      "try_success",
+      "try_rollback"
+    ],
+    "workers": [
+      1,
+      2,
+      8,
+      12
+    ],
+    "shared": [
+      true,
+      false
+    ],
+    "concurrent_fixtures": [
+      "header_interpolation",
+      "body_8192",
+      "nested_silent",
+      "escape_expansion",
+      "data_json_256"
+    ]
+  }
+}

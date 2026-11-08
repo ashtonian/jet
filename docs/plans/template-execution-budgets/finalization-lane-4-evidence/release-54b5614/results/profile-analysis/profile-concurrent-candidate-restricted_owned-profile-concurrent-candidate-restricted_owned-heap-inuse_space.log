@@ -1,0 +1,23 @@
+File: candidate.test
+Type: inuse_space
+Time: 2026-11-08 03:04:02 CST
+Showing nodes accounting for 3078kB, 100% of 3078kB total
+      flat  flat%   sum%        cum   cum%
+    3078kB   100%   100%     3078kB   100%  runtime.mallocgc
+         0     0%   100%      513kB 16.67%  runtime.(*gcControllerState).enlistWorker
+         0     0%   100%     3078kB   100%  runtime.allocm
+         0     0%   100%      513kB 16.67%  runtime.gcBgMarkWorker.func2
+         0     0%   100%      513kB 16.67%  runtime.gcDrain
+         0     0%   100%      513kB 16.67%  runtime.gcDrainMarkWorkerDedicated (inline)
+         0     0%   100%      513kB 16.67%  runtime.mcall
+         0     0%   100%     2052kB 66.67%  runtime.mstart
+         0     0%   100%     2052kB 66.67%  runtime.mstart0
+         0     0%   100%     2052kB 66.67%  runtime.mstart1
+         0     0%   100%     3078kB   100%  runtime.newm
+         0     0%   100%     3078kB   100%  runtime.newobject
+         0     0%   100%      513kB 16.67%  runtime.park_m
+         0     0%   100%     2052kB 66.67%  runtime.resetspinning
+         0     0%   100%     2565kB 83.33%  runtime.schedule
+         0     0%   100%     3078kB   100%  runtime.startm
+         0     0%   100%      513kB 16.67%  runtime.systemstack
+         0     0%   100%     3078kB   100%  runtime.wakep

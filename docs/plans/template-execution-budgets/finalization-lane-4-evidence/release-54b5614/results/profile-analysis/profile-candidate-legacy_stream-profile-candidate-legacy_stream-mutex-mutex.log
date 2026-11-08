@@ -1,0 +1,31 @@
+File: candidate.test
+Type: delay
+Time: 2026-11-08 02:59:35 CST
+Showing nodes accounting for 5291ns, 100% of 5291ns total
+      flat  flat%   sum%        cum   cum%
+    5291ns   100%   100%     5291ns   100%  runtime.unlock (partial-inline)
+         0     0%   100%      166ns  3.14%  runtime.(*mheap).freeSpan (inline)
+         0     0%   100%      166ns  3.14%  runtime.(*mheap).freeSpan.func1
+         0     0%   100%      166ns  3.14%  runtime.(*sweepLocked).sweep
+         0     0%   100%       83ns  1.57%  runtime.GC
+         0     0%   100%     4709ns 89.00%  runtime.allocm
+         0     0%   100%       83ns  1.57%  runtime.bgsweep
+         0     0%   100%     5125ns 96.86%  runtime.gcBgMarkWorker
+         0     0%   100%     4709ns 89.00%  runtime.gcBgMarkWorker.func2
+         0     0%   100%     4709ns 89.00%  runtime.gcDrain
+         0     0%   100%     4709ns 89.00%  runtime.gcDrainMarkWorkerIdle (inline)
+         0     0%   100%      416ns  7.86%  runtime.gcMarkDone
+         0     0%   100%      416ns  7.86%  runtime.gcMarkDone.func2
+         0     0%   100%     4709ns 89.00%  runtime.markroot
+         0     0%   100%     4709ns 89.00%  runtime.markroot.func1
+         0     0%   100%     4709ns 89.00%  runtime.mcommoninit
+         0     0%   100%     4709ns 89.00%  runtime.newm
+         0     0%   100%     4709ns 89.00%  runtime.ready
+         0     0%   100%     4709ns 89.00%  runtime.resumeG
+         0     0%   100%     4709ns 89.00%  runtime.startm
+         0     0%   100%      416ns  7.86%  runtime.stopTheWorldWithSema
+         0     0%   100%      166ns  3.14%  runtime.sweepone
+         0     0%   100%     5291ns   100%  runtime.systemstack
+         0     0%   100%     4709ns 89.00%  runtime.wakep
+         0     0%   100%       83ns  1.57%  testing.(*B).launch
+         0     0%   100%       83ns  1.57%  testing.(*B).runN

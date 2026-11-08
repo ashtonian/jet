@@ -1,0 +1,25 @@
+File: upstream.test
+Type: inuse_space
+Time: 2026-11-08 03:02:50 CST
+Showing nodes accounting for 4615.28kB, 100% of 4615.28kB total
+      flat  flat%   sum%        cum   cum%
+ 4102.28kB 88.88% 88.88%  4102.28kB 88.88%  runtime.mallocgc
+     513kB 11.12%   100%      513kB 11.12%  _.goready.func1
+         0     0%   100%   512.05kB 11.09%  runtime.(*scavengerState).init
+         0     0%   100%     3078kB 66.69%  runtime.allocm
+         0     0%   100%   512.05kB 11.09%  runtime.bgscavenge
+         0     0%   100%   512.23kB 11.10%  runtime.malg
+         0     0%   100%     1026kB 22.23%  runtime.mcall
+         0     0%   100%     2052kB 44.46%  runtime.mstart
+         0     0%   100%     2052kB 44.46%  runtime.mstart0
+         0     0%   100%     2052kB 44.46%  runtime.mstart1
+         0     0%   100%     3078kB 66.69%  runtime.newm
+         0     0%   100%  4102.28kB 88.88%  runtime.newobject
+         0     0%   100%   512.23kB 11.10%  runtime.newproc.func1
+         0     0%   100%   512.23kB 11.10%  runtime.newproc1
+         0     0%   100%     1026kB 22.23%  runtime.park_m
+         0     0%   100%     3078kB 66.69%  runtime.resetspinning
+         0     0%   100%     3078kB 66.69%  runtime.schedule
+         0     0%   100%     3078kB 66.69%  runtime.startm
+         0     0%   100%  1025.23kB 22.21%  runtime.systemstack
+         0     0%   100%     3078kB 66.69%  runtime.wakep

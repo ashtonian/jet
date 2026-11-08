@@ -1,0 +1,22 @@
+File: candidate.test
+Type: delay
+Time: 2026-11-08 03:00:06 CST
+Showing nodes accounting for 2247ns, 100% of 2247ns total
+      flat  flat%   sum%        cum   cum%
+    2247ns   100%   100%     2247ns   100%  runtime.unlock (partial-inline)
+         0     0%   100%      415ns 18.47%  runtime.(*mheap).freeSpan (inline)
+         0     0%   100%      415ns 18.47%  runtime.(*mheap).freeSpan.func1
+         0     0%   100%      415ns 18.47%  runtime.(*sweepLocked).sweep
+         0     0%   100%      124ns  5.52%  runtime.GC
+         0     0%   100%      291ns 12.95%  runtime.bgsweep
+         0     0%   100%     1832ns 81.53%  runtime.findRunnable
+         0     0%   100%     1832ns 81.53%  runtime.gcstopm
+         0     0%   100%     1832ns 81.53%  runtime.gopreempt_m (inline)
+         0     0%   100%     1832ns 81.53%  runtime.goschedImpl
+         0     0%   100%     1832ns 81.53%  runtime.morestack
+         0     0%   100%     1832ns 81.53%  runtime.newstack
+         0     0%   100%     1832ns 81.53%  runtime.schedule
+         0     0%   100%      415ns 18.47%  runtime.sweepone
+         0     0%   100%      415ns 18.47%  runtime.systemstack
+         0     0%   100%      124ns  5.52%  testing.(*B).launch
+         0     0%   100%      124ns  5.52%  testing.(*B).runN

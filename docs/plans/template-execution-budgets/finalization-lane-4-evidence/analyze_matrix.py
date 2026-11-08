@@ -1,22 +1,31 @@
 """Analyze the fixed corpus; extended coverage never changes its weighting."""
 
 import json
+import hashlib
 from pathlib import Path
 import re
+import shutil
 import statistics
 import subprocess
 import sys
 
 
 def expected_cells(group, plan):
-    benchmark = 'BenchmarkExecutionModeLatency' if group == 'latency' else 'BenchmarkConcurrentExecutionModes'
+    benchmark = {'extended': 'BenchmarkExecutionModes', 'phases': 'BenchmarkExecutionPhases',
+                 'latency': 'BenchmarkExecutionModeLatency',
+                 'concurrent': 'BenchmarkConcurrentExecutionModes'}[group]
     cells = set()
     for tree, mode in plan['streams']:
-        fixtures = plan.get('fixtures_by_tree', {}).get(tree, plan['fixtures']) if group == 'latency' else plan['concurrent_fixtures']
+        fixtures = plan.get('fixtures_by_tree', {}).get(tree, plan['fixtures'])
+        if group == 'concurrent':
+            fixtures = plan['concurrent_fixtures']
+        elif group == 'phases':
+            fixtures = plan['phase_fixtures']
         for fixture in fixtures:
-            for format in plan['formats']:
+            formats = plan['phases'] if group == 'phases' else plan['formats']
+            for format in formats:
                 name = tree + '/' + benchmark + '/' + mode + '/' + fixture + '/' + format
-                if group == 'latency':
+                if group != 'concurrent':
                     cells.add(name)
                 else:
                     for worker in plan['workers']:
@@ -36,6 +45,11 @@ def coverage_report(results, expected, samples):
 def main():
     work = Path(sys.argv[1]).resolve()
     output = work / 'results'
+    benchstat = Path(shutil.which('benchstat')).resolve()
+    (output / 'analysis-toolchain.json').write_text(json.dumps({
+        'benchstat': str(benchstat), 'sha256': hashlib.sha256(benchstat.read_bytes()).hexdigest(),
+        'build': subprocess.check_output(['go', 'version', '-m', str(benchstat)], text=True, timeout=15),
+        'analyzer_sha256': hashlib.sha256(Path(__file__).read_bytes()).hexdigest()}, indent=2))
     stages = json.loads((output / 'stages.json').read_text())
     fixtures = json.loads((work / 'candidate/testData/execution_workloads.json').read_text())
     names = {f['name'] for f in fixtures}
@@ -105,7 +119,9 @@ def main():
     plan_path = output / 'coverage-plan.json'
     plans = json.loads(plan_path.read_text()) if plan_path.exists() else {}
     coverage = {}
-    for group, benchmark in [('latency', 'BenchmarkExecutionModeLatency/'),
+    for group, benchmark in [('extended', 'BenchmarkExecutionModes/'),
+                             ('phases', 'BenchmarkExecutionPhases/'),
+                             ('latency', 'BenchmarkExecutionModeLatency/'),
                              ('concurrent', 'BenchmarkConcurrentExecutionModes/')]:
         results = {}
         failed = [name for name, receipt in stages.items() if name.startswith(group + '-') and receipt.get('exit') != 0]
@@ -126,12 +142,16 @@ def main():
             coverage[group] = coverage_report(results, expected_cells(group, plan), plan['samples'])
             coverage[group]['failed_or_skipped_stages'] = failed
             coverage[group]['complete'] &= not failed
+            missing_metrics = [name for name, samples in results.items()
+                               if any(not {'ns/op', 'B/op', 'allocs/op'}.issubset(sample) for sample in samples)]
+            coverage[group]['missing_metrics'] = missing_metrics
+            coverage[group]['complete'] &= not missing_metrics
             if group == 'latency':
                 invalid = [name for name, samples in results.items()
                            if any('p50_ns' not in sample or 'p99_ns' not in sample for sample in samples)]
                 coverage[group]['missing_percentiles'] = invalid
                 coverage[group]['complete'] &= not invalid
-            else:
+            elif group == 'concurrent':
                 controls = ['harness-control-' + str(i) for i in range(plan['samples'])]
                 missing_controls = [name for name in controls if stages.get(name, {}).get('exit') != 0]
                 coverage[group]['missing_harness_controls'] = missing_controls
@@ -139,7 +159,7 @@ def main():
         (output / (group + '-samples.json')).write_text(json.dumps(results, indent=2))
     (output / 'coverage.json').write_text(json.dumps(coverage, indent=2))
     if not all(value['complete'] for value in coverage.values()) and '--partial' not in sys.argv[2:]:
-        raise RuntimeError('final latency/concurrency coverage incomplete; see coverage.json; --partial is diagnostic only')
+        raise RuntimeError('final extended/phase/latency/concurrency coverage incomplete; see coverage.json; --partial is diagnostic only')
 
 
 if __name__ == "__main__":

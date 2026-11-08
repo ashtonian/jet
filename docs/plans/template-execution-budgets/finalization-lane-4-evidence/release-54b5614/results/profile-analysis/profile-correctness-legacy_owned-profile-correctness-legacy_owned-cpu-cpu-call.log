@@ -1,0 +1,202 @@
+File: correctness.test
+Type: cpu
+Time: 2026-11-08 02:59:14 CST
+Duration: 10.37s, Total samples = 10.27s (99.08%)
+Showing nodes accounting for 9.10s, 88.61% of 10.27s total
+Dropped 166 nodes (cum <= 0.05s)
+Showing top 40 nodes out of 118
+----------------------------------------------------------+-------------
+      flat  flat%   sum%        cum   cum%   calls calls% + context
+----------------------------------------------------------+-------------
+     4.10s 39.92% 39.92%      4.10s 39.92%                | runtime.kevent
+----------------------------------------------------------+-------------
+                                             0.11s 17.74% |   runtime.markroot
+     0.62s  6.04% 45.96%      0.62s  6.04%                | runtime.pthread_kill
+----------------------------------------------------------+-------------
+     0.42s  4.09% 50.05%      0.42s  4.09%                | runtime.usleep
+----------------------------------------------------------+-------------
+                                             0.36s 94.74% |   github.com/CloudyKit/jet/v6.(*intsRanger).Range
+     0.37s  3.60% 53.65%      0.38s  3.70%                | reflect.Value.Elem
+----------------------------------------------------------+-------------
+                                             0.49s 59.76% |   text/template.HTMLEscape
+                                             0.33s 40.24% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+     0.33s  3.21% 56.86%      0.82s  7.98%                | github.com/CloudyKit/jet/v6.checkedWriter.Write
+                                             0.49s 59.76% |   bytes.(*Buffer).Write
+----------------------------------------------------------+-------------
+     0.32s  3.12% 59.98%      0.32s  3.12%                | runtime.madvise
+----------------------------------------------------------+-------------
+                                             0.37s   100% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+     0.24s  2.34% 62.32%      0.37s  3.60%                | runtime.(*_panic).nextDefer
+                                             0.13s 35.14% |   runtime.(*_panic).nextFrame
+----------------------------------------------------------+-------------
+                                             0.17s 60.71% |   runtime.mallocgc
+                                             0.09s 32.14% |   github.com/CloudyKit/jet/v6.(*Runtime).recover
+                                             0.02s  7.14% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+     0.24s  2.34% 64.65%      0.28s  2.73%                | runtime.mallocgcSmallScanNoHeaderSC3
+----------------------------------------------------------+-------------
+                                             3.49s   100% |   github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes.func1
+                                             1.51s 43.27% |   github.com/CloudyKit/jet/v6.(*Runtime).executeRange
+     0.22s  2.14% 66.80%      3.49s 33.98%                | github.com/CloudyKit/jet/v6.(*Runtime).executeList
+                                             1.52s 43.55% |   github.com/CloudyKit/jet/v6.(*Runtime).executeRange
+                                             0.88s 25.21% |   github.com/CloudyKit/fastprinter.PrintValue
+                                             0.37s 10.60% |   runtime.(*_panic).nextDefer
+                                             0.33s  9.46% |   github.com/CloudyKit/jet/v6.checkedWriter.Write
+                                             0.23s  6.59% |   runtime.(*_panic).start
+                                             0.10s  2.87% |   runtime.mallocgc
+                                             0.09s  2.58% |   encoding/json/v2.marshalValueAny
+                                             0.07s  2.01% |   github.com/CloudyKit/jet/v6.(*Runtime).evalBaseExpressionGroup
+                                             0.05s  1.43% |   runtime.mapaccess2_faststr
+                                             0.03s  0.86% |   reflect.(*rtype).Implements
+                                             0.03s  0.86% |   runtime.memmove
+                                             0.02s  0.57% |   runtime.mallocgcSmallScanNoHeaderSC3
+----------------------------------------------------------+-------------
+                                             0.23s   100% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+     0.22s  2.14% 68.94%      0.23s  2.24%                | runtime.(*_panic).start
+----------------------------------------------------------+-------------
+                                             0.11s 50.00% |   bytes.(*Buffer).Write
+                                             0.03s 13.64% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+                                             0.03s 13.64% |   github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes.func1
+                                             0.03s 13.64% |   runtime.convT
+                                             0.02s  9.09% |   github.com/CloudyKit/fastprinter.PrintValue
+     0.22s  2.14% 71.08%      0.22s  2.14%                | runtime.memmove
+----------------------------------------------------------+-------------
+                                             1.52s   100% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+     0.18s  1.75% 72.83%      1.52s 14.80%                | github.com/CloudyKit/jet/v6.(*Runtime).executeRange
+                                             1.51s 99.34% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+                                             0.44s 28.95% |   github.com/CloudyKit/jet/v6.(*intsRanger).Range
+                                             0.07s  4.61% |   github.com/CloudyKit/jet/v6.(*Runtime).evalBaseExpressionGroup
+                                             0.05s  3.29% |   reflect.(*rtype).Implements
+----------------------------------------------------------+-------------
+     0.18s  1.75% 74.59%      0.18s  1.75%                | runtime.pthread_cond_wait
+----------------------------------------------------------+-------------
+                                             0.63s   100% |   github.com/CloudyKit/fastprinter.PrintValue
+     0.14s  1.36% 75.95%      0.63s  6.13%                | text/template.HTMLEscape
+                                             0.49s 77.78% |   github.com/CloudyKit/jet/v6.checkedWriter.Write
+----------------------------------------------------------+-------------
+                                             0.13s   100% |   runtime.(*_panic).nextDefer
+     0.13s  1.27% 77.22%      0.13s  1.27%                | runtime.(*_panic).nextFrame
+----------------------------------------------------------+-------------
+                                             0.49s   100% |   github.com/CloudyKit/jet/v6.checkedWriter.Write
+     0.12s  1.17% 78.38%      0.49s  4.77%                | bytes.(*Buffer).Write
+                                             0.24s 48.98% |   bytes.(*Buffer).grow
+                                             0.11s 22.45% |   runtime.memmove
+----------------------------------------------------------+-------------
+                                             0.05s 45.45% |   runtime.scanObject
+                                             0.05s 45.45% |   runtime.wbBufFlush1
+     0.10s  0.97% 79.36%      0.11s  1.07%                | runtime.tryDeferToSpanScan
+----------------------------------------------------------+-------------
+                                             0.19s 30.65% |   runtime.convT
+                                             0.18s 29.03% |   bytes.(*Buffer).grow
+                                             0.13s 20.97% |   github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes.func1
+                                             0.10s 16.13% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+                                             0.02s  3.23% |   encoding/json/v2.marshalValueAny
+     0.09s  0.88% 80.23%      0.62s  6.04%                | runtime.mallocgc
+                                             0.17s 27.42% |   runtime.mallocgcSmallScanNoHeaderSC3
+                                             0.14s 22.58% |   runtime.mallocgcSmallNoScanSC6
+                                             0.13s 20.97% |   runtime.mallocgcTinySC2
+                                             0.02s  3.23% |   runtime.mallocgcSmallScanNoHeaderSC5
+----------------------------------------------------------+-------------
+                                             0.14s   100% |   runtime.mallocgc
+     0.09s  0.88% 81.11%      0.14s  1.36%                | runtime.mallocgcSmallNoScanSC6
+----------------------------------------------------------+-------------
+                                             0.15s 88.24% |   github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes.func1
+                                             0.02s 11.76% |   runtime.mallocgc
+     0.09s  0.88% 81.99%      0.17s  1.66%                | runtime.mallocgcSmallScanNoHeaderSC5
+----------------------------------------------------------+-------------
+                                             0.13s   100% |   runtime.mallocgc
+     0.08s  0.78% 82.77%      0.13s  1.27%                | runtime.mallocgcTinySC2
+----------------------------------------------------------+-------------
+                                             0.44s   100% |   github.com/CloudyKit/jet/v6.(*Runtime).executeRange
+     0.07s  0.68% 83.45%      0.44s  4.28%                | github.com/CloudyKit/jet/v6.(*intsRanger).Range
+                                             0.36s 81.82% |   reflect.Value.Elem
+----------------------------------------------------------+-------------
+                                             0.05s 83.33% |   internal/runtime/maps.(*Map).getWithoutKeySmallFastStr
+     0.06s  0.58% 84.03%      0.06s  0.58%                | internal/runtime/maps.memHashAES
+----------------------------------------------------------+-------------
+                                             0.07s 70.00% |   github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes.func1
+                                             0.02s 20.00% |   github.com/CloudyKit/jet/v6.(*Runtime).recover
+     0.05s  0.49% 84.52%      0.10s  0.97%                | runtime.wbBufFlush1
+                                             0.05s 50.00% |   runtime.tryDeferToSpanScan
+----------------------------------------------------------+-------------
+                                             0.05s 62.50% |   github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes.func1
+                                             0.03s 37.50% |   github.com/CloudyKit/fastprinter.PrintValue
+     0.05s  0.49% 85.00%      0.08s  0.78%                | sync.(*Pool).Get
+                                             0.03s 37.50% |   sync.(*Pool).pin
+----------------------------------------------------------+-------------
+                                             0.03s 37.50% |   github.com/CloudyKit/fastprinter.PrintValue
+                                             0.03s 37.50% |   sync.(*Pool).Get
+                                             0.02s 25.00% |   github.com/CloudyKit/jet/v6.(*Runtime).recover
+     0.04s  0.39% 85.39%      0.08s  0.78%                | sync.(*Pool).pin
+----------------------------------------------------------+-------------
+                                             0.24s   100% |   bytes.(*Buffer).Write
+     0.03s  0.29% 85.69%      0.24s  2.34%                | bytes.(*Buffer).grow
+                                             0.18s 75.00% |   runtime.mallocgc
+----------------------------------------------------------+-------------
+                                             0.17s   100% |   github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes.func1
+     0.03s  0.29% 85.98%      0.17s  1.66%                | github.com/CloudyKit/jet/v6.(*Runtime).recover
+                                             0.09s 52.94% |   runtime.mallocgcSmallScanNoHeaderSC3
+                                             0.02s 11.76% |   runtime.wbBufFlush1
+                                             0.02s 11.76% |   sync.(*Pool).pin
+----------------------------------------------------------+-------------
+     0.03s  0.29% 86.27%      4.34s 42.26%                | github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes.func1
+                                             3.49s 80.41% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+                                             0.19s  4.38% |   runtime.convT
+                                             0.17s  3.92% |   github.com/CloudyKit/jet/v6.(*Runtime).recover
+                                             0.15s  3.46% |   runtime.mallocgcSmallScanNoHeaderSC5
+                                             0.13s  3.00% |   runtime.mallocgc
+                                             0.07s  1.61% |   runtime.wbBufFlush1
+                                             0.05s  1.15% |   sync.(*Pool).Get
+                                             0.03s  0.69% |   runtime.memmove
+----------------------------------------------------------+-------------
+                                             0.08s 61.54% |   github.com/CloudyKit/jet/v6.(*Runtime).resolve
+                                             0.05s 38.46% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+     0.03s  0.29% 86.56%      0.13s  1.27%                | runtime.mapaccess2_faststr
+                                             0.09s 69.23% |   internal/runtime/maps.(*Map).getWithoutKeySmallFastStr
+----------------------------------------------------------+-------------
+     0.03s  0.29% 86.85%      0.11s  1.07%                | runtime.scanObject
+                                             0.05s 45.45% |   runtime.tryDeferToSpanScan
+----------------------------------------------------------+-------------
+                                             0.09s   100% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+     0.02s  0.19% 87.05%      0.09s  0.88%                | encoding/json/v2.marshalValueAny
+                                             0.02s 22.22% |   runtime.mallocgc
+----------------------------------------------------------+-------------
+                                             0.88s   100% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+     0.02s  0.19% 87.24%      0.88s  8.57%                | github.com/CloudyKit/fastprinter.PrintValue
+                                             0.63s 71.59% |   text/template.HTMLEscape
+                                             0.07s  7.95% |   runtime.convT
+                                             0.06s  6.82% |   reflect.(*rtype).Implements
+                                             0.03s  3.41% |   sync.(*Pool).Get
+                                             0.03s  3.41% |   sync.(*Pool).pin
+                                             0.02s  2.27% |   runtime.memmove
+----------------------------------------------------------+-------------
+                                             0.07s 50.00% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+                                             0.07s 50.00% |   github.com/CloudyKit/jet/v6.(*Runtime).executeRange
+     0.02s  0.19% 87.44%      0.14s  1.36%                | github.com/CloudyKit/jet/v6.(*Runtime).evalBaseExpressionGroup
+                                             0.12s 85.71% |   github.com/CloudyKit/jet/v6.(*Runtime).resolve
+----------------------------------------------------------+-------------
+                                             0.12s   100% |   github.com/CloudyKit/jet/v6.(*Runtime).evalBaseExpressionGroup
+     0.02s  0.19% 87.63%      0.12s  1.17%                | github.com/CloudyKit/jet/v6.(*Runtime).resolve
+                                             0.08s 66.67% |   runtime.mapaccess2_faststr
+----------------------------------------------------------+-------------
+                                             0.09s   100% |   runtime.mapaccess2_faststr
+     0.02s  0.19% 87.83%      0.09s  0.88%                | internal/runtime/maps.(*Map).getWithoutKeySmallFastStr
+                                             0.05s 55.56% |   internal/runtime/maps.memHashAES
+----------------------------------------------------------+-------------
+                                             0.06s 42.86% |   github.com/CloudyKit/fastprinter.PrintValue
+                                             0.05s 35.71% |   github.com/CloudyKit/jet/v6.(*Runtime).executeRange
+                                             0.03s 21.43% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+     0.02s  0.19% 88.02%      0.14s  1.36%                | reflect.(*rtype).Implements
+                                             0.10s 71.43% |   reflect.implements
+----------------------------------------------------------+-------------
+                                             0.10s   100% |   reflect.(*rtype).Implements
+     0.02s  0.19% 88.22%      0.10s  0.97%                | reflect.implements
+----------------------------------------------------------+-------------
+                                             0.19s 73.08% |   github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes.func1
+                                             0.07s 26.92% |   github.com/CloudyKit/fastprinter.PrintValue
+     0.02s  0.19% 88.41%      0.26s  2.53%                | runtime.convT
+                                             0.19s 73.08% |   runtime.mallocgc
+                                             0.03s 11.54% |   runtime.memmove
+----------------------------------------------------------+-------------
+     0.02s  0.19% 88.61%      0.16s  1.56%                | runtime.markroot
+                                             0.11s 68.75% |   runtime.pthread_kill
+----------------------------------------------------------+-------------

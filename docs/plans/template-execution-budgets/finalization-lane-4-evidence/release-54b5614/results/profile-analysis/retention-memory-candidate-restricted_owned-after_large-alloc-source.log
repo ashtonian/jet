@@ -1,0 +1,172 @@
+Total: 12.86MB
+ROUTINE ======================== github.com/CloudyKit/jet/v6.(*Runtime).printValue in execution_print.go
+         0     6.57MB (flat, cum) 51.13% of Total
+         .          .     19:func (st *Runtime) printValue(w io.Writer, v reflect.Value) (int, error) {
+         .          .     20:	if st.execution.ctx == nil {
+         .          .     21:		return fastprinter.PrintValue(w, v)
+         .          .     22:	}
+         .          .     23:	p := &st.printer
+         .          .     24:	// Write borrows formatted bytes until it returns. Reentrant printing must
+         .          .     25:	// leave the active workspace intact, including its scalar backing array.
+         .          .     26:	if p.runtime != nil {
+         .          .     27:		p = &dataPrinter{}
+         .          .     28:	}
+         .          .     29:	*p = dataPrinter{runtime: st, writer: w}
+         .          .     30:	defer func() { *p = dataPrinter{} }()
+         .     6.57MB     31:	err := p.value(v, false)
+         .          .     32:	return p.written, err
+         .          .     33:}
+         .          .     34:
+         .          .     35:type dataPrinter struct {
+         .          .     36:	runtime *Runtime
+ROUTINE ======================== github.com/CloudyKit/jet/v6.(*Runtime).recover in eval.go
+         0     1.05kB (flat, cum) 0.008% of Total
+         .          .    276:func (st *Runtime) recover(err *error) {
+         .          .    277:	recovered := recover()
+         .          .    278:	failure := st.execution.terminal
+         .          .    279:	if failure == nil {
+         .          .    280:		failure = st.writeErr
+         .          .    281:	}
+         .          .    282:	st.rootScope = scope{}
+         .          .    283:	st.scope = &st.rootScope
+         .          .    284:	st.printer = dataPrinter{}
+         .          .    285:	st.outputOrigin = nil
+         .          .    286:	*st.escapeeWriter = escapeeWriter{}
+         .          .    287:	st.content = nil
+         .          .    288:	st.context = reflect.Value{}
+         .          .    289:	st.includeDepth = 0
+         .          .    290:	st.execution = executionState{}
+         .     1.05kB    291:	pool_State.Put(st)
+         .          .    292:	if recovered != nil {
+         .          .    293:		if _, ok := recovered.(runtime.Error); ok {
+         .          .    294:			panic(recovered)
+         .          .    295:		}
+         .          .    296:		if aborted, ok := recovered.(executionAbort); ok {
+ROUTINE ======================== github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext in restricted.go
+   63.50kB     9.89MB (flat, cum) 76.91% of Total
+         .          .    220:func (t *Template) RenderRestrictedContext(ctx context.Context, vars VarMap, data interface{}) (string, error) {
+         .          .    221:	if t.set.restricted == nil {
+         .          .    222:		return "", fmt.Errorf("%w: Set has no restricted profile", ErrCapabilityDenied)
+         .          .    223:	}
+   63.50kB    63.50kB    224:	sink := &restrictedSink{owner: t}
+         .     9.83MB    225:	if err := t.ExecuteContext(ctx, sink, vars, data, ExecutionOptions{}); err != nil {
+         .          .    226:		return "", err
+         .          .    227:	}
+         .          .    228:	return sink.result, nil
+         .          .    229:}
+         .          .    230:
+ROUTINE ======================== github.com/CloudyKit/jet/v6.admitInputScopesInto in input.go
+      352B       352B (flat, cum) 0.0026% of Total
+         .          .     49:func admitInputScopesInto(ctx context.Context, scopes []VarMap, data interface{}, opts InputOptions, seed VarMap) (out VarMap, snapshot interface{}, err error) {
+         .          .     50:	if ctx == nil || opts.MaxBytes <= 0 || opts.MaxItems == 0 || opts.MaxSteps == 0 || opts.MaxDepth <= 0 || opts.MaxDepth > 64 {
+         .          .     51:		return nil, nil, fmt.Errorf("%w: positive input budgets and depth <=64 required", ErrInputLimit)
+         .          .     52:	}
+         .          .     53:	a := &inputAdmission{ctx: ctx, opts: opts}
+         .          .     54:	out = seed
+         .          .     55:	defer func() {
+         .          .     56:		if p := recover(); p != nil {
+         .          .     57:			if failure, ok := p.(inputAbort); ok {
+         .          .     58:				err = failure.error
+         .          .     59:				out = nil
+         .          .     60:				snapshot = nil
+         .          .     61:			} else {
+         .          .     62:				panic(p)
+         .          .     63:			}
+         .          .     64:		}
+         .          .     65:	}()
+         .          .     66:	for _, scope := range scopes {
+         .          .     67:		a.reserveItems(uint64(len(scope)))
+         .          .     68:		a.reserveBytes(uint64(len(scope)), uint64(5*(strconv.IntSize/8)))
+         .          .     69:		if len(scope) > 0 && out == nil {
+         .          .     70:			out = make(VarMap, len(scope))
+         .          .     71:		}
+         .          .     72:		for name, value := range scope {
+         .          .     73:			a.reserveBytes(uint64(len(name)), 1)
+      352B       352B     74:			out[name] = a.clone(value, 1)
+         .          .     75:		}
+         .          .     76:	}
+         .          .     77:	value := a.clone(reflect.ValueOf(data), 1)
+         .          .     78:	if value.IsValid() {
+         .          .     79:		snapshot = value.Interface()
+ROUTINE ======================== github.com/CloudyKit/jet/v6.newParseAdmission in compile.go
+         0       640B (flat, cum) 0.0047% of Total
+         .          .    185:func newParseAdmission(ctx context.Context, opts ParseOptions) (*parseAdmission, error) {
+         .       640B    186:	a := parseAdmissions.Get().(*parseAdmission)
+         .          .    187:	if err := a.init(ctx, opts); err != nil {
+         .          .    188:		a.release()
+         .          .    189:		return nil, err
+         .          .    190:	}
+         .          .    191:	return a, nil
+ROUTINE ======================== testing.(*outputWriter).write in testing/testing.go
+         0       400B (flat, cum) 0.003% of Total
+         .          .   1224:func (o *outputWriter) write(p []byte, isErr bool) (int, error) {
+         .          .   1225:	// o can be nil if this is called from a top-level *TB that is no longer active.
+         .          .   1226:	// Just ignore the message in that case.
+         .          .   1227:	if o == nil || o.c == nil {
+         .          .   1228:		return 0, nil
+         .          .   1229:	}
+         .          .   1230:	if o.c.destination() == nil {
+         .          .   1231:		panic("Write called after " + o.c.name + " has completed")
+         .          .   1232:	}
+         .          .   1233:
+         .          .   1234:	o.c.mu.Lock()
+         .          .   1235:	defer o.c.mu.Unlock()
+         .          .   1236:
+         .          .   1237:	// The last element is a partial line.
+         .        96B   1238:	lines := bytes.SplitAfter(p, []byte("\n"))
+         .          .   1239:	last := len(lines) - 1 // Inv: 0 <= last
+         .          .   1240:	for i, line := range lines[:last] {
+         .          .   1241:		// Emit partial line from previous call.
+         .          .   1242:		if i == 0 && len(o.partial) > 0 {
+         .          .   1243:			line = slices.Concat(o.partial, line)
+         .          .   1244:			o.partial = o.partial[:0]
+         .          .   1245:		}
+         .       304B   1246:		o.writeLine(line, isErr && i == 0, isErr && i == last-1)
+         .          .   1247:	}
+         .          .   1248:	// Save partial line for next call.
+         .          .   1249:	o.partial = append(o.partial, lines[last]...)
+         .          .   1250:
+         .          .   1251:	return len(p), nil
+ROUTINE ======================== testing.(*outputWriter).writeLine in testing/testing.go
+       48B       304B (flat, cum) 0.0023% of Total
+         .          .   1255:func (o *outputWriter) writeLine(b []byte, errBegin, errEnd bool) {
+         .          .   1256:	if o.c.done || (o.c.chatty == nil) {
+         .          .   1257:		o.c.output = append(o.c.output, indent...)
+         .          .   1258:		o.c.output = append(o.c.output, b...)
+         .          .   1259:		return
+         .          .   1260:	}
+         .          .   1261:
+         .          .   1262:	// Escape the framing marker.
+         .          .   1263:	if o.c.chatty.json {
+         .          .   1264:		b = escapeMarkers(b)
+         .          .   1265:	}
+         .          .   1266:
+         .          .   1267:	// If this is the start of an error, add ^O to the start of the output.
+         .          .   1268:	var strErrBegin, strErrEnd string
+         .          .   1269:	if errBegin && o.c.chatty.json {
+         .          .   1270:		strErrBegin = string(markErrBegin)
+         .          .   1271:	}
+         .          .   1272:
+         .          .   1273:	// If this is the end of an error, add ^N to the end of the output. If the
+         .          .   1274:	// last character of the output is \n, add ^N before the \n, otherwise
+         .          .   1275:	// test2json will not handle it correctly.
+         .          .   1276:	var c []byte
+         .          .   1277:	if errEnd && o.c.chatty.json {
+         .          .   1278:		i := len(b)
+         .          .   1279:		if len(b) > 0 && b[i-1] == '\n' {
+         .          .   1280:			b, c = b[:i-1], b[i-1:]
+         .          .   1281:		}
+         .          .   1282:		strErrEnd = string(markErrEnd)
+         .          .   1283:	}
+         .          .   1284:
+         .          .   1285:	if o.c.bench {
+         .          .   1286:		// Benchmarks don't print === CONT, so we should skip the test
+         .          .   1287:		// printer and just print straight to stdout.
+         .          .   1288:		fmt.Printf("%s%s%s%s%s", strErrBegin, indent, b, strErrEnd, c)
+         .          .   1289:	} else {
+       48B       304B   1290:		o.c.chatty.Printf(o.c.name, "%s%s%s%s%s", strErrBegin, indent, b, strErrEnd, c)
+         .          .   1291:	}
+         .          .   1292:}
+         .          .   1293:
+         .          .   1294:func escapeMarkers(b []byte) []byte {
+         .          .   1295:	j := nextMark(b)

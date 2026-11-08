@@ -1,0 +1,47 @@
+File: candidate.test
+Type: alloc_objects
+Time: 2026-11-08 03:05:52 CST
+Showing nodes accounting for 828, 94.52% of 876 total
+Dropped 70 nodes (cum <= 4)
+Showing top 40 nodes out of 83
+      flat  flat%   sum%        cum   cum%
+       248 28.31% 28.31%        248 28.31%  regexp.makeOnePass.func1
+       194 22.15% 50.46%        194 22.15%  strings.genSplit
+        52  5.94% 56.39%         52  5.94%  regexp/syntax.(*compiler).inst (inline)
+        36  4.11% 60.50%         36  4.11%  regexp/syntax.(*parser).maybeConcat
+        32  3.65% 64.16%         32  3.65%  regexp.newQueue (inline)
+        32  3.65% 67.81%         32  3.65%  regexp/syntax.(*parser).newRegexp (inline)
+        24  2.74% 70.55%         60  6.85%  regexp/syntax.(*parser).push
+        24  2.74% 73.29%         24  2.74%  unicode/utf8.AppendRune (inline)
+        17  1.94% 75.23%        640 73.06%  testing.(*T).Run
+        16  1.83% 77.05%        532 60.73%  regexp.compile
+        16  1.83% 78.88%         16  1.83%  regexp.onePassCopy
+        16  1.83% 80.71%         16  1.83%  regexp/syntax.(*parser).collapse
+        16  1.83% 82.53%         16  1.83%  testing.rewrite
+        12  1.37% 83.90%        292 33.33%  regexp.makeOnePass
+         8  0.91% 84.82%         61  6.96%  github.com/CloudyKit/jet/v6_test.TestExecutionRetentionMeasurements.func1
+         8  0.91% 85.73%          8  0.91%  regexp/syntax.(*Regexp).CapNames
+         8  0.91% 86.64%         16  1.83%  regexp/syntax.(*compiler).init (inline)
+         8  0.91% 87.56%        116 13.24%  regexp/syntax.parse
+         7   0.8% 88.36%          7   0.8%  runtime.mallocgc
+         6  0.68% 89.04%          6  0.68%  sync.(*Pool).pinSlow
+         5  0.57% 89.61%          5  0.57%  github.com/CloudyKit/jet/v6.NewSet
+         5  0.57% 90.18%          5  0.57%  testing.pcToName
+         4  0.46% 90.64%        359 40.98%  github.com/CloudyKit/jet/v6_test.TestExecutionRetentionMeasurements
+         4  0.46% 91.10%          4  0.46%  path.(*lazybuf).append (inline)
+         4  0.46% 91.55%          4  0.46%  path.(*lazybuf).string (inline)
+         4  0.46% 92.01%         12  1.37%  path.Join
+         4  0.46% 92.47%          4  0.46%  testing.(*matcher).unique
+         3  0.34% 92.81%          6  0.68%  context.WithCancel
+         3  0.34% 93.15%          4  0.46%  github.com/CloudyKit/jet/v6.(*Set).getTemplateFromCache
+         3  0.34% 93.49%         12  1.37%  github.com/CloudyKit/jet/v6.(*Set).parse
+         3  0.34% 93.84%        147 16.78%  testing.newMatcher
+         3  0.34% 94.18%        441 50.34%  testing.runTests
+         2  0.23% 94.41%          5  0.57%  github.com/CloudyKit/jet/v6.(*InMemLoader).Set
+         1  0.11% 94.52%        445 50.80%  testing.(*M).Run
+         0     0% 94.52%          6  0.68%  fmt.Fprintf
+         0     0% 94.52%          5  0.57%  github.com/CloudyKit/jet/v6.(*InMemLoader).Open
+         0     0% 94.52%          9  1.03%  github.com/CloudyKit/jet/v6.(*InMemLoader).normalize (inline)
+         0     0% 94.52%         35  4.00%  github.com/CloudyKit/jet/v6.(*Set).GetTemplateContext
+         0     0% 94.52%         32  3.65%  github.com/CloudyKit/jet/v6.(*Set).getSiblingTemplate
+         0     0% 94.52%         29  3.31%  github.com/CloudyKit/jet/v6.(*Set).getTemplate

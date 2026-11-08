@@ -1,0 +1,29 @@
+goos: darwin
+goarch: arm64
+pkg: github.com/CloudyKit/jet/v6
+cpu: Apple M2 Max
+BenchmarkConcurrentExecutionModes/metered_live_stream/header_interpolation/html/workers_12/shared_true-12         	21960877	        47.76 ns/op	       0 B/op	       0 allocs/op
+BenchmarkConcurrentExecutionModes/metered_live_stream/header_interpolation/html/workers_12/shared_false-12        	23272125	        50.83 ns/op	       0 B/op	       0 allocs/op
+BenchmarkConcurrentExecutionModes/metered_live_stream/escape_expansion/html/workers_12/shared_true-12             	  403440	      3240 ns/op	       0 B/op	       0 allocs/op
+BenchmarkConcurrentExecutionModes/metered_live_stream/escape_expansion/html/workers_12/shared_false-12            	  312963	      3801 ns/op	       0 B/op	       0 allocs/op
+BenchmarkConcurrentExecutionModes/metered_live_stream/data_json_256/html/workers_12/shared_true-12                	   13298	     86790 ns/op	  170594 B/op	    5388 allocs/op
+BenchmarkConcurrentExecutionModes/metered_live_stream/data_json_256/html/workers_12/shared_false-12               	   12943	     85336 ns/op	  170517 B/op	    5388 allocs/op
+PASS
+        9.21 real        71.03 user         4.62 sys
+            54362112  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                3547  page reclaims
+                   0  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+               76153  signals received
+               89634  voluntary context switches
+              394049  involuntary context switches
+        760540482930  instructions retired
+        231470396311  cycles elapsed
+            48579184  peak memory footprint

@@ -1,0 +1,36 @@
+File: candidate.test
+Type: alloc_objects
+Time: 2026-11-08 03:05:52 CST
+Showing nodes accounting for 12317, 96.07% of 12821 total
+Dropped 220 nodes (cum <= 64)
+      flat  flat%   sum%        cum   cum%
+      8068 62.93% 62.93%       8068 62.93%  runtime/pprof.allFrames
+      2691 20.99% 83.92%       2822 22.01%  runtime/pprof.(*profileBuilder).emitLocation
+      1088  8.49% 92.40%      12135 94.65%  runtime/pprof.writeHeapProto
+       192  1.50% 93.90%        192  1.50%  strings.genSplit
+       100  0.78% 94.68%        100  0.78%  regexp.makeOnePass.func1
+        87  0.68% 95.36%         87  0.68%  runtime/pprof.(*profileBuilder).stringIndex (inline)
+        21  0.16% 95.52%      10940 85.33%  runtime/pprof.(*profileBuilder).appendLocsForStack
+        18  0.14% 95.66%      12237 95.44%  github.com/CloudyKit/jet/v6_test.TestExecutionRetentionMeasurements.func1.2
+        17  0.13% 95.80%        349  2.72%  testing.(*T).Run
+         8 0.062% 95.86%      12314 96.05%  github.com/CloudyKit/jet/v6_test.TestExecutionRetentionMeasurements.func1
+         8 0.062% 95.92%        236  1.84%  regexp.compile
+         6 0.047% 95.97%        122  0.95%  regexp.makeOnePass
+         4 0.031% 96.00%      12139 94.68%  runtime/pprof.writeHeapInternal
+         3 0.023% 96.02%        131  1.02%  testing.newMatcher
+         3 0.023% 96.05%        425  3.31%  testing.runTests
+         2 0.016% 96.06%         66  0.51%  github.com/CloudyKit/jet/v6_test.TestExecutionRetentionMeasurements
+         1 0.0078% 96.07%        429  3.35%  testing.(*M).Run
+         0     0% 96.07%        429  3.35%  main.main
+         0     0% 96.07%        236  1.84%  regexp.Compile (inline)
+         0     0% 96.07%        130  1.01%  regexp.compileOnePass
+         0     0% 96.07%        429  3.35%  runtime.main
+         0     0% 96.07%      12139 94.68%  runtime/pprof.WriteHeapProfile (inline)
+         0     0% 96.07%      12139 94.68%  runtime/pprof.writeHeap (inline)
+         0     0% 96.07%        192  1.50%  strings.Split (inline)
+         0     0% 96.07%        317  2.47%  testing.(*matcher).fullName
+         0     0% 96.07%        285  2.22%  testing.runTests.func1
+         0     0% 96.07%        121  0.94%  testing.simpleMatch.matches
+         0     0% 96.07%        125  0.97%  testing.simpleMatch.verify
+         0     0% 96.07%      12670 98.82%  testing.tRunner
+         0     0% 96.07%        239  1.86%  testing/internal/testdeps.TestDeps.MatchString

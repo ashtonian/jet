@@ -1,0 +1,1026 @@
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=54917
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=4125
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1833
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1666
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1667
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1500
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1625
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=2750
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=2666
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=2417
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=2167
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=2250
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1416
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=2042
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1375
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=2375
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=2334
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1875
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=2125
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=2000
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=2125
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=2000
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=2708
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1375
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=10875
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=2083
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1541
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1458
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1500
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=2125
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=2667
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1291
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=2208
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=2500
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1458
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=2208
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1500
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=2000
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=2000
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1291
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1292
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1333
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=2084
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=2417
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1334
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1417
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1708
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=2167
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1750
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=2667
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1542
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1667
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=8542
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=2583
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1583
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1542
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1500
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1625
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=2667
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1291
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=2583
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1500
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1625
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1291
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=2291
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=2833
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1291
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1917
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=10541
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=3959
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=2916
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=3250
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=2291
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=2792
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1917
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1500
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=2042
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=2791
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=22542
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1584
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1875
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=2500
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1500
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1791
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1541
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=2542
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1291
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1333
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1500
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=2041
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1500
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1416
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1750
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=2000
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1375
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1750
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1458
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1750
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1459
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1458
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=3333
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1917
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1375
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1250
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1333
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1250
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1583
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1417
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1333
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1334
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1542
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1458
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=5250
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1458
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1500
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1292
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1375
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=2417
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1292
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1250
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1291
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=3375
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1250
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=5333
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=2292
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=2459
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1750
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=2459
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1500
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1834
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1500
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1417
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=2209
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1375
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1375
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1375
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=2666
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1375
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1375
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1542
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1417
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1292
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=2958
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=2042
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1334
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1875
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1291
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1292
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1292
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1291
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1375
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1375
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1333
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=3625
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1458
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1417
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1417
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1333
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1333
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=6709
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1833
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=2875
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1333
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=2000
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1584
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1250
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1292
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1291
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=2458
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1292
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1292
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1208
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1291
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1250
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1292
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=2291
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1334
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=2084
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=2167
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1250
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1375
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1292
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=2208
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1333
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=2084
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1208
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1500
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=8583
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1458
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1291
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1334
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=2334
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1292
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1250
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1375
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1250
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=2500
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1500
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=2208
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=3792
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1500
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1333
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1375
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1958
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1333
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1334
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1292
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=2166
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=2625
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1333
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1458
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1250
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1458
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1292
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1458
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1334
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=2458
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1250
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1250
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1333
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1333
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=2000
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1458
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1334
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1333
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1416
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=2041
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1958
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=3208
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=3625
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1792
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=3375
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1625
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1458
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=2292
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1375
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=2667
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1333
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=2458
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1291
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=2458
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=2000
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1292
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1958
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=2291
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=2458
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=2416
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1292
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1375
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=2500
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=2125
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1958
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1375
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1209
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+=== RUN   TestExecutionCallbackCancellationOwnership
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_false
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1292
+=== RUN   TestExecutionCallbackCancellationOwnership/cooperative_true
+    execution_cancellation_measurements_test.go:199: callback cancellation return_ns=1959
+--- PASS: TestExecutionCallbackCancellationOwnership (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_false (0.00s)
+    --- PASS: TestExecutionCallbackCancellationOwnership/cooperative_true (0.00s)
+PASS
+ok  	github.com/CloudyKit/jet/v6	0.249s

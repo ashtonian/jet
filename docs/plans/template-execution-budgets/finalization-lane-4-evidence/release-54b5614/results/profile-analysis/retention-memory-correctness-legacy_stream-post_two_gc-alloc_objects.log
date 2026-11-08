@@ -1,0 +1,47 @@
+File: correctness.test
+Type: alloc_objects
+Time: 2026-11-08 03:05:52 CST
+Showing nodes accounting for 396, 92.52% of 428 total
+Dropped 40 nodes (cum <= 2)
+Showing top 40 nodes out of 114
+      flat  flat%   sum%        cum   cum%
+       100 23.36% 23.36%        100 23.36%  regexp.makeOnePass.func1
+        55 12.85% 36.21%         55 12.85%  strings.genSplit
+        24  5.61% 41.82%         24  5.61%  regexp/syntax.(*compiler).inst (inline)
+        17  3.97% 45.79%        212 49.53%  testing.(*T).Run
+        16  3.74% 49.53%         16  3.74%  regexp.newQueue (inline)
+        16  3.74% 53.27%         16  3.74%  regexp/syntax.(*parser).maybeConcat
+        16  3.74% 57.01%         16  3.74%  regexp/syntax.(*parser).newRegexp (inline)
+        12  2.80% 59.81%         28  6.54%  regexp/syntax.(*parser).push
+        10  2.34% 62.15%         10  2.34%  unicode/utf8.AppendRune (inline)
+         9  2.10% 64.25%          9  2.10%  testing.rewrite
+         8  1.87% 66.12%        236 55.14%  regexp.compile
+         8  1.87% 67.99%          8  1.87%  regexp.onePassCopy
+         8  1.87% 69.86%          8  1.87%  regexp/syntax.(*parser).collapse
+         8  1.87% 71.73%          8  1.87%  runtime.mallocgc
+         7  1.64% 73.36%         57 13.32%  github.com/CloudyKit/jet/v6_test.TestExecutionRetentionMeasurements.func1
+         6  1.40% 74.77%        122 28.50%  regexp.makeOnePass
+         5  1.17% 75.93%          5  1.17%  github.com/CloudyKit/jet/v6.NewSet
+         5  1.17% 77.10%          5  1.17%  testing.pcToName
+         4  0.93% 78.04%          4  0.93%  path.(*lazybuf).append (inline)
+         4  0.93% 78.97%          4  0.93%  path.(*lazybuf).string (inline)
+         4  0.93% 79.91%         12  2.80%  path.Join
+         4  0.93% 80.84%          4  0.93%  regexp/syntax.(*Regexp).CapNames
+         4  0.93% 81.78%          8  1.87%  regexp/syntax.(*compiler).init (inline)
+         4  0.93% 82.71%         56 13.08%  regexp/syntax.parse
+         4  0.93% 83.64%          4  0.93%  sync.(*Pool).pinSlow
+         3   0.7% 84.35%          6  1.40%  context.WithCancel
+         3   0.7% 85.05%          3   0.7%  context.withCancel (inline)
+         3   0.7% 85.75%          3   0.7%  fmt.(*buffer).writeString (inline)
+         3   0.7% 86.45%          4  0.93%  github.com/CloudyKit/jet/v6.(*Set).getTemplateFromCache
+         3   0.7% 87.15%          3   0.7%  internal/sync.newEntryNode[go.shape.interface {},go.shape.interface {}] (inline)
+         3   0.7% 87.85%        131 30.61%  testing.newMatcher
+         3   0.7% 88.55%        288 67.29%  testing.runTests
+         3   0.7% 89.25%          3   0.7%  testing.splitRegexp
+         2  0.47% 89.72%          5  1.17%  github.com/CloudyKit/jet/v6.(*InMemLoader).Set
+         2  0.47% 90.19%         13  3.04%  github.com/CloudyKit/jet/v6.(*Set).parse
+         2  0.47% 90.65%          2  0.47%  github.com/CloudyKit/jet/v6.NewInMemLoader (inline)
+         2  0.47% 91.12%          2  0.47%  github.com/CloudyKit/jet/v6.VarMap.Set (inline)
+         2  0.47% 91.59%          2  0.47%  github.com/CloudyKit/jet/v6.lex
+         2  0.47% 92.06%         66 15.42%  github.com/CloudyKit/jet/v6_test.TestExecutionRetentionMeasurements
+         2  0.47% 92.52%          2  0.47%  internal/sync.newIndirectNode[go.shape.interface {},go.shape.interface {}] (inline)

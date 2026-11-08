@@ -1,0 +1,53 @@
+goos: darwin
+goarch: arm64
+pkg: github.com/CloudyKit/jet/v6
+cpu: Apple M2 Max
+BenchmarkExecutionModes/legacy_stream/header_literal/text-2         	15653484	        77.18 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/legacy_stream/header_literal/html-2         	15310222	        78.32 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/legacy_stream/header_interpolation/text-2   	 7941488	       148.4 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/legacy_stream/header_interpolation/html-2   	 7400701	       157.6 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/legacy_stream/body_8192/text-2              	 3475722	       346.4 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/legacy_stream/body_8192/html-2              	  182032	      6513 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/legacy_stream/body_65536/text-2             	  571102	      2202 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/legacy_stream/body_65536/html-2             	   23978	     50335 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/legacy_stream/nested_writing/text-2         	   48643	     25576 ns/op	    1584 B/op	      66 allocs/op
+BenchmarkExecutionModes/legacy_stream/nested_writing/html-2         	   46498	     25840 ns/op	    1584 B/op	      66 allocs/op
+BenchmarkExecutionModes/legacy_stream/nested_silent/text-2          	   20434	     55719 ns/op	    3120 B/op	     130 allocs/op
+BenchmarkExecutionModes/legacy_stream/nested_silent/html-2          	   21945	     56251 ns/op	    3120 B/op	     130 allocs/op
+BenchmarkExecutionModes/legacy_stream/escape_safe/text-2            	 7199629	       168.8 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/legacy_stream/escape_safe/html-2            	 1000000	      1154 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/legacy_stream/escape_expansion/text-2       	 7673637	       154.8 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/legacy_stream/escape_expansion/html-2       	  180529	      6405 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/legacy_stream/string_replace/text-2         	  175758	      6802 ns/op	    1168 B/op	       5 allocs/op
+BenchmarkExecutionModes/legacy_stream/string_replace/html-2         	  157292	      7506 ns/op	    1168 B/op	       5 allocs/op
+BenchmarkExecutionModes/legacy_stream/string_concat/text-2          	 2629724	       474.4 ns/op	    1576 B/op	       4 allocs/op
+BenchmarkExecutionModes/legacy_stream/string_concat/html-2          	  960355	      1260 ns/op	    1577 B/op	       4 allocs/op
+BenchmarkExecutionModes/legacy_stream/include/text-2                	 3283328	       358.7 ns/op	      96 B/op	       5 allocs/op
+BenchmarkExecutionModes/legacy_stream/include/html-2                	 3262869	       367.9 ns/op	      96 B/op	       5 allocs/op
+BenchmarkExecutionModes/legacy_stream/inheritance/text-2            	 8841129	       136.8 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/legacy_stream/inheritance/html-2            	 8577406	       137.2 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/legacy_stream/block_content/text-2          	 5074338	       237.5 ns/op	      32 B/op	       1 allocs/op
+BenchmarkExecutionModes/legacy_stream/block_content/html-2          	 5079901	       238.9 ns/op	      32 B/op	       1 allocs/op
+BenchmarkExecutionModes/legacy_stream/try_success/text-2            	 5268048	       228.4 ns/op	     176 B/op	       2 allocs/op
+BenchmarkExecutionModes/legacy_stream/try_success/html-2            	 4851018	       239.1 ns/op	     176 B/op	       2 allocs/op
+BenchmarkExecutionModes/legacy_stream/try_rollback/text-2           	 1000000	      1122 ns/op	     512 B/op	       8 allocs/op
+BenchmarkExecutionModes/legacy_stream/try_rollback/html-2           	 1000000	      1105 ns/op	     512 B/op	       8 allocs/op
+PASS
+       41.94 real        41.78 user         0.73 sys
+            16334848  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                1436  page reclaims
+                   0  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+               17184  signals received
+                  22  voluntary context switches
+               70335  involuntary context switches
+        677316974944  instructions retired
+        142777322324  cycles elapsed
+            12026384  peak memory footprint

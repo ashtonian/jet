@@ -1,0 +1,23 @@
+{
+  "command": [
+    "python3",
+    "docs/plans/template-execution-budgets/finalization-lane-4-evidence/run_matrix.py",
+    ".git/finalization-evidence/release-54b5614",
+    "profiles"
+  ],
+  "cwd": "$JET_CHECKOUT",
+  "start": 1794128323.947547,
+  "head": "54b561484e1465edea963ed04579bcd24a7dbf76",
+  "inputs_manifest": "af41fd80799fc7b6965a126fe7056c0918031aaf4706552f68975dfebb2038e4",
+  "toolchain": "go version go1.27.3 darwin/arm64",
+  "environment": {
+    "GOMAXPROCS": null,
+    "GOFLAGS": null,
+    "GOTOOLCHAIN": null,
+    "GATE_LOCK_COMMAND_TIMEOUT": "1800",
+    "GATE_LOCK_COMMAND_KILL_AFTER": "10"
+  },
+  "exit": 1,
+  "end": 1794128417.56749,
+  "changed_inputs": []
+}

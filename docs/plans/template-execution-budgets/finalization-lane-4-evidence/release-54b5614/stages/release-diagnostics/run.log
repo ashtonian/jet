@@ -1,0 +1,38 @@
+START retention-upstream-legacy_stream
+END retention-upstream-legacy_stream exit=0
+START retention-memory-upstream-legacy_stream
+END retention-memory-upstream-legacy_stream exit=0
+START retention-upstream-legacy_owned
+END retention-upstream-legacy_owned exit=0
+START retention-memory-upstream-legacy_owned
+END retention-memory-upstream-legacy_owned exit=0
+START retention-correctness-legacy_stream
+END retention-correctness-legacy_stream exit=0
+START retention-memory-correctness-legacy_stream
+END retention-memory-correctness-legacy_stream exit=0
+START retention-correctness-legacy_owned
+END retention-correctness-legacy_owned exit=0
+START retention-memory-correctness-legacy_owned
+END retention-memory-correctness-legacy_owned exit=0
+START retention-candidate-legacy_stream
+END retention-candidate-legacy_stream exit=0
+START retention-memory-candidate-legacy_stream
+END retention-memory-candidate-legacy_stream exit=0
+START retention-candidate-legacy_owned
+END retention-candidate-legacy_owned exit=0
+START retention-memory-candidate-legacy_owned
+END retention-memory-candidate-legacy_owned exit=0
+START retention-candidate-metered_background_stream
+END retention-candidate-metered_background_stream exit=0
+START retention-memory-candidate-metered_background_stream
+END retention-memory-candidate-metered_background_stream exit=0
+START retention-candidate-metered_live_stream
+END retention-candidate-metered_live_stream exit=0
+START retention-memory-candidate-metered_live_stream
+END retention-memory-candidate-metered_live_stream exit=0
+START retention-candidate-restricted_owned
+END retention-candidate-restricted_owned exit=0
+START retention-memory-candidate-restricted_owned
+END retention-memory-candidate-restricted_owned exit=0
+START cancellation-candidate
+END cancellation-candidate exit=0

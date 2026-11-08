@@ -1,0 +1,53 @@
+goos: darwin
+goarch: arm64
+pkg: github.com/CloudyKit/jet/v6
+cpu: Apple M2 Max
+BenchmarkExecutionModes/metered_background_stream/header_literal/text-2         	 9907154	       124.5 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/metered_background_stream/header_literal/html-2         	 9399909	       119.1 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/metered_background_stream/header_interpolation/text-2   	 4942070	       247.3 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/metered_background_stream/header_interpolation/html-2   	 4676659	       252.8 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/metered_background_stream/body_8192/text-2              	 2640652	       456.2 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/metered_background_stream/body_8192/html-2              	  181118	      6725 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/metered_background_stream/body_65536/text-2             	  504715	      2386 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/metered_background_stream/body_65536/html-2             	   22840	     52592 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/metered_background_stream/nested_writing/text-2         	   39985	     30058 ns/op	    1584 B/op	      66 allocs/op
+BenchmarkExecutionModes/metered_background_stream/nested_writing/html-2         	   40285	     29790 ns/op	    1584 B/op	      66 allocs/op
+BenchmarkExecutionModes/metered_background_stream/nested_silent/text-2          	   18178	     66286 ns/op	    3120 B/op	     130 allocs/op
+BenchmarkExecutionModes/metered_background_stream/nested_silent/html-2          	   18788	     65316 ns/op	    3120 B/op	     130 allocs/op
+BenchmarkExecutionModes/metered_background_stream/escape_safe/text-2            	 4694204	       253.0 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/metered_background_stream/escape_safe/html-2            	  889446	      1247 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/metered_background_stream/escape_expansion/text-2       	 4753246	       245.0 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/metered_background_stream/escape_expansion/html-2       	  147504	      8315 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/metered_background_stream/string_replace/text-2         	  176625	      6606 ns/op	    1048 B/op	       3 allocs/op
+BenchmarkExecutionModes/metered_background_stream/string_replace/html-2         	  160822	      7352 ns/op	    1048 B/op	       3 allocs/op
+BenchmarkExecutionModes/metered_background_stream/string_concat/text-2          	 2768436	       452.1 ns/op	    1040 B/op	       2 allocs/op
+BenchmarkExecutionModes/metered_background_stream/string_concat/html-2          	  948182	      1213 ns/op	    1040 B/op	       2 allocs/op
+BenchmarkExecutionModes/metered_background_stream/include/text-2                	 2553859	       469.2 ns/op	      96 B/op	       5 allocs/op
+BenchmarkExecutionModes/metered_background_stream/include/html-2                	 2318062	       534.2 ns/op	      96 B/op	       5 allocs/op
+BenchmarkExecutionModes/metered_background_stream/inheritance/text-2            	 5418417	       210.3 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/metered_background_stream/inheritance/html-2            	 5778961	       208.4 ns/op	       0 B/op	       0 allocs/op
+BenchmarkExecutionModes/metered_background_stream/block_content/text-2          	 4052232	       296.4 ns/op	      32 B/op	       1 allocs/op
+BenchmarkExecutionModes/metered_background_stream/block_content/html-2          	 4034372	       302.9 ns/op	      32 B/op	       1 allocs/op
+BenchmarkExecutionModes/metered_background_stream/try_success/text-2            	 3911167	       311.4 ns/op	     176 B/op	       2 allocs/op
+BenchmarkExecutionModes/metered_background_stream/try_success/html-2            	 3569184	       318.3 ns/op	     176 B/op	       2 allocs/op
+BenchmarkExecutionModes/metered_background_stream/try_rollback/text-2           	 1000000	      1118 ns/op	     480 B/op	       8 allocs/op
+BenchmarkExecutionModes/metered_background_stream/try_rollback/html-2           	 1000000	      1138 ns/op	     480 B/op	       8 allocs/op
+PASS
+       43.56 real        43.08 user         0.66 sys
+            16007168  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                1216  page reclaims
+                   0  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+               12453  signals received
+                  20  voluntary context switches
+               55243  involuntary context switches
+        744741838072  instructions retired
+        147253559186  cycles elapsed
+            10863120  peak memory footprint

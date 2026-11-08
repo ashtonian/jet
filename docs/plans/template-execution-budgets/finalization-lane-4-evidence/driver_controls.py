@@ -143,6 +143,19 @@ time.sleep(120)
         tree: plan['fixtures'] + [name for name in matrix.EXTENDED if tree == 'candidate' or name != 'named_map']
         for tree in ('upstream', 'correctness', 'candidate')}
     assert len(analysis.expected_cells('latency', plan)) == 406
+    phase_plan = dict(plan, phase_fixtures=['header_interpolation', 'include', 'inheritance'],
+                      phases=['constructor', 'cold_compile', 'warm_lookup', 'parse_render'])
+    extended_plan = dict(plan, fixtures_by_tree={
+        tree: [name for name in matrix.EXTENDED if tree == 'candidate' or name != 'named_map']
+        for tree in ('upstream', 'correctness', 'candidate')})
+    for group, scope, count in [('phases', phase_plan, 108), ('extended', extended_plan, 136)]:
+        cells = analysis.expected_cells(group, scope)
+        assert len(cells) == count
+        assert not analysis.coverage_report({}, cells, 6)['complete']
+        results = {key: [{} for _ in range(6)] for key in cells}
+        assert analysis.coverage_report(results, cells, 6)['complete']
+        results[next(iter(results))].pop()
+        assert not analysis.coverage_report(results, cells, 6)['complete']
     (directory / 'result.json').write_text(json.dumps({'scope': 'driver lifecycle controls only',
         'reuse': True, 'source_environment_binary_identity': True, 'profile_artifacts': True,
         'term_int_cleanup_and_no_later_stage': True, 'incomplete_coverage_denied': True}, indent=2))

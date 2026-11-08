@@ -1,0 +1,44 @@
+File: upstream.test
+Type: alloc_objects
+Time: 2026-11-08 03:05:52 CST
+Showing nodes accounting for 18449, 96.09% of 19200 total
+Dropped 233 nodes (cum <= 96)
+      flat  flat%   sum%        cum   cum%
+      8331 43.39% 43.39%       8331 43.39%  runtime/pprof.allFrames
+      2603 13.56% 56.95%       2711 14.12%  runtime/pprof.(*profileBuilder).emitLocation
+      2020 10.52% 67.47%       2028 10.56%  github.com/CloudyKit/jet/v6.(*Runtime).recover
+      2020 10.52% 77.99%       6211 32.35%  github.com/CloudyKit/jet/v6_test.init.func2
+      2004 10.44% 88.43%       2116 11.02%  bytes.(*Buffer).grow
+      1114  5.80% 94.23%      12336 64.25%  runtime/pprof.writeHeapProto
+       146  0.76% 94.99%        146  0.76%  regexp.makeOnePass.func1
+       112  0.58% 95.57%        112  0.58%  bytes.growSlice
+        23  0.12% 95.69%      11092 57.77%  runtime/pprof.(*profileBuilder).appendLocsForStack
+        17 0.089% 95.78%      12464 64.92%  github.com/CloudyKit/jet/v6_test.TestExecutionRetentionMeasurements.func1.2
+        17 0.089% 95.87%        328  1.71%  testing.(*T).Run
+        12 0.062% 95.93%        351  1.83%  regexp.compile
+         9 0.047% 95.98%        179  0.93%  regexp.makeOnePass
+         7 0.036% 96.02%      18706 97.43%  github.com/CloudyKit/jet/v6_test.TestExecutionRetentionMeasurements.func1
+         4 0.021% 96.04%      12340 64.27%  runtime/pprof.writeHeapInternal
+         3 0.016% 96.05%        188  0.98%  github.com/CloudyKit/jet/v6_test.TestExecutionRetentionMeasurements
+         3 0.016% 96.07%        130  0.68%  testing.newMatcher
+         3 0.016% 96.08%        282  1.47%  testing.runTests
+         1 0.0052% 96.09%        286  1.49%  testing.(*M).Run
+         0     0% 96.09%       2116 11.02%  bytes.(*Buffer).Write
+         0     0% 96.09%       2134 11.11%  github.com/CloudyKit/fastprinter.PrintString
+         0     0% 96.09%       2134 11.11%  github.com/CloudyKit/fastprinter.PrintValue
+         0     0% 96.09%       2135 11.12%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 96.09%       4175 21.74%  github.com/CloudyKit/jet/v6.(*Template).Execute
+         0     0% 96.09%       2116 11.02%  github.com/CloudyKit/jet/v6.(*escapeeWriter).Write
+         0     0% 96.09%       6211 32.35%  github.com/CloudyKit/jet/v6_test.TestExecutionRetentionMeasurements.func1.1 (partial-inline)
+         0     0% 96.09%        286  1.49%  main.main
+         0     0% 96.09%        351  1.83%  regexp.Compile (inline)
+         0     0% 96.09%        191  0.99%  regexp.compileOnePass
+         0     0% 96.09%        286  1.49%  runtime.main
+         0     0% 96.09%      12340 64.27%  runtime/pprof.WriteHeapProfile (inline)
+         0     0% 96.09%      12340 64.27%  runtime/pprof.writeHeap (inline)
+         0     0% 96.09%        296  1.54%  testing.(*matcher).fullName
+         0     0% 96.09%        143  0.74%  testing.runTests.func1
+         0     0% 96.09%        237  1.23%  testing.simpleMatch.matches
+         0     0% 96.09%        124  0.65%  testing.simpleMatch.verify
+         0     0% 96.09%      19041 99.17%  testing.tRunner
+         0     0% 96.09%        354  1.84%  testing/internal/testdeps.TestDeps.MatchString

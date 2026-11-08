@@ -1,0 +1,47 @@
+File: candidate.test
+Type: alloc_space
+Time: 2026-11-08 02:59:35 CST
+Showing nodes accounting for 1027.61MB, 98.53% of 1042.95MB total
+Dropped 71 nodes (cum <= 5.21MB)
+Showing top 40 nodes out of 41
+      flat  flat%   sum%        cum   cum%
+  311.01MB 29.82% 29.82%   311.01MB 29.82%  github.com/CloudyKit/jet/v6.(*Runtime).newScope (inline)
+     217MB 20.81% 50.63%      217MB 20.81%  reflect.unsafe_New
+  179.51MB 17.21% 67.84%   179.51MB 17.21%  github.com/CloudyKit/jet/v6.(*Runtime).executeYieldBlock
+  135.09MB 12.95% 80.79%   135.09MB 12.95%  bytes.Clone (inline)
+   63.50MB  6.09% 86.88%    63.50MB  6.09%  github.com/CloudyKit/jet/v6.newIntsRanger (inline)
+   31.50MB  3.02% 89.90%    90.50MB  8.68%  path.Join
+   30.50MB  2.92% 92.82%       94MB  9.01%  github.com/CloudyKit/jet/v6.init.0.func5
+   30.50MB  2.92% 95.75%    30.50MB  2.92%  path.(*lazybuf).append (inline)
+   28.50MB  2.73% 98.48%    28.50MB  2.73%  path.(*lazybuf).string (inline)
+    0.50MB 0.048% 98.53%   355.62MB 34.10%  reflect.Value.call
+         0     0% 98.53%   355.12MB 34.05%  encoding/json.Marshal
+         0     0% 98.53%   355.12MB 34.05%  encoding/json/v2.Marshal
+         0     0% 98.53%    74.52MB  7.15%  encoding/json/v2.makeInterfaceArshaler.func1
+         0     0% 98.53%   220.03MB 21.10%  encoding/json/v2.makeMapArshaler.func2
+         0     0% 98.53%   220.03MB 21.10%  encoding/json/v2.makeSliceArshaler.func2
+         0     0% 98.53%   220.03MB 21.10%  encoding/json/v2.marshalEncode
+         0     0% 98.53%     5.52MB  0.53%  encoding/json/v2.marshalValueAny
+         0     0% 98.53%      138MB 13.23%  encoding/json/v2.newAddressableValue
+         0     0% 98.53%   449.62MB 43.11%  github.com/CloudyKit/jet/v6.(*Runtime).evalCallExpression (inline)
+         0     0% 98.53%   355.62MB 34.10%  github.com/CloudyKit/jet/v6.(*Runtime).evalCommandExpression
+         0     0% 98.53%   449.62MB 43.11%  github.com/CloudyKit/jet/v6.(*Runtime).evalPipeCallExpression
+         0     0% 98.53%   355.62MB 34.10%  github.com/CloudyKit/jet/v6.(*Runtime).evalPipelineExpression
+         0     0% 98.53%       94MB  9.01%  github.com/CloudyKit/jet/v6.(*Runtime).evalPrimaryExpressionGroup
+         0     0% 98.53%   402.02MB 38.55%  github.com/CloudyKit/jet/v6.(*Runtime).executeInclude
+         0     0% 98.53%  1031.14MB 98.87%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 98.53%       94MB  9.01%  github.com/CloudyKit/jet/v6.(*Runtime).executeRange
+         0     0% 98.53%    90.50MB  8.68%  github.com/CloudyKit/jet/v6.(*Runtime).loadTemplate
+         0     0% 98.53%       91MB  8.73%  github.com/CloudyKit/jet/v6.(*Set).getSiblingTemplate
+         0     0% 98.53%  1031.14MB 98.87%  github.com/CloudyKit/jet/v6.(*Template).Execute (inline)
+         0     0% 98.53%  1031.14MB 98.87%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0% 98.53%     8.44MB  0.81%  github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes
+         0     0% 98.53%  1031.64MB 98.92%  github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes.func1
+         0     0% 98.53%  1031.14MB 98.87%  github.com/CloudyKit/jet/v6_test.init.func1
+         0     0% 98.53%       59MB  5.66%  path.Clean
+         0     0% 98.53%      138MB 13.23%  reflect.New
+         0     0% 98.53%   355.62MB 34.10%  reflect.Value.Call
+         0     0% 98.53%       79MB  7.57%  reflect.Value.MapIndex
+         0     0% 98.53%       79MB  7.57%  reflect.copyVal
+         0     0% 98.53%  1030.14MB 98.77%  testing.(*B).launch
+         0     0% 98.53%     9.94MB  0.95%  testing.(*B).run1.func1

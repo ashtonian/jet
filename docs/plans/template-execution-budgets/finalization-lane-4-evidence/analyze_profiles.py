@@ -84,14 +84,22 @@ def main(work):
                 inputs = {'command': command, 'binary_sha256': digest(binary), 'profile_sha256': expected,
                           'source_inputs': specification['inputs'], 'environment': specification['environment'],
                           'toolchain': toolchain}
-                passed = matrix.execute_stage(key, destination, source, command, dict(os.environ),
-                                              inputs, reports, 30)
+                previous = reports.get(key, {})
+                if (previous.get('specification') == inputs and previous.get('exit') == 1
+                        and target.exists() and matrix.valid_artifacts(previous)
+                        and 'no matches found for regexp:' in target.read_text()):
+                    passed = False
+                else:
+                    passed = matrix.execute_stage(key, destination, source, command, dict(os.environ),
+                                                  inputs, reports, 30)
                 text = target.read_text()
+                no_match = 'no matches found for regexp:' in text
                 source_missing = view.endswith('source') and bool(re.search(r'could not find file|could not open|no source information', text, re.I))
                 reports[key].update(source_unavailable=source_missing,
+                                    no_sampled_function_match=no_match,
                                     sparse_or_empty='0% of 0 total' in text or 'No samples were found' in text)
                 reports_path.write_text(json.dumps(reports, indent=2))
-                if not passed or source_missing:
+                if (not passed and not no_match) or source_missing:
                     failures.append(key)
     summary = {'profiles': profiles, 'reports': len(reports), 'failures': failures,
                'interpretation': 'Read the generated call/source and bytes/objects views; sparse heap is not retention proof. Capture logs contain native time/RSS observations. Instrumented timings are excluded from release comparisons.'}

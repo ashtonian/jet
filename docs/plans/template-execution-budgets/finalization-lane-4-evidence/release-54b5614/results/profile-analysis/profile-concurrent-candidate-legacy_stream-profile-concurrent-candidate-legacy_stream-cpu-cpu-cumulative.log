@@ -1,0 +1,48 @@
+File: candidate.test
+Type: cpu
+Time: 2026-11-08 03:03:17 CST
+Duration: 8.24s, Total samples = 61.15s (742.13%)
+Showing nodes accounting for 34.61s, 56.60% of 61.15s total
+Dropped 293 nodes (cum <= 0.31s)
+Showing top 40 nodes out of 129
+      flat  flat%   sum%        cum   cum%
+     0.16s  0.26%  0.26%     47.72s 78.04%  github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes.func1.1
+     0.04s 0.065%  0.33%     47.54s 77.74%  github.com/CloudyKit/jet/v6_test.init.func1
+     0.04s 0.065%  0.39%     47.50s 77.68%  github.com/CloudyKit/jet/v6.(*Template).Execute (inline)
+     2.87s  4.69%  5.09%     47.46s 77.61%  github.com/CloudyKit/jet/v6.(*Template).execute
+     0.97s  1.59%  6.67%     40.39s 66.05%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+     0.08s  0.13%  6.80%     23.42s 38.30%  github.com/CloudyKit/jet/v6.(*Runtime).printValue
+     0.11s  0.18%  6.98%     23.34s 38.17%  github.com/CloudyKit/fastprinter.PrintValue
+     0.19s  0.31%  7.29%     21.13s 34.55%  github.com/CloudyKit/jet/v6.(*escapeeWriter).Write
+     4.50s  7.36% 14.65%     20.94s 34.24%  text/template.HTMLEscape
+     0.27s  0.44% 15.09%     20.89s 34.16%  github.com/CloudyKit/fastprinter.PrintString
+     3.72s  6.08% 21.18%     17.11s 27.98%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+     7.37s 12.05% 33.23%     13.33s 21.80%  bytes.(*Buffer).Write
+     0.20s  0.33% 33.56%     12.99s 21.24%  github.com/CloudyKit/jet/v6.(*Runtime).evalPipelineExpression
+     0.10s  0.16% 33.72%     12.79s 20.92%  github.com/CloudyKit/jet/v6.(*Runtime).evalCommandExpression
+         0     0% 33.72%      9.35s 15.29%  github.com/CloudyKit/jet/v6.(*Runtime).evalCallExpression (inline)
+         0     0% 33.72%      9.35s 15.29%  github.com/CloudyKit/jet/v6.(*Runtime).evalPipeCallExpression
+         0     0% 33.72%      9.35s 15.29%  reflect.Value.Call
+         0     0% 33.72%      9.35s 15.29%  reflect.Value.call
+         0     0% 33.72%      9.31s 15.22%  encoding/json.Marshal
+         0     0% 33.72%      9.31s 15.22%  encoding/json/v2.Marshal
+     0.01s 0.016% 33.74%      9.17s 15.00%  encoding/json/v2.makeSliceArshaler.func2
+         0     0% 33.74%      9.17s 15.00%  encoding/json/v2.marshalEncode
+     0.40s  0.65% 34.39%      9.13s 14.93%  encoding/json/v2.makeMapArshaler.func2
+         0     0% 34.39%      8.31s 13.59%  runtime.systemstack
+         0     0% 34.39%      6.07s  9.93%  runtime.lock (partial-inline)
+     0.03s 0.049% 34.44%      6.07s  9.93%  runtime.lock2
+         0     0% 34.44%      6.07s  9.93%  runtime.lockWithRank (inline)
+     5.15s  8.42% 42.86%      5.15s  8.42%  runtime.usleep
+         0     0% 42.86%      4.91s  8.03%  runtime.osyield (inline)
+         0     0% 42.86%      4.83s  7.90%  runtime.(*mheap).alloc.func1
+         0     0% 42.86%      4.83s  7.90%  runtime.(*mheap).allocSpan
+     4.52s  7.39% 50.25%      4.52s  7.39%  runtime.madvise
+         0     0% 50.25%      4.50s  7.36%  runtime.sysUsed (inline)
+         0     0% 50.25%      4.50s  7.36%  runtime.sysUsedOS (inline)
+         0     0% 50.25%      4.28s  7.00%  runtime.goschedImpl
+         0     0% 50.25%      4.24s  6.93%  runtime.newstack
+         0     0% 50.25%      4.20s  6.87%  runtime.gopreempt_m (inline)
+         0     0% 50.25%      4.16s  6.80%  runtime.morestack
+     3.85s  6.30% 56.55%      3.87s  6.33%  bytes.(*Buffer).tryGrowByReslice (inline)
+     0.03s 0.049% 56.60%      3.87s  6.33%  runtime.schedule

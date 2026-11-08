@@ -1,0 +1,48 @@
+File: upstream.test
+Type: cpu
+Time: 2026-11-08 02:58:54 CST
+Duration: 9.85s, Total samples = 10.30s (104.57%)
+Showing nodes accounting for 9.15s, 88.83% of 10.30s total
+Dropped 156 nodes (cum <= 0.05s)
+Showing top 40 nodes out of 134
+      flat  flat%   sum%        cum   cum%
+     2.69s 26.12% 26.12%      2.69s 26.12%  runtime.kevent
+     0.82s  7.96% 34.08%      0.82s  7.96%  runtime.pthread_kill
+     0.65s  6.31% 40.39%      4.32s 41.94%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+     0.53s  5.15% 45.53%      0.53s  5.15%  runtime.usleep
+     0.48s  4.66% 50.19%      0.48s  4.66%  runtime.madvise
+     0.31s  3.01% 53.20%      0.67s  6.50%  text/template.HTMLEscape
+     0.29s  2.82% 56.02%      0.30s  2.91%  runtime.(*_panic).start
+     0.25s  2.43% 58.45%      0.25s  2.43%  runtime.pthread_cond_wait
+     0.23s  2.23% 60.68%      0.45s  4.37%  github.com/CloudyKit/jet/v6.(*intsRanger).Range
+     0.23s  2.23% 62.91%      0.23s  2.23%  reflect.Value.Elem
+     0.22s  2.14% 65.05%      0.73s  7.09%  bytes.(*Buffer).Write
+     0.20s  1.94% 66.99%      0.34s  3.30%  runtime.(*_panic).nextDefer
+     0.20s  1.94% 68.93%      0.20s  1.94%  runtime.memmove
+     0.14s  1.36% 70.29%      0.14s  1.36%  runtime.(*_panic).nextFrame
+     0.14s  1.36% 71.65%      0.20s  1.94%  runtime.mallocgcSmallNoScanSC6
+     0.14s  1.36% 73.01%      0.26s  2.52%  runtime.mallocgcSmallScanNoHeaderSC5
+     0.11s  1.07% 74.08%      0.15s  1.46%  runtime.mallocgcSmallScanNoHeaderSC3
+     0.11s  1.07% 75.15%      0.16s  1.55%  runtime.mallocgcTinySC2
+     0.10s  0.97% 76.12%      0.10s  0.97%  bytes.(*Buffer).tryGrowByReslice (inline)
+     0.09s  0.87% 76.99%      0.12s  1.17%  internal/runtime/maps.(*Map).getWithoutKeySmallFastStr
+     0.09s  0.87% 77.86%      0.09s  0.87%  runtime.pthread_cond_signal
+     0.08s  0.78% 78.64%      0.08s  0.78%  runtime.acquirem (inline)
+     0.08s  0.78% 79.42%      0.60s  5.83%  runtime.mallocgc
+     0.08s  0.78% 80.19%      0.21s  2.04%  runtime.mapaccess2_faststr
+     0.08s  0.78% 80.97%      0.09s  0.87%  runtime.tryDeferToSpanScan
+     0.08s  0.78% 81.75%      0.08s  0.78%  sync.(*Pool).pin
+     0.07s  0.68% 82.43%      0.08s  0.78%  runtime.mallocgcSmallScanNoHeaderSC2
+     0.07s  0.68% 83.11%      0.07s  0.68%  runtime.pthread_cond_timedwait_relative_np
+     0.07s  0.68% 83.79%      0.12s  1.17%  sync.(*Pool).Get
+     0.06s  0.58% 84.37%      4.72s 45.83%  github.com/CloudyKit/jet/v6.(*Template).Execute
+     0.06s  0.58% 84.95%      0.18s  1.75%  reflect.(*rtype).Implements
+     0.06s  0.58% 85.53%      0.06s  0.58%  runtime.nanotime1
+     0.06s  0.58% 86.12%      0.06s  0.58%  runtime.resolveTypeOff
+     0.05s  0.49% 86.60%      0.14s  1.36%  runtime.wbBufFlush1
+     0.05s  0.49% 87.09%      0.09s  0.87%  sync.(*Pool).Put
+     0.04s  0.39% 87.48%      0.20s  1.94%  github.com/CloudyKit/jet/v6.(*Runtime).evalBaseExpressionGroup
+     0.04s  0.39% 87.86%      0.55s  5.34%  github.com/CloudyKit/jet/v6.(*Runtime).executeInclude
+     0.04s  0.39% 88.25%      0.25s  2.43%  runtime.slicebytetostring
+     0.03s  0.29% 88.54%      0.87s  8.45%  github.com/CloudyKit/fastprinter.PrintValue
+     0.03s  0.29% 88.83%      0.40s  3.88%  github.com/CloudyKit/jet/v6.(*Runtime).executeYieldBlock

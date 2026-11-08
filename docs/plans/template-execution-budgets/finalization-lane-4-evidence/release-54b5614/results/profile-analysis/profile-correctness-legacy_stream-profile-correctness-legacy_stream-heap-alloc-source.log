@@ -1,0 +1,17 @@
+Total: 3.60GB
+ROUTINE ======================== github.com/CloudyKit/jet/v6.(*Runtime).recover in eval.go
+    1.09GB     1.09GB (flat, cum) 30.43% of Total
+         .          .    252:func (st *Runtime) recover(err *error) {
+         .          .    253:	recovered := recover()
+         .          .    254:	failure := st.writeErr
+    1.09GB     1.09GB    255:	st.scope = &scope{}
+         .          .    256:	*st.escapeeWriter = escapeeWriter{}
+         .          .    257:	st.content = nil
+         .          .    258:	st.context = reflect.Value{}
+         .          .    259:	st.includeDepth = 0
+         .        1MB    260:	pool_State.Put(st)
+         .          .    261:	if recovered != nil {
+         .          .    262:		if _, ok := recovered.(runtime.Error); ok {
+         .          .    263:			panic(recovered)
+         .          .    264:		}
+         .          .    265:		var ok bool

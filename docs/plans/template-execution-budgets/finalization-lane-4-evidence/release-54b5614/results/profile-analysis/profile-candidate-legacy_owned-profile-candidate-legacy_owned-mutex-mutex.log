@@ -1,0 +1,47 @@
+File: candidate.test
+Type: delay
+Time: 2026-11-08 02:59:45 CST
+Showing nodes accounting for 75.21us, 100% of 75.21us total
+Dropped 27 nodes (cum <= 0.38us)
+Showing top 40 nodes out of 55
+      flat  flat%   sum%        cum   cum%
+   75.21us   100%   100%    75.21us   100%  runtime.unlock (partial-inline)
+         0     0%   100%     9.42us 12.52%  github.com/CloudyKit/jet/v6_test.BenchmarkExecutionModes
+         0     0%   100%     9.42us 12.52%  github.com/CloudyKit/jet/v6_test.executionWorkloads
+         0     0%   100%     9.42us 12.52%  github.com/CloudyKit/jet/v6_test.measurementWorkloads
+         0     0%   100%     9.42us 12.52%  os.ReadFile
+         0     0%   100%     9.42us 12.52%  os.readFileContents
+         0     0%   100%     9.42us 12.52%  runtime.(*mcache).allocLarge
+         0     0%   100%     9.63us 12.80%  runtime.(*mheap).alloc
+         0     0%   100%     9.63us 12.80%  runtime.(*mheap).alloc.func1
+         0     0%   100%        3us  3.99%  runtime.(*mheap).freeSpan (inline)
+         0     0%   100%        3us  3.99%  runtime.(*mheap).freeSpan.func1
+         0     0%   100%     9.63us 12.80%  runtime.(*mheap).reclaim
+         0     0%   100%     9.63us 12.80%  runtime.(*mheap).reclaimChunk
+         0     0%   100%        3us  3.99%  runtime.(*sweepLocked).sweep
+         0     0%   100%     1.12us  1.50%  runtime.GC
+         0     0%   100%     4.96us  6.59%  runtime.allocm
+         0     0%   100%     1.33us  1.77%  runtime.bgsweep
+         0     0%   100%     3.42us  4.54%  runtime.findRunnable
+         0     0%   100%       15us 19.94%  runtime.forEachP (inline)
+         0     0%   100%       15us 19.94%  runtime.forEachP.func1
+         0     0%   100%       15us 19.94%  runtime.forEachPInternal
+         0     0%   100%    59.71us 79.39%  runtime.gcBgMarkWorker
+         0     0%   100%     4.96us  6.59%  runtime.gcBgMarkWorker.func2
+         0     0%   100%     4.96us  6.59%  runtime.gcDrain
+         0     0%   100%     4.96us  6.59%  runtime.gcDrainMarkWorkerIdle (inline)
+         0     0%   100%    54.75us 72.80%  runtime.gcMarkDone
+         0     0%   100%     4.79us  6.37%  runtime.gcMarkDone.func2
+         0     0%   100%    34.96us 46.48%  runtime.gcMarkTermination
+         0     0%   100%    34.96us 46.48%  runtime.gcMarkTermination.func3
+         0     0%   100%     1.54us  2.05%  runtime.gcstopm
+         0     0%   100%     2.33us  3.10%  runtime.gopreempt_m (inline)
+         0     0%   100%     2.33us  3.10%  runtime.goschedImpl
+         0     0%   100%     9.42us 12.52%  runtime.makeslice
+         0     0%   100%     9.63us 12.80%  runtime.mallocgc
+         0     0%   100%     9.42us 12.52%  runtime.mallocgcLarge
+         0     0%   100%     4.96us  6.59%  runtime.markroot
+         0     0%   100%     4.96us  6.59%  runtime.markroot.func1
+         0     0%   100%     4.96us  6.59%  runtime.mcommoninit
+         0     0%   100%     3.42us  4.54%  runtime.morestack
+         0     0%   100%     4.96us  6.59%  runtime.newm
