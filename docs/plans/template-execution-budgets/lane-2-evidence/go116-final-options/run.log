@@ -1,0 +1,4 @@
+gate-lock: held by pid <pid> on <host>, "jet-lane-2-go116-final-options 5583ec1 in <checkout>", since 2026-11-08T00:37:51Z, 2 of 6 focused cores
+# github.com/CloudyKit/jet/v6.test
+ld: warning: '<temporary> has malformed LC_DYSYMTAB, expected 86 undefined symbols to start at index 7961, found 92 undefined symbols starting at index 58
+ok  	github.com/CloudyKit/jet/v6	0.228s

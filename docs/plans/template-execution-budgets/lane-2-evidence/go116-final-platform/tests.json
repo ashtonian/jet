@@ -1,0 +1,19 @@
+{
+  "command": [
+    "<go1.16-sdk>/bin/go",
+    "test",
+    "-ldflags=-linkmode=external",
+    "-p=1",
+    "-parallel=2",
+    "-timeout=120s",
+    "-count=1",
+    "./..."
+  ],
+  "deadline_seconds": 180,
+  "term_cleanup_seconds": 5,
+  "kill_cleanup_seconds": 5,
+  "started": 1794097330.4964092,
+  "finished": 1794097336.903382,
+  "exit_code": 0,
+  "timed_out": false
+}

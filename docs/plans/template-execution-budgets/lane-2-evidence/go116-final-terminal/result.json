@@ -1,0 +1,41 @@
+{
+  "head": "5583ec15361aea8f98c7a0d5a1fcbef25d407c0e",
+  "command": [
+    "gate-lock",
+    "run-focused",
+    "jet-lane-2-go116-final-terminal",
+    "--",
+    "go",
+    "test",
+    "-ldflags=-linkmode=external",
+    "-p=1",
+    "-parallel=2",
+    "-timeout=60s",
+    "-count=1",
+    "-run",
+    "^TestExecutionDiscardedOutput$",
+    "."
+  ],
+  "execution_timeout_seconds": 120,
+  "kill_after_seconds": 5,
+  "queued_at": 1794098462.976892,
+  "harness_sha256": "5eab2db071c1b3c33da58c40d7b9146057c367c29dfaba6d7df14e02a5ffb0ac",
+  "go_version": "go version go1.16.15 darwin/arm64",
+  "go_env": {
+    "GOARCH": "arm64",
+    "GOFLAGS": "-trimpath",
+    "GOMOD": "<checkout>/go.mod",
+    "GOOS": "darwin",
+    "GOTOOLCHAIN": "",
+    "GOWORK": ""
+  },
+  "environment": {
+    "GATE_LOCK_WAIT": "1",
+    "GATE_LOCK_COMMAND_TIMEOUT": "120",
+    "GATE_LOCK_COMMAND_KILL_AFTER": "5"
+  },
+  "exit_code": 0,
+  "finished_at": 1794098469.669933,
+  "inputs_unchanged": true,
+  "input_manifest": "../manifests/e150d1277715bb1f0ad7c5f7867bf31f7d759f3721ceebcff53835b606da8279.json"
+}
