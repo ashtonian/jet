@@ -34,7 +34,9 @@ var (
 	safeWriterType = reflect.TypeOf(SafeWriter(nil))
 	pool_State     = sync.Pool{
 		New: func() interface{} {
-			return &Runtime{scope: &scope{}, escapeeWriter: new(escapeeWriter)}
+			st := &Runtime{escapeeWriter: new(escapeeWriter)}
+			st.scope = &st.rootScope
+			return st
 		},
 	}
 )
@@ -54,41 +56,34 @@ func (renderer RendererFunc) Render(r *Runtime) {
 }
 
 type escapeeWriter struct {
-	Writer     io.Writer
-	set        *Set
-	writeErr   error
-	rootSink   checkedWriter
-	escapeSink checkedWriter
-}
-
-// checkedWriter records failures even when a SafeWriter or Renderer ignores them.
-type checkedWriter struct {
-	writer  io.Writer
-	failure *error
-}
-
-func (w *checkedWriter) Write(b []byte) (int, error) {
-	if *w.failure != nil {
-		return 0, *w.failure
-	}
-	n, err := w.writer.Write(b)
-	if err == nil && n != len(b) {
-		err = io.ErrShortWrite
-	}
-	if err != nil {
-		*w.failure = err
-	}
-	return n, err
+	Writer       io.Writer
+	set          *Set
+	writeErr     error
+	rootSink     checkedWriter
+	redirectSink checkedWriter
 }
 
 func (w *escapeeWriter) Write(b []byte) (int, error) {
 	if w.set.escapee == nil {
 		return w.Writer.Write(b)
 	}
-	previous := w.escapeSink
-	w.escapeSink = checkedWriter{writer: w.Writer, failure: &w.writeErr}
-	defer func() { w.escapeSink = previous }()
-	w.set.escapee(&w.escapeSink, b)
+	if sink, ok := w.Writer.(*checkedWriter); !ok || sink.runtime != w.rootSink.runtime {
+		return w.writeRedirected(b)
+	}
+	// Capture the current checked destination; a trusted escaper may reenter
+	// execution and temporarily replace Runtime.Writer.
+	w.set.escapee(w.Writer, b)
+	if w.writeErr != nil {
+		return 0, w.writeErr
+	}
+	return len(b), nil
+}
+
+func (w *escapeeWriter) writeRedirected(b []byte) (int, error) {
+	previous := w.redirectSink
+	w.redirectSink = w.rootSink.runtime.checkedOutput(w.Writer)
+	defer func() { w.redirectSink = previous }()
+	w.set.escapee(&w.redirectSink, b)
 	if w.writeErr != nil {
 		return 0, w.writeErr
 	}
@@ -102,8 +97,11 @@ type Runtime struct {
 	content      func(*Runtime, Expression)
 	includeDepth int
 
-	context   reflect.Value
-	execution executionState
+	context      reflect.Value
+	execution    executionState
+	rootScope    scope
+	printer      dataPrinter
+	outputOrigin *NodeBase
 }
 
 // Context returns the current context value
@@ -281,7 +279,10 @@ func (st *Runtime) recover(err *error) {
 	if failure == nil {
 		failure = st.writeErr
 	}
-	st.scope = &scope{}
+	st.rootScope = scope{}
+	st.scope = &st.rootScope
+	st.printer = dataPrinter{}
+	st.outputOrigin = nil
 	*st.escapeeWriter = escapeeWriter{}
 	st.content = nil
 	st.context = reflect.Value{}
@@ -481,7 +482,8 @@ func (st *Runtime) executeYieldBlock(block *BlockNode, blockParam, yieldParam *B
 
 func (st *Runtime) executeList(list *ListNode) (returnValue reflect.Value) {
 	st.enter()
-	defer st.leave()
+	origin := st.outputOrigin
+	defer func() { st.outputOrigin = origin; st.leave() }()
 	inNewScope := false // to use just one scope for multiple actions with variable declarations
 
 	for i := 0; i < len(list.Nodes); i++ {
@@ -492,12 +494,14 @@ func (st *Runtime) executeList(list *ListNode) (returnValue reflect.Value) {
 
 		case NodeText:
 			node := node.(*TextNode)
+			st.outputOrigin = &node.NodeBase
 			_, err := st.Writer.Write(node.Text)
 			if err != nil {
 				node.error(err)
 			}
 		case NodeAction:
 			node := node.(*ActionNode)
+			st.outputOrigin = &node.NodeBase
 			if node.Set != nil {
 				if node.Set.Let {
 					if !inNewScope {
@@ -551,6 +555,7 @@ func (st *Runtime) executeList(list *ListNode) (returnValue reflect.Value) {
 		case NodeRange:
 			returnValue = st.executeRange(node.(*RangeNode))
 		case NodeTry:
+			st.outputOrigin = &node.(*TryNode).NodeBase
 			node := node.(*TryNode)
 			returnValue = st.executeTry(node)
 		case NodeYield:

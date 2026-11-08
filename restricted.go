@@ -205,14 +205,12 @@ func (s *Set) authorizeName(name string) error {
 }
 
 type restrictedSink struct {
-	buffer  bytes.Buffer
-	runtime *Runtime
-	result  string
-	owner   *Template
+	buffer bytes.Buffer
+	result string
+	owner  *Template
 }
 
 func (w *restrictedSink) Write(b []byte) (int, error) {
-	w.runtime.reserveValue(int64(len(b)))
 	return w.buffer.Write(b)
 }
 

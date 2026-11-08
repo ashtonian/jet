@@ -20,7 +20,10 @@ func (st *Runtime) printValue(w io.Writer, v reflect.Value) (int, error) {
 	if st.execution.ctx == nil {
 		return fastprinter.PrintValue(w, v)
 	}
-	p := &dataPrinter{runtime: st, writer: w}
+	p := &st.printer
+	previous := *p
+	*p = dataPrinter{runtime: st, writer: w}
+	defer func() { *p = previous }()
 	err := p.value(v, false)
 	return p.written, err
 }
@@ -29,6 +32,7 @@ type dataPrinter struct {
 	runtime *Runtime
 	writer  io.Writer
 	written int
+	scratch [64]byte
 }
 
 func (p *dataPrinter) Write(b []byte) (int, error) {
@@ -69,23 +73,22 @@ func (p *dataPrinter) value(v reflect.Value, nested bool) error {
 		st.checkpoint(0)
 		return err
 	}
-	var scratch [64]byte
 	var scalar []byte
 	switch k := v.Kind(); {
 	case k == reflect.String:
 		return p.text(v.String())
 	case isInt(k):
-		scalar = strconv.AppendInt(scratch[:0], v.Int(), 10)
+		scalar = strconv.AppendInt(p.scratch[:0], v.Int(), 10)
 	case isUint(k):
-		scalar = strconv.AppendUint(scratch[:0], v.Uint(), 10)
+		scalar = strconv.AppendUint(p.scratch[:0], v.Uint(), 10)
 	case k == reflect.Bool:
-		scalar = strconv.AppendBool(scratch[:0], v.Bool())
+		scalar = strconv.AppendBool(p.scratch[:0], v.Bool())
 	case isFloat(k):
 		if !nested {
 			_, err := fastprinter.PrintValue(p, v)
 			return err
 		}
-		scalar = strconv.AppendFloat(scratch[:0], v.Float(), 'g', -1, v.Type().Bits())
+		scalar = strconv.AppendFloat(p.scratch[:0], v.Float(), 'g', -1, v.Type().Bits())
 	case k == reflect.Array || k == reflect.Slice:
 		if !nested && k == reflect.Slice && v.Type().Elem().Kind() == reflect.Uint8 {
 			_, err := p.Write(v.Bytes())

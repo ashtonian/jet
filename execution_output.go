@@ -2,55 +2,108 @@ package jet
 
 import (
 	"bytes"
+	"fmt"
 	"io"
+	"path/filepath"
 )
+
+// Each destination checks and accounts for writes once, after escaping. The
+// embedded root/transaction sinks retain no caller references after cleanup.
+type checkedWriter struct {
+	runtime   *Runtime
+	writer    io.Writer
+	retained  *bytes.Buffer
+	buffer    *bytes.Buffer
+	committed bool
+}
+
+func (w *checkedWriter) Write(b []byte) (int, error) {
+	st := w.runtime
+	if st.execution.terminal != nil {
+		if st.writeErr != nil {
+			return 0, st.writeErr
+		}
+		st.rethrowTerminal()
+	}
+	if st.execution.ctx != nil {
+		st.reserveWork(uint64(len(b)))
+		budget := &st.execution
+		if !w.committed {
+			st.reserveUnchecked(&budget.output, uint64(budget.options.MaxOutputBytes), uint64(len(b)), "output", ErrOutputLimit)
+		}
+		if w.retained != nil {
+			size, ok := addValueSizes(int64(w.retained.Len()), int64(len(b)))
+			if !ok || uint64(size) > uint64(^uint(0)>>1) {
+				st.failValueSize()
+			}
+			st.reserveUnchecked(&budget.values, uint64(budget.options.MaxValueBytes), uint64(len(b)), "value", ErrValueLimit)
+		}
+	}
+	// bytes.Buffer.Write always accepts the complete chunk or panics.
+	// Keep arbitrary writer error/short-write handling on the native path.
+	if w.buffer != nil {
+		return w.buffer.Write(b)
+	}
+	n, err := w.writer.Write(b)
+	if err == nil && n != len(b) {
+		err = io.ErrShortWrite
+	}
+	if err != nil {
+		err = st.outputFailure(err)
+	}
+	return n, err
+}
+
+func (st *Runtime) outputFailure(err error) error {
+	if st.execution.terminal != nil {
+		return st.execution.terminal
+	}
+	if st.writeErr == nil {
+		if node := st.outputOrigin; node != nil {
+			path := node.TemplatePath
+			if len(path) > 256 {
+				path = path[:253] + "..."
+			}
+			if node.Line > 0 {
+				err = fmt.Errorf("Jet Runtime Error (%q:%d): %w", filepath.ToSlash(path), node.Line, err)
+			} else {
+				err = fmt.Errorf("Jet Runtime Error (%q:byte %d): %w", filepath.ToSlash(path), node.Pos, err)
+			}
+		}
+		st.writeErr = err
+		st.execution.terminal = err
+	}
+	return st.writeErr
+}
 
 // A transaction owns only its temporary output. The render keeps the same
 // execution state through nested buffering, rollback, and commit.
 type outputTransaction struct {
 	parent io.Writer
 	buffer bytes.Buffer
+	sink   checkedWriter
 }
 
-type executionWriter struct {
-	runtime  *Runtime
-	writer   io.Writer
-	retained bool
+func (st *Runtime) checkedOutput(w io.Writer) checkedWriter {
+	sink := checkedWriter{runtime: st, writer: w}
+	sink.buffer, _ = w.(*bytes.Buffer)
+	return sink
 }
 
 func (st *Runtime) outputWriter(w io.Writer, retained bool) io.Writer {
-	if st.execution.ctx == nil {
-		return &checkedWriter{writer: w, failure: &st.writeErr}
+	sink := st.checkedOutput(w)
+	if retained {
+		sink.retained = w.(*bytes.Buffer)
 	}
-	return &executionWriter{runtime: st, writer: w, retained: retained}
-}
-
-func (w *executionWriter) Write(b []byte) (int, error) {
-	return w.write(b, true)
-}
-
-func (w *executionWriter) write(b []byte, generated bool) (int, error) {
-	st := w.runtime
-	st.checkpoint(uint64(len(b)))
-	if generated {
-		st.reserve(&st.execution.output, uint64(st.execution.options.MaxOutputBytes), uint64(len(b)), "output", ErrOutputLimit)
-	}
-	if w.retained {
-		buffer := w.writer.(*bytes.Buffer)
-		size, ok := addValueSizes(int64(buffer.Len()), int64(len(b)))
-		if !ok || uint64(size) > uint64(^uint(0)>>1) {
-			st.failValueSize()
-		}
-		st.reserveValue(int64(len(b)))
-	}
-	sink := checkedWriter{writer: w.writer, failure: &st.writeErr}
-	return sink.Write(b)
+	return &sink
 }
 
 func (st *Runtime) beginOutputTransaction() *outputTransaction {
 	st.checkpoint(0)
 	tx := &outputTransaction{parent: st.Writer}
-	st.Writer = st.outputWriter(&tx.buffer, true)
+	tx.sink = st.checkedOutput(&tx.buffer)
+	tx.sink.retained = &tx.buffer
+	st.Writer = &tx.sink
 	return tx
 }
 
@@ -58,10 +111,16 @@ func (st *Runtime) commitOutputTransaction(tx *outputTransaction) {
 	st.checkpoint(0)
 	st.Writer = tx.parent
 	var err error
-	if parent, ok := tx.parent.(*executionWriter); ok && parent.runtime == st {
-		_, err = parent.write(tx.buffer.Bytes(), false)
+	if parent, ok := tx.parent.(*checkedWriter); ok && parent.runtime == st {
+		// Copy the sink's mode so trusted reentrant output still uses the
+		// original, generation-accounting destination.
+		transfer := *parent
+		transfer.committed = true
+		_, err = transfer.Write(tx.buffer.Bytes())
 	} else {
-		_, err = tx.parent.Write(tx.buffer.Bytes())
+		transfer := st.checkedOutput(tx.parent)
+		transfer.committed = true
+		_, err = transfer.Write(tx.buffer.Bytes())
 	}
 	if err != nil {
 		st.terminate(err)
