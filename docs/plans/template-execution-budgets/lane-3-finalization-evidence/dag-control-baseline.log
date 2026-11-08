@@ -1,0 +1,3 @@
+--- FAIL: TestCompilationSharedDiamondWork (0.00s)
+    admission_graph_test.go:31: jet: parse steps limit exceeded (2000)
+FAIL

@@ -1,0 +1,13 @@
+File: follow-base4.test
+Type: delay
+Time: 2026-11-08 02:16:18 CST
+Showing nodes accounting for 499ns, 100% of 499ns total
+      flat  flat%   sum%        cum   cum%
+     499ns   100%   100%      499ns   100%  runtime.unlock (inline)
+         0     0%   100%      499ns   100%  runtime.findRunnable
+         0     0%   100%      499ns   100%  runtime.gopreempt_m (inline)
+         0     0%   100%      499ns   100%  runtime.goschedImpl
+         0     0%   100%      499ns   100%  runtime.morestack
+         0     0%   100%      499ns   100%  runtime.newstack
+         0     0%   100%      499ns   100%  runtime.runSafePointFn
+         0     0%   100%      499ns   100%  runtime.schedule

@@ -1,0 +1,33 @@
+Total: 1.67GB
+ROUTINE ======================== github.com/CloudyKit/jet/v6.admitInputScopes in .git/finalization/input4-source/input.go
+  551.17MB   551.17MB (flat, cum) 32.30% of Total
+         .          .     43:func admitInputScopes(ctx context.Context, scopes []VarMap, data interface{}, opts InputOptions) (out VarMap, snapshot interface{}, err error) {
+         .          .     44:	if ctx == nil || opts.MaxBytes <= 0 || opts.MaxItems == 0 || opts.MaxSteps == 0 || opts.MaxDepth <= 0 || opts.MaxDepth > 64 {
+         .          .     45:		return nil, nil, fmt.Errorf("%w: positive input budgets and depth <=64 required", ErrInputLimit)
+         .          .     46:	}
+         .          .     47:	a := &inputAdmission{ctx: ctx, opts: opts}
+         .          .     48:	defer func() {
+         .          .     49:		if p := recover(); p != nil {
+         .          .     50:			if failure, ok := p.(inputAbort); ok {
+         .          .     51:				err = failure.error
+         .          .     52:				out = nil
+         .          .     53:				snapshot = nil
+         .          .     54:			} else {
+         .          .     55:				panic(p)
+         .          .     56:			}
+         .          .     57:		}
+         .          .     58:	}()
+         .          .     59:	for _, scope := range scopes {
+         .          .     60:		a.reserveItems(uint64(len(scope)))
+         .          .     61:		a.reserveBytes(uint64(len(scope)), uint64(5*(strconv.IntSize/8)))
+         .          .     62:		if len(scope) > 0 && out == nil {
+      67MB       67MB     63:			out = make(VarMap, len(scope))
+         .          .     64:		}
+         .          .     65:		for name, value := range scope {
+         .          .     66:			a.reserveBytes(uint64(len(name)), 1)
+  484.16MB   484.16MB     67:			out[name] = a.clone(value, 1)
+         .          .     68:		}
+         .          .     69:	}
+         .          .     70:	value := a.clone(reflect.ValueOf(data), 1)
+         .          .     71:	if value.IsValid() {
+         .          .     72:		snapshot = value.Interface()

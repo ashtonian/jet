@@ -1,0 +1,25 @@
+File: follow-pooled4.test
+Type: delay
+Time: 2026-11-08 02:16:20 CST
+Showing nodes accounting for 7542ns, 100% of 7542ns total
+      flat  flat%   sum%        cum   cum%
+    7542ns   100%   100%     7542ns   100%  runtime.unlock (partial-inline)
+         0     0%   100%      167ns  2.21%  runtime.(*mheap).freeSpan (inline)
+         0     0%   100%      167ns  2.21%  runtime.(*mheap).freeSpan.func1
+         0     0%   100%      167ns  2.21%  runtime.(*sweepLocked).sweep
+         0     0%   100%      167ns  2.21%  runtime.bgsweep
+         0     0%   100%      125ns  1.66%  runtime.findRunnable
+         0     0%   100%     7250ns 96.13%  runtime.forEachP (inline)
+         0     0%   100%     7250ns 96.13%  runtime.forEachP.func1
+         0     0%   100%     7250ns 96.13%  runtime.forEachPInternal
+         0     0%   100%     7250ns 96.13%  runtime.gcBgMarkWorker
+         0     0%   100%     7250ns 96.13%  runtime.gcMarkDone
+         0     0%   100%      125ns  1.66%  runtime.gcstopm
+         0     0%   100%      125ns  1.66%  runtime.gopreempt_m (inline)
+         0     0%   100%      125ns  1.66%  runtime.goschedImpl
+         0     0%   100%      125ns  1.66%  runtime.morestack
+         0     0%   100%      125ns  1.66%  runtime.newstack
+         0     0%   100%      125ns  1.66%  runtime.schedule
+         0     0%   100%      125ns  1.66%  runtime.stopm
+         0     0%   100%      167ns  2.21%  runtime.sweepone
+         0     0%   100%     7417ns 98.34%  runtime.systemstack

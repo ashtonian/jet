@@ -1,0 +1,446 @@
+[
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-top",
+      "-sample_index=alloc_objects",
+      "-nodecount=30",
+      "$CHECKOUT/.git/finalization/baseline.test",
+      "$CHECKOUT/.git/finalization/baseline-heap.pprof"
+    ],
+    "exit_code": 0,
+    "start": 1794126555.0341492,
+    "end": 1794126556.687066
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-top",
+      "-sample_index=inuse_objects",
+      "-nodecount=30",
+      "$CHECKOUT/.git/finalization/baseline.test",
+      "$CHECKOUT/.git/finalization/baseline-heap.pprof"
+    ],
+    "exit_code": 0,
+    "start": 1794126556.68714,
+    "end": 1794126556.80827
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-top",
+      "-sample_index=alloc_objects",
+      "-nodecount=30",
+      "$CHECKOUT/.git/finalization/graph4.test",
+      "$CHECKOUT/.git/finalization/graph4-heap.pprof"
+    ],
+    "exit_code": 0,
+    "start": 1794126556.809951,
+    "end": 1794126556.934216
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-top",
+      "-sample_index=inuse_objects",
+      "-nodecount=30",
+      "$CHECKOUT/.git/finalization/graph4.test",
+      "$CHECKOUT/.git/finalization/graph4-heap.pprof"
+    ],
+    "exit_code": 0,
+    "start": 1794126556.9343328,
+    "end": 1794126557.073094
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-top",
+      "-sample_index=alloc_objects",
+      "-nodecount=30",
+      "$CHECKOUT/.git/finalization/input4.test",
+      "$CHECKOUT/.git/finalization/input4-heap.pprof"
+    ],
+    "exit_code": 0,
+    "start": 1794126557.0737338,
+    "end": 1794126557.1955268
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-top",
+      "-sample_index=inuse_objects",
+      "-nodecount=30",
+      "$CHECKOUT/.git/finalization/input4.test",
+      "$CHECKOUT/.git/finalization/input4-heap.pprof"
+    ],
+    "exit_code": 0,
+    "start": 1794126557.195613,
+    "end": 1794126557.314433
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-top",
+      "-sample_index=alloc_objects",
+      "-nodecount=30",
+      "$CHECKOUT/.git/finalization/follow-base4.test",
+      "$CHECKOUT/.git/finalization/follow-base4-heap.pprof"
+    ],
+    "exit_code": 0,
+    "start": 1794126557.315776,
+    "end": 1794126557.431079
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-top",
+      "-sample_index=inuse_objects",
+      "-nodecount=30",
+      "$CHECKOUT/.git/finalization/follow-base4.test",
+      "$CHECKOUT/.git/finalization/follow-base4-heap.pprof"
+    ],
+    "exit_code": 0,
+    "start": 1794126557.431155,
+    "end": 1794126557.552908
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-top",
+      "-sample_index=alloc_objects",
+      "-nodecount=30",
+      "$CHECKOUT/.git/finalization/follow-pooled4.test",
+      "$CHECKOUT/.git/finalization/follow-pooled4-heap.pprof"
+    ],
+    "exit_code": 0,
+    "start": 1794126557.553613,
+    "end": 1794126557.685146
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-top",
+      "-sample_index=inuse_objects",
+      "-nodecount=30",
+      "$CHECKOUT/.git/finalization/follow-pooled4.test",
+      "$CHECKOUT/.git/finalization/follow-pooled4-heap.pprof"
+    ],
+    "exit_code": 0,
+    "start": 1794126557.685229,
+    "end": 1794126557.8059351
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-top",
+      "-sample_index=alloc_objects",
+      "-nodecount=30",
+      "$CHECKOUT/.git/finalization/follow-active8.test",
+      "$CHECKOUT/.git/finalization/follow-active8-heap.pprof"
+    ],
+    "exit_code": 0,
+    "start": 1794126557.806498,
+    "end": 1794126557.924426
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-top",
+      "-sample_index=inuse_objects",
+      "-nodecount=30",
+      "$CHECKOUT/.git/finalization/follow-active8.test",
+      "$CHECKOUT/.git/finalization/follow-active8-heap.pprof"
+    ],
+    "exit_code": 0,
+    "start": 1794126557.924504,
+    "end": 1794126558.03596
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-top",
+      "-sample_index=alloc_objects",
+      "-nodecount=30",
+      "$CHECKOUT/.git/finalization/follow-pooled4.test",
+      "$CHECKOUT/.git/finalization/shape-pooled4-heap.pprof"
+    ],
+    "exit_code": 0,
+    "start": 1794126558.0363321,
+    "end": 1794126558.166856
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-top",
+      "-sample_index=inuse_objects",
+      "-nodecount=30",
+      "$CHECKOUT/.git/finalization/follow-pooled4.test",
+      "$CHECKOUT/.git/finalization/shape-pooled4-heap.pprof"
+    ],
+    "exit_code": 0,
+    "start": 1794126558.16694,
+    "end": 1794126558.2846699
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-top",
+      "-nodecount=30",
+      "$CHECKOUT/.git/finalization/follow-pooled4.test",
+      "$CHECKOUT/.git/finalization/shape-pooled4-cpu.pprof"
+    ],
+    "exit_code": 0,
+    "start": 1794126558.2848141,
+    "end": 1794126558.405668
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-top",
+      "-cum",
+      "-nodecount=30",
+      "$CHECKOUT/.git/finalization/follow-pooled4.test",
+      "$CHECKOUT/.git/finalization/shape-pooled4-cpu.pprof"
+    ],
+    "exit_code": 0,
+    "start": 1794126558.405809,
+    "end": 1794126558.522326
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-top",
+      "-sample_index=alloc_space",
+      "-nodecount=30",
+      "$CHECKOUT/.git/finalization/follow-pooled4.test",
+      "$CHECKOUT/.git/finalization/shape-pooled4-heap.pprof"
+    ],
+    "exit_code": 0,
+    "start": 1794126558.5224488,
+    "end": 1794126558.6432278
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-top",
+      "-sample_index=inuse_space",
+      "-nodecount=30",
+      "$CHECKOUT/.git/finalization/follow-pooled4.test",
+      "$CHECKOUT/.git/finalization/shape-pooled4-heap.pprof"
+    ],
+    "exit_code": 0,
+    "start": 1794126558.6433768,
+    "end": 1794126558.760077
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-top",
+      "-nodecount=30",
+      "$CHECKOUT/.git/finalization/follow-pooled4.test",
+      "$CHECKOUT/.git/finalization/shape-pooled4-mutex.pprof"
+    ],
+    "exit_code": 0,
+    "start": 1794126558.760213,
+    "end": 1794126558.8769238
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-top",
+      "-nodecount=30",
+      "$CHECKOUT/.git/finalization/follow-pooled4.test",
+      "$CHECKOUT/.git/finalization/shape-pooled4-block.pprof"
+    ],
+    "exit_code": 0,
+    "start": 1794126558.877064,
+    "end": 1794126558.986329
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-source_path=$CHECKOUT",
+      "-trim_path=github.com/CloudyKit/jet/v6/",
+      "-list=clone|enterContainer|admitInputScopesInto",
+      "-sample_index=alloc_space",
+      "$CHECKOUT/.git/finalization/follow-pooled4.test",
+      "$CHECKOUT/.git/finalization/shape-pooled4-heap.pprof"
+    ],
+    "exit_code": 0,
+    "no_sampled_match": false
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-top",
+      "-sample_index=alloc_objects",
+      "-nodecount=30",
+      "$CHECKOUT/.git/finalization/follow-active8.test",
+      "$CHECKOUT/.git/finalization/shape-active8-heap.pprof"
+    ],
+    "exit_code": 0,
+    "start": 1794126559.111089,
+    "end": 1794126559.228811
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-top",
+      "-sample_index=inuse_objects",
+      "-nodecount=30",
+      "$CHECKOUT/.git/finalization/follow-active8.test",
+      "$CHECKOUT/.git/finalization/shape-active8-heap.pprof"
+    ],
+    "exit_code": 0,
+    "start": 1794126559.228881,
+    "end": 1794126559.361749
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-top",
+      "-nodecount=30",
+      "$CHECKOUT/.git/finalization/follow-active8.test",
+      "$CHECKOUT/.git/finalization/shape-active8-cpu.pprof"
+    ],
+    "exit_code": 0,
+    "start": 1794126559.361907,
+    "end": 1794126559.495189
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-top",
+      "-cum",
+      "-nodecount=30",
+      "$CHECKOUT/.git/finalization/follow-active8.test",
+      "$CHECKOUT/.git/finalization/shape-active8-cpu.pprof"
+    ],
+    "exit_code": 0,
+    "start": 1794126559.4953291,
+    "end": 1794126559.626731
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-top",
+      "-sample_index=alloc_space",
+      "-nodecount=30",
+      "$CHECKOUT/.git/finalization/follow-active8.test",
+      "$CHECKOUT/.git/finalization/shape-active8-heap.pprof"
+    ],
+    "exit_code": 0,
+    "start": 1794126559.626867,
+    "end": 1794126559.744954
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-top",
+      "-sample_index=inuse_space",
+      "-nodecount=30",
+      "$CHECKOUT/.git/finalization/follow-active8.test",
+      "$CHECKOUT/.git/finalization/shape-active8-heap.pprof"
+    ],
+    "exit_code": 0,
+    "start": 1794126559.745087,
+    "end": 1794126559.85742
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-top",
+      "-nodecount=30",
+      "$CHECKOUT/.git/finalization/follow-active8.test",
+      "$CHECKOUT/.git/finalization/shape-active8-mutex.pprof"
+    ],
+    "exit_code": 0,
+    "start": 1794126559.857554,
+    "end": 1794126559.979192
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-top",
+      "-nodecount=30",
+      "$CHECKOUT/.git/finalization/follow-active8.test",
+      "$CHECKOUT/.git/finalization/shape-active8-block.pprof"
+    ],
+    "exit_code": 0,
+    "start": 1794126559.97934,
+    "end": 1794126560.101421
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-source_path=$CHECKOUT",
+      "-trim_path=github.com/CloudyKit/jet/v6/",
+      "-list=clone|enterContainer|admitInputScopesInto",
+      "-sample_index=alloc_space",
+      "$CHECKOUT/.git/finalization/follow-active8.test",
+      "$CHECKOUT/.git/finalization/shape-active8-heap.pprof"
+    ],
+    "exit_code": 0,
+    "no_sampled_match": false
+  }
+]

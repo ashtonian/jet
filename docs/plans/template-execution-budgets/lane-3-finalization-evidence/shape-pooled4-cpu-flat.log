@@ -1,0 +1,37 @@
+File: follow-pooled4.test
+Type: cpu
+Time: 2026-11-08 02:24:49 CST
+Duration: 1.81s, Total samples = 1700ms (93.73%)
+Showing nodes accounting for 1320ms, 77.65% of 1700ms total
+Showing top 30 nodes out of 195
+      flat  flat%   sum%        cum   cum%
+     380ms 22.35% 22.35%      380ms 22.35%  runtime.kevent
+      70ms  4.12% 26.47%      120ms  7.06%  github.com/CloudyKit/jet/v6.(*inputAdmission).step
+      70ms  4.12% 30.59%       70ms  4.12%  runtime.usleep
+      50ms  2.94% 33.53%     1050ms 61.76%  github.com/CloudyKit/jet/v6.(*inputAdmission).clone
+      50ms  2.94% 36.47%       70ms  4.12%  runtime.(*_panic).nextDefer
+      50ms  2.94% 39.41%       50ms  2.94%  runtime.madvise
+      40ms  2.35% 41.76%       50ms  2.94%  context.(*cancelCtx).Err
+      40ms  2.35% 44.12%       40ms  2.35%  internal/runtime/atomic.(*UnsafePointer).Load (inline)
+      40ms  2.35% 46.47%       50ms  2.94%  internal/runtime/maps.(*Iter).Next
+      40ms  2.35% 48.82%       40ms  2.35%  reflect.(*rtype).uncommon (inline)
+      40ms  2.35% 51.18%       40ms  2.35%  reflect.Value.lenNonSlice
+      40ms  2.35% 53.53%       80ms  4.71%  runtime.mallocgcSmallScanNoHeaderSC2
+      40ms  2.35% 55.88%       60ms  3.53%  runtime.resolveTypeOff
+      30ms  1.76% 57.65%       50ms  2.94%  github.com/CloudyKit/jet/v6.(*inputAdmission).reserveBytes
+      30ms  1.76% 59.41%       30ms  1.76%  runtime.pthread_kill
+      30ms  1.76% 61.18%       40ms  2.35%  runtime.typedmemmove
+      20ms  1.18% 62.35%       20ms  1.18%  internal/runtime/maps.memHashAES
+      20ms  1.18% 63.53%      170ms 10.00%  reflect.mapassign_faststr0
+      20ms  1.18% 64.71%       30ms  1.76%  reflect.packIfaceValueIntoEmptyIface (inline)
+      20ms  1.18% 65.88%       40ms  2.35%  reflect.typedmemmove
+      20ms  1.18% 67.06%       20ms  1.18%  runtime.(*_panic).nextFrame
+      20ms  1.18% 68.24%       30ms  1.76%  runtime.(*_panic).start
+      20ms  1.18% 69.41%       20ms  1.18%  runtime.(*mspan).writeHeapBitsSmall
+      20ms  1.18% 70.59%      100ms  5.88%  runtime.mallocgcSmallScanNoHeader
+      20ms  1.18% 71.76%       20ms  1.18%  runtime.mapaccess2_fast64
+      20ms  1.18% 72.94%       20ms  1.18%  runtime.pthread_cond_wait
+      20ms  1.18% 74.12%       20ms  1.18%  runtime.releasem (inline)
+      20ms  1.18% 75.29%       20ms  1.18%  runtime.tryDeferToSpanScan
+      20ms  1.18% 76.47%       30ms  1.76%  runtime.wbBufFlush1
+      20ms  1.18% 77.65%       20ms  1.18%  type:.eq.M8IM16

@@ -1,0 +1,306 @@
+{
+  "capacity": {
+    "base4": {
+      "BenchmarkFinalReview/legacy_stream/header_interpolation/text-2": {
+        "n": 3,
+        "ns": 140.3,
+        "bytes": 24.0,
+        "allocs": 1
+      },
+      "BenchmarkFinalReview/legacy_stream/header_interpolation/html-2": {
+        "n": 3,
+        "ns": 162.1,
+        "bytes": 24.0,
+        "allocs": 1
+      },
+      "BenchmarkFinalReview/legacy_stream/include/text-2": {
+        "n": 3,
+        "ns": 340.7,
+        "bytes": 120.0,
+        "allocs": 6
+      },
+      "BenchmarkFinalReview/legacy_stream/include/html-2": {
+        "n": 3,
+        "ns": 368.0,
+        "bytes": 120.0,
+        "allocs": 6
+      },
+      "BenchmarkFinalReview/metered_live_stream/header_interpolation/text-2": {
+        "n": 3,
+        "ns": 293.0,
+        "bytes": 152.0,
+        "allocs": 4
+      },
+      "BenchmarkFinalReview/metered_live_stream/header_interpolation/html-2": {
+        "n": 3,
+        "ns": 306.1,
+        "bytes": 152.0,
+        "allocs": 4
+      },
+      "BenchmarkFinalReview/metered_live_stream/include/text-2": {
+        "n": 3,
+        "ns": 553.0,
+        "bytes": 248.0,
+        "allocs": 9
+      },
+      "BenchmarkFinalReview/metered_live_stream/include/html-2": {
+        "n": 3,
+        "ns": 553.2,
+        "bytes": 248.0,
+        "allocs": 9
+      },
+      "BenchmarkFinalReview/restricted_owned/header_interpolation/text-2": {
+        "n": 3,
+        "ns": 636.9,
+        "bytes": 720.0,
+        "allocs": 9
+      },
+      "BenchmarkFinalReview/restricted_owned/header_interpolation/html-2": {
+        "n": 3,
+        "ns": 646.7,
+        "bytes": 720.0,
+        "allocs": 9
+      },
+      "BenchmarkFinalReview/restricted_owned/include/text-2": {
+        "n": 3,
+        "ns": 914.3,
+        "bytes": 816.0,
+        "allocs": 14
+      },
+      "BenchmarkFinalReview/restricted_owned/include/html-2": {
+        "n": 3,
+        "ns": 935.4,
+        "bytes": 816.0,
+        "allocs": 14
+      }
+    },
+    "cap8": {
+      "BenchmarkFinalReview/legacy_stream/header_interpolation/text-2": {
+        "n": 3,
+        "ns": 156.7,
+        "bytes": 24.0,
+        "allocs": 1
+      },
+      "BenchmarkFinalReview/legacy_stream/header_interpolation/html-2": {
+        "n": 3,
+        "ns": 166.6,
+        "bytes": 24.0,
+        "allocs": 1
+      },
+      "BenchmarkFinalReview/legacy_stream/include/text-2": {
+        "n": 3,
+        "ns": 349.6,
+        "bytes": 120.0,
+        "allocs": 6
+      },
+      "BenchmarkFinalReview/legacy_stream/include/html-2": {
+        "n": 3,
+        "ns": 370.8,
+        "bytes": 120.0,
+        "allocs": 6
+      },
+      "BenchmarkFinalReview/metered_live_stream/header_interpolation/text-2": {
+        "n": 3,
+        "ns": 302.7,
+        "bytes": 152.0,
+        "allocs": 4
+      },
+      "BenchmarkFinalReview/metered_live_stream/header_interpolation/html-2": {
+        "n": 3,
+        "ns": 317.3,
+        "bytes": 152.0,
+        "allocs": 4
+      },
+      "BenchmarkFinalReview/metered_live_stream/include/text-2": {
+        "n": 3,
+        "ns": 571.8,
+        "bytes": 248.0,
+        "allocs": 9
+      },
+      "BenchmarkFinalReview/metered_live_stream/include/html-2": {
+        "n": 3,
+        "ns": 594.5,
+        "bytes": 248.0,
+        "allocs": 9
+      },
+      "BenchmarkFinalReview/restricted_owned/header_interpolation/text-2": {
+        "n": 3,
+        "ns": 681.5,
+        "bytes": 720.0,
+        "allocs": 9
+      },
+      "BenchmarkFinalReview/restricted_owned/header_interpolation/html-2": {
+        "n": 3,
+        "ns": 714.7,
+        "bytes": 720.0,
+        "allocs": 9
+      },
+      "BenchmarkFinalReview/restricted_owned/include/text-2": {
+        "n": 3,
+        "ns": 1002.0,
+        "bytes": 816.0,
+        "allocs": 14
+      },
+      "BenchmarkFinalReview/restricted_owned/include/html-2": {
+        "n": 3,
+        "ns": 1012.0,
+        "bytes": 816.0,
+        "allocs": 14
+      }
+    },
+    "cap16": {
+      "BenchmarkFinalReview/legacy_stream/header_interpolation/text-2": {
+        "n": 3,
+        "ns": 176.6,
+        "bytes": 24.0,
+        "allocs": 1
+      },
+      "BenchmarkFinalReview/legacy_stream/header_interpolation/html-2": {
+        "n": 3,
+        "ns": 181.7,
+        "bytes": 24.0,
+        "allocs": 1
+      },
+      "BenchmarkFinalReview/legacy_stream/include/text-2": {
+        "n": 3,
+        "ns": 353.9,
+        "bytes": 120.0,
+        "allocs": 6
+      },
+      "BenchmarkFinalReview/legacy_stream/include/html-2": {
+        "n": 3,
+        "ns": 374.0,
+        "bytes": 120.0,
+        "allocs": 6
+      },
+      "BenchmarkFinalReview/metered_live_stream/header_interpolation/text-2": {
+        "n": 3,
+        "ns": 305.8,
+        "bytes": 152.0,
+        "allocs": 4
+      },
+      "BenchmarkFinalReview/metered_live_stream/header_interpolation/html-2": {
+        "n": 3,
+        "ns": 331.3,
+        "bytes": 152.0,
+        "allocs": 4
+      },
+      "BenchmarkFinalReview/metered_live_stream/include/text-2": {
+        "n": 3,
+        "ns": 546.8,
+        "bytes": 248.0,
+        "allocs": 9
+      },
+      "BenchmarkFinalReview/metered_live_stream/include/html-2": {
+        "n": 3,
+        "ns": 573.2,
+        "bytes": 248.0,
+        "allocs": 9
+      },
+      "BenchmarkFinalReview/restricted_owned/header_interpolation/text-2": {
+        "n": 3,
+        "ns": 657.5,
+        "bytes": 720.0,
+        "allocs": 9
+      },
+      "BenchmarkFinalReview/restricted_owned/header_interpolation/html-2": {
+        "n": 3,
+        "ns": 693.0,
+        "bytes": 720.0,
+        "allocs": 9
+      },
+      "BenchmarkFinalReview/restricted_owned/include/text-2": {
+        "n": 3,
+        "ns": 1044.0,
+        "bytes": 816.0,
+        "allocs": 14
+      },
+      "BenchmarkFinalReview/restricted_owned/include/html-2": {
+        "n": 3,
+        "ns": 989.3,
+        "bytes": 816.0,
+        "allocs": 14
+      }
+    }
+  },
+  "reuse": {
+    "base4": {
+      "BenchmarkFinalReview/restricted_owned/header_interpolation/text-2": {
+        "n": 6,
+        "ns": 644.0,
+        "bytes": 720.0,
+        "allocs": 9.0
+      },
+      "BenchmarkFinalReview/restricted_owned/header_interpolation/html-2": {
+        "n": 6,
+        "ns": 661.6,
+        "bytes": 720.0,
+        "allocs": 9.0
+      },
+      "BenchmarkFinalReview/restricted_owned/include/text-2": {
+        "n": 6,
+        "ns": 947.4000000000001,
+        "bytes": 816.0,
+        "allocs": 14.0
+      },
+      "BenchmarkFinalReview/restricted_owned/include/html-2": {
+        "n": 6,
+        "ns": 991.75,
+        "bytes": 816.0,
+        "allocs": 14.0
+      }
+    },
+    "pooled4": {
+      "BenchmarkFinalReview/restricted_owned/header_interpolation/text-2": {
+        "n": 6,
+        "ns": 584.95,
+        "bytes": 320.0,
+        "allocs": 7.0
+      },
+      "BenchmarkFinalReview/restricted_owned/header_interpolation/html-2": {
+        "n": 6,
+        "ns": 601.6500000000001,
+        "bytes": 320.0,
+        "allocs": 7.0
+      },
+      "BenchmarkFinalReview/restricted_owned/include/text-2": {
+        "n": 6,
+        "ns": 896.5,
+        "bytes": 416.0,
+        "allocs": 12.0
+      },
+      "BenchmarkFinalReview/restricted_owned/include/html-2": {
+        "n": 6,
+        "ns": 899.1,
+        "bytes": 416.0,
+        "allocs": 12.0
+      }
+    },
+    "active8": {
+      "BenchmarkFinalReview/restricted_owned/header_interpolation/text-2": {
+        "n": 6,
+        "ns": 545.95,
+        "bytes": 320.0,
+        "allocs": 7.0
+      },
+      "BenchmarkFinalReview/restricted_owned/header_interpolation/html-2": {
+        "n": 6,
+        "ns": 586.5999999999999,
+        "bytes": 320.0,
+        "allocs": 7.0
+      },
+      "BenchmarkFinalReview/restricted_owned/include/text-2": {
+        "n": 6,
+        "ns": 882.3499999999999,
+        "bytes": 416.0,
+        "allocs": 12.0
+      },
+      "BenchmarkFinalReview/restricted_owned/include/html-2": {
+        "n": 6,
+        "ns": 850.7,
+        "bytes": 416.0,
+        "allocs": 12.0
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+goos: darwin
+goarch: arm64
+pkg: github.com/CloudyKit/jet/v6
+cpu: Apple M2 Max
+BenchmarkFinalReview/legacy_stream/header_interpolation/text-2         	 7696429	       162.3 ns/op	      24 B/op	       1 allocs/op
+BenchmarkFinalReview/legacy_stream/header_interpolation/html-2         	 7768041	       161.5 ns/op	      24 B/op	       1 allocs/op
+BenchmarkFinalReview/legacy_stream/include/text-2                      	 3417741	       356.3 ns/op	     120 B/op	       6 allocs/op
+BenchmarkFinalReview/legacy_stream/include/html-2                      	 3274794	       368.7 ns/op	     120 B/op	       6 allocs/op
+BenchmarkFinalReview/legacy_owned/header_interpolation/text-2          	 6316990	       191.5 ns/op	     160 B/op	       4 allocs/op
+BenchmarkFinalReview/legacy_owned/header_interpolation/html-2          	 5553973	       212.4 ns/op	     160 B/op	       4 allocs/op
+BenchmarkFinalReview/legacy_owned/include/text-2                       	 2936304	       398.6 ns/op	     256 B/op	       9 allocs/op
+BenchmarkFinalReview/legacy_owned/include/html-2                       	 2941933	       407.3 ns/op	     256 B/op	       9 allocs/op
+BenchmarkFinalReview/metered_background_stream/header_interpolation/text-2         	 4337634	       277.0 ns/op	     152 B/op	       4 allocs/op
+BenchmarkFinalReview/metered_background_stream/header_interpolation/html-2         	 4141141	       296.3 ns/op	     152 B/op	       4 allocs/op
+BenchmarkFinalReview/metered_background_stream/include/text-2                      	 2235684	       531.7 ns/op	     248 B/op	       9 allocs/op
+BenchmarkFinalReview/metered_background_stream/include/html-2                      	 2308609	       501.5 ns/op	     248 B/op	       9 allocs/op
+BenchmarkFinalReview/metered_live_stream/header_interpolation/text-2               	 4280480	       274.1 ns/op	     152 B/op	       4 allocs/op
+BenchmarkFinalReview/metered_live_stream/header_interpolation/html-2               	 4154558	       302.6 ns/op	     152 B/op	       4 allocs/op
+BenchmarkFinalReview/metered_live_stream/include/text-2                            	 2249334	       523.2 ns/op	     248 B/op	       9 allocs/op
+BenchmarkFinalReview/metered_live_stream/include/html-2                            	 2255319	       535.0 ns/op	     248 B/op	       9 allocs/op
+BenchmarkFinalReview/restricted_owned/header_interpolation/text-2                  	 1874755	       667.8 ns/op	     720 B/op	       9 allocs/op
+BenchmarkFinalReview/restricted_owned/header_interpolation/html-2                  	 1738830	       643.2 ns/op	     720 B/op	       9 allocs/op
+BenchmarkFinalReview/restricted_owned/include/text-2                               	 1228171	      1003 ns/op	     816 B/op	      14 allocs/op
+BenchmarkFinalReview/restricted_owned/include/html-2                               	 1000000	      1088 ns/op	     816 B/op	      14 allocs/op
+PASS

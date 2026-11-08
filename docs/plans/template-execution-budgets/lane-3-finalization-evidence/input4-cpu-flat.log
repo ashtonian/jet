@@ -1,0 +1,38 @@
+File: input4.test
+Type: cpu
+Time: 2026-11-08 01:49:06 CST
+Duration: 2.82s, Total samples = 2.60s (92.25%)
+Showing nodes accounting for 2.05s, 78.85% of 2.60s total
+Dropped 73 nodes (cum <= 0.01s)
+Showing top 30 nodes out of 124
+      flat  flat%   sum%        cum   cum%
+     0.99s 38.08% 38.08%      0.99s 38.08%  runtime.kevent
+     0.13s  5.00% 43.08%      0.13s  5.00%  runtime.pthread_kill
+     0.09s  3.46% 46.54%      0.09s  3.46%  runtime.madvise
+     0.08s  3.08% 49.62%      1.16s 44.62%  github.com/CloudyKit/jet/v6.(*Template).execute
+     0.07s  2.69% 52.31%      0.15s  5.77%  github.com/CloudyKit/jet/v6.(*Runtime).checkpoint
+     0.07s  2.69% 55.00%      0.07s  2.69%  runtime.usleep
+     0.06s  2.31% 57.31%      0.08s  3.08%  text/template.HTMLEscape
+     0.04s  1.54% 58.85%      0.06s  2.31%  context.(*cancelCtx).Err
+     0.03s  1.15% 60.00%      0.03s  1.15%  github.com/CloudyKit/jet/v6.(*Runtime).checkNode
+     0.03s  1.15% 61.15%      0.78s 30.00%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+     0.03s  1.15% 62.31%      0.03s  1.15%  github.com/CloudyKit/jet/v6.(*Runtime).rethrowTerminal (inline)
+     0.03s  1.15% 63.46%      0.87s 33.46%  github.com/CloudyKit/jet/v6_test.init.0.func1
+     0.03s  1.15% 64.62%      0.03s  1.15%  internal/abi.(*Type).Kind (inline)
+     0.03s  1.15% 65.77%      0.06s  2.31%  path.Clean
+     0.03s  1.15% 66.92%      0.03s  1.15%  runtime.pthread_cond_wait
+     0.03s  1.15% 68.08%      0.03s  1.15%  runtime.scanObject
+     0.02s  0.77% 68.85%      0.04s  1.54%  github.com/CloudyKit/jet/v6.(*Runtime).beforeData
+     0.02s  0.77% 69.62%      0.09s  3.46%  github.com/CloudyKit/jet/v6.(*Runtime).evalBaseExpressionGroup
+     0.02s  0.77% 70.38%      0.06s  2.31%  github.com/CloudyKit/jet/v6.(*Set).getTemplate
+     0.02s  0.77% 71.15%      0.02s  0.77%  github.com/CloudyKit/jet/v6.(*inputAdmission).step
+     0.02s  0.77% 71.92%      0.03s  1.15%  github.com/CloudyKit/jet/v6.(*parseAdmission).step
+     0.02s  0.77% 72.69%      0.09s  3.46%  github.com/CloudyKit/jet/v6.admitInputScopes
+     0.02s  0.77% 73.46%      0.02s  0.77%  internal/sync.(*HashTrieMap[go.shape.interface {},go.shape.interface {}]).Load
+     0.02s  0.77% 74.23%      0.05s  1.92%  runtime.(*_panic).nextDefer
+     0.02s  0.77% 75.00%      0.02s  0.77%  runtime.(*_panic).nextFrame
+     0.02s  0.77% 75.77%      0.02s  0.77%  runtime.(*_panic).start
+     0.02s  0.77% 76.54%      0.08s  3.08%  runtime.mallocgc
+     0.02s  0.77% 77.31%      0.02s  0.77%  runtime.mallocgcTinySC2
+     0.02s  0.77% 78.08%      0.02s  0.77%  runtime.pthread_cond_signal
+     0.02s  0.77% 78.85%      0.04s  1.54%  sync.(*Pool).Get

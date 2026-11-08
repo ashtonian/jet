@@ -1,0 +1,9 @@
+goos: darwin
+goarch: arm64
+pkg: github.com/CloudyKit/jet/v6
+cpu: Apple M2 Max
+BenchmarkFinalReview/restricted_owned/header_interpolation/text-2         	 2228828	       549.9 ns/op	     320 B/op	       7 allocs/op
+BenchmarkFinalReview/restricted_owned/header_interpolation/html-2         	 2138265	       571.0 ns/op	     320 B/op	       7 allocs/op
+BenchmarkFinalReview/restricted_owned/include/text-2                      	 1411999	       926.0 ns/op	     416 B/op	      12 allocs/op
+BenchmarkFinalReview/restricted_owned/include/html-2                      	 1408824	       852.7 ns/op	     416 B/op	      12 allocs/op
+PASS

@@ -1,0 +1,39 @@
+{
+  "compile.go": {
+    "experiment_sha256": "93b8f5f599ee5ab31c4c766d33a3dbc5fe08009d90f169aabbc86b1f9fe21fd0",
+    "working_sha256": "93b8f5f599ee5ab31c4c766d33a3dbc5fe08009d90f169aabbc86b1f9fe21fd0",
+    "identical": true
+  },
+  "input.go": {
+    "experiment_sha256": "0cf9aa9418c5e4e98a9501de2ebed4055831308a0e087cfd017f0c9d5c56046e",
+    "working_sha256": "3bbaa82a02b52502bee4d501320031754b12c8233b534eed9f4712abed9c4ce4",
+    "identical": false,
+    "identical_except_comment": true,
+    "note": "One explanatory comment added after measurement; executable source lines are identical."
+  },
+  "exec.go": {
+    "experiment_sha256": "aab88469875b57662de9d885d5010211901f3fee7b1533f44af259e3aae956d1",
+    "working_sha256": "aab88469875b57662de9d885d5010211901f3fee7b1533f44af259e3aae956d1",
+    "identical": true
+  },
+  "execution.go": {
+    "experiment_sha256": "17b1d53909cffe12b5b21e20c3ba086b9317b14a120abb7bb7692a529b765dc0",
+    "working_sha256": "17b1d53909cffe12b5b21e20c3ba086b9317b14a120abb7bb7692a529b765dc0",
+    "identical": true
+  },
+  "parse.go": {
+    "experiment_sha256": "372ce7885bb94bdf58f1ede1be5f9a6590f748829941dfd59bf0b5c550deb154",
+    "working_sha256": "372ce7885bb94bdf58f1ede1be5f9a6590f748829941dfd59bf0b5c550deb154",
+    "identical": true
+  },
+  "set.go": {
+    "experiment_sha256": "a04c02a62fdc3b1ec9aa3b731cfec04302e02d582bd96526f765319219a15f50",
+    "working_sha256": "a04c02a62fdc3b1ec9aa3b731cfec04302e02d582bd96526f765319219a15f50",
+    "identical": true
+  },
+  "template_bundle.go": {
+    "experiment_sha256": "061bd1139eaa856826754de2bc0f3283e1d45492c0957a22b5220ce1d25623f3",
+    "working_sha256": "061bd1139eaa856826754de2bc0f3283e1d45492c0957a22b5220ce1d25623f3",
+    "identical": true
+  }
+}

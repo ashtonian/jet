@@ -1,0 +1,314 @@
+[
+  {
+    "variant": "baseline",
+    "debug_source_file": ".git/finalization/baseline-source/execution.go",
+    "sha256": "c3087a2d27fb7a384766b4e731d5b6f82ff2b1169cf135f60b053a32bc762b41",
+    "matches_build_manifest": true
+  },
+  {
+    "variant": "baseline",
+    "debug_source_file": ".git/finalization/baseline-source/exec.go",
+    "sha256": "350ec1ca0e182b94e69337e64b94a0b8d2b7585c7446c6d19bf916ae13b93df9",
+    "matches_build_manifest": true
+  },
+  {
+    "variant": "baseline",
+    "debug_source_file": ".git/finalization/baseline-source/input.go",
+    "sha256": "3bcff827e9887b7413da647d6de54bddf52771f0a4e43f4688b5c15ad5f80684",
+    "matches_build_manifest": true
+  },
+  {
+    "variant": "baseline",
+    "debug_source_file": ".git/finalization/baseline-source/compile.go",
+    "sha256": "1bfdd08068357a7ad6b81c9f5fd7ae3bf691f8ce7f3f77cd7158474980d808fc",
+    "matches_build_manifest": true
+  },
+  {
+    "variant": "graph4",
+    "debug_source_file": ".git/finalization/graph4-source/execution.go",
+    "sha256": "17b1d53909cffe12b5b21e20c3ba086b9317b14a120abb7bb7692a529b765dc0",
+    "matches_build_manifest": true
+  },
+  {
+    "variant": "graph4",
+    "debug_source_file": ".git/finalization/graph4-source/exec.go",
+    "sha256": "350ec1ca0e182b94e69337e64b94a0b8d2b7585c7446c6d19bf916ae13b93df9",
+    "matches_build_manifest": true
+  },
+  {
+    "variant": "graph4",
+    "debug_source_file": ".git/finalization/graph4-source/input.go",
+    "sha256": "3bcff827e9887b7413da647d6de54bddf52771f0a4e43f4688b5c15ad5f80684",
+    "matches_build_manifest": true
+  },
+  {
+    "variant": "graph4",
+    "debug_source_file": ".git/finalization/graph4-source/compile.go",
+    "sha256": "5902a2cef4af0b4d08ae23f8def1933226013fdcb20db5a25d678f3b218abb23",
+    "matches_build_manifest": true
+  },
+  {
+    "variant": "input4",
+    "debug_source_file": ".git/finalization/input4-source/execution.go",
+    "sha256": "17b1d53909cffe12b5b21e20c3ba086b9317b14a120abb7bb7692a529b765dc0",
+    "matches_build_manifest": true
+  },
+  {
+    "variant": "input4",
+    "debug_source_file": ".git/finalization/input4-source/exec.go",
+    "sha256": "350ec1ca0e182b94e69337e64b94a0b8d2b7585c7446c6d19bf916ae13b93df9",
+    "matches_build_manifest": true
+  },
+  {
+    "variant": "input4",
+    "debug_source_file": ".git/finalization/input4-source/input.go",
+    "sha256": "850784cbc4b876e89a8066009ed871ba65d141a3b1a2da6cf38da3f96a3bce0a",
+    "matches_build_manifest": true
+  },
+  {
+    "variant": "input4",
+    "debug_source_file": ".git/finalization/input4-source/compile.go",
+    "sha256": "5902a2cef4af0b4d08ae23f8def1933226013fdcb20db5a25d678f3b218abb23",
+    "matches_build_manifest": true
+  },
+  {
+    "variant": "lazy0",
+    "debug_source_file": ".git/finalization/input4-source/execution.go",
+    "sha256": "17b1d53909cffe12b5b21e20c3ba086b9317b14a120abb7bb7692a529b765dc0",
+    "matches_build_manifest": true
+  },
+  {
+    "variant": "lazy0",
+    "debug_source_file": ".git/finalization/input4-source/exec.go",
+    "sha256": "350ec1ca0e182b94e69337e64b94a0b8d2b7585c7446c6d19bf916ae13b93df9",
+    "matches_build_manifest": true
+  },
+  {
+    "variant": "lazy0",
+    "debug_source_file": ".git/finalization/input4-source/input.go",
+    "sha256": "850784cbc4b876e89a8066009ed871ba65d141a3b1a2da6cf38da3f96a3bce0a",
+    "matches_build_manifest": true
+  },
+  {
+    "variant": "lazy0",
+    "debug_source_file": ".git/finalization/lazy0-compile.go.txt",
+    "sha256": "7acfb791a89ed78de816b1c40bb840647ab13501b96feb66f9f8f380d01d7077",
+    "matches_build_manifest": true
+  },
+  {
+    "variant": "inline8",
+    "debug_source_file": ".git/finalization/input4-source/execution.go",
+    "sha256": "17b1d53909cffe12b5b21e20c3ba086b9317b14a120abb7bb7692a529b765dc0",
+    "matches_build_manifest": true
+  },
+  {
+    "variant": "inline8",
+    "debug_source_file": ".git/finalization/input4-source/exec.go",
+    "sha256": "350ec1ca0e182b94e69337e64b94a0b8d2b7585c7446c6d19bf916ae13b93df9",
+    "matches_build_manifest": true
+  },
+  {
+    "variant": "inline8",
+    "debug_source_file": ".git/finalization/input4-source/input.go",
+    "sha256": "850784cbc4b876e89a8066009ed871ba65d141a3b1a2da6cf38da3f96a3bce0a",
+    "matches_build_manifest": true
+  },
+  {
+    "variant": "inline8",
+    "debug_source_file": ".git/finalization/inline8-compile.go.txt",
+    "sha256": "50f3406a2f8434f96fe145a75904e686b936f39d320b0fdab499cafa2a78593c",
+    "matches_build_manifest": true
+  },
+  {
+    "variant": "inline16",
+    "debug_source_file": ".git/finalization/input4-source/execution.go",
+    "sha256": "17b1d53909cffe12b5b21e20c3ba086b9317b14a120abb7bb7692a529b765dc0",
+    "matches_build_manifest": true
+  },
+  {
+    "variant": "inline16",
+    "debug_source_file": ".git/finalization/input4-source/exec.go",
+    "sha256": "350ec1ca0e182b94e69337e64b94a0b8d2b7585c7446c6d19bf916ae13b93df9",
+    "matches_build_manifest": true
+  },
+  {
+    "variant": "inline16",
+    "debug_source_file": ".git/finalization/input4-source/input.go",
+    "sha256": "850784cbc4b876e89a8066009ed871ba65d141a3b1a2da6cf38da3f96a3bce0a",
+    "matches_build_manifest": true
+  },
+  {
+    "variant": "inline16",
+    "debug_source_file": ".git/finalization/inline16-compile.go.txt",
+    "sha256": "50dc099558917b43b69f93addd3582f37ee7c822348d5135fb6485276717a690",
+    "matches_build_manifest": true
+  },
+  {
+    "variant": "walk",
+    "debug_source_file": ".git/finalization/graph4-source/execution.go",
+    "sha256": "17b1d53909cffe12b5b21e20c3ba086b9317b14a120abb7bb7692a529b765dc0",
+    "matches_build_manifest": true
+  },
+  {
+    "variant": "walk",
+    "debug_source_file": ".git/finalization/graph4-source/exec.go",
+    "sha256": "350ec1ca0e182b94e69337e64b94a0b8d2b7585c7446c6d19bf916ae13b93df9",
+    "matches_build_manifest": true
+  },
+  {
+    "variant": "walk",
+    "debug_source_file": ".git/finalization/graph4-source/input.go",
+    "sha256": "3bcff827e9887b7413da647d6de54bddf52771f0a4e43f4688b5c15ad5f80684",
+    "matches_build_manifest": true
+  },
+  {
+    "variant": "walk",
+    "debug_source_file": ".git/finalization/walk-compile.go.txt",
+    "sha256": "713407e646d713ea3eb30e755dfe7f6e4d37fbf82d3cd1da2f8af504e886eb64",
+    "matches_build_manifest": true
+  },
+  {
+    "variant": "nopool",
+    "debug_source_file": ".git/finalization/input4-source/execution.go",
+    "sha256": "17b1d53909cffe12b5b21e20c3ba086b9317b14a120abb7bb7692a529b765dc0",
+    "matches_build_manifest": true
+  },
+  {
+    "variant": "nopool",
+    "debug_source_file": ".git/finalization/input4-source/exec.go",
+    "sha256": "350ec1ca0e182b94e69337e64b94a0b8d2b7585c7446c6d19bf916ae13b93df9",
+    "matches_build_manifest": true
+  },
+  {
+    "variant": "nopool",
+    "debug_source_file": ".git/finalization/input4-source/input.go",
+    "sha256": "850784cbc4b876e89a8066009ed871ba65d141a3b1a2da6cf38da3f96a3bce0a",
+    "matches_build_manifest": true
+  },
+  {
+    "variant": "nopool",
+    "debug_source_file": ".git/finalization/nopool-compile.go.txt",
+    "sha256": "beaf0a3901e418034c872fe78628d333528d69be8d0639cf24c675dc1cb674e1",
+    "matches_build_manifest": true
+  },
+  {
+    "variant": "base4",
+    "debug_source_file": ".git/finalization/followup/1794124856510677000/execution.go",
+    "sha256": "17b1d53909cffe12b5b21e20c3ba086b9317b14a120abb7bb7692a529b765dc0",
+    "matches_build_manifest": true
+  },
+  {
+    "variant": "base4",
+    "debug_source_file": ".git/finalization/followup/1794124856510677000/exec.go",
+    "sha256": "350ec1ca0e182b94e69337e64b94a0b8d2b7585c7446c6d19bf916ae13b93df9",
+    "matches_build_manifest": true
+  },
+  {
+    "variant": "base4",
+    "debug_source_file": ".git/finalization/followup/1794124856510677000/input.go",
+    "sha256": "850784cbc4b876e89a8066009ed871ba65d141a3b1a2da6cf38da3f96a3bce0a",
+    "matches_build_manifest": true
+  },
+  {
+    "variant": "base4",
+    "debug_source_file": ".git/finalization/followup/1794124856510677000/compile.go",
+    "sha256": "93b8f5f599ee5ab31c4c766d33a3dbc5fe08009d90f169aabbc86b1f9fe21fd0",
+    "matches_build_manifest": true
+  },
+  {
+    "variant": "cap8",
+    "debug_source_file": ".git/finalization/followup/1794124856510677000/execution.go",
+    "sha256": "17b1d53909cffe12b5b21e20c3ba086b9317b14a120abb7bb7692a529b765dc0",
+    "matches_build_manifest": true
+  },
+  {
+    "variant": "cap8",
+    "debug_source_file": ".git/finalization/followup/1794124856510677000/exec.go",
+    "sha256": "350ec1ca0e182b94e69337e64b94a0b8d2b7585c7446c6d19bf916ae13b93df9",
+    "matches_build_manifest": true
+  },
+  {
+    "variant": "cap8",
+    "debug_source_file": ".git/finalization/followup/1794124856510677000/input.go",
+    "sha256": "850784cbc4b876e89a8066009ed871ba65d141a3b1a2da6cf38da3f96a3bce0a",
+    "matches_build_manifest": true
+  },
+  {
+    "variant": "cap8",
+    "debug_source_file": ".git/finalization/followup-frozen/cap8-compile.go.txt",
+    "sha256": "407f0235680caacabb706e33468b79bbce58b6ab9ad65f84e7e5be65351f8516",
+    "matches_build_manifest": true
+  },
+  {
+    "variant": "cap16",
+    "debug_source_file": ".git/finalization/followup/1794124856510677000/execution.go",
+    "sha256": "17b1d53909cffe12b5b21e20c3ba086b9317b14a120abb7bb7692a529b765dc0",
+    "matches_build_manifest": true
+  },
+  {
+    "variant": "cap16",
+    "debug_source_file": ".git/finalization/followup/1794124856510677000/exec.go",
+    "sha256": "350ec1ca0e182b94e69337e64b94a0b8d2b7585c7446c6d19bf916ae13b93df9",
+    "matches_build_manifest": true
+  },
+  {
+    "variant": "cap16",
+    "debug_source_file": ".git/finalization/followup/1794124856510677000/input.go",
+    "sha256": "850784cbc4b876e89a8066009ed871ba65d141a3b1a2da6cf38da3f96a3bce0a",
+    "matches_build_manifest": true
+  },
+  {
+    "variant": "cap16",
+    "debug_source_file": ".git/finalization/followup-frozen/cap16-compile.go.txt",
+    "sha256": "1e129acf41dc2df72463a072505d66ef1726fc5143301825fa44d5513fd64dc2",
+    "matches_build_manifest": true
+  },
+  {
+    "variant": "pooled4",
+    "debug_source_file": ".git/finalization/followup-frozen/execution.go",
+    "sha256": "17b1d53909cffe12b5b21e20c3ba086b9317b14a120abb7bb7692a529b765dc0",
+    "matches_build_manifest": true
+  },
+  {
+    "variant": "pooled4",
+    "debug_source_file": ".git/finalization/followup-frozen/exec.go",
+    "sha256": "aab88469875b57662de9d885d5010211901f3fee7b1533f44af259e3aae956d1",
+    "matches_build_manifest": true
+  },
+  {
+    "variant": "pooled4",
+    "debug_source_file": ".git/finalization/followup-frozen/input.go",
+    "sha256": "d6d66436f4f425f89528e783e2b919fbe08842f003eca433460117c598b4a915",
+    "matches_build_manifest": true
+  },
+  {
+    "variant": "pooled4",
+    "debug_source_file": ".git/finalization/followup-frozen/compile.go",
+    "sha256": "93b8f5f599ee5ab31c4c766d33a3dbc5fe08009d90f169aabbc86b1f9fe21fd0",
+    "matches_build_manifest": true
+  },
+  {
+    "variant": "active8",
+    "debug_source_file": ".git/finalization/followup-frozen/execution.go",
+    "sha256": "17b1d53909cffe12b5b21e20c3ba086b9317b14a120abb7bb7692a529b765dc0",
+    "matches_build_manifest": true
+  },
+  {
+    "variant": "active8",
+    "debug_source_file": ".git/finalization/followup-frozen/exec.go",
+    "sha256": "aab88469875b57662de9d885d5010211901f3fee7b1533f44af259e3aae956d1",
+    "matches_build_manifest": true
+  },
+  {
+    "variant": "active8",
+    "debug_source_file": ".git/finalization/followup-frozen/active8-input.go.txt",
+    "sha256": "0cf9aa9418c5e4e98a9501de2ebed4055831308a0e087cfd017f0c9d5c56046e",
+    "matches_build_manifest": true
+  },
+  {
+    "variant": "active8",
+    "debug_source_file": ".git/finalization/followup-frozen/compile.go",
+    "sha256": "93b8f5f599ee5ab31c4c766d33a3dbc5fe08009d90f169aabbc86b1f9fe21fd0",
+    "matches_build_manifest": true
+  }
+]

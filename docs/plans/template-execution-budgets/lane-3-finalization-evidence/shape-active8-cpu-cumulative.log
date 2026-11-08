@@ -1,0 +1,38 @@
+File: follow-active8.test
+Type: cpu
+Time: 2026-11-08 02:24:52 CST
+Duration: 2.31s, Total samples = 2.15s (93.01%)
+Showing nodes accounting for 0.78s, 36.28% of 2.15s total
+Dropped 63 nodes (cum <= 0.01s)
+Showing top 30 nodes out of 132
+      flat  flat%   sum%        cum   cum%
+         0     0%     0%      1.56s 72.56%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0%     0%      1.56s 72.56%  github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext
+     0.01s  0.47%  0.47%      1.56s 72.56%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0%  0.47%      1.56s 72.56%  github.com/CloudyKit/jet/v6.BenchmarkAdmissionInput.func1
+         0     0%  0.47%      1.56s 72.56%  testing.(*B).launch
+         0     0%  0.47%      1.56s 72.56%  testing.(*B).runN
+     0.14s  6.51%  6.98%      1.52s 70.70%  github.com/CloudyKit/jet/v6.(*inputAdmission).clone
+         0     0%  6.98%      1.52s 70.70%  github.com/CloudyKit/jet/v6.admitInputScopesInto
+         0     0%  6.98%      0.54s 25.12%  runtime.systemstack
+         0     0%  6.98%      0.32s 14.88%  runtime.gcStart.func4
+     0.32s 14.88% 21.86%      0.32s 14.88%  runtime.kevent
+         0     0% 21.86%      0.32s 14.88%  runtime.netpoll
+         0     0% 21.86%      0.32s 14.88%  runtime.startTheWorldWithSema
+     0.04s  1.86% 23.72%      0.28s 13.02%  runtime.mallocgc
+     0.01s  0.47% 24.19%      0.26s 12.09%  reflect.Value.SetMapIndex
+         0     0% 24.19%      0.16s  7.44%  reflect.copyVal
+     0.01s  0.47% 24.65%      0.15s  6.98%  reflect.mapassign_faststr
+     0.02s  0.93% 25.58%      0.15s  6.98%  reflect.unsafe_New
+     0.04s  1.86% 27.44%      0.14s  6.51%  reflect.Value.assignTo
+         0     0% 27.44%      0.14s  6.51%  reflect.mapassign_faststr0
+     0.01s  0.47% 27.91%      0.13s  6.05%  runtime.mapassign_faststr
+     0.03s  1.40% 29.30%      0.12s  5.58%  reflect.PtrTo (inline)
+         0     0% 29.30%      0.12s  5.58%  runtime.newarray
+     0.03s  1.40% 30.70%      0.10s  4.65%  reflect.(*rtype).NumMethod
+     0.07s  3.26% 33.95%      0.10s  4.65%  runtime.mallocgcSmallScanNoHeaderSC2
+     0.03s  1.40% 35.35%      0.09s  4.19%  github.com/CloudyKit/jet/v6.(*inputAdmission).enterContainer
+         0     0% 35.35%      0.09s  4.19%  internal/runtime/maps.newGroups (inline)
+         0     0% 35.35%      0.09s  4.19%  internal/runtime/maps.newarray
+     0.01s  0.47% 35.81%      0.09s  4.19%  reflect.(*MapIter).Key
+     0.01s  0.47% 36.28%      0.09s  4.19%  reflect.(*MapIter).Next

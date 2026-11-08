@@ -1,0 +1,17 @@
+goos: darwin
+goarch: arm64
+pkg: github.com/CloudyKit/jet/v6
+cpu: Apple M2 Max
+BenchmarkFinalReview/legacy_stream/header_interpolation/text-2         	 1588365	       149.5 ns/op	      24 B/op	       1 allocs/op
+BenchmarkFinalReview/legacy_stream/header_interpolation/html-2         	 1468486	       164.2 ns/op	      24 B/op	       1 allocs/op
+BenchmarkFinalReview/legacy_stream/include/text-2                      	  670812	       354.2 ns/op	     120 B/op	       6 allocs/op
+BenchmarkFinalReview/legacy_stream/include/html-2                      	  641174	       368.0 ns/op	     120 B/op	       6 allocs/op
+BenchmarkFinalReview/metered_live_stream/header_interpolation/text-2   	  833658	       293.0 ns/op	     152 B/op	       4 allocs/op
+BenchmarkFinalReview/metered_live_stream/header_interpolation/html-2   	  790426	       306.1 ns/op	     152 B/op	       4 allocs/op
+BenchmarkFinalReview/metered_live_stream/include/text-2                	  434732	       576.7 ns/op	     248 B/op	       9 allocs/op
+BenchmarkFinalReview/metered_live_stream/include/html-2                	  418860	       561.8 ns/op	     248 B/op	       9 allocs/op
+BenchmarkFinalReview/restricted_owned/header_interpolation/text-2      	  331586	       702.5 ns/op	     720 B/op	       9 allocs/op
+BenchmarkFinalReview/restricted_owned/header_interpolation/html-2      	  344218	       706.0 ns/op	     720 B/op	       9 allocs/op
+BenchmarkFinalReview/restricted_owned/include/text-2                   	  244861	      1003 ns/op	     816 B/op	      14 allocs/op
+BenchmarkFinalReview/restricted_owned/include/html-2                   	  242673	      1008 ns/op	     816 B/op	      14 allocs/op
+PASS

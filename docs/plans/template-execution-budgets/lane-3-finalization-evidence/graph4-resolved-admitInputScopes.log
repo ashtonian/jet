@@ -1,0 +1,31 @@
+Total: 2.04GB
+ROUTINE ======================== github.com/CloudyKit/jet/v6.admitInputScopes in .git/finalization/graph4-source/input.go
+  666.18MB   666.18MB (flat, cum) 31.88% of Total
+         .          .     42:func admitInputScopes(ctx context.Context, scopes []VarMap, data interface{}, opts InputOptions) (out VarMap, snapshot interface{}, err error) {
+         .          .     43:	if ctx == nil || opts.MaxBytes <= 0 || opts.MaxItems == 0 || opts.MaxSteps == 0 || opts.MaxDepth <= 0 || opts.MaxDepth > 64 {
+         .          .     44:		return nil, nil, fmt.Errorf("%w: positive input budgets and depth <=64 required", ErrInputLimit)
+         .          .     45:	}
+      81MB       81MB     46:	a := &inputAdmission{ctx: ctx, opts: opts, active: make(map[inputIdentity]bool)}
+         .          .     47:	defer func() {
+         .          .     48:		if p := recover(); p != nil {
+         .          .     49:			if failure, ok := p.(inputAbort); ok {
+         .          .     50:				err = failure.error
+         .          .     51:				out = nil
+         .          .     52:				snapshot = nil
+         .          .     53:			} else {
+         .          .     54:				panic(p)
+         .          .     55:			}
+         .          .     56:		}
+         .          .     57:	}()
+   65.50MB    65.50MB     58:	out = make(VarMap)
+         .          .     59:	for _, scope := range scopes {
+         .          .     60:		a.reserveItems(uint64(len(scope)))
+         .          .     61:		a.reserveBytes(uint64(len(scope)), uint64(5*(strconv.IntSize/8)))
+         .          .     62:		for name, value := range scope {
+         .          .     63:			a.reserveBytes(uint64(len(name)), 1)
+  519.67MB   519.67MB     64:			out[name] = a.clone(value, 1)
+         .          .     65:		}
+         .          .     66:	}
+         .          .     67:	value := a.clone(reflect.ValueOf(data), 1)
+         .          .     68:	if value.IsValid() {
+         .          .     69:		snapshot = value.Interface()

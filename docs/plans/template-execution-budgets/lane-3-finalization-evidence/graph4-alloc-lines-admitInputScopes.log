@@ -1,0 +1,4 @@
+Total: 2.04GB
+ROUTINE ======================== github.com/CloudyKit/jet/v6.admitInputScopes in github.com/CloudyKit/jet/v6/.git/finalization/graph4-source/input.go
+  666.18MB   666.18MB (flat, cum) 31.88% of Total
+ Error: could not find file github.com/CloudyKit/jet/v6/.git/finalization/graph4-source/input.go on path $CHECKOUT

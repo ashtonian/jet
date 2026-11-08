@@ -1,0 +1,22 @@
+{
+  "command": [
+    "go",
+    "test",
+    "-p=1",
+    "-parallel=2",
+    "-count=1",
+    "-timeout=90s",
+    "-run",
+    "^TestCompilationCachedSubgraphAgainstActiveVersion$",
+    "."
+  ],
+  "execution_deadline_seconds": 180,
+  "queue_wait_in_stage_elapsed": true,
+  "supervisor": "installed gate-lock",
+  "gate_deadline_seconds": 180,
+  "term_cleanup_seconds": 5,
+  "start": 1794122979.275591,
+  "end": 1794122981.967535,
+  "exit_code": 1,
+  "manifest": "active-version-control-inputs.json"
+}

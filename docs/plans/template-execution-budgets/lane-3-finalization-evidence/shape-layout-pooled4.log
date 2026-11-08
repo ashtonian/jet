@@ -1,0 +1,23 @@
+=== RUN   TestAdmissionLayoutAndRetained
+    strategy_benchmark.go.txt:53: sizes Runtime=552 execution=496 admission=344 Template=280 input=2640
+    strategy_benchmark.go.txt:59: live heap before=124224 retained=175816 delta=51592 HeapObjects before=708 retained=1418
+--- PASS: TestAdmissionLayoutAndRetained (0.00s)
+PASS
+        0.05 real         0.00 user         0.00 sys
+             8568832  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                 481  page reclaims
+                 256  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   3  signals received
+                   1  voluntary context switches
+                 325  involuntary context switches
+            56107531  instructions retired
+            32079542  cycles elapsed
+             4882984  peak memory footprint
