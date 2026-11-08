@@ -24,6 +24,7 @@ GO_ENV = ('GOOS', 'GOARCH', 'GOROOT', 'GOVERSION', 'GOFLAGS', 'GO111MODULE', 'GO
           'CGO_CXXFLAGS', 'CGO_LDFLAGS')
 EXTENDED = ['data_json_256', 'data_unused_256', 'named_map', 'named_slice', 'array',
             'typed_nil', 'builtin_alias', 'catch_diagnostic']
+RETENTION_PHASES = ['post_two_gc', 'warm_small', 'after_large', 'large_then_small', 'large_then_small_after_gc']
 
 
 def interrupted(signum, _frame):
@@ -176,6 +177,9 @@ def run(work, group):
         for argument in command:
             if any(argument.startswith('-test.' + name + 'profile=') for name in ('cpu', 'mem', 'mutex', 'block')):
                 artifacts.append(Path(argument.split('=', 1)[1]))
+            if argument.startswith('JET_RETENTION_PROFILE_DIR='):
+                directory = Path(argument.split('=', 1)[1])
+                artifacts.extend(directory / (phase + '.pprof') for phase in RETENTION_PHASES)
         passed = execute_stage(label, output, work / tree, command, env, specification, receipts, seconds, artifacts)
         if not passed:
             failures.append(label)
@@ -217,7 +221,8 @@ def run(work, group):
                 continue
             pattern = '^TestExecutionModeConformance$'
             if tree != 'candidate':
-                pattern += '/[^/]+/^' + core + '$/'
+                names = [f['name'] for f in fixtures] + [name for name in EXTENDED if name != 'named_map']
+                pattern += '/[^/]+/^(' + '|'.join(names) + ')$/'
             stage('conformance-' + tree, tree, [binary(tree), '-test.run=' + pattern, '-test.timeout=90s'], 120)
         finish()
         return
@@ -270,9 +275,16 @@ def run(work, group):
         return
     if group == 'profiles':
         modes = [('upstream', 'legacy_stream'), ('upstream', 'legacy_owned'),
-                 ('correctness', 'legacy_stream')]
+                 ('correctness', 'legacy_stream'), ('correctness', 'legacy_owned')]
         modes += [('candidate', name) for name in ('legacy_stream', 'legacy_owned',
                   'metered_background_stream', 'metered_live_stream', 'restricted_owned')]
+        plan_path = output / 'profile-plan.json'
+        plan = json.loads(plan_path.read_text()) if plan_path.exists() else {}
+        for tree, mode in modes:
+            for prefix in ('profile-', 'profile-concurrent-'):
+                label = prefix + tree + '-' + mode
+                plan[label] = [str(output / (label + '-' + kind + '.pprof')) for kind in ('cpu', 'heap', 'mutex', 'block')]
+        plan_path.write_text(json.dumps(plan, indent=2))
         for tree, mode in modes:
             label = 'profile-' + tree + '-' + mode
             if not ready(tree, label):
@@ -283,14 +295,24 @@ def run(work, group):
                 command.append('-test.' + flag + '=' + str(output / (label + '-' + suffix + '.pprof')))
             stage(label, tree, command, 120)
         cores = int(os.environ['GOMAXPROCS'])
-        command = benchmark('candidate', '^BenchmarkConcurrentExecutionModes$/[^/]+/^(header_interpolation|escape_expansion)$/^html$/^workers_' + str(cores) + '$/', '1s', cores)
-        command += ['-test.mutexprofile=' + str(output / 'concurrent-mutex.pprof'),
-                    '-test.blockprofile=' + str(output / 'concurrent-block.pprof')]
-        if ready('candidate', 'concurrent-contention'):
-            stage('concurrent-contention', 'candidate', command, 180, cores)
+        concurrent = [('upstream', 'legacy_stream'), ('upstream', 'legacy_owned'),
+                      ('correctness', 'legacy_stream'), ('correctness', 'legacy_owned')]
+        concurrent += [('candidate', mode) for mode in ('legacy_stream', 'legacy_owned',
+                       'metered_background_stream', 'metered_live_stream', 'restricted_owned')]
+        for tree, mode in concurrent:
+            label = 'profile-concurrent-' + tree + '-' + mode
+            if not ready(tree, label):
+                continue
+            command = benchmark(tree, '^BenchmarkConcurrentExecutionModes$/^' + mode + '$/^(header_interpolation|escape_expansion)$/^html$/^workers_' + str(cores) + '$/', '1s', cores)
+            for flag, suffix in [('cpuprofile', 'cpu'), ('memprofile', 'heap'),
+                                 ('mutexprofile', 'mutex'), ('blockprofile', 'block')]:
+                command.append('-test.' + flag + '=' + str(output / (label + '-' + suffix + '.pprof')))
+            stage(label, tree, command, 180, cores)
         finish()
         return
     if group == 'diagnostics':
+        plan_path = output / 'profile-plan.json'
+        plan = json.loads(plan_path.read_text()) if plan_path.exists() else {}
         for tree in ('upstream', 'correctness', 'candidate'):
             modes = ['legacy_stream', 'legacy_owned']
             if tree == 'candidate':
@@ -302,6 +324,17 @@ def run(work, group):
                 command = ['env', 'JET_RETENTION_MEASUREMENTS=1', binary(tree),
                            '-test.run=^TestExecutionRetentionMeasurements$/^' + mode + '$',
                            '-test.v', '-test.timeout=60s']
+                if sys.platform == 'darwin':
+                    command = ['/usr/bin/time', '-l'] + command
+                stage(label, tree, command, 90)
+                label = 'retention-memory-' + tree + '-' + mode
+                directory = output / label
+                directory.mkdir(exist_ok=True)
+                plan[label] = [str(directory / (phase + '.pprof')) for phase in RETENTION_PHASES]
+                plan_path.write_text(json.dumps(plan, indent=2))
+                command = ['env', 'JET_RETENTION_MEASUREMENTS=1', 'JET_RETENTION_PROFILE_DIR=' + str(directory),
+                           binary(tree), '-test.run=^TestExecutionRetentionMeasurements$/^' + mode + '$',
+                           '-test.memprofilerate=1', '-test.v', '-test.timeout=60s']
                 if sys.platform == 'darwin':
                     command = ['/usr/bin/time', '-l'] + command
                 stage(label, tree, command, 90)

@@ -7,7 +7,9 @@ import (
 	"fmt"
 	"html"
 	"os"
+	"path/filepath"
 	"runtime"
+	"runtime/pprof"
 	"sort"
 	"strings"
 	"sync"
@@ -381,6 +383,20 @@ func TestExecutionRetentionMeasurements(t *testing.T) {
 				start := time.Now()
 				render(small)
 				t.Logf(`{"phase":%q,"render_ns":%d,"heap_alloc":%d,"heap_inuse":%d,"heap_sys":%d,"stream_capacity":%d}`, phase, time.Since(start).Nanoseconds(), memory.HeapAlloc, memory.HeapInuse, memory.HeapSys, out.Cap())
+				if directory := os.Getenv("JET_RETENTION_PROFILE_DIR"); directory != "" {
+					file, err := os.Create(filepath.Join(directory, phase+".pprof"))
+					if err != nil {
+						t.Fatal(err)
+					}
+					profileError := pprof.WriteHeapProfile(file)
+					closeError := file.Close()
+					if profileError != nil {
+						t.Fatal(profileError)
+					}
+					if closeError != nil {
+						t.Fatal(closeError)
+					}
+				}
 			}
 			runtime.GC()
 			runtime.GC()
@@ -401,6 +417,9 @@ func TestExecutionRetentionMeasurements(t *testing.T) {
 			observe("large_then_small_after_gc")
 			runtime.KeepAlive(result)
 			runtime.KeepAlive(out)
+			runtime.KeepAlive(large)
+			runtime.KeepAlive(small)
+			runtime.KeepAlive(tpl)
 		})
 	}
 }
