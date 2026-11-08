@@ -1,0 +1,19 @@
+# github.com/CloudyKit/jet/v6.test
+ld: warning: '<temporary> has malformed LC_DYSYMTAB, expected 86 undefined symbols to start at index 7955, found 92 undefined symbols starting at index 58
+ok  	github.com/CloudyKit/jet/v6	0.475s
+?   	github.com/CloudyKit/jet/v6/examples/asset_packaging	[no test files]
+?   	github.com/CloudyKit/jet/v6/examples/asset_packaging/assets/templates	[no test files]
+?   	github.com/CloudyKit/jet/v6/examples/todos	[no test files]
+?   	github.com/CloudyKit/jet/v6/jettest	[no test files]
+# github.com/CloudyKit/jet/v6/loaders/embedfs.test
+ld: warning: '<temporary> has malformed LC_DYSYMTAB, expected 74 undefined symbols to start at index 6653, found 80 undefined symbols starting at index 58
+ok  	github.com/CloudyKit/jet/v6/loaders/embedfs	0.215s
+# github.com/CloudyKit/jet/v6/loaders/httpfs.test
+ld: warning: '<temporary> has malformed LC_DYSYMTAB, expected 83 undefined symbols to start at index 8545, found 92 undefined symbols starting at index 68
+ok  	github.com/CloudyKit/jet/v6/loaders/httpfs	0.241s
+# github.com/CloudyKit/jet/v6/loaders/multi.test
+ld: warning: '<temporary> has malformed LC_DYSYMTAB, expected 83 undefined symbols to start at index 8558, found 92 undefined symbols starting at index 68
+ok  	github.com/CloudyKit/jet/v6/loaders/multi	0.226s
+# github.com/CloudyKit/jet/v6/utils.test
+ld: warning: '<temporary> has malformed LC_DYSYMTAB, expected 74 undefined symbols to start at index 6671, found 80 undefined symbols starting at index 58
+ok  	github.com/CloudyKit/jet/v6/utils	0.240s

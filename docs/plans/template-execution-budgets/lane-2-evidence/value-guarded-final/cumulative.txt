@@ -1,0 +1,23 @@
+File: jet.test
+Type: alloc_space
+Time: 2026-11-07 18:21:50 CST
+Showing nodes accounting for 61.55kB, 27.43% of 224.45kB total
+Dropped 126 nodes (cum <= 1.12kB)
+Showing top 16 nodes out of 106
+      flat  flat%   sum%        cum   cum%
+         0     0%     0%   157.02kB 69.96%  testing.tRunner
+         0     0%     0%   155.33kB 69.21%  testing/internal/testdeps.TestDeps.MatchString
+         0     0%     0%   118.54kB 52.81%  regexp.Compile (inline)
+    3.28kB  1.46%  1.46%   118.54kB 52.81%  regexp.compile
+    6.52kB  2.90%  4.36%   104.70kB 46.65%  testing.(*T).Run
+         0     0%  4.36%   104.25kB 46.45%  testing.(*matcher).fullName
+         0     0%  4.36%   101.83kB 45.37%  testing.simpleMatch.matches
+    0.16kB  0.07%  4.43%    85.66kB 38.17%  github.com/CloudyKit/jet/v6.TestExecutionBudgetProfile
+         0     0%  4.43%    83.05kB 37.00%  runtime.main
+         0     0%  4.43%    83.04kB 37.00%  main.main
+    0.07kB 0.031%  4.47%    83.04kB 37.00%  testing.(*M).Run
+    0.80kB  0.36%  4.82%    69.73kB 31.07%  testing.runTests
+    0.27kB  0.12%  4.94%    54.34kB 24.21%  testing.newMatcher
+         0     0%  4.94%    53.84kB 23.99%  testing.simpleMatch.verify
+         0     0%  4.94%    51.36kB 22.88%  regexp/syntax.Compile
+   50.47kB 22.49% 27.43%    50.47kB 22.49%  regexp/syntax.(*compiler).inst (inline)

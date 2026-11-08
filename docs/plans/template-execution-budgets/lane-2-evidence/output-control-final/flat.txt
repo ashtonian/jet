@@ -1,0 +1,23 @@
+File: jet.test
+Type: alloc_space
+Time: 2026-11-07 18:19:36 CST
+Showing nodes accounting for 270.06kB, 89.39% of 302.11kB total
+Dropped 155 nodes (cum <= 1.51kB)
+Showing top 16 nodes out of 108
+      flat  flat%   sum%        cum   cum%
+      56kB 18.54% 18.54%       56kB 18.54%  bytes.growSlice
+   50.47kB 16.71% 35.24%    50.47kB 16.71%  regexp/syntax.(*compiler).inst (inline)
+      48kB 15.89% 51.13%       48kB 15.89%  internal/bytealg.MakeNoZero
+      36kB 11.92% 63.05%       36kB 11.92%  regexp.(*bitState).reset
+   20.47kB  6.78% 69.82%    20.47kB  6.78%  regexp.onePassCopy
+   12.25kB  4.05% 73.88%    12.25kB  4.05%  regexp/syntax.(*parser).newRegexp (inline)
+    8.05kB  2.66% 76.54%     8.05kB  2.66%  github.com/CloudyKit/fastprinter.newByteSliceBufferPool.func1
+    7.50kB  2.48% 79.02%    16.78kB  5.55%  regexp.makeOnePass
+    5.23kB  1.73% 80.76%    99.95kB 33.08%  testing.(*T).Run
+       5kB  1.66% 82.41%        5kB  1.66%  regexp.newQueue (inline)
+    4.28kB  1.42% 83.83%     4.28kB  1.42%  regexp.makeOnePass.func1
+    4.17kB  1.38% 85.21%     4.17kB  1.38%  regexp/syntax.(*parser).maybeConcat
+    3.98kB  1.32% 86.53%     3.98kB  1.32%  testing.(*common).frameSkip
+    3.28kB  1.09% 87.61%   114.32kB 37.84%  regexp.compile
+       3kB  0.99% 88.61%        3kB  0.99%  runtime.mallocgc
+    2.38kB  0.79% 89.39%    21.43kB  7.09%  regexp/syntax.parse

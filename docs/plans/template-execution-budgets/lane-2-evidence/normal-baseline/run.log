@@ -1,0 +1,244 @@
+gate-lock: held by pid <pid> on <host>, "jet-lane-2-normal-baseline b0bbc07 in <checkout>", since 2026-11-07T23:02:22Z, 2 of 6 focused cores
+=== RUN   TestValueOutputAmplification
+=== RUN   TestValueOutputAmplification/doubling
+    value_output_probe_test.go:40: output="131072" accepted=6 attempted=6 writes=1 error=<nil> sink_limit=false allocated_bytes=558248 allocations=94
+=== RUN   TestValueOutputAmplification/repeat
+    value_output_probe_test.go:40: output="131072" accepted=6 attempted=6 writes=1 error=<nil> sink_limit=false allocated_bytes=133272 allocations=34
+=== RUN   TestValueOutputAmplification/replace
+    value_output_probe_test.go:40: output="131072" accepted=6 attempted=6 writes=1 error=<nil> sink_limit=false allocated_bytes=141520 allocations=36
+=== RUN   TestValueOutputAmplification/split
+    value_output_probe_test.go:40: output="4096" accepted=4 attempted=4 writes=1 error=<nil> sink_limit=false allocated_bytes=71576 allocations=34
+=== RUN   TestValueOutputAmplification/nestedTry
+    value_output_probe_test.go:40: output="" accepted=0 attempted=16384 writes=1 error=<nil> sink_limit=false allocated_bytes=66104 allocations=16
+=== RUN   TestValueOutputAmplification/rollback
+    value_output_probe_test.go:40: output="ok" accepted=2 attempted=2 writes=1 error=<nil> sink_limit=false allocated_bytes=182720 allocations=72
+=== RUN   TestValueOutputAmplification/discard
+    value_output_probe_test.go:40: output="ok" accepted=2 attempted=2 writes=1 error=<nil> sink_limit=false allocated_bytes=19592 allocations=47
+--- PASS: TestValueOutputAmplification (0.00s)
+    --- PASS: TestValueOutputAmplification/doubling (0.00s)
+    --- PASS: TestValueOutputAmplification/repeat (0.00s)
+    --- PASS: TestValueOutputAmplification/replace (0.00s)
+    --- PASS: TestValueOutputAmplification/split (0.00s)
+    --- PASS: TestValueOutputAmplification/nestedTry (0.00s)
+    --- PASS: TestValueOutputAmplification/rollback (0.00s)
+    --- PASS: TestValueOutputAmplification/discard (0.00s)
+=== RUN   TestValueOutputCompatibility
+=== RUN   TestValueOutputCompatibility/lower
+=== RUN   TestValueOutputCompatibility/lower/text
+=== RUN   TestValueOutputCompatibility/lower/html
+=== RUN   TestValueOutputCompatibility/upper
+=== RUN   TestValueOutputCompatibility/upper/text
+=== RUN   TestValueOutputCompatibility/upper/html
+=== RUN   TestValueOutputCompatibility/hasPrefix
+=== RUN   TestValueOutputCompatibility/hasPrefix/text
+=== RUN   TestValueOutputCompatibility/hasPrefix/html
+=== RUN   TestValueOutputCompatibility/hasSuffix
+=== RUN   TestValueOutputCompatibility/hasSuffix/text
+=== RUN   TestValueOutputCompatibility/hasSuffix/html
+=== RUN   TestValueOutputCompatibility/repeat
+=== RUN   TestValueOutputCompatibility/repeat/text
+=== RUN   TestValueOutputCompatibility/repeat/html
+=== RUN   TestValueOutputCompatibility/repeatZero
+=== RUN   TestValueOutputCompatibility/repeatZero/text
+=== RUN   TestValueOutputCompatibility/repeatZero/html
+=== RUN   TestValueOutputCompatibility/replace
+=== RUN   TestValueOutputCompatibility/replace/text
+=== RUN   TestValueOutputCompatibility/replace/html
+=== RUN   TestValueOutputCompatibility/replaceEmpty
+=== RUN   TestValueOutputCompatibility/replaceEmpty/text
+=== RUN   TestValueOutputCompatibility/replaceEmpty/html
+=== RUN   TestValueOutputCompatibility/replaceZero
+=== RUN   TestValueOutputCompatibility/replaceZero/text
+=== RUN   TestValueOutputCompatibility/replaceZero/html
+=== RUN   TestValueOutputCompatibility/split
+=== RUN   TestValueOutputCompatibility/split/text
+=== RUN   TestValueOutputCompatibility/split/html
+=== RUN   TestValueOutputCompatibility/splitEmpty
+=== RUN   TestValueOutputCompatibility/splitEmpty/text
+=== RUN   TestValueOutputCompatibility/splitEmpty/html
+=== RUN   TestValueOutputCompatibility/trimSpace
+=== RUN   TestValueOutputCompatibility/trimSpace/text
+=== RUN   TestValueOutputCompatibility/trimSpace/html
+=== RUN   TestValueOutputCompatibility/html
+=== RUN   TestValueOutputCompatibility/html/text
+=== RUN   TestValueOutputCompatibility/html/html
+=== RUN   TestValueOutputCompatibility/url
+=== RUN   TestValueOutputCompatibility/url/text
+=== RUN   TestValueOutputCompatibility/url/html
+=== RUN   TestValueOutputCompatibility/safeHtml
+=== RUN   TestValueOutputCompatibility/safeHtml/text
+=== RUN   TestValueOutputCompatibility/safeHtml/html
+=== RUN   TestValueOutputCompatibility/safeJs
+=== RUN   TestValueOutputCompatibility/safeJs/text
+=== RUN   TestValueOutputCompatibility/safeJs/html
+=== RUN   TestValueOutputCompatibility/raw
+=== RUN   TestValueOutputCompatibility/raw/text
+=== RUN   TestValueOutputCompatibility/raw/html
+=== RUN   TestValueOutputCompatibility/unsafe
+=== RUN   TestValueOutputCompatibility/unsafe/text
+=== RUN   TestValueOutputCompatibility/unsafe/html
+=== RUN   TestValueOutputCompatibility/json
+=== RUN   TestValueOutputCompatibility/json/text
+=== RUN   TestValueOutputCompatibility/json/html
+=== RUN   TestValueOutputCompatibility/writeJson
+=== RUN   TestValueOutputCompatibility/writeJson/text
+=== RUN   TestValueOutputCompatibility/writeJson/html
+=== RUN   TestValueOutputCompatibility/map
+=== RUN   TestValueOutputCompatibility/map/text
+=== RUN   TestValueOutputCompatibility/map/html
+=== RUN   TestValueOutputCompatibility/slice
+=== RUN   TestValueOutputCompatibility/slice/text
+=== RUN   TestValueOutputCompatibility/slice/html
+=== RUN   TestValueOutputCompatibility/array
+=== RUN   TestValueOutputCompatibility/array/text
+=== RUN   TestValueOutputCompatibility/array/html
+=== RUN   TestValueOutputCompatibility/alias
+=== RUN   TestValueOutputCompatibility/alias/text
+=== RUN   TestValueOutputCompatibility/alias/html
+=== RUN   TestValueOutputCompatibility/isset
+=== RUN   TestValueOutputCompatibility/isset/text
+=== RUN   TestValueOutputCompatibility/isset/html
+=== RUN   TestValueOutputCompatibility/len
+=== RUN   TestValueOutputCompatibility/len/text
+=== RUN   TestValueOutputCompatibility/len/html
+=== RUN   TestValueOutputCompatibility/ints
+=== RUN   TestValueOutputCompatibility/ints/text
+=== RUN   TestValueOutputCompatibility/ints/html
+=== RUN   TestValueOutputCompatibility/dump
+=== RUN   TestValueOutputCompatibility/dump/text
+=== RUN   TestValueOutputCompatibility/dump/html
+=== RUN   TestValueOutputCompatibility/includeIfExists
+=== RUN   TestValueOutputCompatibility/includeIfExists/text
+=== RUN   TestValueOutputCompatibility/includeIfExists/html
+=== RUN   TestValueOutputCompatibility/exec
+=== RUN   TestValueOutputCompatibility/exec/text
+=== RUN   TestValueOutputCompatibility/exec/html
+=== RUN   TestValueOutputCompatibility/byteConcat
+=== RUN   TestValueOutputCompatibility/byteConcat/text
+=== RUN   TestValueOutputCompatibility/byteConcat/html
+=== RUN   TestValueOutputCompatibility/scalarConcat
+=== RUN   TestValueOutputCompatibility/scalarConcat/text
+=== RUN   TestValueOutputCompatibility/scalarConcat/html
+=== RUN   TestValueOutputCompatibility/escapedOutput
+=== RUN   TestValueOutputCompatibility/escapedOutput/text
+=== RUN   TestValueOutputCompatibility/escapedOutput/html
+=== RUN   TestValueOutputCompatibility/nestedTry
+=== RUN   TestValueOutputCompatibility/nestedTry/text
+=== RUN   TestValueOutputCompatibility/nestedTry/html
+=== RUN   TestValueOutputCompatibility/rollback
+=== RUN   TestValueOutputCompatibility/rollback/text
+=== RUN   TestValueOutputCompatibility/rollback/html
+=== RUN   TestValueOutputCompatibility/nestedRollback
+=== RUN   TestValueOutputCompatibility/nestedRollback/text
+=== RUN   TestValueOutputCompatibility/nestedRollback/html
+--- PASS: TestValueOutputCompatibility (0.00s)
+    --- PASS: TestValueOutputCompatibility/lower (0.00s)
+        --- PASS: TestValueOutputCompatibility/lower/text (0.00s)
+        --- PASS: TestValueOutputCompatibility/lower/html (0.00s)
+    --- PASS: TestValueOutputCompatibility/upper (0.00s)
+        --- PASS: TestValueOutputCompatibility/upper/text (0.00s)
+        --- PASS: TestValueOutputCompatibility/upper/html (0.00s)
+    --- PASS: TestValueOutputCompatibility/hasPrefix (0.00s)
+        --- PASS: TestValueOutputCompatibility/hasPrefix/text (0.00s)
+        --- PASS: TestValueOutputCompatibility/hasPrefix/html (0.00s)
+    --- PASS: TestValueOutputCompatibility/hasSuffix (0.00s)
+        --- PASS: TestValueOutputCompatibility/hasSuffix/text (0.00s)
+        --- PASS: TestValueOutputCompatibility/hasSuffix/html (0.00s)
+    --- PASS: TestValueOutputCompatibility/repeat (0.00s)
+        --- PASS: TestValueOutputCompatibility/repeat/text (0.00s)
+        --- PASS: TestValueOutputCompatibility/repeat/html (0.00s)
+    --- PASS: TestValueOutputCompatibility/repeatZero (0.00s)
+        --- PASS: TestValueOutputCompatibility/repeatZero/text (0.00s)
+        --- PASS: TestValueOutputCompatibility/repeatZero/html (0.00s)
+    --- PASS: TestValueOutputCompatibility/replace (0.00s)
+        --- PASS: TestValueOutputCompatibility/replace/text (0.00s)
+        --- PASS: TestValueOutputCompatibility/replace/html (0.00s)
+    --- PASS: TestValueOutputCompatibility/replaceEmpty (0.00s)
+        --- PASS: TestValueOutputCompatibility/replaceEmpty/text (0.00s)
+        --- PASS: TestValueOutputCompatibility/replaceEmpty/html (0.00s)
+    --- PASS: TestValueOutputCompatibility/replaceZero (0.00s)
+        --- PASS: TestValueOutputCompatibility/replaceZero/text (0.00s)
+        --- PASS: TestValueOutputCompatibility/replaceZero/html (0.00s)
+    --- PASS: TestValueOutputCompatibility/split (0.00s)
+        --- PASS: TestValueOutputCompatibility/split/text (0.00s)
+        --- PASS: TestValueOutputCompatibility/split/html (0.00s)
+    --- PASS: TestValueOutputCompatibility/splitEmpty (0.00s)
+        --- PASS: TestValueOutputCompatibility/splitEmpty/text (0.00s)
+        --- PASS: TestValueOutputCompatibility/splitEmpty/html (0.00s)
+    --- PASS: TestValueOutputCompatibility/trimSpace (0.00s)
+        --- PASS: TestValueOutputCompatibility/trimSpace/text (0.00s)
+        --- PASS: TestValueOutputCompatibility/trimSpace/html (0.00s)
+    --- PASS: TestValueOutputCompatibility/html (0.00s)
+        --- PASS: TestValueOutputCompatibility/html/text (0.00s)
+        --- PASS: TestValueOutputCompatibility/html/html (0.00s)
+    --- PASS: TestValueOutputCompatibility/url (0.00s)
+        --- PASS: TestValueOutputCompatibility/url/text (0.00s)
+        --- PASS: TestValueOutputCompatibility/url/html (0.00s)
+    --- PASS: TestValueOutputCompatibility/safeHtml (0.00s)
+        --- PASS: TestValueOutputCompatibility/safeHtml/text (0.00s)
+        --- PASS: TestValueOutputCompatibility/safeHtml/html (0.00s)
+    --- PASS: TestValueOutputCompatibility/safeJs (0.00s)
+        --- PASS: TestValueOutputCompatibility/safeJs/text (0.00s)
+        --- PASS: TestValueOutputCompatibility/safeJs/html (0.00s)
+    --- PASS: TestValueOutputCompatibility/raw (0.00s)
+        --- PASS: TestValueOutputCompatibility/raw/text (0.00s)
+        --- PASS: TestValueOutputCompatibility/raw/html (0.00s)
+    --- PASS: TestValueOutputCompatibility/unsafe (0.00s)
+        --- PASS: TestValueOutputCompatibility/unsafe/text (0.00s)
+        --- PASS: TestValueOutputCompatibility/unsafe/html (0.00s)
+    --- PASS: TestValueOutputCompatibility/json (0.00s)
+        --- PASS: TestValueOutputCompatibility/json/text (0.00s)
+        --- PASS: TestValueOutputCompatibility/json/html (0.00s)
+    --- PASS: TestValueOutputCompatibility/writeJson (0.00s)
+        --- PASS: TestValueOutputCompatibility/writeJson/text (0.00s)
+        --- PASS: TestValueOutputCompatibility/writeJson/html (0.00s)
+    --- PASS: TestValueOutputCompatibility/map (0.00s)
+        --- PASS: TestValueOutputCompatibility/map/text (0.00s)
+        --- PASS: TestValueOutputCompatibility/map/html (0.00s)
+    --- PASS: TestValueOutputCompatibility/slice (0.00s)
+        --- PASS: TestValueOutputCompatibility/slice/text (0.00s)
+        --- PASS: TestValueOutputCompatibility/slice/html (0.00s)
+    --- PASS: TestValueOutputCompatibility/array (0.00s)
+        --- PASS: TestValueOutputCompatibility/array/text (0.00s)
+        --- PASS: TestValueOutputCompatibility/array/html (0.00s)
+    --- PASS: TestValueOutputCompatibility/alias (0.00s)
+        --- PASS: TestValueOutputCompatibility/alias/text (0.00s)
+        --- PASS: TestValueOutputCompatibility/alias/html (0.00s)
+    --- PASS: TestValueOutputCompatibility/isset (0.00s)
+        --- PASS: TestValueOutputCompatibility/isset/text (0.00s)
+        --- PASS: TestValueOutputCompatibility/isset/html (0.00s)
+    --- PASS: TestValueOutputCompatibility/len (0.00s)
+        --- PASS: TestValueOutputCompatibility/len/text (0.00s)
+        --- PASS: TestValueOutputCompatibility/len/html (0.00s)
+    --- PASS: TestValueOutputCompatibility/ints (0.00s)
+        --- PASS: TestValueOutputCompatibility/ints/text (0.00s)
+        --- PASS: TestValueOutputCompatibility/ints/html (0.00s)
+    --- PASS: TestValueOutputCompatibility/dump (0.00s)
+        --- PASS: TestValueOutputCompatibility/dump/text (0.00s)
+        --- PASS: TestValueOutputCompatibility/dump/html (0.00s)
+    --- PASS: TestValueOutputCompatibility/includeIfExists (0.00s)
+        --- PASS: TestValueOutputCompatibility/includeIfExists/text (0.00s)
+        --- PASS: TestValueOutputCompatibility/includeIfExists/html (0.00s)
+    --- PASS: TestValueOutputCompatibility/exec (0.00s)
+        --- PASS: TestValueOutputCompatibility/exec/text (0.00s)
+        --- PASS: TestValueOutputCompatibility/exec/html (0.00s)
+    --- PASS: TestValueOutputCompatibility/byteConcat (0.00s)
+        --- PASS: TestValueOutputCompatibility/byteConcat/text (0.00s)
+        --- PASS: TestValueOutputCompatibility/byteConcat/html (0.00s)
+    --- PASS: TestValueOutputCompatibility/scalarConcat (0.00s)
+        --- PASS: TestValueOutputCompatibility/scalarConcat/text (0.00s)
+        --- PASS: TestValueOutputCompatibility/scalarConcat/html (0.00s)
+    --- PASS: TestValueOutputCompatibility/escapedOutput (0.00s)
+        --- PASS: TestValueOutputCompatibility/escapedOutput/text (0.00s)
+        --- PASS: TestValueOutputCompatibility/escapedOutput/html (0.00s)
+    --- PASS: TestValueOutputCompatibility/nestedTry (0.00s)
+        --- PASS: TestValueOutputCompatibility/nestedTry/text (0.00s)
+        --- PASS: TestValueOutputCompatibility/nestedTry/html (0.00s)
+    --- PASS: TestValueOutputCompatibility/rollback (0.00s)
+        --- PASS: TestValueOutputCompatibility/rollback/text (0.00s)
+        --- PASS: TestValueOutputCompatibility/rollback/html (0.00s)
+    --- PASS: TestValueOutputCompatibility/nestedRollback (0.00s)
+        --- PASS: TestValueOutputCompatibility/nestedRollback/text (0.00s)
+        --- PASS: TestValueOutputCompatibility/nestedRollback/html (0.00s)
+PASS
+ok  	github.com/CloudyKit/jet/v6	0.239s

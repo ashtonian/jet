@@ -1,0 +1,6 @@
+gate-lock: held by pid <pid> on <host>, "jet-lane-2-numeric-error-baseline e883796 in <checkout>", since 2026-11-07T23:59:30Z, 2 of 6 focused cores
+--- FAIL: TestExecutionNumericErrorReservation (0.00s)
+    execution_values_test.go:141: numeric parsing bypassed reservation: *strconv.NumError
+FAIL
+FAIL	github.com/CloudyKit/jet/v6	0.287s
+FAIL

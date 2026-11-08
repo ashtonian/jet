@@ -1,0 +1,40 @@
+gate-lock: held by pid <pid> on <host>, "jet-lane-2-value-control-final 5583ec1 in <checkout>", since 2026-11-08T00:19:24Z, 2 of 6 focused cores
+=== RUN   TestExecutionBudgetProfile
+=== RUN   TestExecutionBudgetProfile/doubling
+    execution_values_test.go:58: output="131072" accepted=6 attempted=6 writes=1 error=<nil> allocated_bytes=263704 allocations=49
+    execution_values_test.go:60: got <nil>, sink attempted 6; want jet: cumulative value limit exceeded before sink
+=== RUN   TestExecutionBudgetProfile/repeat
+    execution_values_test.go:58: output="131072" accepted=6 attempted=6 writes=1 error=<nil> allocated_bytes=131760 allocations=13
+    execution_values_test.go:60: got <nil>, sink attempted 6; want jet: cumulative value limit exceeded before sink
+=== RUN   TestExecutionBudgetProfile/replace
+    execution_values_test.go:58: output="131072" accepted=6 attempted=6 writes=1 error=<nil> allocated_bytes=139984 allocations=16
+    execution_values_test.go:60: got <nil>, sink attempted 6; want jet: cumulative value limit exceeded before sink
+=== RUN   TestExecutionBudgetProfile/split
+    execution_values_test.go:58: output="4096" accepted=4 attempted=4 writes=1 error=<nil> allocated_bytes=70344 allocations=15
+    execution_values_test.go:60: got <nil>, sink attempted 4; want jet: cumulative value limit exceeded before sink
+--- FAIL: TestExecutionBudgetProfile (0.00s)
+    --- FAIL: TestExecutionBudgetProfile/doubling (0.00s)
+    --- FAIL: TestExecutionBudgetProfile/repeat (0.00s)
+    --- FAIL: TestExecutionBudgetProfile/replace (0.00s)
+    --- FAIL: TestExecutionBudgetProfile/split (0.00s)
+FAIL
+        0.28 real         0.01 user         0.00 sys
+            12091392  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                 953  page reclaims
+                   0  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   3  signals received
+                   0  voluntary context switches
+                 249  involuntary context switches
+           244161711  instructions retired
+            66167299  cycles elapsed
+             7389712  peak memory footprint
+FAIL	github.com/CloudyKit/jet/v6	0.288s
+FAIL

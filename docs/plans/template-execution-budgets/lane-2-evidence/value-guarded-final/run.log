@@ -1,0 +1,35 @@
+gate-lock: held by pid <pid> on <host>, "jet-lane-2-value-guarded-final 5583ec1 in <checkout>", since 2026-11-08T00:21:44Z, 2 of 6 focused cores
+=== RUN   TestExecutionBudgetProfile
+=== RUN   TestExecutionBudgetProfile/doubling
+    execution_values_test.go:58: output="" accepted=0 attempted=0 writes=0 error=jet: value limit exceeded (32768) allocated_bytes=17768 allocations=39
+=== RUN   TestExecutionBudgetProfile/repeat
+    execution_values_test.go:58: output="" accepted=0 attempted=0 writes=0 error=jet: value limit exceeded (32768) allocated_bytes=224 allocations=8
+=== RUN   TestExecutionBudgetProfile/replace
+    execution_values_test.go:58: output="" accepted=0 attempted=0 writes=0 error=jet: value limit exceeded (32768) allocated_bytes=8432 allocations=11
+=== RUN   TestExecutionBudgetProfile/split
+    execution_values_test.go:58: output="" accepted=0 attempted=0 writes=0 error=jet: value limit exceeded (32768) allocated_bytes=4336 allocations=10
+--- PASS: TestExecutionBudgetProfile (0.00s)
+    --- PASS: TestExecutionBudgetProfile/doubling (0.00s)
+    --- PASS: TestExecutionBudgetProfile/repeat (0.00s)
+    --- PASS: TestExecutionBudgetProfile/replace (0.00s)
+    --- PASS: TestExecutionBudgetProfile/split (0.00s)
+PASS
+        0.27 real         0.01 user         0.00 sys
+            11878400  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                 936  page reclaims
+                   0  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   2  signals received
+                   0  voluntary context switches
+                 258  involuntary context switches
+           237780960  instructions retired
+            64813938  cycles elapsed
+             7193128  peak memory footprint
+ok  	github.com/CloudyKit/jet/v6	0.274s

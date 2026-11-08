@@ -1,0 +1,23 @@
+File: jet.test
+Type: alloc_space
+Time: 2026-11-07 18:19:28 CST
+Showing nodes accounting for 524.67kB, 66.45% of 789.57kB total
+Dropped 161 nodes (cum <= 3.95kB)
+Showing top 16 nodes out of 79
+      flat  flat%   sum%        cum   cum%
+         0     0%     0%   722.18kB 91.46%  testing.tRunner
+    0.31kB  0.04%  0.04%   615.16kB 77.91%  github.com/CloudyKit/jet/v6.TestExecutionBudgetProfile.func1
+         0     0%  0.04%   591.59kB 74.93%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0%  0.04%   591.59kB 74.93%  github.com/CloudyKit/jet/v6.(*Template).execute
+    0.11kB 0.014% 0.053%   590.85kB 74.83%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 0.053%   588.43kB 74.53%  github.com/CloudyKit/jet/v6.(*Runtime).evalPrimaryExpressionGroup
+     524kB 66.37% 66.42%      524kB 66.37%  internal/bytealg.MakeNoZero
+         0     0% 66.42%      524kB 66.37%  strings.(*Builder).Grow
+         0     0% 66.42%      524kB 66.37%  strings.(*Builder).grow
+         0     0% 66.42%   333.51kB 42.24%  github.com/CloudyKit/jet/v6.(*Runtime).executeLetList
+         0     0% 66.42%   332.21kB 42.07%  github.com/CloudyKit/jet/v6.(*Runtime).evalCallExpression (inline)
+         0     0% 66.42%   332.21kB 42.07%  github.com/CloudyKit/jet/v6.(*Runtime).evalPipeCallExpression
+         0     0% 66.42%   256.30kB 32.46%  github.com/CloudyKit/jet/v6.(*Runtime).executeRange
+    0.25kB 0.032% 66.45%   256.25kB 32.45%  github.com/CloudyKit/jet/v6.(*Runtime).evalAdditiveExpression
+         0     0% 66.45%   256.25kB 32.45%  github.com/CloudyKit/jet/v6.(*Runtime).executeSetList
+         0     0% 66.45%      256kB 32.42%  github.com/CloudyKit/jet/v6.(*Runtime).concatString

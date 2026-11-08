@@ -1,0 +1,5 @@
+--- execution_values.go
++++ execution_values.go
+@@ -29 +29 @@
+-	st.reserve(&st.execution.values, uint64(st.execution.options.MaxValueBytes), uint64(size), "value", ErrValueLimit)
++	st.reserve(&st.execution.values, 0, uint64(size), "value", ErrValueLimit)
