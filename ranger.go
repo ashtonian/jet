@@ -25,19 +25,32 @@ type Ranger interface {
 
 type intsRanger struct {
 	i, val, to int64
+	started    bool
 }
 
 var _ Ranger = &intsRanger{}
 
 func (r *intsRanger) Range() (index, value reflect.Value, end bool) {
-	r.i++
-	r.val++
-	end = r.val == r.to
+	if r.val >= r.to {
+		return reflect.Value{}, reflect.Value{}, true
+	}
+	if r.started {
+		if r.val >= r.to-1 {
+			return reflect.Value{}, reflect.Value{}, true
+		}
+		r.i++
+		r.val++
+	} else {
+		r.started = true
+		if r.val >= r.to {
+			return reflect.Value{}, reflect.Value{}, true
+		}
+	}
 
 	// The indirection in the ValueOf calls avoids an allocation versus
 	// using the concrete value of 'i' and 'val'. The downside is having
 	// to interpret 'r.i' as "the current value" after Range() returns,
-	// and so it needs to be initialized as -1.
+	// and so the values remain valid until the next advance.
 	index = reflect.ValueOf(&r.i).Elem()
 	value = reflect.ValueOf(&r.val).Elem()
 	return
@@ -48,8 +61,7 @@ func (r *intsRanger) ProvidesIndex() bool { return true }
 func newIntsRanger(from, to int64) *intsRanger {
 	r := &intsRanger{
 		to:  to,
-		i:   -1,
-		val: from - 1,
+		val: from,
 	}
 	return r
 }
@@ -165,6 +177,9 @@ func (st *Runtime) getRanger(v reflect.Value) (r Ranger, cleanup func(), err err
 	if !v.IsValid() {
 		return nil, nil, errors.New("can't range over invalid value")
 	}
+	if st.isRestricted() && v.Type() != reflect.TypeOf((*intsRanger)(nil)) {
+		st.beforeData(v)
+	}
 	t := v.Type()
 	if t.Implements(rangerType) {
 		return v.Interface().(Ranger), func() { /* no cleanup needed */ }, nil
@@ -177,7 +192,7 @@ func (st *Runtime) getRanger(v reflect.Value) (r Ranger, cleanup func(), err err
 
 	pool, ok := poolsByKind[v.Kind()]
 	if !ok {
-		return nil, nil, fmt.Errorf("value %v (type %s) is not rangeable", v, t)
+		return nil, nil, fmt.Errorf("value %v (type %s) is not rangeable", st.diagnosticValue(v), t)
 	}
 
 	pr := pool.Get().(pooledRanger)

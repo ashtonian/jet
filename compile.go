@@ -65,7 +65,7 @@ func (e *ParseLimitError) Unwrap() error {
 // ParseContext parses inline source synchronously. Dependencies use the same
 // admission. A failed operation never publishes a partial template.
 func (s *Set) ParseContext(ctx context.Context, name, source string, opts ParseOptions) (t *Template, err error) {
-	a, err := newParseAdmission(ctx, opts)
+	a, err := s.parseAdmission(ctx, opts)
 	if err != nil {
 		return nil, err
 	}
@@ -75,6 +75,9 @@ func (s *Set) ParseContext(ctx context.Context, name, source string, opts ParseO
 		}
 	}()
 	defer a.recover(&err)
+	if s.restricted != nil && len(name) > 1024 {
+		return nil, ErrCapabilityDenied
+	}
 	name, err = normalizeParseName(name)
 	if err != nil {
 		return nil, err
@@ -90,7 +93,7 @@ func (s *Set) ParseContext(ctx context.Context, name, source string, opts ParseO
 // Loader calls and reads are owned synchronously: an arbitrary blocking Loader
 // cannot be interrupted. ContextLoader can cooperate without a detached worker.
 func (s *Set) GetTemplateContext(ctx context.Context, name string, opts ParseOptions) (t *Template, err error) {
-	a, err := newParseAdmission(ctx, opts)
+	a, err := s.parseAdmission(ctx, opts)
 	if err != nil {
 		return nil, err
 	}
@@ -109,22 +112,33 @@ func (s *Set) GetTemplateContext(ctx context.Context, name string, opts ParseOpt
 
 func recoverCompilation(err *error) { compilationPanic(recover(), err) }
 
+type compilationAbort struct{ error }
+
+func (e compilationAbort) Unwrap() error { return e.error }
+
 func compilationPanic(p interface{}, err *error) {
 	if p == nil {
 		return
 	}
-	if _, ok := p.(runtime.Error); ok {
-		panic(p)
+	if abort, ok := p.(compilationAbort); ok {
+		*err = abort.error
+		return
 	}
-	failure, ok := p.(error)
-	if !ok {
-		panic(p)
-	}
-	*err = failure
+	panic(p)
 }
 
 func (a *parseAdmission) recover(err *error) {
-	compilationPanic(recover(), err)
+	p := recover()
+	if p != nil && a.terminal != nil {
+		if _, ok := p.(runtime.Error); ok {
+			panic(p)
+		}
+		if _, ok := p.(error); !ok {
+			panic(p)
+		}
+	} else {
+		compilationPanic(p, err)
+	}
 	// Cleanup cannot replace an observed resource or cancellation failure.
 	if a.terminal != nil {
 		*err = a.terminal
@@ -169,7 +183,7 @@ func (a *parseAdmission) check() {
 		return
 	}
 	if a.terminal != nil {
-		panic(a.terminal)
+		panic(compilationAbort{a.terminal})
 	}
 	if err := a.ctx.Err(); err != nil {
 		a.stop(err)
@@ -180,7 +194,7 @@ func (a *parseAdmission) stop(err error) {
 	if a.terminal == nil {
 		a.terminal = err
 	}
-	panic(a.terminal)
+	panic(compilationAbort{a.terminal})
 }
 
 func (a *parseAdmission) limit(kind string, limit uint64) {
@@ -212,7 +226,7 @@ func (a *parseAdmission) enter() {
 func (a *parseAdmission) prepareSource(name string) {
 	a.step(1)
 	if a.active[name] {
-		panic(fmt.Errorf("%w: %s", ErrTemplateCycle, parseDiagnostic(name)))
+		panic(compilationAbort{fmt.Errorf("%w: %s", ErrTemplateCycle, parseDiagnostic(name))})
 	}
 	if _, ok := a.sources[name]; !ok {
 		if a.opts.MaxTemplates > 0 && uint64(len(a.sources)) >= a.opts.MaxTemplates {
@@ -332,7 +346,7 @@ func (a *parseAdmission) readSource(name string, reader io.Reader) string {
 		n, err := reader.Read(chunk[:readSize])
 		a.check()
 		if n < 0 || n > readSize {
-			panic(errors.New("jet: loader returned an invalid read count"))
+			panic(compilationAbort{errors.New("jet: loader returned an invalid read count")})
 		}
 		if n > 0 {
 			a.step(uint64(n))
@@ -342,14 +356,14 @@ func (a *parseAdmission) readSource(name string, reader io.Reader) string {
 		} else {
 			empty++
 			if err == nil && empty >= 100 {
-				panic(io.ErrNoProgress)
+				panic(compilationAbort{io.ErrNoProgress})
 			}
 		}
 		if err == io.EOF {
 			return buf.String()
 		}
 		if err != nil {
-			panic(err)
+			panic(compilationAbort{err})
 		}
 	}
 }

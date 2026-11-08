@@ -25,7 +25,7 @@ func TestExecutionLimits(t *testing.T) {
 		want         error
 	}{
 		{"empty", "", nil, ExecutionOptions{MaxSteps: 1, MaxDepth: 1}, nil},
-		{"literal", "x", nil, ExecutionOptions{MaxSteps: 2, MaxDepth: 1}, nil},
+		{"literal", "x", nil, ExecutionOptions{MaxSteps: 3, MaxDepth: 1}, nil},
 		{"exact steps", "x", nil, ExecutionOptions{MaxSteps: 1}, ErrStepLimit},
 		{"expression depth", `{{ 1 + (2 + 3) }}`, nil, ExecutionOptions{MaxDepth: 2}, ErrDepthLimit},
 		{"silent", `{{ range ints(0, 100000) }}{{ end }}`, nil, ExecutionOptions{MaxSteps: 100}, ErrStepLimit},

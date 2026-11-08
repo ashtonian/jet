@@ -17,6 +17,8 @@ concurrency:
 
 jobs:
   test:
+    # Same-repository PRs already have the push run on their exact source SHA.
+    if: github.event_name == 'push' || github.event.pull_request.head.repo.full_name != github.repository
     name: Go ${{ matrix.go }} ${{ matrix.mode }}
     runs-on: ubuntu-latest
     timeout-minutes: 10

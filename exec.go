@@ -61,10 +61,10 @@ func (t *Template) Execute(w io.Writer, variables VarMap, data interface{}) (err
 // ExecuteContext executes synchronously with cancellation and interpreter limits.
 // It checks before/after native calls and waits for them to return. It does not
 // interrupt blocked callbacks, writers, loaders, channels, or custom rangers.
-// Nil ctx and negative depth are invalid; zero limits are unlimited.
+// Nil ctx and negative limits are invalid; zero limits are unlimited.
 func (t *Template) ExecuteContext(ctx context.Context, w io.Writer, variables VarMap, data interface{}, opts ExecutionOptions) error {
-	if ctx == nil || opts.MaxDepth < 0 {
-		return fmt.Errorf("%w: context must be non-nil and depth nonnegative", ErrInvalidOptions)
+	if ctx == nil || opts.MaxDepth < 0 || opts.MaxValueBytes < 0 || opts.MaxOutputBytes < 0 {
+		return fmt.Errorf("%w: context must be non-nil and limits nonnegative", ErrInvalidOptions)
 	}
 	if err := validateParseOptions(opts.ParseOptions); err != nil {
 		return err
@@ -73,17 +73,41 @@ func (t *Template) ExecuteContext(ctx context.Context, w io.Writer, variables Va
 }
 
 func (t *Template) execute(ctx context.Context, w io.Writer, variables VarMap, data interface{}, opts ExecutionOptions) (err error) {
+	var owned *restrictedSink
+	if policy := t.set.restricted; policy != nil {
+		var ok bool
+		owned, ok = w.(*restrictedSink)
+		if !ok || owned.owner != t {
+			return fmt.Errorf("%w: use RenderRestrictedContext with an owned result", ErrCapabilityDenied)
+		}
+		if ctx == nil {
+			return ErrInvalidOptions
+		}
+		opts = constrainExecution(opts, policy.execution)
+		variables, data, err = admitInputScopes(ctx, []VarMap{policy.globals, variables}, data, policy.input)
+		if err != nil {
+			return inputContextError(ctx, err)
+		}
+	}
 	st := pool_State.Get().(*Runtime)
 	defer st.recover(&err)
 
-	st.execution = executionState{ctx: ctx, options: opts, remaining: opts.MaxSteps}
+	st.execution = executionState{ctx: ctx, options: opts, remaining: opts.MaxSteps, values: uint64(opts.MaxValueBytes), output: uint64(opts.MaxOutputBytes)}
 	st.checkpoint(0)
+	if owned != nil {
+		owned.runtime = st
+		defer func() { owned.runtime = nil }()
+	}
 	st.blocks = t.processedBlocks
 	st.variables = variables
 	st.set = t.set
 	st.writeErr = nil
 	st.rootSink = checkedWriter{writer: w, failure: &st.writeErr}
-	st.Writer = &st.rootSink
+	if ctx == nil {
+		st.Writer = &st.rootSink
+	} else {
+		st.Writer = st.outputWriter(w, false)
+	}
 
 	st.startCompilation(t)
 	root := st.templateRoot(t)
@@ -94,5 +118,10 @@ func (t *Template) execute(ctx context.Context, w io.Writer, variables VarMap, d
 
 	st.executeList(root)
 	st.checkpoint(0)
+	if owned != nil {
+		st.reserveValue(int64(owned.buffer.Len()))
+		owned.result = owned.buffer.String()
+		st.checkpoint(0)
+	}
 	return
 }

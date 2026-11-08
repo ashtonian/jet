@@ -220,10 +220,13 @@ func (t *Template) recover(errp *error) {
 
 func (s *Set) parse(name, text string, cacheAfterParsing bool, parsing *parseAdmission) (t *Template, err error) {
 	if parsing == nil {
-		parsing, _ = newParseAdmission(context.Background(), ParseOptions{})
+		parsing, _ = s.parseAdmission(context.Background(), ParseOptions{})
 	}
 	defer parsing.recover(&err)
 	name = path.Clean(name)
+	if s.restricted != nil && len(name) > 1024 {
+		return nil, ErrCapabilityDenied
+	}
 	parsing.source(name, int64(len(text)))
 	parsing.enter()
 	defer func() { parsing.depth-- }()
