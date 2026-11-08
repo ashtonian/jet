@@ -1,0 +1,419 @@
+[
+  {
+    "name": "build-base",
+    "command": [
+      "go",
+      "test",
+      "-p=1",
+      "-c",
+      "-overlay=<CHECKOUT>/.git/admission-followup/base-overlay.json",
+      "-o",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "."
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "start": 1794132187.592271,
+    "end": 1794132190.56143,
+    "exit_code": 0
+  },
+  {
+    "name": "conformance-base",
+    "command": [
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "-test.run=^(TestInputAdmission|TestRestricted|TestCompilation|TestExecutionCompilation|TestTemplateBundle|TestExecutionModeConformance)",
+      "-test.timeout=60s"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "start": 1794132190.561781,
+    "end": 1794132190.873122,
+    "exit_code": 0
+  },
+  {
+    "name": "build-split",
+    "command": [
+      "go",
+      "test",
+      "-p=1",
+      "-c",
+      "-overlay=<CHECKOUT>/.git/admission-followup/split-overlay.json",
+      "-o",
+      "<CHECKOUT>/.git/admission-followup/split.test",
+      "."
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "start": 1794132190.887739,
+    "end": 1794132193.2951071,
+    "exit_code": 0
+  },
+  {
+    "name": "conformance-split",
+    "command": [
+      "<CHECKOUT>/.git/admission-followup/split.test",
+      "-test.run=^(TestInputAdmission|TestRestricted|TestCompilation|TestExecutionCompilation|TestTemplateBundle|TestExecutionModeConformance)",
+      "-test.timeout=60s"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "start": 1794132193.306977,
+    "end": 1794132193.6120372,
+    "exit_code": 0
+  },
+  {
+    "name": "build-direct",
+    "command": [
+      "go",
+      "test",
+      "-p=1",
+      "-c",
+      "-overlay=<CHECKOUT>/.git/admission-followup/direct-overlay.json",
+      "-o",
+      "<CHECKOUT>/.git/admission-followup/direct.test",
+      "."
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "start": 1794132193.6260648,
+    "end": 1794132195.9405491,
+    "exit_code": 0
+  },
+  {
+    "name": "conformance-direct",
+    "command": [
+      "<CHECKOUT>/.git/admission-followup/direct.test",
+      "-test.run=^(TestInputAdmission|TestRestricted|TestCompilation|TestExecutionCompilation|TestTemplateBundle|TestExecutionModeConformance)",
+      "-test.timeout=60s"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "start": 1794132195.951443,
+    "end": 1794132196.24686,
+    "exit_code": 0
+  },
+  {
+    "name": "screen-core-base-0",
+    "command": [
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkExecutionModes$/^restricted_owned$/^(header_literal|header_interpolation|include|inheritance|named_map)$/^html$",
+      "-test.benchtime=200ms",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=60s"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "start": 1794132196.258094,
+    "end": 1794132197.576882,
+    "exit_code": 0
+  },
+  {
+    "name": "screen-shape-base-0",
+    "command": [
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkAdmissionInput$",
+      "-test.benchtime=200ms",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=60s"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "start": 1794132197.654331,
+    "end": 1794132199.372492,
+    "exit_code": 0
+  },
+  {
+    "name": "screen-core-split-0",
+    "command": [
+      "<CHECKOUT>/.git/admission-followup/split.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkExecutionModes$/^restricted_owned$/^(header_literal|header_interpolation|include|inheritance|named_map)$/^html$",
+      "-test.benchtime=200ms",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=60s"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "start": 1794132199.3831968,
+    "end": 1794132200.644153,
+    "exit_code": 0
+  },
+  {
+    "name": "screen-shape-split-0",
+    "command": [
+      "<CHECKOUT>/.git/admission-followup/split.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkAdmissionInput$",
+      "-test.benchtime=200ms",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=60s"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "start": 1794132200.650261,
+    "end": 1794132202.173109,
+    "exit_code": 0
+  },
+  {
+    "name": "screen-core-direct-0",
+    "command": [
+      "<CHECKOUT>/.git/admission-followup/direct.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkExecutionModes$/^restricted_owned$/^(header_literal|header_interpolation|include|inheritance|named_map)$/^html$",
+      "-test.benchtime=200ms",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=60s"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "start": 1794132202.184437,
+    "end": 1794132203.4427679,
+    "exit_code": 0
+  },
+  {
+    "name": "screen-shape-direct-0",
+    "command": [
+      "<CHECKOUT>/.git/admission-followup/direct.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkAdmissionInput$",
+      "-test.benchtime=200ms",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=60s"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "start": 1794132203.453464,
+    "end": 1794132204.99714,
+    "exit_code": 0
+  },
+  {
+    "name": "screen-core-split-1",
+    "command": [
+      "<CHECKOUT>/.git/admission-followup/split.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkExecutionModes$/^restricted_owned$/^(header_literal|header_interpolation|include|inheritance|named_map)$/^html$",
+      "-test.benchtime=200ms",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=60s"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "start": 1794132204.9975622,
+    "end": 1794132206.198952,
+    "exit_code": 0
+  },
+  {
+    "name": "screen-shape-split-1",
+    "command": [
+      "<CHECKOUT>/.git/admission-followup/split.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkAdmissionInput$",
+      "-test.benchtime=200ms",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=60s"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "start": 1794132206.199415,
+    "end": 1794132207.667754,
+    "exit_code": 0
+  },
+  {
+    "name": "screen-core-direct-1",
+    "command": [
+      "<CHECKOUT>/.git/admission-followup/direct.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkExecutionModes$/^restricted_owned$/^(header_literal|header_interpolation|include|inheritance|named_map)$/^html$",
+      "-test.benchtime=200ms",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=60s"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "start": 1794132207.6685529,
+    "end": 1794132208.885727,
+    "exit_code": 0
+  },
+  {
+    "name": "screen-shape-direct-1",
+    "command": [
+      "<CHECKOUT>/.git/admission-followup/direct.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkAdmissionInput$",
+      "-test.benchtime=200ms",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=60s"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "start": 1794132208.886697,
+    "end": 1794132210.3875031,
+    "exit_code": 0
+  },
+  {
+    "name": "screen-core-base-1",
+    "command": [
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkExecutionModes$/^restricted_owned$/^(header_literal|header_interpolation|include|inheritance|named_map)$/^html$",
+      "-test.benchtime=200ms",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=60s"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "start": 1794132210.3935518,
+    "end": 1794132211.616378,
+    "exit_code": 0
+  },
+  {
+    "name": "screen-shape-base-1",
+    "command": [
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkAdmissionInput$",
+      "-test.benchtime=200ms",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=60s"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "start": 1794132211.617221,
+    "end": 1794132213.117496,
+    "exit_code": 0
+  },
+  {
+    "name": "screen-core-direct-2",
+    "command": [
+      "<CHECKOUT>/.git/admission-followup/direct.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkExecutionModes$/^restricted_owned$/^(header_literal|header_interpolation|include|inheritance|named_map)$/^html$",
+      "-test.benchtime=200ms",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=60s"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "start": 1794132213.117933,
+    "end": 1794132214.332744,
+    "exit_code": 0
+  },
+  {
+    "name": "screen-shape-direct-2",
+    "command": [
+      "<CHECKOUT>/.git/admission-followup/direct.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkAdmissionInput$",
+      "-test.benchtime=200ms",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=60s"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "start": 1794132214.333122,
+    "end": 1794132215.828916,
+    "exit_code": 0
+  },
+  {
+    "name": "screen-core-base-2",
+    "command": [
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkExecutionModes$/^restricted_owned$/^(header_literal|header_interpolation|include|inheritance|named_map)$/^html$",
+      "-test.benchtime=200ms",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=60s"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "start": 1794132215.829628,
+    "end": 1794132217.063182,
+    "exit_code": 0
+  },
+  {
+    "name": "screen-shape-base-2",
+    "command": [
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkAdmissionInput$",
+      "-test.benchtime=200ms",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=60s"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "start": 1794132217.063592,
+    "end": 1794132218.584089,
+    "exit_code": 0
+  },
+  {
+    "name": "screen-core-split-2",
+    "command": [
+      "<CHECKOUT>/.git/admission-followup/split.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkExecutionModes$/^restricted_owned$/^(header_literal|header_interpolation|include|inheritance|named_map)$/^html$",
+      "-test.benchtime=200ms",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=60s"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "start": 1794132218.584522,
+    "end": 1794132219.801436,
+    "exit_code": 0
+  },
+  {
+    "name": "screen-shape-split-2",
+    "command": [
+      "<CHECKOUT>/.git/admission-followup/split.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkAdmissionInput$",
+      "-test.benchtime=200ms",
+      "-test.count=1",
+      "-test.cpu=2",
+      "-test.benchmem",
+      "-test.timeout=60s"
+    ],
+    "deadline": 90,
+    "cleanup": 5,
+    "start": 1794132219.801876,
+    "end": 1794132221.34913,
+    "exit_code": 0
+  }
+]

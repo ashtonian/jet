@@ -1,0 +1,18 @@
+File: candidate.test
+Type: alloc_space
+Time: 2026-11-08 04:00:04 CST
+Showing nodes accounting for 2728.78MB, 100% of 2728.78MB total
+----------------------------------------------------------+-------------
+      flat  flat%   sum%        cum   cum%   calls calls% + context 	 	 
+----------------------------------------------------------+-------------
+                                         1893.92MB   100% |   github.com/CloudyKit/jet/v6.admitInputScopesInto
+         0     0%     0%  1893.92MB 69.41%                | github.com/CloudyKit/jet/v6.(*inputAdmission).clone
+                                         1477.41MB 78.01% |   reflect.Value.SetMapIndex
+                                          243.01MB 12.83% |   reflect.MakeMapWithSize
+                                           94.50MB  4.99% |   reflect.(*MapIter).Key
+                                              79MB  4.17% |   reflect.(*MapIter).Value
+----------------------------------------------------------+-------------
+                                         1893.92MB   100% |   github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0%     0%  1893.92MB 69.41%                | github.com/CloudyKit/jet/v6.admitInputScopesInto
+                                         1893.92MB   100% |   github.com/CloudyKit/jet/v6.(*inputAdmission).clone
+----------------------------------------------------------+-------------

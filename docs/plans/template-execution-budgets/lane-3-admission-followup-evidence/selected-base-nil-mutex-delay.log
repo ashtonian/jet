@@ -1,0 +1,11 @@
+File: base.test
+Type: delay
+Time: 2026-11-08 04:13:39 CST
+Showing nodes accounting for 6.50us, 100% of 6.50us total
+      flat  flat%   sum%        cum   cum%
+    6.50us   100%   100%     6.50us   100%  runtime.unlock (inline)
+         0     0%   100%     6.50us   100%  runtime.gcBgMarkWorker
+         0     0%   100%     6.50us   100%  runtime.gcMarkDone
+         0     0%   100%     6.50us   100%  runtime.gcMarkDone.func2
+         0     0%   100%     6.50us   100%  runtime.stopTheWorldWithSema
+         0     0%   100%     6.50us   100%  runtime.systemstack

@@ -1,0 +1,97 @@
+File: defaults.test
+Type: cpu
+Time: 2026-11-08 04:14:04 CST
+Duration: 4.13s, Total samples = 4.10s (99.35%)
+Showing nodes accounting for 4.10s, 100% of 4.10s total
+----------------------------------------------------------+-------------
+      flat  flat%   sum%        cum   cum%   calls calls% + context 	 	 
+----------------------------------------------------------+-------------
+                                             2.06s   100% |   github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+     0.11s  2.68%  2.68%      2.06s 50.24%                | github.com/CloudyKit/jet/v6.(*Template).execute
+                                             1.27s 61.65% |   github.com/CloudyKit/jet/v6.admitInputScopesInto
+                                             0.11s  5.34% |   github.com/CloudyKit/jet/v6.(*Runtime).checkpoint
+                                             0.11s  5.34% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+                                             0.11s  5.34% |   github.com/CloudyKit/jet/v6.(*Runtime).startCompilation
+                                             0.10s  4.85% |   github.com/CloudyKit/jet/v6.(*Runtime).recover
+                                             0.06s  2.91% |   bytes.(*Buffer).String (inline)
+                                             0.05s  2.43% |   sync.(*Pool).Get
+                                             0.02s  0.97% |   gcWriteBarrier
+                                             0.02s  0.97% |   github.com/CloudyKit/jet/v6.(*Runtime).reserveValue
+                                             0.02s  0.97% |   github.com/CloudyKit/jet/v6.(*Runtime).templateRoot
+                                             0.02s  0.97% |   github.com/CloudyKit/jet/v6.borrowInputVars
+                                             0.02s  0.97% |   reflect.ValueOf (inline)
+                                             0.02s  0.97% |   runtime.memequal
+                                             0.02s  0.97% |   runtime.wbMove
+----------------------------------------------------------+-------------
+                                             0.09s 56.25% |   github.com/CloudyKit/jet/v6.(*inputAdmission).cloneContainer
+                                             0.04s 25.00% |   github.com/CloudyKit/jet/v6.admitInputScopesInto
+                                             0.03s 18.75% |   github.com/CloudyKit/jet/v6.(*inputAdmission).clone
+     0.08s  1.95%  4.63%      0.16s  3.90%                | github.com/CloudyKit/jet/v6.(*inputAdmission).reserveBytes
+                                             0.08s 50.00% |   github.com/CloudyKit/jet/v6.(*inputAdmission).step
+----------------------------------------------------------+-------------
+                                             0.08s 47.06% |   github.com/CloudyKit/jet/v6.(*inputAdmission).reserveBytes
+                                             0.06s 35.29% |   github.com/CloudyKit/jet/v6.(*inputAdmission).reserveItems
+                                             0.02s 11.76% |   github.com/CloudyKit/jet/v6.(*inputAdmission).clone
+                                             0.01s  5.88% |   github.com/CloudyKit/jet/v6.admitInputScopesInto
+     0.06s  1.46%  6.10%      0.17s  4.15%                | github.com/CloudyKit/jet/v6.(*inputAdmission).step
+                                             0.11s 64.71% |   context.(*cancelCtx).Err
+----------------------------------------------------------+-------------
+                                                1s   100% |   github.com/CloudyKit/jet/v6.(*inputAdmission).clone
+     0.05s  1.22%  7.32%         1s 24.39%                | github.com/CloudyKit/jet/v6.(*inputAdmission).cloneContainer
+                                             0.34s 34.00% |   runtime.mapassign_faststr
+                                             0.13s 13.00% |   runtime.mapIterStart
+                                             0.10s 10.00% |   github.com/CloudyKit/jet/v6.(*inputAdmission).clone
+                                             0.09s  9.00% |   github.com/CloudyKit/jet/v6.(*inputAdmission).reserveBytes
+                                             0.08s  8.00% |   runtime.makemap
+                                             0.05s  5.00% |   github.com/CloudyKit/jet/v6.inputHasMethods
+                                             0.03s  3.00% |   reflect.(*rtype).Elem
+                                             0.02s  2.00% |   github.com/CloudyKit/jet/v6.(*inputAdmission).enterContainer
+                                             0.02s  2.00% |   github.com/CloudyKit/jet/v6.(*inputAdmission).reserveItems
+                                             0.02s  2.00% |   reflect.Value.Interface (inline)
+                                             0.02s  2.00% |   reflect.Value.Len (inline)
+                                             0.02s  2.00% |   runtime.mapIterNext
+                                             0.01s  1.00% |   reflect.(*rtype).Key
+                                             0.01s  1.00% |   reflect.Value.Type (inline)
+                                             0.01s  1.00% |   reflect.ValueOf (inline)
+----------------------------------------------------------+-------------
+                                             0.05s 50.00% |   github.com/CloudyKit/jet/v6.(*inputAdmission).clone
+                                             0.05s 50.00% |   github.com/CloudyKit/jet/v6.(*inputAdmission).cloneContainer
+     0.05s  1.22%  8.54%      0.10s  2.44%                | github.com/CloudyKit/jet/v6.inputHasMethods
+                                             0.03s 30.00% |   reflect.(*rtype).NumMethod
+                                             0.02s 20.00% |   reflect.(*rtype).PkgPath
+----------------------------------------------------------+-------------
+                                             0.08s 80.00% |   github.com/CloudyKit/jet/v6.admitInputScopesInto
+                                             0.02s 20.00% |   github.com/CloudyKit/jet/v6.(*inputAdmission).cloneContainer
+     0.04s  0.98%  9.51%      0.10s  2.44%                | github.com/CloudyKit/jet/v6.(*inputAdmission).reserveItems
+                                             0.06s 60.00% |   github.com/CloudyKit/jet/v6.(*inputAdmission).step
+----------------------------------------------------------+-------------
+                                             1.27s   100% |   github.com/CloudyKit/jet/v6.(*Template).execute
+     0.04s  0.98% 10.49%      1.27s 30.98%                | github.com/CloudyKit/jet/v6.admitInputScopesInto
+                                             1.02s 80.31% |   github.com/CloudyKit/jet/v6.(*inputAdmission).clone
+                                             0.08s  6.30% |   github.com/CloudyKit/jet/v6.(*inputAdmission).reserveItems
+                                             0.04s  3.15% |   github.com/CloudyKit/jet/v6.(*inputAdmission).reserveBytes
+                                             0.04s  3.15% |   runtime.mapIterStart
+                                             0.02s  1.57% |   reflect.Value.Interface (inline)
+                                             0.01s  0.79% |   github.com/CloudyKit/jet/v6.(*inputAdmission).step
+                                             0.01s  0.79% |   github.com/CloudyKit/jet/v6.admitInputScopesInto.func1
+                                             0.01s  0.79% |   reflect.ValueOf (inline)
+----------------------------------------------------------+-------------
+                                             0.02s   100% |   github.com/CloudyKit/jet/v6.(*inputAdmission).cloneContainer
+     0.02s  0.49% 10.98%      0.02s  0.49%                | github.com/CloudyKit/jet/v6.(*inputAdmission).enterContainer
+----------------------------------------------------------+-------------
+                                             0.02s   100% |   github.com/CloudyKit/jet/v6.(*Template).execute
+     0.02s  0.49% 11.46%      0.02s  0.49%                | github.com/CloudyKit/jet/v6.borrowInputVars
+----------------------------------------------------------+-------------
+                                             1.02s   100% |   github.com/CloudyKit/jet/v6.admitInputScopesInto
+                                             0.10s  9.80% |   github.com/CloudyKit/jet/v6.(*inputAdmission).cloneContainer
+     0.01s  0.24% 11.71%      1.02s 24.88%                | github.com/CloudyKit/jet/v6.(*inputAdmission).clone
+                                                1s 98.04% |   github.com/CloudyKit/jet/v6.(*inputAdmission).cloneContainer
+                                             0.05s  4.90% |   github.com/CloudyKit/jet/v6.inputHasMethods
+                                             0.03s  2.94% |   github.com/CloudyKit/jet/v6.(*inputAdmission).reserveBytes
+                                             0.02s  1.96% |   github.com/CloudyKit/jet/v6.(*inputAdmission).step
+                                             0.01s  0.98% |   reflect.Value.Len (inline)
+----------------------------------------------------------+-------------
+                                             0.01s   100% |   github.com/CloudyKit/jet/v6.admitInputScopesInto
+         0     0% 11.71%      0.01s  0.24%                | github.com/CloudyKit/jet/v6.admitInputScopesInto.func1
+                                             0.01s   100% |   runtime.gorecover
+----------------------------------------------------------+-------------

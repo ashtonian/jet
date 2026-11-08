@@ -1,0 +1,16 @@
+File: base.test
+Type: alloc_space
+Time: 2026-11-08 04:13:55 CST
+Showing nodes accounting for 2670.15MB, 98.95% of 2698.43MB total
+Dropped 85 nodes (cum <= 13.49MB)
+      flat  flat%   sum%        cum   cum%
+ 1121.07MB 41.55% 41.55%  1121.07MB 41.55%  bytes.(*Buffer).grow
+ 1120.57MB 41.53% 83.07%  2680.66MB 99.34%  github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext
+  428.51MB 15.88% 98.95%   428.51MB 15.88%  bytes.(*Buffer).String (inline)
+         0     0% 98.95%  1121.07MB 41.55%  bytes.(*Buffer).Write
+         0     0% 98.95%  1125.08MB 41.69%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 98.95%  1560.09MB 57.81%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0% 98.95%  1560.09MB 57.81%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0% 98.95%  1121.07MB 41.55%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+         0     0% 98.95%  2680.66MB 99.34%  github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes.func1.1
+         0     0% 98.95%  2680.66MB 99.34%  github.com/CloudyKit/jet/v6_test.init.0.func5

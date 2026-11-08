@@ -1,0 +1,42 @@
+--- a/input.go
++++ b/input.go
+@@ -159,7 +159,7 @@
+ 	if !v.CanInterface() {
+ 		a.deny("inaccessible value")
+ 	}
+-	if v.Type().NumMethod() != 0 || reflect.PtrTo(v.Type()).NumMethod() != 0 {
++	if inputHasMethods(v.Type()) {
+ 		a.deny("values with methods")
+ 	}
+ 	if v.Kind() == reflect.Interface {
+@@ -181,6 +181,21 @@
+ 			return reflect.ValueOf(v.Interface())
+ 		}
+ 		return v
++	case reflect.Array, reflect.Slice, reflect.Map:
++		return a.cloneContainer(v, depth)
++	default:
++		a.deny("unsupported " + v.Kind().String())
++	}
++	return reflect.Value{}
++}
++
++func inputHasMethods(t reflect.Type) bool {
++	// An unnamed or predeclared type cannot acquire pointer-receiver methods.
++	return t.NumMethod() != 0 || (t.PkgPath() != "" && reflect.PtrTo(t).NumMethod() != 0)
++}
++
++func (a *inputAdmission) cloneContainer(v reflect.Value, depth int) reflect.Value {
++	switch v.Kind() {
+ 	case reflect.Array, reflect.Slice:
+ 		if v.Kind() == reflect.Slice && v.IsNil() {
+ 			return reflect.Zero(v.Type())
+@@ -206,7 +221,7 @@
+ 		}
+ 		return out
+ 	case reflect.Map:
+-		if v.Type().Key().Kind() != reflect.String || v.Type().Key().NumMethod() != 0 || reflect.PtrTo(v.Type().Key()).NumMethod() != 0 {
++		if v.Type().Key().Kind() != reflect.String || inputHasMethods(v.Type().Key()) {
+ 			a.deny("map keys must be method-free strings")
+ 		}
+ 		if v.IsNil() {

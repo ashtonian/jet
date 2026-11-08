@@ -1,0 +1,196 @@
+Total: 3.80GB
+ROUTINE ======================== github.com/CloudyKit/jet/v6.(*Template).execute in .git/admission-followup/defaults-exec.go.txt
+         0     3.30GB (flat, cum) 86.86% of Total
+         .          .     75:func (t *Template) execute(ctx context.Context, w io.Writer, variables VarMap, data interface{}, opts ExecutionOptions) (err error) {
+         .          .     76:	var owned *restrictedSink
+         .          .     77:	if policy := t.set.restricted; policy != nil {
+         .          .     78:		var ok bool
+         .          .     79:		owned, ok = w.(*restrictedSink)
+         .          .     80:		if !ok || owned.owner != t {
+         .          .     81:			return fmt.Errorf("%w: use RenderRestrictedContext with an owned result", ErrCapabilityDenied)
+         .          .     82:		}
+         .          .     83:		if ctx == nil {
+         .          .     84:			return ErrInvalidOptions
+         .          .     85:		}
+         .          .     86:		if opts == (ExecutionOptions{}) {
+         .          .     87:			opts = policy.execution
+         .          .     88:		} else {
+         .          .     89:			opts = constrainExecution(opts, policy.execution)
+         .          .     90:		}
+         .          .     91:		inputVars := borrowInputVars(policy.globals, variables)
+         .          .     92:		defer releaseInputVars(inputVars)
+         .     2.79GB     93:		variables, data, err = admitInputScopesInto(ctx, []VarMap{policy.globals, variables}, data, policy.input, inputVars)
+         .          .     94:		if err != nil {
+         .          .     95:			return inputContextError(ctx, err)
+         .          .     96:		}
+         .          .     97:	}
+         .   512.34kB     98:	st := pool_State.Get().(*Runtime)
+         .          .     99:	defer st.recover(&err)
+         .          .    100:
+         .          .    101:	st.execution = executionState{ctx: ctx, checkContext: ctx != nil && ctx != context.Background() && ctx != context.TODO(), options: opts, remaining: opts.MaxSteps, values: uint64(opts.MaxValueBytes), output: uint64(opts.MaxOutputBytes)}
+         .          .    102:	st.checkpoint(0)
+         .          .    103:	st.blocks = t.processedBlocks
+         .          .    104:	st.variables = variables
+         .          .    105:	st.set = t.set
+         .          .    106:	st.writeErr = nil
+         .          .    107:	st.rootSink = st.checkedOutput(w)
+         .          .    108:	if owned != nil {
+         .          .    109:		st.rootSink.writer = &owned.buffer
+         .          .    110:		st.rootSink.buffer = &owned.buffer
+         .          .    111:		st.rootSink.retained = &owned.buffer
+         .          .    112:	}
+         .          .    113:	st.Writer = &st.rootSink
+         .          .    114:
+         .          .    115:	st.startCompilation(t)
+         .          .    116:	root := st.templateRoot(t)
+         .          .    117:
+         .          .    118:	if data != nil {
+         .          .    119:		st.context = reflect.ValueOf(data)
+         .          .    120:	}
+         .          .    121:
+         .   502.53MB    122:	st.executeList(root)
+         .          .    123:	st.checkpoint(0)
+         .          .    124:	if owned != nil {
+         .          .    125:		st.reserveValue(int64(owned.buffer.Len()))
+         .    19.50MB    126:		owned.result = owned.buffer.String()
+         .          .    127:		st.checkpoint(0)
+         .          .    128:	}
+         .   512.06kB    129:	return
+         .          .    130:}
+ROUTINE ======================== github.com/CloudyKit/jet/v6.(*inputAdmission).clone in .git/admission-followup/direct-frozen/input.go.txt
+         0     2.79GB (flat, cum) 73.43% of Total
+         .          .    151:func (a *inputAdmission) clone(v reflect.Value, depth int) reflect.Value {
+         .          .    152:	a.step(1)
+         .          .    153:	if depth > a.opts.MaxDepth {
+         .          .    154:		a.limit("depth")
+         .          .    155:	}
+         .          .    156:	if !v.IsValid() {
+         .          .    157:		return reflect.Value{}
+         .          .    158:	}
+         .          .    159:	if !v.CanInterface() {
+         .          .    160:		a.deny("inaccessible value")
+         .          .    161:	}
+         .          .    162:	if inputHasMethods(v.Type()) {
+         .          .    163:		a.deny("values with methods")
+         .          .    164:	}
+         .          .    165:	if v.Kind() == reflect.Interface {
+         .          .    166:		if v.IsNil() {
+         .          .    167:			return reflect.Zero(v.Type())
+         .          .    168:		}
+         .          .    169:		return a.clone(v.Elem(), depth+1)
+         .          .    170:	}
+         .          .    171:	switch v.Kind() {
+         .          .    172:	case reflect.Bool, reflect.Int, reflect.Int8, reflect.Int16, reflect.Int32, reflect.Int64, reflect.Uint, reflect.Uint8, reflect.Uint16, reflect.Uint32, reflect.Uint64, reflect.Float32, reflect.Float64:
+         .          .    173:		a.reserveBytes(uint64(v.Type().Size()), 1)
+         .          .    174:		if v.CanAddr() {
+         .          .    175:			return reflect.ValueOf(v.Interface())
+         .          .    176:		}
+         .          .    177:		return v
+         .          .    178:	case reflect.String:
+         .          .    179:		a.reserveBytes(uint64(v.Len()), 1)
+         .          .    180:		if v.CanAddr() {
+         .          .    181:			return reflect.ValueOf(v.Interface())
+         .          .    182:		}
+         .          .    183:		return v
+         .          .    184:	case reflect.Array, reflect.Slice, reflect.Map:
+         .     2.79GB    185:		return a.cloneContainer(v, depth)
+         .          .    186:	default:
+         .          .    187:		a.deny("unsupported " + v.Kind().String())
+         .          .    188:	}
+         .          .    189:	return reflect.Value{}
+         .          .    190:}
+ROUTINE ======================== github.com/CloudyKit/jet/v6.(*inputAdmission).cloneContainer in .git/admission-followup/direct-frozen/input.go.txt
+    2.79GB     2.79GB (flat, cum) 73.43% of Total
+         .          .    197:func (a *inputAdmission) cloneContainer(v reflect.Value, depth int) reflect.Value {
+         .          .    198:	switch v.Kind() {
+         .          .    199:	case reflect.Array, reflect.Slice:
+         .          .    200:		if v.Kind() == reflect.Slice && v.IsNil() {
+         .          .    201:			return reflect.Zero(v.Type())
+         .          .    202:		}
+         .          .    203:		if v.Kind() == reflect.Slice {
+         .          .    204:			key := inputIdentity{kind: v.Kind(), typ: v.Type(), pointer: v.Pointer(), length: v.Len()}
+         .          .    205:			a.enterContainer(key)
+         .          .    206:			defer a.leaveContainer()
+         .          .    207:		}
+         .          .    208:		a.reserveItems(uint64(v.Len()))
+         .          .    209:		a.reserveBytes(uint64(v.Len()), uint64(v.Type().Elem().Size()))
+         .          .    210:		var out reflect.Value
+         .          .    211:		if v.Kind() == reflect.Slice {
+         .          .    212:			out = reflect.MakeSlice(v.Type(), v.Len(), v.Len())
+         .          .    213:		} else {
+         .          .    214:			out = reflect.New(v.Type()).Elem()
+         .          .    215:		}
+         .          .    216:		for i := 0; i < v.Len(); i++ {
+         .          .    217:			child := a.clone(v.Index(i), depth+1)
+         .          .    218:			if child.IsValid() {
+         .          .    219:				out.Index(i).Set(child)
+         .          .    220:			}
+         .          .    221:		}
+         .          .    222:		return out
+         .          .    223:	case reflect.Map:
+         .          .    224:		if v.Type().Key().Kind() != reflect.String || inputHasMethods(v.Type().Key()) {
+         .          .    225:			a.deny("map keys must be method-free strings")
+         .          .    226:		}
+         .          .    227:		if v.IsNil() {
+         .          .    228:			return reflect.Zero(v.Type())
+         .          .    229:		}
+         .          .    230:		key := inputIdentity{kind: v.Kind(), typ: v.Type(), pointer: v.Pointer()}
+         .          .    231:		a.enterContainer(key)
+         .          .    232:		defer a.leaveContainer()
+         .          .    233:		a.reserveItems(uint64(v.Len()))
+         .          .    234:		a.reserveBytes(uint64(v.Len()), uint64(v.Type().Key().Size()+v.Type().Elem().Size()))
+         .          .    235:		if data, ok := v.Interface().(map[string]interface{}); ok {
+  390.02MB   390.02MB    236:			out := make(map[string]interface{}, len(data))
+         .          .    237:			for name, value := range data {
+         .          .    238:				a.reserveBytes(uint64(len(name)), 1)
+         .          .    239:				// Map values have an interface layer even when their dynamic value is nil.
+         .          .    240:				a.step(1)
+         .          .    241:				if depth+1 > a.opts.MaxDepth {
+         .          .    242:					a.limit("depth")
+         .          .    243:				}
+         .          .    244:				var child interface{}
+         .          .    245:				if value != nil {
+         .          .    246:					child = a.clone(reflect.ValueOf(value), depth+2).Interface()
+         .          .    247:				}
+    2.41GB     2.41GB    248:				out[name] = child
+         .          .    249:			}
+         .          .    250:			return reflect.ValueOf(out)
+         .          .    251:		}
+         .          .    252:		out := reflect.MakeMapWithSize(v.Type(), v.Len())
+         .          .    253:		iterator := v.MapRange()
+ROUTINE ======================== github.com/CloudyKit/jet/v6.admitInputScopesInto in .git/admission-followup/direct-frozen/input.go.txt
+         0     2.79GB (flat, cum) 73.43% of Total
+         .          .     49:func admitInputScopesInto(ctx context.Context, scopes []VarMap, data interface{}, opts InputOptions, seed VarMap) (out VarMap, snapshot interface{}, err error) {
+         .          .     50:	if ctx == nil || opts.MaxBytes <= 0 || opts.MaxItems == 0 || opts.MaxSteps == 0 || opts.MaxDepth <= 0 || opts.MaxDepth > 64 {
+         .          .     51:		return nil, nil, fmt.Errorf("%w: positive input budgets and depth <=64 required", ErrInputLimit)
+         .          .     52:	}
+         .          .     53:	a := &inputAdmission{ctx: ctx, opts: opts}
+         .          .     54:	out = seed
+         .          .     55:	defer func() {
+         .          .     56:		if p := recover(); p != nil {
+         .          .     57:			if failure, ok := p.(inputAbort); ok {
+         .          .     58:				err = failure.error
+         .          .     59:				out = nil
+         .          .     60:				snapshot = nil
+         .          .     61:			} else {
+         .          .     62:				panic(p)
+         .          .     63:			}
+         .          .     64:		}
+         .          .     65:	}()
+         .          .     66:	for _, scope := range scopes {
+         .          .     67:		a.reserveItems(uint64(len(scope)))
+         .          .     68:		a.reserveBytes(uint64(len(scope)), uint64(5*(strconv.IntSize/8)))
+         .          .     69:		if len(scope) > 0 && out == nil {
+         .          .     70:			out = make(VarMap, len(scope))
+         .          .     71:		}
+         .          .     72:		for name, value := range scope {
+         .          .     73:			a.reserveBytes(uint64(len(name)), 1)
+         .          .     74:			out[name] = a.clone(value, 1)
+         .          .     75:		}
+         .          .     76:	}
+         .     2.79GB     77:	value := a.clone(reflect.ValueOf(data), 1)
+         .          .     78:	if value.IsValid() {
+         .          .     79:		snapshot = value.Interface()
+         .          .     80:	}
+         .          .     81:	a.step(0)
+         .          .     82:	return out, snapshot, nil

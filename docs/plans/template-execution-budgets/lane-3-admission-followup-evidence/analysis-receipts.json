@@ -1,0 +1,3050 @@
+[
+  {
+    "name": "selected-base-nil-cpu-cpu",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=cpu",
+      "-top",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-nil-cpu.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132870.382862,
+    "end": 1794132870.6515908,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-nil-cpu-cpu-cum",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=cpu",
+      "-top",
+      "-cum",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-nil-cpu.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132870.651875,
+    "end": 1794132870.76972,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-nil-cpu-cpu-source",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=cpu",
+      "-source_path=<CHECKOUT>",
+      "-trim_path=github.com/CloudyKit/jet/v6/",
+      "-list=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|inputHasMethods|borrowInputVars|Template.*execute",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-nil-cpu.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132870.770037,
+    "end": 1794132870.8886871,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-nil-cpu-cpu-call",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=cpu",
+      "-peek=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|inputHasMethods|borrowInputVars|Template.*execute",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-nil-cpu.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132870.888958,
+    "end": 1794132871.0015092,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-nil-heap-alloc_space",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=alloc_space",
+      "-top",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-nil-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132871.001846,
+    "end": 1794132871.110844,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-nil-heap-alloc_space-source",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=alloc_space",
+      "-source_path=<CHECKOUT>",
+      "-trim_path=github.com/CloudyKit/jet/v6/",
+      "-list=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|inputHasMethods|borrowInputVars|Template.*execute",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-nil-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132871.1111639,
+    "end": 1794132871.222253,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-nil-heap-alloc_space-call",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=alloc_space",
+      "-peek=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|inputHasMethods|borrowInputVars|Template.*execute",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-nil-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132871.2225971,
+    "end": 1794132871.330256,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-nil-heap-alloc_objects",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=alloc_objects",
+      "-top",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-nil-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132871.33059,
+    "end": 1794132871.4345338,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-nil-heap-alloc_objects-source",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=alloc_objects",
+      "-source_path=<CHECKOUT>",
+      "-trim_path=github.com/CloudyKit/jet/v6/",
+      "-list=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|inputHasMethods|borrowInputVars|Template.*execute",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-nil-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132871.4348779,
+    "end": 1794132871.542474,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-nil-heap-alloc_objects-call",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=alloc_objects",
+      "-peek=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|inputHasMethods|borrowInputVars|Template.*execute",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-nil-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132871.542774,
+    "end": 1794132871.645569,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-nil-heap-inuse_space",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=inuse_space",
+      "-top",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-nil-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132871.645914,
+    "end": 1794132871.747987,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-nil-heap-inuse_objects",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=inuse_objects",
+      "-top",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-nil-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132871.7483368,
+    "end": 1794132871.848029,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-nil-mutex-delay",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=delay",
+      "-top",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-nil-mutex.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132871.848377,
+    "end": 1794132871.953229,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-nil-mutex-delay-call",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=delay",
+      "-peek=sync.*|inputAdmission|RenderRestrictedContext",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-nil-mutex.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132871.9535758,
+    "end": 1794132872.055258,
+    "exit_code": 2,
+    "status": "failed"
+  },
+  {
+    "name": "selected-base-nil-mutex-delay-call",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=delay",
+      "-peek=sync.*|inputAdmission|RenderRestrictedContext",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-nil-mutex.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132967.303252,
+    "end": 1794132967.773824,
+    "exit_code": 2,
+    "status": "no_sampled_attribution"
+  },
+  {
+    "name": "selected-base-nil-block-delay",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=delay",
+      "-top",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-nil-block.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132967.774108,
+    "end": 1794132967.902591,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-nil-block-delay-call",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=delay",
+      "-peek=sync.*|inputAdmission|RenderRestrictedContext",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-nil-block.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132967.9029372,
+    "end": 1794132968.027678,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-scalar-cpu-cpu",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=cpu",
+      "-top",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-scalar-cpu.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132968.0281012,
+    "end": 1794132968.161012,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-scalar-cpu-cpu-cum",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=cpu",
+      "-top",
+      "-cum",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-scalar-cpu.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132968.1613598,
+    "end": 1794132968.2849479,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-scalar-cpu-cpu-source",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=cpu",
+      "-source_path=<CHECKOUT>",
+      "-trim_path=github.com/CloudyKit/jet/v6/",
+      "-list=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|inputHasMethods|borrowInputVars|Template.*execute",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-scalar-cpu.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132968.2853189,
+    "end": 1794132968.428323,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-scalar-cpu-cpu-call",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=cpu",
+      "-peek=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|inputHasMethods|borrowInputVars|Template.*execute",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-scalar-cpu.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132968.428721,
+    "end": 1794132968.554731,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-scalar-heap-alloc_space",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=alloc_space",
+      "-top",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-scalar-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132968.555139,
+    "end": 1794132968.667099,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-scalar-heap-alloc_space-source",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=alloc_space",
+      "-source_path=<CHECKOUT>",
+      "-trim_path=github.com/CloudyKit/jet/v6/",
+      "-list=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|inputHasMethods|borrowInputVars|Template.*execute",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-scalar-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132968.6676302,
+    "end": 1794132968.78691,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-scalar-heap-alloc_space-call",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=alloc_space",
+      "-peek=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|inputHasMethods|borrowInputVars|Template.*execute",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-scalar-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132968.79794,
+    "end": 1794132968.9449742,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-scalar-heap-alloc_objects",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=alloc_objects",
+      "-top",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-scalar-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132968.9612641,
+    "end": 1794132969.083518,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-scalar-heap-alloc_objects-source",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=alloc_objects",
+      "-source_path=<CHECKOUT>",
+      "-trim_path=github.com/CloudyKit/jet/v6/",
+      "-list=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|inputHasMethods|borrowInputVars|Template.*execute",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-scalar-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132969.0839481,
+    "end": 1794132969.205777,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-scalar-heap-alloc_objects-call",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=alloc_objects",
+      "-peek=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|inputHasMethods|borrowInputVars|Template.*execute",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-scalar-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132969.2062669,
+    "end": 1794132969.354069,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-scalar-heap-inuse_space",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=inuse_space",
+      "-top",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-scalar-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132969.354582,
+    "end": 1794132969.5081768,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-scalar-heap-inuse_objects",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=inuse_objects",
+      "-top",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-scalar-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132969.5086231,
+    "end": 1794132969.643929,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-scalar-mutex-delay",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=delay",
+      "-top",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-scalar-mutex.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132969.6445189,
+    "end": 1794132969.785218,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-scalar-mutex-delay-call",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=delay",
+      "-peek=sync.*|inputAdmission|RenderRestrictedContext",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-scalar-mutex.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132969.786077,
+    "end": 1794132969.914363,
+    "exit_code": 2,
+    "status": "no_sampled_attribution"
+  },
+  {
+    "name": "selected-base-scalar-block-delay",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=delay",
+      "-top",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-scalar-block.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132969.915075,
+    "end": 1794132970.043533,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-scalar-block-delay-call",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=delay",
+      "-peek=sync.*|inputAdmission|RenderRestrictedContext",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-scalar-block.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132970.044323,
+    "end": 1794132970.2812579,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-map-cpu-cpu",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=cpu",
+      "-top",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-map-cpu.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132970.28247,
+    "end": 1794132970.448767,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-map-cpu-cpu-cum",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=cpu",
+      "-top",
+      "-cum",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-map-cpu.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132970.449758,
+    "end": 1794132970.5833018,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-map-cpu-cpu-source",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=cpu",
+      "-source_path=<CHECKOUT>",
+      "-trim_path=github.com/CloudyKit/jet/v6/",
+      "-list=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|inputHasMethods|borrowInputVars|Template.*execute",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-map-cpu.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132970.583963,
+    "end": 1794132970.730657,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-map-cpu-cpu-call",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=cpu",
+      "-peek=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|inputHasMethods|borrowInputVars|Template.*execute",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-map-cpu.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132970.7313259,
+    "end": 1794132970.868512,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-map-heap-alloc_space",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=alloc_space",
+      "-top",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-map-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132970.869517,
+    "end": 1794132971.00563,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-map-heap-alloc_space-source",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=alloc_space",
+      "-source_path=<CHECKOUT>",
+      "-trim_path=github.com/CloudyKit/jet/v6/",
+      "-list=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|inputHasMethods|borrowInputVars|Template.*execute",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-map-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132971.006219,
+    "end": 1794132971.1454668,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-map-heap-alloc_space-call",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=alloc_space",
+      "-peek=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|inputHasMethods|borrowInputVars|Template.*execute",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-map-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132971.145984,
+    "end": 1794132971.2880902,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-map-heap-alloc_objects",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=alloc_objects",
+      "-top",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-map-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132971.288664,
+    "end": 1794132971.441337,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-map-heap-alloc_objects-source",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=alloc_objects",
+      "-source_path=<CHECKOUT>",
+      "-trim_path=github.com/CloudyKit/jet/v6/",
+      "-list=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|inputHasMethods|borrowInputVars|Template.*execute",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-map-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132971.441967,
+    "end": 1794132971.5724108,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-map-heap-alloc_objects-call",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=alloc_objects",
+      "-peek=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|inputHasMethods|borrowInputVars|Template.*execute",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-map-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132971.57291,
+    "end": 1794132971.697698,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-map-heap-inuse_space",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=inuse_space",
+      "-top",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-map-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132971.698161,
+    "end": 1794132971.821341,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-map-heap-inuse_objects",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=inuse_objects",
+      "-top",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-map-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132971.822377,
+    "end": 1794132971.943724,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-map-mutex-delay",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=delay",
+      "-top",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-map-mutex.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132971.944541,
+    "end": 1794132972.066921,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-map-mutex-delay-call",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=delay",
+      "-peek=sync.*|inputAdmission|RenderRestrictedContext",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-map-mutex.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132972.067452,
+    "end": 1794132972.182462,
+    "exit_code": 2,
+    "status": "no_sampled_attribution"
+  },
+  {
+    "name": "selected-base-map-block-delay",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=delay",
+      "-top",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-map-block.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132972.1827881,
+    "end": 1794132972.3018959,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-map-block-delay-call",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=delay",
+      "-peek=sync.*|inputAdmission|RenderRestrictedContext",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-map-block.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132972.30263,
+    "end": 1794132972.418912,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-large-cpu-cpu",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=cpu",
+      "-top",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-large-cpu.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132972.419473,
+    "end": 1794132972.541667,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-large-cpu-cpu-cum",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=cpu",
+      "-top",
+      "-cum",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-large-cpu.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132972.5424151,
+    "end": 1794132972.665449,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-large-cpu-cpu-source",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=cpu",
+      "-source_path=<CHECKOUT>",
+      "-trim_path=github.com/CloudyKit/jet/v6/",
+      "-list=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|inputHasMethods|borrowInputVars|Template.*execute",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-large-cpu.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132972.665938,
+    "end": 1794132972.790712,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-large-cpu-cpu-call",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=cpu",
+      "-peek=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|inputHasMethods|borrowInputVars|Template.*execute",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-large-cpu.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132972.791467,
+    "end": 1794132972.923504,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-large-heap-alloc_space",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=alloc_space",
+      "-top",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-large-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132972.924052,
+    "end": 1794132973.044018,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-large-heap-alloc_space-source",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=alloc_space",
+      "-source_path=<CHECKOUT>",
+      "-trim_path=github.com/CloudyKit/jet/v6/",
+      "-list=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|inputHasMethods|borrowInputVars|Template.*execute",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-large-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132973.044553,
+    "end": 1794132973.1627169,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-large-heap-alloc_space-call",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=alloc_space",
+      "-peek=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|inputHasMethods|borrowInputVars|Template.*execute",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-large-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132973.163369,
+    "end": 1794132973.2800388,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-large-heap-alloc_objects",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=alloc_objects",
+      "-top",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-large-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132973.280768,
+    "end": 1794132973.391888,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-large-heap-alloc_objects-source",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=alloc_objects",
+      "-source_path=<CHECKOUT>",
+      "-trim_path=github.com/CloudyKit/jet/v6/",
+      "-list=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|inputHasMethods|borrowInputVars|Template.*execute",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-large-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132973.3924181,
+    "end": 1794132973.505435,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-large-heap-alloc_objects-call",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=alloc_objects",
+      "-peek=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|inputHasMethods|borrowInputVars|Template.*execute",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-large-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132973.5059772,
+    "end": 1794132973.615602,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-large-heap-inuse_space",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=inuse_space",
+      "-top",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-large-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132973.616621,
+    "end": 1794132973.729088,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-large-heap-inuse_objects",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=inuse_objects",
+      "-top",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-large-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132973.730108,
+    "end": 1794132973.851239,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-large-mutex-delay",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=delay",
+      "-top",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-large-mutex.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132973.851746,
+    "end": 1794132973.9613838,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-large-mutex-delay-call",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=delay",
+      "-peek=sync.*|inputAdmission|RenderRestrictedContext",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-large-mutex.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132973.9621272,
+    "end": 1794132974.070622,
+    "exit_code": 2,
+    "status": "no_sampled_attribution"
+  },
+  {
+    "name": "selected-base-large-block-delay",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=delay",
+      "-top",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-large-block.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132974.0709949,
+    "end": 1794132974.180049,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-large-block-delay-call",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=delay",
+      "-peek=sync.*|inputAdmission|RenderRestrictedContext",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-large-block.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132974.180524,
+    "end": 1794132974.292881,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-concurrent-cpu-cpu",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=cpu",
+      "-top",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-concurrent-cpu.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132974.293619,
+    "end": 1794132974.411232,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-concurrent-cpu-cpu-cum",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=cpu",
+      "-top",
+      "-cum",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-concurrent-cpu.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132974.412313,
+    "end": 1794132974.528983,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-concurrent-cpu-cpu-source",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=cpu",
+      "-source_path=<CHECKOUT>",
+      "-trim_path=github.com/CloudyKit/jet/v6/",
+      "-list=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|inputHasMethods|borrowInputVars|Template.*execute",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-concurrent-cpu.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132974.529996,
+    "end": 1794132974.647553,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-concurrent-cpu-cpu-call",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=cpu",
+      "-peek=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|inputHasMethods|borrowInputVars|Template.*execute",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-concurrent-cpu.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132974.6481159,
+    "end": 1794132974.765933,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-concurrent-heap-alloc_space",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=alloc_space",
+      "-top",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-concurrent-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132974.766639,
+    "end": 1794132974.8925161,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-concurrent-heap-alloc_space-source",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=alloc_space",
+      "-source_path=<CHECKOUT>",
+      "-trim_path=github.com/CloudyKit/jet/v6/",
+      "-list=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|inputHasMethods|borrowInputVars|Template.*execute",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-concurrent-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132974.89326,
+    "end": 1794132975.020129,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-concurrent-heap-alloc_space-call",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=alloc_space",
+      "-peek=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|inputHasMethods|borrowInputVars|Template.*execute",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-concurrent-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132975.0206652,
+    "end": 1794132975.147101,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-concurrent-heap-alloc_objects",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=alloc_objects",
+      "-top",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-concurrent-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132975.147646,
+    "end": 1794132975.281845,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-concurrent-heap-alloc_objects-source",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=alloc_objects",
+      "-source_path=<CHECKOUT>",
+      "-trim_path=github.com/CloudyKit/jet/v6/",
+      "-list=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|inputHasMethods|borrowInputVars|Template.*execute",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-concurrent-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132975.28252,
+    "end": 1794132975.404948,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-concurrent-heap-alloc_objects-call",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=alloc_objects",
+      "-peek=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|inputHasMethods|borrowInputVars|Template.*execute",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-concurrent-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132975.4057999,
+    "end": 1794132975.538541,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-concurrent-heap-inuse_space",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=inuse_space",
+      "-top",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-concurrent-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132975.539592,
+    "end": 1794132975.6590478,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-concurrent-heap-inuse_objects",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=inuse_objects",
+      "-top",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-concurrent-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132975.659631,
+    "end": 1794132975.7683158,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-concurrent-mutex-delay",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=delay",
+      "-top",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-concurrent-mutex.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132975.769106,
+    "end": 1794132975.884594,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-concurrent-mutex-delay-call",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=delay",
+      "-peek=sync.*|inputAdmission|RenderRestrictedContext",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-concurrent-mutex.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132975.885473,
+    "end": 1794132976.0138938,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-concurrent-block-delay",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=delay",
+      "-top",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-concurrent-block.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132976.0147579,
+    "end": 1794132976.126682,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-base-concurrent-block-delay-call",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=delay",
+      "-peek=sync.*|inputAdmission|RenderRestrictedContext",
+      "<CHECKOUT>/.git/admission-followup/base.test",
+      "<CHECKOUT>/.git/admission-followup/selected-base-concurrent-block.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132976.127328,
+    "end": 1794132976.239805,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-nil-cpu-cpu",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=cpu",
+      "-top",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-nil-cpu.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132976.240622,
+    "end": 1794132976.362918,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-nil-cpu-cpu-cum",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=cpu",
+      "-top",
+      "-cum",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-nil-cpu.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132976.363477,
+    "end": 1794132976.482562,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-nil-cpu-cpu-source",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=cpu",
+      "-source_path=<CHECKOUT>",
+      "-trim_path=github.com/CloudyKit/jet/v6/",
+      "-list=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|inputHasMethods|borrowInputVars|Template.*execute",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-nil-cpu.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132976.483333,
+    "end": 1794132976.619274,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-nil-cpu-cpu-call",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=cpu",
+      "-peek=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|inputHasMethods|borrowInputVars|Template.*execute",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-nil-cpu.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132976.6200461,
+    "end": 1794132976.764556,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-nil-heap-alloc_space",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=alloc_space",
+      "-top",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-nil-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132976.765175,
+    "end": 1794132976.91761,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-nil-heap-alloc_space-source",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=alloc_space",
+      "-source_path=<CHECKOUT>",
+      "-trim_path=github.com/CloudyKit/jet/v6/",
+      "-list=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|inputHasMethods|borrowInputVars|Template.*execute",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-nil-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132976.918368,
+    "end": 1794132977.0471392,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-nil-heap-alloc_space-call",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=alloc_space",
+      "-peek=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|inputHasMethods|borrowInputVars|Template.*execute",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-nil-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132977.047769,
+    "end": 1794132977.196244,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-nil-heap-alloc_objects",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=alloc_objects",
+      "-top",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-nil-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132977.196804,
+    "end": 1794132977.328188,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-nil-heap-alloc_objects-source",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=alloc_objects",
+      "-source_path=<CHECKOUT>",
+      "-trim_path=github.com/CloudyKit/jet/v6/",
+      "-list=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|inputHasMethods|borrowInputVars|Template.*execute",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-nil-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132977.328779,
+    "end": 1794132977.4776561,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-nil-heap-alloc_objects-call",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=alloc_objects",
+      "-peek=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|inputHasMethods|borrowInputVars|Template.*execute",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-nil-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132977.478246,
+    "end": 1794132977.6132202,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-nil-heap-inuse_space",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=inuse_space",
+      "-top",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-nil-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132977.614369,
+    "end": 1794132977.74847,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-nil-heap-inuse_objects",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=inuse_objects",
+      "-top",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-nil-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132977.7490711,
+    "end": 1794132977.884502,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-nil-mutex-delay",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=delay",
+      "-top",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-nil-mutex.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132977.8857,
+    "end": 1794132978.008422,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-nil-mutex-delay-call",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=delay",
+      "-peek=sync.*|inputAdmission|RenderRestrictedContext",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-nil-mutex.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132978.0091782,
+    "end": 1794132978.1275241,
+    "exit_code": 2,
+    "status": "no_sampled_attribution"
+  },
+  {
+    "name": "selected-defaults-nil-block-delay",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=delay",
+      "-top",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-nil-block.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132978.1281579,
+    "end": 1794132978.244103,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-nil-block-delay-call",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=delay",
+      "-peek=sync.*|inputAdmission|RenderRestrictedContext",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-nil-block.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132978.244609,
+    "end": 1794132978.3679569,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-scalar-cpu-cpu",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=cpu",
+      "-top",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-scalar-cpu.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132978.368746,
+    "end": 1794132978.494038,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-scalar-cpu-cpu-cum",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=cpu",
+      "-top",
+      "-cum",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-scalar-cpu.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132978.494585,
+    "end": 1794132978.6216042,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-scalar-cpu-cpu-source",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=cpu",
+      "-source_path=<CHECKOUT>",
+      "-trim_path=github.com/CloudyKit/jet/v6/",
+      "-list=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|inputHasMethods|borrowInputVars|Template.*execute",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-scalar-cpu.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132978.622766,
+    "end": 1794132978.745074,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-scalar-cpu-cpu-call",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=cpu",
+      "-peek=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|inputHasMethods|borrowInputVars|Template.*execute",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-scalar-cpu.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132978.7459068,
+    "end": 1794132978.8704052,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-scalar-heap-alloc_space",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=alloc_space",
+      "-top",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-scalar-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132978.8710039,
+    "end": 1794132978.996244,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-scalar-heap-alloc_space-source",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=alloc_space",
+      "-source_path=<CHECKOUT>",
+      "-trim_path=github.com/CloudyKit/jet/v6/",
+      "-list=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|inputHasMethods|borrowInputVars|Template.*execute",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-scalar-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132978.9968388,
+    "end": 1794132979.121839,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-scalar-heap-alloc_space-call",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=alloc_space",
+      "-peek=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|inputHasMethods|borrowInputVars|Template.*execute",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-scalar-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132979.1227572,
+    "end": 1794132979.2462149,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-scalar-heap-alloc_objects",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=alloc_objects",
+      "-top",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-scalar-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132979.246774,
+    "end": 1794132979.36942,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-scalar-heap-alloc_objects-source",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=alloc_objects",
+      "-source_path=<CHECKOUT>",
+      "-trim_path=github.com/CloudyKit/jet/v6/",
+      "-list=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|inputHasMethods|borrowInputVars|Template.*execute",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-scalar-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132979.3699882,
+    "end": 1794132979.486191,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-scalar-heap-alloc_objects-call",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=alloc_objects",
+      "-peek=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|inputHasMethods|borrowInputVars|Template.*execute",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-scalar-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132979.486759,
+    "end": 1794132979.605837,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-scalar-heap-inuse_space",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=inuse_space",
+      "-top",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-scalar-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132979.606456,
+    "end": 1794132979.722218,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-scalar-heap-inuse_objects",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=inuse_objects",
+      "-top",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-scalar-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132979.723132,
+    "end": 1794132979.840495,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-scalar-mutex-delay",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=delay",
+      "-top",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-scalar-mutex.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132979.8414981,
+    "end": 1794132979.9574149,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-scalar-mutex-delay-call",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=delay",
+      "-peek=sync.*|inputAdmission|RenderRestrictedContext",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-scalar-mutex.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132979.95807,
+    "end": 1794132980.086373,
+    "exit_code": 2,
+    "status": "no_sampled_attribution"
+  },
+  {
+    "name": "selected-defaults-scalar-block-delay",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=delay",
+      "-top",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-scalar-block.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132980.0870788,
+    "end": 1794132980.210677,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-scalar-block-delay-call",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=delay",
+      "-peek=sync.*|inputAdmission|RenderRestrictedContext",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-scalar-block.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132980.211228,
+    "end": 1794132980.3297,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-map-cpu-cpu",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=cpu",
+      "-top",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-map-cpu.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132980.330362,
+    "end": 1794132980.4551082,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-map-cpu-cpu-cum",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=cpu",
+      "-top",
+      "-cum",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-map-cpu.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132980.4561121,
+    "end": 1794132980.5777972,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-map-cpu-cpu-source",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=cpu",
+      "-source_path=<CHECKOUT>",
+      "-trim_path=github.com/CloudyKit/jet/v6/",
+      "-list=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|inputHasMethods|borrowInputVars|Template.*execute",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-map-cpu.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132980.578399,
+    "end": 1794132980.698258,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-map-cpu-cpu-call",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=cpu",
+      "-peek=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|inputHasMethods|borrowInputVars|Template.*execute",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-map-cpu.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132980.6991758,
+    "end": 1794132980.839871,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-map-heap-alloc_space",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=alloc_space",
+      "-top",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-map-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132980.8405051,
+    "end": 1794132980.963564,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-map-heap-alloc_space-source",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=alloc_space",
+      "-source_path=<CHECKOUT>",
+      "-trim_path=github.com/CloudyKit/jet/v6/",
+      "-list=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|inputHasMethods|borrowInputVars|Template.*execute",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-map-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132980.964222,
+    "end": 1794132981.073757,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-map-heap-alloc_space-call",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=alloc_space",
+      "-peek=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|inputHasMethods|borrowInputVars|Template.*execute",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-map-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132981.074388,
+    "end": 1794132981.183531,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-map-heap-alloc_objects",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=alloc_objects",
+      "-top",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-map-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132981.1844301,
+    "end": 1794132981.291229,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-map-heap-alloc_objects-source",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=alloc_objects",
+      "-source_path=<CHECKOUT>",
+      "-trim_path=github.com/CloudyKit/jet/v6/",
+      "-list=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|inputHasMethods|borrowInputVars|Template.*execute",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-map-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132981.29184,
+    "end": 1794132981.3990452,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-map-heap-alloc_objects-call",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=alloc_objects",
+      "-peek=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|inputHasMethods|borrowInputVars|Template.*execute",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-map-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132981.3999429,
+    "end": 1794132981.505976,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-map-heap-inuse_space",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=inuse_space",
+      "-top",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-map-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132981.5067918,
+    "end": 1794132981.612714,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-map-heap-inuse_objects",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=inuse_objects",
+      "-top",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-map-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132981.6133828,
+    "end": 1794132981.725235,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-map-mutex-delay",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=delay",
+      "-top",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-map-mutex.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132981.72593,
+    "end": 1794132981.842486,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-map-mutex-delay-call",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=delay",
+      "-peek=sync.*|inputAdmission|RenderRestrictedContext",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-map-mutex.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132981.843531,
+    "end": 1794132981.9583411,
+    "exit_code": 2,
+    "status": "no_sampled_attribution"
+  },
+  {
+    "name": "selected-defaults-map-block-delay",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=delay",
+      "-top",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-map-block.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132981.959286,
+    "end": 1794132982.074601,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-map-block-delay-call",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=delay",
+      "-peek=sync.*|inputAdmission|RenderRestrictedContext",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-map-block.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132982.075785,
+    "end": 1794132982.182515,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-large-cpu-cpu",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=cpu",
+      "-top",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-large-cpu.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132982.183182,
+    "end": 1794132982.286804,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-large-cpu-cpu-cum",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=cpu",
+      "-top",
+      "-cum",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-large-cpu.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132982.287425,
+    "end": 1794132982.39093,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-large-cpu-cpu-source",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=cpu",
+      "-source_path=<CHECKOUT>",
+      "-trim_path=github.com/CloudyKit/jet/v6/",
+      "-list=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|inputHasMethods|borrowInputVars|Template.*execute",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-large-cpu.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132982.39151,
+    "end": 1794132982.497159,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-large-cpu-cpu-call",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=cpu",
+      "-peek=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|inputHasMethods|borrowInputVars|Template.*execute",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-large-cpu.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132982.49781,
+    "end": 1794132982.597954,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-large-heap-alloc_space",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=alloc_space",
+      "-top",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-large-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132982.598583,
+    "end": 1794132982.703594,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-large-heap-alloc_space-source",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=alloc_space",
+      "-source_path=<CHECKOUT>",
+      "-trim_path=github.com/CloudyKit/jet/v6/",
+      "-list=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|inputHasMethods|borrowInputVars|Template.*execute",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-large-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132982.704271,
+    "end": 1794132982.820575,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-large-heap-alloc_space-call",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=alloc_space",
+      "-peek=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|inputHasMethods|borrowInputVars|Template.*execute",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-large-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132982.821283,
+    "end": 1794132982.9404001,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-large-heap-alloc_objects",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=alloc_objects",
+      "-top",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-large-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132982.941364,
+    "end": 1794132983.060641,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-large-heap-alloc_objects-source",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=alloc_objects",
+      "-source_path=<CHECKOUT>",
+      "-trim_path=github.com/CloudyKit/jet/v6/",
+      "-list=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|inputHasMethods|borrowInputVars|Template.*execute",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-large-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132983.061425,
+    "end": 1794132983.1820538,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-large-heap-alloc_objects-call",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=alloc_objects",
+      "-peek=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|inputHasMethods|borrowInputVars|Template.*execute",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-large-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132983.1828291,
+    "end": 1794132983.308309,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-large-heap-inuse_space",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=inuse_space",
+      "-top",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-large-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132983.308969,
+    "end": 1794132983.423052,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-large-heap-inuse_objects",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=inuse_objects",
+      "-top",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-large-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132983.42373,
+    "end": 1794132983.53617,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-large-mutex-delay",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=delay",
+      "-top",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-large-mutex.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132983.536823,
+    "end": 1794132983.641734,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-large-mutex-delay-call",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=delay",
+      "-peek=sync.*|inputAdmission|RenderRestrictedContext",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-large-mutex.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132983.642369,
+    "end": 1794132983.750582,
+    "exit_code": 2,
+    "status": "no_sampled_attribution"
+  },
+  {
+    "name": "selected-defaults-large-block-delay",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=delay",
+      "-top",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-large-block.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132983.751405,
+    "end": 1794132983.8631968,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-large-block-delay-call",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=delay",
+      "-peek=sync.*|inputAdmission|RenderRestrictedContext",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-large-block.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132983.864304,
+    "end": 1794132983.968226,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-concurrent-cpu-cpu",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=cpu",
+      "-top",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-concurrent-cpu.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132983.968916,
+    "end": 1794132984.077846,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-concurrent-cpu-cpu-cum",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=cpu",
+      "-top",
+      "-cum",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-concurrent-cpu.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132984.078739,
+    "end": 1794132984.1873322,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-concurrent-cpu-cpu-source",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=cpu",
+      "-source_path=<CHECKOUT>",
+      "-trim_path=github.com/CloudyKit/jet/v6/",
+      "-list=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|inputHasMethods|borrowInputVars|Template.*execute",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-concurrent-cpu.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132984.187983,
+    "end": 1794132984.304985,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-concurrent-cpu-cpu-call",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=cpu",
+      "-peek=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|inputHasMethods|borrowInputVars|Template.*execute",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-concurrent-cpu.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132984.3059,
+    "end": 1794132984.443946,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-concurrent-heap-alloc_space",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=alloc_space",
+      "-top",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-concurrent-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132984.45094,
+    "end": 1794132984.610046,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-concurrent-heap-alloc_space-source",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=alloc_space",
+      "-source_path=<CHECKOUT>",
+      "-trim_path=github.com/CloudyKit/jet/v6/",
+      "-list=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|inputHasMethods|borrowInputVars|Template.*execute",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-concurrent-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132984.620592,
+    "end": 1794132984.749206,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-concurrent-heap-alloc_space-call",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=alloc_space",
+      "-peek=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|inputHasMethods|borrowInputVars|Template.*execute",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-concurrent-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132984.750016,
+    "end": 1794132984.888994,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-concurrent-heap-alloc_objects",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=alloc_objects",
+      "-top",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-concurrent-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132984.8899379,
+    "end": 1794132985.029595,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-concurrent-heap-alloc_objects-source",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=alloc_objects",
+      "-source_path=<CHECKOUT>",
+      "-trim_path=github.com/CloudyKit/jet/v6/",
+      "-list=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|inputHasMethods|borrowInputVars|Template.*execute",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-concurrent-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132985.035989,
+    "end": 1794132985.167941,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-concurrent-heap-alloc_objects-call",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=alloc_objects",
+      "-peek=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|inputHasMethods|borrowInputVars|Template.*execute",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-concurrent-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132985.174423,
+    "end": 1794132985.3064451,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-concurrent-heap-inuse_space",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=inuse_space",
+      "-top",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-concurrent-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132985.3073258,
+    "end": 1794132985.421984,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-concurrent-heap-inuse_objects",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=inuse_objects",
+      "-top",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-concurrent-heap.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132985.422932,
+    "end": 1794132985.5372758,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-concurrent-mutex-delay",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=delay",
+      "-top",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-concurrent-mutex.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132985.538003,
+    "end": 1794132985.671791,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-concurrent-mutex-delay-call",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=delay",
+      "-peek=sync.*|inputAdmission|RenderRestrictedContext",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-concurrent-mutex.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132985.672492,
+    "end": 1794132985.7863219,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-concurrent-block-delay",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=delay",
+      "-top",
+      "-nodecount=40",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-concurrent-block.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132985.787112,
+    "end": 1794132985.9036548,
+    "exit_code": 0,
+    "status": "passed"
+  },
+  {
+    "name": "selected-defaults-concurrent-block-delay-call",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=delay",
+      "-peek=sync.*|inputAdmission|RenderRestrictedContext",
+      "<CHECKOUT>/.git/admission-followup/defaults.test",
+      "<CHECKOUT>/.git/admission-followup/selected-defaults-concurrent-block.pprof"
+    ],
+    "deadline": 40,
+    "cleanup": 5,
+    "start": 1794132985.90474,
+    "end": 1794132986.021354,
+    "exit_code": 0,
+    "status": "passed"
+  }
+]

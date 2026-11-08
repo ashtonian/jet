@@ -1,0 +1,39 @@
+File: base.test
+Type: delay
+Time: 2026-11-08 04:13:48 CST
+Showing nodes accounting for 13.29us, 100% of 13.29us total
+      flat  flat%   sum%        cum   cum%
+   13.29us   100%   100%    13.29us   100%  runtime.unlock (partial-inline)
+         0     0%   100%     0.08us  0.62%  runtime.(*mheap).freeSpan (inline)
+         0     0%   100%     0.08us  0.62%  runtime.(*mheap).freeSpan.func1
+         0     0%   100%     0.08us  0.62%  runtime.(*sweepLocked).sweep
+         0     0%   100%     7.54us 56.74%  runtime.allocm
+         0     0%   100%     0.08us  0.62%  runtime.bgsweep
+         0     0%   100%     2.33us 17.55%  runtime.findRunnable
+         0     0%   100%     0.75us  5.64%  runtime.forEachP (inline)
+         0     0%   100%     0.75us  5.64%  runtime.forEachP.func1
+         0     0%   100%     0.75us  5.64%  runtime.forEachPInternal
+         0     0%   100%    10.88us 81.82%  runtime.gcBgMarkWorker
+         0     0%   100%     7.54us 56.74%  runtime.gcBgMarkWorker.func2
+         0     0%   100%     7.54us 56.74%  runtime.gcDrain
+         0     0%   100%     7.54us 56.74%  runtime.gcDrainMarkWorkerIdle (inline)
+         0     0%   100%     3.33us 25.08%  runtime.gcMarkDone
+         0     0%   100%     2.58us 19.44%  runtime.gcMarkDone.func2
+         0     0%   100%     1.21us  9.09%  runtime.gcstopm
+         0     0%   100%     2.33us 17.55%  runtime.gopreempt_m (inline)
+         0     0%   100%     2.33us 17.55%  runtime.goschedImpl
+         0     0%   100%     7.54us 56.74%  runtime.markroot
+         0     0%   100%     7.54us 56.74%  runtime.markroot.func1
+         0     0%   100%     7.54us 56.74%  runtime.mcommoninit
+         0     0%   100%     2.33us 17.55%  runtime.morestack
+         0     0%   100%     7.54us 56.74%  runtime.newm
+         0     0%   100%     2.33us 17.55%  runtime.newstack
+         0     0%   100%     7.54us 56.74%  runtime.ready
+         0     0%   100%     7.54us 56.74%  runtime.resumeG
+         0     0%   100%     1.12us  8.46%  runtime.runSafePointFn
+         0     0%   100%     2.33us 17.55%  runtime.schedule
+         0     0%   100%     7.54us 56.74%  runtime.startm
+         0     0%   100%     2.58us 19.44%  runtime.stopTheWorldWithSema
+         0     0%   100%     0.08us  0.62%  runtime.sweepone
+         0     0%   100%    10.96us 82.45%  runtime.systemstack
+         0     0%   100%     7.54us 56.74%  runtime.wakep

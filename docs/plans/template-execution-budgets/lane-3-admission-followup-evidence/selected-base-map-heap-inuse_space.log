@@ -1,0 +1,17 @@
+File: base.test
+Type: inuse_space
+Time: 2026-11-08 04:13:48 CST
+Showing nodes accounting for 1024.07kB, 100% of 1024.07kB total
+      flat  flat%   sum%        cum   cum%
+  512.05kB 50.00% 50.00%   512.05kB 50.00%  runtime.mallocgc
+  512.02kB 50.00%   100%   512.02kB 50.00%  flag.(*FlagSet).Var
+         0     0%   100%   512.02kB 50.00%  flag.(*FlagSet).Bool
+         0     0%   100%   512.02kB 50.00%  flag.(*FlagSet).BoolVar (inline)
+         0     0%   100%   512.02kB 50.00%  flag.Bool (inline)
+         0     0%   100%   512.02kB 50.00%  main.main
+         0     0%   100%   512.05kB 50.00%  runtime.(*scavengerState).init
+         0     0%   100%   512.05kB 50.00%  runtime.bgscavenge
+         0     0%   100%   512.02kB 50.00%  runtime.main
+         0     0%   100%   512.05kB 50.00%  runtime.newobject
+         0     0%   100%   512.02kB 50.00%  testing.Init
+         0     0%   100%   512.02kB 50.00%  testing.MainStart

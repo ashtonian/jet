@@ -1,0 +1,13 @@
+File: defaults.test
+Type: inuse_space
+Time: 2026-11-08 04:14:08 CST
+Showing nodes accounting for 1024.28kB, 100% of 1024.28kB total
+      flat  flat%   sum%        cum   cum%
+ 1024.28kB   100%   100%  1024.28kB   100%  runtime.mallocgc
+         0     0%   100%   512.05kB 49.99%  runtime.(*scavengerState).init
+         0     0%   100%   512.05kB 49.99%  runtime.bgscavenge
+         0     0%   100%   512.23kB 50.01%  runtime.malg
+         0     0%   100%  1024.28kB   100%  runtime.newobject
+         0     0%   100%   512.23kB 50.01%  runtime.newproc.func1
+         0     0%   100%   512.23kB 50.01%  runtime.newproc1
+         0     0%   100%   512.23kB 50.01%  runtime.systemstack

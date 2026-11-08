@@ -1,0 +1,29 @@
+File: base.test
+Type: alloc_objects
+Time: 2026-11-08 04:13:48 CST
+Showing nodes accounting for 50764776, 100% of 50781947 total
+Dropped 28 nodes (cum <= 253909)
+      flat  flat%   sum%        cum   cum%
+  21299524 41.94% 41.94%   21299524 41.94%  reflect.unsafe_New
+   7348672 14.47% 56.41%   50765521   100%  github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext
+   7192730 14.16% 70.58%    7192730 14.16%  reflect.mapassign_faststr0
+   7001749 13.79% 84.37%    7001749 13.79%  reflect.makemap
+   6939047 13.66% 98.03%    6939047 13.66%  bytes.(*Buffer).grow
+    983054  1.94%   100%     983054  1.94%  bytes.(*Buffer).String (inline)
+         0     0%   100%    6939047 13.66%  bytes.(*Buffer).Write
+         0     0%   100%    6939047 13.66%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0%   100%   43416849 85.50%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0%   100%   43416849 85.50%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0%   100%    6939047 13.66%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+         0     0%   100%   35494003 69.89%  github.com/CloudyKit/jet/v6.(*inputAdmission).clone
+         0     0%   100%   50765521   100%  github.com/CloudyKit/jet/v6.BenchmarkAdmissionInput.func1
+         0     0%   100%   35494003 69.89%  github.com/CloudyKit/jet/v6.admitInputScopesInto
+         0     0%   100%    7307375 14.39%  reflect.(*MapIter).Key
+         0     0%   100%    7045227 13.87%  reflect.(*MapIter).Value
+         0     0%   100%    7001749 13.79%  reflect.MakeMapWithSize
+         0     0%   100%   14139652 27.84%  reflect.Value.SetMapIndex
+         0     0%   100%    6946922 13.68%  reflect.Value.assignTo
+         0     0%   100%   14352602 28.26%  reflect.copyVal
+         0     0%   100%    7192730 14.16%  reflect.mapassign_faststr
+         0     0%   100%   50765521   100%  testing.(*B).launch
+         0     0%   100%   50765521   100%  testing.(*B).runN

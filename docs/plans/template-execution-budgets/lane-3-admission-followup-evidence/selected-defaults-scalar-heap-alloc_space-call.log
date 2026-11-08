@@ -1,0 +1,12 @@
+File: defaults.test
+Type: alloc_space
+Time: 2026-11-08 04:14:04 CST
+Showing nodes accounting for 1150.19MB, 100% of 1150.19MB total
+----------------------------------------------------------+-------------
+      flat  flat%   sum%        cum   cum%   calls calls% + context 	 	 
+----------------------------------------------------------+-------------
+                                          663.54MB   100% |   github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0%     0%   663.54MB 57.69%                | github.com/CloudyKit/jet/v6.(*Template).execute
+                                          475.53MB 71.67% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+                                             188MB 28.33% |   bytes.(*Buffer).String (inline)
+----------------------------------------------------------+-------------

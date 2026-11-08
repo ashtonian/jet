@@ -1,0 +1,870 @@
+[
+  {
+    "name": "baseline-nil",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<FROZEN54>/results/candidate.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkExecutionModes$/^restricted_owned$/^header_literal$/^html$",
+      "-test.benchtime=3s",
+      "-test.cpu=2",
+      "-test.count=1",
+      "-test.benchmem",
+      "-test.timeout=40s",
+      "-test.cpuprofile=<CHECKOUT>/.git/admission-followup/baseline-nil-cpu.pprof",
+      "-test.memprofile=<CHECKOUT>/.git/admission-followup/baseline-nil-heap.pprof",
+      "-test.mutexprofile=<CHECKOUT>/.git/admission-followup/baseline-nil-mutex.pprof",
+      "-test.blockprofile=<CHECKOUT>/.git/admission-followup/baseline-nil-block.pprof"
+    ],
+    "deadline": 60,
+    "cleanup": 5,
+    "start": 1794131930.3474612,
+    "end": 1794131934.2888079,
+    "exit_code": 0
+  },
+  {
+    "name": "baseline-nil-cpu-cpu",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=cpu",
+      "-top",
+      "-nodecount=35",
+      "<FROZEN54>/results/candidate.test",
+      "<CHECKOUT>/.git/admission-followup/baseline-nil-cpu.pprof"
+    ],
+    "deadline": 60,
+    "cleanup": 5,
+    "start": 1794131934.2893171,
+    "end": 1794131934.63167,
+    "exit_code": 0
+  },
+  {
+    "name": "baseline-nil-cpu-cpu-cum",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=cpu",
+      "-top",
+      "-cum",
+      "-nodecount=35",
+      "<FROZEN54>/results/candidate.test",
+      "<CHECKOUT>/.git/admission-followup/baseline-nil-cpu.pprof"
+    ],
+    "deadline": 60,
+    "cleanup": 5,
+    "start": 1794131934.6319711,
+    "end": 1794131934.7368078,
+    "exit_code": 0
+  },
+  {
+    "name": "baseline-nil-cpu-cpu-source",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-source_path=<FROZEN54>/candidate",
+      "-trim_path=github.com/CloudyKit/jet/v6/",
+      "-sample_index=cpu",
+      "-list=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|borrowInputVars",
+      "<FROZEN54>/results/candidate.test",
+      "<CHECKOUT>/.git/admission-followup/baseline-nil-cpu.pprof"
+    ],
+    "deadline": 60,
+    "cleanup": 5,
+    "start": 1794131934.737141,
+    "end": 1794131934.8406558,
+    "exit_code": 0
+  },
+  {
+    "name": "baseline-nil-cpu-cpu-call",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-source_path=<FROZEN54>/candidate",
+      "-trim_path=github.com/CloudyKit/jet/v6/",
+      "-sample_index=cpu",
+      "-peek=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|borrowInputVars",
+      "<FROZEN54>/results/candidate.test",
+      "<CHECKOUT>/.git/admission-followup/baseline-nil-cpu.pprof"
+    ],
+    "deadline": 60,
+    "cleanup": 5,
+    "start": 1794131934.840984,
+    "end": 1794131934.944907,
+    "exit_code": 0
+  },
+  {
+    "name": "baseline-nil-heap-alloc_space",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=alloc_space",
+      "-top",
+      "-nodecount=35",
+      "<FROZEN54>/results/candidate.test",
+      "<CHECKOUT>/.git/admission-followup/baseline-nil-heap.pprof"
+    ],
+    "deadline": 60,
+    "cleanup": 5,
+    "start": 1794131934.945277,
+    "end": 1794131935.0519161,
+    "exit_code": 0
+  },
+  {
+    "name": "baseline-nil-heap-alloc_space-source",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-source_path=<FROZEN54>/candidate",
+      "-trim_path=github.com/CloudyKit/jet/v6/",
+      "-sample_index=alloc_space",
+      "-list=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|borrowInputVars",
+      "<FROZEN54>/results/candidate.test",
+      "<CHECKOUT>/.git/admission-followup/baseline-nil-heap.pprof"
+    ],
+    "deadline": 60,
+    "cleanup": 5,
+    "start": 1794131935.052284,
+    "end": 1794131935.1606882,
+    "exit_code": 2
+  },
+  {
+    "name": "baseline-nil-heap-alloc_space-source",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-source_path=<FROZEN54>/candidate",
+      "-trim_path=github.com/CloudyKit/jet/v6/",
+      "-sample_index=alloc_space",
+      "-list=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|borrowInputVars",
+      "<FROZEN54>/results/candidate.test",
+      "<CHECKOUT>/.git/admission-followup/baseline-nil-heap.pprof"
+    ],
+    "deadline": 60,
+    "cleanup": 5,
+    "start": 1794131992.6385012,
+    "end": 1794131993.210043,
+    "exit_code": 2
+  },
+  {
+    "name": "baseline-nil-heap-alloc_space-call",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-source_path=<FROZEN54>/candidate",
+      "-trim_path=github.com/CloudyKit/jet/v6/",
+      "-sample_index=alloc_space",
+      "-peek=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|borrowInputVars",
+      "<FROZEN54>/results/candidate.test",
+      "<CHECKOUT>/.git/admission-followup/baseline-nil-heap.pprof"
+    ],
+    "deadline": 60,
+    "cleanup": 5,
+    "start": 1794131993.210492,
+    "end": 1794131993.3135092,
+    "exit_code": 2
+  },
+  {
+    "name": "baseline-nil-heap-alloc_objects",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=alloc_objects",
+      "-top",
+      "-nodecount=35",
+      "<FROZEN54>/results/candidate.test",
+      "<CHECKOUT>/.git/admission-followup/baseline-nil-heap.pprof"
+    ],
+    "deadline": 60,
+    "cleanup": 5,
+    "start": 1794131993.3142889,
+    "end": 1794131993.435101,
+    "exit_code": 0
+  },
+  {
+    "name": "baseline-nil-heap-alloc_objects-source",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-source_path=<FROZEN54>/candidate",
+      "-trim_path=github.com/CloudyKit/jet/v6/",
+      "-sample_index=alloc_objects",
+      "-list=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|borrowInputVars",
+      "<FROZEN54>/results/candidate.test",
+      "<CHECKOUT>/.git/admission-followup/baseline-nil-heap.pprof"
+    ],
+    "deadline": 60,
+    "cleanup": 5,
+    "start": 1794131993.435759,
+    "end": 1794131993.558191,
+    "exit_code": 2
+  },
+  {
+    "name": "baseline-nil-heap-alloc_objects-call",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-source_path=<FROZEN54>/candidate",
+      "-trim_path=github.com/CloudyKit/jet/v6/",
+      "-sample_index=alloc_objects",
+      "-peek=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|borrowInputVars",
+      "<FROZEN54>/results/candidate.test",
+      "<CHECKOUT>/.git/admission-followup/baseline-nil-heap.pprof"
+    ],
+    "deadline": 60,
+    "cleanup": 5,
+    "start": 1794131993.559139,
+    "end": 1794131993.684855,
+    "exit_code": 2
+  },
+  {
+    "name": "baseline-nil-heap-inuse_space",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=inuse_space",
+      "-top",
+      "-nodecount=35",
+      "<FROZEN54>/results/candidate.test",
+      "<CHECKOUT>/.git/admission-followup/baseline-nil-heap.pprof"
+    ],
+    "deadline": 60,
+    "cleanup": 5,
+    "start": 1794131993.685717,
+    "end": 1794131993.7982001,
+    "exit_code": 0
+  },
+  {
+    "name": "baseline-nil-heap-inuse_objects",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=inuse_objects",
+      "-top",
+      "-nodecount=35",
+      "<FROZEN54>/results/candidate.test",
+      "<CHECKOUT>/.git/admission-followup/baseline-nil-heap.pprof"
+    ],
+    "deadline": 60,
+    "cleanup": 5,
+    "start": 1794131993.798653,
+    "end": 1794131993.910517,
+    "exit_code": 0
+  },
+  {
+    "name": "baseline-nil-mutex-delay",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=delay",
+      "-top",
+      "-nodecount=35",
+      "<FROZEN54>/results/candidate.test",
+      "<CHECKOUT>/.git/admission-followup/baseline-nil-mutex.pprof"
+    ],
+    "deadline": 60,
+    "cleanup": 5,
+    "start": 1794131993.9109619,
+    "end": 1794131994.024498,
+    "exit_code": 0
+  },
+  {
+    "name": "baseline-nil-block-delay",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=delay",
+      "-top",
+      "-nodecount=35",
+      "<FROZEN54>/results/candidate.test",
+      "<CHECKOUT>/.git/admission-followup/baseline-nil-block.pprof"
+    ],
+    "deadline": 60,
+    "cleanup": 5,
+    "start": 1794131994.024929,
+    "end": 1794131994.1283011,
+    "exit_code": 0
+  },
+  {
+    "name": "baseline-scalar",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<FROZEN54>/results/candidate.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkExecutionModes$/^restricted_owned$/^header_interpolation$/^html$",
+      "-test.benchtime=3s",
+      "-test.cpu=2",
+      "-test.count=1",
+      "-test.benchmem",
+      "-test.timeout=40s",
+      "-test.cpuprofile=<CHECKOUT>/.git/admission-followup/baseline-scalar-cpu.pprof",
+      "-test.memprofile=<CHECKOUT>/.git/admission-followup/baseline-scalar-heap.pprof",
+      "-test.mutexprofile=<CHECKOUT>/.git/admission-followup/baseline-scalar-mutex.pprof",
+      "-test.blockprofile=<CHECKOUT>/.git/admission-followup/baseline-scalar-block.pprof"
+    ],
+    "deadline": 60,
+    "cleanup": 5,
+    "start": 1794131994.128768,
+    "end": 1794131998.487836,
+    "exit_code": 0
+  },
+  {
+    "name": "baseline-scalar-cpu-cpu",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=cpu",
+      "-top",
+      "-nodecount=35",
+      "<FROZEN54>/results/candidate.test",
+      "<CHECKOUT>/.git/admission-followup/baseline-scalar-cpu.pprof"
+    ],
+    "deadline": 60,
+    "cleanup": 5,
+    "start": 1794131998.488406,
+    "end": 1794131998.6102378,
+    "exit_code": 0
+  },
+  {
+    "name": "baseline-scalar-cpu-cpu-cum",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=cpu",
+      "-top",
+      "-cum",
+      "-nodecount=35",
+      "<FROZEN54>/results/candidate.test",
+      "<CHECKOUT>/.git/admission-followup/baseline-scalar-cpu.pprof"
+    ],
+    "deadline": 60,
+    "cleanup": 5,
+    "start": 1794131998.610703,
+    "end": 1794131998.71663,
+    "exit_code": 0
+  },
+  {
+    "name": "baseline-scalar-cpu-cpu-source",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-source_path=<FROZEN54>/candidate",
+      "-trim_path=github.com/CloudyKit/jet/v6/",
+      "-sample_index=cpu",
+      "-list=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|borrowInputVars",
+      "<FROZEN54>/results/candidate.test",
+      "<CHECKOUT>/.git/admission-followup/baseline-scalar-cpu.pprof"
+    ],
+    "deadline": 60,
+    "cleanup": 5,
+    "start": 1794131998.7170439,
+    "end": 1794131998.8231301,
+    "exit_code": 0
+  },
+  {
+    "name": "baseline-scalar-cpu-cpu-call",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-source_path=<FROZEN54>/candidate",
+      "-trim_path=github.com/CloudyKit/jet/v6/",
+      "-sample_index=cpu",
+      "-peek=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|borrowInputVars",
+      "<FROZEN54>/results/candidate.test",
+      "<CHECKOUT>/.git/admission-followup/baseline-scalar-cpu.pprof"
+    ],
+    "deadline": 60,
+    "cleanup": 5,
+    "start": 1794131998.8236952,
+    "end": 1794131998.926653,
+    "exit_code": 0
+  },
+  {
+    "name": "baseline-scalar-heap-alloc_space",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=alloc_space",
+      "-top",
+      "-nodecount=35",
+      "<FROZEN54>/results/candidate.test",
+      "<CHECKOUT>/.git/admission-followup/baseline-scalar-heap.pprof"
+    ],
+    "deadline": 60,
+    "cleanup": 5,
+    "start": 1794131998.9270499,
+    "end": 1794131999.035699,
+    "exit_code": 0
+  },
+  {
+    "name": "baseline-scalar-heap-alloc_space-source",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-source_path=<FROZEN54>/candidate",
+      "-trim_path=github.com/CloudyKit/jet/v6/",
+      "-sample_index=alloc_space",
+      "-list=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|borrowInputVars",
+      "<FROZEN54>/results/candidate.test",
+      "<CHECKOUT>/.git/admission-followup/baseline-scalar-heap.pprof"
+    ],
+    "deadline": 60,
+    "cleanup": 5,
+    "start": 1794131999.0360909,
+    "end": 1794131999.139905,
+    "exit_code": 2
+  },
+  {
+    "name": "baseline-scalar-heap-alloc_space-call",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-source_path=<FROZEN54>/candidate",
+      "-trim_path=github.com/CloudyKit/jet/v6/",
+      "-sample_index=alloc_space",
+      "-peek=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|borrowInputVars",
+      "<FROZEN54>/results/candidate.test",
+      "<CHECKOUT>/.git/admission-followup/baseline-scalar-heap.pprof"
+    ],
+    "deadline": 60,
+    "cleanup": 5,
+    "start": 1794131999.140329,
+    "end": 1794131999.2400389,
+    "exit_code": 2
+  },
+  {
+    "name": "baseline-scalar-heap-alloc_objects",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=alloc_objects",
+      "-top",
+      "-nodecount=35",
+      "<FROZEN54>/results/candidate.test",
+      "<CHECKOUT>/.git/admission-followup/baseline-scalar-heap.pprof"
+    ],
+    "deadline": 60,
+    "cleanup": 5,
+    "start": 1794131999.240501,
+    "end": 1794131999.341229,
+    "exit_code": 0
+  },
+  {
+    "name": "baseline-scalar-heap-alloc_objects-source",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-source_path=<FROZEN54>/candidate",
+      "-trim_path=github.com/CloudyKit/jet/v6/",
+      "-sample_index=alloc_objects",
+      "-list=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|borrowInputVars",
+      "<FROZEN54>/results/candidate.test",
+      "<CHECKOUT>/.git/admission-followup/baseline-scalar-heap.pprof"
+    ],
+    "deadline": 60,
+    "cleanup": 5,
+    "start": 1794131999.341685,
+    "end": 1794131999.4420412,
+    "exit_code": 2
+  },
+  {
+    "name": "baseline-scalar-heap-alloc_objects-call",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-source_path=<FROZEN54>/candidate",
+      "-trim_path=github.com/CloudyKit/jet/v6/",
+      "-sample_index=alloc_objects",
+      "-peek=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|borrowInputVars",
+      "<FROZEN54>/results/candidate.test",
+      "<CHECKOUT>/.git/admission-followup/baseline-scalar-heap.pprof"
+    ],
+    "deadline": 60,
+    "cleanup": 5,
+    "start": 1794131999.442515,
+    "end": 1794131999.54421,
+    "exit_code": 2
+  },
+  {
+    "name": "baseline-scalar-heap-inuse_space",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=inuse_space",
+      "-top",
+      "-nodecount=35",
+      "<FROZEN54>/results/candidate.test",
+      "<CHECKOUT>/.git/admission-followup/baseline-scalar-heap.pprof"
+    ],
+    "deadline": 60,
+    "cleanup": 5,
+    "start": 1794131999.544707,
+    "end": 1794131999.6459332,
+    "exit_code": 0
+  },
+  {
+    "name": "baseline-scalar-heap-inuse_objects",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=inuse_objects",
+      "-top",
+      "-nodecount=35",
+      "<FROZEN54>/results/candidate.test",
+      "<CHECKOUT>/.git/admission-followup/baseline-scalar-heap.pprof"
+    ],
+    "deadline": 60,
+    "cleanup": 5,
+    "start": 1794131999.646354,
+    "end": 1794131999.74721,
+    "exit_code": 0
+  },
+  {
+    "name": "baseline-scalar-mutex-delay",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=delay",
+      "-top",
+      "-nodecount=35",
+      "<FROZEN54>/results/candidate.test",
+      "<CHECKOUT>/.git/admission-followup/baseline-scalar-mutex.pprof"
+    ],
+    "deadline": 60,
+    "cleanup": 5,
+    "start": 1794131999.7476249,
+    "end": 1794131999.858758,
+    "exit_code": 0
+  },
+  {
+    "name": "baseline-scalar-block-delay",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=delay",
+      "-top",
+      "-nodecount=35",
+      "<FROZEN54>/results/candidate.test",
+      "<CHECKOUT>/.git/admission-followup/baseline-scalar-block.pprof"
+    ],
+    "deadline": 60,
+    "cleanup": 5,
+    "start": 1794131999.859175,
+    "end": 1794131999.964428,
+    "exit_code": 0
+  },
+  {
+    "name": "baseline-map",
+    "command": [
+      "/usr/bin/time",
+      "-l",
+      "<FROZEN54>/results/candidate.test",
+      "-test.run=^$",
+      "-test.bench=^BenchmarkExecutionModes$/^restricted_owned$/^named_map$/^html$",
+      "-test.benchtime=3s",
+      "-test.cpu=2",
+      "-test.count=1",
+      "-test.benchmem",
+      "-test.timeout=40s",
+      "-test.cpuprofile=<CHECKOUT>/.git/admission-followup/baseline-map-cpu.pprof",
+      "-test.memprofile=<CHECKOUT>/.git/admission-followup/baseline-map-heap.pprof",
+      "-test.mutexprofile=<CHECKOUT>/.git/admission-followup/baseline-map-mutex.pprof",
+      "-test.blockprofile=<CHECKOUT>/.git/admission-followup/baseline-map-block.pprof"
+    ],
+    "deadline": 60,
+    "cleanup": 5,
+    "start": 1794131999.964884,
+    "end": 1794132004.713451,
+    "exit_code": 0
+  },
+  {
+    "name": "baseline-map-cpu-cpu",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=cpu",
+      "-top",
+      "-nodecount=35",
+      "<FROZEN54>/results/candidate.test",
+      "<CHECKOUT>/.git/admission-followup/baseline-map-cpu.pprof"
+    ],
+    "deadline": 60,
+    "cleanup": 5,
+    "start": 1794132004.714663,
+    "end": 1794132004.835169,
+    "exit_code": 0
+  },
+  {
+    "name": "baseline-map-cpu-cpu-cum",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=cpu",
+      "-top",
+      "-cum",
+      "-nodecount=35",
+      "<FROZEN54>/results/candidate.test",
+      "<CHECKOUT>/.git/admission-followup/baseline-map-cpu.pprof"
+    ],
+    "deadline": 60,
+    "cleanup": 5,
+    "start": 1794132004.835649,
+    "end": 1794132004.943179,
+    "exit_code": 0
+  },
+  {
+    "name": "baseline-map-cpu-cpu-source",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-source_path=<FROZEN54>/candidate",
+      "-trim_path=github.com/CloudyKit/jet/v6/",
+      "-sample_index=cpu",
+      "-list=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|borrowInputVars",
+      "<FROZEN54>/results/candidate.test",
+      "<CHECKOUT>/.git/admission-followup/baseline-map-cpu.pprof"
+    ],
+    "deadline": 60,
+    "cleanup": 5,
+    "start": 1794132004.9436429,
+    "end": 1794132005.103105,
+    "exit_code": 0
+  },
+  {
+    "name": "baseline-map-cpu-cpu-call",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-source_path=<FROZEN54>/candidate",
+      "-trim_path=github.com/CloudyKit/jet/v6/",
+      "-sample_index=cpu",
+      "-peek=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|borrowInputVars",
+      "<FROZEN54>/results/candidate.test",
+      "<CHECKOUT>/.git/admission-followup/baseline-map-cpu.pprof"
+    ],
+    "deadline": 60,
+    "cleanup": 5,
+    "start": 1794132005.1092758,
+    "end": 1794132005.233664,
+    "exit_code": 0
+  },
+  {
+    "name": "baseline-map-heap-alloc_space",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=alloc_space",
+      "-top",
+      "-nodecount=35",
+      "<FROZEN54>/results/candidate.test",
+      "<CHECKOUT>/.git/admission-followup/baseline-map-heap.pprof"
+    ],
+    "deadline": 60,
+    "cleanup": 5,
+    "start": 1794132005.2398632,
+    "end": 1794132005.360002,
+    "exit_code": 0
+  },
+  {
+    "name": "baseline-map-heap-alloc_space-source",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-source_path=<FROZEN54>/candidate",
+      "-trim_path=github.com/CloudyKit/jet/v6/",
+      "-sample_index=alloc_space",
+      "-list=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|borrowInputVars",
+      "<FROZEN54>/results/candidate.test",
+      "<CHECKOUT>/.git/admission-followup/baseline-map-heap.pprof"
+    ],
+    "deadline": 60,
+    "cleanup": 5,
+    "start": 1794132005.366085,
+    "end": 1794132005.494655,
+    "exit_code": 0
+  },
+  {
+    "name": "baseline-map-heap-alloc_space-call",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-source_path=<FROZEN54>/candidate",
+      "-trim_path=github.com/CloudyKit/jet/v6/",
+      "-sample_index=alloc_space",
+      "-peek=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|borrowInputVars",
+      "<FROZEN54>/results/candidate.test",
+      "<CHECKOUT>/.git/admission-followup/baseline-map-heap.pprof"
+    ],
+    "deadline": 60,
+    "cleanup": 5,
+    "start": 1794132005.505534,
+    "end": 1794132005.6315231,
+    "exit_code": 0
+  },
+  {
+    "name": "baseline-map-heap-alloc_objects",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=alloc_objects",
+      "-top",
+      "-nodecount=35",
+      "<FROZEN54>/results/candidate.test",
+      "<CHECKOUT>/.git/admission-followup/baseline-map-heap.pprof"
+    ],
+    "deadline": 60,
+    "cleanup": 5,
+    "start": 1794132005.642588,
+    "end": 1794132005.8025339,
+    "exit_code": 0
+  },
+  {
+    "name": "baseline-map-heap-alloc_objects-source",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-source_path=<FROZEN54>/candidate",
+      "-trim_path=github.com/CloudyKit/jet/v6/",
+      "-sample_index=alloc_objects",
+      "-list=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|borrowInputVars",
+      "<FROZEN54>/results/candidate.test",
+      "<CHECKOUT>/.git/admission-followup/baseline-map-heap.pprof"
+    ],
+    "deadline": 60,
+    "cleanup": 5,
+    "start": 1794132005.81909,
+    "end": 1794132005.94708,
+    "exit_code": 0
+  },
+  {
+    "name": "baseline-map-heap-alloc_objects-call",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-source_path=<FROZEN54>/candidate",
+      "-trim_path=github.com/CloudyKit/jet/v6/",
+      "-sample_index=alloc_objects",
+      "-peek=admitInputScopesInto|inputAdmission.*(clone|step|reserve|enterContainer)|borrowInputVars",
+      "<FROZEN54>/results/candidate.test",
+      "<CHECKOUT>/.git/admission-followup/baseline-map-heap.pprof"
+    ],
+    "deadline": 60,
+    "cleanup": 5,
+    "start": 1794132005.958219,
+    "end": 1794132006.0785751,
+    "exit_code": 0
+  },
+  {
+    "name": "baseline-map-heap-inuse_space",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=inuse_space",
+      "-top",
+      "-nodecount=35",
+      "<FROZEN54>/results/candidate.test",
+      "<CHECKOUT>/.git/admission-followup/baseline-map-heap.pprof"
+    ],
+    "deadline": 60,
+    "cleanup": 5,
+    "start": 1794132006.090032,
+    "end": 1794132006.2264042,
+    "exit_code": 0
+  },
+  {
+    "name": "baseline-map-heap-inuse_objects",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=inuse_objects",
+      "-top",
+      "-nodecount=35",
+      "<FROZEN54>/results/candidate.test",
+      "<CHECKOUT>/.git/admission-followup/baseline-map-heap.pprof"
+    ],
+    "deadline": 60,
+    "cleanup": 5,
+    "start": 1794132006.2328892,
+    "end": 1794132006.373143,
+    "exit_code": 0
+  },
+  {
+    "name": "baseline-map-mutex-delay",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=delay",
+      "-top",
+      "-nodecount=35",
+      "<FROZEN54>/results/candidate.test",
+      "<CHECKOUT>/.git/admission-followup/baseline-map-mutex.pprof"
+    ],
+    "deadline": 60,
+    "cleanup": 5,
+    "start": 1794132006.379361,
+    "end": 1794132006.50468,
+    "exit_code": 0
+  },
+  {
+    "name": "baseline-map-block-delay",
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-sample_index=delay",
+      "-top",
+      "-nodecount=35",
+      "<FROZEN54>/results/candidate.test",
+      "<CHECKOUT>/.git/admission-followup/baseline-map-block.pprof"
+    ],
+    "deadline": 60,
+    "cleanup": 5,
+    "start": 1794132006.510866,
+    "end": 1794132006.63039,
+    "exit_code": 0
+  }
+]

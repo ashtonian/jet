@@ -190,7 +190,7 @@ func (a *inputAdmission) clone(v reflect.Value, depth int) reflect.Value {
 }
 
 func inputHasMethods(t reflect.Type) bool {
-	// An unnamed or predeclared type cannot acquire pointer-receiver methods.
+	// Supported unnamed types cannot add pointer methods; structs are denied below.
 	return t.NumMethod() != 0 || (t.PkgPath() != "" && reflect.PtrTo(t).NumMethod() != 0)
 }
 

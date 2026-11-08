@@ -1,0 +1,23 @@
+File: base.test
+Type: alloc_objects
+Time: 2026-11-08 04:13:55 CST
+Showing nodes accounting for 55641869, 100% of 55641869 total
+----------------------------------------------------------+-------------
+      flat  flat%   sum%        cum   cum%   calls calls% + context 	 	 
+----------------------------------------------------------+-------------
+                                              5959   100% |   github.com/CloudyKit/jet/v6.(*Template).execute
+      5959 0.011% 0.011%       5959 0.011%                | github.com/CloudyKit/jet/v6.admitInputScopesInto
+----------------------------------------------------------+-------------
+                                          37128439   100% |   github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0% 0.011%   37128439 66.73%                | github.com/CloudyKit/jet/v6.(*Template).execute
+                                          18721878 50.42% |   bytes.(*Buffer).String (inline)
+                                          18369105 49.47% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+                                             21846 0.059% |   github.com/CloudyKit/jet/v6.releaseInputVars
+                                              9358 0.025% |   sync.(*Pool).Get
+                                              5959 0.016% |   github.com/CloudyKit/jet/v6.admitInputScopesInto
+                                               293 0.00079% |   github.com/CloudyKit/jet/v6.borrowInputVars
+----------------------------------------------------------+-------------
+                                               293   100% |   github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0% 0.011%        293 0.00053%                | github.com/CloudyKit/jet/v6.borrowInputVars
+                                               293   100% |   sync.(*Pool).Get
+----------------------------------------------------------+-------------

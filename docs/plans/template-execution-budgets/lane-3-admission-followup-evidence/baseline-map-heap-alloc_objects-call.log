@@ -1,0 +1,18 @@
+File: candidate.test
+Type: alloc_objects
+Time: 2026-11-08 04:00:04 CST
+Showing nodes accounting for 45015119, 100% of 45015119 total
+----------------------------------------------------------+-------------
+      flat  flat%   sum%        cum   cum%   calls calls% + context 	 	 
+----------------------------------------------------------+-------------
+                                          22058396   100% |   github.com/CloudyKit/jet/v6.admitInputScopesInto
+         0     0%     0%   22058396 49.00%                | github.com/CloudyKit/jet/v6.(*inputAdmission).clone
+                                           6193246 28.08% |   reflect.(*MapIter).Key
+                                           5379070 24.39% |   reflect.Value.SetMapIndex
+                                           5308658 24.07% |   reflect.MakeMapWithSize
+                                           5177422 23.47% |   reflect.(*MapIter).Value
+----------------------------------------------------------+-------------
+                                          22058396   100% |   github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0%     0%   22058396 49.00%                | github.com/CloudyKit/jet/v6.admitInputScopesInto
+                                          22058396   100% |   github.com/CloudyKit/jet/v6.(*inputAdmission).clone
+----------------------------------------------------------+-------------

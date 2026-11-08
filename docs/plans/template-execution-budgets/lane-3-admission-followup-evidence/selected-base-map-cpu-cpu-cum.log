@@ -1,0 +1,48 @@
+File: base.test
+Type: cpu
+Time: 2026-11-08 04:13:44 CST
+Duration: 4.33s, Total samples = 4.13s (95.46%)
+Showing nodes accounting for 2.16s, 52.30% of 4.13s total
+Dropped 89 nodes (cum <= 0.02s)
+Showing top 40 nodes out of 137
+      flat  flat%   sum%        cum   cum%
+     0.02s  0.48%  0.48%      2.59s 62.71%  github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext
+         0     0%  0.48%      2.59s 62.71%  github.com/CloudyKit/jet/v6.BenchmarkAdmissionInput.func1
+         0     0%  0.48%      2.59s 62.71%  testing.(*B).launch
+         0     0%  0.48%      2.59s 62.71%  testing.(*B).runN
+         0     0%  0.48%      2.47s 59.81%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+     0.12s  2.91%  3.39%      2.47s 59.81%  github.com/CloudyKit/jet/v6.(*Template).execute
+     0.02s  0.48%  3.87%      1.50s 36.32%  github.com/CloudyKit/jet/v6.admitInputScopesInto
+         0     0%  3.87%      1.44s 34.87%  runtime.systemstack
+     0.11s  2.66%  6.54%      1.25s 30.27%  github.com/CloudyKit/jet/v6.(*inputAdmission).clone
+     0.92s 22.28% 28.81%      0.92s 22.28%  runtime.kevent
+         0     0% 28.81%      0.92s 22.28%  runtime.netpoll
+         0     0% 28.81%      0.92s 22.28%  runtime.startTheWorldWithSema
+         0     0% 28.81%      0.91s 22.03%  runtime.gcStart.func4
+     0.04s  0.97% 29.78%      0.43s 10.41%  runtime.mallocgc
+     0.01s  0.24% 30.02%      0.34s  8.23%  reflect.Value.SetMapIndex
+     0.05s  1.21% 31.23%      0.25s  6.05%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+     0.02s  0.48% 31.72%      0.23s  5.57%  reflect.mapassign_faststr
+     0.04s  0.97% 32.69%      0.21s  5.08%  github.com/CloudyKit/jet/v6.(*Runtime).checkpoint
+     0.01s  0.24% 32.93%      0.21s  5.08%  reflect.mapassign_faststr0
+         0     0% 32.93%      0.19s  4.60%  runtime.(*mheap).alloc.func1
+         0     0% 32.93%      0.19s  4.60%  runtime.(*mheap).allocSpan
+         0     0% 32.93%      0.19s  4.60%  runtime.mapassign_faststr
+     0.01s  0.24% 33.17%      0.18s  4.36%  github.com/CloudyKit/jet/v6.(*Runtime).startCompilation
+     0.09s  2.18% 35.35%      0.18s  4.36%  github.com/CloudyKit/jet/v6.(*inputAdmission).reserveBytes
+         0     0% 35.35%      0.18s  4.36%  runtime.preemptM
+     0.18s  4.36% 39.71%      0.18s  4.36%  runtime.pthread_kill
+         0     0% 39.71%      0.18s  4.36%  runtime.signalM (inline)
+     0.17s  4.12% 43.83%      0.17s  4.12%  context.(*cancelCtx).Err
+         0     0% 43.83%      0.17s  4.12%  github.com/CloudyKit/jet/v6.(*Runtime).checkpointActive (inline)
+     0.06s  1.45% 45.28%      0.17s  4.12%  github.com/CloudyKit/jet/v6.(*Runtime).reserveWork
+     0.11s  2.66% 47.94%      0.17s  4.12%  github.com/CloudyKit/jet/v6.(*inputAdmission).step
+         0     0% 47.94%      0.17s  4.12%  internal/runtime/maps.(*Map).growToSmall
+     0.17s  4.12% 52.06%      0.17s  4.12%  runtime.madvise
+         0     0% 52.06%      0.17s  4.12%  runtime.sysUsed (inline)
+         0     0% 52.06%      0.17s  4.12%  runtime.sysUsedOS (inline)
+         0     0% 52.06%      0.16s  3.87%  internal/runtime/maps.newGroups (inline)
+         0     0% 52.06%      0.16s  3.87%  internal/runtime/maps.newarray
+         0     0% 52.06%      0.16s  3.87%  runtime.newarray
+     0.01s  0.24% 52.30%      0.15s  3.63%  github.com/CloudyKit/jet/v6.(*Runtime).startCompilation.func1
+         0     0% 52.30%      0.15s  3.63%  reflect.unsafe_New

@@ -1,0 +1,31 @@
+File: base.test
+Type: alloc_objects
+Time: 2026-11-08 04:13:52 CST
+Showing nodes accounting for 53597920, 99.67% of 53775212 total
+Dropped 19 nodes (cum <= 268876)
+      flat  flat%   sum%        cum   cum%
+  28246435 52.53% 52.53%   28246435 52.53%  reflect.unsafe_New
+   7056203 13.12% 65.65%   13866715 25.79%  reflect.MakeSlice
+   6810512 12.66% 78.31%    6810512 12.66%  reflect.unsafe_NewArray
+   4551697  8.46% 86.78%    4551697  8.46%  reflect.makemap
+   4350229  8.09% 94.87%    4350229  8.09%  reflect.mapassign_faststr0
+    974907  1.81% 96.68%     974907  1.81%  bytes.(*Buffer).grow
+    917559  1.71% 98.39%   53769686   100%  github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext
+    690378  1.28% 99.67%     690378  1.28%  github.com/CloudyKit/jet/v6.(*inputAdmission).enterContainer
+         0     0% 99.67%     974907  1.81%  bytes.(*Buffer).Write
+         0     0% 99.67%     974907  1.81%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 99.67%   52852127 98.28%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0% 99.67%   52852127 98.28%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0% 99.67%     974907  1.81%  github.com/CloudyKit/jet/v6.(*checkedWriter).Write
+         0     0% 99.67%   51705454 96.15%  github.com/CloudyKit/jet/v6.(*inputAdmission).clone
+         0     0% 99.67%   53769686   100%  github.com/CloudyKit/jet/v6.BenchmarkAdmissionInput.func1
+         0     0% 99.67%   51705454 96.15%  github.com/CloudyKit/jet/v6.admitInputScopesInto
+         0     0% 99.67%    9633936 17.92%  reflect.(*MapIter).Key
+         0     0% 99.67%    8945796 16.64%  reflect.(*MapIter).Value
+         0     0% 99.67%    4551697  8.46%  reflect.MakeMapWithSize
+         0     0% 99.67%   14016932 26.07%  reflect.Value.SetMapIndex
+         0     0% 99.67%    9666703 17.98%  reflect.Value.assignTo
+         0     0% 99.67%   18579732 34.55%  reflect.copyVal
+         0     0% 99.67%    4350229  8.09%  reflect.mapassign_faststr
+         0     0% 99.67%   53769686   100%  testing.(*B).launch
+         0     0% 99.67%   53769686   100%  testing.(*B).runN

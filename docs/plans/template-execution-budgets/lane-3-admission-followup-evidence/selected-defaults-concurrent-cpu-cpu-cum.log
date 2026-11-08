@@ -1,0 +1,48 @@
+File: defaults.test
+Type: cpu
+Time: 2026-11-08 04:14:12 CST
+Duration: 2.82s, Total samples = 21.77s (772.40%)
+Showing nodes accounting for 15.01s, 68.95% of 21.77s total
+Dropped 203 nodes (cum <= 0.11s)
+Showing top 40 nodes out of 139
+      flat  flat%   sum%        cum   cum%
+     0.01s 0.046% 0.046%      8.13s 37.34%  runtime.systemstack
+     0.03s  0.14%  0.18%      7.22s 33.16%  github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes.func1.1
+     0.03s  0.14%  0.32%      7.19s 33.03%  github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext
+         0     0%  0.32%      7.19s 33.03%  github.com/CloudyKit/jet/v6_test.init.0.func5
+         0     0%  0.32%      7.10s 32.61%  runtime.lock (partial-inline)
+     0.08s  0.37%  0.69%      7.10s 32.61%  runtime.lock2
+         0     0%  0.69%      7.10s 32.61%  runtime.lockWithRank (inline)
+     0.08s  0.37%  1.06%      6.77s 31.10%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+     0.20s  0.92%  1.98%      6.67s 30.64%  github.com/CloudyKit/jet/v6.(*Template).execute
+     6.45s 29.63% 31.60%      6.45s 29.63%  runtime.usleep
+         0     0% 31.60%      6.14s 28.20%  runtime.osyield (inline)
+     0.01s 0.046% 31.65%      5.40s 24.80%  runtime.goschedImpl
+     0.01s 0.046% 31.69%      5.34s 24.53%  runtime.newstack
+         0     0% 31.69%      5.32s 24.44%  runtime.gopreempt_m (inline)
+         0     0% 31.69%      5.31s 24.39%  runtime.morestack
+         0     0% 31.69%      4.48s 20.58%  runtime.(*mheap).alloc.func1
+         0     0% 31.69%      4.48s 20.58%  runtime.(*mheap).allocSpan
+     4.36s 20.03% 51.72%      4.36s 20.03%  runtime.madvise
+         0     0% 51.72%      4.35s 19.98%  runtime.sysUsed (inline)
+         0     0% 51.72%      4.35s 19.98%  runtime.sysUsedOS (inline)
+     0.01s 0.046% 51.77%      4.27s 19.61%  runtime.schedule
+         0     0% 51.77%      4.23s 19.43%  runtime.findRunnable
+         0     0% 51.77%      3.43s 15.76%  runtime.gcstopm
+     0.10s  0.46% 52.23%      2.41s 11.07%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 52.23%      2.27s 10.43%  runtime.mcall
+         0     0% 52.23%      2.15s  9.88%  runtime.park_m
+     0.11s  0.51% 52.73%      1.19s  5.47%  github.com/CloudyKit/jet/v6.admitInputScopesInto
+         0     0% 52.73%      1.14s  5.24%  runtime.semasleep
+     0.14s  0.64% 53.38%      1.13s  5.19%  runtime.bulkBarrierPreWrite
+         0     0% 53.38%      1.12s  5.14%  runtime.(*mheap).freeSpan.func1
+     0.01s 0.046% 53.42%      1.11s  5.10%  runtime.preemptM
+     1.10s  5.05% 58.47%      1.10s  5.05%  runtime.pthread_kill
+         0     0% 58.47%      1.10s  5.05%  runtime.signalM (inline)
+     0.01s 0.046% 58.52%      1.09s  5.01%  runtime.wbBufFlush
+     0.27s  1.24% 59.76%      1.09s  5.01%  runtime.wbBufFlush1
+         0     0% 59.76%      1.08s  4.96%  runtime.preemptone
+     1.08s  4.96% 64.72%      1.08s  4.96%  runtime.pthread_cond_wait
+         0     0% 64.72%      1.08s  4.96%  runtime.wbBufFlush.func1
+         0     0% 64.72%      0.93s  4.27%  runtime.semawakeup
+     0.92s  4.23% 68.95%      0.92s  4.23%  runtime.pthread_cond_signal

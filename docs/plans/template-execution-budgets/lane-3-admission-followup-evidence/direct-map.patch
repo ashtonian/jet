@@ -1,0 +1,26 @@
+--- a/input.go
++++ b/input.go
+@@ -232,6 +232,23 @@
+ 		defer a.leaveContainer()
+ 		a.reserveItems(uint64(v.Len()))
+ 		a.reserveBytes(uint64(v.Len()), uint64(v.Type().Key().Size()+v.Type().Elem().Size()))
++		if data, ok := v.Interface().(map[string]interface{}); ok {
++			out := make(map[string]interface{}, len(data))
++			for name, value := range data {
++				a.reserveBytes(uint64(len(name)), 1)
++				// Map values have an interface layer even when their dynamic value is nil.
++				a.step(1)
++				if depth+1 > a.opts.MaxDepth {
++					a.limit("depth")
++				}
++				var child interface{}
++				if value != nil {
++					child = a.clone(reflect.ValueOf(value), depth+2).Interface()
++				}
++				out[name] = child
++			}
++			return reflect.ValueOf(out)
++		}
+ 		out := reflect.MakeMapWithSize(v.Type(), v.Len())
+ 		iterator := v.MapRange()
+ 		for iterator.Next() {

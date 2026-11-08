@@ -1,0 +1,47 @@
+File: defaults.test
+Type: delay
+Time: 2026-11-08 04:14:14 CST
+Showing nodes accounting for 8.31s, 100% of 8.31s total
+Dropped 8 nodes (cum <= 0.04s)
+Showing top 40 nodes out of 41
+      flat  flat%   sum%        cum   cum%
+     5.52s 66.36% 66.36%      5.52s 66.36%  runtime.chanrecv1
+     2.69s 32.30% 98.65%      2.69s 32.30%  sync.(*WaitGroup).Wait
+     0.11s  1.35%   100%      0.11s  1.35%  sync.(*Mutex).Lock (inline)
+         0     0%   100%      0.04s   0.5%  github.com/CloudyKit/fastprinter.PrintString
+         0     0%   100%      0.04s   0.5%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0%   100%      0.04s   0.5%  github.com/CloudyKit/jet/v6.(*Runtime).printValue
+         0     0%   100%      0.11s  1.35%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0%   100%      0.11s  1.35%  github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext
+         0     0%   100%      0.11s  1.35%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0%   100%      0.04s   0.5%  github.com/CloudyKit/jet/v6.(*dataPrinter).text
+         0     0%   100%      0.04s   0.5%  github.com/CloudyKit/jet/v6.(*dataPrinter).value
+         0     0%   100%      2.69s 32.36%  github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes
+         0     0%   100%      2.69s 32.30%  github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes.func1
+         0     0%   100%      0.12s  1.41%  github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes.func1.1
+         0     0%   100%      0.12s  1.41%  github.com/CloudyKit/jet/v6_test.BenchmarkConcurrentExecutionModes.func1.gowrap1
+         0     0%   100%      0.11s  1.35%  github.com/CloudyKit/jet/v6_test.init.0.func5
+         0     0%   100%      2.82s 33.94%  main.main
+         0     0%   100%      2.82s 33.94%  runtime.main
+         0     0%   100%      0.12s  1.44%  runtime/pprof.StopCPUProfile
+         0     0%   100%      0.12s  1.44%  sync.(*Once).Do (inline)
+         0     0%   100%      0.12s  1.44%  sync.(*Once).doSlow
+         0     0%   100%      0.08s  0.95%  sync.(*Pool).Get
+         0     0%   100%      0.11s  1.35%  sync.(*Pool).pin
+         0     0%   100%      0.11s  1.35%  sync.(*Pool).pinSlow
+         0     0%   100%      5.39s 64.85%  testing.(*B).Run
+         0     0%   100%      2.69s 32.34%  testing.(*B).doBench
+         0     0%   100%      2.69s 32.29%  testing.(*B).doBench.gowrap1
+         0     0%   100%      2.69s 32.29%  testing.(*B).launch
+         0     0%   100%      2.69s 32.34%  testing.(*B).run
+         0     0%   100%      2.70s 32.51%  testing.(*B).run1
+         0     0%   100%      2.69s 32.36%  testing.(*B).run1.func1
+         0     0%   100%      8.08s 97.15%  testing.(*B).runN
+         0     0%   100%      2.82s 33.94%  testing.(*M).Run
+         0     0%   100%      0.12s  1.44%  testing.(*M).Run.deferwrap1
+         0     0%   100%      0.12s  1.44%  testing.(*M).after
+         0     0%   100%      0.12s  1.44%  testing.(*M).after.func1
+         0     0%   100%      0.12s  1.44%  testing.(*M).writeProfiles
+         0     0%   100%      2.69s 32.34%  testing.(*benchState).processBench
+         0     0%   100%      2.70s 32.50%  testing.runBenchmarks
+         0     0%   100%      2.70s 32.50%  testing.runBenchmarks.func1

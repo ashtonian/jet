@@ -1,0 +1,192 @@
+{
+  "implementation": "7001b1e",
+  "production_files": {
+    "execution.go": {
+      "sha256": "49c31f80552052377440e0dc86af926e9c2a964c27b34e8d4cc6e0568ff33947",
+      "frozen_sha256": "49c31f80552052377440e0dc86af926e9c2a964c27b34e8d4cc6e0568ff33947",
+      "ordinary_comment_only_difference": false,
+      "frozen": "<CHECKOUT>/.git/admission-followup/direct-frozen/execution.go.txt"
+    },
+    "lex.go": {
+      "sha256": "0e608ce5456683db9a5acc98f4160f182074816a9658bf71483810d04dd866ca",
+      "frozen_sha256": "0e608ce5456683db9a5acc98f4160f182074816a9658bf71483810d04dd866ca",
+      "ordinary_comment_only_difference": false,
+      "frozen": "<CHECKOUT>/.git/admission-followup/direct-frozen/lex.go.txt"
+    },
+    "value_size.go": {
+      "sha256": "24556297dc316afb85e081497ae4e00779e7379c1c031b021ff6f221e46b72eb",
+      "frozen_sha256": "24556297dc316afb85e081497ae4e00779e7379c1c031b021ff6f221e46b72eb",
+      "ordinary_comment_only_difference": false,
+      "frozen": "<CHECKOUT>/.git/admission-followup/direct-frozen/value_size.go.txt"
+    },
+    "eval_errors.go": {
+      "sha256": "3b173066dece929a0cb4b0c8e801e3280caee1252e4c6d4303314199b96ce97c",
+      "frozen_sha256": "3b173066dece929a0cb4b0c8e801e3280caee1252e4c6d4303314199b96ce97c",
+      "ordinary_comment_only_difference": false,
+      "frozen": "<CHECKOUT>/.git/admission-followup/direct-frozen/eval_errors.go.txt"
+    },
+    "execution_context_legacy.go": {
+      "sha256": "12b27265ef7e301244dce375f7f403dcdc2bafe45da6e061f8e4f5dc058695c3",
+      "frozen_sha256": "12b27265ef7e301244dce375f7f403dcdc2bafe45da6e061f8e4f5dc058695c3",
+      "ordinary_comment_only_difference": false,
+      "frozen": "<CHECKOUT>/.git/admission-followup/direct-frozen/execution_context_legacy.go.txt"
+    },
+    "cache.go": {
+      "sha256": "4804fe7772a8f0b4aa91ad6cc547500dce2502f0af36306928d305aa69e96777",
+      "frozen_sha256": "4804fe7772a8f0b4aa91ad6cc547500dce2502f0af36306928d305aa69e96777",
+      "ordinary_comment_only_difference": false,
+      "frozen": "<CHECKOUT>/.git/admission-followup/direct-frozen/cache.go.txt"
+    },
+    "execution_output.go": {
+      "sha256": "4b9f1176d5eb4835783c32f81c9b44e84cab9049b8f5a46ab67e98c0aa29cb3b",
+      "frozen_sha256": "4b9f1176d5eb4835783c32f81c9b44e84cab9049b8f5a46ab67e98c0aa29cb3b",
+      "ordinary_comment_only_difference": false,
+      "frozen": "<CHECKOUT>/.git/admission-followup/direct-frozen/execution_output.go.txt"
+    },
+    "exec.go": {
+      "sha256": "89d9e48a0b828593d81d5636971156f074f0f16bb2d161343deaa1afbb596809",
+      "frozen_sha256": "89d9e48a0b828593d81d5636971156f074f0f16bb2d161343deaa1afbb596809",
+      "ordinary_comment_only_difference": false,
+      "frozen": "<CHECKOUT>/.git/admission-followup/defaults-exec.go.txt"
+    },
+    "eval_semantics.go": {
+      "sha256": "706994e129f3b6fc66e9f87a0f61ca2fc3e685a59a04171afcfcb5389b070f5a",
+      "frozen_sha256": "706994e129f3b6fc66e9f87a0f61ca2fc3e685a59a04171afcfcb5389b070f5a",
+      "ordinary_comment_only_difference": false,
+      "frozen": "<CHECKOUT>/.git/admission-followup/direct-frozen/eval_semantics.go.txt"
+    },
+    "input.go": {
+      "sha256": "7bfb4baba57f909794c1591e7048336581a7a4a79833febc9d311ba9c1c555e6",
+      "frozen_sha256": "45a84d4fe6a2495271f2dc762302fab9fd7221195ebc29072e0929d05fdf72fc",
+      "ordinary_comment_only_difference": true,
+      "frozen": "<CHECKOUT>/.git/admission-followup/direct-frozen/input.go.txt"
+    },
+    "ranger.go": {
+      "sha256": "29f7dfca52a6d7e629f68f5a50d0d05cabb99d9e008378b4be5496458c94f199",
+      "frozen_sha256": "29f7dfca52a6d7e629f68f5a50d0d05cabb99d9e008378b4be5496458c94f199",
+      "ordinary_comment_only_difference": false,
+      "frozen": "<CHECKOUT>/.git/admission-followup/direct-frozen/ranger.go.txt"
+    },
+    "loader.go": {
+      "sha256": "27e77d384dd6dfec17ef7f4f3d4a930b9b5f6a65d39735b6b340342bde624728",
+      "frozen_sha256": "27e77d384dd6dfec17ef7f4f3d4a930b9b5f6a65d39735b6b340342bde624728",
+      "ordinary_comment_only_difference": false,
+      "frozen": "<CHECKOUT>/.git/admission-followup/direct-frozen/loader.go.txt"
+    },
+    "compile.go": {
+      "sha256": "93b8f5f599ee5ab31c4c766d33a3dbc5fe08009d90f169aabbc86b1f9fe21fd0",
+      "frozen_sha256": "93b8f5f599ee5ab31c4c766d33a3dbc5fe08009d90f169aabbc86b1f9fe21fd0",
+      "ordinary_comment_only_difference": false,
+      "frozen": "<CHECKOUT>/.git/admission-followup/direct-frozen/compile.go.txt"
+    },
+    "execution_numeric.go": {
+      "sha256": "169f6eb9abf183d999c3176539fbf8eb6dd9ef8f4b5adf4f899ef1b58035782c",
+      "frozen_sha256": "169f6eb9abf183d999c3176539fbf8eb6dd9ef8f4b5adf4f899ef1b58035782c",
+      "ordinary_comment_only_difference": false,
+      "frozen": "<CHECKOUT>/.git/admission-followup/direct-frozen/execution_numeric.go.txt"
+    },
+    "default.go": {
+      "sha256": "cca3397e517bb4f1dae29473bace19909ac527a0e978be641f0d562236998efa",
+      "frozen_sha256": "cca3397e517bb4f1dae29473bace19909ac527a0e978be641f0d562236998efa",
+      "ordinary_comment_only_difference": false,
+      "frozen": "<CHECKOUT>/.git/admission-followup/direct-frozen/default.go.txt"
+    },
+    "execution_values.go": {
+      "sha256": "d35be2c969f5957ae4b55684ca261e4964022c4b45d99eeb0e98d08b6cd01493",
+      "frozen_sha256": "d35be2c969f5957ae4b55684ca261e4964022c4b45d99eeb0e98d08b6cd01493",
+      "ordinary_comment_only_difference": false,
+      "frozen": "<CHECKOUT>/.git/admission-followup/direct-frozen/execution_values.go.txt"
+    },
+    "dump.go": {
+      "sha256": "f2400ea5a6cb879415f1d4bf68653a0304d38422f286751f41eb76ecd957a385",
+      "frozen_sha256": "f2400ea5a6cb879415f1d4bf68653a0304d38422f286751f41eb76ecd957a385",
+      "ordinary_comment_only_difference": false,
+      "frozen": "<CHECKOUT>/.git/admission-followup/direct-frozen/dump.go.txt"
+    },
+    "builtin_json.go": {
+      "sha256": "fef57bc5ac1ca10dd752eff086f87fda6c8a8cb11d42a39d2ecd6c9bb5d83a84",
+      "frozen_sha256": "fef57bc5ac1ca10dd752eff086f87fda6c8a8cb11d42a39d2ecd6c9bb5d83a84",
+      "ordinary_comment_only_difference": false,
+      "frozen": "<CHECKOUT>/.git/admission-followup/direct-frozen/builtin_json.go.txt"
+    },
+    "template_bundle.go": {
+      "sha256": "061bd1139eaa856826754de2bc0f3283e1d45492c0957a22b5220ce1d25623f3",
+      "frozen_sha256": "061bd1139eaa856826754de2bc0f3283e1d45492c0957a22b5220ce1d25623f3",
+      "ordinary_comment_only_difference": false,
+      "frozen": "<CHECKOUT>/.git/admission-followup/direct-frozen/template_bundle.go.txt"
+    },
+    "func.go": {
+      "sha256": "bf5a266f1e0b9cdbaf3c61cdce632ea170c2622b5f6189aebb89d8c50e546bc6",
+      "frozen_sha256": "bf5a266f1e0b9cdbaf3c61cdce632ea170c2622b5f6189aebb89d8c50e546bc6",
+      "ordinary_comment_only_difference": false,
+      "frozen": "<CHECKOUT>/.git/admission-followup/direct-frozen/func.go.txt"
+    },
+    "constructors.go": {
+      "sha256": "7cacb9d23bab67f247e4f6af442ef5c2fb72188f0c22f54a99caf30701c60e1e",
+      "frozen_sha256": "7cacb9d23bab67f247e4f6af442ef5c2fb72188f0c22f54a99caf30701c60e1e",
+      "ordinary_comment_only_difference": false,
+      "frozen": "<CHECKOUT>/.git/admission-followup/direct-frozen/constructors.go.txt"
+    },
+    "builtin_strings.go": {
+      "sha256": "37e2f4d0a029268c8ffd4f816dd004f4ff9065dfe398478726f0e0ad104ffa04",
+      "frozen_sha256": "37e2f4d0a029268c8ffd4f816dd004f4ff9065dfe398478726f0e0ad104ffa04",
+      "ordinary_comment_only_difference": false,
+      "frozen": "<CHECKOUT>/.git/admission-followup/direct-frozen/builtin_strings.go.txt"
+    },
+    "value_encoding_size.go": {
+      "sha256": "d0832c7126e5dbb3b5904994be8701ecab85ef0a980af768a84b5556a9644fdd",
+      "frozen_sha256": "d0832c7126e5dbb3b5904994be8701ecab85ef0a980af768a84b5556a9644fdd",
+      "ordinary_comment_only_difference": false,
+      "frozen": "<CHECKOUT>/.git/admission-followup/direct-frozen/value_encoding_size.go.txt"
+    },
+    "set.go": {
+      "sha256": "a04c02a62fdc3b1ec9aa3b731cfec04302e02d582bd96526f765319219a15f50",
+      "frozen_sha256": "a04c02a62fdc3b1ec9aa3b731cfec04302e02d582bd96526f765319219a15f50",
+      "ordinary_comment_only_difference": false,
+      "frozen": "<CHECKOUT>/.git/admission-followup/direct-frozen/set.go.txt"
+    },
+    "execution_context_go120.go": {
+      "sha256": "51094ab7d81ca93404fbaadd192696d2cb8fd70811879197df92b9764e1c666c",
+      "frozen_sha256": "51094ab7d81ca93404fbaadd192696d2cb8fd70811879197df92b9764e1c666c",
+      "ordinary_comment_only_difference": false,
+      "frozen": "<CHECKOUT>/.git/admission-followup/direct-frozen/execution_context_go120.go.txt"
+    },
+    "execution_print.go": {
+      "sha256": "92b4c21e0c04c9e6ef91de0df32f6ced43436873c09c15453c36ac22720e6337",
+      "frozen_sha256": "92b4c21e0c04c9e6ef91de0df32f6ced43436873c09c15453c36ac22720e6337",
+      "ordinary_comment_only_difference": false,
+      "frozen": "<CHECKOUT>/.git/admission-followup/direct-frozen/execution_print.go.txt"
+    },
+    "node.go": {
+      "sha256": "63258a86c9b8ab199ce6c20775805166b879796a9dbd5a7a7866eba016260e7b",
+      "frozen_sha256": "63258a86c9b8ab199ce6c20775805166b879796a9dbd5a7a7866eba016260e7b",
+      "ordinary_comment_only_difference": false,
+      "frozen": "<CHECKOUT>/.git/admission-followup/direct-frozen/node.go.txt"
+    },
+    "parse.go": {
+      "sha256": "372ce7885bb94bdf58f1ede1be5f9a6590f748829941dfd59bf0b5c550deb154",
+      "frozen_sha256": "372ce7885bb94bdf58f1ede1be5f9a6590f748829941dfd59bf0b5c550deb154",
+      "ordinary_comment_only_difference": false,
+      "frozen": "<CHECKOUT>/.git/admission-followup/direct-frozen/parse.go.txt"
+    },
+    "restricted.go": {
+      "sha256": "72e4dd56c4db4ac1af3428a057471fa073ac8f3bd842c82b3d0da274d97637e3",
+      "frozen_sha256": "72e4dd56c4db4ac1af3428a057471fa073ac8f3bd842c82b3d0da274d97637e3",
+      "ordinary_comment_only_difference": false,
+      "frozen": "<CHECKOUT>/.git/admission-followup/direct-frozen/restricted.go.txt"
+    },
+    "eval.go": {
+      "sha256": "a6a0d75ca85d1514c975ad9e8bdf1760f53d2ef7a8be3e8c6798bc3968a824fc",
+      "frozen_sha256": "a6a0d75ca85d1514c975ad9e8bdf1760f53d2ef7a8be3e8c6798bc3968a824fc",
+      "ordinary_comment_only_difference": false,
+      "frozen": "<CHECKOUT>/.git/admission-followup/direct-frozen/eval.go.txt"
+    },
+    "builtin.go": {
+      "sha256": "03a805659b5fce05dd7e27a93f327a68f60d2c683f0324bcf08ae3cf3574d99e",
+      "frozen_sha256": "03a805659b5fce05dd7e27a93f327a68f60d2c683f0324bcf08ae3cf3574d99e",
+      "ordinary_comment_only_difference": false,
+      "frozen": "<CHECKOUT>/.git/admission-followup/direct-frozen/builtin.go.txt"
+    }
+  },
+  "test_difference": "Only the later deterministic cancellation test was added after the benchmark sources were frozen; validation-inputs.json records its exact final source. Executable production source matches every frozen selected file; input.go has one ordinary-comment clarification explicitly checked by exact normalization."
+}

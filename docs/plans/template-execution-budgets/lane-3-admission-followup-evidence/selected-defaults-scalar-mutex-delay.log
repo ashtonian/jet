@@ -1,0 +1,19 @@
+File: defaults.test
+Type: delay
+Time: 2026-11-08 04:14:04 CST
+Showing nodes accounting for 26.08us, 100% of 26.08us total
+      flat  flat%   sum%        cum   cum%
+   26.08us   100%   100%    26.08us   100%  runtime.unlock (partial-inline)
+         0     0%   100%     0.25us  0.96%  runtime.(*mheap).freeSpan (inline)
+         0     0%   100%     0.25us  0.96%  runtime.(*mheap).freeSpan.func1
+         0     0%   100%     0.25us  0.96%  runtime.(*sweepLocked).sweep
+         0     0%   100%     0.25us  0.96%  runtime.bgsweep
+         0     0%   100%    18.92us 72.52%  runtime.forEachP (inline)
+         0     0%   100%    18.92us 72.52%  runtime.forEachP.func1
+         0     0%   100%    18.92us 72.52%  runtime.forEachPInternal
+         0     0%   100%    25.83us 99.04%  runtime.gcBgMarkWorker
+         0     0%   100%    25.83us 99.04%  runtime.gcMarkDone
+         0     0%   100%     6.92us 26.52%  runtime.gcMarkDone.func2
+         0     0%   100%     6.92us 26.52%  runtime.stopTheWorldWithSema
+         0     0%   100%     0.25us  0.96%  runtime.sweepone
+         0     0%   100%    26.08us   100%  runtime.systemstack

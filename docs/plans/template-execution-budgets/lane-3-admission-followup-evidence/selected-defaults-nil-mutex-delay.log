@@ -1,0 +1,31 @@
+File: defaults.test
+Type: delay
+Time: 2026-11-08 04:13:59 CST
+Showing nodes accounting for 22.38us, 100% of 22.38us total
+      flat  flat%   sum%        cum   cum%
+   22.38us   100%   100%    22.38us   100%  runtime.unlock (partial-inline)
+         0     0%   100%     3.08us 13.78%  runtime.(*mheap).freeSpan (inline)
+         0     0%   100%     3.08us 13.78%  runtime.(*mheap).freeSpan.func1
+         0     0%   100%     3.08us 13.78%  runtime.(*sweepLocked).sweep
+         0     0%   100%     3.08us 13.78%  runtime.GC
+         0     0%   100%     8.29us 37.06%  runtime.allocm
+         0     0%   100%       11us 49.16%  runtime.forEachP (inline)
+         0     0%   100%       11us 49.16%  runtime.forEachP.func1
+         0     0%   100%       11us 49.16%  runtime.forEachPInternal
+         0     0%   100%    19.29us 86.22%  runtime.gcBgMarkWorker
+         0     0%   100%     8.29us 37.06%  runtime.gcBgMarkWorker.func2
+         0     0%   100%     8.29us 37.06%  runtime.gcDrain
+         0     0%   100%     8.29us 37.06%  runtime.gcDrainMarkWorkerIdle (inline)
+         0     0%   100%       11us 49.16%  runtime.gcMarkDone
+         0     0%   100%     8.29us 37.06%  runtime.markroot
+         0     0%   100%     8.29us 37.06%  runtime.markroot.func1
+         0     0%   100%     8.29us 37.06%  runtime.mcommoninit
+         0     0%   100%     8.29us 37.06%  runtime.newm
+         0     0%   100%     8.29us 37.06%  runtime.ready
+         0     0%   100%     8.29us 37.06%  runtime.resumeG
+         0     0%   100%     8.29us 37.06%  runtime.startm
+         0     0%   100%     3.08us 13.78%  runtime.sweepone
+         0     0%   100%    22.38us   100%  runtime.systemstack
+         0     0%   100%     8.29us 37.06%  runtime.wakep
+         0     0%   100%     3.08us 13.78%  testing.(*B).launch
+         0     0%   100%     3.08us 13.78%  testing.(*B).runN

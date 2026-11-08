@@ -1,0 +1,80 @@
+File: base.test
+Type: delay
+Time: 2026-11-08 04:13:55 CST
+Showing nodes accounting for 5913291.26us, 100% of 5913291.26us total
+----------------------------------------------------------+-------------
+      flat  flat%   sum%        cum   cum%   calls calls% + context 	 	 
+----------------------------------------------------------+-------------
+                                       106857.85us   100% |   sync.(*Pool).pinSlow
+106489.02us  1.80%  1.80% 106857.85us  1.81%                | sync.(*Mutex).Unlock
+                                          368.82us  0.35% |   internal/sync.(*Mutex).Unlock (inline)
+----------------------------------------------------------+-------------
+                                       901063.76us   100% |   github.com/CloudyKit/jet/v6_test.init.0.func5
+         0     0%  1.80% 901063.76us 15.24%                | github.com/CloudyKit/jet/v6.(*Template).RenderRestrictedContext
+                                       576050.72us 63.93% |   github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+                                       325013.04us 36.07% |   runtime.mallocgcSmallScanNoHeaderSC6
+----------------------------------------------------------+-------------
+                                           98.42us   100% |   sync.(*Mutex).Lock (inline)
+         0     0%  1.80%    98.42us 0.0017%                | internal/sync.(*Mutex).Lock
+                                           98.42us   100% |   internal/sync.(*Mutex).lockSlow
+----------------------------------------------------------+-------------
+                                          368.82us   100% |   sync.(*Mutex).Unlock (inline)
+         0     0%  1.80%   368.82us 0.0062%                | internal/sync.(*Mutex).Unlock
+                                          368.82us   100% |   internal/sync.(*Mutex).unlockSlow
+----------------------------------------------------------+-------------
+                                           98.42us   100% |   internal/sync.(*Mutex).Lock
+         0     0%  1.80%    98.42us 0.0017%                | internal/sync.(*Mutex).lockSlow
+                                           98.42us   100% |   internal/sync.runtime_SemacquireMutex
+----------------------------------------------------------+-------------
+                                          368.82us   100% |   internal/sync.(*Mutex).Unlock
+         0     0%  1.80%   368.82us 0.0062%                | internal/sync.(*Mutex).unlockSlow
+                                          368.82us   100% |   internal/sync.runtime_Semrelease
+----------------------------------------------------------+-------------
+                                           98.42us   100% |   internal/sync.(*Mutex).lockSlow
+         0     0%  1.80%    98.42us 0.0017%                | internal/sync.runtime_SemacquireMutex
+                                           98.42us   100% |   runtime.semacquire1
+----------------------------------------------------------+-------------
+                                          368.82us   100% |   internal/sync.(*Mutex).unlockSlow
+         0     0%  1.80%   368.82us 0.0062%                | internal/sync.runtime_Semrelease
+                                          368.82us   100% |   runtime.semrelease1
+----------------------------------------------------------+-------------
+                                        47804.38us   100% |   runtime.mcall
+         0     0%  1.80% 47804.38us  0.81%                | runtime.asyncPreempt2.func1
+                                        47804.38us   100% |   runtime.gopreempt_m (inline)
+----------------------------------------------------------+-------------
+                                           98.42us   100% |   sync.(*Pool).pinSlow (inline)
+         0     0%  1.80%    98.42us 0.0017%                | sync.(*Mutex).Lock
+                                           98.42us   100% |   internal/sync.(*Mutex).Lock (inline)
+----------------------------------------------------------+-------------
+                                        39761.47us 52.38% |   github.com/CloudyKit/fastprinter.PrintString
+                                        21224.52us 27.96% |   github.com/CloudyKit/jet/v6.borrowInputVars
+                                        14928.22us 19.66% |   github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0%  1.80% 75914.22us  1.28%                | sync.(*Pool).Get
+                                        73605.87us 96.96% |   sync.(*Pool).pin
+                                         2124.72us  2.80% |   github.com/CloudyKit/fastprinter.newByteSliceBufferPool.func1
+                                          119.97us  0.16% |   github.com/CloudyKit/jet/v6.init.func2
+                                           63.66us 0.084% |   github.com/CloudyKit/jet/v6.init.func5
+----------------------------------------------------------+-------------
+                                        18568.01us 52.75% |   github.com/CloudyKit/jet/v6.(*Runtime).recover
+                                        15389.72us 43.72% |   github.com/CloudyKit/jet/v6.releaseInputVars
+                                         1243.45us  3.53% |   github.com/CloudyKit/fastprinter.PrintString
+         0     0%  1.80% 35201.18us   0.6%                | sync.(*Pool).Put
+                                        33393.72us 94.87% |   sync.(*Pool).pin
+                                         1807.45us  5.13% |   sync.(*poolChain).pushHead
+----------------------------------------------------------+-------------
+                                        73605.87us 68.79% |   sync.(*Pool).Get
+                                        33393.72us 31.21% |   sync.(*Pool).Put
+         0     0%  1.80% 106999.59us  1.81%                | sync.(*Pool).pin
+                                       106999.59us   100% |   sync.(*Pool).pinSlow
+----------------------------------------------------------+-------------
+                                       106999.59us   100% |   sync.(*Pool).pin
+         0     0%  1.80% 106999.59us  1.81%                | sync.(*Pool).pinSlow
+                                       106857.85us 99.87% |   sync.(*Mutex).Unlock
+                                           98.42us 0.092% |   sync.(*Mutex).Lock (inline)
+                                           43.33us  0.04% |   runtime.GOMAXPROCS
+----------------------------------------------------------+-------------
+                                         1807.45us   100% |   sync.(*Pool).Put
+         0     0%  1.80%  1807.45us 0.031%                | sync.(*poolChain).pushHead
+                                          964.22us 53.35% |   runtime.mallocgcSmallScanNoHeaderSC5
+                                          843.23us 46.65% |   runtime.makeslice
+----------------------------------------------------------+-------------

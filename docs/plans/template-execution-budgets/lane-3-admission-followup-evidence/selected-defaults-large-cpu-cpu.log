@@ -1,0 +1,48 @@
+File: defaults.test
+Type: cpu
+Time: 2026-11-08 04:14:08 CST
+Duration: 3.93s, Total samples = 3.86s (98.34%)
+Showing nodes accounting for 3.33s, 86.27% of 3.86s total
+Dropped 69 nodes (cum <= 0.02s)
+Showing top 40 nodes out of 138
+      flat  flat%   sum%        cum   cum%
+     1.25s 32.38% 32.38%      1.25s 32.38%  runtime.kevent
+     0.17s  4.40% 36.79%      0.19s  4.92%  context.(*cancelCtx).Err
+     0.17s  4.40% 41.19%      0.17s  4.40%  runtime.pthread_kill
+     0.15s  3.89% 45.08%      0.15s  3.89%  runtime.usleep
+     0.11s  2.85% 47.93%      0.30s  7.77%  github.com/CloudyKit/jet/v6.(*inputAdmission).step
+     0.11s  2.85% 50.78%      0.11s  2.85%  runtime.madvise
+     0.11s  2.85% 53.63%      0.11s  2.85%  runtime.pthread_cond_wait
+     0.08s  2.07% 55.70%      0.23s  5.96%  github.com/CloudyKit/jet/v6.inputHasMethods
+     0.08s  2.07% 57.77%      0.10s  2.59%  internal/runtime/maps.(*Iter).Next
+     0.08s  2.07% 59.84%      0.12s  3.11%  runtime.mallocgcSmallScanNoHeader
+     0.07s  1.81% 61.66%      1.73s 44.82%  github.com/CloudyKit/jet/v6.(*inputAdmission).cloneContainer
+     0.07s  1.81% 63.47%      0.18s  4.66%  github.com/CloudyKit/jet/v6.(*inputAdmission).enterContainer
+     0.05s  1.30% 64.77%      0.14s  3.63%  github.com/CloudyKit/jet/v6.(*inputAdmission).reserveBytes
+     0.05s  1.30% 66.06%      0.05s  1.30%  internal/abi.Name.Name
+     0.05s  1.30% 67.36%      0.17s  4.40%  reflect.MakeSlice
+     0.05s  1.30% 68.65%      0.06s  1.55%  type:.eq.M8IM16
+     0.04s  1.04% 69.69%      1.74s 45.08%  github.com/CloudyKit/jet/v6.(*inputAdmission).clone
+     0.04s  1.04% 70.73%      0.04s  1.04%  internal/abi.(*Type).Kind (inline)
+     0.04s  1.04% 71.76%      0.04s  1.04%  reflect.(*rtype).Kind (inline)
+     0.04s  1.04% 72.80%      0.10s  2.59%  reflect.(*rtype).PkgPath
+     0.04s  1.04% 73.83%      0.05s  1.30%  runtime.mallocgcSmallScanNoHeaderSC4
+     0.03s  0.78% 74.61%      0.03s  0.78%  github.com/CloudyKit/jet/v6.(*inputAdmission).leaveContainer
+     0.03s  0.78% 75.39%      0.07s  1.81%  reflect.Value.Elem
+     0.03s  0.78% 76.17%      0.03s  0.78%  reflect.Value.Type (inline)
+     0.03s  0.78% 76.94%      0.03s  0.78%  reflect.flag.ro (inline)
+     0.03s  0.78% 77.72%      0.04s  1.04%  reflect.unpackEface (inline)
+     0.03s  0.78% 78.50%      0.06s  1.55%  runtime.mallocgcSmallScanNoHeaderSC5
+     0.03s  0.78% 79.27%      0.17s  4.40%  runtime.mapassign_faststr
+     0.03s  0.78% 80.05%      0.03s  0.78%  runtime.pthread_cond_timedwait_relative_np
+     0.03s  0.78% 80.83%      0.03s  0.78%  runtime.tryDeferToSpanScan
+     0.03s  0.78% 81.61%      0.03s  0.78%  sync.(*Pool).pin
+     0.02s  0.52% 82.12%      0.02s  0.52%  internal/abi.(*Type).IsDirectIface (inline)
+     0.02s  0.52% 82.64%      0.02s  0.52%  internal/abi.(*Type).Uncommon (inline)
+     0.02s  0.52% 83.16%      0.02s  0.52%  internal/chacha8rand.block
+     0.02s  0.52% 83.68%      0.05s  1.30%  reflect.Value.Index
+     0.02s  0.52% 84.20%      0.11s  2.85%  reflect.Value.Set
+     0.02s  0.52% 84.72%      0.04s  1.04%  reflect.elem
+     0.02s  0.52% 85.23%      0.04s  1.04%  reflect.valueInterface
+     0.02s  0.52% 85.75%      0.05s  1.30%  runtime.(*mcache).refill
+     0.02s  0.52% 86.27%      0.02s  0.52%  runtime.growslice

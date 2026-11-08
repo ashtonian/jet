@@ -1,0 +1,32 @@
+File: defaults.test
+Type: alloc_space
+Time: 2026-11-08 04:14:12 CST
+Showing nodes accounting for 3467.89MB, 100% of 3467.89MB total
+----------------------------------------------------------+-------------
+      flat  flat%   sum%        cum   cum%   calls calls% + context 	 	 
+----------------------------------------------------------+-------------
+                                         3280.48MB   100% |   github.com/CloudyKit/jet/v6.(*inputAdmission).clone
+ 2616.95MB 75.46% 75.46%  3280.48MB 94.60%                | github.com/CloudyKit/jet/v6.(*inputAdmission).cloneContainer
+                                            2556MB 77.92% |   github.com/CloudyKit/jet/v6.(*inputAdmission).clone
+                                          571.02MB 17.41% |   reflect.MakeSlice
+                                           92.51MB  2.82% |   github.com/CloudyKit/jet/v6.(*inputAdmission).enterContainer
+----------------------------------------------------------+-------------
+                                           92.51MB   100% |   github.com/CloudyKit/jet/v6.(*inputAdmission).cloneContainer
+   92.51MB  2.67% 78.13%    92.51MB  2.67%                | github.com/CloudyKit/jet/v6.(*inputAdmission).enterContainer
+----------------------------------------------------------+-------------
+                                         3375.98MB   100% |   github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0% 78.13%  3375.98MB 97.35%                | github.com/CloudyKit/jet/v6.(*Template).execute
+                                         3280.48MB 97.17% |   github.com/CloudyKit/jet/v6.admitInputScopesInto
+                                           93.01MB  2.75% |   github.com/CloudyKit/jet/v6.(*Runtime).executeList
+                                               2MB 0.059% |   bytes.(*Buffer).String (inline)
+                                            0.50MB 0.015% |   github.com/CloudyKit/jet/v6.(*Runtime).recover
+----------------------------------------------------------+-------------
+                                         3280.48MB   100% |   github.com/CloudyKit/jet/v6.admitInputScopesInto
+                                            2556MB 77.92% |   github.com/CloudyKit/jet/v6.(*inputAdmission).cloneContainer
+         0     0% 78.13%  3280.48MB 94.60%                | github.com/CloudyKit/jet/v6.(*inputAdmission).clone
+                                         3280.48MB   100% |   github.com/CloudyKit/jet/v6.(*inputAdmission).cloneContainer
+----------------------------------------------------------+-------------
+                                         3280.48MB   100% |   github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0% 78.13%  3280.48MB 94.60%                | github.com/CloudyKit/jet/v6.admitInputScopesInto
+                                         3280.48MB   100% |   github.com/CloudyKit/jet/v6.(*inputAdmission).clone
+----------------------------------------------------------+-------------
