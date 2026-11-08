@@ -29,3 +29,15 @@ J02/J03 may combine if separating them weakens the public contract. J04/J05 may 
 5. Benchmarks and profile explanation when relevant; links to direct prerequisites.
 
 No internal assignment history, generated-by text or assistant credits. Do not substitute a large checklist for explaining the change. Keep a concise coverage table where the security boundary benefits from it. Open upstream submissions only after their code and evidence exist; this planning session creates no upstream issue/PR or maintainer notification.
+
+## Lane 3 fork review state (2026-11-07)
+
+The owner has superseded upstream-submission planning: **use ashtonian/jet only; do not open new upstream PRs**. Existing third-party #236 was consumed unchanged, not resubmitted.
+
+| Scope | Fork PR | Exact review head | Exact base |
+| --- | --- | --- | --- |
+| Pull scanner | [#5](https://github.com/ashtonian/jet/pull/5) | `6cf13002e0a9fcf0548b8a426c428802c7890553` | `c9ec08935ddf15eaf9328128e008faf0bef5e079` |
+| Compilation admission | [#6](https://github.com/ashtonian/jet/pull/6) | `5e5aa42662d9f6fc5372b7809cd03c6ddbb48486` | `6cf13002e0a9fcf0548b8a426c428802c7890553` |
+| Shared runtime compilation | [#7](https://github.com/ashtonian/jet/pull/7) | `98f45c6b1d87b9fb8941291c94d51441c3a5b4b9` | `c422a0215ed40cc17d2282688d3626a1014ac7d7` |
+
+The combined runtime base includes explicit foundation `d2f089ce4f617dd512c7eee6b5d825f2c0b57914`, compiler #6 and the compatibility workflow. Normal/race/minimum-Go CI passes on the canonical and clean review candidates; [lane handoff and receipts](lane-3-admission.md) provide controlled baselines, tested inputs and remaining gates. The reviews exclude internal task documents, private admission preparation and fork packaging. No PR was merged. Restricted selection remains disabled pending J05's accepted cost/binding implementation and C01–C07 enforcement.

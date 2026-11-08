@@ -1,0 +1,31 @@
+gate-lock: held by pid 13769 on studio, "jet-lane3-cycle-baseline b0bbc07 in $CHECKOUT", since 2026-11-07T23:00:52Z, 2 of 6 focused cores
+--- FAIL: TestCyclicTemplateDependencies (0.01s)
+    --- FAIL: TestCyclicTemplateDependencies/self_import/development=false (0.00s)
+        set_test.go:113: expected cyclic dependency error, got template: /a.jet:1: template: /a.jet:1: template: /a.jet:1: template: /a.jet:1: template: /a.jet:1: template: /a.jet:1: template: /a.jet:1: template: /a.jet:1: too many template reads
+    --- FAIL: TestCyclicTemplateDependencies/mutual_import/development=false (0.00s)
+        set_test.go:113: expected cyclic dependency error, got template: /a.jet:1: template: /b.jet:1: template: /a.jet:1: template: /b.jet:1: template: /a.jet:1: template: /b.jet:1: template: /a.jet:1: template: /b.jet:1: too many template reads
+    --- FAIL: TestCyclicTemplateDependencies/self_extends/development=false (0.01s)
+        set_test.go:113: expected cyclic dependency error, got template: /a.jet:1: template: /a.jet:1: template: /a.jet:1: template: /a.jet:1: template: /a.jet:1: template: /a.jet:1: template: /a.jet:1: template: /a.jet:1: too many template reads
+    --- FAIL: TestCyclicTemplateDependencies/mutual_extends/development=false (0.00s)
+        set_test.go:113: expected cyclic dependency error, got template: /a.jet:1: template: /b.jet:1: template: /a.jet:1: template: /b.jet:1: template: /a.jet:1: template: /b.jet:1: template: /a.jet:1: template: /b.jet:1: too many template reads
+    --- FAIL: TestCyclicTemplateDependencies/mixed/development=false (0.00s)
+        set_test.go:113: expected cyclic dependency error, got template: /a.jet:1: template: /b.jet:1: template: /a.jet:1: template: /b.jet:1: template: /a.jet:1: template: /b.jet:1: template: /a.jet:1: template: /b.jet:1: too many template reads
+    --- FAIL: TestCyclicTemplateDependencies/extension_alias/development=false (0.00s)
+        set_test.go:113: expected cyclic dependency error, got template: /a.jet:1: template: /b.jet:1: template: /a.jet:1: template: /b.jet:1: template: /a.jet:1: template: /b.jet:1: template: /a.jet:1: template: /b.jet:1: too many template reads
+    --- FAIL: TestCyclicTemplateDependencies/self_import/development=true (0.00s)
+        set_test.go:113: expected cyclic dependency error, got template: /a.jet:1: template: /a.jet:1: template: /a.jet:1: template: /a.jet:1: template: /a.jet:1: template: /a.jet:1: template: /a.jet:1: template: /a.jet:1: too many template reads
+    --- FAIL: TestCyclicTemplateDependencies/mutual_import/development=true (0.00s)
+        set_test.go:113: expected cyclic dependency error, got template: /a.jet:1: template: /b.jet:1: template: /a.jet:1: template: /b.jet:1: template: /a.jet:1: template: /b.jet:1: template: /a.jet:1: template: /b.jet:1: too many template reads
+    --- FAIL: TestCyclicTemplateDependencies/self_extends/development=true (0.00s)
+        set_test.go:113: expected cyclic dependency error, got template: /a.jet:1: template: /a.jet:1: template: /a.jet:1: template: /a.jet:1: template: /a.jet:1: template: /a.jet:1: template: /a.jet:1: template: /a.jet:1: too many template reads
+    --- FAIL: TestCyclicTemplateDependencies/mutual_extends/development=true (0.00s)
+        set_test.go:113: expected cyclic dependency error, got template: /a.jet:1: template: /b.jet:1: template: /a.jet:1: template: /b.jet:1: template: /a.jet:1: template: /b.jet:1: template: /a.jet:1: template: /b.jet:1: too many template reads
+    --- FAIL: TestCyclicTemplateDependencies/mixed/development=true (0.00s)
+        set_test.go:113: expected cyclic dependency error, got template: /a.jet:1: template: /b.jet:1: template: /a.jet:1: template: /b.jet:1: template: /a.jet:1: template: /b.jet:1: template: /a.jet:1: template: /b.jet:1: too many template reads
+    --- FAIL: TestCyclicTemplateDependencies/extension_alias/development=true (0.00s)
+        set_test.go:113: expected cyclic dependency error, got template: /a.jet:1: template: /b.jet:1: template: /a.jet:1: template: /b.jet:1: template: /a.jet:1: template: /b.jet:1: template: /a.jet:1: template: /b.jet:1: too many template reads
+--- FAIL: TestParseCyclicTemplateDependencies (0.00s)
+    set_test.go:156: expected cyclic dependency error, got template: /a.jet:1: template: /b.jet:1: template: /a.jet:1: template: /b.jet:1: template: /a.jet:1: template: /b.jet:1: template: /a.jet:1: template: /b.jet:1: template: /a.jet:1: too many template reads
+FAIL
+FAIL	github.com/CloudyKit/jet/v6	0.248s
+FAIL

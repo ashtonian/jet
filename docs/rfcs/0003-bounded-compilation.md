@@ -2,7 +2,7 @@
 
 | Field | Value |
 | --- | --- |
-| Status | Proposed; implementation not started |
+| Status | Implemented in fork; evidence in Lane 3 handoff |
 | Date | 2026-11-07 |
 | Owner | Lane 3 |
 | Depends on | Upstream PR #236 review; RFC-0001 for runtime-triggered compilation budget |
@@ -22,6 +22,7 @@ type ParseOptions struct {
     MaxSourceBytes int64
     MaxTotalSourceBytes int64
     MaxNodes uint64
+    MaxSteps uint64
     MaxDepth int
     MaxTemplates uint64
 }
@@ -31,6 +32,8 @@ func (s *Set) GetTemplateContext(ctx context.Context, name string, opts ParseOpt
 ```
 
 Zero is unlimited at the low-level boundary; negatives are invalid. Source bytes bound each file; total bytes and template count bound the dependency graph admitted for one operation; nodes bound AST construction; depth bounds parser recursion and active dependency nesting. Define counts for repeated imports and cache hits explicitly: charge the admitted graph's unique canonical templates once for size/count, charge every traversal for work, and track active ancestors separately for cycle detection. Development mode repeated parsing also charges actual work.
+
+Parser work is also bounded by `MaxSteps`: each scanned byte, consumed token, AST construction and dependency/cache visit consumes work. This is separate from unique graph size: development-mode diamonds can reparse the same source exponentially without increasing unique bytes or template count. Cache reuse avoids scan work but still charges graph visits and admitted AST nodes. Step totals are implementation details, not stable billing units.
 
 Validate before source copying, token/AST allocation and recursive descent. Bound error diagnostics (including line-number lookup) to prevent huge messages or repeated whole-source scans. Check cancellation in long token scans and parsing loops, not only between complete tokens. Runtime loading consumes the render's remaining compilation allowance and deadline; `exec` cannot reset it.
 

@@ -2,7 +2,7 @@
 
 | Field | Value |
 | --- | --- |
-| Status | Proposed; implementation not started |
+| Status | Not enabled; admission preparation implemented, J05 acceptance pending |
 | Date | 2026-11-07 |
 | Owner | Lane 3; Lane 1 owns evaluator hooks, Lane 2 owns builtin implementations |
 | Depends on | RFCs 0001–0003 before any sandbox claim |
@@ -58,3 +58,9 @@ Enumerate all invocation and implicit conversion sites. Maintain tests for funct
 Do not expose partially implemented restricted mode as safe. A trusted `ExecuteContext` release can precede this RFC with explicit exclusions; Karsto's tenant adoption cannot. A block in arbitrary host code still requires OS process isolation for hard CPU/memory/crash containment. Such isolation also requires handling callbacks and I/O outside the process boundary deliberately.
 
 Acceptance: [C01–C07](../plans/template-execution-budgets/validation.md) and a completed, source-linked capability inventory signed off in the PR. A policy document alone is not enforcement.
+
+## Implementation gate
+
+The fork has private input-snapshot and immutable bundle helpers plus a [source capability inventory](../plans/template-execution-budgets/lane-3-capabilities.md). These do not select or enforce a restricted rendering profile. Input preparation supports method-free primitive values, strings, arrays/slices (including byte-slice snapshots) and string-keyed maps. Unsupported keys, structs/pointers, methods, functions, channels, unsafe values and cycles are denied; shared acyclic children consume admission per copied occurrence. Caller synchronization is required during admission. Bundle construction copies the namespace under positive source/total/template caps and a 1,024-byte name ceiling.
+
+J08 waits for the accepted builtin/value contract, including minimum-Go JSON bounds and immutable audited descriptor identity. No public callback registration grants approval. The owner's current direction is fork-only development/review; no new upstream PR is authorized. Compilation and execution budgets remain useful independently and do not establish a sandbox.

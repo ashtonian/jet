@@ -1,0 +1,6 @@
+gate-lock: held by pid 43556 on studio, "jet-lane3-drain-syntax-baseline 4d419fd in $CHECKOUT", since 2026-11-07T23:04:11Z, 2 of 6 focused cores
+--- FAIL: TestLexerStopsAtParseError (0.00s)
+    lex_lifecycle_test.go:23: scanner consumed source beyond the syntax error
+FAIL
+FAIL	github.com/CloudyKit/jet/v6	0.220s
+FAIL

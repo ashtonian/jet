@@ -1,0 +1,2 @@
+gate-lock: held by pid 24433 on studio, "jet-lane3-compile-edge 9432a63 in $CHECKOUT", since 2026-11-07T23:31:42Z, 2 of 6 focused cores
+ok  	github.com/CloudyKit/jet/v6	1.344s

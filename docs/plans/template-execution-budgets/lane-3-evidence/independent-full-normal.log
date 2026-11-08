@@ -1,0 +1,9 @@
+ok  	github.com/CloudyKit/jet/v6	1.084s
+?   	github.com/CloudyKit/jet/v6/examples/asset_packaging	[no test files]
+?   	github.com/CloudyKit/jet/v6/examples/asset_packaging/assets/templates	[no test files]
+?   	github.com/CloudyKit/jet/v6/examples/todos	[no test files]
+?   	github.com/CloudyKit/jet/v6/jettest	[no test files]
+ok  	github.com/CloudyKit/jet/v6/loaders/embedfs	0.222s
+ok  	github.com/CloudyKit/jet/v6/loaders/httpfs	0.386s
+ok  	github.com/CloudyKit/jet/v6/loaders/multi	0.210s
+ok  	github.com/CloudyKit/jet/v6/utils	0.259s

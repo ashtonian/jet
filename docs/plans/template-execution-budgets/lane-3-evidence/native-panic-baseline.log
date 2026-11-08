@@ -1,0 +1,17 @@
+gate-lock: held by pid 4354 on studio, "jet-lane3-native-panic-baseline 195312a in $CHECKOUT", since 2026-11-08T00:11:32Z, 2 of 6 focused cores
+--- FAIL: TestCompilationPreservesLoaderPanics (0.00s)
+    --- FAIL: TestCompilationPreservesLoaderPanics/context=false/open (0.00s)
+        compile_test.go:559: got panic <nil>, want original loader panic
+    --- FAIL: TestCompilationPreservesLoaderPanics/context=false/read (0.00s)
+        compile_test.go:559: got panic <nil>, want original loader panic
+    --- FAIL: TestCompilationPreservesLoaderPanics/context=false/close (0.00s)
+        compile_test.go:559: got panic <nil>, want original loader panic
+    --- FAIL: TestCompilationPreservesLoaderPanics/context=true/open (0.00s)
+        compile_test.go:559: got panic <nil>, want original loader panic
+    --- FAIL: TestCompilationPreservesLoaderPanics/context=true/read (0.00s)
+        compile_test.go:559: got panic <nil>, want original loader panic
+    --- FAIL: TestCompilationPreservesLoaderPanics/context=true/close (0.00s)
+        compile_test.go:559: got panic <nil>, want original loader panic
+FAIL
+FAIL	github.com/CloudyKit/jet/v6	0.276s
+FAIL
