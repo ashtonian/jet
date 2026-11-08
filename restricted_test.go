@@ -393,7 +393,7 @@ func TestRestrictedUnknownKindsAndNativeDefenses(t *testing.T) {
 		}},
 	} {
 		t.Run(test.name, func(t *testing.T) {
-			st := &Runtime{escapeeWriter: &escapeeWriter{set: tpl.set}, execution: executionState{ctx: context.Background(), options: restrictedTestOptions().Execution, remaining: 1000000}}
+			st := &Runtime{escapeeWriter: &escapeeWriter{set: tpl.set}, execution: executionState{ctx: context.Background(), metered: true, options: restrictedTestOptions().Execution, remaining: 1000000}}
 			defer func() {
 				abort, ok := recover().(executionAbort)
 				if !ok || !errors.Is(abort.error, ErrCapabilityDenied) {

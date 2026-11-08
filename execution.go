@@ -59,6 +59,7 @@ func (e *LimitError) Unwrap() error {
 // synchronous render. It is never cached and is cleared before pooling Runtime.
 type executionState struct {
 	ctx              context.Context
+	metered          bool // Fixed at entry when a context is supplied.
 	checkContext     bool
 	options          ExecutionOptions
 	remaining        uint64
@@ -104,17 +105,16 @@ func (st *Runtime) rethrowRecovered(recovered interface{}) {
 // checkpoint reserves work before it happens, using subtraction to avoid wrap.
 // Additional budget dimensions must reserve against this same execution state.
 func (st *Runtime) checkpoint(steps uint64) {
-	if st.execution.ctx != nil || st.execution.terminal != nil {
+	st.rethrowTerminal()
+	if st.execution.metered {
 		st.reserveWork(steps)
 	}
 }
 
+// Callers check the terminal latch and non-nil context before this reservation,
+// with no intervening native call.
 func (st *Runtime) reserveWork(steps uint64) {
-	st.rethrowTerminal()
 	b := &st.execution
-	if b.ctx == nil {
-		return
-	}
 	if b.checkContext && b.ctx.Err() != nil {
 		st.terminate(executionContextError(b.ctx))
 	}
@@ -139,13 +139,13 @@ func (st *Runtime) reserveUnchecked(remaining *uint64, limit, requested uint64, 
 }
 
 func (st *Runtime) enter() {
-	if st.execution.ctx != nil || st.execution.terminal != nil || st.execution.options.MaxDepth != 0 {
+	if st.execution.metered || st.execution.terminal != nil || st.execution.options.MaxDepth != 0 {
 		st.enterActive()
 	}
 }
 
 func (st *Runtime) enterActive() {
-	st.reserveWork(1)
+	st.checkpoint(1)
 	b := &st.execution
 	if b.options.MaxDepth != 0 {
 		if b.depth >= b.options.MaxDepth {

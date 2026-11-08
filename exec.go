@@ -97,6 +97,7 @@ func (t *Template) execute(ctx context.Context, w io.Writer, variables VarMap, d
 	// Legacy execution uses the state already cleared before pooling.
 	if ctx != nil {
 		st.execution.ctx = ctx
+		st.execution.metered = true
 		st.execution.checkContext = ctx != context.Background() && ctx != context.TODO()
 		st.execution.options = opts
 		st.execution.remaining = opts.MaxSteps
