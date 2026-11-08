@@ -21,9 +21,13 @@ func (st *Runtime) printValue(w io.Writer, v reflect.Value) (int, error) {
 		return fastprinter.PrintValue(w, v)
 	}
 	p := &st.printer
-	previous := *p
+	// Write borrows formatted bytes until it returns. Reentrant printing must
+	// leave the active workspace intact, including its scalar backing array.
+	if p.runtime != nil {
+		p = &dataPrinter{}
+	}
 	*p = dataPrinter{runtime: st, writer: w}
-	defer func() { *p = previous }()
+	defer func() { *p = dataPrinter{} }()
 	err := p.value(v, false)
 	return p.written, err
 }
