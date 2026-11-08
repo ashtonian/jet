@@ -19,9 +19,10 @@ Version 6 brings major improvements to the Go API. Make sure to read through the
 ## Docs
 
 - [Go API](https://pkg.go.dev/github.com/CloudyKit/jet/v6#section-documentation)
+- [Context-aware execution and interpreter limits](./docs/execution.md)
+- [Context-aware compilation and limits](./docs/compilation.md)
 - [Syntax Reference](./docs/syntax.md)
 - [Built-ins](./docs/builtins.md)
-- [Context-aware compilation and limits](./docs/compilation.md)
 - [Wiki](https://github.com/CloudyKit/jet/wiki) (some things are out of date)
 
 ## Example application

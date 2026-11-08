@@ -1,0 +1,207 @@
+package jet
+
+import (
+	"bytes"
+	"context"
+	"errors"
+	"io"
+	"math"
+	"runtime"
+	"strconv"
+	"strings"
+	"testing"
+)
+
+func TestExecutionValueGrowth(t *testing.T) {
+	for _, tt := range []struct {
+		name, source string
+		vars         VarMap
+		limit        int64
+	}{
+		{"doubling", valueOutputFixtures[0].source, nil, 32768},
+		{"byteConcat", `{{ "a" + b }}`, VarMap{}.Set("b", bytes.Repeat([]byte("x"), 16384)), 16384},
+		{"rollback", `{{ try }}ab{{ missing }}{{ catch }}{{ end }}{{ try }}ab{{ missing }}{{ catch }}{{ end }}`, nil, 3},
+		{"isset", `{{ try }}{{ isset(a["abc" + "def"]) }}{{ catch }}caught{{ end }}`, VarMap{}.Set("a", map[string]string{"abcdef": "x"}), 5},
+	} {
+		t.Run(tt.name, func(t *testing.T) {
+			var out bytes.Buffer
+			err := runtimeTemplate(t, tt.source).ExecuteContext(context.Background(), &out, tt.vars, nil, ExecutionOptions{MaxValueBytes: tt.limit, MaxDepth: 100, MaxSteps: 1000000})
+			if !errors.Is(err, ErrValueLimit) || out.Len() != 0 {
+				t.Fatalf("got %v, output %q", err, out.String())
+			}
+			var limit *LimitError
+			if !errors.As(err, &limit) || limit.Kind != "value" || limit.Limit != uint64(tt.limit) {
+				t.Fatalf("missing value limit details: %v", err)
+			}
+		})
+	}
+}
+
+func TestExecutionBudgetProfile(t *testing.T) {
+	for _, fixture := range valueOutputFixtures {
+		t.Run(fixture.name, func(t *testing.T) {
+			loader := NewInMemLoader()
+			loader.Set("generated", `{{ repeat("x", 16384) }}`)
+			tpl, err := NewSet(loader, WithSafeWriter(nil)).Parse("amplification", fixture.source)
+			if err != nil {
+				t.Fatal(err)
+			}
+			out := &valueOutputProbeWriter{limit: 1024}
+			var before, after runtime.MemStats
+			runtime.ReadMemStats(&before)
+			err = tpl.ExecuteContext(context.Background(), out, nil, nil, ExecutionOptions{MaxValueBytes: 32768, MaxOutputBytes: 1024, MaxSteps: 1000000, MaxDepth: 100})
+			runtime.ReadMemStats(&after)
+			want := ErrValueLimit
+			if fixture.name == "nestedTry" || fixture.name == "rollback" || fixture.name == "discard" {
+				want = ErrOutputLimit
+			}
+			t.Logf("output=%q accepted=%d attempted=%d writes=%d error=%v allocated_bytes=%d allocations=%d", out.String(), out.Len(), out.attempted, out.writes, err, after.TotalAlloc-before.TotalAlloc, after.Mallocs-before.Mallocs)
+			if !errors.Is(err, want) || out.Len() != 0 || out.attempted != 0 {
+				t.Fatalf("got %v, sink attempted %d; want %v before sink", err, out.attempted, want)
+			}
+		})
+	}
+}
+
+func TestExecutionGeneratedOutput(t *testing.T) {
+	for _, tt := range []struct {
+		name, source, output string
+		value, outputLimit   int64
+		want                 error
+	}{
+		{"literalBoundary", "abc", "abc", 0, 3, nil},
+		{"literalFailure", "abc", "", 0, 2, ErrOutputLimit},
+		{"escapedBoundary", `{{ "<&" }}`, "&lt;&amp;", 0, 9, nil},
+		{"escapedFailure", `{{ "<&" }}`, "&lt;", 0, 8, ErrOutputLimit},
+		{"nestedCommit", `{{ try }}a{{ try }}b{{ end }}c{{ end }}`, "abc", 4, 3, nil},
+		{"nestedValue", `{{ try }}a{{ try }}b{{ end }}c{{ end }}`, "", 3, 3, ErrValueLimit},
+		{"rollback", `{{ try }}ab{{ missing }}{{ catch }}c{{ end }}`, "", 0, 2, ErrOutputLimit},
+		{"terminalTry", `{{ try }}abc{{ catch }}caught{{ end }}`, "", 0, 2, ErrOutputLimit},
+	} {
+		t.Run(tt.name, func(t *testing.T) {
+			var out bytes.Buffer
+			err := runtimeTemplate(t, tt.source).ExecuteContext(context.Background(), &out, nil, nil, ExecutionOptions{MaxOutputBytes: tt.outputLimit, MaxValueBytes: tt.value})
+			if !errors.Is(err, tt.want) || out.String() != tt.output {
+				t.Fatalf("got %v, %q; want %v, %q", err, out.String(), tt.want, tt.output)
+			}
+		})
+	}
+}
+
+func TestExecutionDiscardedOutput(t *testing.T) {
+	loader := NewInMemLoader()
+	loader.Set("child", `{{ "<&" }}`)
+	set := NewSet(loader)
+	for _, source := range []string{
+		`{{ exec("child") }}ok`,
+		`{{ try }}{{ exec("child") }}{{ catch }}caught{{ end }}`,
+		`{{ a := map() }}{{ try }}{{ isset(a[exec("child")]) }}{{ catch }}caught{{ end }}`,
+	} {
+		t.Run(source, func(t *testing.T) {
+			tpl, err := set.Parse("root", source)
+			if err != nil {
+				t.Fatal(err)
+			}
+			var out bytes.Buffer
+			err = tpl.ExecuteContext(context.Background(), &out, nil, nil, ExecutionOptions{MaxOutputBytes: 8})
+			if !errors.Is(err, ErrOutputLimit) || out.Len() != 0 {
+				t.Fatalf("got %v, %q", err, out.String())
+			}
+		})
+	}
+}
+
+func TestExecutionOutputLoop(t *testing.T) {
+	tpl := runtimeTemplate(t, `{{ range ints(0, 100) }}{{ "<&" }}{{ end }}`)
+	for _, tt := range []struct {
+		name   string
+		steps  uint64
+		output int64
+		want   error
+	}{
+		{"output", 100000, 17, ErrOutputLimit},
+		{"work", 50, 900, ErrStepLimit},
+	} {
+		t.Run(tt.name, func(t *testing.T) {
+			var out bytes.Buffer
+			err := tpl.ExecuteContext(context.Background(), &out, nil, nil, ExecutionOptions{MaxSteps: tt.steps, MaxOutputBytes: tt.output, MaxValueBytes: 10000, MaxDepth: 100})
+			if !errors.Is(err, tt.want) || out.Len() > int(tt.output) || out.Len() >= 900 {
+				t.Fatalf("got %v, %d generated bytes; want %v", err, out.Len(), tt.want)
+			}
+		})
+	}
+}
+
+func TestExecutionFormatting(t *testing.T) {
+	for _, value := range []interface{}{
+		[]interface{}{"a", 1.23, []byte("ab"), nil},
+		map[string]interface{}{"b": []int{1, 2}, "a": "<&"},
+		map[string]string(nil), []string(nil),
+	} {
+		vars := VarMap{}.Set("v", value)
+		for _, source := range []string{`{{ v }}`, `{{ "a" + v }}`, `{{ raw(v) }}`} {
+			t.Run(source, func(t *testing.T) {
+				tpl := runtimeTemplate(t, source)
+				var legacy, metered bytes.Buffer
+				if err := tpl.Execute(&legacy, vars, nil); err != nil {
+					t.Fatal(err)
+				}
+				if err := tpl.ExecuteContext(context.Background(), &metered, vars, nil, ExecutionOptions{MaxSteps: 100000, MaxDepth: 100, MaxValueBytes: 10000, MaxOutputBytes: 10000}); err != nil {
+					t.Fatal(err)
+				}
+				if legacy.String() != metered.String() {
+					t.Fatalf("got %q, want %q", metered.String(), legacy.String())
+				}
+			})
+		}
+	}
+	vars := VarMap{}.Set("v", []string{strings.Repeat("x", 16384)})
+	if err := runtimeTemplate(t, `{{ "a" + v }}`).ExecuteContext(context.Background(), io.Discard, vars, nil, ExecutionOptions{MaxValueBytes: 4096}); !errors.Is(err, ErrValueLimit) {
+		t.Fatal(err)
+	}
+}
+
+func TestExecutionNumericErrorReservation(t *testing.T) {
+	for _, source := range []string{`{{ 1 * v }}`, `{{ 1.0 * v }}`} {
+		err := runtimeTemplate(t, source).ExecuteContext(context.Background(), io.Discard, VarMap{}.Set("v", strings.Repeat("0", 4096)+"x"), nil, ExecutionOptions{MaxSteps: 100000, MaxValueBytes: 1024, MaxDepth: 100})
+		if !errors.Is(err, ErrValueLimit) {
+			t.Fatalf("numeric parsing bypassed reservation: %T", err)
+		}
+	}
+}
+
+func TestExecutionNumericErrorIdentity(t *testing.T) {
+	input := strings.Repeat("0", 4096) + "x"
+	err := runtimeTemplate(t, `{{ 1 * v }}`).ExecuteContext(context.Background(), io.Discard, VarMap{}.Set("v", input), nil, ExecutionOptions{MaxSteps: 100000, MaxValueBytes: 32768, MaxDepth: 100})
+	var numeric *strconv.NumError
+	if !errors.Is(err, strconv.ErrSyntax) || !errors.As(err, &numeric) || numeric.Num != input || len(err.Error()) > 200 {
+		t.Fatalf("numeric error lost its cause or expanded its input: %T", err)
+	}
+}
+
+func TestExecutionByteOptions(t *testing.T) {
+	for _, tt := range []struct {
+		name          string
+		value, output int64
+		want          error
+	}{
+		{"zero", 0, 0, nil},
+		{"negativeValue", -1, 0, ErrInvalidOptions},
+		{"negativeOutput", 0, -1, ErrInvalidOptions},
+		{"oneValue", 1, 2, ErrValueLimit},
+		{"oneOutput", 2, 1, ErrOutputLimit},
+		{"exact", 2, 2, nil},
+		{"largest", math.MaxInt64, math.MaxInt64, nil},
+	} {
+		t.Run(tt.name, func(t *testing.T) {
+			var out bytes.Buffer
+			err := runtimeTemplate(t, `{{ "x" + "y" }}`).ExecuteContext(context.Background(), &out, nil, nil, ExecutionOptions{MaxValueBytes: tt.value, MaxOutputBytes: tt.output, MaxSteps: 10000, MaxDepth: 100})
+			if !errors.Is(err, tt.want) {
+				t.Fatalf("got %v, want %v", err, tt.want)
+			}
+			if (err == nil && out.String() != "xy") || (err != nil && out.Len() != 0) {
+				t.Fatalf("unexpected output %q", out.String())
+			}
+		})
+	}
+}

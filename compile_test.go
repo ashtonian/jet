@@ -518,3 +518,50 @@ func TestCompilationCloseCannotMaskLimit(t *testing.T) {
 		t.Fatalf("%v", err)
 	}
 }
+
+type compilationPanicReader struct{ failure error }
+
+func (r compilationPanicReader) Read([]byte) (int, error) { panic(r.failure) }
+
+func TestCompilationPreservesLoaderPanics(t *testing.T) {
+	for _, contextAPI := range []bool{false, true} {
+		for _, stage := range []string{"open", "read", "close"} {
+			t.Run(fmt.Sprintf("context=%t/%s", contextAPI, stage), func(t *testing.T) {
+				failure := errors.New("native loader panic")
+				closed := false
+				loader := compilationLoader{open: func() (io.ReadCloser, error) {
+					if stage == "open" {
+						panic(failure)
+					}
+					var reader io.Reader = strings.NewReader("ok")
+					if stage == "read" {
+						reader = compilationPanicReader{failure}
+					}
+					return compilationReadCloser{Reader: reader, close: func() error {
+						closed = true
+						if stage == "close" {
+							panic(failure)
+						}
+						return nil
+					}}, nil
+				}}
+				var caught interface{}
+				func() {
+					defer func() { caught = recover() }()
+					set := NewSet(loader)
+					if contextAPI {
+						_, _ = set.GetTemplateContext(context.Background(), "s", ParseOptions{})
+					} else {
+						_, _ = set.GetTemplate("s")
+					}
+				}()
+				if caught != failure {
+					t.Fatalf("got panic %v, want original loader panic", caught)
+				}
+				if stage != "open" && !closed {
+					t.Fatal("reader not closed during native panic")
+				}
+			})
+		}
+	}
+}

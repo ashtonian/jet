@@ -24,8 +24,6 @@ import (
 	"strconv"
 	"strings"
 	"sync"
-
-	"github.com/CloudyKit/fastprinter"
 )
 
 var (
@@ -174,7 +172,7 @@ func (state *Runtime) setValue(name string, val reflect.Value) error {
 		sc = sc.parent
 	}
 
-	return fmt.Errorf("could not assign %q = %v because variable %q is uninitialised", name, val, name)
+	return fmt.Errorf("could not assign %q = %v because variable %q is uninitialised", name, state.diagnosticValue(val), name)
 }
 
 // LetGlobal sets or initialises a variable in the top-most template scope.
@@ -187,7 +185,7 @@ func (state *Runtime) LetGlobal(name string, val interface{}) {
 		sc = sc.parent
 	}
 
-	sc.variables[name] = reflect.ValueOf(val)
+	state.declareValue(sc, name, reflect.ValueOf(val))
 }
 
 // Set sets an existing variable in the template scope it lives in.
@@ -197,7 +195,7 @@ func (state *Runtime) Set(name string, val interface{}) error {
 
 // Let initialises a variable in the current template scope (possibly shadowing an existing variable of the same name in a parent scope).
 func (state *Runtime) Let(name string, val interface{}) {
-	state.scope.variables[name] = reflect.ValueOf(val)
+	state.declareValue(state.scope, name, reflect.ValueOf(val))
 }
 
 // SetOrLet calls Set() (if a variable with the given name is visible from the current scope) or Let() (if there is no variable with the given name in the current or any parent scope).
@@ -212,6 +210,7 @@ func (state *Runtime) SetOrLet(name string, val interface{}) {
 
 // Resolve resolves a value from the execution context.
 func (state *Runtime) resolve(name string) (reflect.Value, error) {
+	state.checkpoint(uint64(len(name)))
 	if name == "." {
 		return state.context, nil
 	}
@@ -236,18 +235,25 @@ func (state *Runtime) resolve(name string) (reflect.Value, error) {
 	}
 
 	// try default variables
-	v, ok = defaultVariables[name]
+	defaults := defaultVariables
+	if state.execution.ctx != nil {
+		defaults = meteredVariables
+	}
+	v, ok = defaults[name]
 	if ok {
 		return indirectEface(v), nil
 	}
 
+	if state.execution.ctx != nil {
+		return reflect.Value{}, fmt.Errorf("identifier %q not available in current or parent scope, global, or default variables", name)
+	}
 	return reflect.Value{}, fmt.Errorf("identifier %q not available in current (%+v) or parent scope, global, or default variables", name, state.scope.variables)
 }
 
 // Resolve calls resolve() and ignores any errors, meaning it may return a zero reflect.Value.
 func (state *Runtime) Resolve(name string) reflect.Value {
 	v, _ := state.resolve(name)
-	return v
+	return legacyBuiltinValue(v)
 }
 
 // Resolve calls resolve() and panics if there is an error.
@@ -256,7 +262,7 @@ func (state *Runtime) MustResolve(name string) reflect.Value {
 	if err != nil {
 		panic(err)
 	}
-	return v
+	return legacyBuiltinValue(v)
 }
 
 func (st *Runtime) recover(err *error) {
@@ -333,7 +339,12 @@ RESTART:
 		}
 		value.Set(right)
 	case reflect.Map:
-		value.SetMapIndex(reflect.ValueOf(&fields[lef]).Elem(), right)
+		key := reflect.ValueOf(&fields[lef]).Elem()
+		st.checkpoint(uint64(key.Len()))
+		if right.IsValid() && !value.MapIndex(key).IsValid() {
+			st.reserveValue(int64(value.Type().Key().Size() + value.Type().Elem().Size()))
+		}
+		value.SetMapIndex(key, right)
 	}
 }
 
@@ -365,13 +376,13 @@ func (st *Runtime) executeLetList(set *SetNode) {
 	if set.IndexExprGetLookup {
 		value := st.evalPrimaryExpressionGroup(set.Right[0])
 		if set.Left[0].Type() != NodeUnderscore {
-			st.variables[set.Left[0].(*IdentifierNode).Ident] = value
+			st.declareValue(st.scope, set.Left[0].(*IdentifierNode).Ident, value)
 		}
 		if set.Left[1].Type() != NodeUnderscore {
 			if value.IsValid() {
-				st.variables[set.Left[1].(*IdentifierNode).Ident] = valueBoolTRUE
+				st.declareValue(st.scope, set.Left[1].(*IdentifierNode).Ident, valueBoolTRUE)
 			} else {
-				st.variables[set.Left[1].(*IdentifierNode).Ident] = valueBoolFALSE
+				st.declareValue(st.scope, set.Left[1].(*IdentifierNode).Ident, valueBoolFALSE)
 			}
 		}
 	} else {
@@ -379,7 +390,7 @@ func (st *Runtime) executeLetList(set *SetNode) {
 			st.checkpoint(1)
 			value := st.evalPrimaryExpressionGroup(set.Right[i])
 			if set.Left[i].Type() != NodeUnderscore {
-				st.variables[set.Left[i].(*IdentifierNode).Ident] = value
+				st.declareValue(st.scope, set.Left[i].(*IdentifierNode).Ident, value)
 			}
 		}
 	}
@@ -402,16 +413,16 @@ func (st *Runtime) executeYieldBlock(block *BlockNode, blockParam, yieldParam *B
 				block.errorf("missing name for block parameter '%s'", blockParam.List[i].Identifier)
 			}
 
-			st.variables[p.Identifier] = st.evalPrimaryExpressionGroup(p.Expression)
+			st.declareValue(st.scope, p.Identifier, st.evalPrimaryExpressionGroup(p.Expression))
 		}
 		for i := 0; i < len(blockParam.List); i++ {
 			st.checkpoint(1)
 			p := &blockParam.List[i]
 			if _, found := st.variables[p.Identifier]; !found {
 				if p.Expression == nil {
-					st.variables[p.Identifier] = valueBoolFALSE
+					st.declareValue(st.scope, p.Identifier, valueBoolFALSE)
 				} else {
-					st.variables[p.Identifier] = st.evalPrimaryExpressionGroup(p.Expression)
+					st.declareValue(st.scope, p.Identifier, st.evalPrimaryExpressionGroup(p.Expression))
 				}
 			}
 		}
@@ -497,7 +508,7 @@ func (st *Runtime) executeList(list *ListNode) (returnValue reflect.Value) {
 						st.checkpoint(0)
 					} else {
 						st.beforeCall(v)
-						_, err := fastprinter.PrintValue(st.escapeeWriter, v)
+						_, err := st.printValue(st.escapeeWriter, v)
 						st.checkpoint(0)
 						if err != nil {
 							node.error(err)
@@ -612,10 +623,10 @@ func (st *Runtime) executeRange(node *RangeNode) (returnValue reflect.Value) {
 			if isSet {
 				if isLet {
 					if keyVarSlot >= 0 {
-						st.variables[node.Set.Left[keyVarSlot].String()] = indexValue
+						st.declareValue(st.scope, node.Set.Left[keyVarSlot].String(), indexValue)
 					}
 					if valVarSlot >= 0 {
-						st.variables[node.Set.Left[valVarSlot].String()] = rangeValue
+						st.declareValue(st.scope, node.Set.Left[valVarSlot].String(), rangeValue)
 					}
 				} else {
 					if keyVarSlot >= 0 {
@@ -662,7 +673,7 @@ func (st *Runtime) executeTry(try *TryNode) (returnValue reflect.Value) {
 				if try.Catch.Err != nil {
 					st.newScope()
 					defer st.releaseScope()
-					st.scope.variables[try.Catch.Err.Ident] = reflect.ValueOf(r)
+					st.declareValue(st.scope, try.Catch.Err.Ident, reflect.ValueOf(r))
 				}
 				if try.Catch.List != nil {
 					returnValue = st.executeList(try.Catch.List)
@@ -749,7 +760,8 @@ func (st *Runtime) evalPrimaryExpressionGroup(node Expression) reflect.Value {
 	case NodeCallExpr:
 		node := node.(*CallExprNode)
 		baseExpr := st.evalBaseExpressionGroup(node.BaseExpr)
-		if baseExpr.Kind() != reflect.Func {
+		_, builtin := builtinForValue(baseExpr)
+		if baseExpr.Kind() != reflect.Func && !builtin {
 			node.errorf("node %q is not func kind %q", node.BaseExpr, baseExpr.Type())
 		}
 		ret, err := st.evalCallExpression(baseExpr, node.CallArgs)
@@ -986,9 +998,10 @@ func (st *Runtime) toInt(v reflect.Value) int64 {
 		return int64(v.Uint())
 	} else if kind == reflect.String {
 		st.checkpoint(uint64(v.Len()))
+		st.reserveNumericInput(v.Len())
 		n, e := strconv.ParseInt(v.String(), 10, 0)
 		if e != nil {
-			panic(e)
+			panic(st.numericError(e))
 		}
 		return n
 	} else if kind == reflect.Bool {
@@ -1013,9 +1026,10 @@ func (st *Runtime) toUint(v reflect.Value) uint64 {
 		return uint64(v.Float())
 	} else if kind == reflect.String {
 		st.checkpoint(uint64(v.Len()))
+		st.reserveNumericInput(v.Len())
 		n, e := strconv.ParseUint(v.String(), 10, 0)
 		if e != nil {
-			panic(e)
+			panic(st.numericError(e))
 		}
 		return n
 	} else if kind == reflect.Bool {
@@ -1040,9 +1054,10 @@ func (st *Runtime) toFloat(v reflect.Value) float64 {
 		return float64(v.Uint())
 	} else if kind == reflect.String {
 		st.checkpoint(uint64(v.Len()))
+		st.reserveNumericInput(v.Len())
 		n, e := strconv.ParseFloat(v.String(), 64)
 		if e != nil {
-			panic(e)
+			panic(st.numericError(e))
 		}
 		return n
 	} else if kind == reflect.Bool {
@@ -1210,11 +1225,14 @@ func (st *Runtime) evalAdditiveExpression(node *AdditiveExprNode) reflect.Value 
 			if !isAdditive {
 				node.Right.errorf("minus signal is not allowed with strings")
 			}
-			// converts []byte (and alias types of []byte) to string
-			if right.Kind() == reflect.Slice && right.Type().Elem().Kind() == reflect.Uint8 {
-				right = right.Convert(left.Type())
+			if st.execution.ctx != nil {
+				left = reflect.ValueOf(st.concatString(left.String(), right))
+			} else {
+				if right.Kind() == reflect.Slice && right.Type().Elem().Kind() == reflect.Uint8 {
+					right = right.Convert(left.Type())
+				}
+				left = reflect.ValueOf(left.String() + fmt.Sprint(right))
 			}
-			left = reflect.ValueOf(left.String() + fmt.Sprint(right))
 		} else {
 			node.Left.errorf("additive expression: left side %s (%s) is not a numeric value", node.Left, getTypeString(left))
 		}
@@ -1298,6 +1316,12 @@ func (st *Runtime) evalPipeCallExpression(baseExpr reflect.Value, args CallArgs,
 	}
 	st.enter()
 	defer st.leave()
+	if b, ok := builtinForValue(baseExpr); ok {
+		st.beforeCall(baseExpr)
+		result := b.execute(Arguments{runtime: st, args: args, pipedVal: pipedArg, builtin: true})
+		st.checkpoint(0)
+		return result, nil
+	}
 	if funcType.AssignableTo(baseExpr.Type()) {
 		st.beforeCall(baseExpr)
 		result := baseExpr.Interface().(Func)(Arguments{runtime: st, args: args, pipedVal: pipedArg})
@@ -1323,6 +1347,13 @@ func (st *Runtime) evalPipeCallExpression(baseExpr reflect.Value, args CallArgs,
 func (st *Runtime) evalCommandExpression(node *CommandNode) (reflect.Value, bool) {
 	term := st.evalPrimaryExpressionGroup(node.BaseExpr)
 	if term.IsValid() && node.Exprs != nil {
+		if b, ok := builtinForValue(term); ok {
+			ret, err := st.evalCallExpression(term, node.CallArgs)
+			if err != nil {
+				node.BaseExpr.error(err)
+			}
+			return ret, b.writes
+		}
 		if term.Kind() == reflect.Func {
 			if term.Type() == safeWriterType {
 				st.evalSafeWriter(term, node)
@@ -1376,13 +1407,13 @@ func (st *Runtime) evalSafeWriter(term reflect.Value, node *CommandNode, v ...re
 	sw := &escapeWriter{rawWriter: st.Writer, safeWriter: term.Interface().(SafeWriter)}
 	for i := 0; i < len(v); i++ {
 		st.checkpoint(1)
-		if _, err := fastprinter.PrintValue(sw, v[i]); err != nil {
+		if _, err := st.printValue(sw, v[i]); err != nil {
 			node.error(err)
 		}
 	}
 	for i := 0; i < len(node.Exprs); i++ {
 		st.checkpoint(1)
-		if _, err := fastprinter.PrintValue(sw, st.evalPrimaryExpressionGroup(node.Exprs[i])); err != nil {
+		if _, err := st.printValue(sw, st.evalPrimaryExpressionGroup(node.Exprs[i])); err != nil {
 			node.error(err)
 		}
 	}
@@ -1393,6 +1424,13 @@ func (st *Runtime) evalCommandPipeExpression(node *CommandNode, value reflect.Va
 	term := st.evalPrimaryExpressionGroup(node.BaseExpr)
 	if !term.IsValid() {
 		node.errorf("base expression of command pipe node is invalid value")
+	}
+	if b, ok := builtinForValue(term); ok {
+		ret, err := st.evalPipeCallExpression(term, node.CallArgs, &value)
+		if err != nil {
+			node.BaseExpr.error(err)
+		}
+		return ret, b.writes
 	}
 	if term.Kind() != reflect.Func {
 		node.BaseExpr.errorf("pipe command %q must be a function, but is %s", node.BaseExpr, term.Type())
@@ -1440,16 +1478,18 @@ func (st *Runtime) evaluateArgs(fnType reflect.Type, args CallArgs, pipedArg *re
 		}
 	}
 
+	st.reserveSlots(numArgs, int64(reflect.TypeOf(reflect.Value{}).Size()))
 	argValues := make([]reflect.Value, numArgs)
 	slot := 0 // index in argument values (evaluated expressions combined with piped argument if applicable)
 
 	if !args.HasPipeSlot && pipedArg != nil {
 		in := fnType.In(slot)
+		*pipedArg = legacyBuiltinValue(*pipedArg)
 		if !(*pipedArg).IsValid() {
 			return nil, fmt.Errorf("piped first argument for %s is not a valid value", fnType)
 		}
 		if !(*pipedArg).Type().AssignableTo(in) {
-			*pipedArg = (*pipedArg).Convert(in)
+			*pipedArg = st.convertValue(*pipedArg, in)
 		}
 		argValues[slot] = *pipedArg
 		slot++
@@ -1469,8 +1509,9 @@ func (st *Runtime) evaluateArgs(fnType reflect.Type, args CallArgs, pipedArg *re
 		if !term.IsValid() {
 			return nil, fmt.Errorf("argument for position %d in %s is not a valid value", slot, fnType)
 		}
+		term = legacyBuiltinValue(term)
 		if !term.Type().AssignableTo(in) {
-			term = term.Convert(in)
+			term = st.convertValue(term, in)
 		}
 		argValues[slot] = term
 		i++
@@ -1490,8 +1531,9 @@ func (st *Runtime) evaluateArgs(fnType reflect.Type, args CallArgs, pipedArg *re
 			if !term.IsValid() {
 				return nil, fmt.Errorf("argument for position %d in %s is not a valid value", slot, fnType)
 			}
+			term = legacyBuiltinValue(term)
 			if !term.Type().AssignableTo(in) {
-				term = term.Convert(in)
+				term = st.convertValue(term, in)
 			}
 			argValues[slot] = term
 			i++
@@ -1518,6 +1560,7 @@ func (st *Runtime) checkEquality(v1, v2 reflect.Value) bool {
 	defer st.leave()
 	v1 = indirectInterface(v1)
 	v2 = indirectInterface(v2)
+	v1, v2 = legacyBuiltinValue(v1), legacyBuiltinValue(v2)
 
 	if !v1.IsValid() || !v2.IsValid() {
 		return v1.IsValid() == v2.IsValid()
@@ -1725,14 +1768,14 @@ func (st *Runtime) resolveIndex(v, index reflect.Value, indexAsStr string) (refl
 	st.enter()
 	defer st.leave()
 	if !v.IsValid() {
-		return reflect.Value{}, fmt.Errorf("there is no field or method '%s' in %s (%s)", index, v, getTypeString(v))
+		return reflect.Value{}, fmt.Errorf("there is no field or method '%s' in %s (%s)", st.diagnosticValue(index), st.diagnosticValue(v), getTypeString(v))
 	}
 
 	v, isNil := st.indirect(v)
 	if v.Kind() == reflect.Interface && isNil {
 		// Calling a method on a nil interface can't work. The
 		// MethodByName method call below would panic.
-		return reflect.Value{}, fmt.Errorf("nil pointer evaluating %s.%s", v.Type(), index)
+		return reflect.Value{}, fmt.Errorf("nil pointer evaluating %s.%s", v.Type(), st.diagnosticValue(index))
 	}
 
 	// Handle the caller passing either index or indexAsStr.
@@ -1783,7 +1826,7 @@ func (st *Runtime) resolveIndex(v, index reflect.Value, indexAsStr string) (refl
 		return indirectEface(v.Index(x)), nil
 	case reflect.Struct:
 		if !indexIsStr {
-			return reflect.Value{}, fmt.Errorf("can't use %s (%s, not string) as field name in struct type %s", index, indexAsValue().Type(), v.Type())
+			return reflect.Value{}, fmt.Errorf("can't use %s (%s, not string) as field name in struct type %s", st.diagnosticValue(index), indexAsValue().Type(), v.Type())
 		}
 		typ := v.Type()
 		key := indexAsStr
@@ -1814,18 +1857,18 @@ func (st *Runtime) resolveIndex(v, index reflect.Value, indexAsStr string) (refl
 		if ok {
 			field := v.FieldByIndex(tField.Index)
 			if tField.PkgPath != "" { // field is unexported
-				return reflect.Value{}, fmt.Errorf("%s is an unexported field of struct type %s", indexAsStr, v.Type())
+				return reflect.Value{}, fmt.Errorf("%s is an unexported field of struct type %s", st.diagnosticText(indexAsStr), v.Type())
 			}
 			return indirectEface(field), nil
 		}
-		return reflect.Value{}, fmt.Errorf("can't use %s as field name in struct type %s", indexAsStr, v.Type())
+		return reflect.Value{}, fmt.Errorf("can't use %s as field name in struct type %s", st.diagnosticText(indexAsStr), v.Type())
 	case reflect.Map:
 		// If it's a map, attempt to use the field name as a key.
 		indexVal := indexAsValue()
 		if !indexVal.Type().ConvertibleTo(v.Type().Key()) {
-			return reflect.Value{}, fmt.Errorf("can't use %s (%s) as key for map of type %s", indexAsStr, indexVal.Type(), v.Type())
+			return reflect.Value{}, fmt.Errorf("can't use %s (%s) as key for map of type %s", st.diagnosticText(indexAsStr), indexVal.Type(), v.Type())
 		}
-		index = indexVal.Convert(v.Type().Key()) // noop in most cases, but not expensive
+		index = st.convertValue(indexVal, v.Type().Key()) // noop in most cases, but not expensive
 		return indirectEface(v.MapIndex(indexVal)), nil
 	case reflect.Ptr:
 		etyp := v.Type().Elem()
@@ -1837,10 +1880,10 @@ func (st *Runtime) resolveIndex(v, index reflect.Value, indexAsStr string) (refl
 			}
 		}
 		if isNil {
-			return reflect.Value{}, fmt.Errorf("nil pointer evaluating %s.%s", v.Type(), index)
+			return reflect.Value{}, fmt.Errorf("nil pointer evaluating %s.%s", v.Type(), st.diagnosticValue(index))
 		}
 	}
-	return reflect.Value{}, fmt.Errorf("can't evaluate index %s (%s) in type %s", index, indexAsStr, getTypeString(v))
+	return reflect.Value{}, fmt.Errorf("can't evaluate index %s (%s) in type %s", st.diagnosticValue(index), st.diagnosticText(indexAsStr), getTypeString(v))
 }
 
 // from Go's text/template's funcs.go:
