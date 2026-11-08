@@ -72,7 +72,7 @@ func additionalExecutionWorkloads() []executionWorkload {
 		panic(err)
 	}
 	meteredDiagnostic := `Jet Runtime Error ("/workload":1): identifier "missing" not available in current or parent scope, global, or default variables`
-	restrictedDiagnostic := `Jet Runtime Error ("/workload":1): identifier "missing" is not available`
+	restrictedDiagnostic := `Jet Runtime Error ("/workload":1): identifier "<string>" is not available`
 	return []executionWorkload{
 		{Name: "data_json_256", Source: "{{ json(.) }}", Data: items, Text: string(encoded), HTML: html.EscapeString(string(encoded))},
 		{Name: "data_unused_256", Source: "ready", Data: items, Text: "ready", HTML: "ready"},
