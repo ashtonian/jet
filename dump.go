@@ -8,28 +8,39 @@ import (
 )
 
 // dumpAll returns
-//  - everything in Runtime.context
-//  - everything in Runtime.variables
-//  - everything in Runtime.set.globals
-//  - everything in Runtime.blocks
+//   - everything in Runtime.context
+//   - everything in Runtime.variables
+//   - everything in Runtime.set.globals
+//   - everything in Runtime.blocks
 func dumpAll(a Arguments, depth int) reflect.Value {
 	var b bytes.Buffer
 	var vars VarMap
 
 	ctx := a.runtime.context
 	fmt.Fprintln(&b, "Context:")
-	fmt.Fprintf(&b, "\t%s %#v\n", ctx.Type(), ctx)
+	if ctx.IsValid() {
+		fmt.Fprintf(&b, "\t%s %#v\n", ctx.Type(), ctx)
+	} else {
+		fmt.Fprintln(&b, "\t<nil>")
+	}
 
 	dumpScopeVars(&b, a.runtime.scope, 0)
 	dumpScopeVarsToDepth(&b, a.runtime.parent, depth)
 
-	vars = a.runtime.set.globals
+	// globals is guarded by gmx; AddGlobal can run while a template executes.
+	a.runtime.set.gmx.RLock()
+	vars = make(VarMap, len(a.runtime.set.globals))
+	for name, val := range a.runtime.set.globals {
+		vars[name] = val
+	}
+	a.runtime.set.gmx.RUnlock()
+
 	for i, name := range vars.SortedKeys() {
 		if i == 0 {
 			fmt.Fprintln(&b, "Globals:")
 		}
 		val := vars[name]
-		fmt.Fprintf(&b, "\t%s:=%#v // %s\n", name, val, val.Type())
+		fmt.Fprintf(&b, "\t%s:=%#v // %s\n", name, val, getTypeString(val))
 	}
 
 	blockKeys := a.runtime.scope.sortedBlocks()
@@ -104,5 +115,5 @@ func dumpFindVar(w io.Writer, rnt *Runtime, name string) {
 	if err != nil {
 		return
 	}
-	fmt.Fprintf(w, "\t%s:=%#v // %s\n", name, val, val.Type())
+	fmt.Fprintf(w, "\t%s:=%#v // %s\n", name, val, getTypeString(val))
 }

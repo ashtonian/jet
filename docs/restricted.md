@@ -44,6 +44,8 @@ result, err := tpl.RenderRestrictedContext(ctx, nil, map[string]string{"name": "
 | Generated values | Data plus the sealed JSON/hidden-boolean renderers and integer ranger. Native collections use internal pooled rangers. Unknown capability roles, AST kinds and unsupported reflective conversions terminate. Generated cycles remain bounded by execution depth/work during traversal. |
 | Host hooks | External Func/Go functions, Renderer/Ranger/SafeWriter, Stringer/Error/Formatter and JSON/TextMarshaler hooks are denied before invocation. Public Runtime/Arguments compatibility adapters are available to trusted callbacks, which this profile cannot invoke. |
 
+Ordinary `try/catch err` binds `err` to a plain string in this profile. Print it directly (`{{ err }}`), pass it to string/data builtins, or store it in a map/slice; it has no Go `Error()` method. Interpreter-owned messages are copied under work/value reservations, capped at 512 UTF-8-safe bytes with `...` on truncation (before output escaping). Unknown recovered errors use the fixed text `template execution failed`; constructing this diagnostic never invokes their Error/Stringer hooks. Trusted APIs retain their Go error binding and cause chains. Capability, cancellation and resource failures remain terminal and never bind a catch diagnostic.
+
 `replace` retains Jet's four-argument contract. This profile does not supply application helpers such as three-argument replace, join, formatNumber or time helpers. They need metered owning-layer implementations and explicit registry dispositions before an application can preserve those helper contracts. Registering their original Go functions is not an admission mechanism.
 
 ## Compilation, composition and immutability
