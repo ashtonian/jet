@@ -1,0 +1,25 @@
+gate-lock: held by pid <pid> on <host>, "jet-lane-2-diagnostic-baseline abbaeb2 in <checkout>", since 2026-11-07T23:36:32Z, 2 of 6 focused cores
+=== RUN   TestExecutionErrorFormattingBounded
+=== RUN   TestExecutionErrorFormattingBounded/{{_x_:=_"a"_}}{{_range_ints(0,_16)_}}{{_x_=_slice(x,_x)_}}{{_end_}}{{_missing_}}
+    execution_diagnostics_test.go:23: diagnostic_bytes=157
+=== RUN   TestExecutionErrorFormattingBounded/{{_x_:=_"a"_}}{{_range_ints(0,_16)_}}{{_x_=_slice(x,_x)_}}{{_end_}}{{_missing_=_x_}}
+    execution_diagnostics_test.go:23: diagnostic_bytes=262248
+    execution_diagnostics_test.go:25: error recursively formatted runtime data: 262248 bytes
+=== RUN   TestExecutionErrorFormattingBounded/{{_x_:=_"a"_}}{{_range_ints(0,_16)_}}{{_x_=_slice(x,_x)_}}{{_end_}}{{_map(x,_"v")_}}
+    execution_diagnostics_test.go:23: diagnostic_bytes=262217
+    execution_diagnostics_test.go:25: error recursively formatted runtime data: 262217 bytes
+=== RUN   TestExecutionErrorFormattingBounded/{{_x_:=_"a"_}}{{_range_ints(0,_16)_}}{{_x_=_slice(x,_x)_}}{{_end_}}{{_ints(x,_3)_}}
+    execution_diagnostics_test.go:23: diagnostic_bytes=262203
+    execution_diagnostics_test.go:25: error recursively formatted runtime data: 262203 bytes
+=== RUN   TestExecutionErrorFormattingBounded/{{_range_repeat("x",_16384)_}}{{_end_}}
+    execution_diagnostics_test.go:23: diagnostic_bytes=16455
+    execution_diagnostics_test.go:25: error recursively formatted runtime data: 16455 bytes
+--- FAIL: TestExecutionErrorFormattingBounded (0.02s)
+    --- PASS: TestExecutionErrorFormattingBounded/{{_x_:=_"a"_}}{{_range_ints(0,_16)_}}{{_x_=_slice(x,_x)_}}{{_end_}}{{_missing_}} (0.00s)
+    --- FAIL: TestExecutionErrorFormattingBounded/{{_x_:=_"a"_}}{{_range_ints(0,_16)_}}{{_x_=_slice(x,_x)_}}{{_end_}}{{_missing_=_x_}} (0.01s)
+    --- FAIL: TestExecutionErrorFormattingBounded/{{_x_:=_"a"_}}{{_range_ints(0,_16)_}}{{_x_=_slice(x,_x)_}}{{_end_}}{{_map(x,_"v")_}} (0.01s)
+    --- FAIL: TestExecutionErrorFormattingBounded/{{_x_:=_"a"_}}{{_range_ints(0,_16)_}}{{_x_=_slice(x,_x)_}}{{_end_}}{{_ints(x,_3)_}} (0.01s)
+    --- FAIL: TestExecutionErrorFormattingBounded/{{_range_repeat("x",_16384)_}}{{_end_}} (0.00s)
+FAIL
+FAIL	github.com/CloudyKit/jet/v6	0.292s
+FAIL

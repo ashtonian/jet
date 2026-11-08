@@ -1,0 +1,28 @@
+gate-lock: held by pid <pid> on <host>, "jet-lane-2-allocation-profile b0bbc07 in <checkout>", since 2026-11-07T23:01:49Z, 2 of 6 focused cores
+File: jet.test
+Type: alloc_space
+Time: 2026-11-07 17:01:20 CST
+Showing nodes accounting for 1149.30kB, 94.87% of 1211.48kB total
+Dropped 211 nodes (cum <= 6.06kB)
+Showing top 20 nodes out of 62
+      flat  flat%   sum%        cum   cum%
+     364kB 30.05% 30.05%      364kB 30.05%  internal/bytealg.MakeNoZero
+  256.62kB 21.18% 51.23%   543.86kB 44.89%  github.com/CloudyKit/jet/v6.(*Runtime).evalAdditiveExpression
+  159.52kB 13.17% 64.40%   159.52kB 13.17%  fmt.(*buffer).writeString (inline)
+     156kB 12.88% 77.27%      156kB 12.88%  bytes.growSlice
+     128kB 10.57% 87.84%   287.23kB 23.71%  fmt.Sprint
+      64kB  5.28% 93.12%       64kB  5.28%  strings.explode
+   10.36kB  0.86% 93.98%    14.40kB  1.19%  testing.(*T).Run
+    2.88kB  0.24% 94.21%     8.76kB  0.72%  testing.(*common).log
+    2.12kB  0.18% 94.39%    15.91kB  1.31%  github.com/CloudyKit/jet/v6.(*Set).parse
+    1.38kB  0.11% 94.50%   338.22kB 27.92%  github.com/CloudyKit/jet/v6.(*Runtime).executeLetList
+       1kB 0.083% 94.58%       65kB  5.37%  strings.genSplit
+    0.80kB 0.066% 94.65%    12.84kB  1.06%  testing.runTests
+    0.56kB 0.046% 94.70%    12.75kB  1.05%  github.com/CloudyKit/jet/v6.(*Runtime).evaluateArgs
+    0.55kB 0.045% 94.74%  1176.33kB 97.10%  github.com/CloudyKit/jet/v6.TestValueOutputAmplification.func1
+    0.38kB 0.031% 94.77%   156.38kB 12.91%  bytes.(*Buffer).grow
+    0.28kB 0.023% 94.80%   242.84kB 20.05%  github.com/CloudyKit/jet/v6.(*Runtime).executeTry
+    0.27kB 0.022% 94.82%     8.51kB   0.7%  testing.newMatcher
+    0.26kB 0.021% 94.84%   432.75kB 35.72%  reflect.Value.call
+    0.19kB 0.015% 94.85%     7.99kB  0.66%  regexp.compile
+    0.16kB 0.013% 94.87%     6.55kB  0.54%  github.com/CloudyKit/jet/v6.(*Template).assignmentOrExpression

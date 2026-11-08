@@ -1,0 +1,109 @@
+Total: 789.57kB
+ROUTINE ======================== github.com/CloudyKit/jet/v6.(*Runtime).concatString in <checkout>/execution_values.go
+         0      256kB (flat, cum) 32.42% of Total
+         .          .     71:func (st *Runtime) concatString(left string, right reflect.Value) string {
+         .          .     72:	bytes := right.Kind() == reflect.Slice && right.Type().Elem().Kind() == reflect.Uint8
+         .          .     73:	if !bytes && (right.Type().Implements(formatterType) || right.Type().Implements(stringerType) || right.Type().Implements(errorType)) {
+         .          .     74:		return st.concatFormattedValue(left, right)
+         .          .     75:	}
+         .          .     76:	var scratch [64]byte
+         .          .     77:	var scalar []byte
+         .          .     78:	var text string
+         .          .     79:	var payload []byte
+         .          .     80:	switch k := right.Kind(); {
+         .          .     81:	case k == reflect.String:
+         .          .     82:		text = right.String()
+         .          .     83:	case k == reflect.Slice && right.Type().Elem().Kind() == reflect.Uint8:
+         .          .     84:		payload = right.Bytes()
+         .          .     85:	case isInt(k):
+         .          .     86:		scalar = strconv.AppendInt(scratch[:0], right.Int(), 10)
+         .          .     87:	case isUint(k):
+         .          .     88:		scalar = strconv.AppendUint(scratch[:0], right.Uint(), 10)
+         .          .     89:	case isFloat(k):
+         .          .     90:		scalar = strconv.AppendFloat(scratch[:0], right.Float(), 'g', -1, right.Type().Bits())
+         .          .     91:	case k == reflect.Bool:
+         .          .     92:		scalar = strconv.AppendBool(scratch[:0], right.Bool())
+         .          .     93:	default:
+         .          .     94:		return st.concatFormattedValue(left, right)
+         .          .     95:	}
+         .          .     96:	size, ok := addValueSizes(int64(len(left)), int64(len(text)+len(payload)+len(scalar)))
+         .          .     97:	n := st.valueLength(size, ok)
+         .          .     98:	st.checkpoint(uint64(n))
+         .          .     99:	var out strings.Builder
+         .      256kB    100:	out.Grow(n)
+         .          .    101:	out.WriteString(left)
+         .          .    102:	out.WriteString(text)
+         .          .    103:	out.Write(payload)
+         .          .    104:	out.Write(scalar)
+         .          .    105:	return out.String()
+ROUTINE ======================== github.com/CloudyKit/jet/v6.(*executionWriter).write in <checkout>/execution_output.go
+         0       256B (flat, cum) 0.032% of Total
+         .          .     32:func (w *executionWriter) write(b []byte, generated bool) (int, error) {
+         .          .     33:	st := w.runtime
+         .          .     34:	st.checkpoint(uint64(len(b)))
+         .          .     35:	if generated {
+         .          .     36:		st.reserve(&st.execution.output, uint64(st.execution.options.MaxOutputBytes), uint64(len(b)), "output", ErrOutputLimit)
+         .          .     37:	}
+         .          .     38:	if w.retained {
+         .          .     39:		buffer := w.writer.(*bytes.Buffer)
+         .          .     40:		size, ok := addValueSizes(int64(buffer.Len()), int64(len(b)))
+         .          .     41:		if !ok || uint64(size) > uint64(^uint(0)>>1) {
+         .          .     42:			st.failValueSize()
+         .          .     43:		}
+         .          .     44:		st.reserveValue(int64(len(b)))
+         .          .     45:	}
+         .          .     46:	sink := checkedWriter{writer: w.writer, failure: &st.writeErr}
+         .       256B     47:	return sink.Write(b)
+         .          .     48:}
+         .          .     49:
+         .          .     50:func (st *Runtime) beginOutputTransaction() *outputTransaction {
+         .          .     51:	st.checkpoint(0)
+         .          .     52:	tx := &outputTransaction{parent: st.Writer}
+ROUTINE ======================== github.com/CloudyKit/jet/v6.builtinRepeat in <checkout>/builtin_strings.go
+       48B   140.09kB (flat, cum) 17.74% of Total
+         .          .     63:func builtinRepeat(a Arguments) reflect.Value {
+         .          .     64:	a.RequireNumOfArguments("repeat", 2, 2)
+         .        48B     65:	s, count := a.stringArg(0), a.intArg(1)
+         .          .     66:	if count < 0 {
+         .          .     67:		a.Panicf("repeat(): count must be nonnegative")
+         .          .     68:	}
+         .          .     69:	if count == 0 || len(s) == 0 {
+         .          .     70:		return reflect.ValueOf("")
+         .          .     71:	}
+         .          .     72:	if count == 1 {
+         .          .     73:		return reflect.ValueOf(s)
+         .          .     74:	}
+         .          .     75:	size, ok := multiplyValueSize(int64(len(s)), int64(count))
+         .          .     76:	n := a.runtime.valueLength(size, ok)
+         .          .     77:	a.runtime.checkpoint(uint64(n))
+       48B   140.05kB     78:	return reflect.ValueOf(strings.Repeat(s, count))
+         .          .     79:}
+         .          .     80:
+         .          .     81:func builtinReplace(a Arguments) reflect.Value {
+         .          .     82:	a.RequireNumOfArguments("replace", 4, 4)
+         .          .     83:	s, old, replacement, count := a.stringArg(0), a.stringArg(1), a.stringArg(2), a.intArg(3)
+ROUTINE ======================== github.com/CloudyKit/jet/v6.builtinSplit in <checkout>/builtin_strings.go
+       24B    68.05kB (flat, cum)  8.62% of Total
+         .          .    115:func builtinSplit(a Arguments) reflect.Value {
+         .          .    116:	a.RequireNumOfArguments("split", 2, 2)
+         .     4.03kB    117:	s, separator := a.stringArg(0), a.stringArg(1)
+         .          .    118:	st := a.runtime
+         .          .    119:	st.checkpoint(uint64(len(s)) + uint64(len(separator)))
+         .          .    120:	var count int
+         .          .    121:	if separator == "" {
+         .          .    122:		count = utf8.RuneCountInString(s)
+         .          .    123:	} else {
+         .          .    124:		n, ok := addValueSizes(int64(strings.Count(s, separator)), 1)
+         .          .    125:		if !ok || uint64(n) > uint64(^uint(0)>>1) {
+         .          .    126:			st.failValueSize()
+         .          .    127:		}
+         .          .    128:		count = int(n)
+         .          .    129:	}
+         .          .    130:	st.reserveSlots(count, int64(reflect.TypeOf("").Size()))
+         .          .    131:	st.checkpoint(uint64(len(s)) + uint64(count))
+       24B    64.02kB    132:	return reflect.ValueOf(strings.Split(s, separator))
+         .          .    133:}
+         .          .    134:
+         .          .    135:func builtinTrimSpace(a Arguments) reflect.Value {
+         .          .    136:	a.RequireNumOfArguments("trimSpace", 1, 1)
+         .          .    137:	s := a.stringArg(0)

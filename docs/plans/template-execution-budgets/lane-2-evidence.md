@@ -2,11 +2,27 @@
 
 ## Current handoff
 
-Execution is active on `work/lane-2-values`. Generic candidate code is `906e93856aea9dd70c98526a9bad34e39c5b6b85`, based on Lane 1's final explicit handoff `32997fd20e6986220c8c0b60bfff9cedc49d46b7` ([PR #3](https://github.com/ashtonian/jet/pull/3)). The earlier `86fce7a` meter was consumed first; the final base also includes the YieldBlock correction, numeric scan accounting and reusable checked sinks. Local backup refs preserve both pre-rebase task histories. No other lane checkout was edited.
+The production candidate is `5583ec15361aea8f98c7a0d5a1fcbef25d407c0e`, based on Lane 1's explicit final foundation `32997fd20e6986220c8c0b60bfff9cedc49d46b7` ([fork PR #3](https://github.com/ashtonian/jet/pull/3)). [Fork draft PR #2](https://github.com/ashtonian/jet/pull/2) carries the consolidated lane, final test/documentation commit and its exact CI result. No production code changed after `5583ec1`; the final batch adds byte-option boundaries and independent fuel/output loop checks and discarded-output termination through isset. Earlier foundation/rebase histories have local backup refs. No other lane checkout was edited.
 
-The candidate adds enforced `MaxValueBytes`/`MaxOutputBytes`, `ErrValueLimit`/`ErrOutputLimit`, shared pre-allocation reservations, generated-output transactions, metered default bindings and bounded data-only formatting/JSON. `ConsumeSteps` and `ReserveValueBytes` are cooperative Runtime hooks for owned helper adapters; neither grants restricted permission. Values remain cumulative logical payload, not heap/RSS. Public options remain zero-unlimited and reject negative limits. The [cost inventory](lane-2-cost-inventory.md) records the schedule and unsupported capabilities.
+Implemented: checked `MaxValueBytes`/`MaxOutputBytes` reservations, inspectable `ErrValueLimit`/`ErrOutputLimit`, shared sticky termination, generated-output transactions, private immutable builtin bindings, bounded data-only formatting/JSON, allocating conversion checks and bounded diagnostics/numeric parse errors. Public [execution costs](../../execution-costs.md) and the [cost inventory](lane-2-cost-inventory.md) define the logical schedule. No heap/RSS, unrestricted-host-code or tenant-safe execution claim follows from these limits.
 
-`foundation-values-normal` passes the rebased candidate's focused normal workflow/compatibility checks. Earlier focused normal/race stages passed the implementation before the final base and diagnostic refinements. Final CI, Darwin Go 1.16, controlled reservation-on/off profiles and restricted-policy integration are pending; they are not inferred from those earlier passes. The unchanged CI workflow from Lane 4 `68bddd3fbd3fce1fce4f710400c6bd664db34d19` is consumed separately at `e8b80f1`. It tests Go 1.16.15 plus stable normal/race on Linux. Action pins match the official latest releases (checkout v7.0.1, setup-go v7.0.0).
+All work stays in the fork under the owner's publication hold. Do not open CloudyKit PRs/issues/submissions. Internal `docs/plans/`, RFCs and fork CI stay out of any future generic submission. Existing fork reviews are reused; no issue closure or release is authorized by this evidence.
+
+## Acceptance status
+
+| Gate | Executed evidence / remaining limit |
+| --- | --- |
+| V01 | Same finite doubling fixture and positive options with only value reservation disabled/enabled; source profiles show rejection before the next Builder.Grow. |
+| V02 | Repeat/replace/split controls; case/escape/JSON and encoding-size regressions. Checked size helpers cover near-overflow without constructing giant values. Arbitrary width/precision formatting is native capability; Karsto adapters remain Lane 4. |
+| V03 | New map/slice slots, shared children, map key conversion once, data-only printing/JSON cycles bounded by depth. Input admission/cycle rejection remains Lane 3. |
+| V04 | `TestExecutionOutputLoop` holds an escaped 100-iteration loop constant and independently exhausts output or steps; escaped boundary cases cover partial prefixes. |
+| V05 | Nested copies, exact no-double-output-charge commit, repeated rollback, terminal catch/isset paths; paired output control profiles show buffer growth prevention. |
+| V06 | Discarded exec fixture succeeds only with output reservation disabled; enabled rejection precedes caller-sink writes. Shared execution state retained. |
+| V07 | Checked add/multiply/encoding sizes; repeat zero/negative; int64 endpoint/range distance; invalid reflection conversion returns ordinary catchable errors. |
+| V08 | All 25 default bindings plus text/HTML/escaping/alias/native compatibility pass with sufficient budgets. **Restricted denial of unsupported hooks is still Lane 3's dependent gate.** |
+| R07/R09/R12 | Sticky value/output failures through catch/isset; partial/error/short writes across text/raw/safe/JSON/try and recovering callbacks; zero/negative/one/exact/MaxInt64 byte options. Policy errors await Lane 3. |
+| Compatibility | Linux Go 1.16/stable normal/race full suites pass at `5583ec1`; Darwin Go 1.16 full suite passes, with focused checks for final new tests. Final branch CI is recorded in PR #2. |
+| Adoption/performance | C01–C07 restricted closure, actual Karsto I01–I08 workflows, packaging and the 20% performance report remain external gates. No admission/profile is enabled by lane 2. |
 
 ### Lane 3 contract
 
@@ -39,41 +55,54 @@ The probe writer refuses any write exceeding its **1,024-byte** sink allowance, 
 | `rollback` | `ok`, two bytes, success | 182,720 / 72 | Four generated 16 KiB strings/try buffers disappear before final sink. |
 | `discard` | `ok`, two bytes, success | 19,592 / 47 | `exec` generation bypasses final sink. |
 
-Allocation deltas include runtime/formatting overhead and are observations, not logical-budget costs or stable test assertions. Passing these compatibility/baseline tests does not pass V01–V08; value/output options do not exist at the tested baseline. The metered comparison must reuse the exact fixtures, set configuration, dependencies and toolchain, apply fixed positive logical budgets and reject before the offending operation. The nested commit-error result is distinct from allocation prevention.
+Allocation deltas include runtime/formatting overhead and are observations, not logical-budget costs or stable test assertions. These baseline observations alone do not pass V01–V08: value/output options did not exist at that source. The paired reservation controls below isolate the new guard from other runtime/formatting changes. The nested commit-error result is distinct from allocation prevention.
 
-## Allocation profile interpretation
+## Controlled reservation comparisons
 
-The separate normal-build allocation-profile run uses `-memprofilerate=1`. Both flat/cumulative top tables and source-annotated `evalAdditiveExpression`, `executeTry` and `fastprinter.PrintValue` were inspected.
+[Paired proof](lane-2-evidence/paired-proof.json) verifies matching source/test/dependency/configuration/toolchain inputs except **one reservation line** per pair. Both runs use `ExecuteContext`, value allowance **32,768**, generated output **1,024**, steps **1,000,000**, depth **100**, the same 1,024-byte refusing sink and fixed fixture sources. All paired source manifests remained stable; controlled mutations were restored. Expected control test exit 1 is an observed failed protection assertion, not an infrastructure success claim.
 
-- `evalAdditiveExpression` accounts for 543.86 KiB cumulative / 256.62 KiB flat across these fixtures. Source attribution is at `left.String() + fmt.Sprint(right)`; `fmt.Sprint` adds 287.23 KiB cumulative / 128 KiB flat. Reserving only the concatenated string while retaining an unbounded formatter would miss a separate destination.
-- `bytes.growSlice` accounts for 156 KiB flat; `executeTry` accounts for 242.89 KiB cumulative including child generation. Reserving at the final sink is later than temporary buffer growth.
-- `strings.explode` allocates 64 KiB of slots in the split fixture; child string bytes need no recursive re-charge.
+The value control changes only the value reserve's configured-limit argument to zero; the output control changes only the corresponding output reserve argument. Other limits remain enabled. Patches are committed with [value](lane-2-evidence/value-control-final/control.patch) and [output](lane-2-evidence/output-control-final/control.patch) receipts. This isolates reservation causality from the new formatting implementation and from race instrumentation.
 
-No CPU/performance-overhead conclusion is drawn from these allocation observations. The profile is not an RSS cap or evidence of pre-allocation rejection; that evidence remains a required fixed-runtime comparison. Lane 4 owns the final performance report.
-
-## Commands and durable receipts
-
-All paths below are relative to this checkout's `.git/lane-2-validation/`. Each stage has `inputs.json`, `run.log` and `result.json`, with HEAD, SHA-256 source/test/fixture manifest (including untracked tests), toolchain/configuration, exact command, deadline/cleanup and exit result. Input manifests were checked unchanged after execution. Queue waiting is separate from execution. Installed host-gate supervision provides its own managed command receipt and process-group cleanup.
-
-Toolchain: `go1.27.3 darwin/arm64`; module still declares Go 1.16; no dependencies or language-version changes. Default focused pool grants `GOMAXPROCS=2`, `-p=1`, `-parallel=2`. `GATE_LOCK_COMMAND_TIMEOUT=120` and `GATE_LOCK_COMMAND_KILL_AFTER=5` bound baseline stages; tests additionally use `-timeout=60s`.
-
-| Stage | Command after `gate-lock run-focused <label> --` | Result |
+| Fixture | Reservation disabled: outcome, allocated bytes / count | Enabled: outcome, allocated bytes / count |
 | --- | --- | --- |
-| `compatibility-baseline` | `go test -p=1 -parallel=2 -timeout=60s -count=1 -run '^TestValueOutputCompatibility$' .` | Pass. |
-| `normal-baseline` | `go test -p=1 -parallel=2 -timeout=60s -count=1 -v -run '^TestValueOutput(Compatibility\|Amplification)$' .` | Pass; table above from this run. |
-| `amplification-baseline` | `go test -p=1 -parallel=2 -timeout=60s -count=1 -v -run '^TestValueOutputAmplification$' -memprofile=<artifact>/allocs.pprof -memprofilerate=1 -outputdir=<artifact> .` | Pass; allocation profile collected. Generated `jet.test` moved into this stage's artifact directory. |
-| `race-baseline` | `go test -race -p=1 -parallel=2 -timeout=60s -count=1 -run '^TestValueOutput(Compatibility\|Amplification)$' .` | Pass, separate from normal/profile results; 180-second execution deadline. |
+| doubling | Success, six sink bytes; 263,704 / 49 | ErrValueLimit before sink; 17,768 / 39 |
+| repeat | Success, six sink bytes; 131,760 / 13 | ErrValueLimit before sink; 224 / 8 |
+| replace | Success, six sink bytes; 139,984 / 16 | ErrValueLimit before sink; 8,432 / 11 |
+| split | Success, four sink bytes; 70,344 / 15 | ErrValueLimit before sink; 4,336 / 10 |
+| nestedTry | Later ErrValueLimit; 50,488 / 25 | ErrOutputLimit before retention/sink; 21,832 / 23 |
+| rollback | Later ErrValueLimit; 45,464 / 17 | ErrOutputLimit before retention/sink; 21,192 / 19 |
+| discard | Success, `ok`; 23,208 / 49 | ErrOutputLimit before sink; 23,800 / 52 |
 
-Profile inspection uses `gate-lock run-check` with a 60-second execution / five-second cleanup bound: `go tool pprof -top -alloc_space`, `-top -cum -alloc_space`, and `-alloc_space -list 'evalAdditiveExpression\|executeTry\|PrintValue'` against the preserved binary/profile. Stages `allocation-profile`, `allocation-profile-cumulative` and `allocation-profile-lines` all passed.
+Normal-build `-memprofilerate=1` profiles were read as flat, cumulative and source views for every pair ([inspection commands/receipts](lane-2-evidence/profile-inspection-stages.json)). The per-render allocation observations above include runtime overhead, are not logical charges and are not stable test assertions.
 
-Artifact hashes:
+- Value control: 524 KiB in `internal/bytealg.MakeNoZero`, plus 64 KiB `strings.explode` slots. Enabled: MakeNoZero is 28 KiB and explode is absent. `concatString` is 256 KiB cumulative in control versus 16.09 KiB enabled; the enabled source view attributes rejection to `valueLength` before the next `Grow`. The remaining repeat allocations are the small input prerequisites, not the rejected 128 KiB result. Split fails at `reserveSlots` before string-header allocation. See [control source](lane-2-evidence/value-control-final/source.txt) and [enabled source](lane-2-evidence/value-guarded-final/source.txt).
+- Output control: 56 KiB `bytes.growSlice`; enabled has no `bytes.growSlice` allocation. Both still construct 48 KiB across the three repeat prerequisites. The enabled source view terminates at generated-output reservation before retained-buffer reserve/write. See [control flat](lane-2-evidence/output-control-final/flat.txt), [enabled flat](lane-2-evidence/output-guarded-final/flat.txt) and [source](lane-2-evidence/output-guarded-final/source.txt).
+- Child peak RSS (value control/enabled): 12,091,392 / 11,878,400 bytes; output: 12,042,240 / 12,124,160. These mostly reflect the process/runtime. Test regex/harness allocations also differ, so profile totals/RSS do not establish execution overhead or a memory cap. No CPU/latency optimization claim is made. Lane 4 owns the performance program.
 
-| Artifact | SHA-256 |
+The original upstream profile separately attributes 543.86 KiB cumulative / 256.62 KiB flat to `evalAdditiveExpression`, 287.23 KiB cumulative / 128 KiB flat to `fmt.Sprint`, 156 KiB to `bytes.growSlice` and 64 KiB to split slots. Those explain the old allocation sites; only the paired new-runtime controls isolate guard causality.
+
+## Independent root-cause regressions
+
+- Diagnostic amplification: the same 16-level shared DAG produced 262,203–262,248-byte errors for assignment/map/ints; an invalid 16 KiB range value produced a 16,455-byte error. Fixed errors are 55–125 bytes and never invoke arbitrary formatting hooks. Ordinary metered diagnostics use positions/types rather than expanding scopes or values. [Failing baseline](lane-2-evidence/diagnostic-baseline/run.log), [passing fix](lane-2-evidence/diagnostic-fix/run.log).
+- Argument conversion: lower(map), repeat(slice count) and split(slice) escaped as string panics; byte-slice map key evaluation ran twice before panic. Fixed conversion validation returns ordinary errors and evaluates/converts/inserts the key once. [Baseline](lane-2-evidence/argument-baseline/run.log), [fix](lane-2-evidence/argument-fix/run.log).
+- Numeric parsing: a fixed 4,097-byte invalid numeric string allocated native error input copies without reservation. Now the parser reserves twice the input size before invocation; low allowance returns ErrValueLimit, sufficient allowance preserves errors.Is(strconv.ErrSyntax)/errors.As(*strconv.NumError) with bounded diagnostic text. [Baseline](lane-2-evidence/numeric-error-baseline/run.log), [fix](lane-2-evidence/sink-and-numeric-errors/run.log).
+
+## Validation and reproduction
+
+[Portable evidence index](lane-2-evidence/index.md) contains source manifests, commands, logs, deadlines/cleanup and receipts. Raw originals, profile binaries and managed host-gate receipts remain in this checkout's `.git/lane-2-validation/`; raw artifact hashes are committed. Published text replaces local paths/host identifiers and removes other owners' queue notices. No tokens or private host locations are published.
+
+Every local stage uses installed host-gate with explicit execution timeout and five-second TERM escalation; queue waiting is separate. Named-package tests use focused admission, `GOMAXPROCS<=2`, `-p=1`, `-parallel=2`, plus Go test timeout. Profile/control stages use 120-second execution / 60-second test bounds. Full Darwin Go 1.16 uses all-host admission (300-second outer bound), 180-second test stage / 120-second Go test timeout, and bounded process-group TERM/KILL cleanup. There was no dedicated fuzzing or giant/OOM probe; the largest fixture result is 128 KiB.
+
+| Stage / immutable input | Result |
 | --- | --- |
-| `normal-baseline/run.log` | `0a72bc995e5f6aa5b8ea42e4c789d570b56f5fc12a5b7398cce0c4208a02a9e8` |
-| `normal-baseline/result.json` | `9d501acedbc5beac58cd655d6f0aca063ef4569f2d0dea289a27018cc3a4b3a2` |
-| `amplification-baseline/allocs.pprof` | `7890de839ca0cd28c58af66ad6d1780bfdde041f15087982bcc98e4cd2ee1eb3` |
-| `amplification-baseline/result.json` | `a8972575f7761848d436b4fd44f5090a3d320a590b0dfa403701434d1d687954` |
-| `race-baseline/result.json` | `4a691256ac535727db3c1b6c605fe7fd42839c3cb96ee5b40551ff5007c332fb` |
+| `normal-baseline`, `race-baseline`, `amplification-baseline` | Original compatibility/finite workflow observations pass; normal/profile/race results kept separate. |
+| `value-control-final`, `output-control-final` | Expected test failures (exit 1); disabled reservation violates fixed protection assertions. Source restored. |
+| `value-guarded-final`, `output-guarded-final` | Pass; same production candidate, options, fixtures and toolchain. |
+| `final-core`, `final-vet` | Focused runtime/value/builtin/escaping checks and `go vet ./...` pass on Go 1.27.3 darwin/arm64. |
+| `go116-final-platform` | Full Go 1.16.15 darwin/arm64 suite passes with external linker; original LC_DYSYMTAB warnings retained. Toolchain archive SHA-256 `28365c5c252970c10f2627dc0aa63a2ec3df04a92df4d45ed83dbe464732c3e0`; own SDK/compiler/link hashes recorded. SDK reused by APFS clone without writing the source checkout. |
+| `final-terminal-coverage`, `go116-final-options`, `go116-final-terminal` | Final independent loop, byte-option and discard/isset tests pass on current Go and Go 1.16, respectively. Previous production/fixture stages remain valid; only added tests needed incremental Darwin execution. |
+| Linux [run 42428373277](https://github.com/ashtonian/jet/actions/runs/42428373277), SHA `5583ec1` | Go 1.16.15 normal, stable normal and stable race full suites pass. Final added-test commit CI is recorded in PR #2. |
 
-Full upstream suites/CI, oldest-supported-Go validation, V01–V08 fixed-runtime acceptance, R07/R09 dependent paths and actual Karsto workflow validation remain unexecuted. No upstream submission, packaging/release, tenant-safe claim or issue closure is established by a baseline pass. Internal lane documents stay out of eventual upstream submission diffs.
+Failure history is retained: the earlier [Go 1.16 job](https://github.com/ashtonian/jet/actions/runs/42426825673/job/128566779953) exposed JSON backspace/formfeed escaping differences (27-byte bound versus 35-byte encoding). `5583ec1` corrects the cross-version bound; passing minimum-Go CI demonstrates the fix. An initial guarded profile run passed tests but failed to write its profile due a relative artifact path; final paired runs use absolute artifact paths. A first incremental Go 1.16 command was rejected before execution because run-focused requires a direct `go test` command; the corrected environment/direct command passed. A final documentation check also found over-deep source links in the inventory; those links were corrected before the passing final doc check. None of these failed stages are counted as passing coverage.
+
+The compatibility workflow is consumed unchanged from Lane 4 `68bddd3fbd3fce1fce4f710400c6bd664db34d19` in `e8b80f1`. Its pinned actions matched official stable releases at adoption (checkout v7.0.1, setup-go v7.0.0). It has explicit job/command cleanup deadlines and does not duplicate same-repository PR and push jobs. Module Go version/dependencies remain unchanged.

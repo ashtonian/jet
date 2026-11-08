@@ -1,0 +1,23 @@
+File: jet.test
+Type: alloc_space
+Time: 2026-11-07 18:19:28 CST
+Showing nodes accounting for 753.84kB, 95.48% of 789.57kB total
+Dropped 161 nodes (cum <= 3.95kB)
+Showing top 16 nodes out of 79
+      flat  flat%   sum%        cum   cum%
+     524kB 66.37% 66.37%      524kB 66.37%  internal/bytealg.MakeNoZero
+      64kB  8.11% 74.47%       64kB  8.11%  strings.explode
+   50.47kB  6.39% 80.86%    50.47kB  6.39%  regexp/syntax.(*compiler).inst (inline)
+      36kB  4.56% 85.42%       36kB  4.56%  regexp.(*bitState).reset
+   20.47kB  2.59% 88.01%    20.47kB  2.59%  regexp.onePassCopy
+   16.19kB  2.05% 90.06%    16.19kB  2.05%  regexp/syntax.(*parser).newRegexp (inline)
+    7.50kB  0.95% 91.01%    16.77kB  2.12%  regexp.makeOnePass
+    6.52kB  0.83% 91.84%   104.85kB 13.28%  testing.(*T).Run
+    5.31kB  0.67% 92.51%     5.31kB  0.67%  testing.(*common).frameSkip
+       5kB  0.63% 93.15%        5kB  0.63%  regexp.newQueue (inline)
+    4.27kB  0.54% 93.69%     4.27kB  0.54%  regexp.makeOnePass.func1
+    4.03kB  0.51% 94.20%     4.03kB  0.51%  regexp/syntax.(*parser).maybeConcat
+    3.28kB  0.42% 94.61%   118.54kB 15.01%  regexp.compile
+    2.67kB  0.34% 94.95%     8.92kB  1.13%  testing.(*common).log
+    2.38kB   0.3% 95.25%    25.65kB  3.25%  regexp/syntax.parse
+    1.77kB  0.22% 95.48%    65.77kB  8.33%  strings.genSplit

@@ -1,0 +1,13 @@
+{
+  "command": [
+    "<go1.16-sdk>/bin/go",
+    "version"
+  ],
+  "deadline_seconds": 15,
+  "term_cleanup_seconds": 5,
+  "kill_cleanup_seconds": 5,
+  "started": 1794097330.4125319,
+  "finished": 1794097330.466284,
+  "exit_code": 0,
+  "timed_out": false
+}

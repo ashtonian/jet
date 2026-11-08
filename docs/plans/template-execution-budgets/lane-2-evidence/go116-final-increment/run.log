@@ -1,0 +1,1 @@
+gate-lock: run-focused requires an explicit go test command; use run-check for a lint or check, run for other work

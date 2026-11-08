@@ -1,0 +1,198 @@
+[
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-top",
+      "-alloc_space",
+      "-nodecount=16",
+      "<artifacts>/value-control-final/jet.test",
+      "<artifacts>/value-control-final/allocs.pprof"
+    ],
+    "timeout_seconds": 25,
+    "started": 1794097697.09873,
+    "finished": 1794097698.206401,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-top",
+      "-cum",
+      "-alloc_space",
+      "-nodecount=16",
+      "<artifacts>/value-control-final/jet.test",
+      "<artifacts>/value-control-final/allocs.pprof"
+    ],
+    "timeout_seconds": 25,
+    "started": 1794097698.206422,
+    "finished": 1794097698.3454149,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-alloc_space",
+      "-list",
+      "concatString|builtinRepeat|builtinSplit|executionWriter.*write|beginOutputTransaction",
+      "<artifacts>/value-control-final/jet.test",
+      "<artifacts>/value-control-final/allocs.pprof"
+    ],
+    "timeout_seconds": 25,
+    "started": 1794097698.345438,
+    "finished": 1794097698.5145679,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-top",
+      "-alloc_space",
+      "-nodecount=16",
+      "<artifacts>/value-guarded-final/jet.test",
+      "<artifacts>/value-guarded-final/allocs.pprof"
+    ],
+    "timeout_seconds": 25,
+    "started": 1794097698.5146601,
+    "finished": 1794097698.654953,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-top",
+      "-cum",
+      "-alloc_space",
+      "-nodecount=16",
+      "<artifacts>/value-guarded-final/jet.test",
+      "<artifacts>/value-guarded-final/allocs.pprof"
+    ],
+    "timeout_seconds": 25,
+    "started": 1794097698.654974,
+    "finished": 1794097698.8012302,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-alloc_space",
+      "-list",
+      "concatString|builtinRepeat|builtinSplit|executionWriter.*write|beginOutputTransaction",
+      "<artifacts>/value-guarded-final/jet.test",
+      "<artifacts>/value-guarded-final/allocs.pprof"
+    ],
+    "timeout_seconds": 25,
+    "started": 1794097698.8012521,
+    "finished": 1794097698.9339788,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-top",
+      "-alloc_space",
+      "-nodecount=16",
+      "<artifacts>/output-control-final/jet.test",
+      "<artifacts>/output-control-final/allocs.pprof"
+    ],
+    "timeout_seconds": 25,
+    "started": 1794097698.9341178,
+    "finished": 1794097699.061005,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-top",
+      "-cum",
+      "-alloc_space",
+      "-nodecount=16",
+      "<artifacts>/output-control-final/jet.test",
+      "<artifacts>/output-control-final/allocs.pprof"
+    ],
+    "timeout_seconds": 25,
+    "started": 1794097699.061036,
+    "finished": 1794097699.186986,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-alloc_space",
+      "-list",
+      "concatString|builtinRepeat|builtinSplit|executionWriter.*write|beginOutputTransaction",
+      "<artifacts>/output-control-final/jet.test",
+      "<artifacts>/output-control-final/allocs.pprof"
+    ],
+    "timeout_seconds": 25,
+    "started": 1794097699.187008,
+    "finished": 1794097699.331506,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-top",
+      "-alloc_space",
+      "-nodecount=16",
+      "<artifacts>/output-guarded-final/jet.test",
+      "<artifacts>/output-guarded-final/allocs.pprof"
+    ],
+    "timeout_seconds": 25,
+    "started": 1794097699.33165,
+    "finished": 1794097699.56394,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-top",
+      "-cum",
+      "-alloc_space",
+      "-nodecount=16",
+      "<artifacts>/output-guarded-final/jet.test",
+      "<artifacts>/output-guarded-final/allocs.pprof"
+    ],
+    "timeout_seconds": 25,
+    "started": 1794097699.563968,
+    "finished": 1794097699.722652,
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "go",
+      "tool",
+      "pprof",
+      "-alloc_space",
+      "-list",
+      "concatString|builtinRepeat|builtinSplit|executionWriter.*write|beginOutputTransaction",
+      "<artifacts>/output-guarded-final/jet.test",
+      "<artifacts>/output-guarded-final/allocs.pprof"
+    ],
+    "timeout_seconds": 25,
+    "started": 1794097699.7226748,
+    "finished": 1794097699.872421,
+    "exit_code": 0
+  }
+]

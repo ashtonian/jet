@@ -10,7 +10,7 @@ Read [plan](plan.md), [RFC-0002](../../rfcs/0002-value-and-output-budgets.md), [
 2. Prepare bounded failing amplification/transaction fixtures and the operation-cost schedule. Do not run OOM inputs on the host or assume `GOMEMLIMIT` isolates them.
 3. Review default helper signatures/semantics and report which Karsto helpers require adapter changes to Lane 4. `formatNumber` precision and replace/split/join growth are concrete cases.
 
-The source-linked [cost/capability inventory and helper handoff](lane-2-cost-inventory.md) covers all default bindings, implicit formatting/conversion, transactions and discard sinks. [Evidence](lane-2-evidence.md) records bounded baseline fixtures, profiles and current dependency gates. No value/output protection is claimed by preparation tests.
+The source-linked [cost/capability inventory and helper handoff](lane-2-cost-inventory.md) covers all default bindings, implicit formatting/conversion, transactions and discard sinks. [Evidence](lane-2-evidence.md) records bounded baseline fixtures, profiles and current dependency gates. Production candidate `5583ec15361aea8f98c7a0d5a1fcbef25d407c0e` consumes Lane 1 foundation `32997fd20e6986220c8c0b60bfff9cedc49d46b7`; the consolidated final test/docs commit and CI are in [fork draft PR #2](https://github.com/ashtonian/jet/pull/2). No upstream submissions are authorized.
 
 ## Dependent implementation
 
@@ -26,10 +26,13 @@ After Lane 1 publishes its foundation SHA, rebase and implement J04/J05 against 
 
 Own `default.go`, builtin/value/output helpers and corresponding new tests after Lane 1's nested-execution patch. Coordinate `eval.go` edits as a dependent diff. Lane 3 owns restricted policy selection and input conversion; supply the vetted builtin descriptors and denial list it needs. Lane 4 owns Karsto helper registration and final performance report.
 
-- [ ] V01–V08 and relevant R07/R09 pass with matching baseline/fix fixtures.
-- [ ] Allocation profiles establish pre-allocation rejection; no giant allocation is made merely to discover the budget failure.
+- [x] V01–V07, supported-default V08 and value/output R07/R09/R12 paths pass with controlled baseline/fix and workflow fixtures.
+- [ ] V08 unsupported-capability denial and policy-error R07 acceptance pass after Lane 3 integration.
+- [x] Allocation profiles establish pre-allocation rejection; no giant allocation is made merely to discover the budget failure.
 - [ ] Every builtin has a complete capability/work/value contract; unsupported ones fail explicitly in restricted mode.
-- [ ] Upstream escaping/template compatibility and normal/race tests pass.
-- [ ] PRs describe logical accounting, output generation semantics and arbitrary-writer/callback limitations accurately.
+- [x] Upstream escaping/template compatibility and normal/race tests pass.
+- [x] Fork PR/public docs describe logical accounting, output generation semantics and arbitrary-writer/callback limitations accurately.
 
 Provide exact SHA, meter API, changed helper contracts, logs/receipts and remaining exclusions. Do not tune away checks to meet the 20% target. Read profiles before attributing overhead. Follow the shared gate and stage-reuse policy; no dedicated fuzzing without approval.
+
+Lane 2 implementation and its independent checks are complete. The complete builtin schedule and private identity handoff are supplied; the unchecked restricted-policy row requires Lane 3, not a second evaluator or meter. Karsto adapters/workflows, fork release and final performance acceptance remain Lane 4. Keep the existing fork PR draft until dependent gates are demonstrated. Portable evidence and exact remaining limits are linked above.

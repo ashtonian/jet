@@ -1,0 +1,33 @@
+{
+  "head": "5583ec15361aea8f98c7a0d5a1fcbef25d407c0e",
+  "command": [
+    "gate-lock",
+    "run-check",
+    "jet-lane-2-final-profile-inspection",
+    "--",
+    "python3",
+    ".git/lane-2-validation/inspect_final_profiles.py"
+  ],
+  "execution_timeout_seconds": 120,
+  "kill_after_seconds": 5,
+  "queued_at": 1794097575.829071,
+  "harness_sha256": "5eab2db071c1b3c33da58c40d7b9146057c367c29dfaba6d7df14e02a5ffb0ac",
+  "go_version": "go version go1.27.3 darwin/arm64",
+  "go_env": {
+    "GOARCH": "arm64",
+    "GOFLAGS": "-trimpath",
+    "GOMOD": "<checkout>/go.mod",
+    "GOOS": "darwin",
+    "GOTOOLCHAIN": "auto",
+    "GOWORK": ""
+  },
+  "environment": {
+    "GATE_LOCK_WAIT": "1",
+    "GATE_LOCK_COMMAND_TIMEOUT": "120",
+    "GATE_LOCK_COMMAND_KILL_AFTER": "5"
+  },
+  "exit_code": 0,
+  "finished_at": 1794097700.869909,
+  "inputs_unchanged": true,
+  "input_manifest": "../manifests/d860fc5e904a1fdadab34fb425a721cd6e4dd85f46fd6edd7b337bcde2c97a21.json"
+}

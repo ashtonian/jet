@@ -1,0 +1,28 @@
+gate-lock: held by pid <pid> on <host>, "jet-lane-2-allocation-profile-cumulative b0bbc07 in <checkout>", since 2026-11-07T23:02:05Z, 2 of 6 focused cores
+File: jet.test
+Type: alloc_space
+Time: 2026-11-07 17:01:20 CST
+Showing nodes accounting for 910.71kB, 75.17% of 1211.48kB total
+Dropped 211 nodes (cum <= 6.06kB)
+Showing top 20 nodes out of 62
+      flat  flat%   sum%        cum   cum%
+         0     0%     0%  1195.05kB 98.64%  testing.tRunner
+    0.55kB 0.045% 0.045%  1176.33kB 97.10%  github.com/CloudyKit/jet/v6.TestValueOutputAmplification.func1
+         0     0% 0.045%  1145.12kB 94.52%  github.com/CloudyKit/jet/v6.(*Template).Execute
+    0.11kB 0.009% 0.054%  1144.56kB 94.48%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 0.054%   882.53kB 72.85%  github.com/CloudyKit/jet/v6.(*Runtime).evalPrimaryExpressionGroup
+  256.62kB 21.18% 21.24%   543.86kB 44.89%  github.com/CloudyKit/jet/v6.(*Runtime).evalAdditiveExpression
+         0     0% 21.24%   543.86kB 44.89%  github.com/CloudyKit/jet/v6.(*Runtime).executeSetList
+         0     0% 21.24%   435.90kB 35.98%  github.com/CloudyKit/jet/v6.(*Runtime).evalCallExpression (inline)
+         0     0% 21.24%   435.90kB 35.98%  github.com/CloudyKit/jet/v6.(*Runtime).evalPipeCallExpression
+         0     0% 21.24%   432.75kB 35.72%  reflect.Value.Call
+    0.26kB 0.021% 21.26%   432.75kB 35.72%  reflect.Value.call
+     364kB 30.05% 51.30%      364kB 30.05%  internal/bytealg.MakeNoZero
+         0     0% 51.30%      364kB 30.05%  strings.(*Builder).Grow
+         0     0% 51.30%      364kB 30.05%  strings.(*Builder).grow
+    1.38kB  0.11% 51.42%   338.22kB 27.92%  github.com/CloudyKit/jet/v6.(*Runtime).executeLetList
+     128kB 10.57% 61.98%   287.23kB 23.71%  fmt.Sprint
+    0.28kB 0.023% 62.01%   242.84kB 20.05%  github.com/CloudyKit/jet/v6.(*Runtime).executeTry
+         0     0% 62.01%      236kB 19.48%  strings.Repeat
+         0     0% 62.01%   160.05kB 13.21%  fmt.(*pp).printArg
+  159.52kB 13.17% 75.17%   159.52kB 13.17%  fmt.(*buffer).writeString (inline)

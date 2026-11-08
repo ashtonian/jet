@@ -1,0 +1,8 @@
+{
+  "expected_exit": 1,
+  "actual_exit": 1,
+  "enabled_sha256": "3e5fcb4b7f1657e1b936a0c12f26c89924926b1a5661369514894abd0383439e",
+  "control_sha256": "228416b014f4d3ba8a12fd8c4c9a5efde1bf21c6cfe208879624d80b2ee39631",
+  "restored": true,
+  "fixtures": "Fixed maximum produced string: 131072 bytes; no OOM probe"
+}

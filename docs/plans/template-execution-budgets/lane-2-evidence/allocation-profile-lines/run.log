@@ -1,0 +1,172 @@
+gate-lock: held by pid <pid> on <host>, "jet-lane-2-allocation-profile-lines b0bbc07 in <checkout>", since 2026-11-07T23:02:23Z, 2 of 6 focused cores
+Total: 1.18MB
+ROUTINE ======================== github.com/CloudyKit/fastprinter.PrintValue in <module-cache>/github.com/!cloudy!kit/fastprinter@v0.0.0-20200109182630-33d98a066a53/printers.go
+         0   144.88kB (flat, cum) 11.96% of Total
+         .          .    166:func PrintValue(w io.Writer, v reflect.Value) (int, error) {
+         .          .    167:	v = maybeDereference(v, 2)
+         .          .    168:
+         .          .    169:	if v.Type().Implements(fmtStringerType) {
+         .          .    170:		return PrintString(w, v.Interface().(fmt.Stringer).String())
+         .          .    171:	}
+         .          .    172:
+         .          .    173:	if v.Type().Implements(errorType) {
+         .          .    174:		return PrintString(w, v.Interface().(error).Error())
+         .          .    175:	}
+         .          .    176:
+         .          .    177:	k := v.Kind()
+         .          .    178:
+         .          .    179:	if k == reflect.String {
+         .   144.34kB    180:		return PrintString(w, v.String())
+         .          .    181:	}
+         .          .    182:
+         .          .    183:	if k >= reflect.Int && k <= reflect.Int64 {
+         .       560B    184:		return PrintInt(w, v.Int())
+         .          .    185:	}
+         .          .    186:
+         .          .    187:	if k >= reflect.Uint && k <= reflect.Uint64 {
+         .          .    188:		return PrintUint(w, v.Uint())
+         .          .    189:	}
+ROUTINE ======================== github.com/CloudyKit/jet/v6.(*Runtime).evalAdditiveExpression in <checkout>/eval.go
+  256.62kB   543.86kB (flat, cum) 44.89% of Total
+         .          .   1052:func (st *Runtime) evalAdditiveExpression(node *AdditiveExprNode) reflect.Value {
+         .          .   1053:	isAdditive := node.Operator.typ == itemAdd
+         .          .   1054:	if node.Left == nil {
+         .          .   1055:		right := st.evalPrimaryExpressionGroup(node.Right)
+         .          .   1056:		if !right.IsValid() {
+         .          .   1057:			node.errorf("right side of additive expression is invalid value")
+         .          .   1058:		}
+         .          .   1059:		kind := right.Kind()
+         .          .   1060:		// todo: optimize
+         .          .   1061:		if isInt(kind) {
+         .          .   1062:			if isAdditive {
+         .          .   1063:				return reflect.ValueOf(+right.Int())
+         .          .   1064:			} else {
+         .          .   1065:				return reflect.ValueOf(-right.Int())
+         .          .   1066:			}
+         .          .   1067:		} else if isUint(kind) {
+         .          .   1068:			if isAdditive {
+         .          .   1069:				return right
+         .          .   1070:			} else {
+         .          .   1071:				return reflect.ValueOf(-int64(right.Uint()))
+         .          .   1072:			}
+         .          .   1073:		} else if isFloat(kind) {
+         .          .   1074:			if isAdditive {
+         .          .   1075:				return reflect.ValueOf(+right.Float())
+         .          .   1076:			} else {
+         .          .   1077:				return reflect.ValueOf(-right.Float())
+         .          .   1078:			}
+         .          .   1079:		}
+         .          .   1080:		node.Left.errorf("additive expression: right side %s (%s) is not a numeric value (no left side)", node.Right, getTypeString(right))
+         .          .   1081:	}
+         .          .   1082:
+         .          .   1083:	left, right := st.evalPrimaryExpressionGroup(node.Left), st.evalPrimaryExpressionGroup(node.Right)
+         .          .   1084:	if !left.IsValid() {
+         .          .   1085:		node.errorf("left side of additive expression is invalid value")
+         .          .   1086:	}
+         .          .   1087:	if !right.IsValid() {
+         .          .   1088:		node.errorf("right side of additive expression is invalid value")
+         .          .   1089:	}
+         .          .   1090:	kind := left.Kind()
+         .          .   1091:	// if the left value is not a float and the right is, we need to promote the left value to a float before the calculation
+         .          .   1092:	// this is necessary for expressions like 4+1.23
+         .          .   1093:	needFloatPromotion := !isFloat(kind) && kind != reflect.String && isFloat(right.Kind())
+         .          .   1094:	if needFloatPromotion {
+         .          .   1095:		if isInt(kind) {
+         .          .   1096:			if isAdditive {
+         .          .   1097:				left = reflect.ValueOf(float64(left.Int()) + right.Float())
+         .          .   1098:			} else {
+         .          .   1099:				left = reflect.ValueOf(float64(left.Int()) - right.Float())
+         .          .   1100:			}
+         .          .   1101:		} else if isUint(kind) {
+         .          .   1102:			if isAdditive {
+         .          .   1103:				left = reflect.ValueOf(float64(left.Uint()) + right.Float())
+         .          .   1104:			} else {
+         .          .   1105:				left = reflect.ValueOf(float64(left.Uint()) - right.Float())
+         .          .   1106:			}
+         .          .   1107:		} else {
+         .          .   1108:			node.Left.errorf("additive expression: left side (%s (%s) needs float promotion but neither int nor uint)", node.Left, getTypeString(left))
+         .          .   1109:		}
+         .          .   1110:	} else {
+         .          .   1111:		if isInt(kind) {
+         .          .   1112:			if isAdditive {
+         .          .   1113:				left = reflect.ValueOf(left.Int() + toInt(right))
+         .          .   1114:			} else {
+         .          .   1115:				left = reflect.ValueOf(left.Int() - toInt(right))
+         .          .   1116:			}
+         .          .   1117:		} else if isFloat(kind) {
+         .          .   1118:			if isAdditive {
+         .          .   1119:				left = reflect.ValueOf(left.Float() + toFloat(right))
+         .          .   1120:			} else {
+         .          .   1121:				left = reflect.ValueOf(left.Float() - toFloat(right))
+         .          .   1122:			}
+         .          .   1123:		} else if isUint(kind) {
+         .          .   1124:			if isAdditive {
+         .          .   1125:				left = reflect.ValueOf(left.Uint() + toUint(right))
+         .          .   1126:			} else {
+         .          .   1127:				left = reflect.ValueOf(left.Uint() - toUint(right))
+         .          .   1128:			}
+         .          .   1129:		} else if kind == reflect.String {
+         .          .   1130:			if !isAdditive {
+         .          .   1131:				node.Right.errorf("minus signal is not allowed with strings")
+         .          .   1132:			}
+         .          .   1133:			// converts []byte (and alias types of []byte) to string
+         .          .   1134:			if right.Kind() == reflect.Slice && right.Type().Elem().Kind() == reflect.Uint8 {
+         .          .   1135:				right = right.Convert(left.Type())
+         .          .   1136:			}
+  256.62kB   543.86kB   1137:			left = reflect.ValueOf(left.String() + fmt.Sprint(right))
+         .          .   1138:		} else {
+         .          .   1139:			node.Left.errorf("additive expression: left side %s (%s) is not a numeric value", node.Left, getTypeString(left))
+         .          .   1140:		}
+         .          .   1141:	}
+         .          .   1142:
+ROUTINE ======================== github.com/CloudyKit/jet/v6.(*Runtime).executeTry in <checkout>/eval.go
+      288B   242.89kB (flat, cum) 20.05% of Total
+         .          .    571:func (st *Runtime) executeTry(try *TryNode) (returnValue reflect.Value) {
+         .          .    572:	writer := st.Writer
+      288B       288B    573:	buf := new(bytes.Buffer)
+         .          .    574:
+         .          .    575:	defer func() {
+         .          .    576:		r := recover()
+         .          .    577:
+         .          .    578:		// copy buffered render output to writer only if no panic occurred
+         .          .    579:		if r == nil {
+         .          .    580:			io.Copy(writer, buf)
+         .          .    581:		} else {
+         .          .    582:			// st.Writer is already set to its original value since the later defer ran first
+         .          .    583:			if try.Catch != nil {
+         .          .    584:				if try.Catch.Err != nil {
+         .          .    585:					st.newScope()
+         .          .    586:					st.scope.variables[try.Catch.Err.Ident] = reflect.ValueOf(r)
+         .          .    587:				}
+         .          .    588:				if try.Catch.List != nil {
+         .          .    589:					returnValue = st.executeList(try.Catch.List)
+         .          .    590:				}
+         .          .    591:				if try.Catch.Err != nil {
+         .          .    592:					st.releaseScope()
+         .          .    593:				}
+         .          .    594:			}
+         .          .    595:		}
+         .          .    596:	}()
+         .          .    597:
+         .          .    598:	st.Writer = buf
+         .          .    599:	defer func() { st.Writer = writer }()
+         .          .    600:
+         .   242.61kB    601:	return st.executeList(try.List)
+         .          .    602:}
+         .          .    603:
+         .          .    604:func (st *Runtime) executeInclude(node *IncludeNode) (returnValue reflect.Value) {
+         .          .    605:	if st.includeDepth >= 100_000 {
+         .          .    606:		node.errorf("maximum 'include' depth (100000) exceeded")
+ROUTINE ======================== github.com/CloudyKit/jet/v6.(*Runtime).executeTry.func1 in <checkout>/eval.go
+         0       16kB (flat, cum)  1.32% of Total
+         .          .    575:	defer func() {
+         .          .    576:		r := recover()
+         .          .    577:
+         .          .    578:		// copy buffered render output to writer only if no panic occurred
+         .          .    579:		if r == nil {
+         .       16kB    580:			io.Copy(writer, buf)
+         .          .    581:		} else {
+         .          .    582:			// st.Writer is already set to its original value since the later defer ran first
+         .          .    583:			if try.Catch != nil {
+         .          .    584:				if try.Catch.Err != nil {
+         .          .    585:					st.newScope()
