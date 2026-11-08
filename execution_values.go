@@ -1,6 +1,7 @@
 package jet
 
 import (
+	"fmt"
 	"reflect"
 	"strconv"
 	"strings"
@@ -68,6 +69,10 @@ func (st *Runtime) valueLength(size int64, ok bool) int {
 }
 
 func (st *Runtime) concatString(left string, right reflect.Value) string {
+	bytes := right.Kind() == reflect.Slice && right.Type().Elem().Kind() == reflect.Uint8
+	if !bytes && (right.Type().Implements(formatterType) || right.Type().Implements(stringerType) || right.Type().Implements(errorType)) {
+		return st.concatFormattedValue(left, right)
+	}
 	var scratch [64]byte
 	var scalar []byte
 	var text string
@@ -106,6 +111,16 @@ func (st *Runtime) convertValue(value reflect.Value, target reflect.Type) reflec
 	}
 	if st.execution.ctx == nil {
 		return value.Convert(target)
+	}
+	st.checkpoint(0)
+	if !value.IsValid() || !value.Type().ConvertibleTo(target) {
+		panic(fmt.Errorf("cannot convert %s to %s", getTypeString(value), target))
+	}
+	if value.Kind() == reflect.Slice {
+		if (target.Kind() == reflect.Array && value.Len() < target.Len()) ||
+			(target.Kind() == reflect.Ptr && target.Elem().Kind() == reflect.Array && value.Len() < target.Elem().Len()) {
+			panic(fmt.Errorf("slice of length %d cannot be converted to %s", value.Len(), target))
+		}
 	}
 	if value.Kind() == reflect.String && target.Kind() == reflect.Slice {
 		st.checkpoint(uint64(value.Len()))

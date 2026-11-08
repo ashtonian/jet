@@ -998,9 +998,10 @@ func (st *Runtime) toInt(v reflect.Value) int64 {
 		return int64(v.Uint())
 	} else if kind == reflect.String {
 		st.checkpoint(uint64(v.Len()))
+		st.reserveNumericInput(v.Len())
 		n, e := strconv.ParseInt(v.String(), 10, 0)
 		if e != nil {
-			panic(e)
+			panic(st.numericError(e))
 		}
 		return n
 	} else if kind == reflect.Bool {
@@ -1025,9 +1026,10 @@ func (st *Runtime) toUint(v reflect.Value) uint64 {
 		return uint64(v.Float())
 	} else if kind == reflect.String {
 		st.checkpoint(uint64(v.Len()))
+		st.reserveNumericInput(v.Len())
 		n, e := strconv.ParseUint(v.String(), 10, 0)
 		if e != nil {
-			panic(e)
+			panic(st.numericError(e))
 		}
 		return n
 	} else if kind == reflect.Bool {
@@ -1052,9 +1054,10 @@ func (st *Runtime) toFloat(v reflect.Value) float64 {
 		return float64(v.Uint())
 	} else if kind == reflect.String {
 		st.checkpoint(uint64(v.Len()))
+		st.reserveNumericInput(v.Len())
 		n, e := strconv.ParseFloat(v.String(), 64)
 		if e != nil {
-			panic(e)
+			panic(st.numericError(e))
 		}
 		return n
 	} else if kind == reflect.Bool {

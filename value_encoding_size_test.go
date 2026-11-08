@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"html"
 	"net/url"
+	"strings"
 	"testing"
 	"unicode/utf8"
 )
@@ -30,9 +31,9 @@ func TestEncodedValueSizes(t *testing.T) {
 			} {
 				t.Run(tt.name, func(t *testing.T) {
 					got, ok := tt.size(input)
-					if tt.name == "json" && !utf8.ValidString(input) {
+					if tt.name == "json" && (!utf8.ValidString(input) || strings.ContainsAny(input, "\b\f")) {
 						if !ok || got < int64(tt.want) || got > 2+6*int64(len(input)) {
-							t.Fatalf("invalid UTF-8 bound (%d, %t) does not cover %d bytes", got, ok, tt.want)
+							t.Fatalf("JSON bound (%d, %t) does not cover %d bytes", got, ok, tt.want)
 						}
 						return
 					}

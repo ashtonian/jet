@@ -233,7 +233,14 @@ var newMap = Func(func(a Arguments) reflect.Value {
 		if key.Kind() == reflect.String {
 			a.runtime.checkpoint(uint64(key.Len()))
 		}
-		m.SetMapIndex(a.Get(i), a.Get(i+1))
+		if a.runtime.execution.ctx != nil {
+			if key.Type() != stringType {
+				key = a.runtime.convertValue(key, stringType)
+			}
+			m.SetMapIndex(key, a.Get(i+1))
+		} else {
+			m.SetMapIndex(a.Get(i), a.Get(i+1))
+		}
 	}
 
 	return m

@@ -6,6 +6,7 @@ import (
 	"errors"
 	"io"
 	"runtime"
+	"strconv"
 	"strings"
 	"testing"
 )
@@ -131,5 +132,23 @@ func TestExecutionFormatting(t *testing.T) {
 	vars := VarMap{}.Set("v", []string{strings.Repeat("x", 16384)})
 	if err := runtimeTemplate(t, `{{ "a" + v }}`).ExecuteContext(context.Background(), io.Discard, vars, nil, ExecutionOptions{MaxValueBytes: 4096}); !errors.Is(err, ErrValueLimit) {
 		t.Fatal(err)
+	}
+}
+
+func TestExecutionNumericErrorReservation(t *testing.T) {
+	for _, source := range []string{`{{ 1 * v }}`, `{{ 1.0 * v }}`} {
+		err := runtimeTemplate(t, source).ExecuteContext(context.Background(), io.Discard, VarMap{}.Set("v", strings.Repeat("0", 4096)+"x"), nil, ExecutionOptions{MaxSteps: 100000, MaxValueBytes: 1024, MaxDepth: 100})
+		if !errors.Is(err, ErrValueLimit) {
+			t.Fatalf("numeric parsing bypassed reservation: %T", err)
+		}
+	}
+}
+
+func TestExecutionNumericErrorIdentity(t *testing.T) {
+	input := strings.Repeat("0", 4096) + "x"
+	err := runtimeTemplate(t, `{{ 1 * v }}`).ExecuteContext(context.Background(), io.Discard, VarMap{}.Set("v", input), nil, ExecutionOptions{MaxSteps: 100000, MaxValueBytes: 32768, MaxDepth: 100})
+	var numeric *strconv.NumError
+	if !errors.Is(err, strconv.ErrSyntax) || !errors.As(err, &numeric) || numeric.Num != input || len(err.Error()) > 200 {
+		t.Fatalf("numeric error lost its cause or expanded its input: %T", err)
 	}
 }

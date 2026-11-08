@@ -3,8 +3,8 @@ package jet
 import "unicode/utf8"
 
 // jsonStringValueBound includes quotes and encoding/json's default HTML escaping.
-// Invalid UTF-8 reserves six bytes per replacement, covering both escaped and
-// literal replacement characters across supported Go versions.
+// Invalid UTF-8 and backspace/formfeed reserve six bytes, covering both short
+// and Unicode escape spellings across supported Go versions.
 // Callers must charge scanning work before using the result to reserve storage.
 func jsonStringValueBound(s string) (int64, bool) {
 	size := int64(2)
@@ -12,7 +12,7 @@ func jsonStringValueBound(s string) (int64, bool) {
 		width, encoded := 1, int64(1)
 		c := s[i]
 		switch {
-		case c == '\\', c == '"', c == '\b', c == '\f', c == '\n', c == '\r', c == '\t':
+		case c == '\\', c == '"', c == '\n', c == '\r', c == '\t':
 			encoded = 2
 		case c < 0x20, c == '<', c == '>', c == '&':
 			encoded = 6
