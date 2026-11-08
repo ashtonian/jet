@@ -9,3 +9,5 @@ Read [the report](../finalization-lane-2.md) for scope, statistical limits and p
 The initial historical F3 receipt includes discarded probe mistakes described in the report. Passing selected checks, including final redirect/reentry controls, are separate. No invalid instrumentation or failed baseline is counted as a passing gate.
 
 `object-profile-inspection.json` and `object-profile-source-proof.json` add allocated/live object-count flat/cumulative views from all 22 existing heaps, without new captures. See the report for removed/remaining costs and sparse/default-sampling limitations. `object-profile-summary.json` indexes all 88 views.
+
+`scalar-repair/` supersedes the earlier scratch reuse safety assertion. It contains six interleaved affected scalar comparisons, a safe invocation-local reentry control, frozen overlay/build/source hashes, default-sampling CPU/heap/object/contention views and excluded harness failures. `scalar-borrow-*` preserves the exact public red/green normal/race/minimum-Go workflows and the committed-tree check. The old `f7c2b6` ready SHA is invalidated; consume the signed repaired handoff.

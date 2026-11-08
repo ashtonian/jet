@@ -1,0 +1,15 @@
+Total: 60026780
+ROUTINE ======================== github.com/CloudyKit/jet/v6.(*Runtime).printValue in execution_print.go
+  12655067   17013610 (flat, cum) 28.34% of Total
+         .          .     19:func (st *Runtime) printValue(w io.Writer, v reflect.Value) (int, error) {
+         .          .     20:	if st.execution.ctx == nil {
+         .          .     21:		return fastprinter.PrintValue(w, v)
+         .          .     22:	}
+  12655067   12655067     23:	p := &dataPrinter{runtime: st, writer: w}
+         .          .     24:	defer func() { *p = dataPrinter{} }()
+         .    4358543     25:	err := p.value(v, false)
+         .          .     26:	return p.written, err
+         .          .     27:}
+         .          .     28:
+         .          .     29:type dataPrinter struct {
+         .          .     30:	runtime *Runtime

@@ -1,0 +1,29 @@
+File: local.test
+Type: delay
+Time: 2026-11-08 02:43:10 CST
+Showing nodes accounting for 225.13us, 100% of 225.13us total
+Dropped 7 nodes (cum <= 1.12us)
+Showing top 22 nodes out of 28
+      flat  flat%   sum%        cum   cum%
+  225.13us   100%   100%   225.13us   100%  runtime.unlock (inline)
+         0     0%   100%     8.50us  3.78%  runtime.allocm
+         0     0%   100%     6.75us  3.00%  runtime.findRunnable
+         0     0%   100%   103.25us 45.86%  runtime.forEachP (inline)
+         0     0%   100%   103.25us 45.86%  runtime.forEachP.func1
+         0     0%   100%   103.25us 45.86%  runtime.forEachPInternal
+         0     0%   100%   218.25us 96.95%  runtime.gcBgMarkWorker
+         0     0%   100%     8.50us  3.78%  runtime.gcBgMarkWorker.func2
+         0     0%   100%     8.50us  3.78%  runtime.gcDrain
+         0     0%   100%     8.50us  3.78%  runtime.gcDrainMarkWorkerIdle (inline)
+         0     0%   100%   209.75us 93.17%  runtime.gcMarkDone
+         0     0%   100%   106.50us 47.31%  runtime.gcMarkDone.func2
+         0     0%   100%     6.75us  3.00%  runtime.gopreempt_m (inline)
+         0     0%   100%     6.75us  3.00%  runtime.goschedImpl
+         0     0%   100%     8.50us  3.78%  runtime.markroot
+         0     0%   100%     8.50us  3.78%  runtime.markroot.func1
+         0     0%   100%     8.50us  3.78%  runtime.mcommoninit
+         0     0%   100%     6.75us  3.00%  runtime.morestack
+         0     0%   100%     8.50us  3.78%  runtime.newm
+         0     0%   100%     6.75us  3.00%  runtime.newstack
+         0     0%   100%     8.50us  3.78%  runtime.ready
+         0     0%   100%     8.50us  3.78%  runtime.resumeG

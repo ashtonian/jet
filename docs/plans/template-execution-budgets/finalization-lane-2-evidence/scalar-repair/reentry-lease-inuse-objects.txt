@@ -1,0 +1,9 @@
+File: lease.test
+Type: inuse_objects
+Time: 2026-11-08 02:43:14 CST
+Showing nodes accounting for 5461, 100% of 5461 total
+      flat  flat%   sum%        cum   cum%
+      5461   100%   100%       5461   100%  runtime.mallocgc
+         0     0%   100%       5461   100%  runtime.(*scavengerState).init
+         0     0%   100%       5461   100%  runtime.bgscavenge
+         0     0%   100%       5461   100%  runtime.newobject

@@ -1,0 +1,25 @@
+goos: darwin
+goarch: arm64
+pkg: github.com/CloudyKit/jet/v6
+cpu: Apple M2 Max
+BenchmarkScalarReentry/background-2         	  966475	      1045 ns/op	    1576 B/op	      14 allocs/op
+BenchmarkScalarReentry/live-2               	  946004	      1135 ns/op	    1576 B/op	      14 allocs/op
+PASS
+        2.13 real         2.15 user         0.05 sys
+            14516224  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                 810  page reclaims
+                 289  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                3597  signals received
+                   0  voluntary context switches
+               10222  involuntary context switches
+         36727600538  instructions retired
+          7468637017  cycles elapsed
+            10207760  peak memory footprint

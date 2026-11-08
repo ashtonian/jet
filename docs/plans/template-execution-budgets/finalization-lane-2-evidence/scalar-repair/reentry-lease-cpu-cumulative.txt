@@ -1,0 +1,30 @@
+File: lease.test
+Type: cpu
+Time: 2026-11-08 02:43:10 CST
+Duration: 3.72s, Total samples = 3.53s (94.97%)
+Showing nodes accounting for 2.46s, 69.69% of 3.53s total
+Dropped 59 nodes (cum <= 0.02s)
+Showing top 22 nodes out of 122
+      flat  flat%   sum%        cum   cum%
+         0     0%     0%      2.65s 75.07%  runtime.systemstack
+         0     0%     0%      2.18s 61.76%  runtime.gcStart.func4
+     2.18s 61.76% 61.76%      2.18s 61.76%  runtime.kevent
+         0     0% 61.76%      2.18s 61.76%  runtime.netpoll
+         0     0% 61.76%      2.18s 61.76%  runtime.startTheWorldWithSema
+         0     0% 61.76%      0.74s 20.96%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0% 61.76%      0.74s 20.96%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0% 61.76%      0.74s 20.96%  github.com/CloudyKit/jet/v6_test.BenchmarkScalarReentry.func1
+         0     0% 61.76%      0.74s 20.96%  github.com/CloudyKit/jet/v6_test.BenchmarkScalarReentry.func1.3
+         0     0% 61.76%      0.74s 20.96%  testing.(*B).launch
+         0     0% 61.76%      0.74s 20.96%  testing.(*B).runN
+         0     0% 61.76%      0.53s 15.01%  github.com/CloudyKit/jet/v6.(*Runtime).executeList
+         0     0% 61.76%      0.25s  7.08%  runtime.(*mheap).alloc.func1
+         0     0% 61.76%      0.25s  7.08%  runtime.(*mheap).allocSpan
+         0     0% 61.76%      0.24s  6.80%  github.com/CloudyKit/jet/v6.(*Runtime).printValue
+     0.03s  0.85% 62.61%      0.24s  6.80%  github.com/CloudyKit/jet/v6.(*dataPrinter).value
+     0.24s  6.80% 69.41%      0.24s  6.80%  runtime.madvise
+         0     0% 69.41%      0.23s  6.52%  runtime.sysUsed (inline)
+         0     0% 69.41%      0.23s  6.52%  runtime.sysUsedOS (inline)
+         0     0% 69.41%      0.20s  5.67%  runtime.mallocgc
+     0.01s  0.28% 69.69%      0.19s  5.38%  github.com/CloudyKit/jet/v6.(*Runtime).startCompilation
+         0     0% 69.69%      0.17s  4.82%  github.com/CloudyKit/jet/v6.(*Runtime).executeLetList

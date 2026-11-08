@@ -1,0 +1,124 @@
+{
+  "code_sha": "f599fc95992f104dd6e8cab180df04c9f964b5fa",
+  "probe_origin": "fae8b0a1a3f16a12820c63d9517b692c2e8def24",
+  "probe_cherry_pick": "0fb28eea333e524518428149ca25013440eaf3ff",
+  "probe_sha256": "cd11dbdf2249e6c36b35171391c023f284be156d80444d3fafad0519bbb00e42",
+  "passing_stage_source_reuse": {
+    "scalar-borrow-fix": {
+      "source_inputs_match": true,
+      "checked_source_count": 124,
+      "checked_paths_sha256": "b8a9dad0f05c7562ccbde2075ca0b7544371631e0c849dcff115ae1fc96d609a",
+      "non_source_changes_since_stage": [
+        "docs/plans/template-execution-budgets/finalization-lane-2-evidence/index.md",
+        "docs/plans/template-execution-budgets/finalization-lane-2.md"
+      ],
+      "original_inputs_unchanged": true
+    },
+    "scalar-borrow-fix-normal": {
+      "source_inputs_match": true,
+      "checked_source_count": 124,
+      "checked_paths_sha256": "b8a9dad0f05c7562ccbde2075ca0b7544371631e0c849dcff115ae1fc96d609a",
+      "non_source_changes_since_stage": [
+        "docs/plans/template-execution-budgets/finalization-lane-2-evidence/index.md",
+        "docs/plans/template-execution-budgets/finalization-lane-2.md"
+      ],
+      "original_inputs_unchanged": false
+    },
+    "scalar-borrow-fix-race": {
+      "source_inputs_match": true,
+      "checked_source_count": 124,
+      "checked_paths_sha256": "b8a9dad0f05c7562ccbde2075ca0b7544371631e0c849dcff115ae1fc96d609a",
+      "non_source_changes_since_stage": [
+        "docs/plans/template-execution-budgets/finalization-lane-2-evidence/index.md",
+        "docs/plans/template-execution-budgets/finalization-lane-2.md"
+      ],
+      "original_inputs_unchanged": true
+    },
+    "scalar-borrow-fix-go116": {
+      "source_inputs_match": true,
+      "checked_source_count": 124,
+      "checked_paths_sha256": "b8a9dad0f05c7562ccbde2075ca0b7544371631e0c849dcff115ae1fc96d609a",
+      "non_source_changes_since_stage": [
+        "docs/plans/template-execution-budgets/finalization-lane-2-evidence/index.md",
+        "docs/plans/template-execution-budgets/finalization-lane-2.md"
+      ],
+      "original_inputs_unchanged": true
+    },
+    "scalar-borrow-vet": {
+      "source_inputs_match": true,
+      "checked_source_count": 124,
+      "checked_paths_sha256": "b8a9dad0f05c7562ccbde2075ca0b7544371631e0c849dcff115ae1fc96d609a",
+      "non_source_changes_since_stage": [
+        "docs/plans/template-execution-budgets/finalization-lane-2-evidence/index.md",
+        "docs/plans/template-execution-budgets/finalization-lane-2.md"
+      ],
+      "original_inputs_unchanged": false
+    },
+    "scalar-borrow-committed-tree": {
+      "source_inputs_match": true,
+      "checked_source_count": 124,
+      "checked_paths_sha256": "b8a9dad0f05c7562ccbde2075ca0b7544371631e0c849dcff115ae1fc96d609a",
+      "non_source_changes_since_stage": [
+        "docs/plans/template-execution-budgets/finalization-lane-2-evidence/index.md",
+        "docs/plans/template-execution-budgets/finalization-lane-2.md"
+      ],
+      "original_inputs_unchanged": true
+    },
+    "scalar-repair-analysis": {
+      "source_inputs_match": true,
+      "checked_source_count": 124,
+      "checked_paths_sha256": "b8a9dad0f05c7562ccbde2075ca0b7544371631e0c849dcff115ae1fc96d609a",
+      "non_source_changes_since_stage": [
+        "docs/plans/template-execution-budgets/finalization-lane-2-evidence/index.md",
+        "docs/plans/template-execution-budgets/finalization-lane-2.md"
+      ],
+      "original_inputs_unchanged": true
+    },
+    "scalar-repair-object-source-views-final": {
+      "source_inputs_match": true,
+      "checked_source_count": 124,
+      "checked_paths_sha256": "b8a9dad0f05c7562ccbde2075ca0b7544371631e0c849dcff115ae1fc96d609a",
+      "non_source_changes_since_stage": [
+        "docs/plans/template-execution-budgets/finalization-lane-2-evidence/index.md",
+        "docs/plans/template-execution-budgets/finalization-lane-2.md"
+      ],
+      "original_inputs_unchanged": true
+    },
+    "scalar-repair-evidence-review": {
+      "source_inputs_match": true,
+      "checked_source_count": 124,
+      "checked_paths_sha256": "b8a9dad0f05c7562ccbde2075ca0b7544371631e0c849dcff115ae1fc96d609a",
+      "non_source_changes_since_stage": [],
+      "original_inputs_unchanged": true
+    }
+  },
+  "benchmark_builds": {
+    "unsafe": {
+      "common_inputs_match": true,
+      "source_sha256": "97d7ddc2c1cb18ef011f4cd14d1eec0c605839afeaae9221d2cb6c7e275ffaad",
+      "binary_sha256": "8da9447adac5101fcebf180ad6d7bf0537acfc21cb933484e69023b565874278"
+    },
+    "lease": {
+      "common_inputs_match": true,
+      "source_sha256": "92b4c21e0c04c9e6ef91de0df32f6ced43436873c09c15453c36ac22720e6337",
+      "binary_sha256": "99e417c6bf01d283c130799e5403ddd5c3d3eca95db115f3e03240c8e21dd06c"
+    },
+    "local": {
+      "common_inputs_match": true,
+      "source_sha256": "9e90eca67f41d0797fa1c3ff9f5828d6281c2d111827f99b220c8503d4801720",
+      "binary_sha256": "1701884acbf31c32f038270812e04a8ea1513c940cad88f27a9a2cfe7327e0b4"
+    }
+  },
+  "benchstat_sha256": "1cce2f67defd135e0ca5bb4b6b040ee3f83799a550cd7b0200aaaa410ef9d100",
+  "runtime_instrumentation": {
+    "timing": "ordinary non-race binaries; profiling off",
+    "profiles": "same binaries, CPU/heap/mutex/block enabled, default MemProfileRate 512KiB; not used for timing statistics",
+    "GOMAXPROCS": 2,
+    "samples": 6,
+    "sample_seconds": 1,
+    "profile_seconds": 2,
+    "outer_deadline_seconds": 600,
+    "subprocess_deadline_seconds": 60,
+    "kill_after_seconds": 5
+  }
+}

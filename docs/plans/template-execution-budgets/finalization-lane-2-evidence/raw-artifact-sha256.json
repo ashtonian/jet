@@ -1,4 +1,8 @@
 {
+  "analyze_scalar_repair.py": {
+    "bytes": 2790,
+    "sha256": "98c31205cad896b5c038c9c8214c51c5e7094a0d96def33c66fa62a8004d2a4b"
+  },
   "baseline-harness-sha.json": {
     "bytes": 320,
     "sha256": "c1c6e17d541459be5c6ca3707a276a9b509fdb903673ac96cc044cf419fc8eae"
@@ -19,6 +23,10 @@
     "bytes": 2398,
     "sha256": "a1ee98a47bec26c35cb4aacd9060450bc942bbcac9f44c9a446e856fa9f22069"
   },
+  "build_scalar_variants.py": {
+    "bytes": 1893,
+    "sha256": "973aab9097726d09ffc0a9e27bfbf6f11bed081df4da8bd47c8d0b3cabcf81f0"
+  },
   "capacity-benchmark.go.txt": {
     "bytes": 1282,
     "sha256": "d8c3e29fcf75c1a461770d79517f5fdc58e6701fc72e305bbdccb93e8026bae5"
@@ -31,6 +39,10 @@
     "bytes": 230,
     "sha256": "5201fea5bc419ae914dae32accfb029d9bb93328759d68f5ca7a7cb6e5ce9789"
   },
+  "injected-harness/zz_finalization_scalar_test.go.txt": {
+    "bytes": 2675,
+    "sha256": "29c1220db71fa625edfffc6d920171937f535a7452072f03ed89b04306576085"
+  },
   "inspect_objects.py": {
     "bytes": 2431,
     "sha256": "fc8cbc8fd29093c6385b76db1ed0169f4688b0cce0644a87b0377801e2cd0c40"
@@ -42,6 +54,10 @@
   "invalid-baseline-configuration.json": {
     "bytes": 220,
     "sha256": "eef4ad3c2ccdabc5643fe26bf81ba321be9d01bcd751c8b68a8b26ef314b1110"
+  },
+  "measure_scalar_repair.py": {
+    "bytes": 2434,
+    "sha256": "e970ffdfb1b9fad7343db5af58f50b0833fdb47297534678acc3c22cd7fa645d"
   },
   "object-profile-inspection.json": {
     "bytes": 55332,
@@ -678,6 +694,610 @@
   "reserve_screen.py": {
     "bytes": 2129,
     "sha256": "9425f309532c0e06808be7d33dc724f95b990376c64e3242204782684bdd0413"
+  },
+  "scalar-borrow-baseline-go116/result.json": {
+    "bytes": 17320,
+    "sha256": "a00e71b9fbcdb0d04aafa73e2caaa92994c01ec7b84fe1edfc2cfe2d2a1d1697"
+  },
+  "scalar-borrow-baseline-go116/run.log": {
+    "bytes": 1069,
+    "sha256": "ddc39313ec74d986664184305559bcf3cf10b34546f9b1a0b77bfb8c738ecfde"
+  },
+  "scalar-borrow-baseline-race/result.json": {
+    "bytes": 17302,
+    "sha256": "df2d1afb924cab26e754bbb3ccc0fb61237152d6781b1f878bf2d0127fdc564c"
+  },
+  "scalar-borrow-baseline-race/run.log": {
+    "bytes": 809,
+    "sha256": "b5ad81e7edf5f17e0e29479b61cf810edc4c1b931b577b8c0cff47bf5ac9029a"
+  },
+  "scalar-borrow-baseline/result.json": {
+    "bytes": 17282,
+    "sha256": "cdb9870bc2fb86bf5d8faae869716dfba614cf58597613056043260b52d05e73"
+  },
+  "scalar-borrow-baseline/run.log": {
+    "bytes": 804,
+    "sha256": "1c34684743d43d4613b47e563da865ce1db5a361420850f662557338ee1b505b"
+  },
+  "scalar-borrow-committed-tree/result.json": {
+    "bytes": 17430,
+    "sha256": "b8cd290f2689d0d09d4a419a600300585d59fb9b4762a40a89aa1fded5aa3121"
+  },
+  "scalar-borrow-committed-tree/run.log": {
+    "bytes": 236,
+    "sha256": "93ac5404f9f8d92d145f7af526c03468e70a01483556d21918097e3cc82dbcb5"
+  },
+  "scalar-borrow-fix-go116/result.json": {
+    "bytes": 17440,
+    "sha256": "6ab560582c73eb1731d57b068d934bc28625e2ceb259a1bf3c96e45c887f47fd"
+  },
+  "scalar-borrow-fix-go116/run.log": {
+    "bytes": 490,
+    "sha256": "0630c30f0d7915ff14e0749c26e7be53cc41ac187e49ba9e44e64e52dbb5073e"
+  },
+  "scalar-borrow-fix-normal/result.json": {
+    "bytes": 17411,
+    "sha256": "6aaeefd9175d7cd6fb16c5af896801eb3679dd9f5231df320e3e308e1bcb7c50"
+  },
+  "scalar-borrow-fix-normal/run.log": {
+    "bytes": 231,
+    "sha256": "94bb807e009169f2eb7a6cc9f87349164819568a5f7834686c81c3915ca060fe"
+  },
+  "scalar-borrow-fix-race/result.json": {
+    "bytes": 17421,
+    "sha256": "58bdba40edd598514fc0d2d604d0da6857ad94087805432cae893fdfbf26131b"
+  },
+  "scalar-borrow-fix-race/run.log": {
+    "bytes": 230,
+    "sha256": "c6396fb070c2cd11703b4ae68f79268afde6bc647a92c42933e51928855e2cc2"
+  },
+  "scalar-borrow-fix/result.json": {
+    "bytes": 17416,
+    "sha256": "0553cd152e0d04a7b1e0283b9a8a10892c6e660935aea0d6b6ef5dad322b7f79"
+  },
+  "scalar-borrow-fix/run.log": {
+    "bytes": 2544,
+    "sha256": "b7f3a117b298d570ba8cf1428007381ba01177d44f4eed1378a383eb2cc19fa7"
+  },
+  "scalar-borrow-vet/result.json": {
+    "bytes": 17254,
+    "sha256": "85f7805ea8ab0041f1716f607bbfc15628fae3cf7d0a6e264dcb6308dda17075"
+  },
+  "scalar-borrow-vet/run.log": {
+    "bytes": 184,
+    "sha256": "51b50e4ab19c0c955ff5c687a23e6709fb03a6345846bfc1db74d34a15e80d3d"
+  },
+  "scalar-repair-analysis/result.json": {
+    "bytes": 17289,
+    "sha256": "cc81d4447a8b925b047688c783815eb9e589b21bf3027d88c7de2ecc4151924a"
+  },
+  "scalar-repair-analysis/run.log": {
+    "bytes": 1101,
+    "sha256": "e107cf97bca32a79647aa612e7b70bdc094d534642a0c36d1a3c772686a71561"
+  },
+  "scalar-repair-evidence-review/result.json": {
+    "bytes": 17288,
+    "sha256": "02bfef80d104f8f363b8a768e98e057a8a06053a2ac9d194e3de4925a19cce64"
+  },
+  "scalar-repair-evidence-review/run.log": {
+    "bytes": 395,
+    "sha256": "6cb78e2555eeb634a21cff4728edb5dfb54b3613f439df6fab99e941b6deba97"
+  },
+  "scalar-repair-measure-fixed.log": {
+    "bytes": 448,
+    "sha256": "9ca935020e45df33dc7ea07570f63c4004962388326ddaab6bd4ecfd3abaeb5b"
+  },
+  "scalar-repair-measure.log": {
+    "bytes": 939,
+    "sha256": "5ceba6625d26cfcb8de7f9d1b3e8d0aaae01eaa449b3459f846fa37bb7c2a58f"
+  },
+  "scalar-repair-object-source-views-final/result.json": {
+    "bytes": 17309,
+    "sha256": "e78b9ac62f99a6fc66c7433fd3163585d184fdfccdcc88624ed781274922f972"
+  },
+  "scalar-repair-object-source-views-final/run.log": {
+    "bytes": 334,
+    "sha256": "949613513a5d43e3d1428c7e29914bc1bc9a2414ba857b7a56cb8489604385d7"
+  },
+  "scalar-repair-object-source-views-resumed/result.json": {
+    "bytes": 17312,
+    "sha256": "5ad7d5a7578a5f36e94098ec033c30c310cca136af77397fde1b013c4e097965"
+  },
+  "scalar-repair-object-source-views-resumed/run.log": {
+    "bytes": 861,
+    "sha256": "34084f0759f298511f6feaa945b625bf6febf856f484f06d81344990d95ff76f"
+  },
+  "scalar-repair-object-source-views/result.json": {
+    "bytes": 17304,
+    "sha256": "47d6447f4696bbebbea8a0b01cbb9f943628762ba3badd457b161ef6e958ce2f"
+  },
+  "scalar-repair-object-source-views/run.log": {
+    "bytes": 802,
+    "sha256": "ffd3a1df5f7ac510b475673afa0fb3a8c368af785fe831711669078fd8e363f2"
+  },
+  "scalar-repair/extra-inspection.json": {
+    "bytes": 5315,
+    "sha256": "93b6d45fc063ba4c7f511c330e4f0cd3e60334adf1eca45b6f197eb1f979b057"
+  },
+  "scalar-repair/inspection.json": {
+    "bytes": 22301,
+    "sha256": "2497243015ee045eae1e9c060af1b753161e46d114f2295548f93338c3438d25"
+  },
+  "scalar-repair/invalid-context-measurements.json": {
+    "bytes": 582,
+    "sha256": "6ee269d7c071488a82337b74908251a6cf8dc1b32d158d3b87ec48b91c0a1692"
+  },
+  "scalar-repair/invalid-context-sequential.log": {
+    "bytes": 1767,
+    "sha256": "a64fac73764ff2b0dc6e60bed910146061f4da475206b18a12aa21a6fcd93cae"
+  },
+  "scalar-repair/lease.test": {
+    "bytes": 9473378,
+    "sha256": "99e417c6bf01d283c130799e5403ddd5c3d3eca95db115f3e03240c8e21dd06c"
+  },
+  "scalar-repair/lease/build.json": {
+    "bytes": 7007,
+    "sha256": "5e35529b6b1cf176ea0c5e412a9daea4e1d8dc988e3057f1b9caa62cd9f72f92"
+  },
+  "scalar-repair/lease/build.log": {
+    "bytes": 173,
+    "sha256": "bd70a9b7311b55013d33f76251dc728ec149ec95057d6ac3ff24f1b2b02ec97c"
+  },
+  "scalar-repair/lease/execution_print.go": {
+    "bytes": 4475,
+    "sha256": "92b4c21e0c04c9e6ef91de0df32f6ced43436873c09c15453c36ac22720e6337"
+  },
+  "scalar-repair/lease/overlay.json": {
+    "bytes": 176,
+    "sha256": "9843c276d3235ccb55650bf24509ad9d1a37584bcde0591e8009ce44ec755b00"
+  },
+  "scalar-repair/local.test": {
+    "bytes": 9473378,
+    "sha256": "1701884acbf31c32f038270812e04a8ea1513c940cad88f27a9a2cfe7327e0b4"
+  },
+  "scalar-repair/local/build.json": {
+    "bytes": 7007,
+    "sha256": "a5f3c8cb3dd6d0f517455bd45b5f0b0efbdbc89574b30f310e74a4e7957d8e84"
+  },
+  "scalar-repair/local/build.log": {
+    "bytes": 173,
+    "sha256": "0a8634c2043b6422ca1c1c46a17cb8f261e56965020338c5db683d036ca9cadb"
+  },
+  "scalar-repair/local/execution_print.go": {
+    "bytes": 4260,
+    "sha256": "9e90eca67f41d0797fa1c3ff9f5828d6281c2d111827f99b220c8503d4801720"
+  },
+  "scalar-repair/local/overlay.json": {
+    "bytes": 176,
+    "sha256": "c5bbd3de105aa5fecdffe9d9078d4cd4e081a57e35ea542d884891c407c5763c"
+  },
+  "scalar-repair/measurements.json": {
+    "bytes": 18149,
+    "sha256": "a738838057e3c6aed0f331f38c3e85213631205dd498f60672aa7d6628d53840"
+  },
+  "scalar-repair/reentry-benchstat.txt": {
+    "bytes": 3269,
+    "sha256": "22a15ad67efcf9490988443fcd4757ceb3542c9cf8b1e547fcbf6051d85f08c9"
+  },
+  "scalar-repair/reentry-lease-0.log": {
+    "bytes": 1068,
+    "sha256": "6c6e8da4f55f8eb7f3dadd855282394b799cbea9123e56d5f28428242f2176f1"
+  },
+  "scalar-repair/reentry-lease-1.log": {
+    "bytes": 1068,
+    "sha256": "d0d30fcd0ad58a9d970e9c7cff8533be79d4d55c294d1bf791572946f2843cd5"
+  },
+  "scalar-repair/reentry-lease-2.log": {
+    "bytes": 1068,
+    "sha256": "ba953ce2a3b425d1e60699e5e7df263759082248b3d986894379a0b8766d6d4c"
+  },
+  "scalar-repair/reentry-lease-3.log": {
+    "bytes": 1068,
+    "sha256": "76ae4826b25827007e40cec71d8c0e585b298432bfff2263a9e7c41235811d39"
+  },
+  "scalar-repair/reentry-lease-4.log": {
+    "bytes": 1068,
+    "sha256": "aa4cb068f48781c351431994038e7a407e520a241b0dfaa9e4321dcf156c460f"
+  },
+  "scalar-repair/reentry-lease-5.log": {
+    "bytes": 1068,
+    "sha256": "61e647730340825f1d9e186d048b18ca6ee4f4d6dc3f3ede0de059efb1a5732c"
+  },
+  "scalar-repair/reentry-lease-alloc-bytes.txt": {
+    "bytes": 2300,
+    "sha256": "fef4b4f8a20d58dc25d12b7ebdc9e962bff600a691610a152cc4e835500c1543"
+  },
+  "scalar-repair/reentry-lease-alloc-objects-cumulative.txt": {
+    "bytes": 2297,
+    "sha256": "e5f1e60ddcd9997e5986fa0033860258f6d25d43dd80df521ab0ec1a79d28833"
+  },
+  "scalar-repair/reentry-lease-alloc-objects.txt": {
+    "bytes": 2297,
+    "sha256": "2a074f8ddf9bea3fb866d11a0ca86c77d1d44f3074380008ac9d62353324e3e7"
+  },
+  "scalar-repair/reentry-lease-alloc-source.txt": {
+    "bytes": 1232,
+    "sha256": "aa849a543dcea9357a6c9d83b22dc6d560fd957b34123851d46479be483d5c8d"
+  },
+  "scalar-repair/reentry-lease-block.pprof": {
+    "bytes": 1440,
+    "sha256": "a1fb2e74cbc735e82eaf7f7065e4ac8e33cbf860ce2a548012859a433d28681d"
+  },
+  "scalar-repair/reentry-lease-block.txt": {
+    "bytes": 1704,
+    "sha256": "a3d0c31cc9aa1e15b191a44b15b6477e54e3d0e76d8fa34f83ea2a672ee91dce"
+  },
+  "scalar-repair/reentry-lease-cpu-cumulative.txt": {
+    "bytes": 2009,
+    "sha256": "c7ff364809fb6566c921c8b06d675742cc77a88e38248b579563b47f91368bea"
+  },
+  "scalar-repair/reentry-lease-cpu-flat.txt": {
+    "bytes": 2122,
+    "sha256": "64820356097b199b268f788f6146913f2469c5ab1be996dec970730d34278e7a"
+  },
+  "scalar-repair/reentry-lease-cpu.pprof": {
+    "bytes": 9729,
+    "sha256": "1475946682cd25510480e2661af7de57358fd77532f7c43a0d26e44a911e1c7b"
+  },
+  "scalar-repair/reentry-lease-heap.pprof": {
+    "bytes": 2577,
+    "sha256": "5fc45af1aeaf515eee5279bcdd488e3f9272b5fab97b0989d1cd77bc9e667182"
+  },
+  "scalar-repair/reentry-lease-inuse-bytes.txt": {
+    "bytes": 431,
+    "sha256": "6abb0c4074cef1a5d418b2ce8273397ef1cb481415432a9b8eb07e93a5936195"
+  },
+  "scalar-repair/reentry-lease-inuse-objects-cumulative.txt": {
+    "bytes": 425,
+    "sha256": "764bcaf1336d203ed3de88b322b5e39997c5b38c304aa30c1809f90aa0214e15"
+  },
+  "scalar-repair/reentry-lease-inuse-objects.txt": {
+    "bytes": 425,
+    "sha256": "ce3ef73b5374ad785c6ed26ba4be28ba6e7bfb107b21a7c9e3541d3fa351fff2"
+  },
+  "scalar-repair/reentry-lease-mutex.pprof": {
+    "bytes": 1575,
+    "sha256": "85ceb118eb5681e08802589c0e98c584d8e4c8db7ac87c41480a6318fb3736cd"
+  },
+  "scalar-repair/reentry-lease-mutex.txt": {
+    "bytes": 1706,
+    "sha256": "5e5cdfafbd9d32f18b818bd47ac975786e3fdde0b37f627a0b6c6c10070cfedd"
+  },
+  "scalar-repair/reentry-lease-profile.log": {
+    "bytes": 958,
+    "sha256": "9c9c9d5dd014a88acc80d26b27b8b73552af00f5ad913cc74e1959204cb98304"
+  },
+  "scalar-repair/reentry-lease-source.txt": {
+    "bytes": 7786,
+    "sha256": "55a37340aa5c7e03defde54dcc8b0660f9395a93560aaee91d611c735f43f44d"
+  },
+  "scalar-repair/reentry-lease.txt": {
+    "bytes": 6408,
+    "sha256": "1b884f55e98ed69d9766e11d6db848ef2cb844954ce29a2b99b5b16c817c2fed"
+  },
+  "scalar-repair/reentry-local-0.log": {
+    "bytes": 1068,
+    "sha256": "011dd900f5596ad47698b0f292636e39814e580bae9e2cd12f200bbe4bdeea07"
+  },
+  "scalar-repair/reentry-local-1.log": {
+    "bytes": 1068,
+    "sha256": "1cd7d9ad8b1f92279344c690af6e18a9e6105c1a2734cd3425d2f35f3e92764f"
+  },
+  "scalar-repair/reentry-local-2.log": {
+    "bytes": 1068,
+    "sha256": "1b758654a7c695ee2d980307735b7b9e3176b2d6671e710244145b0f307fdcf6"
+  },
+  "scalar-repair/reentry-local-3.log": {
+    "bytes": 1068,
+    "sha256": "a603549779339eb5a1ad3987e393698742ceed901740a2a3adb4792e091d9b3e"
+  },
+  "scalar-repair/reentry-local-4.log": {
+    "bytes": 1068,
+    "sha256": "90d8d7b09e3034c927ca62455496cfd3184cbf42c837fde7a1feec3522584189"
+  },
+  "scalar-repair/reentry-local-5.log": {
+    "bytes": 1068,
+    "sha256": "18101f9a0a24da11d1016875113d91052623f63d558548f95641deaaeaf74236"
+  },
+  "scalar-repair/reentry-local-alloc-bytes.txt": {
+    "bytes": 2361,
+    "sha256": "474b4922df871f0843b0bc5a7c8b354a58989a87564869411ca53c4ab41901da"
+  },
+  "scalar-repair/reentry-local-alloc-objects-cumulative.txt": {
+    "bytes": 2328,
+    "sha256": "2d7ad29980cee587f261d0e23c5e71b2a9314392e9fe9e8b22c15a3e6399104e"
+  },
+  "scalar-repair/reentry-local-alloc-objects.txt": {
+    "bytes": 2367,
+    "sha256": "3cbc7013b4e6ff2e10d3275399633f25624d8cd01b139f4289cecdc5415ebbbf"
+  },
+  "scalar-repair/reentry-local-alloc-source.txt": {
+    "bytes": 843,
+    "sha256": "adbbf82248416b60028f7e4ca8137b12c249562f3631f52c43008ead8eb37e51"
+  },
+  "scalar-repair/reentry-local-block.pprof": {
+    "bytes": 1439,
+    "sha256": "191f13d6cadf7bb3387d03a90a752b55f30db10374c3064661def320fcffec66"
+  },
+  "scalar-repair/reentry-local-block.txt": {
+    "bytes": 1706,
+    "sha256": "9def06fcaabc9f12f3a9c5bc3cfd64616b87147d4894d27bbfcf91b1ffa91eef"
+  },
+  "scalar-repair/reentry-local-cpu-cumulative.txt": {
+    "bytes": 2163,
+    "sha256": "2e08dcb4db0d5e4da90994697165a1e31003b41376e2f5608fa5230f447873f3"
+  },
+  "scalar-repair/reentry-local-cpu-flat.txt": {
+    "bytes": 1972,
+    "sha256": "633254015167c143941b80fac1cb3fff4cc02c559f372c12063bf00926d4e735"
+  },
+  "scalar-repair/reentry-local-cpu.pprof": {
+    "bytes": 13836,
+    "sha256": "0bfca66feb85b2c7eb9f047c000086e8c4e20466997ba7effb885bc654ba7b01"
+  },
+  "scalar-repair/reentry-local-heap.pprof": {
+    "bytes": 2819,
+    "sha256": "71285f6073830719ec087efa6d69ab7cdd39687ec07f9bba6f618342c6d2745e"
+  },
+  "scalar-repair/reentry-local-inuse-bytes.txt": {
+    "bytes": 154,
+    "sha256": "24ef447853aa8ec82a356ff8ea8ae535b081381762bebe9f66531602baf13a2c"
+  },
+  "scalar-repair/reentry-local-inuse-objects-cumulative.txt": {
+    "bytes": 156,
+    "sha256": "5a377474e41dc85c3369db4fa2c9e5aaa1675fce0527ed025e241c5cc2133d07"
+  },
+  "scalar-repair/reentry-local-inuse-objects.txt": {
+    "bytes": 156,
+    "sha256": "5a377474e41dc85c3369db4fa2c9e5aaa1675fce0527ed025e241c5cc2133d07"
+  },
+  "scalar-repair/reentry-local-mutex.pprof": {
+    "bytes": 1695,
+    "sha256": "27fce1a167b70a3bf690a7dda3cd76b2aa26375e52a1f94669a6a31295193846"
+  },
+  "scalar-repair/reentry-local-mutex.txt": {
+    "bytes": 1667,
+    "sha256": "20615eabc75bde5d4b84fe549a0a851893cf853f55f9df28bc404eccdbb0cf37"
+  },
+  "scalar-repair/reentry-local-profile.log": {
+    "bytes": 958,
+    "sha256": "5e978665ebd20142b1651be5ea0220f67b30b55882681ab547a7d360373e8624"
+  },
+  "scalar-repair/reentry-local-source.txt": {
+    "bytes": 7397,
+    "sha256": "709304ec95c2e0c762a6fdd74d147376a1631951671b0975feb24607128e3cf3"
+  },
+  "scalar-repair/reentry-local.txt": {
+    "bytes": 6408,
+    "sha256": "c398924e6ba1d27a4f1f8500c58b64b57560d703f5b95cd45f6c5f46a8e32702"
+  },
+  "scalar-repair/sequential-benchstat.txt": {
+    "bytes": 6444,
+    "sha256": "039b2ae16d7bade2f7c1d8c9e131d45961394bb5193e279139f9df8216ed1b42"
+  },
+  "scalar-repair/sequential-lease-0.log": {
+    "bytes": 1538,
+    "sha256": "8db9906a0d089ef93301cd752b6c5dc5bb08a17f3a32ea8988e9e866c2c1636d"
+  },
+  "scalar-repair/sequential-lease-1.log": {
+    "bytes": 1538,
+    "sha256": "3a2f0616b1bca94a2e51758f2cda641ad239b0b65097df15d6b57c99f1118cfd"
+  },
+  "scalar-repair/sequential-lease-2.log": {
+    "bytes": 1538,
+    "sha256": "235a985abaaea187984af8328303abc79d09f22d480b14a8984fdbdb3b5aaa67"
+  },
+  "scalar-repair/sequential-lease-3.log": {
+    "bytes": 1538,
+    "sha256": "8d90b497a6bab49803d07c03a495b620e1470071779587d46ddefd1a64a03095"
+  },
+  "scalar-repair/sequential-lease-4.log": {
+    "bytes": 1538,
+    "sha256": "a02a354b921fe596a164c6a151a1691895fa107d80815c279f96531b10cdf019"
+  },
+  "scalar-repair/sequential-lease-5.log": {
+    "bytes": 1538,
+    "sha256": "53b20d001eb58e87267f3025af5ea3979935cf79f4b63c4030e5f5b7a5c0544d"
+  },
+  "scalar-repair/sequential-lease-alloc-bytes.txt": {
+    "bytes": 1129,
+    "sha256": "ec42beb4604480f6d238b73e522f3b19f4945def8797c162b57e157a891d2270"
+  },
+  "scalar-repair/sequential-lease-alloc-objects-cumulative.txt": {
+    "bytes": 1133,
+    "sha256": "7b00854e1c082b7131adad33d859bee859924f56c80f5b057e4f3fb456a6c77a"
+  },
+  "scalar-repair/sequential-lease-alloc-objects.txt": {
+    "bytes": 1133,
+    "sha256": "ac63b09b6d40382e5049d489fe3a9f42bbccad4218d7967c3771e081cba3014f"
+  },
+  "scalar-repair/sequential-lease-alloc-source.txt": {
+    "bytes": 40,
+    "sha256": "3ba1888c4f98cd1dd0383455ec6aa3077063d7d58e6b54ca1f7816706e5e2b12"
+  },
+  "scalar-repair/sequential-lease-block.pprof": {
+    "bytes": 1441,
+    "sha256": "4c56aa61f399e4a231b40a60c3288d8a9d18fb279512a78532e936a035a892fc"
+  },
+  "scalar-repair/sequential-lease-block.txt": {
+    "bytes": 1707,
+    "sha256": "3457991a7a72f5e8d737dcf50522ebbef84892d1df5ddd6816cf952a28ab14ac"
+  },
+  "scalar-repair/sequential-lease-cpu-cumulative.txt": {
+    "bytes": 1928,
+    "sha256": "a691c13bc698198960d059972e936eb3df472a400b8ee6b85f8676ce74abe28e"
+  },
+  "scalar-repair/sequential-lease-cpu-flat.txt": {
+    "bytes": 1985,
+    "sha256": "93ef66ea94e57af02dd6e79b4f871bee454b7eeb42d116edd038000f8b2cc34f"
+  },
+  "scalar-repair/sequential-lease-cpu.pprof": {
+    "bytes": 10080,
+    "sha256": "af1638f2eac9b0974dfb802bb05255d8cec2d046a676d6a0d5eb48abcbdf3c9d"
+  },
+  "scalar-repair/sequential-lease-heap.pprof": {
+    "bytes": 2869,
+    "sha256": "8d4ac4f1d3acf5fbcbd514af16dba89e107346720b1026c50eb6b74d2f0f5da0"
+  },
+  "scalar-repair/sequential-lease-inuse-bytes.txt": {
+    "bytes": 1065,
+    "sha256": "f6e813cb7ef25d1872aae2e861f66fe8ca7fb7e9a5993f2880323053e9e4442b"
+  },
+  "scalar-repair/sequential-lease-inuse-objects-cumulative.txt": {
+    "bytes": 1055,
+    "sha256": "7bf5c10d6436f35f0743d8fca780b03b422b9703346a6b2e5d686b1f790ce42c"
+  },
+  "scalar-repair/sequential-lease-inuse-objects.txt": {
+    "bytes": 1055,
+    "sha256": "8cc3a81f04d4ab2b059ef797838f8a75711a446de8869930db5ef51d0c04f081"
+  },
+  "scalar-repair/sequential-lease-mutex.pprof": {
+    "bytes": 907,
+    "sha256": "e3a7df38f2eadc4e750ef18733caeb064dce816a7315ec03f901662bc8792951"
+  },
+  "scalar-repair/sequential-lease-mutex.txt": {
+    "bytes": 1218,
+    "sha256": "6a3c22ec3c69f0feb510e2734d176527604d8bc9cb3f613240f55cf93d5aaaba"
+  },
+  "scalar-repair/sequential-lease-profile.log": {
+    "bytes": 967,
+    "sha256": "adfd2d7feea71c6e4aaef0e2a263500f3565e47f6def131c36e6c544e9933c46"
+  },
+  "scalar-repair/sequential-lease-source.txt": {
+    "bytes": 7712,
+    "sha256": "6ad20b05bce6388edab0a01dcf394c680ac4783a31e266670a9878bf451bd5bf"
+  },
+  "scalar-repair/sequential-lease.txt": {
+    "bytes": 9228,
+    "sha256": "98e1026183019cef78c7dc36b20c1342881166c273ec587cf76ad62278a0e5b3"
+  },
+  "scalar-repair/sequential-unsafe-0.log": {
+    "bytes": 1538,
+    "sha256": "fa6bd9081e16823639ddbe9953c5dd75b2750dba078c9e0c067742dda72ba185"
+  },
+  "scalar-repair/sequential-unsafe-1.log": {
+    "bytes": 1538,
+    "sha256": "d3fc41f315bdcec1cb1eaf16e28ec6f5130a6f504d24e3b803e3cc302c1e55c7"
+  },
+  "scalar-repair/sequential-unsafe-2.log": {
+    "bytes": 1538,
+    "sha256": "5b8d9392a8072599593d8503d016dc696c39caebc195bff3e7e376903abab8ee"
+  },
+  "scalar-repair/sequential-unsafe-3.log": {
+    "bytes": 1538,
+    "sha256": "ef0cfe11906a8e874f320aad6838e3b77e43d3bac419518349d929f5ecd585ef"
+  },
+  "scalar-repair/sequential-unsafe-4.log": {
+    "bytes": 1538,
+    "sha256": "cfabffc04c51593931d6e7c58ee44cf14b9e1e86ceb3abea0ca9799e59c4f985"
+  },
+  "scalar-repair/sequential-unsafe-5.log": {
+    "bytes": 1538,
+    "sha256": "ad4d91f275647cd8488c2e5af2b3db2bb468d6d3c8c969df38df4292768a45b8"
+  },
+  "scalar-repair/sequential-unsafe-alloc-bytes.txt": {
+    "bytes": 1130,
+    "sha256": "92ca2794c8b0c0e7c59d01801141ce05f2ad825154c65ac4abb857ee98aa5993"
+  },
+  "scalar-repair/sequential-unsafe-alloc-objects-cumulative.txt": {
+    "bytes": 1134,
+    "sha256": "522bd93c5c46345d00ced1cbbfa78f5b48cdfd0b0385eb9a6e052aa9403fc1fc"
+  },
+  "scalar-repair/sequential-unsafe-alloc-objects.txt": {
+    "bytes": 1134,
+    "sha256": "d3abc9d0e193cf5f358bf8ab81ae59bcbcb0fa6a92ecced14109789f65623fb8"
+  },
+  "scalar-repair/sequential-unsafe-alloc-source.txt": {
+    "bytes": 40,
+    "sha256": "3ba1888c4f98cd1dd0383455ec6aa3077063d7d58e6b54ca1f7816706e5e2b12"
+  },
+  "scalar-repair/sequential-unsafe-block.pprof": {
+    "bytes": 1440,
+    "sha256": "b6f3f99dd58c3119f2876681fdf1382c56245822ba497fc0b92593e3214170d1"
+  },
+  "scalar-repair/sequential-unsafe-block.txt": {
+    "bytes": 1708,
+    "sha256": "67d623d6fae1347eb1a84f7ff4696d8a4918183d03d908eaea23255e70dd828a"
+  },
+  "scalar-repair/sequential-unsafe-cpu-cumulative.txt": {
+    "bytes": 1889,
+    "sha256": "87923291dab97afc89aeec9a692fc667f8849da72be7b4214f89c4ad5062ff55"
+  },
+  "scalar-repair/sequential-unsafe-cpu-flat.txt": {
+    "bytes": 1931,
+    "sha256": "51be70af18be43f449a7458526382b9ab120a7a2d46b4520e1f2bb8879972628"
+  },
+  "scalar-repair/sequential-unsafe-cpu.pprof": {
+    "bytes": 9699,
+    "sha256": "2e418dbf310cb39e8220574f8d536b805233b6396db633e5464818a531c51b3b"
+  },
+  "scalar-repair/sequential-unsafe-heap.pprof": {
+    "bytes": 2595,
+    "sha256": "79673b9ed46bf9568d1d278c58c6b5b618b78f79bffec9a0871828bb95c81bd7"
+  },
+  "scalar-repair/sequential-unsafe-inuse-bytes.txt": {
+    "bytes": 155,
+    "sha256": "6dce0cf5dff8197a60602443bcc28d1a9044029a93c4270e85eb17b87904a402"
+  },
+  "scalar-repair/sequential-unsafe-inuse-objects-cumulative.txt": {
+    "bytes": 157,
+    "sha256": "9831ceae9f161744909125200f224ef3ce9d7443b83de4968861b95ea014feda"
+  },
+  "scalar-repair/sequential-unsafe-inuse-objects.txt": {
+    "bytes": 157,
+    "sha256": "9831ceae9f161744909125200f224ef3ce9d7443b83de4968861b95ea014feda"
+  },
+  "scalar-repair/sequential-unsafe-mutex.pprof": {
+    "bytes": 1794,
+    "sha256": "4eec1bfda2a27d7853f19eef1e3fb9e151b584e7b3a152b5fd5accbc0a091d70"
+  },
+  "scalar-repair/sequential-unsafe-mutex.txt": {
+    "bytes": 1674,
+    "sha256": "acb88ec4a86f0c18c59c065644af65c52111952e3b79476428eba1409f7a9292"
+  },
+  "scalar-repair/sequential-unsafe-profile.log": {
+    "bytes": 967,
+    "sha256": "64e2642dcc1c407cb4593fb6515db4f1c0bda63f7f1408fd22a23bfa71f7c664"
+  },
+  "scalar-repair/sequential-unsafe-source.txt": {
+    "bytes": 7478,
+    "sha256": "6bfaac293649af4c217158312f0f888d28d05dc33600c122200de4c32a5043bf"
+  },
+  "scalar-repair/sequential-unsafe.txt": {
+    "bytes": 9228,
+    "sha256": "2a75e9abbd912420a502382db0f8e2e9c5a9bf3089d5cfc7b7feb2d0d20e7e35"
+  },
+  "scalar-repair/source-proof.json": {
+    "bytes": 5524,
+    "sha256": "cb6573442de7df3d3aa26cbd6a2b9d2e3ac1949f3ea590e0e372c79e96749e80"
+  },
+  "scalar-repair/summary.json": {
+    "bytes": 10607,
+    "sha256": "73f2c4f9d3467f91d432bfc2d962125faf13adcd9a66752c86721df9ce5709a8"
+  },
+  "scalar-repair/unsafe.test": {
+    "bytes": 9473378,
+    "sha256": "8da9447adac5101fcebf180ad6d7bf0537acfc21cb933484e69023b565874278"
+  },
+  "scalar-repair/unsafe/build.json": {
+    "bytes": 7010,
+    "sha256": "a8733399899d1ca8594f370d1374f356910eae0b08faf03843717fe67257248c"
+  },
+  "scalar-repair/unsafe/build.log": {
+    "bytes": 174,
+    "sha256": "13ba80dce3f578fc690a3a27ec5f8efdc82e173e2beb8c9a8eba20e2e211fb12"
+  },
+  "scalar-repair/unsafe/execution_print.go": {
+    "bytes": 4288,
+    "sha256": "97d7ddc2c1cb18ef011f4cd14d1eec0c605839afeaae9221d2cb6c7e275ffaad"
+  },
+  "scalar-repair/unsafe/overlay.json": {
+    "bytes": 177,
+    "sha256": "9794525d3892da3d960e3155f1e8ea4c38f5b041530cacfe408ba778d8841bcb"
+  },
+  "scalar_repair_extra_views.py": {
+    "bytes": 1575,
+    "sha256": "93e326db83d66e2c8f1b0475ed4d7c9e01e56e71ff4ccdeffd00b1f869b51986"
   },
   "selected-measure/baseline-0.log": {
     "bytes": 3122,

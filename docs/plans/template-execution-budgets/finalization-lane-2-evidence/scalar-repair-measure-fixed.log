@@ -1,0 +1,3 @@
+gate-lock: held by pid <pid> on <host>, "jet-scalar-workspace-lifetime-fixed-harness 0fb28ee in <checkout>", since 2026-11-08T08:40:09Z
+gate-lock: held by pid <pid> on <host>, "jet-scalar-workspace-lifetime-fixed-harness 0fb28ee in <checkout>", since 2026-11-08T08:40:10Z
+Six interleaved valid-output scalar comparisons and affected profiles completed; unsafe reentry was never benchmarked

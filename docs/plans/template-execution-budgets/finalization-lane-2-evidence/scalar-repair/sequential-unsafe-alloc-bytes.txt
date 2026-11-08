@@ -1,0 +1,16 @@
+File: unsafe.test
+Type: alloc_space
+Time: 2026-11-08 02:43:01 CST
+Showing nodes accounting for 4.40GB, 99.92% of 4.41GB total
+Dropped 33 nodes (cum <= 0.02GB)
+      flat  flat%   sum%        cum   cum%
+    1.82GB 41.38% 41.38%     2.90GB 65.74%  github.com/CloudyKit/jet/v6.(*parseAdmission).admitCached
+    1.51GB 34.17% 75.55%     1.51GB 34.17%  github.com/CloudyKit/jet/v6.newParseAdmission
+    1.07GB 24.37% 99.92%     1.07GB 24.37%  github.com/CloudyKit/jet/v6.(*parseAdmission).prepareSource
+         0     0% 99.92%     4.40GB 99.92%  github.com/CloudyKit/jet/v6.(*Runtime).startCompilation
+         0     0% 99.92%     2.90GB 65.74%  github.com/CloudyKit/jet/v6.(*Runtime).startCompilation.func1
+         0     0% 99.92%     4.40GB 99.92%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0% 99.92%     4.40GB 99.92%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0% 99.92%     4.40GB 99.93%  github.com/CloudyKit/jet/v6_test.BenchmarkScalarSequential.func1
+         0     0% 99.92%     4.40GB 99.93%  testing.(*B).launch
+         0     0% 99.92%     4.40GB 99.94%  testing.(*B).runN

@@ -1,0 +1,29 @@
+File: unsafe.test
+Type: delay
+Time: 2026-11-08 02:43:01 CST
+Showing nodes accounting for 174.33us, 100% of 174.33us total
+Dropped 7 nodes (cum <= 0.87us)
+Showing top 22 nodes out of 30
+      flat  flat%   sum%        cum   cum%
+  174.33us   100%   100%   174.33us   100%  runtime.unlock (inline)
+         0     0%   100%    15.50us  8.89%  runtime.allocm
+         0     0%   100%     6.33us  3.63%  runtime.findRunnable
+         0     0%   100%    69.25us 39.72%  runtime.forEachP (inline)
+         0     0%   100%    69.25us 39.72%  runtime.forEachP.func1
+         0     0%   100%    69.25us 39.72%  runtime.forEachPInternal
+         0     0%   100%   113.33us 65.01%  runtime.gcBgMarkWorker
+         0     0%   100%    15.50us  8.89%  runtime.gcBgMarkWorker.func2
+         0     0%   100%    15.50us  8.89%  runtime.gcDrain
+         0     0%   100%    15.50us  8.89%  runtime.gcDrainMarkWorkerIdle (inline)
+         0     0%   100%    97.83us 56.12%  runtime.gcMarkDone
+         0     0%   100%    28.58us 16.40%  runtime.gcMarkDone.func2
+         0     0%   100%     1.08us  0.62%  runtime.gcstopm
+         0     0%   100%     6.33us  3.63%  runtime.gopreempt_m (inline)
+         0     0%   100%     6.33us  3.63%  runtime.goschedImpl
+         0     0%   100%    15.50us  8.89%  runtime.markroot
+         0     0%   100%    15.50us  8.89%  runtime.markroot.func1
+         0     0%   100%    15.50us  8.89%  runtime.mcommoninit
+         0     0%   100%    60.87us 34.92%  runtime.morestack
+         0     0%   100%    15.50us  8.89%  runtime.newm
+         0     0%   100%    60.87us 34.92%  runtime.newstack
+         0     0%   100%    54.54us 31.29%  runtime.preemptPark

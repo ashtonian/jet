@@ -1,0 +1,30 @@
+File: unsafe.test
+Type: cpu
+Time: 2026-11-08 02:42:58 CST
+Duration: 3.21s, Total samples = 3.22s (100.19%)
+Showing nodes accounting for 1.93s, 59.94% of 3.22s total
+Dropped 49 nodes (cum <= 0.02s)
+Showing top 22 nodes out of 125
+      flat  flat%   sum%        cum   cum%
+         0     0%     0%      2.09s 64.91%  runtime.systemstack
+         0     0%     0%      1.29s 40.06%  runtime.gcStart.func4
+     1.29s 40.06% 40.06%      1.29s 40.06%  runtime.kevent
+         0     0% 40.06%      1.29s 40.06%  runtime.netpoll
+         0     0% 40.06%      1.29s 40.06%  runtime.startTheWorldWithSema
+     0.01s  0.31% 40.37%      0.70s 21.74%  github.com/CloudyKit/jet/v6_test.BenchmarkScalarSequential.func1
+         0     0% 40.37%      0.70s 21.74%  testing.(*B).launch
+         0     0% 40.37%      0.70s 21.74%  testing.(*B).runN
+         0     0% 40.37%      0.69s 21.43%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+     0.03s  0.93% 41.30%      0.69s 21.43%  github.com/CloudyKit/jet/v6.(*Template).execute
+     0.01s  0.31% 41.61%      0.37s 11.49%  github.com/CloudyKit/jet/v6.(*Runtime).startCompilation
+         0     0% 41.61%      0.29s  9.01%  runtime.(*mheap).alloc.func1
+         0     0% 41.61%      0.29s  9.01%  runtime.(*mheap).allocSpan
+     0.29s  9.01% 50.62%      0.29s  9.01%  runtime.madvise
+     0.01s  0.31% 50.93%      0.29s  9.01%  runtime.newstack
+         0     0% 50.93%      0.29s  9.01%  runtime.preemptM
+     0.29s  9.01% 59.94%      0.29s  9.01%  runtime.pthread_kill
+         0     0% 59.94%      0.29s  9.01%  runtime.signalM (inline)
+         0     0% 59.94%      0.28s  8.70%  github.com/CloudyKit/jet/v6.(*Runtime).startCompilation.func1
+         0     0% 59.94%      0.28s  8.70%  runtime.morestack
+         0     0% 59.94%      0.28s  8.70%  runtime.sysUsed (inline)
+         0     0% 59.94%      0.28s  8.70%  runtime.sysUsedOS (inline)

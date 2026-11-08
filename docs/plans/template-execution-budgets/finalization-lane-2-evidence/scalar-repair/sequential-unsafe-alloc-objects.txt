@@ -1,0 +1,16 @@
+File: unsafe.test
+Type: alloc_objects
+Time: 2026-11-08 02:43:01 CST
+Showing nodes accounting for 38968735, 100% of 38973869 total
+Dropped 33 nodes (cum <= 194869)
+      flat  flat%   sum%        cum   cum%
+  22360237 57.37% 57.37%   22360237 57.37%  github.com/CloudyKit/jet/v6.newParseAdmission
+  11067087 28.40% 85.77%   16608498 42.61%  github.com/CloudyKit/jet/v6.(*parseAdmission).admitCached
+   5541411 14.22%   100%    5541411 14.22%  github.com/CloudyKit/jet/v6.(*parseAdmission).prepareSource
+         0     0%   100%   38968735   100%  github.com/CloudyKit/jet/v6.(*Runtime).startCompilation
+         0     0%   100%   16608498 42.61%  github.com/CloudyKit/jet/v6.(*Runtime).startCompilation.func1
+         0     0%   100%   38968735   100%  github.com/CloudyKit/jet/v6.(*Template).ExecuteContext
+         0     0%   100%   38968735   100%  github.com/CloudyKit/jet/v6.(*Template).execute
+         0     0%   100%   38970555   100%  github.com/CloudyKit/jet/v6_test.BenchmarkScalarSequential.func1
+         0     0%   100%   38970555   100%  testing.(*B).launch
+         0     0%   100%   38970571   100%  testing.(*B).runN

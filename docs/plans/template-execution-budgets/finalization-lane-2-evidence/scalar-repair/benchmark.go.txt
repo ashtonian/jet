@@ -1,0 +1,93 @@
+package jet_test
+
+import (
+	"bytes"
+	"context"
+	"reflect"
+	"testing"
+
+	"github.com/CloudyKit/jet/v6"
+)
+
+func scalarBudget() jet.ExecutionOptions {
+	return jet.ExecutionOptions{MaxSteps: 1000000, MaxDepth: 64, MaxValueBytes: 8 << 20, MaxOutputBytes: 1 << 20}
+}
+func BenchmarkScalarSequential(b *testing.B) {
+	for _, fixture := range []struct {
+		name  string
+		value interface{}
+		want  string
+	}{
+		{"int", int(123), "123"}, {"collection", []interface{}{int(123), uint64(7), true}, "[123 7 true]"}, {"string", "header", "header"},
+	} {
+		for _, live := range []bool{false, true} {
+			mode := "background"
+			if live {
+				mode = "live"
+			}
+			b.Run(fixture.name+"/"+mode, func(b *testing.B) {
+				ctx := context.Background()
+				cancel := func() {}
+				if live {
+					ctx, cancel = context.WithCancel(ctx)
+				}
+				defer cancel()
+				tpl, err := jet.NewSet(jet.NewInMemLoader(), jet.WithSafeWriter(nil)).Parse("scalar.jet", `{{ . }}`)
+				if err != nil {
+					b.Fatal(err)
+				}
+				var out bytes.Buffer
+				if err = tpl.ExecuteContext(ctx, &out, nil, fixture.value, scalarBudget()); err != nil || out.String() != fixture.want {
+					b.Fatalf("fixture output %q: %v", out.String(), err)
+				}
+				out.Reset()
+				b.ReportAllocs()
+				b.ResetTimer()
+				for i := 0; i < b.N; i++ {
+					out.Reset()
+					if err = tpl.ExecuteContext(ctx, &out, nil, fixture.value, scalarBudget()); err != nil {
+						b.Fatal(err)
+					}
+				}
+			})
+		}
+	}
+}
+func BenchmarkScalarReentry(b *testing.B) {
+	for _, live := range []bool{false, true} {
+		mode := "background"
+		if live {
+			mode = "live"
+		}
+		b.Run(mode, func(b *testing.B) {
+			ctx := context.Background()
+			cancel := func() {}
+			if live {
+				ctx, cancel = context.WithCancel(ctx)
+			}
+			defer cancel()
+			var out scalarBorrowWriter
+			vars := jet.VarMap{}.Set("outerValue", int(123)).Set("nestedValue", int(456)).SetFunc("capture", func(a jet.Arguments) reflect.Value { out.runtime = a.Runtime(); return reflect.Value{} })
+			tpl, err := jet.NewSet(jet.NewInMemLoader(), jet.WithSafeWriter(nil)).Parse("scalar-reentry.jet", `{{ block inner() }}{{ nestedValue }}{{ end }}{{ saved := capture() }}{{ outerValue }}`)
+			if err != nil {
+				b.Fatal(err)
+			}
+			run := func() {
+				out.Reset()
+				out.runtime = nil
+				out.borrowed = nil
+				out.checked = false
+				out.changed = ""
+				if err = tpl.ExecuteContext(ctx, &out, vars, nil, scalarBudget()); err != nil || !out.checked || out.changed != "" || out.String() != "456456123" {
+					b.Fatalf("reentry output %q changed %q: %v", out.String(), out.changed, err)
+				}
+			}
+			run()
+			b.ReportAllocs()
+			b.ResetTimer()
+			for i := 0; i < b.N; i++ {
+				run()
+			}
+		})
+	}
+}
