@@ -23,6 +23,7 @@ Add `MaxValueBytes int64` and `MaxOutputBytes int64` to `ExecutionOptions` when 
 | Slice/array construction or copy | Number of new slots times declared element storage width, with checked multiplication |
 | Map construction or insertion | New key/value slot storage plus new key payload, using a documented conservative logical charge; not Go map bucket bytes |
 | Formatting, escaping, serialization | Reserve a proven upper bound, or stream incrementally to a charging writer without an unbounded hidden buffer |
+| Numeric parsing of strings | Reserve twice the input length for possible native numeric-error copies before parsing; bounded diagnostics preserve the original NumError in the error chain without formatting its input |
 | `try` temporary output | Bytes retained by the temporary buffer before growth; nested buffers charge each physical logical copy |
 | Aliases, slices or reads that allocate nothing | No payload allocation charge; traversal still consumes steps |
 
@@ -33,6 +34,8 @@ Fixed-size interpreter control objects and printing scratch are bounded by runti
 Metered default functions use private immutable builtin descriptors so aliases retain authority without approving a function name or program counter. Public Runtime resolution and direct native arguments expose the original functions for unrestricted callback compatibility; function-valued containers remain host capabilities outside the data-only restricted profile. `SafeWriter` keeps its public signature. Unsupported native formatting/marshaling and diagnostic dump are restricted-policy denials, not size checks after a callback returns.
 
 Owned cooperative adapters can call `Runtime.ConsumeSteps(uint64)` and `Runtime.ReserveValueBytes(int64)` before work/allocation. Both operate on the active render and terminate through the same sticky error path; negative byte requests fail with the value sentinel. These hooks neither approve arbitrary callbacks for restricted execution nor make native code preemptible. Helper registration/admission remains RFC-0004's separate identity-based contract.
+
+Metered argument conversions validate type/length constraints before reflection so invalid template arguments return ordinary catchable errors rather than escaping as panic strings. Metered `map` evaluates each key once, converts that validated value to the declared string-key type with a pre-allocation reservation, and inserts that same value. This closes the gap between preflight and a second argument evaluation. Legacy Execute retains its existing argument behavior.
 
 Check `requested > remaining`, and check addition/multiplication overflow **before** allocating, converting, formatting or growing buffers. A length check on a returned callback value is detection after allocation and cannot certify protection. Failed reservations are terminal and cannot be caught by the template. No refunds are required; cumulative accounting makes repeated allocate/discard work consume budget.
 
